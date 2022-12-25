@@ -3,19 +3,17 @@ using UnityEngine;
 //Конструктор лабиринта
 public class MazeConstructor : MonoBehaviour
 {
-    /* Все эти поля доступны вам в Инспекторе. showDebug будет использоваться 
-     * для отображения окна отладки, в то время как различные ссылки на материалы 
-     * являются материалами для генерированных моделей. Между прочим, атрибут SerializeField 
-     * отображает поле в Инспекторе, даже если переменная является закрытой для доступа к коду.*/
+    /* showDebug будет использоваться для отображения окна отладки.*/ 
     public bool showDebug;
 
-    [SerializeField] private Material mazeMat1;
-    [SerializeField] private Material mazeMat2;
-    [SerializeField] private Material startMat;
-    [SerializeField] private Material treasureMat;
+    [SerializeField] private Material mazeMat1;    //Пол и потолок лабиринта
+    [SerializeField] private Material mazeMat2;    //Стены лабиринта
+    [SerializeField] private Material startMat;    //Блок в начале
+    [SerializeField] private Material treasureMat; //Блок цели
 
     private MazeDataGenerator dataGenerator; // переменная для хранения генератора данных
     private MazeMeshGenerator meshGenerator; // хранение генератора сетки
+    static public GameObject Player; //Игрок (не используется)
 
     //свойства для хранения размеров и координат
     public float hallWidth
@@ -45,7 +43,7 @@ public class MazeConstructor : MonoBehaviour
         get; private set;
     }
 
-    /* Далее идет свойство данных. Декларации доступа (то есть объявление свойства как открытого, 
+    /* Свойство данных. Декларации доступа (то есть объявление свойства как открытого, 
      * но затем назначение частного набора) делает его доступным только для чтения вне этого класса. 
      * Таким образом, данные лабиринта не могут быть изменены извне.*/
     public int[,] data
@@ -53,11 +51,13 @@ public class MazeConstructor : MonoBehaviour
         get; private set;
     }
 
-    //3
+    /* Инициализация данных с массивом 3 на 3, который окружает ноль. 1 значит что это «стена», в то время как 0 означает «пусто», 
+     * поэтому эта сетка по умолчанию является просто замурованной комнатой.*/
     void Awake()
     {
         dataGenerator = new MazeDataGenerator();
         meshGenerator = new MazeMeshGenerator(); //сохрание генератора сетки в новом поле
+        Player = GameObject.Find("Player"); //Создаём ссылку на префаб игрока (не используется)
 
         // по умолчанию используются стены, окружающие одну пустую ячейку
         data = new int[,]
@@ -71,25 +71,25 @@ public class MazeConstructor : MonoBehaviour
     public void GenerateNewMaze(int sizeRows, int sizeCols,
     TriggerEventHandler startCallback = null, TriggerEventHandler goalCallback = null)
     {
+        //проверка размеров лабиринта, необходимы нечётные числа
         if (sizeRows % 2 == 0 && sizeCols % 2 == 0)
         {
-            Debug.LogError("Odd numbers work better for dungeon size./Нечетные числа лучше подходят для размера подземелья.");
+            Debug.LogError("Odd numbers are needed to generate a maze./Необходимы нечетные числа для генерации лабиринта.");
         }
 
-        DisposeOldMaze();
+        DisposeOldMaze(); //удаляет любой существующий, или старый лабиринт.
 
         data = dataGenerator.FromDimensions(sizeRows, sizeCols); //передаём размер сетки и сохраняем полученные данные
 
         FindStartPosition();
         FindGoalPosition();
 
-        // store values used to generate this mesh
+        //хранят значения, используемые для создания этой сетки
         hallWidth = meshGenerator.width;
         hallHeight = meshGenerator.height;
 
-        /* DisplayMaze () не только вызывает MazeMeshGenerator.FromData (), но и вставляет этот вызов в середине создания нового GameObject, 
-         * устанавливая тег Generated, добавляя MeshFilter и генерированный меш, добавляя MeshCollider для столкновения с лабиринтом, 
-         * ну и конечно добавление MeshRenderer и материалов для него.*/
+        /* DisplayMaze() вызывает MazeMeshGenerator.FromData(), вставляет этот вызов в середине создания нового GameObject, устанавливая тег Generated, 
+         * добавляя MeshFilter и генерированный меш, добавляя MeshCollider для столкновения с лабиринтом, MeshRenderer и материалов для него.*/
         DisplayMaze();
 
         PlaceStartTrigger(startCallback);
@@ -113,11 +113,9 @@ public class MazeConstructor : MonoBehaviour
 
         string msg = "";
 
-        /* Два вложенных цикла перебирают строки и столбцы двумерного массива. 
-         * Для каждой из строки или столбца данного массива, код будет проверяет сохраненное значение 
-         * и добавляет либо «….», либо «==», это зависит от того, равняться ли значение нулю. 
-         * Кроме того, код добавляет новую строку после итерации по всем столбцам в строке, 
-         * так что каждая строка является новой строчкой.*/
+        /* Два вложенных цикла перебирают строки и столбцы двумерного массива. Для каждой из строки или столбца данного массива, 
+         * код будет проверяет сохраненное значение и добавляет либо «....», либо «==», это зависит от того, равняться ли значение нулю. 
+         * Кроме того, код добавляет новую строку после итерации по всем столбцам в строке, так что каждая строка является новой строчкой.*/
         for (int i = rMax; i >= 0; i--)
         {
             for (int j = 0; j <= cMax; j++)
@@ -134,36 +132,35 @@ public class MazeConstructor : MonoBehaviour
             msg += "\n";
         }
 
-        /* Наконец то добрались до Label(), который распечатывает встроенную строчку. 
-         * Этот лейбел использует совершенно новую систему графического интерфейса 
-         * для дисплеев, видимых игроком, но более старая система используется 
-         * для создания дисплеев быстрой отладки без особого труда.*/
+        /* Распечатывает встроенную строчку. Использует совершенно новую систему графического интерфейса для дисплеев, видимых игроком, 
+         * но более старая система используется для создания дисплеев быстрой отладки без особого труда.*/
         GUI.Label(new Rect(20, 20, 500, 500), msg);
     }
 
+    /* DisplayMaze() вызывает MazeMeshGenerator.FromData() (переписать описание)*/
     private void DisplayMaze()
     {
-        GameObject go = new GameObject();
-        go.transform.position = Vector3.zero;
-        go.name = "Procedural Maze";
-        go.tag = "Generated";
+        GameObject gameObject= new GameObject(); //создаём лабиринт
+        gameObject.transform.position = Vector3.zero; //перемещаем лабиринт на (0,0,0) позицию
+        gameObject.name = "Procedural Maze"; //задаём имя
+        gameObject.tag = "Generated"; //добавляем тег
 
-        MeshFilter mf = go.AddComponent<MeshFilter>();
-        mf.mesh = meshGenerator.FromData(data);
+        MeshFilter meshFilter = gameObject.AddComponent<MeshFilter>();
+        meshFilter.mesh = meshGenerator.FromData(data); //Добавляем MeshFilter и генерированный меш.
 
-        MeshCollider mc = go.AddComponent<MeshCollider>();
-        mc.sharedMesh = mf.mesh;
+        MeshCollider meshCollider = gameObject.AddComponent<MeshCollider>();
+        meshCollider.sharedMesh = meshFilter.mesh; //Добавляем MeshCollider для столкновения с лабиринтом.
 
-        MeshRenderer mr = go.AddComponent<MeshRenderer>();
-        mr.materials = new Material[2] { mazeMat1, mazeMat2 };
+        MeshRenderer MeshRenderer = gameObject.AddComponent<MeshRenderer>();
+        MeshRenderer.materials = new Material[2] { mazeMat1, mazeMat2 }; //Добавляем MeshRenderer и материалов для него.
     }
 
     public void DisposeOldMaze() //удаляет любой существующий, или старый лабиринт. Он попросту найдёт все объекты с тегом Generated и уничтожит их.
     {
         GameObject[] objects = GameObject.FindGameObjectsWithTag("Generated");
-        foreach (GameObject go in objects)
+        foreach (GameObject gameObjectin in objects)
         {
-            Destroy(go);
+            Destroy(gameObject);
         }
     }
 
@@ -210,20 +207,20 @@ public class MazeConstructor : MonoBehaviour
         }
     }
 
-    /*размещения объектов на сцене в начальной позиции. 
+    /* размещения объектов на сцене в начальной позиции. 
      * Их коллайдер установлен как триггер, сперва будет применен соответствующий материал, а затем добавится событие TriggerEventRouter (из стартового пакета). 
      * Этот компонент принимает функцию обратного вызова, когда что-то входит в значение триггера.*/
     private void PlaceStartTrigger(TriggerEventHandler callback)
     {
-        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        go.transform.position = new Vector3(startCol * hallWidth, .5f, startRow * hallWidth);
-        go.name = "Start Trigger";
-        go.tag = "Generated";
+        GameObject gameObject= GameObject.CreatePrimitive(PrimitiveType.Cube);
+        gameObject.transform.position = new Vector3(startCol * hallWidth, .5f, startRow * hallWidth);
+        gameObject.name = "Start Trigger";
+        gameObject.tag = "Generated";
 
-        go.GetComponent<BoxCollider>().isTrigger = true;
-        go.GetComponent<MeshRenderer>().sharedMaterial = startMat;
+        gameObject.GetComponent<BoxCollider>().isTrigger = true;
+        gameObject.GetComponent<MeshRenderer>().sharedMaterial = startMat;
 
-        TriggerEventRouter tc = go.AddComponent<TriggerEventRouter>();
+        TriggerEventRouter tc = gameObject.AddComponent<TriggerEventRouter>();
         tc.callback = callback;
     }
 
@@ -232,15 +229,15 @@ public class MazeConstructor : MonoBehaviour
      * Этот компонент принимает функцию обратного вызова, когда что-то входит в значение триггера.*/
     private void PlaceGoalTrigger(TriggerEventHandler callback)
     {
-        GameObject go = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        go.transform.position = new Vector3(goalCol * hallWidth, .5f, goalRow * hallWidth);
-        go.name = "Treasure";
-        go.tag = "Generated";
+        GameObject gameObject= GameObject.CreatePrimitive(PrimitiveType.Cube);
+        gameObject.transform.position = new Vector3(goalCol * hallWidth, .5f, goalRow * hallWidth);
+        gameObject.name = "Treasure";
+        gameObject.tag = "Generated";
 
-        go.GetComponent<BoxCollider>().isTrigger = true;
-        go.GetComponent<MeshRenderer>().sharedMaterial = treasureMat;
+        gameObject.GetComponent<BoxCollider>().isTrigger = true;
+        gameObject.GetComponent<MeshRenderer>().sharedMaterial = treasureMat;
 
-        TriggerEventRouter tc = go.AddComponent<TriggerEventRouter>();
+        TriggerEventRouter tc = gameObject.AddComponent<TriggerEventRouter>();
         tc.callback = callback;
     }
 }
