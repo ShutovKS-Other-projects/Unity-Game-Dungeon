@@ -1,19 +1,18 @@
+//Конструктор лабиринта
 using UnityEngine;
 
-//Конструктор лабиринта
 public class MazeConstructor : MonoBehaviour
 {
-    /* showDebug будет использоваться для отображения окна отладки.*/ 
+    /*отображения окна отладки*/ 
     public bool showDebug;
 
-    [SerializeField] private Material mazeMat1;    //Пол и потолок лабиринта
-    [SerializeField] private Material mazeMat2;    //Стены лабиринта
-    [SerializeField] private Material startMat;    //Блок в начале
-    [SerializeField] private Material treasureMat; //Блок цели
+    [SerializeField] private Material mazeMat1;
+    [SerializeField] private Material mazeMat2;
+    [SerializeField] private Material startMat;
+    [SerializeField] private Material treasureMat;
 
-    private MazeDataGenerator dataGenerator; // переменная для хранения генератора данных
-    private MazeMeshGenerator meshGenerator; // хранение генератора сетки
-    static public GameObject Player; //Игрок (не используется)
+    private MazeDataGenerator dataGenerator;
+    private MazeMeshGenerator meshGenerator;
 
     //свойства для хранения размеров и координат
     public float hallWidth
@@ -24,7 +23,6 @@ public class MazeConstructor : MonoBehaviour
     {
         get; private set;
     }
-
     public int startRow
     {
         get; private set;
@@ -33,7 +31,6 @@ public class MazeConstructor : MonoBehaviour
     {
         get; private set;
     }
-
     public int goalRow
     {
         get; private set;
@@ -43,23 +40,17 @@ public class MazeConstructor : MonoBehaviour
         get; private set;
     }
 
-    /* Свойство данных. Декларации доступа (то есть объявление свойства как открытого, 
-     * но затем назначение частного набора) делает его доступным только для чтения вне этого класса. 
-     * Таким образом, данные лабиринта не могут быть изменены извне.*/
+    /* Свойство данных */
     public int[,] data
     {
         get; private set;
     }
 
-    /* Инициализация данных с массивом 3 на 3, который окружает ноль. 1 значит что это «стена», в то время как 0 означает «пусто», 
-     * поэтому эта сетка по умолчанию является просто замурованной комнатой.*/
     void Awake()
     {
         dataGenerator = new MazeDataGenerator();
         meshGenerator = new MazeMeshGenerator(); //сохрание генератора сетки в новом поле
-        Player = GameObject.Find("Player"); //Создаём ссылку на префаб игрока (не используется)
 
-        // по умолчанию используются стены, окружающие одну пустую ячейку
         data = new int[,]
         {
             {1, 1, 1},
@@ -71,7 +62,7 @@ public class MazeConstructor : MonoBehaviour
     public void GenerateNewMaze(int sizeRows, int sizeCols,
     TriggerEventHandler startCallback = null, TriggerEventHandler goalCallback = null)
     {
-        //проверка размеров лабиринта, необходимы нечётные числа
+        //проверка размеров лабиринта, необходимы нечётные числа для коректной работы
         if (sizeRows % 2 == 0 && sizeCols % 2 == 0)
         {
             Debug.LogError("Odd numbers are needed to generate a maze./Необходимы нечетные числа для генерации лабиринта.");
@@ -97,9 +88,9 @@ public class MazeConstructor : MonoBehaviour
     }
 
 
-    void OnGUI() // Для отображения данных лабиринта и проверки, как они выглядят
+    void OnGUI() // Отображения массива-лабиринта на экране
     {
-        // Этот код проверяет, включены ли отладочные дисплеи.
+        // Проверка включены ли отладочные дисплеи.
         if (!showDebug)
         {
             return;
@@ -137,35 +128,34 @@ public class MazeConstructor : MonoBehaviour
         GUI.Label(new Rect(20, 20, 500, 500), msg);
     }
 
-    /* DisplayMaze() вызывает MazeMeshGenerator.FromData() (переписать описание)*/
     private void DisplayMaze()
     {
-        GameObject gameObject= new GameObject(); //создаём лабиринт
-        gameObject.transform.position = Vector3.zero; //перемещаем лабиринт на (0,0,0) позицию
-        gameObject.name = "Procedural Maze"; //задаём имя
-        gameObject.tag = "Generated"; //добавляем тег
+        GameObject labirint = new GameObject();
+        labirint.transform.position = Vector3.zero;
+        labirint.name = "Procedural Maze";
+        labirint.tag = "Generated";
 
-        MeshFilter meshFilter = gameObject.AddComponent<MeshFilter>();
-        meshFilter.mesh = meshGenerator.FromData(data); //Добавляем MeshFilter и генерированный меш.
+        MeshFilter meshFilter = labirint.AddComponent<MeshFilter>();
+        meshFilter.mesh = meshGenerator.FromData(data);
 
-        MeshCollider meshCollider = gameObject.AddComponent<MeshCollider>();
-        meshCollider.sharedMesh = meshFilter.mesh; //Добавляем MeshCollider для столкновения с лабиринтом.
+        MeshCollider meshCollider = labirint.AddComponent<MeshCollider>();
+        meshCollider.sharedMesh = meshFilter.mesh;
 
-        MeshRenderer MeshRenderer = gameObject.AddComponent<MeshRenderer>();
-        MeshRenderer.materials = new Material[2] { mazeMat1, mazeMat2 }; //Добавляем MeshRenderer и материалов для него.
+        MeshRenderer MeshRenderer = labirint.AddComponent<MeshRenderer>();
+        MeshRenderer.materials = new Material[2] { mazeMat1, mazeMat2 };
     }
 
-    public void DisposeOldMaze() //удаляет любой существующий, или старый лабиринт. Он попросту найдёт все объекты с тегом Generated и уничтожит их.
+    public void DisposeOldMaze() //удаляет лабиринт (тег "Generated").
     {
-        GameObject[] objects = GameObject.FindGameObjectsWithTag("Generated");
-        foreach (GameObject gameObjectin in objects)
+        GameObject[] generated = GameObject.FindGameObjectsWithTag("Generated");
+        foreach (GameObject gameObject in generated)
         {
             Destroy(gameObject);
         }
     }
 
-    /* Этот код начинается с 0,0 и перебирает данные лабиринта, пока не найдет валидное пространство. 
-     * После чего эти координаты будут сохранены в качестве начальной позиции лабиринта.*/
+    /* Начиная с мин значений перебирает данные лабиринта, пока не найдет валидное пространство. 
+     * Эти координаты будут сохранены в качестве начальной позиции лабиринта. */
     private void FindStartPosition()
     {
         int[,] maze = data;
@@ -185,14 +175,14 @@ public class MazeConstructor : MonoBehaviour
             }
         }
     }
-    //делает то же самое что FindStartPosition(), только начиная с максимальных значений и заканчивая обратным отсчетом.
+    /* Начиная с макс значений перебирает данные лабиринта, пока не найдет валидное пространство. 
+     * Эти координаты будут сохранены в качестве конечной позиции лабиринта. */
     private void FindGoalPosition()
     {
         int[,] maze = data;
         int rMax = maze.GetUpperBound(0);
         int cMax = maze.GetUpperBound(1);
 
-        // loop top to bottom, right to left
         for (int i = rMax; i >= 0; i--)
         {
             for (int j = cMax; j >= 0; j--)
@@ -207,9 +197,7 @@ public class MazeConstructor : MonoBehaviour
         }
     }
 
-    /* размещения объектов на сцене в начальной позиции. 
-     * Их коллайдер установлен как триггер, сперва будет применен соответствующий материал, а затем добавится событие TriggerEventRouter (из стартового пакета). 
-     * Этот компонент принимает функцию обратного вызова, когда что-то входит в значение триггера.*/
+    /* размещения объектов в начале */
     private void PlaceStartTrigger(TriggerEventHandler callback)
     {
         GameObject gameObject= GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -220,13 +208,11 @@ public class MazeConstructor : MonoBehaviour
         gameObject.GetComponent<BoxCollider>().isTrigger = true;
         gameObject.GetComponent<MeshRenderer>().sharedMaterial = startMat;
 
-        TriggerEventRouter tc = gameObject.AddComponent<TriggerEventRouter>();
-        tc.callback = callback;
+        TriggerEventRouter triggerEventRouter = gameObject.AddComponent<TriggerEventRouter>();
+        triggerEventRouter.callback = callback;
     }
 
-    /*размещения объектов на сцене в конечной позиции
-     * Их коллайдер установлен как триггер, сперва будет применен соответствующий материал, а затем добавится событие TriggerEventRouter (из стартового пакета). 
-     * Этот компонент принимает функцию обратного вызова, когда что-то входит в значение триггера.*/
+    /* размещения объектов в конеце */
     private void PlaceGoalTrigger(TriggerEventHandler callback)
     {
         GameObject gameObject= GameObject.CreatePrimitive(PrimitiveType.Cube);
@@ -237,8 +223,8 @@ public class MazeConstructor : MonoBehaviour
         gameObject.GetComponent<BoxCollider>().isTrigger = true;
         gameObject.GetComponent<MeshRenderer>().sharedMaterial = treasureMat;
 
-        TriggerEventRouter tc = gameObject.AddComponent<TriggerEventRouter>();
-        tc.callback = callback;
+        TriggerEventRouter triggerEventRouter = gameObject.AddComponent<TriggerEventRouter>();
+        triggerEventRouter.callback = callback;
     }
 }
 

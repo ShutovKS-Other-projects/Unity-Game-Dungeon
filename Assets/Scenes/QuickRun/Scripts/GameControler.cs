@@ -1,10 +1,10 @@
+//”правление игрой
 using System;
 using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(MazeConstructor))] // јтрибут RequireComponent гарантирует, что компонент MazeConstructor также будет добавлен при добавлении этого сценари€ в GameObject.
 
-//”правление игрой
 public class GameController : MonoBehaviour
 {
 	[SerializeField] private FpsMovement player;

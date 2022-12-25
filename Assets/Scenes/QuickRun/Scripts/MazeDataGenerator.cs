@@ -1,7 +1,7 @@
+//Логика генерации данных, в этом нам поможет MazeConstructor
 using System.Collections.Generic;
 using UnityEngine;
 
-//Класс будет инкапсулировать логику генерации данных, в этом нам поможет MazeConstructor
 public class MazeDataGenerator
 {
     public float placementThreshold; // вероятность наличия пустого места
