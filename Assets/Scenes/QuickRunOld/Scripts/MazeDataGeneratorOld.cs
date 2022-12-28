@@ -1,15 +1,14 @@
+
 //Логика генерации данных, в этом нам поможет MazeConstructor
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MazeDataGenerator
+public class MazeDataGeneratorOld
 {
-    public float placementThreshold; // вероятность наличия пустого места
+    public float placementThreshold; //вероятность наличия пустого места
 
-    /* placementThreshold будет использоваться алгоритмом генерации данных, чтобы определить, является ли пространство пустым. 
-     * Этой переменной присваивается значение по умолчанию в конструкторе класса, но она становится общедоступной, 
-     * чтобы другой код мог настраивать генерированный лабиринт.*/
-    public MazeDataGenerator()
+    /* placementThreshold будет использоваться алгоритмом генерации данных, чтобы определить, является ли пространство пустым.*/
+    public MazeDataGeneratorOld()
     {
         placementThreshold = .1f;       
     }

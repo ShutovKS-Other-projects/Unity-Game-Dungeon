@@ -1,19 +1,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MazeMeshGenerator
+public class MazeMeshGeneratorOld
 {
 
     public float width;
     public float height;
 
-    public MazeMeshGenerator()
+    public MazeMeshGeneratorOld()
     {
         width = 3.75f;
         height = 3.5f;
     }
 
-    //метод, который нужен MazeConstructor для создания сетки
+    //метод для MazeConstructor для создания сетки
     public Mesh FromData(int[,] data)
     {
         Mesh maze = new Mesh();
