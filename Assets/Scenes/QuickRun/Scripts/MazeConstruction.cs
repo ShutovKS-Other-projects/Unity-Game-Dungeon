@@ -36,6 +36,7 @@ public class MazeConstruction : MonoBehaviour
 
     void MezeConstruct()
     {
+        GameObject sector;
         int y = 0; int x = 0;
         for (int i = 0; i < maze.Length; i++)
         {
@@ -49,19 +50,35 @@ public class MazeConstruction : MonoBehaviour
                     }
                 case ' ':
                     {
-                        GameObject sector = Instantiate(Floor, new Vector3(x, 0, y), new Quaternion(0, 0, 0, 0));
-                        sector.name = $"sector({y};{x})";
+                        ConstructionFloor();
                         x++;
                         continue;
                     }
                 default:
                     {
-                        GameObject sector = Instantiate(Wall, new Vector3(x, 0, y), new Quaternion(0, 0, 0, 0));
-                        sector.name = $"sector({y};{x})";
+                        ConstructionWall();
                         x++;
                         continue;
                     }
             }
+        }
+
+        void ConstructionFloor()
+        {
+            sector = Instantiate(Floor, new Vector3(x - 0.25f, 0, y - 0.25f), new Quaternion(0, 0, 0, 0));
+            sector.name = $"sector({y};{x})-[Floor1]";
+            sector = Instantiate(Floor, new Vector3(x - 0.25f, 0, y + 0.25f), new Quaternion(0, 0, 0, 0));
+            sector.name = $"sector({y};{x})-[Floor2]";
+            sector = Instantiate(Floor, new Vector3(x + 0.25f, 0, y - 0.25f), new Quaternion(0, 0, 0, 0));
+            sector.name = $"sector({y};{x})-[Floor3]";
+            sector = Instantiate(Floor, new Vector3(x + 0.25f, 0, y + 0.25f), new Quaternion(0, 0, 0, 0));
+            sector.name = $"sector({y};{x})-[Floor4]";
+        }
+
+        void ConstructionWall()
+        {
+            sector = Instantiate(Wall, new Vector3(x, 0, y), new Quaternion(0, 0, 0, 0));
+            sector.name = $"sector({y};{x})-[Wall]";
         }
     }
 }
