@@ -4,15 +4,15 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Generated
+  - Ladder
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - PostProcessing
   - Water
   - UI
-  - 
+  - Hands
   - 
   - 
   - 

@@ -262,7 +262,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee2e89ec72670364badaca55bd7496e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SkyBoxNight: {fileID: 7560606691306507296, guid: d7bef47a2d8e3c842a8056c87e41dc5b, type: 3}
+  SkyBoxNight: {fileID: 7560606691306507296, guid: d7bef47a2d8e3c842a8056c87e41dc5b,
+    type: 3}
   Player: {fileID: 7269400773961662929, guid: 8ec4cd525e5f3a9468afc7a5ac81ea08, type: 3}
   widthMaze: 10
   heightMaze: 10

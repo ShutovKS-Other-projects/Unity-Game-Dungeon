@@ -1080,7 +1080,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3825816760703384966}
-  m_LocalRotation: {x: 0.00000043137084, y: -0.0041323826, z: -0.000000050078135, w: 0.9999915}
+  m_LocalRotation: {x: 0.00000043137084, y: -0.0041323826, z: -0.000000050078135,
+    w: 0.9999915}
   m_LocalPosition: {x: -0.0000000013072705, y: 0.26954535, z: -1.5443504e-11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1227,6 +1228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5288841614224713106}
+  - component: {fileID: 1560171741590027402}
   - component: {fileID: 2271381813993095144}
   m_Layer: 0
   m_Name: Maynard
@@ -1252,6 +1254,18 @@ Transform:
   m_Father: {fileID: 1951765050103022249}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1560171741590027402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4768869733872877352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086d0ae086e98ac45b04c2561c9c434f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &2271381813993095144
 Animator:
   serializedVersion: 5
@@ -1265,7 +1279,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 574fe302fc43247488af66fd557a61b3, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -1699,6 +1713,7 @@ GameObject:
   - component: {fileID: 1058407882546948047}
   - component: {fileID: 3859839720391224270}
   - component: {fileID: -3152399412018113618}
+  - component: {fileID: 2199967255740810859}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1731,7 +1746,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7269400773961662929}
   serializedVersion: 4
-  m_Mass: 1
+  m_Mass: 0.1
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -1785,7 +1800,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1390b38698497e4190453b832043014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 1
+--- !u!114 &2199967255740810859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269400773961662929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7829a6094b8de68488bf5bce67078a61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 1000
 --- !u!1 &7286212524585823549
 GameObject:
   m_ObjectHideFlags: 0
