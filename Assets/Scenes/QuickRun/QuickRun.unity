@@ -227,7 +227,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1116997660}
   - component: {fileID: 1116997661}
-  - component: {fileID: 1116997662}
   m_Layer: 0
   m_Name: GameControl
   m_TagString: Untagged
@@ -246,7 +245,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1310760753}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -265,19 +265,55 @@ MonoBehaviour:
   SkyBoxNight: {fileID: 7560606691306507296, guid: d7bef47a2d8e3c842a8056c87e41dc5b,
     type: 3}
   Player: {fileID: 7269400773961662929, guid: 8ec4cd525e5f3a9468afc7a5ac81ea08, type: 3}
-  widthMaze: 10
-  heightMaze: 10
---- !u!114 &1116997662
+  widthMaze: 15
+  heightMaze: 15
+--- !u!1 &1310760752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1310760753}
+  - component: {fileID: 1310760755}
+  m_Layer: 0
+  m_Name: MazeConstructor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1310760753
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1310760752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1116997660}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1310760755
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1116997658}
+  m_GameObject: {fileID: 1310760752}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 02c5cc33181c32041a1876d008eca61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Floor: {fileID: 2741308363718346433, guid: 3940a34dbd037c6408d73cf2e8a8b370, type: 3}
-  Wall: {fileID: 7539765851491090197, guid: 8c103c1b54a91d243bf306c37bd02d35, type: 3}
+  Wall: {fileID: 7539765851491090197, guid: 0be9494f14c5bb846a2a267f9b56a74e, type: 3}
+  WallHorizontal: {fileID: 7539765851491090197, guid: 5ed73d9fc404a7b45ba6fd3325ef43f5,
+    type: 3}
+  WallVertical: {fileID: 7539765851491090197, guid: 04ee47ee2461cba45ac431edf7de826d,
+    type: 3}

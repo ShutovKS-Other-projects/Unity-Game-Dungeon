@@ -1,217 +1,247 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using UnityEngine;
 using Random = System.Random;
 
 public class MazeGeneration
 {
-        private int width;
-        private int height;
-        private Cell[,] cells;
+    GameControler gameControler = new GameControler();
 
-        public MazeGeneration(int width, int height)
+    private int width;
+    private int height;
+    private Cell[,] cells;
+
+    public MazeGeneration()
+    {
+        this.width = gameControler.widthMaze;
+        this.height = gameControler.heightMaze;
+
+        // Инициализируем массив ячеек
+        cells = new Cell[gameControler.widthMaze, gameControler.heightMaze];
+        for (int x = 0; x < gameControler.widthMaze; x++)
         {
-            this.width  =width;
-            this.height =height;
-
-            // Инициализируем массив ячеек
-            cells = new Cell[width, height];
-            for (int x = 0; x < width; x++)
+            for (int y = 0; y < gameControler.heightMaze; y++)
             {
-                for (int y = 0; y < height; y++)
-                {
-                    cells[x, y] = new Cell(x, y);
-                }
+                cells[x, y] = new Cell(x, y);
             }
-        }
-
-        // Генерируем лабиринт, используя случайный алгоритм поиска в глубину
-        public void GenerateMaze()
-        {
-            Random rand = new Random();
-
-            // Следим за посещенными ячейками
-            bool[,] visitedCells = new bool[width, height];
-
-            // Выбираем случайную начальную ячейку
-            int startX = rand.Next(width);
-            int startY = rand.Next(height);
-            Cell currentCell = cells[startX, startY];
-            visitedCells[startX, startY] = true;
-
-            // Создаем стек для хранения посещенных ячеек
-            Stack<Cell> stack = new Stack<Cell>();
-            stack.Push(currentCell);
-
-            // Пока есть непросмотренные ячейки
-            while (stack.Count > 0)
-            {
-                // Получить список соседей текущей ячейки, которые не были посещены
-                List<Cell> unvisitedNeighbors = GetUnvisitedNeighbors(currentCell, visitedCells);
-
-                // Если у текущей ячейки есть непосещенные соседи
-                if (unvisitedNeighbors.Count > 0)
-                {
-                    // Выбираем случайного непосещенного соседа
-                    int index = rand.Next(unvisitedNeighbors.Count);
-                    Cell neighbor = unvisitedNeighbors[index];
-
-                    // Удаляем стену между текущей ячейкой и выбранным соседом
-                    RemoveWall(currentCell, neighbor);
-
-                    // Отмечаем соседа как посещенного
-                    visitedCells[neighbor.X, neighbor.Y] = true;
-
-                    // Поместить текущую ячейку в стек
-                    stack.Push(currentCell);
-
-                    // Делаем выбранного соседа текущей ячейкой
-                    currentCell = neighbor;
-                }
-                else
-                {
-                    // Если у текущей ячейки нет непосещенных соседей, извлекаем ее из стека
-                    currentCell = stack.Pop();
-                }
-            }
-        }
-
-        // Получить список соседей указанной ячейки, которые не были посещены
-        private List<Cell> GetUnvisitedNeighbors(Cell cell, bool[,] visitedCells)
-        {
-            List<Cell> unvisitedNeighbors = new List<Cell>();
-
-            // Проверяем ячейку слева
-            if (cell.X > 0 && !visitedCells[cell.X - 1, cell.Y])
-            {
-                unvisitedNeighbors.Add(cells[cell.X - 1, cell.Y]);
-            }
-            // Проверяем ячейку справа
-            if (cell.X < width - 1 && !visitedCells[cell.X + 1, cell.Y])
-            {
-                unvisitedNeighbors.Add(cells[cell.X + 1, cell.Y]);
-            }
-            // Проверяем ячейку выше
-            if (cell.Y > 0 && !visitedCells[cell.X, cell.Y - 1])
-            {
-                unvisitedNeighbors.Add(cells[cell.X, cell.Y - 1]);
-            }
-            // Проверяем ячейку ниже
-            if (cell.Y < height - 1 && !visitedCells[cell.X, cell.Y + 1])
-            {
-                unvisitedNeighbors.Add(cells[cell.X, cell.Y + 1]);
-            }
-            return unvisitedNeighbors;
-        }
-
-        // Убираем стену между двумя указанными ячейками
-        private void RemoveWall(Cell cell1, Cell cell2)
-        {
-            // Если ячейки находятся в одном столбце
-            if (cell1.X == cell2.X)
-            {
-                // Если ячейка1 выше ячейки2
-                if (cell1.Y < cell2.Y)
-                {
-                    cell1.Walls[2] = false;
-                    cell2.Walls[0] = false;
-                }
-                // Если ячейка1 ниже ячейки2
-                else
-                {
-                    cell1.Walls[0] = false;
-                    cell2.Walls[2] = false;
-                }
-            }
-            // Если ячейки находятся в одной строке
-            else
-            {
-                // Если ячейка1 находится слева от ячейки2
-                if (cell1.X < cell2.X)
-                {
-                    cell1.Walls[1] = false;
-                    cell2.Walls[3] = false;
-                }
-                // Если ячейка1 находится справа от ячейки2
-                else
-                {
-                    cell1.Walls[3] = false;
-                    cell2.Walls[1] = false;
-                }
-            }
-        }
-
-        public string StringMaze()
-        {
-            string str = null;
-            // Печатаем верхнюю строку лабиринта
-            for (int x = 0; x < width; x++)
-            {
-                str +=("+--");
-            }
-            str +=("+") + "\n";
-
-            // Печатаем строки лабиринта
-            for (int y = 0; y < height; y++)
-            {
-                // Печать левой стены лабиринта
-                str +=("|");
-
-                // Печатаем ячейки лабиринта
-                for (int x = 0; x < width; x++)
-                {
-                    // Печатаем ячейку
-                    if (cells[x, y].Walls[0])
-                    {
-                        str +=("  ");
-                    }
-                    else
-
-                    {
-                        str +=("  ");
-                    }
-
-                    // Печатаем правую стенку ячейки
-                    if (cells[x, y].Walls[1])
-                    {
-                        str +=("|");
-                    }
-                    else
-                    {
-                        str +=(" ");
-                    }
-                }
-                str +=("") + "\n";
-
-                // Печать нижней строки лабиринта
-                if (y < height - 1)
-                {
-                    for (int x = 0; x < width; x++)
-                    {
-                        if (cells[x, y].Walls[2])
-                        {
-                            str +=("+--");
-                        }
-                        else
-                        {
-                            str +=("+  ");
-                        }
-                    }
-                    str +=("+") + "\n";
-                }
-            }
-
-            // Печать нижней строки лабиринта
-            for (int x = 0; x < width; x++)
-            {
-                str +=("+--");
-            }
-            str +=("+") + "\n";
-            return str;
         }
     }
+
+    // Генерируем лабиринт, используя случайный алгоритм поиска в глубину
+    public void Generate()
+    {
+        Random rand = new Random();
+
+        // Следим за посещенными ячейками
+        bool[,] visitedCells = new bool[width, height];
+
+        // Выбираем случайную начальную ячейку
+        int startX = rand.Next(width);
+        int startY = rand.Next(height);
+        Cell currentCell = cells[startX, startY];
+        visitedCells[startX, startY] = true;
+
+        // Создаем стек для хранения посещенных ячеек
+        Stack<Cell> stack = new Stack<Cell>();
+        stack.Push(currentCell);
+
+        // Пока есть непросмотренные ячейки
+        while (stack.Count > 0)
+        {
+            // Получить список соседей текущей ячейки, которые не были посещены
+            List<Cell> unvisitedNeighbors = GetUnvisitedNeighbors(currentCell, visitedCells);
+
+            // Если у текущей ячейки есть непосещенные соседи
+            if (unvisitedNeighbors.Count > 0)
+            {
+                // Выбираем случайного непосещенного соседа
+                int index = rand.Next(unvisitedNeighbors.Count);
+                Cell neighbor = unvisitedNeighbors[index];
+
+                // Удаляем стену между текущей ячейкой и выбранным соседом
+                RemoveWall(currentCell, neighbor);
+
+                // Отмечаем соседа как посещенного
+                visitedCells[neighbor.X, neighbor.Y] = true;
+
+                // Поместить текущую ячейку в стек
+                stack.Push(currentCell);
+
+                // Делаем выбранного соседа текущей ячейкой
+                currentCell = neighbor;
+            }
+            else
+            {
+                // Если у текущей ячейки нет непосещенных соседей, извлекаем ее из стека
+                currentCell = stack.Pop();
+            }
+        }
+    }
+
+    // Получить список соседей указанной ячейки, которые не были посещены
+    private List<Cell> GetUnvisitedNeighbors(Cell cell, bool[,] visitedCells)
+    {
+        List<Cell> unvisitedNeighbors = new List<Cell>();
+
+        // Проверяем ячейку слева
+        if (cell.X > 0 && !visitedCells[cell.X - 1, cell.Y])
+        {
+            unvisitedNeighbors.Add(cells[cell.X - 1, cell.Y]);
+        }
+        // Проверяем ячейку справа
+        if (cell.X < width - 1 && !visitedCells[cell.X + 1, cell.Y])
+        {
+            unvisitedNeighbors.Add(cells[cell.X + 1, cell.Y]);
+        }
+        // Проверяем ячейку выше
+        if (cell.Y > 0 && !visitedCells[cell.X, cell.Y - 1])
+        {
+            unvisitedNeighbors.Add(cells[cell.X, cell.Y - 1]);
+        }
+        // Проверяем ячейку ниже
+        if (cell.Y < height - 1 && !visitedCells[cell.X, cell.Y + 1])
+        {
+            unvisitedNeighbors.Add(cells[cell.X, cell.Y + 1]);
+        }
+        return unvisitedNeighbors;
+    }
+
+    // Убираем стену между двумя указанными ячейками
+    private void RemoveWall(Cell cell1, Cell cell2)
+    {
+        // Если ячейки находятся в одном столбце
+        if (cell1.X == cell2.X)
+        {
+            // Если ячейка1 выше ячейки2
+            if (cell1.Y < cell2.Y)
+            {
+                cell1.Walls[2] = false;
+                cell2.Walls[0] = false;
+            }
+            // Если ячейка1 ниже ячейки2
+            else
+            {
+                cell1.Walls[0] = false;
+                cell2.Walls[2] = false;
+            }
+        }
+        // Если ячейки находятся в одной строке
+        else
+        {
+            // Если ячейка1 находится слева от ячейки2
+            if (cell1.X < cell2.X)
+            {
+                cell1.Walls[1] = false;
+                cell2.Walls[3] = false;
+            }
+            // Если ячейка1 находится справа от ячейки2
+            else
+            {
+                cell1.Walls[3] = false;
+                cell2.Walls[1] = false;
+            }
+        }
+    }
+
+    public string StringMaze()
+    {
+        string str = null;
+        // Печатаем верхнюю строку лабиринта
+        str += ("+");
+        for (int x = 0; x < width; x++)
+        {
+            if (cells[x, 0].Walls[1])
+            {
+                str += ("-+");
+            }
+            else
+            {
+                str += ("--");
+            }
+        }
+        str +="\n";
+
+        // Печатаем строки лабиринта
+        for (int y = 0; y < height; y++)
+        {
+            // Печать левой стены лабиринта
+            str += ("|");
+
+            // Печатаем ячейки лабиринта
+            for (int x = 0; x < width; x++)
+            {
+                // Печатаем ячейку
+                if (cells[x, y].Walls[0])
+                {
+                    str += (" ");
+                }
+                else
+
+                {
+                    str += (" ");
+                }
+
+                // Печатаем правую стенку ячейки
+                if (cells[x, y].Walls[1])
+                {
+                    str += ("|");
+                }
+                else
+                {
+                    str += (" ");
+                }
+            }
+            str += ("") + "\n";
+
+            // Печать нижней строки лабиринта
+            if (y < height - 1)
+            {
+                if (cells[0, y].Walls[2])
+                {
+                    str += ("+-");
+                }
+                else
+                {
+                    str += ("| ");
+                }
+                for (int x = 1; x < width; x++)
+                {
+                    if (cells[x, y].Walls[2])
+                    {
+                        str += ("--");
+                    }
+                    else
+                    {
+                        str += ("- ");
+                    }
+                }
+                if (cells[width-1, y].Walls[2])
+                {
+                    str += ("+") + "\n";
+                }
+                else
+                {
+                    str += ("|") + "\n";
+                }
+            }
+        }
+
+        // Печать нижней строки лабиринта
+        str += ("+");
+        for (int x = 0; x < width; x++)
+        {
+            if (cells[x, height-1].Walls[1])
+            {
+                str += ("-+");
+            }
+            else
+            {
+                str += ("--");
+            }
+        }
+        str +="\n";
+        return str;
+    }
+
+}
 
 class Cell
 {

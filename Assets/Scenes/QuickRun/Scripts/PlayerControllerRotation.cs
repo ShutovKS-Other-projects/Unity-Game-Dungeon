@@ -32,7 +32,6 @@ public class PlayerControlerRotation : MonoBehaviour
         xRotation -= mouseY;
         yRotation += mouseX;
 
-        Debug.Log(xRotation);
         if (xRotation > -90f && xRotation < 90f)
             _camera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
