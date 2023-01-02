@@ -12,9 +12,6 @@ public class PlayerControlerRotation : MonoBehaviour
     float xRotation = 0f;
     float yRotation = 0f;
 
-    float xRotationMin = -90f;
-    float xRotationMax = 90f;
-
 
     void Start()
     {

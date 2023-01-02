@@ -9,8 +9,6 @@ public class GameControler : MonoBehaviour
 {
     [SerializeField] GameObject SkyBoxNight;
     [SerializeField] GameObject Player;
-    public int widthMaze = 15;
-    public int heightMaze = 15;
 
     //private bool GamePause = false;
 

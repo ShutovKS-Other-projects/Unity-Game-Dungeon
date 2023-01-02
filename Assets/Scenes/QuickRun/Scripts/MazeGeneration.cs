@@ -3,22 +3,20 @@ using Random = System.Random;
 
 public class MazeGeneration
 {
-    GameControler gameControler = new GameControler();
-
-    private int width;
-    private int height;
+    public int width;
+    public int height;
     private Cell[,] cells;
 
     public MazeGeneration()
     {
-        this.width = gameControler.widthMaze;
-        this.height = gameControler.heightMaze;
+        this.width = 15;
+        this.height = 15;
 
         // »нициализируем массив €чеек
-        cells = new Cell[gameControler.widthMaze, gameControler.heightMaze];
-        for (int x = 0; x < gameControler.widthMaze; x++)
+        cells = new Cell[width, height];
+        for (int x = 0; x < width; x++)
         {
-            for (int y = 0; y < gameControler.heightMaze; y++)
+            for (int y = 0; y < height; y++)
             {
                 cells[x, y] = new Cell(x, y);
             }

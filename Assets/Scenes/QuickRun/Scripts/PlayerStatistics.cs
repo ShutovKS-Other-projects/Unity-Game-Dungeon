@@ -20,6 +20,4 @@ public class PlayerStatistics
     /// Манна 
     /// </summary>
     public float manna = 15f;
-
-
 }

@@ -2,16 +2,21 @@ using System;
 
 public class MazeModification
 {
-    MazeGeneration mazeGeneration = new MazeGeneration();
-
+    GameControler  gameControler;
+    MazeGeneration mazeGeneration;
+    
     Random random = new Random();
 
     private string mazeString;
 
     public int[,] Modification()
     {
+        mazeGeneration = new MazeGeneration();
+
         mazeGeneration.Generate();
         mazeString = mazeGeneration.StringMaze();
+
+        int[,] mazeInt = new int[mazeGeneration.height * 2 + 1, mazeGeneration.width * 2 + 1];
 
         int n = 0;
         foreach (char ch in mazeString)
@@ -19,7 +24,6 @@ public class MazeModification
             if (ch == '\n')
                 n++;
         }
-        int[,] mazeInt = new int[n,mazeString.Length/n-1];
 
         int y = 0, x = 0;
         foreach (char ch in mazeString)
@@ -34,19 +38,8 @@ public class MazeModification
                         }
                         else
                         {
-                            switch (random.Next(2))
-                            {
-                                case 0:
-                                    {
-                                        mazeInt[y, x] = 10;
-                                        continue;
-                                    }
-                                case 1:
-                                    {
-                                        mazeInt[y, x] = 11;
-                                        continue;
-                                    }
-                            }
+
+                            mazeInt[y, x] = random.Next(11,13);
                         }
                         x++;
                         continue;

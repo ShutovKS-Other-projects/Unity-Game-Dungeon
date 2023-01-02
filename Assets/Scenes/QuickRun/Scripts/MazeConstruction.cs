@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class MazeConstruction : MonoBehaviour
 {
-    MazeModification mazeModification = new MazeModification();
+    MazeModification mazeModification;
 
     [SerializeField] GameObject Floor;
     [SerializeField] GameObject Wall;
@@ -18,6 +18,7 @@ public class MazeConstruction : MonoBehaviour
 
     private void Awake()
     {
+        mazeModification= new MazeModification();
         Construction();
     }
 
@@ -49,6 +50,16 @@ public class MazeConstruction : MonoBehaviour
                     case 2:
                         {
                             ConstructionWall(x, y);
+                            continue;
+                        }
+                    case 11:
+                        {
+                            ConstructionFloor(x, y);
+                            continue;
+                        }
+                    case 12:
+                        {
+                            ConstructionFloor(x, y);
                             continue;
                         }
                 }
