@@ -1,20 +1,22 @@
 fileFormatVersion: 2
-guid: b84241684d0b03844a20cf36010e8c72
+guid: 29462879ad457e746aafd26b5df560d3
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
-  fontSize: 108
-  forceTextureCase: -1
+  fontSize: 172
+  forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Inkulinati 210706
-  fallbackFontReferences: []
+  - Aero Matics Stencil
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 40d83fa4a620b0c4899e36900fd2f376, type: 3}
+  - {fileID: 12800000, guid: 487c785c3f098064d99b6641cd54a354, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
-  useLegacyBoundsCalculation: 1
+  useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
