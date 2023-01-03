@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/RealisticFPSController/Scenes/DemoScene.unity
-    guid: ab0b46e2e44b5d14f99aff193b77d1c2
+    path: Assets/Scenes/QuickRun/QuickRun.unity
+    guid: 5e3e600bc15858948abf3e59b13e4ba9
   m_configObjects: {}

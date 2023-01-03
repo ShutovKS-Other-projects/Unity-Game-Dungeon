@@ -1,64 +1,54 @@
 using System;
-
+//MazeConvertToChar => AddStart => AddEnd => AddMobe => AddChest
 public class MazeModification
 {
-    GameControler  gameControler;
-    MazeGeneration mazeGeneration;
-    
-    Random random = new Random();
+    MazeGeneration mazeGeneration = new MazeGeneration();
+    private Random random = new Random();
+    char[,] mazeChar;
 
-    private string mazeString;
-
-    public int[,] Modification()
+    public char[,] Modification()
     {
-        mazeGeneration = new MazeGeneration();
-
         mazeGeneration.Generate();
-        mazeString = mazeGeneration.StringMaze();
 
-        int[,] mazeInt = new int[mazeGeneration.height * 2 + 1, mazeGeneration.width * 2 + 1];
+        MazeConvertToChar();
+        AddStart();
+        AddEnd();
+        AddMobe();
+        AddChest();
 
-        int n = 0;
-        foreach (char ch in mazeString)
-        {
-            if (ch == '\n')
-                n++;
-        }
+        return mazeChar;
+    }
 
+    void MazeConvertToChar()
+    {
+        string mazeString = mazeGeneration.StringMaze();
         int y = 0, x = 0;
+        mazeChar = new char[mazeGeneration.height * 2 + 1, mazeGeneration.width * 2 + 1];
         foreach (char ch in mazeString)
         {
-            switch(ch)
+            switch (ch)
             {
                 case ' ':
                     {
-                        if (random.Next(n) != 0)
-                        {
-                            mazeInt[y, x] = 0;
-                        }
-                        else
-                        {
-
-                            mazeInt[y, x] = random.Next(11,13);
-                        }
+                        mazeChar[y, x] = ' ';
                         x++;
                         continue;
                     }
                 case '-':
                     {
-                        mazeInt[y, x] = -1;
+                        mazeChar[y, x] = '-';
                         x++;
                         continue;
                     }
                 case '|':
                     {
-                        mazeInt[y, x] = 1;
+                        mazeChar[y, x] = '|';
                         x++;
                         continue;
                     }
                 case '+':
                     {
-                        mazeInt[y, x] = 2;
+                        mazeChar[y, x] = '+';
                         x++;
                         continue;
                     }
@@ -70,6 +60,83 @@ public class MazeModification
                     }
             }
         }
-        return mazeInt;
+    }
+    void AddStart()
+    {
+        bool start = false;
+        while (!start)
+        {
+            int y = random.Next(mazeChar.GetLength(0));
+            int x = random.Next(mazeChar.GetLength(1));
+            if (y < mazeChar.GetLength(0) / 2 && x < mazeChar.GetLength(1) / 2)
+            {
+                if (mazeChar[x, y] == ' ')
+                {
+                    mazeChar[x, y] = 'S';
+                    start = true;
+                }
+            }
+        }
+    }
+    void AddEnd()
+    {
+        bool end = false;
+        while (!end)
+        {
+            int y = random.Next(mazeChar.GetLength(0));
+            int x = random.Next(mazeChar.GetLength(1));
+            if (y > mazeChar.GetLength(0) / 2 && x > mazeChar.GetLength(1) / 2)
+            {
+                if (mazeChar[x, y] == ' ')
+                {
+                    mazeChar[x, y] = 'E';
+                    end = true;
+                }
+            }
+        }
+    }
+    void AddMobe()
+    {
+        int numeFloor = 0;
+        foreach (char c in mazeChar)
+        {
+            if (c == ' ')
+            {
+                numeFloor++;
+            }
+        }
+        numeFloor /= 10;
+
+        for (int n = 0; n < numeFloor; n++)
+        {
+            int y = random.Next(5, mazeChar.GetLength(0));
+            int x = random.Next(5, mazeChar.GetLength(1));
+            if (mazeChar[x, y] == ' ')
+            {
+                mazeChar[x, y] = 'M';
+            }
+        }
+    }
+    void AddChest()
+    {
+        int numeFloor = 0;
+        foreach (char c in mazeChar)
+        {
+            if (c == ' ')
+            {
+                numeFloor++;
+            }
+        }
+        numeFloor /= 9;
+
+        for (int n = 0; n < numeFloor; n++)
+        {
+            int y = random.Next(5, mazeChar.GetLength(0));
+            int x = random.Next(5, mazeChar.GetLength(1));
+            if (mazeChar[x, y] == ' ')
+            {
+                mazeChar[x, y] = 'C';
+            }
+        }
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -265,8 +265,6 @@ MonoBehaviour:
   SkyBoxNight: {fileID: 7560606691306507296, guid: d7bef47a2d8e3c842a8056c87e41dc5b,
     type: 3}
   Player: {fileID: 7269400773961662929, guid: 8ec4cd525e5f3a9468afc7a5ac81ea08, type: 3}
-  widthMaze: 15
-  heightMaze: 15
 --- !u!1 &1310760752
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,9 +309,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02c5cc33181c32041a1876d008eca61a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Floor: {fileID: 2741308363718346433, guid: 3940a34dbd037c6408d73cf2e8a8b370, type: 3}
-  Wall: {fileID: 7539765851491090197, guid: 0be9494f14c5bb846a2a267f9b56a74e, type: 3}
-  WallHorizontal: {fileID: 7539765851491090197, guid: 5ed73d9fc404a7b45ba6fd3325ef43f5,
-    type: 3}
-  WallVertical: {fileID: 7539765851491090197, guid: 04ee47ee2461cba45ac431edf7de826d,
-    type: 3}

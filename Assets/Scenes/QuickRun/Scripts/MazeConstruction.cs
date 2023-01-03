@@ -7,59 +7,60 @@ using UnityEngine;
 
 public class MazeConstruction : MonoBehaviour
 {
-    MazeModification mazeModification;
-
-    [SerializeField] GameObject Floor;
-    [SerializeField] GameObject Wall;
-    [SerializeField] GameObject WallHorizontal;
-    [SerializeField] GameObject WallVertical;
-
-    private int[,] maze;
-
     private void Awake()
     {
-        mazeModification= new MazeModification();
         Construction();
     }
 
     void Construction()
     {
-        maze = mazeModification.Modification();
-        int y, x;
-        for (y = 0; y < maze.GetLength(0); y++)
+        MazeModification mazeModification = new MazeModification();
+        char[,] maze = mazeModification.Modification();
+
+        for (int y = 0; y < maze.GetLength(0); y++)
         {
-            for (x = 0; x < maze.GetLength(1); x++)
+            for (int x = 0; x < maze.GetLength(1); x++)
             {
-                switch (maze[y, x])
+                ConstructionFloor(x, y);
+                switch (maze[y,x])
                 {
-                    case 0:
+                    case ' ':
                         {
-                            ConstructionFloor(x, y);
                             continue;
                         }
-                    case -1:
+                    case '-':
                         {
                             ConstructionWallHorizontal(x, y);
                             continue;
                         }
-                    case 1:
+                    case '|':
                         {
                             ConstructionWallVertical(x, y);
                             continue;
                         }
-                    case 2:
+                    case '+':
                         {
                             ConstructionWall(x, y);
                             continue;
                         }
-                    case 11:
+                    case 'S':
                         {
-                            ConstructionFloor(x, y);
+                            ConstructionStart(x, y);
                             continue;
                         }
-                    case 12:
+                    case 'E':
                         {
-                            ConstructionFloor(x, y);
+                            ConstructionEnd(x, y);
+                            continue;
+                        }
+                    case 'M':
+                        {
+                            ConstructionMobe(x, y);
+                            continue;
+                        }
+                    case 'C':
+                        {
+                            ConstructionChest(x, y);
                             continue;
                         }
                 }
@@ -67,6 +68,31 @@ public class MazeConstruction : MonoBehaviour
         }
     }
 
+    void ConstructionWall(float x, float y)
+    {
+        GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        sector.transform.position = new Vector3(x, 0.25f, y);
+        sector.transform.localScale = new Vector3(0.1f, 1.5f, 2f);
+        sector.name = $"sector({y};{x})-[Wall]";
+        sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        sector.transform.position = new Vector3(x, 0.25f, y);
+        sector.transform.localScale = new Vector3(1f, 1.5f, 0.1f);
+        sector.name = $"sector({y};{x})-[WallH]";
+    }
+    void ConstructionWallHorizontal(float x, float y)
+    {
+        GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        sector.transform.position = new Vector3(x, 0.25f, y);
+        sector.transform.localScale = new Vector3(1f, 1.5f, 0.1f);
+        sector.name = $"sector({y};{x})-[WallH]";
+    }
+    void ConstructionWallVertical(float x, float y)
+    {
+        GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        sector.transform.position = new Vector3(x, 0.25f, y);
+        sector.transform.localScale = new Vector3(0.1f, 1.5f, 2f);
+        sector.name = $"sector({y};{x})-[WallV]";
+    }
     void ConstructionFloor(float x, float y)
     {
         float n = 0.335f;
@@ -74,25 +100,41 @@ public class MazeConstruction : MonoBehaviour
         {
             for (int j = 0; j < 3; j++)
             {
-                GameObject sector = Instantiate(Floor, new Vector3(x - n * (1 - i), 0, y - n * (1 - j)), new Quaternion(0, 0, 0, 0));
+                GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
+                sector.transform.position = new Vector3(x - n * (1 - i), -0.45f, y - n * (1 - j));
+                sector.transform.localScale = new Vector3(0.335f, 0.1f, 0.335f);
                 sector.name = $"sector({y};{x})-[Floor({i};{j}]";
+
             }
         }
     }
+    void ConstructionStart(float x, float y)
+    {
+        GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        sector.transform.position = new Vector3(x, -0.45f, y);
+        sector.transform.localScale = new Vector3(0.335f, 0.1f, 0.335f);
+        sector.GetComponent<MeshRenderer>().material.color = Color.green;
+        sector.name = $"sector({y};{x})-[Start]";
+    }
+    void ConstructionEnd(float x, float y)
+    {
+        GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        sector.transform.position = new Vector3(x, 0, y);
+        sector.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        sector.GetComponent<MeshRenderer>().material.color = Color.red;
+        sector.AddComponent<EndMaze>();
+        sector.name = $"sector({y};{x})-[End]";
+    }
+    void ConstructionMobe(float x, float y)
+    {
 
-    void ConstructionWall(float x, float y)
-    {
-        GameObject sector = Instantiate(Wall, new Vector3(x, 0, y), new Quaternion(0, 0, 0, 0));
-        sector.name = $"sector({y};{x})-[Wall1]";
     }
-    void ConstructionWallHorizontal(float x, float y)
+    void ConstructionChest(float x, float y)
     {
-        GameObject sector = Instantiate(WallHorizontal, new Vector3(x, 0, y), new Quaternion(0, 0, 0, 0));
-        sector.name = $"sector({y};{x})-[Wall1]";
+
     }
-    void ConstructionWallVertical(float x, float y)
+    void Construction(float x, float y)
     {
-        GameObject sector = Instantiate(WallVertical, new Vector3(x, 0, y), new Quaternion(0, 0, 0, 0));
-        sector.name = $"sector({y};{x})-[Wall1]";
+
     }
 }
