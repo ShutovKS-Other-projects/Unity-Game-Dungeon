@@ -4,9 +4,12 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-
 public class MazeConstruction : MonoBehaviour
 {
+    System.Random random = new System.Random();
+
+    [SerializeField] GameObject[] Mobe;
+
     private void Awake()
     {
         Construction();
@@ -127,7 +130,8 @@ public class MazeConstruction : MonoBehaviour
     }
     void ConstructionMobe(float x, float y)
     {
-
+        GameObject mobe = Instantiate(Mobe[random.Next(Mobe.Length)]);
+        mobe.transform.position = new Vector3(x, 0, y);
     }
     void ConstructionChest(float x, float y)
     {

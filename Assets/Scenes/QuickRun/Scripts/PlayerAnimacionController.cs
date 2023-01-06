@@ -22,7 +22,7 @@ public class PlayerAnimacionController : MonoBehaviour
         _verticalInput = Input.GetAxis("Vertical");
 
 
-        _animator.SetFloat("Moving", Movement(_verticalInput));
+        _animator.SetFloat("Speed", Movement(_verticalInput));
 
         if (Input.GetMouseButtonDown(0))
         {
