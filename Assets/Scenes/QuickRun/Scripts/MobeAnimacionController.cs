@@ -1,27 +1,40 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MobeAnimacionController : MonoBehaviour
 {
     Animator animator;
     private MobeController mobeController;
-    
+
+    float speed;
+    bool dead;
+    bool attack;
+
     private void Start()
     {
+        mobeController = new MobeController();
         animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
-        float speed = mobeController.speed;
+        UpdateStatistics();
+
         animator.SetFloat("Speed", speed);
-        animator.SetFloat("XP", mobeController.xp);
-        
-        if(mobeController.attack)
+        if(dead)
+        {
+            animator.SetTrigger("Dead");
+        }
+
+        if (mobeController.attack)
         {
             animator.SetTrigger("Attack");
         }
+    }
+
+    void UpdateStatistics()
+    {
+        speed = mobeController.speed;
+        dead = mobeController.dead;
+        attack = mobeController.attack;
     }
 }

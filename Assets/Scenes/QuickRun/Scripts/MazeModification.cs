@@ -1,5 +1,5 @@
 using System;
-//MazeConvertToChar => AddStart => AddEnd => AddMobe => AddChest
+
 public class MazeModification
 {
     MazeGeneration mazeGeneration = new MazeGeneration();
