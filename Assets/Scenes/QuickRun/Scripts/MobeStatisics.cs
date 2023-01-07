@@ -2,16 +2,16 @@ using System;
 
 public class MobeStatistics
 {
-    //Random random = new Random();
+    Random random = new Random();
 
-    //public float speed;
-    //public float xp;
-    //public float force;
+    public float speed;
+    public float xp;
+    public float force;
 
-    //public MobeStatistics() 
-    //{
-    //    this.speed = 0;
-    //    this.xp = random.Next(75, 150);
-    //    this.force = random.Next(3, 7);
-    //}
+    public MobeStatistics() 
+    {
+        this.speed = random.Next(90, 110)/100;
+        this.xp = random.Next(75, 150);
+        this.force = random.Next(3, 7);
+    }
 }
