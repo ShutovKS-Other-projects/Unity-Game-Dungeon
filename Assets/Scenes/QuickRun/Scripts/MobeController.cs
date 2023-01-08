@@ -1,23 +1,27 @@
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MobeController : MonoBehaviour
 {
-    private MobeAnimatorController mobeAnimatorController;
-    public MobeStatistics mobeStatistics;
+    private MobeAnimatorController animatorController;
+    public MobeStatistics statistics;
 
     private GameObject Player;
 
     private void Start()
     {
-        mobeAnimatorController = new MobeAnimatorController();
-        mobeStatistics = new MobeStatistics();
+        animatorController = transform.Find("Animator").GetComponent<MobeAnimatorController>();
+        statistics = new MobeStatistics();
         Player = GameObject.Find("Player(Clone)");
     }
 
     private void Update()
     {
+        if (statistics.isDead)
+        {
+            return;
+        }
+        statistics.speed = 0f;
         Ray ray = new(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), Player.transform.position - transform.position);
         Physics.Raycast(ray, out RaycastHit raycastHit, 7.5f);
         if (raycastHit.collider.gameObject == Player)
@@ -25,14 +29,16 @@ public class MobeController : MonoBehaviour
             transform.LookAt(Player.transform.position);
             switch (MathF.Round(Vector3.Distance(transform.position, Player.transform.position), 1))
             {
-                case > 0.75f:
+                case >= 0.5f:
                     {
                         transform.Translate(new Vector3(0f, 0f, 0.5f) * Time.deltaTime);
+                        statistics.speed = 1f;
                         return;
                     }
-                case < 0.25f:
+                case <= 0.3f:
                     {
                         transform.Translate(new Vector3(0f, 0f, -0.25f) * Time.deltaTime);
+                        statistics.speed = -1f;
                         return;
                     }
                 default:
@@ -45,10 +51,19 @@ public class MobeController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.name == "mixamorig:RightHand" || other.gameObject.name == "mixamorig:LeftHand")
+        if (!statistics.isDead)
         {
-            Destroy(gameObject, 5f);
+
+            if (other.gameObject.name == "mixamorig:RightHand" || other.gameObject.name == "mixamorig:LeftHand")
+            {
+                statistics.health = -1f;
+                if (statistics.health <= 0)
+                {
+                    statistics.isDead = true;
+                }
+                Destroy(gameObject, 10f);
+            }
+            Debug.Log(other.gameObject);
         }
-        Debug.Log(other.gameObject);
     }
 }
