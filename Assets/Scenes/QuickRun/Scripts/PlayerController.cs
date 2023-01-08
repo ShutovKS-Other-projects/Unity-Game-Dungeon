@@ -1,49 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using UnityEditor;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    PlayerStatistics playerStatistics;
+    PlayerStatistics statistics;
 
-    private float _speed;
+    Rigidbody rb;
+
     private float _horizontalInput;
     private float _verticalInput;
     private float _jumpInput;
 
     void Start()
     {
-        playerStatistics = new PlayerStatistics();
+        statistics = new PlayerStatistics();
 
-        _speed = playerStatistics.speed;
+        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        Movement();
-    }
-
-    private void Movement()
-    {
         _horizontalInput = Input.GetAxis("Horizontal");
         _verticalInput = Input.GetAxis("Vertical");
         _jumpInput = Input.GetAxis("Jump");
-
-        Vector3 movement = new Vector3 (_horizontalInput, 0f, _verticalInput);
-        transform.Translate(movement * _speed * Boost() * Time.deltaTime);
     }
 
+    private void FixedUpdate()
+    {
+        if (_horizontalInput != 0 && _verticalInput != 0)
+        {
+            _horizontalInput /= 2;
+        }
+        Vector3 movement = new Vector3(_horizontalInput, 0f, _verticalInput);
+        rb.AddRelativeForce(movement * statistics.speed * Boost());
+    }
 
     private float Boost()
     {
-        float _speed = 0.75f;
+        float boost = 0.7f;
+
         if (Input.GetKey(KeyCode.LeftShift))
         {
-            _speed = 1.5f;
-            return _speed;
+            boost = 0.9f;
         }
-        return _speed;
+
+        return boost;
     }
 }

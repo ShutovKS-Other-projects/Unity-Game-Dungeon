@@ -27,24 +27,18 @@ public class MobeController : MonoBehaviour
         if (raycastHit.collider.gameObject == Player)
         {
             transform.LookAt(Player.transform.position);
-            switch (MathF.Round(Vector3.Distance(transform.position, Player.transform.position), 1))
+
+            if (Vector3.Distance(transform.position, Player.transform.position) >= 0.5f)
             {
-                case >= 0.5f:
-                    {
-                        transform.Translate(new Vector3(0f, 0f, 0.5f) * Time.deltaTime);
-                        statistics.speed = 1f;
-                        return;
-                    }
-                case <= 0.3f:
-                    {
-                        transform.Translate(new Vector3(0f, 0f, -0.25f) * Time.deltaTime);
-                        statistics.speed = -1f;
-                        return;
-                    }
-                default:
-                    {
-                        return;
-                    }
+                transform.Translate(new Vector3(0f, 0f, 0.5f) * Time.deltaTime);
+                statistics.speed = 1f;
+                return;
+            }
+            else if (Vector3.Distance(transform.position, Player.transform.position) <= 0.3f)
+            {
+                transform.Translate(new Vector3(0f, 0f, -0.25f) * Time.deltaTime);
+                statistics.speed = -1f;
+                return;
             }
         }
     }
@@ -63,7 +57,6 @@ public class MobeController : MonoBehaviour
                 }
                 Destroy(gameObject, 10f);
             }
-            Debug.Log(other.gameObject);
         }
     }
 }
