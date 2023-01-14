@@ -4,6 +4,10 @@ public class MazeConstruction : MonoBehaviour
 {
     System.Random random = new System.Random();
 
+    public static int width = 10;
+    public static int height = 10;
+
+
     [SerializeField] GameObject[] Mobe;
 
     private void Awake()
@@ -24,44 +28,28 @@ public class MazeConstruction : MonoBehaviour
                 switch (maze[y,x])
                 {
                     case ' ':
-                        {
-                            continue;
-                        }
+                            break;
                     case '-':
-                        {
                             ConstructionWallHorizontal(x, y);
-                            continue;
-                        }
+                            break;
                     case '|':
-                        {
                             ConstructionWallVertical(x, y);
-                            continue;
-                        }
+                            break;
                     case '+':
-                        {
                             ConstructionWall(x, y);
-                            continue;
-                        }
-                    case 'S':
-                        {
-                            ConstructionStart(x, y);
-                            continue;
-                        }
-                    case 'E':
-                        {
-                            ConstructionEnd(x, y);
-                            continue;
-                        }
+                            break;
                     case 'M':
-                        {
                             ConstructionMobe(x, y);
-                            continue;
-                        }
+                            break;
+                    case 'S':
+                            ConstructionStart(x, y);
+                            break;
+                    case 'E':
+                            ConstructionEnd(x, y);
+                            break;
                     case 'C':
-                        {
                             ConstructionChest(x, y);
-                            continue;
-                        }
+                            break;
                 }
             }
         }
@@ -113,7 +101,7 @@ public class MazeConstruction : MonoBehaviour
         sector.transform.position = new Vector3(x, -0.45f, y);
         sector.transform.localScale = new Vector3(0.335f, 0.1f, 0.335f);
         sector.GetComponent<MeshRenderer>().material.color = Color.green;
-        sector.name = $"sector({y};{x})-[Start]";
+        sector.name = $"Start";
     }
     void ConstructionEnd(float x, float y)
     {
@@ -121,13 +109,13 @@ public class MazeConstruction : MonoBehaviour
         sector.transform.position = new Vector3(x, 0, y);
         sector.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         sector.GetComponent<MeshRenderer>().material.color = Color.red;
-        sector.AddComponent<EndMaze>();
-        sector.name = $"sector({y};{x})-[End]";
+        sector.name = $"End";
     }
     void ConstructionMobe(float x, float y)
     {
         GameObject mobe = Instantiate(Mobe[random.Next(Mobe.Length)]);
         mobe.transform.position = new Vector3(x, 0, y);
+        mobe.name = $"Mobe";
     }
     void ConstructionChest(float x, float y)
     {

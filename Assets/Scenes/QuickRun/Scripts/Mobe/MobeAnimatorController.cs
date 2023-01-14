@@ -4,8 +4,7 @@ public class MobeAnimatorController : MonoBehaviour
 {
     private Animator animator;
     private MobeController controller;
-
-    private bool animationDeadStart = false;
+    private bool _animationDeadStart = false;
 
     private void Start()
     {
@@ -14,8 +13,8 @@ public class MobeAnimatorController : MonoBehaviour
     }
 
     private void Update()
-    {if (animationDeadStart) return;
-        State();
+    {
+        if (_animationDeadStart) return;
 
         animator.SetFloat("Speed", controller.statistics.movement);
         if (controller.statistics.isAttack)
@@ -28,9 +27,10 @@ public class MobeAnimatorController : MonoBehaviour
         if (controller.statistics.isDead)
         {
             animator.SetTrigger("Dead");
-            animationDeadStart = true;
+            _animationDeadStart = true;
         }
 
+        State();
     }
 
     void State()

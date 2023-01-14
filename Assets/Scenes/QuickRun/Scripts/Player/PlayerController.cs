@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public PlayerStatistics statistics;
-
     private Rigidbody _rigidbody;
 
     private Transform _playerTransform;
@@ -28,38 +27,33 @@ public class PlayerController : MonoBehaviour
         _playerTransform = transform;
         _cameraTransform = Camera.main.transform;
         _rigidbody = GetComponent<Rigidbody>();
-
-        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void Update()
-    {Stop();
-     
+    {
         _horizontalInput = Input.GetAxis("Horizontal");
         _verticalInput = Input.GetAxis("Vertical");
         _jumpInput = Input.GetAxis("Jump");
         _mouseX = Input.GetAxis("Mouse X");
         _mouseY = Input.GetAxis("Mouse Y");
+
+        Attack();
+        Jump();
     }
 
     private void FixedUpdate()
-    {Stop();
-     
-        Attack();
-        Jump();
+    {
         Movement();
         Rotation();
     }
 
     private void OnTriggerEnter(Collider other)
-    {Stop();
-     
+    {
         if (other.gameObject.tag == "MobeWeapon")
         {
             statistics.health -= 10;
         }
     }
-
     private void Attack()
     {
         if (Input.GetMouseButtonDown(0))
@@ -68,22 +62,29 @@ public class PlayerController : MonoBehaviour
             statistics.stamina -= 10;
         }
     }
+    private void Block()
+    {
+        if(Input.GetMouseButtonDown(1))
+        {
+            statistics.isBlock = true;
+
+        }
+    }
     private void Jump()
     {
         if (_jumpInput > 0 && statistics.stamina > 0)
         {
-            _rigidbody.AddForce(Vector3.up * statistics.force, ForceMode.Impulse);
+            _rigidbody.AddForce(Vector3.up * statistics.jumpForce);
             statistics.stamina -= 10;
-            statistics.isJump = true;
         }
     }
     private void Movement()
     {
-		statistics.movement = _verticalInput * Running();
+        statistics.movement = _verticalInput * Running();
         Vector3 movement = new Vector3(_horizontalInput, 0f, _verticalInput);
         if (_horizontalInput != 0 && _verticalInput != 0)
         {
-            movement /= 1.5f;
+            movement /= 1.4f;
         }
         _rigidbody.AddRelativeForce(movement * statistics.speed * Running());
 
@@ -92,11 +93,19 @@ public class PlayerController : MonoBehaviour
             if (Input.GetKey(KeyCode.LeftShift))
             {
                 statistics.acceleration = 1.25f;
-                statistics.stamina -= 1f * Time.deltaTime;
+                statistics.stamina -= 5f * Time.deltaTime;
             }
             else
             {
                 statistics.acceleration = 1f;
+                if(statistics.stamina < 100)
+                {
+                    statistics.stamina += 3f * Time.deltaTime;
+                }
+                if(statistics.stamina > 100)
+                {
+                    statistics.stamina = 100;
+                }
             }
             return statistics.acceleration;
         }
@@ -106,31 +115,10 @@ public class PlayerController : MonoBehaviour
         _xRotation -= _mouseY * _mouseSensitivity * Time.deltaTime;
         _yRotation += _mouseX * _mouseSensitivity * Time.deltaTime;
 
-        if (_xRotation > -90f && _xRotation < 90f)
-            _cameraTransform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
+        _xRotation = Mathf.Clamp(_xRotation, -70, 70f);
 
+        _cameraTransform.localRotation = Quaternion.Euler(_xRotation, 0f, 0f);
         _playerTransform.localRotation = Quaternion.Euler(0f, _yRotation, 0f);
         _rigidbody.MoveRotation(Quaternion.Euler(0f, _yRotation, 0f));
-    }
-
-    private void Stop()
-    {
-        if (statistics.isDead)
-        {
-            return;
-        }
-    }
-
-    private void OnGUI()
-    {
-        GUI.Label(new Rect(10, 10, 100, 20), "Health: " + statistics.health);
-        GUI.Label(new Rect(10, 30, 100, 20), "Stamina: " + statistics.stamina);
-        GUI.Label(new Rect(10, 50, 100, 20), "Speed: " + statistics.speed);
-        GUI.Label(new Rect(10, 70, 100, 20), "Force: " + statistics.force);
-        GUI.Label(new Rect(10, 90, 100, 20), "Acceleration: " + statistics.acceleration);
-        GUI.Label(new Rect(10, 110, 100, 20), "Movement: " + statistics.movement);
-        GUI.Label(new Rect(10, 130, 100, 20), "IsAttack: " + statistics.isAttack);
-        GUI.Label(new Rect(10, 150, 100, 20), "IsJump: " + statistics.isJump);
-        GUI.Label(new Rect(10, 170, 100, 20), "IsDead: " + statistics.isDead);
     }
 }

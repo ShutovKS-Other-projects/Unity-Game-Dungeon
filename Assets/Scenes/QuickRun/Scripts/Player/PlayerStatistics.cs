@@ -1,52 +1,96 @@
 public class PlayerStatistics
 {
     /// <summary>
-    /// Ускорение параметр
+    /// Player's acceleration/СѓСЃРєРѕСЂРµРЅРёРµ
     /// </summary>
-    public float acceleration = 1f;
-    
-    /// <summary>
-    /// Урон параметр
-    /// </summary>
-    public float damage = 0f;
+    public float acceleration;
 
     /// <summary>
-    /// Сила параметр
+    /// Player's damage/СѓСЂРѕРЅ
     /// </summary>
-    public float force = 5f;
+    public float damage;
 
     /// <summary>
-    /// ХП параметр
+    /// Player's attack/СЃРёР»Р°
     /// </summary>
-    public float health = 100f;
-	
-	/// <summary>
-    /// Передвижение
-    /// </summary>
-    public float movement = 0;
+    public float attack;
 
     /// <summary>
-    /// Скорость параметр
+    /// Player's health/Р·РґРѕСЂРѕРІСЊРµ
     /// </summary>
-    public float speed = 500f;
+    public float health;
+
+    /// <summary
+    /// Player's manna/РјР°РЅР°
+    /// </summary>
+    public float manna;
 
     /// <summary>
-    /// Выносливость параметр
+    /// Player's jump force/СЃРёР»Р° РїСЂС‹Р¶РєР°
     /// </summary>
-    public float stamina = 100f;
+    public float jumpForce;
+
+    /// <summary
+    /// Player's armor/Р±СЂРѕРЅСЏ
+    /// </summary>
+    public float armor;
 
     /// <summary>
-    /// Атака состояние
+    /// Player's direction movement/РЅР°РїСЂР°РІР»РµРЅРёРµ РґРІРёР¶РµРЅРёСЏ
     /// </summary>
-    public bool isAttack = false;
+    public float movement;
 
     /// <summary>
-    /// Смерть состояние
+    /// Player's speed/СЃРєРѕСЂРѕСЃС‚СЊ
     /// </summary>
-    public bool isDead = false;
+    public float speed;
 
     /// <summary>
-    /// Прыжок состояние
+    /// Player's stamina/РІС‹РЅРѕСЃР»РёРІРѕСЃС‚СЊ
     /// </summary>
-    public bool isJump = false;
+    public float stamina;
+
+    /// <summary>
+    /// Indicates if the player is currently attacking/РїРѕРєР°Р·С‹РІР°РµС‚, Р°С‚Р°РєСѓРµС‚ Р»Рё РёРіСЂРѕРє 
+    /// </summary>
+    public bool isAttack;
+
+    /// <sumary>
+    /// Indicates if the player is currently block/РїРѕРєР°Р·С‹РІР°РµС‚, Р±Р»РѕРєРёСЂСѓРµС‚ Р»Рё РёРіСЂРѕРє
+    /// </sumary>
+    public bool isBlock;
+
+    /// <summary>
+    /// Indicates if the player is currently dead/РїРѕРєР°Р·С‹РІР°РµС‚, РјРµСЂС‚РІ Р»Рё РёРіСЂРѕРє
+    /// </summary>
+    public bool isDead;
+
+    /// <summary>
+    /// Indicates if the player is currently jumping/РїРѕРєР°Р·С‹РІР°РµС‚, РїСЂС‹РіР°РµС‚ Р»Рё РёРіСЂРѕРє
+    /// </summary>
+    public bool isJump;
+
+    /// <summary>
+    /// Number of enemies killed by the player/РєРѕР»РёС‡РµСЃС‚РІРѕ СѓР±РёС‚С‹С… РІСЂР°РіРѕРІ РёРіСЂРѕРєРѕРј
+    /// </summary> 
+    public int killCount;
+
+    public PlayerStatistics()
+    {
+        this.acceleration = 1f;
+        this.damage = 0f;
+        this.attack = 5f;
+        this.health = 100f;
+        this.manna = 100f;
+        this.jumpForce = 500f;
+        this.armor = 0f;
+        this.movement = 0;
+        this.speed = 500f;
+        this.stamina = 100f;
+        this.isAttack = false;
+        this.isBlock = false;
+        this.isDead = false;
+        this.isJump = false;
+        this.killCount = 0;
+    }
 }

@@ -2,140 +2,129 @@ using System;
 
 public class MazeModification
 {
-    MazeGeneration mazeGeneration = new MazeGeneration();
-    private Random random = new Random();
-    char[,] mazeChar;
+    private MazeGeneration _mazeGeneration = new MazeGeneration();
+    private Random _random = new Random();
+    private char[,] _mazeChar;
 
     public char[,] Modification()
     {
-        mazeGeneration.Generate();
+        _mazeGeneration.Generate();
 
-        MazeConvertToChar();
+        ConvertMazeToChar();
         AddStart();
         AddEnd();
-        AddMobe();
+        AddMob();
         AddChest();
 
-        return mazeChar;
+        return _mazeChar;
     }
 
-    void MazeConvertToChar()
+    private void ConvertMazeToChar()
     {
-        string mazeString = mazeGeneration.StringMaze();
+        string mazeString = _mazeGeneration.StringMaze();
         int y = 0, x = 0;
-        mazeChar = new char[mazeGeneration.height * 2 + 1, mazeGeneration.width * 2 + 1];
+        _mazeChar = new char[_mazeGeneration.height * 2 + 1, _mazeGeneration.width * 2 + 1];
         foreach (char ch in mazeString)
         {
             switch (ch)
             {
                 case ' ':
-                    {
-                        mazeChar[y, x] = ' ';
-                        x++;
-                        continue;
-                    }
+                    _mazeChar[y, x] = ' ';
+                    x++;
+                    break;
                 case '-':
-                    {
-                        mazeChar[y, x] = '-';
-                        x++;
-                        continue;
-                    }
+                    _mazeChar[y, x] = '-';
+                    x++;
+                    break;
                 case '|':
-                    {
-                        mazeChar[y, x] = '|';
-                        x++;
-                        continue;
-                    }
+                    _mazeChar[y, x] = '|';
+                    x++;
+                    break;
                 case '+':
-                    {
-                        mazeChar[y, x] = '+';
-                        x++;
-                        continue;
-                    }
+                    _mazeChar[y, x] = '+';
+                    x++;
+                    break;
                 case '\n':
-                    {
-                        y++;
-                        x = 0;
-                        continue;
-                    }
+                    y++;
+                    x = 0;
+                    break;
             }
         }
     }
-    void AddStart()
+
+    private void AddStart()
     {
-        bool start = false;
-        while (!start)
+        while (true)
         {
-            int y = random.Next(mazeChar.GetLength(0));
-            int x = random.Next(mazeChar.GetLength(1));
-            if (y < mazeChar.GetLength(0) / 2 && x < mazeChar.GetLength(1) / 2)
+            int y = _random.Next(_mazeChar.GetLength(0));
+            int x = _random.Next(_mazeChar.GetLength(1));
+            if (y < _mazeChar.GetLength(0) / 2 && x < _mazeChar.GetLength(1) / 2)
             {
-                if (mazeChar[x, y] == ' ')
+                if (_mazeChar[x, y] == ' ')
                 {
-                    mazeChar[x, y] = 'S';
-                    start = true;
+                    _mazeChar[x, y] = 'S';
+                    break;
                 }
             }
         }
     }
-    void AddEnd()
+
+    private void AddEnd()
     {
-        bool end = false;
-        while (!end)
+        while (true)
         {
-            int y = random.Next(mazeChar.GetLength(0));
-            int x = random.Next(mazeChar.GetLength(1));
-            if (y > mazeChar.GetLength(0) / 2 && x > mazeChar.GetLength(1) / 2)
+            int y = _random.Next(_mazeChar.GetLength(0));
+            int x = _random.Next(_mazeChar.GetLength(1));
+            if (y > _mazeChar.GetLength(0) / 2 && x > _mazeChar.GetLength(1) / 2)
             {
-                if (mazeChar[x, y] == ' ')
+                if (_mazeChar[x, y] == ' ')
                 {
-                    mazeChar[x, y] = 'E';
-                    end = true;
+                    _mazeChar[x, y] = 'E';
+                    break;
                 }
             }
         }
     }
-    void AddMobe()
+    private void AddMob()
     {
-        int numeFloor = 0;
-        foreach (char c in mazeChar)
+        int numFloor = 0;
+        foreach (char c in _mazeChar)
         {
             if (c == ' ')
             {
-                numeFloor++;
+                numFloor++;
             }
         }
-        numeFloor /= 10;
+        numFloor /= 10;
 
-        for (int n = 0; n < numeFloor; n++)
+        for (int n = 0; n < numFloor; n++)
         {
-            int y = random.Next(5, mazeChar.GetLength(0));
-            int x = random.Next(5, mazeChar.GetLength(1));
-            if (mazeChar[x, y] == ' ')
+            int y = _random.Next(5, _mazeChar.GetLength(0));
+            int x = _random.Next(5, _mazeChar.GetLength(1));
+            if (_mazeChar[x, y] == ' ')
             {
-                mazeChar[x, y] = 'M';
+                _mazeChar[x, y] = 'M';
             }
         }
     }
-    void AddChest()
+    private void AddChest()
     {
-        int numeFloor = 0;
-        foreach (char c in mazeChar)
+        int numFloor = 0;
+        foreach (char c in _mazeChar)
         {
             if (c == ' ')
             {
-                numeFloor++;
+                numFloor++;
             }
         }
-        numeFloor /= 9;
-
-        for (int n = 0; n < numeFloor; n++)
+        numFloor /= 9;
+        for (int n = 0; n < numFloor; n++)
         {
-            int y = random.Next(5, mazeChar.GetLength(0));
-            int x = random.Next(5, mazeChar.GetLength(1));
-            if (mazeChar[x, y] == ' ')
+            int y = _random.Next(5, _mazeChar.GetLength(0));
+            int x = _random.Next(5, _mazeChar.GetLength(1));
+            if (_mazeChar[x, y] == ' ')
             {
-                mazeChar[x, y] = 'C';
+                _mazeChar[x, y] = 'C';
             }
         }
     }

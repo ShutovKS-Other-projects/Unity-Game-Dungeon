@@ -9,10 +9,9 @@ public class MazeGeneration
 
     public MazeGeneration()
     {
-        this.width = 15;
-        this.height = 15;
+        this.width = MazeConstruction.width;
+        this.height = MazeConstruction.height;
 
-        // »нициализируем массив €чеек
         cells = new Cell[width, height];
         for (int x = 0; x < width; x++)
         {
@@ -23,234 +22,189 @@ public class MazeGeneration
         }
     }
 
-    // √енерируем лабиринт, использу€ случайный алгоритм поиска в глубину
     public void Generate()
     {
         Random rand = new Random();
 
-        // —ледим за посещенными €чейками
+        // Keeps track of visited cells
         bool[,] visitedCells = new bool[width, height];
 
-        // ¬ыбираем случайную начальную €чейку
+        // Choose a random starting cell
         int startX = rand.Next(width);
         int startY = rand.Next(height);
         Cell currentCell = cells[startX, startY];
         visitedCells[startX, startY] = true;
 
-        // —оздаем стек дл€ хранени€ посещенных €чеек
+        // Create a stack for backtracking
         Stack<Cell> stack = new Stack<Cell>();
         stack.Push(currentCell);
 
-        // ѕока есть непросмотренные €чейки
+        // While the stack is not empty
         while (stack.Count > 0)
         {
-            // ѕолучить список соседей текущей €чейки, которые не были посещены
+            // Get unvisited neighbors of the current cell
             List<Cell> unvisitedNeighbors = GetUnvisitedNeighbors(currentCell, visitedCells);
-
-            // ≈сли у текущей €чейки есть непосещенные соседи
+            // If there are unvisited neighbors
             if (unvisitedNeighbors.Count > 0)
             {
-                // ¬ыбираем случайного непосещенного соседа
+                // Choose a random unvisited neighbor
                 int index = rand.Next(unvisitedNeighbors.Count);
                 Cell neighbor = unvisitedNeighbors[index];
 
-                // ”дал€ем стену между текущей €чейкой и выбранным соседом
-                RemoveWall(currentCell, neighbor);
+                // Remove the wall between the current cell and the neighbor
+                currentCell.RemoveWall(neighbor);
 
-                // ќтмечаем соседа как посещенного
+                // Mark the neighbor as visited
                 visitedCells[neighbor.X, neighbor.Y] = true;
 
-                // ѕоместить текущую €чейку в стек
+                // Add the current cell to the stack
                 stack.Push(currentCell);
 
-                // ƒелаем выбранного соседа текущей €чейкой
+                // Make the neighbor the current cell
                 currentCell = neighbor;
             }
             else
             {
-                // ≈сли у текущей €чейки нет непосещенных соседей, извлекаем ее из стека
+                // If there are no unvisited neighbors, backtrack by popping a cell from the stack
                 currentCell = stack.Pop();
             }
         }
     }
 
-    // ѕолучить список соседей указанной €чейки, которые не были посещены
-    private List<Cell> GetUnvisitedNeighbors(Cell cell, bool[,] visitedCells)
+        public string StringMaze()
     {
-        List<Cell> unvisitedNeighbors = new List<Cell>();
-
-        // ѕровер€ем €чейку слева
-        if (cell.X > 0 && !visitedCells[cell.X - 1, cell.Y])
-        {
-            unvisitedNeighbors.Add(cells[cell.X - 1, cell.Y]);
-        }
-        // ѕровер€ем €чейку справа
-        if (cell.X < width - 1 && !visitedCells[cell.X + 1, cell.Y])
-        {
-            unvisitedNeighbors.Add(cells[cell.X + 1, cell.Y]);
-        }
-        // ѕровер€ем €чейку выше
-        if (cell.Y > 0 && !visitedCells[cell.X, cell.Y - 1])
-        {
-            unvisitedNeighbors.Add(cells[cell.X, cell.Y - 1]);
-        }
-        // ѕровер€ем €чейку ниже
-        if (cell.Y < height - 1 && !visitedCells[cell.X, cell.Y + 1])
-        {
-            unvisitedNeighbors.Add(cells[cell.X, cell.Y + 1]);
-        }
-        return unvisitedNeighbors;
-    }
-
-    // ”бираем стену между двум€ указанными €чейками
-    private void RemoveWall(Cell cell1, Cell cell2)
-    {
-        // ≈сли €чейки наход€тс€ в одном столбце
-        if (cell1.X == cell2.X)
-        {
-            // ≈сли €чейка1 выше €чейки2
-            if (cell1.Y < cell2.Y)
-            {
-                cell1.Walls[2] = false;
-                cell2.Walls[0] = false;
-            }
-            // ≈сли €чейка1 ниже €чейки2
-            else
-            {
-                cell1.Walls[0] = false;
-                cell2.Walls[2] = false;
-            }
-        }
-        // ≈сли €чейки наход€тс€ в одной строке
-        else
-        {
-            // ≈сли €чейка1 находитс€ слева от €чейки2
-            if (cell1.X < cell2.X)
-            {
-                cell1.Walls[1] = false;
-                cell2.Walls[3] = false;
-            }
-            // ≈сли €чейка1 находитс€ справа от €чейки2
-            else
-            {
-                cell1.Walls[3] = false;
-                cell2.Walls[1] = false;
-            }
-        }
-    }
-
-    public string StringMaze()
-    {
-        string str = null;
-        // ѕечатаем верхнюю строку лабиринта
-        str += ("+");
+        string mazeString = null;
+        mazeString += ("+");
         for (int x = 0; x < width; x++)
         {
             if (cells[x, 0].Walls[1])
             {
-                str += ("-+");
+                mazeString += ("-+");
             }
             else
             {
-                str += ("--");
+                mazeString += ("--");
             }
         }
-        str +="\n";
+        mazeString +="\n";
 
-        // ѕечатаем строки лабиринта
         for (int y = 0; y < height; y++)
         {
-            // ѕечать левой стены лабиринта
-            str += ("|");
+            mazeString += ("|");
 
-            // ѕечатаем €чейки лабиринта
             for (int x = 0; x < width; x++)
             {
-                // ѕечатаем €чейку
                 if (cells[x, y].Walls[0])
-                {
-                    str += (" ");
-                }
+                    mazeString += (" ");
                 else
+                    mazeString += (" ");
 
-                {
-                    str += (" ");
-                }
-
-                // ѕечатаем правую стенку €чейки
                 if (cells[x, y].Walls[1])
-                {
-                    str += ("|");
-                }
+                    mazeString += ("|");
                 else
-                {
-                    str += (" ");
-                }
+                    mazeString += (" ");
             }
-            str += ("") + "\n";
+            mazeString += ("") + "\n";
 
-            // ѕечать нижней строки лабиринта
             if (y < height - 1)
             {
                 if (cells[0, y].Walls[2])
-                {
-                    str += ("+-");
-                }
+                    mazeString += ("+-");
                 else
-                {
-                    str += ("| ");
-                }
+                    mazeString += ("| ");
                 for (int x = 1; x < width; x++)
                 {
                     if (cells[x, y].Walls[2])
-                    {
-                        str += ("--");
-                    }
+                        mazeString += ("--");
                     else
-                    {
-                        str += ("- ");
-                    }
+                        mazeString += ("- ");
                 }
                 if (cells[width-1, y].Walls[2])
-                {
-                    str += ("+") + "\n";
-                }
+                    mazeString += ("+") + "\n";
                 else
-                {
-                    str += ("|") + "\n";
-                }
+                    mazeString += ("|") + "\n";
             }
         }
 
-        // ѕечать нижней строки лабиринта
-        str += ("+");
+        mazeString += ("+");
         for (int x = 0; x < width; x++)
         {
             if (cells[x, height-1].Walls[1])
-            {
-                str += ("-+");
-            }
+                mazeString += ("-+");
             else
-            {
-                str += ("--");
-            }
+                mazeString += ("--");
         }
-        str +="\n";
-        return str;
+        mazeString +="\n";
+        return mazeString;
     }
 
-}
-
-class Cell
-{
-    public int X { get; set; }
-    public int Y { get; set; }
-    public bool[] Walls { get; set; }
-
-    public Cell(int x, int y)
+    // Gets the unvisited neighbors of a cell
+    private List<Cell> GetUnvisitedNeighbors(Cell cell, bool[,] visitedCells)
     {
-        X = x;
-        Y = y;
-        Walls = new bool[4] { true, true, true, true };
+        List<Cell> unvisitedNeighbors = new List<Cell>();
+        // Check the cell to the left
+        if (cell.X > 0 && !visitedCells[cell.X - 1, cell.Y])
+        {
+            unvisitedNeighbors.Add(cells[cell.X - 1, cell.Y]);
+        }
+        // Check the cell to the right
+        if (cell.X < width - 1 && !visitedCells[cell.X + 1, cell.Y])
+        {
+            unvisitedNeighbors.Add(cells[cell.X + 1, cell.Y]);
+        }
+        // Check the cell above
+        if (cell.Y > 0 && !visitedCells[cell.X, cell.Y - 1])
+        {
+            unvisitedNeighbors.Add(cells[cell.X, cell.Y - 1]);
+        }
+        // Check the cell below
+        if (cell.Y < height - 1 && !visitedCells[cell.X, cell.Y + 1])
+        {
+            unvisitedNeighbors.Add(cells[cell.X, cell.Y + 1]);
+        }
+
+        return unvisitedNeighbors;
+    }
+    public class Cell
+    {
+        public int X { get; private set; }
+        public int Y { get; private set; }
+        public bool[] Walls { get; private set; }
+        public bool Visited { get; set; }
+        public Cell(int x, int y)
+        {
+            X = x;
+            Y = y;
+            Walls = new bool[] { true, true, true, true };
+            Visited = false;
+        }
+
+        public void RemoveWall(Cell neighbor)
+        {
+            // If the neighbor is to the left of this cell
+            if (X - 1 == neighbor.X)
+            {
+                Walls[3] = false;
+                neighbor.Walls[1] = false;
+            }
+            // If the neighbor is to the right of this cell
+            else if (X + 1 == neighbor.X)
+            {
+                Walls[1] = false;
+                neighbor.Walls[3] = false;
+            }
+            // If the neighbor is above this cell
+            else if (Y - 1 == neighbor.Y)
+            {
+                Walls[0] = false;
+                neighbor.Walls[2] = false;
+            }
+            // If the neighbor is below this cell
+            else if (Y + 1 == neighbor.Y)
+            {
+                Walls[2] = false;
+                neighbor.Walls[0] = false;
+            }
+        }
     }
 }

@@ -1,24 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
-using Unity.VisualScripting;
 using UnityEngine;
 
-
-public class GameControler : MonoBehaviour
+public class GameController : MonoBehaviour
 {
     [SerializeField] GameObject SkyBoxNight;
-    [SerializeField] GameObject Player;
+    [SerializeField] GameObject PlayerPrefab;
+    private GameObject _player;
 
     private void Awake()
     {
         Instantiate(SkyBoxNight);
-        Player = Instantiate(Player, new Vector3(1f, 0, 1f), new Quaternion(0, 0, 0, 0));
+        _player = Instantiate(PlayerPrefab, new Vector3(1f, 0, 1f), Quaternion.identity);
     }
 
     private void Update()
     {
-        if (Input.GetAxis("Cancel") != 0)
+        if (Input.GetButton("Cancel"))
         {
             Application.Quit();
         }
