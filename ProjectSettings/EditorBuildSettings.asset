@@ -6,9 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu/Menu.unity
+    path: Assets/Internal assets/Scenes/Menu.unity
     guid: 078a950d59a37214ab55fedc0954366f
   - enabled: 1
-    path: Assets/Scenes/QuickRun/QuickRun.unity
+    path: Assets/Internal assets/Scenes/QuickRun.unity
     guid: 5e3e600bc15858948abf3e59b13e4ba9
   m_configObjects: {}
