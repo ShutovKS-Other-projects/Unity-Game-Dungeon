@@ -29,12 +29,5 @@ public class MobeAnimatorController : MonoBehaviour
             animator.SetTrigger("Dead");
             _animationDeadStart = true;
         }
-
-        State();
-    }
-
-    void State()
-    {
-        controller.statistics.isStateAnimation = animator.GetCurrentAnimatorStateInfo(0).nameHash.ToString();
     }
 }

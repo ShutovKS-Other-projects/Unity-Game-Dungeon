@@ -18,9 +18,14 @@ public class MobeController : MonoBehaviour
     {
         if (!statistics.isDead)
         {
-            Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), _player.transform.position - transform.position);
-            Physics.Raycast(ray, out RaycastHit raycastHit, 4f);
-            if (raycastHit.collider.gameObject == _player)
+            GettingVisibility(out Collider collider);
+
+            if (collider == null)
+            {
+                statistics.Movement = 0f;
+                statistics.isAttack = false;
+            }
+            else
             {
                 Rotation();
                 Attack();
@@ -74,8 +79,6 @@ public class MobeController : MonoBehaviour
 
         Vector3 Move()
         {
-            if (statistics.isStateAnimation == "Attack")
-                return new Vector3(0f, 0f, 0f);
             float distance = (float)Math.Round(Vector3.Distance(transform.position, _player.transform.position), 2);
             if (distance > 0.65f)
             {
@@ -98,5 +101,11 @@ public class MobeController : MonoBehaviour
     private void Rotation()
     {
         transform.LookAt(_player.transform.position);
+    }
+    private void GettingVisibility(out Collider collider)
+    {
+        Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), _player.transform.position - transform.position);
+        Physics.Raycast(ray, out RaycastHit raycastHit, 4f);
+        collider = raycastHit.collider;
     }
 }

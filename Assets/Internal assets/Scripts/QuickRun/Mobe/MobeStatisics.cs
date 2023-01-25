@@ -21,7 +21,6 @@ public class MobeStatistics
     }
     public float Speed { get { return _speed; } }
 
-    public string isStateAnimation;
     public bool isAttack = false;
     public bool isDead { get { return _health <= 0; } }
     public bool isPlayerDetected = false;

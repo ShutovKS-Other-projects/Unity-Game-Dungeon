@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57a4b39f200eae4438ed730f5abfeeaf, type: 3}
-  m_Name: Bones
+  m_Script: {fileID: 11500000, guid: e49adb187d183fc4f82d190c1962da9e, type: 3}
+  m_Name: Healm
   m_EditorClassIdentifier: 
-  Id: 0
-  uiDisplay: {fileID: -538617689, guid: 91935d6116edc284fad1aaa8870758fb, type: 3}
-  type: 1
-  description: Bones
+  uiDisplay: {fileID: -735722624, guid: 91935d6116edc284fad1aaa8870758fb, type: 3}
+  stackable: 0
+  type: 2
+  description: 
+  data:
+    Name: 
+    Id: -1
+    buffs: []

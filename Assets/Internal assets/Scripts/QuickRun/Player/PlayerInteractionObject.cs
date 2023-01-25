@@ -33,8 +33,10 @@ public class PlayerInteractionObject : MonoBehaviour
                     if (item)
                     {
                         Item _item = new Item(item.item);
-                        inventory.AddItem(_item, 1);
-                        Destroy(collider.gameObject);
+                        if(inventory.AddItem(_item, 1))
+                        {
+                            Destroy(collider.gameObject);
+                        }
                     }
                 }
                 break;
