@@ -29,10 +29,10 @@ public class PlayerInteractionObject : MonoBehaviour
                 interactionText = "Нажмите F чтобы забрать предмет";
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    var item = collider.gameObject.GetComponent<GroundItem>();
-                    if (item)
+                    var groundItem = collider.gameObject.GetComponent<GroundItem>();
+                    if (groundItem)
                     {
-                        Item _item = new Item(item.item);
+                        Item _item = new Item(groundItem.item);
                         if(inventory.AddItem(_item, 1))
                         {
                             Destroy(collider.gameObject);

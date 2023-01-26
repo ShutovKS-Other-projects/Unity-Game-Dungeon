@@ -15,338 +15,290 @@ MonoBehaviour:
   savePath: /database.save
   database: {fileID: 11400000, guid: 68ca834d6dbb39241aeb9aae5452adfb, type: 2}
   Container:
-    Items:
+    Slots:
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1
         buffs: []
       amount: 0
     - AllowedItems: 
-      parent: {fileID: 0}
       item:
         Name: 
         Id: -1

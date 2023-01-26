@@ -16,7 +16,7 @@ public enum ItemType
     Ring,
     Sword
 }
-public enum Attribute
+public enum Attributes
 {
     Agility,
     Intelect,
@@ -68,7 +68,7 @@ public class Item
 }
 
 [System.Serializable]
-public class ItemBuff
+public class ItemBuff : IModifiers
 {
     public Attribute attribute;
     public int value;
@@ -80,6 +80,12 @@ public class ItemBuff
         max = _max;
         GenerateValue();
     }
+
+    public void AddValue(ref int baseValue)
+    {
+        baseValue += value;
+    }
+
     public void GenerateValue()
     {
         value = UnityEngine.Random.Range(min, max);

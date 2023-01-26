@@ -4,14 +4,14 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New ItemDatabase", menuName = "Inventory System/Items/Database")]
 public class ItemDatabaseObjects : ScriptableObject, ISerializationCallbackReceiver
 {
-    public ItemObject[] Items;
+    public ItemObject[] ItemObjects;
 
     [ContextMenu("Update ID's")]
     public void UpdateID()
     {
-        for (int i = 0; i < Items.Length; i++)
+        for (int i = 0; i < ItemObjects.Length; i++)
         {
-            Items[i].data.Id = i;
+            ItemObjects[i].data.Id = i;
         }
     }
 
