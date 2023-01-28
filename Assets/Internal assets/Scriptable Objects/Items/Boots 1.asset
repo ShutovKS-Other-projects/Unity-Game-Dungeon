@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e49adb187d183fc4f82d190c1962da9e, type: 3}
+  m_Name: Boots 1
+  m_EditorClassIdentifier: 
+  uiDisplay: {fileID: -1695796322, guid: 91935d6116edc284fad1aaa8870758fb, type: 3}
+  stackable: 0
+  type: 5
+  description: 
+  data:
+    Name: Boots
+    Id: 1
+    buffs:
+    - attribute:
+        type: 3
+        value:
+          baseValue: 0
+          modifiedValue: 0
+      value: 0
+      min: 6
+      max: 10

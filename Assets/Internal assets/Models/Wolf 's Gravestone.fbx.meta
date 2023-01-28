@@ -3,7 +3,17 @@ guid: bddfe19d7834765478b4380ea2d041ae
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WGS_Bottom
+    second: {fileID: 2100000, guid: e4aa689f166e3454186fc262b96246c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WGS_Top
+    second: {fileID: 2100000, guid: 7a4404e50a7fd1240ae7cc8764cb1022, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

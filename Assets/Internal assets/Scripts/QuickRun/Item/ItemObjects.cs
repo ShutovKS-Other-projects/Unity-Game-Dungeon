@@ -18,10 +18,10 @@ public enum ItemType
 }
 public enum Attributes
 {
-    Agility,
-    Intelect,
-    Stamina,
-    Strngth
+    HP,
+    MP,
+    Damage,
+    Protection
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory System/Items/Item")]
@@ -33,7 +33,7 @@ public class ItemObject : ScriptableObject
     [TextArea(15, 20)]
     public string description;
     public Item data = new Item();
-    
+
     public Item CreateItem()
     {
         Item newItem = new Item(this);
