@@ -41,7 +41,7 @@ public class PlayerInteractionObject : MonoBehaviour
                 }
                 break;
             case "Mobe":
-                if (gettingVisibility.GetComponent<MobeController>().statistics.isDead)
+                if (gettingVisibility.GetComponent<MobeStatistic>().isDead)
                 {
                     interactionText = "Нажмите F чтобы забрать душу врага";
                     if (Input.GetKeyDown(KeyCode.F))

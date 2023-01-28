@@ -1784,7 +1784,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Mobe:
+  - {fileID: 5838720905623373365, guid: 3307ea2123fc02142ae04b58d2523181, type: 3}
   - {fileID: 8557461336080835233, guid: cb0fbc0e451ca954daf6f3a755617b5f, type: 3}
+  - {fileID: 6036817092541115048, guid: fd4572ef589725a4ca2293997d4e1987, type: 3}
+  - {fileID: 877548979073834031, guid: 6d1eac14bbbbbc548a2b527f17ed212b, type: 3}
 --- !u!1 &1321146255
 GameObject:
   m_ObjectHideFlags: 0

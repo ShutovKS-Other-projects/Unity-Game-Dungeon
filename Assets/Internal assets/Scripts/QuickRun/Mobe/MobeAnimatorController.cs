@@ -3,28 +3,28 @@ using UnityEngine;
 public class MobeAnimatorController : MonoBehaviour
 {
     private Animator animator;
-    private MobeController controller;
+    private MobeStatistic statistic;
     private bool _animationDeadStart = false;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
-        controller = GetComponentInParent<MobeController>();
+        statistic = GetComponentInParent<MobeStatistic>();
     }
 
     private void Update()
     {
         if (_animationDeadStart) return;
 
-        animator.SetFloat("Speed", controller.statistics.Movement);
-        if (controller.statistics.isAttack)
+        animator.SetFloat("Speed", statistic.Movement);
+        if (statistic.isAttack)
         {
             animator.SetTrigger("Attack");
-            controller.statistics.isAttack = false;
-            controller.statistics.attackTimer = controller.statistics.attackCooldown;
+            statistic.isAttack = false;
+            statistic.AttackTimer = statistic.AttackCooldown;
         }
 
-        if (controller.statistics.isDead)
+        if (statistic.isDead)
         {
             animator.SetTrigger("Dead");
             _animationDeadStart = true;
