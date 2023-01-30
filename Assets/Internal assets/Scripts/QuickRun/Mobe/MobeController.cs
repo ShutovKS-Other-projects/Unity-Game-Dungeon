@@ -38,9 +38,9 @@ public class MobeController : MonoBehaviour
     {
         if (!statistic.isDead)
         {
-            if (other.gameObject.name == "mixamorig:RightHand" || other.gameObject.name == "mixamorig:LeftHand")
+            if (other.tag == "ObjectDamaging")
             {
-                statistic.Health = -1f;
+                statistic.Health = 0f;
                 if (statistic.isDead)
                 {
                     Dead();
@@ -81,13 +81,13 @@ public class MobeController : MonoBehaviour
 
         Vector3 Move()
         {
-            float distance = (float)Math.Round(Vector3.Distance(transform.position, _player.transform.position), 2);
-            if (distance > 0.65f)
+            float distance = Vector3.Distance(transform.position, _player.transform.position);
+            if (distance > 2f)
             {
                 statistic.Movement = 1f;
                 return new Vector3(0f, 0f, 1f);
             }
-            else if (distance < 0.4f)
+            else if (distance < 1f)
             {
                 statistic.Movement = -1f;
                 return new Vector3(0f, 0f, -0.75f);
@@ -109,7 +109,7 @@ public class MobeController : MonoBehaviour
     private void GettingVisibility(out Collider collider)
     {
         Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), _player.transform.position - transform.position);
-        Physics.Raycast(ray, out RaycastHit raycastHit, 4f);
+        Physics.Raycast(ray, out RaycastHit raycastHit, 10f);
         collider = raycastHit.collider;
     }
 }

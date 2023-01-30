@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Mobe
   - Item
+  - ObjectDamaging
   layers:
   - Default
   - TransparentFX

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Zombi
   m_EditorClassIdentifier: 
   _name: Zombi
-  _damageMin: 0
-  _damageMax: 0
-  _health: 0
-  _speed: 0
-  attackCooldown: 0
+  _damageMin: 1
+  _damageMax: 10
+  _health: 100
+  _speed: 10
+  _attackCooldown: 10

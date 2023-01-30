@@ -7,11 +7,7 @@ public class GroundItem : MonoBehaviour, ISerializationCallbackReceiver
 {
     public ItemObject item;
     
-    public void OnAfterDeserialize()
-    {
-        
-    }
-
+    public void OnAfterDeserialize() { }
     public void OnBeforeSerialize()
     {
 #if UNITY_EDITOR

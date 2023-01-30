@@ -2,7 +2,7 @@
 
 public class PlayerController : MonoBehaviour
 {
-    public PlayerStatistics statistics;
+    public PlayerStatistic statistic;
     private Rigidbody _rigidbody;
     private Transform _playerTransform;
     private Transform _cameraTransform;
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        statistics = new PlayerStatistics();
+        statistic = new PlayerStatistic();
         _playerTransform = transform;
         _cameraTransform = Camera.main.transform;
         _rigidbody = GetComponent<Rigidbody>();
@@ -43,63 +43,63 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "MobeWeapon")
         {
-            statistics.Health -= 10;
+            statistic.Health -= 10;
         }
     }
     private void Attack()
     {
-        if (Input.GetMouseButtonDown(0) && statistics.Stamina > 10)
+        if (Input.GetMouseButtonDown(0) && statistic.Stamina > 10)
         {
-            statistics.isAttack = true;
-            statistics.Stamina -= 10;
+            statistic.isAttack = true;
+            statistic.Stamina -= 10;
         }
     }
     private void Block()
     {
         if (Input.GetMouseButtonDown(1))
         {
-            statistics.isBlock = true;
+            statistic.isBlock = true;
         }
     }
     private void Jump()
     {
-        if (_jumpInput > 0 && statistics.Stamina > 10)
+        if (_jumpInput > 0 && statistic.Stamina > 10)
         {
-            _rigidbody.AddForce(Vector3.up * statistics.JumpForce);
-            statistics.Stamina -= 10;
+            _rigidbody.AddForce(Vector3.up * statistic.JumpForce);
+            statistic.Stamina -= 10;
         }
     }
     private void Movement()
     {
-        statistics.Movement = _verticalInput * Running();
-        _rigidbody.AddRelativeForce(new Vector3(_horizontalInput, 0f, _verticalInput) * statistics.Speed * _rigidbody.mass * Running());
+        statistic.Movement = _verticalInput * Running();
+        _rigidbody.AddRelativeForce(new Vector3(_horizontalInput, 0f, _verticalInput) * statistic.Speed * Running());
 
         float Running()
         {
-            switch (statistics.Stamina, statistics.isFatigue, Input.GetKey(KeyCode.LeftShift))
+            switch (statistic.Stamina, statistic.isFatigue, Input.GetKey(KeyCode.LeftShift))
             {
                 case ( > 0, false, true):
-                    statistics.Stamina -= 2.5f * Time.deltaTime;
-                    return statistics.Acceleration = 1.25f;
+                    statistic.Stamina -= 2.5f * Time.deltaTime;
+                    return statistic.Acceleration = 1.25f;
                 case ( < 100, false, false):
-                    if (statistics.Stamina == 0)
+                    if (statistic.Stamina == 0)
                     {
-                        statistics.isFatigue = true;
+                        statistic.isFatigue = true;
                     }
-                    statistics.Stamina += 5f * Time.deltaTime;
-                    return statistics.Acceleration = 1f;
+                    statistic.Stamina += 5f * Time.deltaTime;
+                    return statistic.Acceleration = 1f;
                 case ( > 0, true, false):
-                    statistics.Stamina += 2f * Time.deltaTime;
-                    if (statistics.Stamina > 15f)
+                    statistic.Stamina += 2f * Time.deltaTime;
+                    if (statistic.Stamina > 15f)
                     {
-                        statistics.isFatigue = false;
+                        statistic.isFatigue = false;
                     }
-                    return statistics.Acceleration = 0.9f;
+                    return statistic.Acceleration = 0.9f;
                 case (100, true || false, false || true):
-                    statistics.Stamina = 100;
-                    return statistics.Acceleration = 1f;
+                    statistic.Stamina = 100;
+                    return statistic.Acceleration = 1f;
                 default:
-                    return statistics.Acceleration = 1f;
+                    return statistic.Acceleration = 1f;
             }
         }
     }

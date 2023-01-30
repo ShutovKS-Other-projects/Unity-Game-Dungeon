@@ -1994,6 +1994,8 @@ GameObject:
   - component: {fileID: 3386240005231131032}
   - component: {fileID: 6834846702011539838}
   - component: {fileID: 1430179833225967688}
+  - component: {fileID: 6953951912902310583}
+  - component: {fileID: 5616429541718824683}
   m_Layer: 0
   m_Name: Zombi2
   m_TagString: Mobe
@@ -2010,7 +2012,7 @@ Transform:
   m_GameObject: {fileID: 6036817092541115048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5556882790809040626}
@@ -2030,7 +2032,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1355700480266e41800965330a693f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statistic: {fileID: 0}
 --- !u!114 &1430179833225967688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2043,8 +2044,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4481335effd8540accd688f4e54116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mobeStatisticObject: {fileID: 11400000, guid: 48b49fb16718c5d46a5b4097344e7ff3,
-    type: 2}
+  statisticObject: {fileID: 11400000, guid: 48b49fb16718c5d46a5b4097344e7ff3, type: 2}
+--- !u!136 &6953951912902310583
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036817092541115048}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.05, z: 0}
+--- !u!54 &5616429541718824683
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036817092541115048}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &6107106283854803938
 GameObject:
   m_ObjectHideFlags: 0

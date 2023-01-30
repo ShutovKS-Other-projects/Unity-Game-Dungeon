@@ -43,17 +43,15 @@ public class PlayerInteractionObject : MonoBehaviour
             case "Mobe":
                 if (gettingVisibility.GetComponent<MobeStatistic>().isDead)
                 {
-                    interactionText = "Нажмите F чтобы забрать душу врага";
+                    interactionText = "Нажмите F чтобы забрать кристал врага";
                     if (Input.GetKeyDown(KeyCode.F))
                     {
                         DropItem(gettingVisibility.transform.position);
                         Destroy(gettingVisibility.gameObject);
-                        gameObject.GetComponent<PlayerController>().statistics.KillCount++;
+                        gameObject.GetComponent<PlayerController>().statistic.CollectCrystal++;
                     }
                 }
                 break;
-
-
             case "Chest":
                 interactionText = "Нажмите F чтобы открыть сундук";
                 if (Input.GetKeyDown(KeyCode.F))
@@ -80,7 +78,6 @@ public class PlayerInteractionObject : MonoBehaviour
     {
         Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
         Physics.Raycast(ray, out RaycastHit hits, 5f);
-        Debug.DrawRay(ray.origin, ray.direction, Color.red, 5f);
         collider = hits.collider;
     }
 

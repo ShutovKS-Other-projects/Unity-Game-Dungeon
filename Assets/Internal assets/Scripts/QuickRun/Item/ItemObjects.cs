@@ -4,30 +4,18 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Default,
-    Food,
-    Healm,
-    Chest,
-    Pants,
-    Boots,
-    Back,
-    Bracers,
-    Gloves,
-    Ring,
-    Sword
+    Default, Food, Helmet, Chest, Pants, Boots, Back, Bracers, Gloves, Ring, Sword, Shield
 }
 public enum Attributes
-{
-    HP,
-    MP,
-    Damage,
-    Protection
+{ 
+    HP, MP, Damage, Protection
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory System/Items/Item")]
 public class ItemObject : ScriptableObject
 {
     public Sprite uiDisplay;
+    public GameObject characterDisplay;
     public bool stackable;
     public ItemType type;
     [TextArea(15, 20)]

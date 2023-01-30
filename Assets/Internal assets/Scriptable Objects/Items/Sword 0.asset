@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Sword 0
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: -1645009880, guid: 61a4c9c5bdaf3da4ba2e80758c2231a7, type: 3}
+  characterDisplay: {fileID: 1889927820228970275, guid: 8b46dda91c07b6e499ec4b74fd80a9ae,
+    type: 3}
   stackable: 0
   type: 10
   description: 

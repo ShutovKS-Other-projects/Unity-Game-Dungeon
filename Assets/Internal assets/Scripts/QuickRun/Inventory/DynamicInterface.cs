@@ -8,6 +8,7 @@ using UnityEngine.Events;
 
 public class DynamicInterface : UserInterface
 {
+    [SerializeField] private GameObject panelInvertory;
     [SerializeField] private int X_START = -105;
     [SerializeField] private int Y_START = 75;
     [SerializeField] private int X_SPACE_BETWEEN_ITEM = 30;
@@ -20,7 +21,7 @@ public class DynamicInterface : UserInterface
         slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
         for (int i = 0; i < inventory.GetSlots.Length; i++)
         {
-            var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
+            var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, panelInvertory.transform);
             obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
 
             AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });

@@ -1,26 +1,25 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIPlayerInfo : MonoBehaviour
 {
+    private PlayerStatistic _statistic;
     [SerializeField] private GameObject _classText;
 
-    [SerializeField] private GameObject _helmet;
-    [SerializeField] private GameObject _scapular;
-    [SerializeField] private GameObject _chestplate;
-    [SerializeField] private GameObject _leggings;
-    [SerializeField] private GameObject _boots;
-    [SerializeField] private GameObject _ring;
-    [SerializeField] private GameObject _amulet;
-    [SerializeField] private GameObject _belt;
-    [SerializeField] private GameObject _bracers;
-    [SerializeField] private GameObject _gloves;
-
-    [SerializeField] private GameObject _arm;
-
     [SerializeField] private GameObject _healthText;
-    [SerializeField] private GameObject _mannaText;
     [SerializeField] private GameObject _staminaText;
-    [SerializeField] private GameObject _armorText;
-    [SerializeField] private GameObject _attackText;
-    [SerializeField] private GameObject _killCountText;
+    [SerializeField] private GameObject _сollectCrystal;
+
+    private void Awake()
+    {
+        _statistic = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStatistic>();
+    }
+
+    private void Start()
+    {
+        _classText.GetComponent<Text>().text = $"{_statistic.Class.ToString()}";
+        _healthText.GetComponent<Text>().text = $"Здоровья: {_statistic.Health.ToString()}";
+        _staminaText.GetComponent<Text>().text = $"Выносливости: {_statistic.Stamina.ToString()}";
+        _сollectCrystal.GetComponent<Text>().text = $"Кристаллов: {_statistic.CollectCrystal.ToString()}";
+    }
 }

@@ -24,91 +24,95 @@ public class MazeConstruction : MonoBehaviour
         {
             for (int x = 0; x < maze.GetLength(1); x++)
             {
-                ConstructionFloor(x, y);
+                Vector3 position = new Vector3(x, 0, y) * 3;
+                ConstructionFloor(position);
                 switch (maze[y, x])
                 {
                     case ' ':
                         break;
                     case '-':
-                        ConstructionWallHorizontal(x, y);
+                        ConstructionWallHorizontal(position);
                         break;
                     case '|':
-                        ConstructionWallVertical(x, y);
+                        ConstructionWallVertical(position);
                         break;
                     case '+':
-                        ConstructionWall(x, y);
+                        ConstructionWall(position);
                         break;
                     case 'M':
-                        ConstructionMobe(x, y);
+                        ConstructionMobe(position);
                         break;
                     case 'S':
-                        ConstructionStart(x, y);
+                        ConstructionStart(position);
                         break;
                     case 'E':
-                        ConstructionEnd(x, y);
+                        ConstructionEnd(position);
                         break;
                     case 'C':
-                        ConstructionChest(x, y);
+                        ConstructionChest(position);
                         break;
                 }
             }
         }
     }
 
-    void ConstructionWall(float x, float y)
+    void ConstructionWall(Vector3 position)
     {
-        GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        sector.transform.position = new Vector3(x, 0.25f, y);
-        sector.transform.localScale = new Vector3(0.1f, 1.5f, 2f);
-        sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        sector.transform.position = new Vector3(x, 0.25f, y);
-        sector.transform.localScale = new Vector3(1f, 1.5f, 0.1f);
+        ConstructionWallHorizontal(position);
+        ConstructionWallVertical(position);
     }
-    void ConstructionWallHorizontal(float x, float y)
+    void ConstructionWallHorizontal(Vector3 position)
     {
         GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        sector.transform.position = new Vector3(x, 0.25f, y);
-        sector.transform.localScale = new Vector3(1f, 1.5f, 0.1f);
+        sector.transform.position = position;
+        sector.transform.localScale = new Vector3(3f, 8f, 0.2f);
     }
-    void ConstructionWallVertical(float x, float y)
+    void ConstructionWallVertical(Vector3 position)
     {
         GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        sector.transform.position = new Vector3(x, 0.25f, y);
-        sector.transform.localScale = new Vector3(0.1f, 1.5f, 2f);
+        sector.transform.position = position;
+        sector.transform.localScale = new Vector3(0.2f, 8f, 6f);
     }
-    void ConstructionFloor(float x, float y)
+    void ConstructionFloor(Vector3 position)
     {
         GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        sector.transform.position = new Vector3(x, -0.45f, y);
+        sector.transform.localScale = new Vector3(3f, 0.1f, 3f);
+        sector.transform.position = position;
+        sector.GetComponent<MeshRenderer>().material.color = Color.gray;
+
+        GameObject sector2 = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        sector2.transform.localScale = new Vector3(3f, 0.1f, 3f);
+        sector2.transform.position = position + new Vector3(0, 4f, 0);
+        sector2.GetComponent<MeshRenderer>().material.color = Color.gray;
     }
-    void ConstructionStart(float x, float y)
+    void ConstructionStart(Vector3 position)
     {
         GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        sector.transform.position = new Vector3(x, -0.45f, y);
+        sector.transform.position = position;
         sector.transform.localScale = new Vector3(0.335f, 0.1f, 0.335f);
         sector.GetComponent<MeshRenderer>().material.color = Color.green;
         sector.name = $"Start";
     }
-    void ConstructionEnd(float x, float y)
+    void ConstructionEnd(Vector3 position)
     {
         GameObject sector = GameObject.CreatePrimitive(PrimitiveType.Cube);
-        sector.transform.position = new Vector3(x, 0, y);
+        sector.transform.position = position + new Vector3(0, 0.1f, 0);
         sector.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
         sector.GetComponent<MeshRenderer>().material.color = Color.red;
         sector.name = $"End";
     }
-    void ConstructionMobe(float x, float y)
+    void ConstructionMobe(Vector3 position)
     {
         GameObject mobe = Instantiate(Mobe[random.Next(Mobe.Length)]);
-        mobe.transform.position = new Vector3(x, 0, y);
+        mobe.transform.position = position;
         mobe.tag = "Mobe";
     }
-    void ConstructionChest(float x, float y)
+    void ConstructionChest(Vector3 position)
     {
-
-    }
-    void Construction(float x, float y)
-    {
-
+        //GameObject chest = GameObject.CreatePrimitive(PrimitiveType.Cube);
+        //chest.transform.position = position;
+        //chest.transform.localScale = new Vector3(0.1f, 0.1f, 0.1f);
+        //chest.GetComponent<MeshRenderer>().material.color = Color.yellow;
+        //chest.name = $"Chest";
     }
 }

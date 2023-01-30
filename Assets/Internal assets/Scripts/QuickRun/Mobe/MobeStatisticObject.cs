@@ -21,7 +21,6 @@ public class MobeStatisticObject : ScriptableObject
     public float Health 
     { 
         get { return _health; } 
-        set { _health = value; }
     }
     public float Speed 
     { 

@@ -14,17 +14,32 @@ public class MobeStatisticUI : MonoBehaviour
         nameText = transform.Find("Name").gameObject;
         healthText = transform.Find("Health").gameObject;
 
-
         nameText.GetComponent<TextMesh>().text = $"{statistic.Name}";
     }
 
     private void FixedUpdate()
     {
-        transform.LookAt(Camera.main.transform.position);
-        healthText.GetComponent<TextMesh>().text = $"XP: {statistic.Health.ToString()}";
         if (statistic.isDead)
-        {
             Destroy(gameObject);
-        }
+
+        if (statistic.isPlayerDetected)
+            Display();
+        else
+            NoDisplay();
+    }
+
+    private void Display()
+    {
+        nameText.SetActive(true);
+        healthText.SetActive(true);
+        transform.LookAt(Camera.main.transform.position);
+        healthText.GetComponent<TextMesh>().text = $"XP: {statistic.Health}";
+        if(statistic.Health != statistic.statisticObject.Health)
+            healthText.GetComponent<TextMesh>().text = $"XP: {statistic.Health}/{statistic.statisticObject.Health}";
+    }
+    private void NoDisplay()
+    {
+        nameText.SetActive(false);
+        healthText.SetActive(false);
     }
 }

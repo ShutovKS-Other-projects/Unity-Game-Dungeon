@@ -6,7 +6,7 @@ public class UIGame : MonoBehaviour
     private PlayerInteractionObject playerInteractionObject;
     [SerializeField] private GameObject healthText;
     [SerializeField] private GameObject staminaText;
-    [SerializeField] private GameObject killCountText;
+    [SerializeField] private GameObject collectCrystalText;
     [SerializeField] private GameObject interactionLabel;
 
     void Start()
@@ -17,10 +17,9 @@ public class UIGame : MonoBehaviour
 
     public void UpdateGameStatistics()
     {
-        healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + playerController.statistics.Health;
-        staminaText.GetComponent<UnityEngine.UI.Text>().text = "Stamina: " + playerController.statistics.Stamina;
-        killCountText.GetComponent<UnityEngine.UI.Text>().text = "Kill count: " + playerController.statistics.KillCount;
+        healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + playerController.statistic.Health;
+        staminaText.GetComponent<UnityEngine.UI.Text>().text = "Stamina: " + playerController.statistic.Stamina;
+        collectCrystalText.GetComponent<UnityEngine.UI.Text>().text = "Crystal count: " + playerController.statistic.CollectCrystal;
         interactionLabel.GetComponent<UnityEngine.UI.Text>().text = playerInteractionObject.interactionText;
     }
-
 }

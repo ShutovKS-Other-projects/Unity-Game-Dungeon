@@ -11,4 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Internal assets/Scenes/QuickRun.unity
     guid: 5e3e600bc15858948abf3e59b13e4ba9
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 92835fb9fe50fc9428fc915e9a0b836a,
+      type: 2}
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: b2c74c7c7218c8e48b5a13f54749ff42, type: 2}

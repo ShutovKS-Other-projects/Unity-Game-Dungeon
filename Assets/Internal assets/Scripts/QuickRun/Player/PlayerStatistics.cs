@@ -1,4 +1,4 @@
-public class PlayerStatistics
+public class PlayerStatistic
 {
     string _class = "Никто";
     float _acceleration = 1f;
@@ -6,12 +6,12 @@ public class PlayerStatistics
     float _experience = 0f;
     float _health = 100f;
     float _jumpForce = 500f;
-    int _killCount = 0;
+    int _сollectCrystal = 0;
     float _movement = 0f;
-    float _speed = 10f;
+    float _speed = 6.2f;
     float _stamina = 100f;
 
-    public string Class 
+    public string Class
     {
         get { return _class; }
     }
@@ -38,10 +38,10 @@ public class PlayerStatistics
     {
         get { return _jumpForce; }
     }
-    public int KillCount
+    public int CollectCrystal
     {
-        get { return _killCount; }
-        set { _killCount = value; }
+        get { return _сollectCrystal; }
+        set { _сollectCrystal = value; }
     }
     public float Movement
     {
@@ -55,9 +55,23 @@ public class PlayerStatistics
     public float Stamina
     {
         get { return _stamina; }
-        set { _stamina = value; }
+        set
+        {
+            if (value > 100)
+            {
+                _stamina = 100;
+            }
+            else if (value < 0)
+            {
+                _stamina = 0;
+            }
+            else if (value >= 0 && value <= 100)
+            {
+                _stamina = value;
+            }
+        }
     }
-    
+
     public bool isAttack = false;
     public bool isBlock = false;
     public bool isDead = false;

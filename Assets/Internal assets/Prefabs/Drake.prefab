@@ -1642,6 +1642,7 @@ GameObject:
   - component: {fileID: 4758812427394904511}
   - component: {fileID: 1111982407605834300}
   - component: {fileID: 2129458219724303259}
+  - component: {fileID: 6897583303456791313}
   m_Layer: 0
   m_Name: Drake
   m_TagString: Mobe
@@ -1678,7 +1679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1355700480266e41800965330a693f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statistic: {fileID: 0}
 --- !u!114 &2129458219724303259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,8 +1691,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc4481335effd8540accd688f4e54116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mobeStatisticObject: {fileID: 11400000, guid: e74b08f56e97d6441afa60b9d675538f,
-    type: 2}
+  statisticObject: {fileID: 11400000, guid: e74b08f56e97d6441afa60b9d675538f, type: 2}
+--- !u!54 &6897583303456791313
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5838720905623373365}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!1 &5847874322770903797
 GameObject:
   m_ObjectHideFlags: 0

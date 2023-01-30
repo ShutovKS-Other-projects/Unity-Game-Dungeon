@@ -12,33 +12,33 @@ public class PlayerAnimacionController : MonoBehaviour
 
     void Update()
     {
-        animator.SetFloat("Speed", controller.statistics.Movement);
+        animator.SetFloat("Speed", controller.statistic.Movement);
         HandleTriggers();
     }
 
     private void HandleTriggers()
     {
-        if (controller.statistics.isAttack)
+        if (controller.statistic.isAttack)
         {
             animator.SetTrigger("Attack");
-            controller.statistics.isAttack = false;
+            controller.statistic.isAttack = false;
         }
 
-        if (controller.statistics.isBlock)
+        if (controller.statistic.isBlock)
         {
             
         }
 
-        if (controller.statistics.isJump)
+        if (controller.statistic.isJump)
         {
             animator.SetTrigger("Jump");
-            controller.statistics.isJump = false;
+            controller.statistic.isJump = false;
         }
 
-        if (controller.statistics.isDead)
+        if (controller.statistic.isDead)
         {
             animator.SetTrigger("Dead");
-            controller.statistics.isDead = false;
+            controller.statistic.isDead = false;
         }
     }
 }

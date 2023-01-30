@@ -3310,10 +3310,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1308553023383395105}
-  - component: {fileID: 1617833856701497745}
-  - component: {fileID: 7878138451641977837}
   - component: {fileID: 7993628428413699916}
   - component: {fileID: 4960753337921822475}
+  - component: {fileID: 1617833856701497745}
+  - component: {fileID: 7878138451641977837}
   m_Layer: 0
   m_Name: Vampire A Lusth
   m_TagString: Mobe
@@ -3330,7 +3330,7 @@ Transform:
   m_GameObject: {fileID: 8557461336080835233}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 6301183401226793733}
@@ -3338,6 +3338,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7993628428413699916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8557461336080835233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1355700480266e41800965330a693f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4960753337921822475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8557461336080835233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4481335effd8540accd688f4e54116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statisticObject: {fileID: 11400000, guid: 473d6be100305dc4ab7bab682acd2001, type: 2}
 --- !u!136 &1617833856701497745
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -3388,33 +3413,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &7993628428413699916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557461336080835233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1355700480266e41800965330a693f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statistic: {fileID: 0}
---- !u!114 &4960753337921822475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8557461336080835233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4481335effd8540accd688f4e54116, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mobeStatisticObject: {fileID: 11400000, guid: 473d6be100305dc4ab7bab682acd2001,
-    type: 2}
 --- !u!1 &8571548857645425686
 GameObject:
   m_ObjectHideFlags: 0
