@@ -172,7 +172,7 @@ namespace WakaTime
                 string branchname = process.StandardOutput.ReadLine();
                 return branchname;
             }
-            catch(Exception ex)
+            catch (Exception)
             {
                 //Todo, figure out if git exists on this machine.
                 //Also, figure out if this is even a git repo.

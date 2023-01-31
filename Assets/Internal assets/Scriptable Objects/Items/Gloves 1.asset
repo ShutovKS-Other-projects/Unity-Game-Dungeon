@@ -26,3 +26,4 @@ MonoBehaviour:
       min: 10
       max: 20
   boneNames: []
+  no3DModel: 1

@@ -18,8 +18,7 @@ public class ItemObject : ScriptableObject
     public GameObject characterDisplay;
     public bool stackable;
     public ItemType type;
-    [TextArea(15, 20)]
-    public string description;
+    [TextArea(15, 20)] public string description;
     public Item data = new Item();
     public List<string> boneNames = new List<string>();
 

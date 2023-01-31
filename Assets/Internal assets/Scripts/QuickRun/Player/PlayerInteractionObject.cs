@@ -7,7 +7,7 @@ public class PlayerInteractionObject : MonoBehaviour
 {
     private static System.Random random = new System.Random();
     [NonSerialized] public string interactionText;
-    [SerializeField] private GameObject sword;
+    [SerializeField] private GameObject[] items;
     public InventoryObject inventory;
     private Collider gettingVisibility;
 
@@ -83,6 +83,6 @@ public class PlayerInteractionObject : MonoBehaviour
 
     private void DropItem(Vector3 position)
     {
-        GameObject item = Instantiate(sword, position, Quaternion.identity);
+        GameObject item = Instantiate(GameObject.Find("ItemDatabase").GetComponent<ItemDatabase>().GetRandomItemPrefab(), position, Quaternion.identity);
     }
 }

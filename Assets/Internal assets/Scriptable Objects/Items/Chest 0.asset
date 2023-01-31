@@ -19,10 +19,11 @@ MonoBehaviour:
   description: 
   data:
     Name: Chest
-    Id: -1
+    Id: 2
     buffs:
     - attribute: 3
       value: 0
       min: 10
       max: 20
   boneNames: []
+  no3DModel: 1

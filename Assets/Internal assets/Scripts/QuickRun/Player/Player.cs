@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        boneCombiner = new BoneCombiner(gameObject);
+        //boneCombiner = new BoneCombiner(gameObject);
 
         for (int i = 0; i < attributes.Length; i++)
         {
@@ -36,8 +36,10 @@ public class Player : MonoBehaviour
 
     public void OnRemoveItem(InventorySlot _slot)
     {
+        Debug.Log("OnRemoveItemStart");
         if (_slot.ItemObject == null)
             return;
+        Debug.Log("OnRemoveItemSwitch");
         switch (_slot.parent.inventory.type)
         {
             case InterfaceType.Inventory:
@@ -71,6 +73,7 @@ public class Player : MonoBehaviour
                         //    Destroy(boots.gameObject);
                         //    break;
                         case ItemType.Weapon:
+                            Debug.Log("Destroying sword");
                             Destroy(sword.gameObject);
                             break;
                     }
@@ -86,26 +89,36 @@ public class Player : MonoBehaviour
 
     public void OnAddItem(InventorySlot _slot)
     {
+        Debug.Log("OnAddItemStart");
         if (_slot.ItemObject == null)
             return;
+        Debug.Log("OnAddItemSwitch");
+        Debug.Log(_slot.parent.inventory.type);
         switch (_slot.parent.inventory.type)
         {
             case InterfaceType.Inventory:
                 break;
             case InterfaceType.Equipment:
+                Debug.Log("Detected Equipment");
                 print($"Placed {_slot.ItemObject}  on {_slot.parent.inventory.type}, Allowed Items: {string.Join(", ", _slot.AllowedItems)}");
-
+                
                 for (int i = 0; i < _slot.item.buffs.Length; i++)
                 {
+                    Debug.Log("Adding buff");
                     for (int j = 0; j < attributes.Length; j++)
                     {
+                        Debug.Log("Adding attribute");
                         if (attributes[j].type == _slot.item.buffs[i].attribute)
+                        {
+                            Debug.Log("Adding modifier");
                             attributes[j].value.AddModifier(_slot.item.buffs[i]);
+                        }
                     }
                 }
 
                 if (_slot.ItemObject.characterDisplay != null)
                 {
+                    Debug.Log("Adding character display");
                     switch (_slot.AllowedItems[0])
                     {
                         //case ItemType.Helmet:
@@ -121,6 +134,7 @@ public class Player : MonoBehaviour
                         //    boots = boneCombiner.AddLimb(_slot.ItemObject.characterDisplay, _slot.ItemObject.boneNames);
                         //    break;
                         case ItemType.Weapon:
+                            Debug.Log("Adding sword");
                             sword = Instantiate(_slot.ItemObject.characterDisplay, weaponTransform).transform;
                             break;
                     }
@@ -135,7 +149,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.KeypadPlus))
         {
             inventory.Save();
             equipment.Save();
