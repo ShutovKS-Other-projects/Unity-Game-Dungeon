@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum ItemType
 {
-    Default, Food, Helmet, Chest, Pants, Boots, Back, Bracers, Gloves, Ring, Sword, Shield
+    Default, Food, Helmet, Chest, Pants, Boots, Back, Bracers, Gloves, Ring, Weapon, Shield
 }
 public enum Attributes
 { 
@@ -21,11 +21,30 @@ public class ItemObject : ScriptableObject
     [TextArea(15, 20)]
     public string description;
     public Item data = new Item();
+    public List<string> boneNames = new List<string>();
 
     public Item CreateItem()
     {
         Item newItem = new Item(this);
         return newItem;
+    }
+
+    private void OnValidate()
+    {
+        boneNames.Clear();
+        if (characterDisplay == null)
+            return;
+        if (!characterDisplay.GetComponent<SkinnedMeshRenderer>())
+            return;
+
+        var renderer = characterDisplay.GetComponent<SkinnedMeshRenderer>();
+        var bones = renderer.bones;
+
+        foreach (var t in bones)
+        {
+            boneNames.Add(t.name);
+        }
+
     }
 }
 
@@ -58,7 +77,7 @@ public class Item
 [System.Serializable]
 public class ItemBuff : IModifiers
 {
-    public Attribute attribute;
+    public Attributes attribute;
     public int value;
     public int min;
     public int max;

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Food 1
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: -1195481603, guid: 91935d6116edc284fad1aaa8870758fb, type: 3}
+  characterDisplay: {fileID: 0}
   stackable: 1
   type: 1
   description: 
@@ -20,11 +21,8 @@ MonoBehaviour:
     Name: Biscuit
     Id: -1
     buffs:
-    - attribute:
-        type: 0
-        value:
-          baseValue: 0
-          modifiedValue: 0
+    - attribute: 0
       value: 15
       min: 0
       max: 0
+  boneNames: []

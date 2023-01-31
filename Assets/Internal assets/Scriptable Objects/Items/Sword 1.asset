@@ -20,13 +20,10 @@ MonoBehaviour:
   description: 
   data:
     Name: Sword
-    Id: 15
+    Id: 1
     buffs:
-    - attribute:
-        type: 2
-        value:
-          baseValue: 0
-          modifiedValue: 0
+    - attribute: 2
       value: 0
-      min: 15
-      max: 25
+      min: 20
+      max: 50
+  boneNames: []

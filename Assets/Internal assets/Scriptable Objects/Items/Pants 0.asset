@@ -13,18 +13,16 @@ MonoBehaviour:
   m_Name: Pants 0
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: -1238684863, guid: 91935d6116edc284fad1aaa8870758fb, type: 3}
+  characterDisplay: {fileID: 0}
   stackable: 0
   type: 4
   description: 
   data:
     Name: Pants
-    Id: 12
+    Id: -1
     buffs:
-    - attribute:
-        type: 3
-        value:
-          baseValue: 0
-          modifiedValue: 0
+    - attribute: 3
       value: 0
-      min: 1
-      max: 5
+      min: 10
+      max: 20
+  boneNames: []

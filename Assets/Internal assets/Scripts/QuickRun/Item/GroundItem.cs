@@ -1,13 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
 public class GroundItem : MonoBehaviour, ISerializationCallbackReceiver
 {
     public ItemObject item;
-    
-    public void OnAfterDeserialize() { }
+
+    public void OnAfterDeserialize()
+    {
+    }
+
     public void OnBeforeSerialize()
     {
 #if UNITY_EDITOR

@@ -86,7 +86,7 @@ namespace TMPro.Examples
                 #region Handle Character Selection
                 int charIndex = TMP_TextUtilities.FindIntersectingCharacter(m_TextMeshPro, Input.mousePosition, m_Camera, true);
 
-                // Undo Swap and Vertex Attribute changes.
+                // Undo Swap and Vertex Attributes changes.
                 if (charIndex == -1 || charIndex != m_lastIndex)
                 {
                     RestoreCachedVertexAttributes(m_lastIndex);
@@ -421,7 +421,7 @@ namespace TMPro.Examples
                 }
 
                 // Example of how to modify vertex attributes like colors
-                #region Vertex Attribute Modification Example
+                #region Vertex Attributes Modification Example
                 UIVertex[] uiVertices = m_TextMeshPro.textInfo.meshInfo.uiVertices;
 
                 Color32 c = new Color32((byte)Random.Range(0, 255), (byte)Random.Range(0, 255), (byte)Random.Range(0, 255), 255);
