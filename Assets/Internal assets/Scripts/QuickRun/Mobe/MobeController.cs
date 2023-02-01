@@ -70,9 +70,11 @@ public class MobeController : MonoBehaviour
 
     private void Dead()
     {
-        _rigidbody.isKinematic = true;
-        gameObject.GetComponent<CapsuleCollider>().direction = 2;
-        gameObject.GetComponent<CapsuleCollider>().center = new Vector3(0.25f, 0.5f, 1f);
+        _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+        GetComponent<CapsuleCollider>().direction = 2;
+        GetComponent<CapsuleCollider>().center = new Vector3(0.25f, 0.35f, 1f);
+        GetComponent<CapsuleCollider>().height = 0.3f;
+        gameObject.layer = LayerMask.NameToLayer("Interactable");
     }
 
     private void Movement()

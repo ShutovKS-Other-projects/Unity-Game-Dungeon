@@ -1796,9 +1796,8 @@ GameObject:
   - component: {fileID: 1951765050103022249}
   - component: {fileID: 1058407882546948047}
   - component: {fileID: 3859839720391224270}
-  - component: {fileID: -7503289935313084511}
-  - component: {fileID: 2920576247253534879}
   - component: {fileID: 4102678338520836895}
+  - component: {fileID: -7503289935313084511}
   m_Layer: 0
   m_Name: Maynard
   m_TagString: Player
@@ -1873,37 +1872,6 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
---- !u!114 &-7503289935313084511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7269400773961662929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1390b38698497e4190453b832043014, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2920576247253534879
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7269400773961662929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc25eea5080631343bb576dd54da632b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  items:
-  - {fileID: 1889927820228970275, guid: 8b46dda91c07b6e499ec4b74fd80a9ae, type: 3}
-  - {fileID: 7344682265217637477, guid: 472f782259c12b84199e77d8aa4883fb, type: 3}
-  - {fileID: 5319688136100693980, guid: 1a8e0c5d6a2b192479df741e92bdff1c, type: 3}
-  - {fileID: 8120417097465526197, guid: 940abe3df67f0674184913cc70827b3a, type: 3}
-  - {fileID: 8857166863836745442, guid: f822d903dd22ae34ba0ad9d33171dca0, type: 3}
-  inventory: {fileID: 11400000, guid: d5462428c7132324385be6ac8cb8f0b8, type: 2}
 --- !u!114 &4102678338520836895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1920,6 +1888,18 @@ MonoBehaviour:
   equipment: {fileID: 11400000, guid: 6ddb9e707e07fd545af818c9de29df5f, type: 2}
   attributes: []
   weaponTransform: {fileID: 963256154510749206}
+--- !u!114 &-7503289935313084511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269400773961662929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1390b38698497e4190453b832043014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7286212524585823549
 GameObject:
   m_ObjectHideFlags: 0

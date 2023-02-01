@@ -5,7 +5,7 @@ public class PlayerStatistic
     float _attack = 5f;
     float _experience = 0f;
     float _health = 100f;
-    float _jumpForce = 500f;
+    float _jumpForce = 50f;
     int _сollectCrystal = 0;
     float _movement = 0f;
     float _speed = 6.2f;

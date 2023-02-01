@@ -28,20 +28,20 @@ public class MazeConstruction : MonoBehaviour
                 Vector3 position = new Vector3(x, 0, y) * 3;
 
                 ConstructionFoundations(position, mazeParent, new Vector3(3f, 0.1f, 3f));
-                ConstructionFoundations(position + new Vector3(0f, 4f, 0f), mazeParent, new Vector3(3f, 0.1f, 3f));
+                //ConstructionFoundations(position + new Vector3(0f, 4f, 0f), mazeParent, new Vector3(3f, 0.1f, 3f));
                 switch (maze[y, x])
                 {
                     case ' ':
                         break;
                     case '-':
-                        ConstructionFoundations(position, mazeParent, new Vector3(3f, 8f, 0.2f)); //перепроверить размеры
+                        //ConstructionFoundations(position, mazeParent, new Vector3(3f, 8f, 0.2f)); //перепроверить размеры
                         break;
                     case '|':
-                        ConstructionFoundations(position, mazeParent, new Vector3(0.2f, 8f, 6f)); //перепроверить размеры
+                        //ConstructionFoundations(position, mazeParent, new Vector3(0.2f, 8f, 6f)); //перепроверить размеры
                         break;
                     case '+':
-                        ConstructionFoundations(position, mazeParent, new Vector3(3f, 8f, 0.2f));
-                        ConstructionFoundations(position, mazeParent, new Vector3(0.2f, 8f, 6f));
+                        //ConstructionFoundations(position, mazeParent, new Vector3(3f, 8f, 0.2f));
+                        //ConstructionFoundations(position, mazeParent, new Vector3(0.2f, 8f, 6f));
                         break;
                     case 'M':
                         ConstructionMobe(position);
@@ -88,8 +88,8 @@ public class MazeConstruction : MonoBehaviour
         void ConstructionMobe(Vector3 position)
         {
             GameObject mobe = Instantiate(Mobe[random.Next(Mobe.Length)]);
+            mobe.AddComponent<InteractableDeadMobe>();
             mobe.transform.position = position;
-            mobe.tag = "Mobe";
         }
         void ConstructionChest(Vector3 position)
         {

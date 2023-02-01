@@ -1640,12 +1640,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4758812427394904511}
+  - component: {fileID: -2623092387763661539}
+  - component: {fileID: 6897583303456791313}
   - component: {fileID: 1111982407605834300}
   - component: {fileID: 2129458219724303259}
-  - component: {fileID: 6897583303456791313}
+  - component: {fileID: -4237116814877975748}
   m_Layer: 0
   m_Name: Drake
-  m_TagString: Mobe
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1667,31 +1669,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1111982407605834300
-MonoBehaviour:
+--- !u!136 &-2623092387763661539
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5838720905623373365}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1355700480266e41800965330a693f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2129458219724303259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5838720905623373365}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4481335effd8540accd688f4e54116, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statisticObject: {fileID: 11400000, guid: e74b08f56e97d6441afa60b9d675538f, type: 2}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.1
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.05, z: 0}
 --- !u!54 &6897583303456791313
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1719,6 +1719,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1111982407605834300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5838720905623373365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1355700480266e41800965330a693f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2129458219724303259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5838720905623373365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4481335effd8540accd688f4e54116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statisticObject: {fileID: 11400000, guid: e74b08f56e97d6441afa60b9d675538f, type: 2}
+--- !u!114 &-4237116814877975748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5838720905623373365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbbf1720c839cc4cb8913f640f99c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _holdDuration: 0
+  _holdInteract: 0
+  _multipleUse: 0
+  _isInteractable: 1
+  _tooltipText: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 F \u0447\u0442\u043E\u0431\u044B
+    \u0437\u0430\u0431\u0440\u0430\u0442\u044C \u043A\u0430\u043C\u0435\u043D\u044C
+    \u0434\u0443\u0448\u0438"
 --- !u!1 &5847874322770903797
 GameObject:
   m_ObjectHideFlags: 0

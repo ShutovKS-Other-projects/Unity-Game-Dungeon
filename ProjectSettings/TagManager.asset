@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Mobe
-  - Item
   - ObjectDamaging
   layers:
   - Default
@@ -16,7 +14,7 @@ TagManager:
   - UI
   - Hands
   - Ignoring
-  - 
+  - Interactable
   - 
   - 
   - 

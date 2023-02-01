@@ -1992,13 +1992,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3386240005231131032}
-  - component: {fileID: 6834846702011539838}
-  - component: {fileID: 1430179833225967688}
   - component: {fileID: 6953951912902310583}
   - component: {fileID: 5616429541718824683}
+  - component: {fileID: 6834846702011539838}
+  - component: {fileID: 1430179833225967688}
+  - component: {fileID: -955836145188957559}
   m_Layer: 0
   m_Name: Zombi2
-  m_TagString: Mobe
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2020,31 +2021,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6834846702011539838
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6036817092541115048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1355700480266e41800965330a693f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1430179833225967688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6036817092541115048}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc4481335effd8540accd688f4e54116, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statisticObject: {fileID: 11400000, guid: 48b49fb16718c5d46a5b4097344e7ff3, type: 2}
 --- !u!136 &6953951912902310583
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2095,6 +2071,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &6834846702011539838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036817092541115048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1355700480266e41800965330a693f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1430179833225967688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036817092541115048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc4481335effd8540accd688f4e54116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statisticObject: {fileID: 11400000, guid: 48b49fb16718c5d46a5b4097344e7ff3, type: 2}
+--- !u!114 &-955836145188957559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6036817092541115048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efbbf1720c839cc4cb8913f640f99c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _holdDuration: 0
+  _holdInteract: 0
+  _multipleUse: 0
+  _isInteractable: 1
+  _tooltipText: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 F \u0447\u0442\u043E\u0431\u044B
+    \u0437\u0430\u0431\u0440\u0430\u0442\u044C \u043A\u0430\u043C\u0435\u043D\u044C
+    \u0434\u0443\u0448\u0438"
 --- !u!1 &6107106283854803938
 GameObject:
   m_ObjectHideFlags: 0

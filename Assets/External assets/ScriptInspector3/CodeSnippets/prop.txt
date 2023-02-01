@@ -1,3 +1,0 @@
-$ValidAsTypeMember$
-$NotValidAsStatement$
-public $start$int$end$ MyProperty { get; set; }

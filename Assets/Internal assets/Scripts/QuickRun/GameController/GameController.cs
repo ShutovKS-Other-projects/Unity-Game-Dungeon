@@ -2,14 +2,11 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] GameObject SkyBoxNight;
-    [SerializeField] GameObject PlayerPrefab;
-    private GameObject _player;
+    [SerializeField] private GameObject _playerPrefab;
 
     private void Awake()
     {
-        Instantiate(SkyBoxNight);
-        _player = Instantiate(PlayerPrefab, new Vector3(1f, 0, 1f), Quaternion.identity);
+        GameObject player = Instantiate(_playerPrefab, new Vector3(1f, 0, 1f), Quaternion.identity);
     }
 
     private void Update()
