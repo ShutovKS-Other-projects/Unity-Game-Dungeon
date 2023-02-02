@@ -74,7 +74,8 @@ public class PlayerStatistic
 
     public bool isAttack = false;
     public bool isBlock = false;
-    public bool isDead = false;
     public bool isJump = false;
+    public bool isAction => isAttack || isBlock || isJump;
+    public bool isDead = false;
     public bool isFatigue = false;
 }

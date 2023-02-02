@@ -287,12 +287,12 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.05
+  near clip plane: 0.03
   far clip plane: 1000
   field of view: 45
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1797,6 +1797,7 @@ GameObject:
   - component: {fileID: 1058407882546948047}
   - component: {fileID: 3859839720391224270}
   - component: {fileID: 4102678338520836895}
+  - component: {fileID: 8840418714743137665}
   - component: {fileID: -7503289935313084511}
   m_Layer: 0
   m_Name: Maynard
@@ -1888,7 +1889,7 @@ MonoBehaviour:
   equipment: {fileID: 11400000, guid: 6ddb9e707e07fd545af818c9de29df5f, type: 2}
   attributes: []
   weaponTransform: {fileID: 963256154510749206}
---- !u!114 &-7503289935313084511
+--- !u!114 &8840418714743137665
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1896,6 +1897,18 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7269400773961662929}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77c43f4455ea1b240b64b6ba5daff9c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-7503289935313084511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269400773961662929}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1390b38698497e4190453b832043014, type: 3}
   m_Name: 

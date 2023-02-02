@@ -1,82 +1,52 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     public PlayerStatistic statistic;
+    private InputManager _inputManager;
     private Rigidbody _rigidbody;
     private Transform _playerTransform;
     private Transform _cameraTransform;
-    private float _horizontalInput;
-    private float _verticalInput;
-    private float _jumpInput;
-    private float _mouseX;
-    private float _mouseY;
-    private float _xRotation = 0f;
-    private float _yRotation = 0f;
-    private float _mouseSensitivity = 150f;
 
-    void Start()
+    private float _yRotation = 0f;
+    private float _xRotation = 0f;
+    private float _mouseSensitivity = 50;
+
+    private void Awake()
     {
-        statistic = new PlayerStatistic();
         _playerTransform = transform;
         _cameraTransform = Camera.main.transform;
         _rigidbody = GetComponent<Rigidbody>();
     }
-    private void Update()
+
+    private void Start()
     {
-        _horizontalInput = Input.GetAxis("Horizontal");
-        _verticalInput = Input.GetAxis("Vertical");
-        _jumpInput = Input.GetAxis("Jump");
-        _mouseX = Input.GetAxis("Mouse X");
-        _mouseY = Input.GetAxis("Mouse Y");
+        statistic = new PlayerStatistic();
+        _inputManager = InputManager.Instance;
+    }
+
+    private void Update()
+    {if (statistic.isDead) return;
+
+        Rotation();
+        Movement();
 
         Jump();
         Attack();
         Block();
     }
-    private void FixedUpdate()
-    {
-        Movement();
-        Rotation();
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "MobeWeapon")
-        {
-            statistic.Health -= 10;
-        }
-    }
-    private void Attack()
-    {
-        if (Input.GetMouseButtonDown(0) && statistic.Stamina > 10)
-        {
-            statistic.isAttack = true;
-            statistic.Stamina -= 10;
-        }
-    }
-    private void Block()
-    {
-        if (Input.GetMouseButtonDown(1))
-        {
-            statistic.isBlock = true;
-        }
-    }
-    private void Jump()
-    {
-        if (_jumpInput > 0 && statistic.Stamina > 10)
-        {
-            _rigidbody.AddForce(Vector3.up * statistic.JumpForce);
-            statistic.Stamina -= 10;
-        }
-    }
+
+
     private void Movement()
     {
-        statistic.Movement = _verticalInput * Running();
-        _rigidbody.AddRelativeForce(new Vector3(_horizontalInput, 0f, _verticalInput) * statistic.Speed * Running());
+        Vector2 movementInput = _inputManager.GetPlayerMovementInput();
+
+        statistic.Movement = movementInput.y * Running();
+        _rigidbody.AddRelativeForce(new Vector3(movementInput.x, 0, movementInput.y) * statistic.Speed * Running());
 
         float Running()
         {
-            switch (statistic.Stamina, statistic.isFatigue, Input.GetKey(KeyCode.LeftShift))
+            switch (statistic.Stamina, statistic.isFatigue, _inputManager.GetPlayerSprintInput())
             {
                 case ( > 0, false, true):
                     statistic.Stamina -= 2.5f * Time.deltaTime;
@@ -88,6 +58,9 @@ public class PlayerController : MonoBehaviour
                     }
                     statistic.Stamina += 5f * Time.deltaTime;
                     return statistic.Acceleration = 1f;
+                case (100, true || false, false || true):
+                    statistic.Stamina = 100;
+                    return statistic.Acceleration = 1f;
                 case ( > 0, true, false):
                     statistic.Stamina += 2f * Time.deltaTime;
                     if (statistic.Stamina > 15f)
@@ -95,9 +68,6 @@ public class PlayerController : MonoBehaviour
                         statistic.isFatigue = false;
                     }
                     return statistic.Acceleration = 0.9f;
-                case (100, true || false, false || true):
-                    statistic.Stamina = 100;
-                    return statistic.Acceleration = 1f;
                 default:
                     return statistic.Acceleration = 1f;
             }
@@ -105,8 +75,10 @@ public class PlayerController : MonoBehaviour
     }
     private void Rotation()
     {
-        _xRotation -= _mouseY * _mouseSensitivity * Time.deltaTime;
-        _yRotation += _mouseX * _mouseSensitivity * Time.deltaTime;
+        Vector2 lookInput = _inputManager.GetLookInput();
+
+        _yRotation += lookInput.x * _mouseSensitivity * Time.deltaTime;
+        _xRotation -= lookInput.y * _mouseSensitivity * Time.deltaTime;
 
         _xRotation = Mathf.Clamp(_xRotation, -70, 70f);
 
@@ -114,4 +86,26 @@ public class PlayerController : MonoBehaviour
         _playerTransform.localRotation = Quaternion.Euler(0f, _yRotation, 0f);
         _rigidbody.MoveRotation(Quaternion.Euler(0f, _yRotation, 0f));
     }
+    private void Jump()
+    {
+        if (_inputManager.GetPlayerJumpInput() && !statistic.isJump && statistic.Stamina > 10)
+        {
+            _rigidbody.AddForce(Vector3.up * statistic.JumpForce);
+        }
+    }
+    private void Attack()
+    {
+        if (_inputManager.GetPlayerAttackInput() && !statistic.isAttack && statistic.Stamina > 10)
+        {
+            statistic.isAttack = true;
+        }
+    }
+    private void Block()
+    {
+        if (_inputManager.GetPlayerBlockInput() && !statistic.isBlock)
+        {
+            statistic.isBlock = true;
+        }
+    }
+
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class UIController : MonoBehaviour
 {
+    private InputManager inputManager;
     [SerializeField] private GameObject uiPanelGame;
     [SerializeField] private GameObject uiMenu;
     private UIGame uiGame;
@@ -13,11 +14,12 @@ public class UIController : MonoBehaviour
     {
         uiGame = GetComponent<UIGame>();
         uiPlayerInfo = GetComponent<UIPlayerInfo>();
+        inputManager = InputManager.Instance;
     }
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.I))
+        if (inputManager.GetPlayerMenuInput())
         {
             isGameOpen = !isGameOpen;
             isPlayerInfo = !isPlayerInfo;
