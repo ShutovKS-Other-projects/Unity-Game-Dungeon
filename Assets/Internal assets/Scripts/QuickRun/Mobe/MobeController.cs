@@ -83,22 +83,23 @@ public class MobeController : MonoBehaviour
 
         Vector3 Move()
         {
-            float distance = Vector3.Distance(transform.position, _player.transform.position);
-            if (distance > 2f)
+            float distance = (float)Math.Round(Vector3.Distance(transform.position, _player.transform.position), 1);
+
+            switch (distance)
             {
-                statistic.Movement = 1f;
-                return new Vector3(0f, 0f, 1f);
-            }
-            else if (distance < 1f)
-            {
-                statistic.Movement = -1f;
-                return new Vector3(0f, 0f, -0.75f);
-            }
-            else
-            {
-                statistic.Movement = 0f;
-                Attack();
-                return new Vector3(0f, 0f, 0f);
+                case > 2.5f:
+                    statistic.Movement = 1f;
+                    return new Vector3(0f, 0f, 1f);
+                case > 1.55f:
+                    statistic.Movement = 1f;
+                    return new Vector3(0f, 0f, 0.75f);
+                case < 0.85f:
+                    statistic.Movement = -1f;
+                    return new Vector3(0f, 0f, 1f);
+                default:
+                    Attack();
+                    statistic.Movement = 0f;
+                    return new Vector3(0f, 0f, 0f);
             }
         }
     }
@@ -111,7 +112,7 @@ public class MobeController : MonoBehaviour
     private void GettingVisibility(out Collider collider)
     {
         Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), _player.transform.position - transform.position);
-        Physics.Raycast(ray, out RaycastHit raycastHit, 10f);
+        Physics.Raycast(ray, out RaycastHit raycastHit, 7.5f);
         collider = raycastHit.collider;
     }
 }

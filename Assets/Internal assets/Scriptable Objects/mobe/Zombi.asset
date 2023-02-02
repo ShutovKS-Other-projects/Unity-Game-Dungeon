@@ -16,5 +16,5 @@ MonoBehaviour:
   _damageMin: 1
   _damageMax: 10
   _health: 100
-  _speed: 10
+  _speed: 5.75
   _attackCooldown: 10

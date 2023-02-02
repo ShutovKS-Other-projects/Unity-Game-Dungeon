@@ -3,41 +3,41 @@ using UnityEngine;
 public class PlayerAnimacionController : MonoBehaviour
 {
     private Animator animator;
-    private PlayerStatistic statistic;
+    private PlayerController controller;
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
-        statistic = GameObject.FindWithTag("Player").GetComponent<PlayerController>().statistic;
+        controller = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
 
     void Update()
     {
-        animator.SetFloat("Speed", statistic.Movement);
+        animator.SetFloat("Speed", controller.statistic.DirectionMovement * controller.statistic.Acceleration);
         HandleTriggers();
     }
 
     private void HandleTriggers()
     {
-        if (statistic.isAttack)
+        if (controller.statistic.isAttack)
         {
             animator.SetTrigger("Attack");
-            statistic.isAttack = false;
-            statistic.Stamina -= 10;
+            controller.statistic.isAttack = false;
+            controller.statistic.Stamina -= 10;
         }
 
-        if (statistic.isBlock)
+        if (controller.statistic.isBlock)
         {
             
         }
 
-        if (statistic.isJump)
+        if (controller.statistic.isJump)
         {
             animator.SetTrigger("Jump");
-            statistic.isJump = false;
-            statistic.Stamina -= 10;
+            controller.statistic.isJump = false;
+            controller.statistic.Stamina -= 10;
         }
 
-        if (statistic.isDead)
+        if (controller.statistic.isDead)
         {
             animator.SetTrigger("Dead");
         }

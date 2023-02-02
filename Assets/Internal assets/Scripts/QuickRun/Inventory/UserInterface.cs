@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.Events;
-using System;
 
 public abstract class UserInterface : MonoBehaviour
 {
@@ -13,12 +12,12 @@ public abstract class UserInterface : MonoBehaviour
 
     private void Start()
     {
-        CreateSlots();
         for (int i = 0; i < inventory.GetSlots.Length; i++)
         {
             inventory.GetSlots[i].parent = this;
             inventory.GetSlots[i].OnAfterUpdate += OnSlotUpdate;
         }
+        CreateSlots();
         AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
         AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });
     }
@@ -26,19 +25,19 @@ public abstract class UserInterface : MonoBehaviour
     private void OnSlotUpdate(InventorySlot _slot)
     {
         if (_slot.item.Id >= 0)
-            {
-                _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = _slot.ItemObject.uiDisplay;
-                _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
-                _slot.slotDisplay.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 0);
-                _slot.slotDisplay.transform.GetChild(2).GetComponent<Text>().text = _slot.amount == 1 ? "" : _slot.amount.ToString("n0");
-            }
-            else
-            {
-                _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = null;
-                _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
-                _slot.slotDisplay.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 1);
-                _slot.slotDisplay.transform.GetChild(2).GetComponent<Text>().text = "";
-            }
+        {
+            _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = _slot.ItemObject.uiDisplay;
+            _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            _slot.slotDisplay.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 0);
+            _slot.slotDisplay.transform.GetChild(2).GetComponent<Text>().text = _slot.amount == 1 ? "" : _slot.amount.ToString("n0");
+        }
+        else
+        {
+            _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = null;
+            _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
+            _slot.slotDisplay.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+            _slot.slotDisplay.transform.GetChild(2).GetComponent<Text>().text = "";
+        }
     }
 
     //private void Update()

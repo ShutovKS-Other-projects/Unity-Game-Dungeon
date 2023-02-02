@@ -1,5 +1,10 @@
+using UnityEngine;
+
 public class PlayerStatistic
 {
+    public static PlayerStatistic Instance { get; private set; }
+
+
     string _class = "Никто";
     float _acceleration = 1f;
     float _attack = 5f;
@@ -7,8 +12,8 @@ public class PlayerStatistic
     float _health = 100f;
     float _jumpForce = 50f;
     int _сollectCrystal = 0;
-    float _movement = 0f;
-    float _speed = 6.2f;
+    float _directionMovement = 0f;
+    float _speed = 5.75f;
     float _stamina = 100f;
 
     public string Class
@@ -43,10 +48,10 @@ public class PlayerStatistic
         get { return _сollectCrystal; }
         set { _сollectCrystal = value; }
     }
-    public float Movement
+    public float DirectionMovement
     {
-        get { return _movement; }
-        set { _movement = value; }
+        get { return _directionMovement; }
+        set { _directionMovement = value; }
     }
     public float Speed
     {
@@ -57,18 +62,7 @@ public class PlayerStatistic
         get { return _stamina; }
         set
         {
-            if (value > 100)
-            {
-                _stamina = 100;
-            }
-            else if (value < 0)
-            {
-                _stamina = 0;
-            }
-            else if (value >= 0 && value <= 100)
-            {
-                _stamina = value;
-            }
+            _stamina = Mathf.Clamp(value, 0, 100);
         }
     }
 

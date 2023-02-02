@@ -13,6 +13,11 @@ public class UIGame : MonoBehaviour
         playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
     }
 
+    void Update()
+    {
+        UpdateGameStatistics();
+    }
+
     public void UpdateGameStatistics()
     {
         healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + playerController.statistic.Health;

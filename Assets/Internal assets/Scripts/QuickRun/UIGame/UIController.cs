@@ -4,17 +4,20 @@ public class UIController : MonoBehaviour
 {
     private InputManager inputManager;
     [SerializeField] private GameObject uiPanelGame;
-    [SerializeField] private GameObject uiMenu;
+    [SerializeField] private GameObject uiPanelMenu;
     private UIGame uiGame;
-    private UIPlayerInfo uiPlayerInfo;
+    private UIPlayerInfo uiMenu;
     private bool isGameOpen = true;
-    private bool isPlayerInfo = false;
-    
+
     void Start()
     {
         uiGame = GetComponent<UIGame>();
-        uiPlayerInfo = GetComponent<UIPlayerInfo>();
+        uiMenu = GetComponent<UIPlayerInfo>();
         inputManager = InputManager.Instance;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        uiPanelGame.SetActive(true);
+        uiPanelMenu.SetActive(false);
     }
 
     void Update()
@@ -22,22 +25,29 @@ public class UIController : MonoBehaviour
         if (inputManager.GetPlayerMenuInput())
         {
             isGameOpen = !isGameOpen;
-            isPlayerInfo = !isPlayerInfo;
+
+            if (isGameOpen)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                uiPanelGame.SetActive(true);
+                uiPanelMenu.SetActive(false);
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+                uiPanelGame.SetActive(false);
+                uiPanelMenu.SetActive(true);
+            }
+
         }
 
         if (isGameOpen)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-
-            uiPanelGame.SetActive(true);
-            uiMenu.SetActive(false);
             uiGame.UpdateGameStatistics();
         }
-        if (isPlayerInfo)
+        else
         {
-            Cursor.lockState = CursorLockMode.None;
-            uiPanelGame.SetActive(false);
-            uiMenu.SetActive(true);
+            uiMenu.UpdatePlayerInfo();
         }
     }
 }
