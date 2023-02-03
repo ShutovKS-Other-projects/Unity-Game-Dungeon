@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class InputManager : MonoBehaviour
@@ -44,5 +42,5 @@ public class InputManager : MonoBehaviour
     public bool GetPlayerInteractInput() => _inputSystemGame.Player.Interact.triggered;
     public bool GetPlayerMenuInput() => _inputSystemGame.Player.Menu.triggered;
     public bool GetPlayerJumpInput() => _inputSystemGame.Player.Jump.triggered;
-    public bool GetPlayerSprintInput() => _inputSystemGame.Player.Sprint.triggered;
+    public bool GetPlayerSprintInput() => _inputSystemGame.Player.Sprint.inProgress;
 }

@@ -4,13 +4,12 @@ public class PlayerStatistic
 {
     public static PlayerStatistic Instance { get; private set; }
 
-
     string _class = "Никто";
     float _acceleration = 1f;
     float _attack = 5f;
     float _experience = 0f;
     float _health = 100f;
-    float _jumpForce = 50f;
+    float _jumpForce = 200;
     int _сollectCrystal = 0;
     float _directionMovement = 0f;
     float _speed = 5.75f;
@@ -60,10 +59,7 @@ public class PlayerStatistic
     public float Stamina
     {
         get { return _stamina; }
-        set
-        {
-            _stamina = Mathf.Clamp(value, 0, 100);
-        }
+        set { _stamina = Mathf.Clamp(value, 0, 100); }
     }
 
     public bool isAttack = false;

@@ -27,7 +27,7 @@ public class PlayerAnimacionController : MonoBehaviour
 
         if (controller.statistic.isBlock)
         {
-            
+        
         }
 
         if (controller.statistic.isJump)

@@ -20,12 +20,18 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         if (statistic.isDead) return;
-        Rotat();
-        Movement();
         Jump();
         Attack();
         Block();
     }
+
+    private void FixedUpdate()
+    {
+        if (statistic.isDead) return;
+        Movement();
+        Rotat();
+    }
+
 
 
     private void Movement()
@@ -42,16 +48,16 @@ public class PlayerController : MonoBehaviour
                 if (_inputManager.GetPlayerSprintInput() && _inputManager.GetPlayerMovementInput().y > 0)
                 {
                     statistic.Stamina -= 3f * Time.deltaTime;
+                    statistic.Acceleration = 1.25f;
                     if (statistic.Stamina <= 0)
                     {
                         statistic.isFatigue = true;
                     }
-                    return statistic.Acceleration = 1.25f;
                 }
                 else
                 {
                     statistic.Stamina += 5f * Time.deltaTime;
-                    return statistic.Acceleration = 1f;
+                    statistic.Acceleration = 1f;
                 }
             }
             else
@@ -61,8 +67,9 @@ public class PlayerController : MonoBehaviour
                 {
                     statistic.isFatigue = false;
                 }
-                return statistic.Acceleration = 0.9f;
+                statistic.Acceleration = 0.9f;
             }
+            return statistic.Acceleration;
         }
     }
     private void Rotat()
@@ -77,6 +84,7 @@ public class PlayerController : MonoBehaviour
         if (_inputManager.GetPlayerJumpInput() && !statistic.isJump && statistic.Stamina > 10)
         {
             _rigidbody.AddForce(Vector3.up * statistic.JumpForce);
+            statistic.isJump = true;
         }
     }
     private void Attack()

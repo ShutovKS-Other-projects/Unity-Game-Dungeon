@@ -14,7 +14,8 @@
 </head>
 
 <body>
-    <h1>My project is a dungeon game/Мой Проект игра Подземелье. Unity</h1>
+    <h1>Game: Dungeon (Unity)</h1>
+
     <h4>Eng</h4>
     <h3>Description</h3>
     <div>
@@ -34,23 +35,26 @@
             <li>Rewrite part of the scripts</li>
         </ul>
     </div>
-    <h3>Version 2.6.1</h3>
+    <h3>Version 2.6.2</h3>
     <div>
         <ul>
-            <li>Added Cinemachinee</li>
-            <li>Fixed a bug when opening the inventory that it does not load the contents</li>
-            <li>A bug with the player's stamina has been detected</li>
+            <li>Fixed the error of running and unused endurance. The error was in the wrong setting of the button, used
+                triggered, replaced with inProgress.</li>
+            <li>Fixed the player's jump.
+                <ul>
+                    <li>Fixed an error that the jump method did not pass the jump state to true.</li>
+                    <li>Regulated the applied force to the player's body when jumping.</li>
+                    <li>Cut the jump animation.</li>
+                </ul>
+            </li>
         </ul>
     </div>
-    <h3>Working time on the project</h3>
-    <a href="https://wakatime.com/badge/github/ShutovKS/LabirintVR"><img
-            src="https://wakatime.com/badge/github/ShutovKS/LabirintVR.svg" alt="wakatime"></a>
 
     <h4>Русский</h4>
     <h3>Описание</h3>
     <div>
         <p>Сейчас игрок может перемещаться по подземелью и сражаться с монстрами. Взаимодействовать с объектами. Игрок
-            может подбирать предметы и перемещать их по инвентарю, экипировать, брать оружие в руки. Есть сохранение и 
+            может подбирать предметы и перемещать их по инвентарю, экипировать, брать оружие в руки. Есть сохранение и
             загрузка инвентаря. Подземелье генерируется случайным образом, можно задавать разные размеры.</p>
         <p>Проект использует новую систему ввода Unity и Cinemachinee. Scriptable Object для характеристик предметов и
             мобов.</p>
@@ -65,15 +69,23 @@
             <li>Переписать часть скриптов</li>
         </ul>
     </div>
-    <h3>Версия 2.6.1</h3>
+    <h3>Версия 2.6.2</h3>
     <div>
         <ul>
-            <li>Добавлен Cinemachinee</li>
-            <li>Исправлена ошибка при открытии инвентаря, что он не загружает содержимое</li>
-            <li>Обнаружена ошибка со стаминой игрока</li>
+            <li>Исправлена ошибка бега и неиспользуемой выносливости. Ошибка заключалась в неправильной настройки
+                кнопки, использовался triggered, заменено на inProgress.</li>
+            <li>Исправлен прыжок игрока.
+                <ul>
+                    <li>Исправлена ошибка, что метод прыжка не передавал параметру состояния прыжка true.</li>
+                    <li>Отрегулирована прикладываемая сила к телу игрока при прыжке.</li>
+                    <li>Обрезана анимация прыжка.</li>
+                </ul>
+            </li>
         </ul>
     </div>
-    <h3>Время работы над проектом</h3>
-    <a href="https://wakatime.com/badge/github/ShutovKS/LabirintVR"><img
-            src="https://wakatime.com/badge/github/ShutovKS/LabirintVR.svg" alt="wakatime"></a>
+    <h2>Working time on the project/Время работы над проектом</h3>
+    <div>
+        <a href="https://wakatime.com/badge/github/ShutovKS/LabirintVR"><img
+                src="https://wakatime.com/badge/github/ShutovKS/LabirintVR.svg" alt="wakatime"></a>
+    </div>
 </body>

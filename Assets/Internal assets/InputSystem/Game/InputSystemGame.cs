@@ -104,7 +104,7 @@ public partial class @InputSystemGame : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d68c715c-b903-40df-b3ce-dcfeb58ed7c2"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
