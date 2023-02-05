@@ -12,7 +12,7 @@ public class PlayerAnimacionController : MonoBehaviour
 
     void Update()
     {
-        animator.SetFloat("Speed", controller.statistic.DirectionMovement * controller.statistic.Acceleration);
+        animator.SetFloat("Speed", controller.statistic.Movement);
         HandleTriggers();
     }
 

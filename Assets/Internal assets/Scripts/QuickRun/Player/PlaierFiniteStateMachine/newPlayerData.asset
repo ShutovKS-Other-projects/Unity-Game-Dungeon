@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6ffeed3baa110945b017e86d4b8d573, type: 3}
+  m_Name: newPlayerData
+  m_EditorClassIdentifier: 
+  movementVelocity: 6
+  jumpVelocity: 10
+  jumpVelocityHold: 2
+  acceleration: 1.25
+  stamina: 100
+  isFatigue: 0

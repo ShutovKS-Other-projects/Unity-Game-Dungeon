@@ -5,16 +5,12 @@ public class PlayerController : MonoBehaviour
     public PlayerStatistic statistic;
     private InputManager _inputManager;
     private Rigidbody _rigidbody;
-    private Transform _playerTransform;
-    private Transform _cameraTransform;
 
     private void Start()
     {
         statistic = new PlayerStatistic();
         _rigidbody = GetComponent<Rigidbody>();
         _inputManager = InputManager.Instance;
-        _cameraTransform = Camera.main.transform;
-        _playerTransform = transform;
     }
 
     private void Update()
@@ -39,7 +35,7 @@ public class PlayerController : MonoBehaviour
         Vector2 movementInput = _inputManager.GetPlayerMovementInput();
         Vector3 move = new Vector3(movementInput.x, 0, movementInput.y);
 
-        statistic.DirectionMovement = movementInput.y;
+        statistic.Movement = movementInput.y;
         _rigidbody.AddRelativeForce(move * statistic.Speed * Running());
         float Running()
         {
@@ -77,7 +73,8 @@ public class PlayerController : MonoBehaviour
         //_playerTransform.localRotation = Quaternion.Euler(0f, _cameraTransform.rotation.y * 180, 0f);
         //_rigidbody.MoveRotation(Quaternion.Euler(0f, _cameraTransform.rotation.y * 180, 0f));
 
-        _playerTransform.rotation = new Quaternion(0f, _cameraTransform.rotation.y, 0f, _cameraTransform.rotation.w);
+        //_playerTransform.rotation = new Quaternion(0f, _cameraTransform.rotation.y, 0f, _cameraTransform.rotation.w);
+        transform.rotation = new Quaternion(0f, Camera.main.transform.rotation.y, 0f, Camera.main.transform.rotation.w);
     }
     private void Jump()
     {

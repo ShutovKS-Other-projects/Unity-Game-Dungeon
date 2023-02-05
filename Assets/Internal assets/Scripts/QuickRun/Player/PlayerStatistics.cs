@@ -11,7 +11,7 @@ public class PlayerStatistic
     float _health = 100f;
     float _jumpForce = 200;
     int _сollectCrystal = 0;
-    float _directionMovement = 0f;
+    float movement = 0f;
     float _speed = 5.75f;
     float _stamina = 100f;
 
@@ -47,10 +47,10 @@ public class PlayerStatistic
         get { return _сollectCrystal; }
         set { _сollectCrystal = value; }
     }
-    public float DirectionMovement
+    public float Movement
     {
-        get { return _directionMovement; }
-        set { _directionMovement = value; }
+        get { return movement; }
+        set { movement = value; }
     }
     public float Speed
     {
