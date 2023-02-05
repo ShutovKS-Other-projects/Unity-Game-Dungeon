@@ -16,25 +16,35 @@ public class PlayerMoveState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
+
+        player.SetColliderHeight(playerData.standColliderHeight, playerData.standColliderCenter);
     }
 
     public override void Exit()
     {
-        base.Exit(); 
+        base.Exit();
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (movementInput.y == 0)
+
+        if (!isExitingState)
         {
-            stateMachine.ChangeState(player.IdleState);
-        }    
+            if (movementInput == Vector2.zero)
+            {
+                stateMachine.ChangeState(player.IdleState);
+            }
+            else if (crouchInput)
+            {
+                stateMachine.ChangeState(player.CrouchMoveState);
+            }
+        }
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        player.Movement(movementInput);
+        player.Movement(movementInput, playerData.movementSpeed);
     }
 }

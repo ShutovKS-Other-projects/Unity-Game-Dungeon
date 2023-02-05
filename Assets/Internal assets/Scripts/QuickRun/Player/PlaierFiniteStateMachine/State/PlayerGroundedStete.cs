@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlayerGroundedState : PlayerState
 {
     protected Vector2 movementInput;
-    private bool JumpInput;
+    protected bool crouchInput;
+    protected bool isCelling;
+
+    private bool jumpInput;
     private bool isGrounded;
+    
 
     public PlayerGroundedState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -34,9 +38,10 @@ public class PlayerGroundedState : PlayerState
         base.LogicUpdate();
 
         movementInput = player.InputManager.GetPlayerMovementInput();
-        JumpInput = player.InputManager.GetPlayerJumpInput();
+        crouchInput = player.InputManager.GetPlayerCrouchInput();
+        jumpInput = player.InputManager.GetPlayerJumpInput();
 
-        if (JumpInput)
+        if (jumpInput)
         {
             stateMachine.ChangeState(player.JumpState);
         }
@@ -49,13 +54,6 @@ public class PlayerGroundedState : PlayerState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        Rotation();
+        player.Rotation();
     }
-
-    #region Rotation
-    public virtual void Rotation()
-    {
-        playerTransform.rotation = new Quaternion(0f, Camera.main.transform.rotation.y, 0f, Camera.main.transform.rotation.w);
-    }
-    #endregion
 }

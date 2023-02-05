@@ -38,10 +38,6 @@ public class PlayerInAirState : PlayerState
         {
             stateMachine.ChangeState(player.LandState);
         }
-        else 
-        {
-            player.Movement(movementInput);
-        }
     }
 
     public override void PhysicsUpdate()

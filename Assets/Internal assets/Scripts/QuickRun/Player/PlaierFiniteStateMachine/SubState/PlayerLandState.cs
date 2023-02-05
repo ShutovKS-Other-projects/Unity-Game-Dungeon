@@ -12,6 +12,8 @@ public class PlayerLandState : PlayerGroundedState
     {
         base.LogicUpdate();
 
+        player.Movement(movementInput, playerData.movementSpeed);
+
         if (movementInput != Vector2.zero)
         {
             stateMachine.ChangeState(player.MoveState);

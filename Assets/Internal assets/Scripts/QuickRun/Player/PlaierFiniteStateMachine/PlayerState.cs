@@ -9,7 +9,10 @@ public class PlayerState : MonoBehaviour
     protected PlayerData playerData;
 
     protected bool isAnimationFinished;
+    protected bool isExitingState;
+
     protected float startTime;
+    
     private string animBoolName;
 
     protected Transform playerTransform => player.transform;
@@ -28,10 +31,15 @@ public class PlayerState : MonoBehaviour
         player.Animator.SetBool(animBoolName, true);
         startTime = Time.time;
         isAnimationFinished = false;
+        isExitingState = false;
     }
 
-    public virtual void Exit() => player.Animator.SetBool(animBoolName, false);
-    
+    public virtual void Exit()
+    {
+        player.Animator.SetBool(animBoolName, false);
+        isExitingState = true;
+    }
+
     public virtual void LogicUpdate() { }
 
     public virtual void PhysicsUpdate() => DoChecks();

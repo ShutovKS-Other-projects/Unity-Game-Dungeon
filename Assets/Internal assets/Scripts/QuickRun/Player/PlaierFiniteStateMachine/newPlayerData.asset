@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ffeed3baa110945b017e86d4b8d573, type: 3}
   m_Name: newPlayerData
   m_EditorClassIdentifier: 
-  movementVelocity: 6
-  jumpVelocity: 10
-  jumpVelocityHold: 2
-  groundCheckRadius: 0.2
+  movementSpeed: 10
+  inAirMovementSpeed: 8
+  jumpSpeed: 5
+  groundCheckRadius: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  stamina: 209.61969
+  stamina: 435.8443
   isFatigue: 0
+  crouchMovementSpeed: 8
+  crouchColliderHeight: 1.2
+  standColliderHeight: 1.8
+  crouchColliderCenter: 0.9
+  standColliderCenter: 0.6
