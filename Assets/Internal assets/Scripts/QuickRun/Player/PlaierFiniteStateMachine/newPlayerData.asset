@@ -15,6 +15,9 @@ MonoBehaviour:
   movementVelocity: 6
   jumpVelocity: 10
   jumpVelocityHold: 2
-  acceleration: 1.25
-  stamina: 100
+  groundCheckRadius: 0.2
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  stamina: 209.61969
   isFatigue: 0

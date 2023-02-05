@@ -29,7 +29,7 @@ public class PlayerIdleState : PlayerGroundedState
     
         if(movementInput != Vector2.zero)
         {
-            stateMachine.ChangeState(player.MovementState);
+            stateMachine.ChangeState(player.MoveState);
         }
     }
 

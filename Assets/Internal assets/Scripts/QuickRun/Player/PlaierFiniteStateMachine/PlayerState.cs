@@ -8,11 +8,11 @@ public class PlayerState : MonoBehaviour
     protected PlayerStateMachine stateMachine;
     protected PlayerData playerData;
 
-    protected Transform playerTransform => player.transform;
-    protected float startTime; //время начала анимации
-    private string animBoolName; //логическое имя анимации
-    private float animFloatName; //вещественное имя анимации
+    protected bool isAnimationFinished;
+    protected float startTime;
+    private string animBoolName;
 
+    protected Transform playerTransform => player.transform;
 
     public PlayerState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
     {
@@ -22,30 +22,23 @@ public class PlayerState : MonoBehaviour
         this.animBoolName = animBoolName;
     }
 
-    public virtual void Enter() //вход в состояние
+    public virtual void Enter()
     {
         DoChecks();
         player.Animator.SetBool(animBoolName, true);
         startTime = Time.time;
+        isAnimationFinished = false;
     }
 
-    public virtual void Exit() //выход из состояния 
-    {
-        player.Animator.SetBool(animBoolName, false);
-    }
+    public virtual void Exit() => player.Animator.SetBool(animBoolName, false);
+    
+    public virtual void LogicUpdate() { }
 
-    public virtual void LogicUpdate() //логическое обновление (Update)
-    {
-        DoChecks();
-    }
+    public virtual void PhysicsUpdate() => DoChecks();
 
-    public virtual void PhysicsUpdate() //физическое обновление (FixedUpdate)
-    {
-        DoChecks();
-    }
+    public virtual void DoChecks() { }
 
-    public virtual void DoChecks() //проверка
-    {
+    public virtual void AnimationTrigger() { }
 
-    }
+    public virtual void AnimationFinishTrigger() => isAnimationFinished = true;
 }

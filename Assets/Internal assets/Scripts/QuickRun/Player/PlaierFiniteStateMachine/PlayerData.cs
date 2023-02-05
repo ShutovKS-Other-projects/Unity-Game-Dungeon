@@ -8,8 +8,10 @@ public class PlayerData : ScriptableObject
     public float movementVelocity = 6f;
     public float jumpVelocity = 10f;
     public float jumpVelocityHold = 2f;
-    public float acceleration = 1.25f;
-    public float stamina = 100f;
+    
+    public float groundCheckRadius = 0.2f;
+    public LayerMask whatIsGround;
 
+    public float stamina = 100f;
     public bool isFatigue = false;
 }
