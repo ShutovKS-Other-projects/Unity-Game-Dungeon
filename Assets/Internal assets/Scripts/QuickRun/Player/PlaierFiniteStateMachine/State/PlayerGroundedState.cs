@@ -8,14 +8,14 @@ public class PlayerGroundedState : PlayerState
 
     protected bool crouchInput;
     protected bool interactInput;
+    protected bool isTouchingCelling;
+    
     private bool attackInput;
     private bool blockInput;
     private bool jumpInput;
     private bool isInteractable;
+    private bool isGrounded;
     
-    protected bool isTouchingCelling;
-    private bool isTouchingGrounded;
-
     public PlayerGroundedState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -24,17 +24,8 @@ public class PlayerGroundedState : PlayerState
     {
         base.DoChecks();
 
-        isTouchingGrounded = player.CheckIfGrounded();
-    }
-
-    public override void Enter()
-    {
-        base.Enter();
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
+        isGrounded = player.CheckIfGrounded();
+        isTouchingCelling = player.CheckIfTouchingCelling();
     }
 
     public override void LogicUpdate()
@@ -49,11 +40,11 @@ public class PlayerGroundedState : PlayerState
         interactInput = player.InputManager.GetPlayerInteractInput();
         isInteractable = CheckVisibleIfInteractable();
 
-        if (attackInput) // && !isTouchingCelling)
+        if (attackInput && !isTouchingCelling)
         {
             stateMachine.ChangeState(player.AttackState);
         }
-        else if (blockInput) // && !isTouchingCelling)
+        else if (blockInput && !isTouchingCelling)
         {
             stateMachine.ChangeState(player.BlockState);
         }
@@ -65,7 +56,7 @@ public class PlayerGroundedState : PlayerState
         {
             stateMachine.ChangeState(player.InteractState);
         }
-        else if (!isTouchingGrounded)
+        else if (!isGrounded)
         {
             stateMachine.ChangeState(player.InAirState);
         } 

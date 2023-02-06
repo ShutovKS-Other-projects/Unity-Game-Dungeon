@@ -15,6 +15,13 @@ public class PlayerCrouchMoveState : PlayerGroundedState
         player.SetColliderHeight(playerData.crouchColliderHeight, playerData.crouchColliderCenter);
     }
 
+    public override void Exit()
+    {
+        base.Exit();
+
+        player.SetColliderHeight(playerData.standColliderHeight, playerData.standColliderCenter);
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();

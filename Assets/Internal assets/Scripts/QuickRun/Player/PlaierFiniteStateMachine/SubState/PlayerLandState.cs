@@ -14,13 +14,16 @@ public class PlayerLandState : PlayerGroundedState
 
         player.Movement(movementInput, playerData.movementSpeed);
 
-        if (movementInput != Vector2.zero)
+        if (!isExitingState)
         {
-            stateMachine.ChangeState(player.MoveState);
-        }
-        else if(isAnimationFinished)
-        {
-            stateMachine.ChangeState(player.IdleState);
+            if (movementInput != Vector2.zero)
+            {
+                stateMachine.ChangeState(player.MoveState);
+            }
+            else if (isAnimationFinished)
+            {
+                stateMachine.ChangeState(player.IdleState);
+            }
         }
     }
 }

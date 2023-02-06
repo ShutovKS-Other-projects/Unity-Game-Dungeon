@@ -8,6 +8,20 @@ public class PlayerBlockState : PlayerAbilityState
     {
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        //OnEnable trigger weapon collider
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        //OnDisable trigger weapon collider
+    }
+
     public override void LogicUpdate()
     {
         base.LogicUpdate();

@@ -21,9 +21,11 @@
         <li>Implementation of the enemy final state machine</li>
     </ul>
 </div>
-<h3>Version 2.7.5</h3>
+<h3>Version 2.7.6</h3>
 <div>
-    <li>Added interaction state</li>
+    <li>Edited scripts of states</li>
+    <li>Replaced player animations</li>
+    <li>Replaced enemy animations</li>
 </div>
 
 <h4>Русский</h4>
@@ -47,9 +49,11 @@
         <li>Реализация системы состояния врагов</li>
     </ul>
 </div>
-<h3>Версия 2.7.5</h3>
+<h3>Версия 2.7.6</h3>
 <div>
-    <li>Добавлено состояние взаимодейсвия</li>
+    <li>Подредактированый скрипты состояний</li>
+    <li>Заменены анимации игрока</li>
+    <li>Заменены анимации врагов</li>
 </div>
 
 <h2>Working time on the project/Время работы над проектом</h2>

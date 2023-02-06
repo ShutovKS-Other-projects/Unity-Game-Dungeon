@@ -12,8 +12,15 @@ public class PlayerCrouchIdleState : PlayerGroundedState
     {
         base.Enter();
 
-        player.SpeedZero();
+        player.SetVelocityZero();
         player.SetColliderHeight(playerData.crouchColliderHeight, playerData.crouchColliderCenter);
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        player.SetColliderHeight(playerData.standColliderHeight, playerData.standColliderCenter);
     }
 
     public override void LogicUpdate()

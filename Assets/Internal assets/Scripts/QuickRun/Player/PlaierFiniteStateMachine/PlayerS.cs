@@ -78,6 +78,14 @@ public class PlayerS : MonoBehaviour
     #endregion
 
     #region Velocity    
+    public void SetVelocityZero()
+    {
+        RB.velocity = Vector3.zero;
+        Animator.SetFloat("ySpeed", 0);
+        Animator.SetFloat("xSpeed", 0);
+        Animator.SetFloat("zSpeed", 0);
+    }
+
     public void SetVelocityY(float velocityY)
     {
         RB.velocity = new Vector3(RB.velocity.x, velocityY, RB.velocity.z);
@@ -123,7 +131,7 @@ public class PlayerS : MonoBehaviour
         return Physics.CheckSphere(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
     }
 
-    public bool CheckIfTouchingCeiling()
+    public bool CheckIfTouchingCelling()
     {
         return Physics.CheckSphere(cellingCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
     }
@@ -134,14 +142,6 @@ public class PlayerS : MonoBehaviour
     {
         MovementCollider.height = height;
         MovementCollider.center = new Vector3(MovementCollider.center.x, center, MovementCollider.center.z);
-    }
-
-    public void SpeedZero()
-    {
-        RB.velocity = Vector3.zero;
-        Animator.SetFloat("zSpeed", 0);
-        Animator.SetFloat("xSpeed", 0);
-        Animator.SetFloat("ySpeed", 0);
     }
 
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();

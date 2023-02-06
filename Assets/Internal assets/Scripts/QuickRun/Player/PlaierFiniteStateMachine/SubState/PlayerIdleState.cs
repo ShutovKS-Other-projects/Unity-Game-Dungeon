@@ -8,22 +8,11 @@ public class PlayerIdleState : PlayerGroundedState
     {
     }
 
-    public override void DoChecks()
-    {
-        base.DoChecks();
-    }
-
     public override void Enter()
     {
         base.Enter();
 
-        player.SpeedZero();
-        player.SetColliderHeight(playerData.standColliderHeight, playerData.standColliderCenter);
-    }
-
-    public override void Exit()
-    {
-        base.Exit();
+        player.SetVelocityZero();
     }
 
     public override void LogicUpdate()
@@ -41,10 +30,5 @@ public class PlayerIdleState : PlayerGroundedState
                 stateMachine.ChangeState(player.CrouchIdleState);
             }
         }
-    }
-
-    public override void PhysicsUpdate()
-    {
-        base.PhysicsUpdate();
     }
 }

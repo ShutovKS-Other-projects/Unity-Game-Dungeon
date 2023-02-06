@@ -12,7 +12,14 @@ public class PlayerAttackState : PlayerAbilityState
     {
         base.Enter();
 
-        isAbilityDone = true;
+        //OnEnable trigger weapon collider
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+
+        //OnDisable trigger weapon collider
     }
 
     public override void AnimationFinishTrigger()

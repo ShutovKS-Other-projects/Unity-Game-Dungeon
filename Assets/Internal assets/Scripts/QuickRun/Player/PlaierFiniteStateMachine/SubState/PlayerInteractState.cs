@@ -16,7 +16,6 @@ public class PlayerInteractState : PlayerAbilityState
         player.SetVelocityZ(0f);
 
         playerData.interactionData.Interact();
-        isAbilityDone = true;
     }
 
     public override void Exit()
