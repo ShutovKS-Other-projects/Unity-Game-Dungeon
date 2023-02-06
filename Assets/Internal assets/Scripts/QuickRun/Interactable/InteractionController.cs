@@ -12,9 +12,9 @@ public class InteractionController : MonoBehaviour
     [SerializeField] private UIInteractionBare _uiInteractionBare = null;
 
     [Space, Header("Ray Settings")]
-    [SerializeField] private float _rayDistance;
-    [SerializeField] private float _raySphereRadius;
-    [SerializeField] private LayerMask _interactibleLayer;
+    [SerializeField] private float _rayDistance = 3f;
+    [SerializeField] private float _raySphereRadius = 0.5f;
+    [SerializeField] private LayerMask _interactibleLayer = LayerMask.GetMask("Interactable");
 
     private float _holdTimer = 0f;
     private bool _isInteracting = false;
@@ -54,7 +54,7 @@ public class InteractionController : MonoBehaviour
             _uiInteractionBare.Reset();
         }
 
-        Debug.DrawRay(ray.origin, ray.direction * _rayDistance, Physics.SphereCast(ray, _raySphereRadius, out hitInfo, _rayDistance, _interactibleLayer) ? Color.green : Color.red);
+        //Debug.DrawRay(ray.origin, ray.direction * _rayDistance, Physics.SphereCast(ray, _raySphereRadius, out hitInfo, _rayDistance, _interactibleLayer) ? Color.green : Color.red);
     }
 
     void CheckForInteractableInput()

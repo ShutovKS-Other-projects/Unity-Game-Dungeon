@@ -9,10 +9,16 @@ public class PlayerData : ScriptableObject
     public float movementSpeed = 10f;
     public float inAirMovementSpeed = 8f;
     public float jumpSpeed = 5f;
-    
+
     [Header("Ground Check")]
     public float groundCheckRadius = 0.2f;
-    public LayerMask whatIsGround;
+    public LayerMask whatIsGround = LayerMask.GetMask("Ground");
+
+    [Header("Inter Check")]
+    public float interCheckRadius = 3f;
+    public float interCheckSphereRadius = 0.5f;
+    public LayerMask layerInteractable = LayerMask.GetMask("Interactable");
+    public InteractionData interactionData = null;
 
     [Header("Stamina")]
     public float stamina = 100f;

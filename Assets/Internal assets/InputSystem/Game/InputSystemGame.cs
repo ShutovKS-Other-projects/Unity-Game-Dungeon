@@ -61,7 +61,7 @@ public partial class @InputSystemGame : IInputActionCollection2, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
-                    ""initialStateCheck"": false
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""Crouch"",
@@ -190,7 +190,7 @@ public partial class @InputSystemGame : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""938193ec-ba8e-4ddb-8a5c-df726b498631"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

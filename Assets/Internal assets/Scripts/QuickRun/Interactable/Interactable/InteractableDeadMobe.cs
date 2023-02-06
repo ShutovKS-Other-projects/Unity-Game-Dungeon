@@ -2,13 +2,12 @@
 
 public class InteractableDeadMobe : InteractableBase
 {
-
+    
 
     public override void OnInteract()
     {
         DropItem(transform.position);
         Destroy(gameObject);
-        GameObject.FindWithTag("Player").GetComponent<PlayerController>().statistic.CollectCrystal++;
     }
 
     private void DropItem(Vector3 position)

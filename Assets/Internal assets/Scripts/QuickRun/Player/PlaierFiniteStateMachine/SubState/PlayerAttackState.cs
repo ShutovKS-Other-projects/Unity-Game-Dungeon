@@ -8,6 +8,13 @@ public class PlayerAttackState : PlayerAbilityState
     {
     }
 
+    public override void Enter()
+    {
+        base.Enter();
+
+        isAbilityDone = true;
+    }
+
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();

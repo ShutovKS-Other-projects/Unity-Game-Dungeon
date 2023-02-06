@@ -20,9 +20,9 @@ public class UIGame : MonoBehaviour
 
     public void UpdateGameStatistics()
     {
-        healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + playerController.statistic.Health;
-        staminaText.GetComponent<UnityEngine.UI.Text>().text = "Stamina: " + playerController.statistic.Stamina;
-        collectCrystalText.GetComponent<UnityEngine.UI.Text>().text = "Crystal count: " + playerController.statistic.CollectCrystal;
+        //healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + playerController.statistic.Health;
+        //staminaText.GetComponent<UnityEngine.UI.Text>().text = "Stamina: " + playerController.statistic.Stamina;
+        //collectCrystalText.GetComponent<UnityEngine.UI.Text>().text = "Crystal count: " + playerController.statistic.CollectCrystal;
         //dialogText.GetComponent<UnityEngine.UI.Text>().text = ;
     }
 }

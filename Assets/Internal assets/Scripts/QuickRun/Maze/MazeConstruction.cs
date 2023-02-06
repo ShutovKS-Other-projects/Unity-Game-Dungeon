@@ -65,6 +65,7 @@ public class MazeConstruction : MonoBehaviour
             GameObject sector = Instantiate(obj, position, Quaternion.identity, mazeParent); ;
             sector.transform.localScale = scale;
             Destroy(obj);
+            sector.layer = LayerMask.NameToLayer("Ground");
         }
         void ConstructionStart(Vector3 position)
         {

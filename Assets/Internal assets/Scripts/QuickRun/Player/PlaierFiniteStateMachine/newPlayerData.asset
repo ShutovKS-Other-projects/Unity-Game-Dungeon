@@ -18,11 +18,18 @@ MonoBehaviour:
   groundCheckRadius: 0.5
   whatIsGround:
     serializedVersion: 2
+    m_Bits: 512
+  interCheckRadius: 2
+  interCheckSphereRadius: 0.5
+  layerInteractable:
+    serializedVersion: 2
     m_Bits: 256
-  stamina: 435.8443
+  interactionData: {fileID: 11400000, guid: 1c7c0fc237be1e941a1f6ddfdff759cd, type: 2}
+  stamina: 844.9928
   isFatigue: 0
   crouchMovementSpeed: 8
   crouchColliderHeight: 1.2
   standColliderHeight: 1.8
   crouchColliderCenter: 0.9
   standColliderCenter: 0.6
+  blockMovementSpeed: 4

@@ -12,7 +12,7 @@ public class UIPlayerInfo : MonoBehaviour
 
     private void Start()
     {
-        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+        //controller = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -22,9 +22,9 @@ public class UIPlayerInfo : MonoBehaviour
 
     public void UpdatePlayerInfo()
     {
-        _classText.GetComponent<Text>().text = $"{controller.statistic.Class}";
-        _healthText.GetComponent<Text>().text = $"Здоровья: {controller.statistic.Health}";
-        _staminaText.GetComponent<Text>().text = $"Выносливости: {controller.statistic.Stamina}";
-        _сollectCrystal.GetComponent<Text>().text = $"Кристаллов: {controller.statistic.CollectCrystal}";
+        //_classText.GetComponent<Text>().text = $"{controller.statistic.Class}";
+        //_healthText.GetComponent<Text>().text = $"Здоровья: {controller.statistic.Health}";
+        //_staminaText.GetComponent<Text>().text = $"Выносливости: {controller.statistic.Stamina}";
+        //_сollectCrystal.GetComponent<Text>().text = $"Кристаллов: {controller.statistic.CollectCrystal}";
     }
 }

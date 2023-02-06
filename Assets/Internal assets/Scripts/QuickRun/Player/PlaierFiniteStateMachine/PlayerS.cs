@@ -16,6 +16,7 @@ public class PlayerS : MonoBehaviour
     public PlayerCrouchMoveState CrouchMoveState { get; private set; }
     public PlayerAttackState AttackState { get; private set; }
     public PlayerBlockState BlockState { get; private set; }
+    public PlayerInteractState InteractState { get; private set; }
 
     [SerializeField] private PlayerData playerData;
     #endregion
@@ -30,6 +31,7 @@ public class PlayerS : MonoBehaviour
     public InputManager InputManager { get; private set; }
     public Rigidbody RB { get; private set; }
     public CapsuleCollider MovementCollider { get; private set; }
+    public UIInteractionBare uiInteractionBare;
     #endregion
 
     #region Unity Callbacks Functions
@@ -46,6 +48,7 @@ public class PlayerS : MonoBehaviour
         CrouchMoveState = new PlayerCrouchMoveState(this, StateMachine, playerData, "CrouchMove");
         AttackState = new PlayerAttackState(this, StateMachine, playerData, "Attack");
         BlockState = new PlayerBlockState(this, StateMachine, playerData, "Block");
+        InteractState = new PlayerInteractState(this, StateMachine, playerData, "Interact");
     }
 
     private void Start()
@@ -54,6 +57,11 @@ public class PlayerS : MonoBehaviour
         InputManager = InputManager.Instance;
         RB = GetComponent<Rigidbody>();
         MovementCollider = GetComponent<CapsuleCollider>();
+
+        groundCheck = transform.Find("GroundCheck");
+        cellingCheck = transform.Find("CellingCheck");
+
+        uiInteractionBare = GameObject.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
 
         StateMachine.Initialize(IdleState);
     }
@@ -74,6 +82,18 @@ public class PlayerS : MonoBehaviour
     {
         RB.velocity = new Vector3(RB.velocity.x, velocityY, RB.velocity.z);
         Animator.SetFloat("ySpeed", velocityY);
+    }
+
+    public void SetVelocityX(float velocityX)
+    {
+        RB.velocity = new Vector3(velocityX, RB.velocity.y, RB.velocity.z);
+        Animator.SetFloat("xSpeed", velocityX);
+    }
+
+    public void SetVelocityZ(float velocityZ)
+    {
+        RB.velocity = new Vector3(RB.velocity.x, RB.velocity.y, velocityZ);
+        Animator.SetFloat("zSpeed", velocityZ);
     }
     #endregion
 
