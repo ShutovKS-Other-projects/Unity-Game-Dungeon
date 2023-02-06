@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlayerGroundedState : PlayerState
 {
     protected Vector2 movementInput;
-    protected bool crouchInput;
-    protected bool isCelling;
 
+    protected bool crouchInput;
+    private bool attackInput;
+    private bool blockInput;
     private bool jumpInput;
-    private bool isGrounded;
     
+    protected bool isTouchingCelling;
+    private bool isTouchingGrounded;
 
     public PlayerGroundedState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
@@ -20,7 +22,7 @@ public class PlayerGroundedState : PlayerState
     {
         base.DoChecks();
 
-        isGrounded = player.CheckIfGrounded();
+        isTouchingGrounded = player.CheckIfGrounded();
     }
 
     public override void Enter()
@@ -40,12 +42,22 @@ public class PlayerGroundedState : PlayerState
         movementInput = player.InputManager.GetPlayerMovementInput();
         crouchInput = player.InputManager.GetPlayerCrouchInput();
         jumpInput = player.InputManager.GetPlayerJumpInput();
+        attackInput = player.InputManager.GetPlayerAttackInput();
+        blockInput = player.InputManager.GetPlayerBlockInput();
 
-        if (jumpInput)
+        if (attackInput) // && !isTouchingCelling)
+        {
+            stateMachine.ChangeState(player.AttackState);
+        }
+        else if (blockInput) // && !isTouchingCelling)
+        {
+            stateMachine.ChangeState(player.BlockState);
+        }
+        else if (jumpInput && !isTouchingCelling)
         {
             stateMachine.ChangeState(player.JumpState);
         }
-        else if (!isGrounded)
+        else if (!isTouchingGrounded)
         {
             stateMachine.ChangeState(player.InAirState);
         }

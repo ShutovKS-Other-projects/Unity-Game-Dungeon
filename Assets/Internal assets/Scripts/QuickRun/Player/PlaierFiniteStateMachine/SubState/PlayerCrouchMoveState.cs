@@ -25,7 +25,7 @@ public class PlayerCrouchMoveState : PlayerGroundedState
             {
                 stateMachine.ChangeState(player.CrouchIdleState);
             }
-            else if (!crouchInput && !isCelling)
+            else if (!crouchInput && !isTouchingCelling)
             {
                 stateMachine.ChangeState(player.MoveState);
             }

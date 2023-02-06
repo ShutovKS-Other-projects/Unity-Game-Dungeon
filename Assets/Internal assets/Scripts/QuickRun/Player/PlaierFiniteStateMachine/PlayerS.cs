@@ -14,6 +14,8 @@ public class PlayerS : MonoBehaviour
     public PlayerLandState LandState { get; private set; }
     public PlayerCrouchIdleState CrouchIdleState { get; private set; }
     public PlayerCrouchMoveState CrouchMoveState { get; private set; }
+    public PlayerAttackState AttackState { get; private set; }
+    public PlayerBlockState BlockState { get; private set; }
 
     [SerializeField] private PlayerData playerData;
     #endregion
@@ -42,6 +44,8 @@ public class PlayerS : MonoBehaviour
         LandState = new PlayerLandState(this, StateMachine, playerData, "Land");
         CrouchIdleState = new PlayerCrouchIdleState(this, StateMachine, playerData, "CrouchIdle");
         CrouchMoveState = new PlayerCrouchMoveState(this, StateMachine, playerData, "CrouchMove");
+        AttackState = new PlayerAttackState(this, StateMachine, playerData, "Attack");
+        BlockState = new PlayerBlockState(this, StateMachine, playerData, "Block");
     }
 
     private void Start()

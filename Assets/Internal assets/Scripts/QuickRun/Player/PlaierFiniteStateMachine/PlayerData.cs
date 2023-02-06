@@ -24,4 +24,7 @@ public class PlayerData : ScriptableObject
     public float standColliderHeight = 1.8f;
     public float crouchColliderCenter = 0.9f;
     public float standColliderCenter = 0.6f;
+
+    [Header("Block")]
+    public float blockMovementSpeed = 4f;
 }

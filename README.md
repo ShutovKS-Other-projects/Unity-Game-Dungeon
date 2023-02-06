@@ -1,4 +1,5 @@
 <h1>Game: Dungeon (Unity)</h1>
+
 <h4>Eng</h4>
 <h3>Description</h3>
 <div>
@@ -20,15 +21,17 @@
         <li>Implementation of the enemy final state machine</li>
     </ul>
 </div>
-<h3>Version 2.7.3</h3>
+<h3>Version 2.7.4</h3>
 <div>
     <li>Added states:
         <ul>
-            <li>Crouch Move</li>
-            <li>Crouch Idle</li>
+            <li>Attack</li>
+            <li>Block</li>
+            <li>Attack when blocking</li>
         </ul>
     </li>
 </div>
+
 <h4>Русский</h4>
 <h3>Описание</h3>
 <div>
@@ -50,12 +53,13 @@
         <li>Реализация системы состояния врагов</li>
     </ul>
 </div>
-<h3>Версия 2.7.3</h3>
+<h3>Версия 2.7.4</h3>
 <div>
     <li>Добавлены состояния:
         <ul>
-            <li>Перемещение присядя</li>
-            <li>Приседание</li>
+            <li>Атаки</li>
+            <li>Блока</li>
+            <li>Атаки при блоке</li>
         </ul>
     </li>
 </div>
