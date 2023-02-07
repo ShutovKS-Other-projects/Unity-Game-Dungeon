@@ -2,6 +2,54 @@
     "name": "InputSystemGame",
     "maps": [
         {
+            "name": "All",
+            "id": "facf1ee1-0e9d-417c-b0b9-5bcceff59b18",
+            "actions": [
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "bed7c927-31c3-47e6-9a17-1a674ea91746",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PlayerInfo",
+                    "type": "Button",
+                    "id": "6bc3d829-c199-4aa0-b2a9-0addebf5fa14",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "ecb19fa3-f06f-4a76-888e-9ac2ed71b0af",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8e32d1d6-6ae1-42fb-a3a3-3066a3db78f1",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerInfo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
             "name": "Player",
             "id": "06b8300d-4ace-4f2c-aaa8-cee18099545f",
             "actions": [
@@ -72,15 +120,6 @@
                     "name": "Interact",
                     "type": "Button",
                     "id": "7f4de484-983a-4abd-badd-31d0258459c1",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Menu",
-                    "type": "Button",
-                    "id": "ec0189b7-9714-4b22-a990-76d81a6ad042",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -173,17 +212,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "b24c2872-1283-4820-af9a-226900e21536",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Menu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

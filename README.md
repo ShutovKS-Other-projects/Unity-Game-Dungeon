@@ -21,11 +21,21 @@
         <li>Implementation of the enemy final state machine</li>
     </ul>
 </div>
-<h3>Version 2.7.6</h3>
+<h3>Version 2.7.7</h3>
 <div>
-    <li>Edited scripts of states</li>
-    <li>Replaced player animations</li>
-    <li>Replaced enemy animations</li>
+    <li>The project is cleared of unnecessary files</li>
+    <ul>
+        <li>Unused animation controllers deleted</li>
+        <li>Old player control script</li>
+        <li>Old player animation control script</li>
+    </ul>
+    <li>Fixed the animation of the player's attack and interaction</li>
+    <li>Added a menu button</li>
+    <li>The player appears in a random part of the maze</li>
+    <li>After the enemy's death, an item appears on the ground</li>
+    <li>The player's statistics are stored in ScriptableObject</li>
+
+<li>There is a known error that the inventory is not cleared after the end of the game</li>
 </div>
 
 <h4>Русский</h4>
@@ -49,11 +59,20 @@
         <li>Реализация системы состояния врагов</li>
     </ul>
 </div>
-<h3>Версия 2.7.6</h3>
+<h3>Версия 2.7.7</h3>
 <div>
-    <li>Подредактированый скрипты состояний</li>
-    <li>Заменены анимации игрока</li>
-    <li>Заменены анимации врагов</li>
+    <li>Проект очищен от лишних файлов</li>
+    <ul>
+        <li>Удалены ненужные контролеры  анимаций</li>
+        <li>Старый скрипт управления игрока</li>
+        <li>Старый скрипт управления анимациями игрока</li>
+    </ul>
+    <li>Исправлено залипание анимации атаки и взаимодействия игрока</li>
+    <li>Добавлена кнопка меню</li>
+    <li>Игрок появляется в рандомной части лабиринта</li>
+    <li>После смерти врага появляется предмет на замле</li>
+    <li>Статистика игрока хранится в ScriptableObject</li>
+    <li>Известна ошибка что инвертарь после окончания игры не очищается</li>
 </div>
 
 <h2>Working time on the project/Время работы над проектом</h2>

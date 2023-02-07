@@ -10,9 +10,8 @@ public class CinemachinePOVExtension : CinemachineExtension
     private InputManager _inputManager;
     private Vector3 staringRotation;
 
-    protected override void Awake()
+    private void Start()
     {
-        base.Awake();
         _inputManager = InputManager.Instance;
         transform.GetComponent<CinemachineVirtualCameraBase>().Follow = GameObject.Find("PositionCamera").transform;
     }

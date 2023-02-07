@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerInventory : MonoBehaviour
 {
     public InventoryObject inventory;
     public InventoryObject equipment;
@@ -17,10 +17,13 @@ public class Player : MonoBehaviour
 
     private BoneCombiner boneCombiner;
 
-    private void Start()
+    private void Awake()
     {
         //boneCombiner = new BoneCombiner(gameObject);
+    }
 
+    private void Start()
+    {
         for (int i = 0; i < attributes.Length; i++)
         {
             attributes[i].SetParent(this);
@@ -101,7 +104,7 @@ public class Player : MonoBehaviour
             case InterfaceType.Equipment:
                 Debug.Log("Detected Equipment");
                 print($"Placed {_slot.ItemObject}  on {_slot.parent.inventory.type}, Allowed Items: {string.Join(", ", _slot.AllowedItems)}");
-                
+
                 for (int i = 0; i < _slot.item.buffs.Length; i++)
                 {
                     Debug.Log("Adding buff");
@@ -134,7 +137,6 @@ public class Player : MonoBehaviour
                         //    boots = boneCombiner.AddLimb(_slot.ItemObject.characterDisplay, _slot.ItemObject.boneNames);
                         //    break;
                         case ItemType.Weapon:
-                            Debug.Log("Adding sword");
                             sword = Instantiate(_slot.ItemObject.characterDisplay, weaponTransform).transform;
                             break;
                     }
@@ -147,42 +149,48 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.KeypadPlus))
-        {
-            inventory.Save();
-            equipment.Save();
-        }
-
-        if (Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-            inventory.Load();
-            equipment.Load();
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.KeypadPlus))
+    //    {
+    //        inventory.Save();
+    //        equipment.Save();
+    //    }
+    //    if (Input.GetKeyDown(KeyCode.KeypadEnter))
+    //    {
+    //        inventory.Load();
+    //        equipment.Load();
+    //    }
+    //}
 
     public void AttributeModified(Attribute attribute)
     {
-        Debug.Log(string.Concat(attribute.type, " was updated! Value is now ", attribute.value.ModifiedValue));
+        Debug.Log($"{attribute.type} was updated! Value is now {attribute.value.ModifiedValue}");
     }
 
 
     private void OnApplicationQuit()
     {
-        inventory.Clear();
-        equipment.Clear();
+        try
+        {
+            inventory.Container.Clear();
+            equipment.Container.Clear();
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("Inventory or Equipment is null");
+        }
     }
 }
 
 [System.Serializable]
 public class Attribute
 {
-    [System.NonSerialized] public Player parent;
+    [System.NonSerialized] public PlayerInventory parent;
     public Attributes type;
     public ModifiableInt value;
 
-    public void SetParent(Player _parent)
+    public void SetParent(PlayerInventory _parent)
     {
         parent = _parent;
         value = new ModifiableInt(AttributeModified);

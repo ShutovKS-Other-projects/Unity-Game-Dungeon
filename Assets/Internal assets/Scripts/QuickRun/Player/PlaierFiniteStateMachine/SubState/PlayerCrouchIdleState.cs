@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCrouchIdleState : PlayerGroundedState
 {
-    public PlayerCrouchIdleState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerCrouchIdleState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(playerStateController, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -12,15 +12,15 @@ public class PlayerCrouchIdleState : PlayerGroundedState
     {
         base.Enter();
 
-        player.SetVelocityZero();
-        player.SetColliderHeight(playerData.crouchColliderHeight, playerData.crouchColliderCenter);
+        playerStateController.SetVelocityZero();
+        playerStateController.SetColliderHeight(playerData.crouchColliderHeight, playerData.crouchColliderCenter);
     }
 
     public override void Exit()
     {
         base.Exit();
 
-        player.SetColliderHeight(playerData.standColliderHeight, playerData.standColliderCenter);
+        playerStateController.SetColliderHeight(playerData.standColliderHeight, playerData.standColliderCenter);
     }
 
     public override void LogicUpdate()
@@ -31,11 +31,11 @@ public class PlayerCrouchIdleState : PlayerGroundedState
         {
             if (movementInput != Vector2.zero)
             {
-                stateMachine.ChangeState(player.CrouchMoveState);
+                stateMachine.ChangeState(playerStateController.CrouchMoveState);
             }
             else if (!crouchInput && !isTouchingCelling)
             {
-                stateMachine.ChangeState(player.IdleState);
+                stateMachine.ChangeState(playerStateController.IdleState);
             }
         }
     }

@@ -8,7 +8,7 @@ public class UIInteractionBare : MonoBehaviour
     [SerializeField] private Image _progresBar;
     [SerializeField] private Text _toltipText;
 
-    private void Awake()
+    private void Start()
     {
         _progresBar = GetComponentInChildren<Image>();
         _toltipText = GetComponentInChildren<Text>();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerIdleState : PlayerGroundedState
 {
-    public PlayerIdleState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerIdleState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(playerStateController, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -12,7 +12,7 @@ public class PlayerIdleState : PlayerGroundedState
     {
         base.Enter();
 
-        player.SetVelocityZero();
+        playerStateController.SetVelocityZero();
     }
 
     public override void LogicUpdate()
@@ -23,11 +23,11 @@ public class PlayerIdleState : PlayerGroundedState
         {
             if (movementInput != Vector2.zero)
             {
-                stateMachine.ChangeState(player.MoveState);
+                stateMachine.ChangeState(playerStateController.MoveState);
             }
             else if (crouchInput)
             {
-                stateMachine.ChangeState(player.CrouchIdleState);
+                stateMachine.ChangeState(playerStateController.CrouchIdleState);
             }
         }
     }

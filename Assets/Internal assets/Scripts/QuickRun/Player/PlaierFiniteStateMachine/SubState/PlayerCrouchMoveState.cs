@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerCrouchMoveState : PlayerGroundedState
 {
-    public PlayerCrouchMoveState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerCrouchMoveState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(playerStateController, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -12,14 +12,14 @@ public class PlayerCrouchMoveState : PlayerGroundedState
     {
         base.Enter();
 
-        player.SetColliderHeight(playerData.crouchColliderHeight, playerData.crouchColliderCenter);
+        playerStateController.SetColliderHeight(playerData.crouchColliderHeight, playerData.crouchColliderCenter);
     }
 
     public override void Exit()
     {
         base.Exit();
 
-        player.SetColliderHeight(playerData.standColliderHeight, playerData.standColliderCenter);
+        playerStateController.SetColliderHeight(playerData.standColliderHeight, playerData.standColliderCenter);
     }
 
     public override void LogicUpdate()
@@ -30,11 +30,11 @@ public class PlayerCrouchMoveState : PlayerGroundedState
         {
             if (movementInput == Vector2.zero)
             {
-                stateMachine.ChangeState(player.CrouchIdleState);
+                stateMachine.ChangeState(playerStateController.CrouchIdleState);
             }
             else if (!crouchInput && !isTouchingCelling)
             {
-                stateMachine.ChangeState(player.MoveState);
+                stateMachine.ChangeState(playerStateController.MoveState);
             }
         }
     }
@@ -42,7 +42,7 @@ public class PlayerCrouchMoveState : PlayerGroundedState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        player.Movement(movementInput, playerData.crouchMovementSpeed);
+        playerStateController.Movement(movementInput, playerData.crouchMovementSpeed);
 
     }
 }

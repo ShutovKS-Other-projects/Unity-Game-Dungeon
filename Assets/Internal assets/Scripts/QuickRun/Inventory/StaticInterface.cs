@@ -23,4 +23,13 @@ public class StaticInterface : UserInterface
             slotsOnInterface.Add(obj, inventory.GetSlots[i]);
         }
     }
+
+    public override void AllSlotsUpdate()
+    {
+        for (int i = 0; i < inventory.GetSlots.Length; i++)
+        {
+            inventory.GetSlots[i].UpdateSlot(inventory.GetSlots[i].item, inventory.GetSlots[i].amount);
+        }
+    }
+
 }

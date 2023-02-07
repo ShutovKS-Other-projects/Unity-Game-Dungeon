@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerInteractState : PlayerAbilityState
 {
-    public PlayerInteractState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerInteractState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(playerStateController, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -12,8 +12,8 @@ public class PlayerInteractState : PlayerAbilityState
     {
         base.Enter();
 
-        player.SetVelocityX(0f);
-        player.SetVelocityZ(0f);
+        playerStateController.SetVelocityX(0f);
+        playerStateController.SetVelocityZ(0f);
 
         playerData.interactionData.Interact();
     }

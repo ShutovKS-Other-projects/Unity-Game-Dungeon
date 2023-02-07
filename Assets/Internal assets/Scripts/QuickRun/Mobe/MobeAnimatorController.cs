@@ -2,31 +2,32 @@ using UnityEngine;
 
 public class MobeAnimatorController : MonoBehaviour
 {
-    private Animator animator;
-    private MobeStatistic statistic;
+    private Animator _animator;
+    private MobeStatistic _statistic;
+    
     private bool _animationDeadStart = false;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
-        statistic = GetComponentInParent<MobeStatistic>();
+        _animator = GetComponent<Animator>();
+        _statistic = GetComponentInParent<MobeStatistic>();
     }
 
     private void Update()
     {
         if (_animationDeadStart) return;
 
-        animator.SetFloat("Speed", statistic.Movement);
-        if (statistic.isAttack)
+        _animator.SetFloat("Speed", _statistic.Movement);
+        if (_statistic.isAttack)
         {
-            animator.SetTrigger("Attack");
-            statistic.isAttack = false;
-            statistic.AttackTimer = statistic.AttackCooldown;
+            _animator.SetTrigger("Attack");
+            _statistic.isAttack = false;
+            _statistic.AttackTimer = _statistic.AttackCooldown;
         }
 
-        if (statistic.isDead)
+        if (_statistic.isDead)
         {
-            animator.SetTrigger("Dead");
+            _animator.SetTrigger("Dead");
             _animationDeadStart = true;
         }
     }

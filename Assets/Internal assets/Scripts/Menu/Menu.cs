@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIMenu : MonoBehaviour
+public class Menu : MonoBehaviour
 {
     System.Random random = new System.Random();
     [SerializeField] private GameObject _citationText;

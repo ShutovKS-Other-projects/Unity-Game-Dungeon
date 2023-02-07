@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttackState : PlayerAbilityState
 {
-    public PlayerAttackState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerAttackState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(playerStateController, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -12,6 +12,7 @@ public class PlayerAttackState : PlayerAbilityState
     {
         base.Enter();
 
+        playerData.stamina -= 10;
         //OnEnable trigger weapon collider
     }
 

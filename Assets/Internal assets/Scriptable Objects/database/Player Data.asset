@@ -10,11 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b6ffeed3baa110945b017e86d4b8d573, type: 3}
-  m_Name: newPlayerData
+  m_Name: Player Data
   m_EditorClassIdentifier: 
+  className: No one
+  health: 100
+  recoveryHealthSpeed: 10
+  stamina: 100
+  staminaRecoverySpeed: 10
+  staminaRecoverySpeedIsFatigue: 7.5
+  experience: 0
+  damage: 10
+  maxHealth: 100
+  maxStamina: 100
+  jumpSpeed: 5
   movementSpeed: 10
   inAirMovementSpeed: 8
-  jumpSpeed: 5
+  crouchMovementSpeed: 8
+  blockMovementSpeed: 4
+  isAbility: 0
+  isFatigue: 0
+  crouchColliderHeight: 1.2
+  standColliderHeight: 1.8
+  crouchColliderCenter: 0.9
+  standColliderCenter: 0.6
   groundCheckRadius: 0.5
   whatIsGround:
     serializedVersion: 2
@@ -25,11 +43,3 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   interactionData: {fileID: 11400000, guid: 1c7c0fc237be1e941a1f6ddfdff759cd, type: 2}
-  stamina: 844.9928
-  isFatigue: 0
-  crouchMovementSpeed: 8
-  crouchColliderHeight: 1.2
-  standColliderHeight: 1.8
-  crouchColliderCenter: 0.9
-  standColliderCenter: 0.6
-  blockMovementSpeed: 4

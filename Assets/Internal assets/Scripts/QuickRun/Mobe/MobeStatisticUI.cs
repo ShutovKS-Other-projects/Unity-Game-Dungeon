@@ -11,6 +11,7 @@ public class MobeStatisticUI : MonoBehaviour
     private void Start()
     {
         statistic = GetComponentInParent<MobeStatistic>();
+        
         nameText = transform.Find("Name").gameObject;
         healthText = transform.Find("Health").gameObject;
 

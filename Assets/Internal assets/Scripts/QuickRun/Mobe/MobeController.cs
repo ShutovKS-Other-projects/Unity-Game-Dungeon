@@ -3,45 +3,43 @@ using UnityEngine;
 
 public class MobeController : MonoBehaviour
 {
-    private MobeStatistic statistic;
+    private MobeStatistic _statistic;
     private GameObject _player;
     private Rigidbody _rigidbody;
 
     private void Start()
     {
-        statistic = GetComponent<MobeStatistic>();
         _player = GameObject.FindGameObjectWithTag("Player");
+        _statistic = GetComponent<MobeStatistic>();
         _rigidbody = GetComponent<Rigidbody>();
     }
 
     private void Update()
     {
-        if (!statistic.isDead)
+        if (!_statistic.isDead)
         {
-            GettingVisibility(out Collider collider);
-
-            if (collider)
+            if (CheckVisibleIfPlayer())
             {
                 Rotation();
                 Attack();
-                Movement();   
+                Movement();
             }
             else
             {
-                statistic.Movement = 0f;
-                statistic.isAttack = false;
+                _statistic.Movement = 0f;
+                _statistic.isAttack = false;
             }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!statistic.isDead)
+        if (!_statistic.isDead)
         {
             if (other.tag == "ObjectDamaging")
             {
-                statistic.Health = 0f;
-                if (statistic.isDead)
+                _statistic.Health = 0f;
+                if (_statistic.isDead)
                 {
                     Dead();
                 }
@@ -51,35 +49,32 @@ public class MobeController : MonoBehaviour
 
     private void Attack()
     {
-        if (statistic.Movement == 0)
+        if (_statistic.Movement == 0)
         {
-            if (statistic.AttackTimer <= 0)
+            if (_statistic.AttackTimer <= 0)
             {
-                statistic.isAttack = true;
+                _statistic.isAttack = true;
             }
             else
             {
-                statistic.AttackTimer -= Time.deltaTime;
+                _statistic.AttackTimer -= Time.deltaTime;
             }
         }
         else
         {
-            statistic.AttackTimer = statistic.AttackCooldown;
+            _statistic.AttackTimer = _statistic.AttackCooldown;
         }
     }
 
     private void Dead()
     {
-        _rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-        GetComponent<CapsuleCollider>().direction = 2;
-        GetComponent<CapsuleCollider>().center = new Vector3(0.25f, 0.35f, 1f);
-        GetComponent<CapsuleCollider>().height = 0.3f;
-        gameObject.layer = LayerMask.NameToLayer("Interactable");
+        DropItem(transform.position);
+        Destroy(gameObject);
     }
 
     private void Movement()
     {
-        _rigidbody.AddRelativeForce(Move() * statistic.Speed);
+        _rigidbody.AddRelativeForce(Move() * _statistic.Speed);
 
         Vector3 Move()
         {
@@ -88,17 +83,17 @@ public class MobeController : MonoBehaviour
             switch (distance)
             {
                 case > 2.5f:
-                    statistic.Movement = 1f;
+                    _statistic.Movement = 1f;
                     return new Vector3(0f, 0f, 1f);
                 case > 1.55f:
-                    statistic.Movement = 1f;
+                    _statistic.Movement = 1f;
                     return new Vector3(0f, 0f, 0.75f);
                 case < 0.85f:
-                    statistic.Movement = -1f;
+                    _statistic.Movement = -1f;
                     return new Vector3(0f, 0f, 1f);
                 default:
                     Attack();
-                    statistic.Movement = 0f;
+                    _statistic.Movement = 0f;
                     return new Vector3(0f, 0f, 0f);
             }
         }
@@ -109,10 +104,27 @@ public class MobeController : MonoBehaviour
         transform.LookAt(_player.transform.position);
     }
 
-    private void GettingVisibility(out Collider collider)
+    private bool CheckVisibleIfPlayer()
     {
         Ray ray = new Ray(new Vector3(transform.position.x, transform.position.y + 0.1f, transform.position.z), _player.transform.position - transform.position);
-        Physics.Raycast(ray, out RaycastHit raycastHit, 7.5f);
-        collider = raycastHit.collider;
+        Physics.Raycast(ray, out RaycastHit raycastHit, 6f);
+
+        if (raycastHit.collider)
+        {
+            if (raycastHit.collider.tag == "Player")
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private void DropItem(Vector3 position)
+    {
+        GameObject item = Instantiate(GameObject.Find("ItemDatabase").GetComponent<ItemDatabase>().GetRandomItemPrefab(), position, Quaternion.identity);
+        item.layer = LayerMask.NameToLayer("Interactable");
+        item.AddComponent<Rigidbody>();
+        item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
     }
 }

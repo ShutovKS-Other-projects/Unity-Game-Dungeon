@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerState : MonoBehaviour
 {
-    protected PlayerS player;
+    protected PlayerStateController playerStateController;
     protected PlayerStateMachine stateMachine;
-    protected PlayerData playerData;
+    public PlayerData playerData;
 
     protected bool isAnimationFinished;
     protected bool isExitingState;
@@ -15,11 +15,11 @@ public class PlayerState : MonoBehaviour
     
     private string animBoolName;
 
-    protected Transform playerTransform => player.transform;
+    protected Transform playerTransform => playerStateController.transform;
 
-    public PlayerState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
+    public PlayerState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
     {
-        this.player = player;
+        this.playerStateController = playerStateController;
         this.stateMachine = stateMachine;
         this.playerData = playerData;
         this.animBoolName = animBoolName;
@@ -28,7 +28,7 @@ public class PlayerState : MonoBehaviour
     public virtual void Enter()
     {
         DoChecks();
-        player.Animator.SetBool(animBoolName, true);
+        playerStateController.Animator.SetBool(animBoolName, true);
         startTime = Time.time;
         isAnimationFinished = false;
         isExitingState = false;
@@ -36,7 +36,7 @@ public class PlayerState : MonoBehaviour
 
     public virtual void Exit()
     {
-        player.Animator.SetBool(animBoolName, false);
+        playerStateController.Animator.SetBool(animBoolName, false);
         isExitingState = true;
     }
 

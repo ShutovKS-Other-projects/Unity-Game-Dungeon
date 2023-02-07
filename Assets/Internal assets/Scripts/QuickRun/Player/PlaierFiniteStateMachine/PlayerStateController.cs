@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerS : MonoBehaviour
+public class PlayerStateController : MonoBehaviour
 {
     #region State Machine
     public PlayerStateMachine StateMachine { get; private set; }
@@ -128,12 +128,12 @@ public class PlayerS : MonoBehaviour
     #region Check Functions
     public bool CheckIfGrounded()
     {
-        return Physics.CheckSphere(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
+        return Physics.CheckSphere(groundCheck.position, playerData.groundCheckRadius, playerData.groundLayer);
     }
 
     public bool CheckIfTouchingCelling()
     {
-        return Physics.CheckSphere(cellingCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
+        return Physics.CheckSphere(cellingCheck.position, playerData.groundCheckRadius, playerData.groundLayer);
     }
     #endregion
 
@@ -185,6 +185,5 @@ public class PlayerS : MonoBehaviour
             }
         }
     }
-
     #endregion
 }

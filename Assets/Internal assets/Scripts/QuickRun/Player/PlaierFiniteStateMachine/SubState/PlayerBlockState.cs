@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBlockState : PlayerAbilityState
 {
-    public PlayerBlockState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerBlockState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(playerStateController, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -26,13 +26,13 @@ public class PlayerBlockState : PlayerAbilityState
     {
         base.LogicUpdate();
 
-        if (!player.InputManager.GetPlayerBlockInput())
+        if (!playerStateController.InputManager.GetPlayerBlockInput())
         {
             isAbilityDone = true;
         }
-        else if (player.InputManager.GetPlayerAttackInput())
+        else if (playerStateController.InputManager.GetPlayerAttackInput())
         {
-            stateMachine.ChangeState(player.AttackState);
+            stateMachine.ChangeState(playerStateController.AttackState);
         }
     }
 }

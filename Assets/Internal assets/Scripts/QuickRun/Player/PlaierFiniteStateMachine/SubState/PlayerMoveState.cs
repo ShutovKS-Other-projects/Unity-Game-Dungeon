@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMoveState : PlayerGroundedState
 {
-    public PlayerMoveState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerMoveState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(playerStateController, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -16,11 +16,11 @@ public class PlayerMoveState : PlayerGroundedState
         {
             if (movementInput == Vector2.zero)
             {
-                stateMachine.ChangeState(player.IdleState);
+                stateMachine.ChangeState(playerStateController.IdleState);
             }
             else if (crouchInput)
             {
-                stateMachine.ChangeState(player.CrouchMoveState);
+                stateMachine.ChangeState(playerStateController.CrouchMoveState);
             }
         }
     }
@@ -28,6 +28,6 @@ public class PlayerMoveState : PlayerGroundedState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        player.Movement(movementInput, playerData.movementSpeed);
+        playerStateController.Movement(movementInput, playerData.movementSpeed);
     }
 }

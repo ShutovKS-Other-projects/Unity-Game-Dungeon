@@ -9,14 +9,14 @@ public class PlayerGroundedState : PlayerState
     protected bool crouchInput;
     protected bool interactInput;
     protected bool isTouchingCelling;
-    
+
     private bool attackInput;
     private bool blockInput;
     private bool jumpInput;
     private bool isInteractable;
     private bool isGrounded;
-    
-    public PlayerGroundedState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+
+    public PlayerGroundedState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(playerStateController, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -24,48 +24,50 @@ public class PlayerGroundedState : PlayerState
     {
         base.DoChecks();
 
-        isGrounded = player.CheckIfGrounded();
-        isTouchingCelling = player.CheckIfTouchingCelling();
+        isGrounded = playerStateController.CheckIfGrounded();
+        isTouchingCelling = playerStateController.CheckIfTouchingCelling();
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
-        movementInput = player.InputManager.GetPlayerMovementInput();
-        crouchInput = player.InputManager.GetPlayerCrouchInput();
-        jumpInput = player.InputManager.GetPlayerJumpInput();
-        attackInput = player.InputManager.GetPlayerAttackInput();
-        blockInput = player.InputManager.GetPlayerBlockInput();
-        interactInput = player.InputManager.GetPlayerInteractInput();
+        movementInput = playerStateController.InputManager.GetPlayerMovementInput();
+        crouchInput = playerStateController.InputManager.GetPlayerCrouchInput();
+        jumpInput = playerStateController.InputManager.GetPlayerJumpInput();
+        attackInput = playerStateController.InputManager.GetPlayerAttackInput();
+        blockInput = playerStateController.InputManager.GetPlayerBlockInput();
+        interactInput = playerStateController.InputManager.GetPlayerInteractInput();
         isInteractable = CheckVisibleIfInteractable();
 
         if (attackInput && !isTouchingCelling)
         {
-            stateMachine.ChangeState(player.AttackState);
+            stateMachine.ChangeState(playerStateController.AttackState);
         }
         else if (blockInput && !isTouchingCelling)
         {
-            stateMachine.ChangeState(player.BlockState);
+            stateMachine.ChangeState(playerStateController.BlockState);
         }
         else if (jumpInput && !isTouchingCelling)
         {
-            stateMachine.ChangeState(player.JumpState);
+            stateMachine.ChangeState(playerStateController.JumpState);
         }
-        else if(isInteractable && interactInput)
+        else if (isInteractable && interactInput)
         {
-            stateMachine.ChangeState(player.InteractState);
+            stateMachine.ChangeState(playerStateController.InteractState);
         }
         else if (!isGrounded)
         {
-            stateMachine.ChangeState(player.InAirState);
-        } 
+            stateMachine.ChangeState(playerStateController.InAirState);
+        }
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
-        player.Rotation();
+
+        RecoveryStamina();
+        playerStateController.Rotation();
     }
 
     #region Check Methods
@@ -74,24 +76,26 @@ public class PlayerGroundedState : PlayerState
         Ray ray = new(Camera.main.transform.position, Camera.main.transform.forward);
         RaycastHit hitInfo;
 
-        if (Physics.SphereCast(ray, playerData.interCheckSphereRadius, out hitInfo, playerData.interCheckRadius))
+        if (Physics.SphereCast(ray, playerData.interCheckSphereRadius, out hitInfo, playerData.interCheckDistance, playerData.interactableLayer))
         {
             InteractableBase _interactable = hitInfo.collider.GetComponent<InteractableBase>();
 
             if (_interactable != null)
             {
-                if (playerData.interactionData.IsEmpy())
+                if (playerData.interactionData.IsEmpy() || playerData.interactionData.IsSameInteractable(_interactable))
                 {
                     playerData.interactionData.Interactable = _interactable;
-                    player.uiInteractionBare.SetTooltipText(_interactable.TooltipText);
-                }
-                else if (!playerData.interactionData.IsSameInteractable(_interactable))
-                {
-                    playerData.interactionData.Interactable = _interactable;
-                    player.uiInteractionBare.SetTooltipText(_interactable.TooltipText);
-                }
+                    playerStateController.uiInteractionBare.SetTooltipText(_interactable.TooltipText);
 
-                return true;
+                    return true;
+                }
+                else
+                {
+                    playerData.interactionData.ResetData();
+                    playerStateController.uiInteractionBare.SetTooltipText("");
+
+                    return false;
+                }
             }
             else
             {
@@ -101,8 +105,45 @@ public class PlayerGroundedState : PlayerState
         else
         {
             playerData.interactionData.ResetData();
-            player.uiInteractionBare.SetTooltipText("");
+            playerStateController.uiInteractionBare.SetTooltipText("");
             return false;
+        }
+    }
+    #endregion
+
+    #region Other Methods
+    private void RecoveryStamina()
+    {
+        if (playerData.stamina >= playerData.maxStamina)
+        {
+            playerData.stamina = playerData.maxStamina;
+        }
+        else
+        {
+            if (playerData.isFatigue)
+            {
+                playerData.stamina += playerData.staminaRecoverySpeedIsFatigue * Time.deltaTime;
+                if (playerData.stamina >= playerData.maxStamina / 4)
+                {
+                    playerData.isFatigue = false;
+                }
+            }
+            else
+            {
+                playerData.stamina += playerData.staminaRecoverySpeed * Time.deltaTime;
+            }
+        }
+    }
+
+    private void RecoveryHealth()
+    {
+        if (playerData.health >= playerData.maxHealth)
+        {
+            playerData.health = playerData.maxHealth;
+        }
+        else
+        {
+            playerData.health += playerData.healthRecoverySpeed * Time.deltaTime;
         }
     }
     #endregion

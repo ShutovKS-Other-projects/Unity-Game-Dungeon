@@ -7,7 +7,7 @@ public class PlayerInAirState : PlayerState
     private Vector2 movementInput;
     private bool isGrounded;
 
-    public PlayerInAirState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerInAirState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(playerStateController, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -15,18 +15,18 @@ public class PlayerInAirState : PlayerState
     {
         base.DoChecks();
 
-        isGrounded = player.CheckIfGrounded();
+        isGrounded = playerStateController.CheckIfGrounded();
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
-        movementInput = player.InputManager.GetPlayerMovementInput();
+        movementInput = playerStateController.InputManager.GetPlayerMovementInput();
 
-        if(isGrounded && player.RB.velocity.y < 0.01f)
+        if(isGrounded && playerStateController.RB.velocity.y < 0.01f)
         {
-            stateMachine.ChangeState(player.LandState);
+            stateMachine.ChangeState(playerStateController.LandState);
         }
     }
 }

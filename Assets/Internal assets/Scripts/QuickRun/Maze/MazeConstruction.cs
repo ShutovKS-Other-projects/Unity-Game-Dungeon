@@ -8,6 +8,7 @@ public class MazeConstruction : MonoBehaviour
     public static int height = 10;
 
     [SerializeField] GameObject[] Mobe;
+    [SerializeField] GameObject Player;
 
     private void Awake()
     {
@@ -69,12 +70,8 @@ public class MazeConstruction : MonoBehaviour
         }
         void ConstructionStart(Vector3 position)
         {
-            GameObject obj = GameObject.CreatePrimitive(PrimitiveType.Cube);
-            GameObject sector = Instantiate(obj, position, Quaternion.identity); ;
-            sector.transform.localScale = new Vector3(0.335f, 0.1f, 0.335f);
-            sector.GetComponent<MeshRenderer>().material.color = Color.green;
-            sector.name = $"Start";
-            Destroy(obj);
+            GameObject Player = Instantiate(this.Player , position, Quaternion.identity);
+            Player.tag = "Player";
         }
         void ConstructionEnd(Vector3 position)
         {

@@ -3,51 +3,116 @@ using UnityEngine;
 public class UIController : MonoBehaviour
 {
     private InputManager inputManager;
+
     [SerializeField] private GameObject uiPanelGame;
     [SerializeField] private GameObject uiPanelMenu;
-    private UIGame uiGame;
-    private UIPlayerInfo uiMenu;
-    private bool isGameOpen = true;
+    [SerializeField] private GameObject uiPanelPlayerInfo;
+
+    private UIGame uiGameScript;
+    private UIMenu uiMenuScript;
+    private UIPlayerInfo uiPlayerInfoScript;
 
     void Start()
     {
-        uiGame = GetComponent<UIGame>();
-        uiMenu = GetComponent<UIPlayerInfo>();
         inputManager = InputManager.Instance;
 
-        Cursor.lockState = CursorLockMode.Locked;
-        uiPanelGame.SetActive(true);
-        uiPanelMenu.SetActive(false);
+        AddScript();
+        OnGame();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if (inputManager.GetPlayerMenuInput())
+        if (inputManager.GetAllMenuInput())
         {
-            isGameOpen = !isGameOpen;
-
-            if (isGameOpen)
+            if (uiPanelMenu.activeSelf)
             {
-                Cursor.lockState = CursorLockMode.Locked;
-                uiPanelGame.SetActive(true);
-                uiPanelMenu.SetActive(false);
+                OnGame();
             }
             else
             {
-                Cursor.lockState = CursorLockMode.None;
-                uiPanelGame.SetActive(false);
-                uiPanelMenu.SetActive(true);
+                OnMenu();
             }
-
         }
 
-        if (isGameOpen)
+        if (inputManager.GetAllPlayerInfoInput())
         {
-            uiGame.UpdateGameStatistics();
+            if (uiPanelPlayerInfo.activeSelf)
+            {
+                OnGame();
+            }
+            else
+            {
+                OnPlayerInfo();
+            }
         }
-        else
+    }
+
+    public void OnGame()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        uiPanelGame.SetActive(true);
+        uiPanelMenu.SetActive(false);
+        uiPanelPlayerInfo.SetActive(false);
+    }
+
+    public void OnMenu()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        uiPanelGame.SetActive(false);
+        uiPanelMenu.SetActive(true);
+        uiPanelPlayerInfo.SetActive(false);
+    }
+
+    public void OnPlayerInfo()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        uiPanelGame.SetActive(false);
+        uiPanelMenu.SetActive(false);
+        uiPanelPlayerInfo.SetActive(true);
+
+        try
         {
-            uiMenu.UpdatePlayerInfo();
+            uiPlayerInfoScript.UpdateInventory();
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("UpdateInventory error");
+        }
+    }
+
+    private void AddScript()
+    {
+        try
+        {
+            uiGameScript = uiPanelGame.GetComponent<UIGame>();
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("UIGame script not found");
+        }
+
+        try
+        {
+            uiMenuScript = uiPanelMenu.GetComponent<UIMenu>();
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("UIMenu script not found");
+        }
+
+        try
+        {
+            uiPlayerInfoScript = uiPanelPlayerInfo.GetComponent<UIPlayerInfo>();
+        }
+        catch (System.Exception)
+        {
+            Debug.Log("UIPlayerInfo script not found");
         }
     }
 }

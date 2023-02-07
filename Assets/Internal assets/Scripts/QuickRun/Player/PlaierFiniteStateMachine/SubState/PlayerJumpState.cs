@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerJumpState : PlayerAbilityState
 {
-    public PlayerJumpState(PlayerS player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerJumpState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(playerStateController, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -12,7 +12,8 @@ public class PlayerJumpState : PlayerAbilityState
     {
         base.Enter();
 
-        player.SetVelocityY(playerData.jumpSpeed);
+        playerStateController.SetVelocityY(playerData.jumpSpeed);
+        playerData.stamina -= 10;
         isAbilityDone = true;
     }
 }

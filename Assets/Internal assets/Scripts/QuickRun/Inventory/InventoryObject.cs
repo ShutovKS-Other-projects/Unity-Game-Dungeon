@@ -3,7 +3,6 @@ using System.IO;
 using UnityEngine;
 using System.Runtime.Serialization;
 
-
 public enum InterfaceType
 {
     Inventory,

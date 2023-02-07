@@ -22,7 +22,7 @@ public class MobeStatistic : MonoBehaviour
     [System.NonSerialized] public bool isAttack = false;
     [System.NonSerialized] public bool isPlayerDetected = false;
 
-    private void Awake()
+    private void Start()
     {
         _health = statisticObject.Health;
         AttackTimer = AttackCooldown;

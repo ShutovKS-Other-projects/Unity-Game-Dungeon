@@ -2,27 +2,21 @@ using UnityEngine;
 
 public class UIGame : MonoBehaviour
 {
-    private PlayerController playerController;
-    [SerializeField] private GameObject healthText;
-    [SerializeField] private GameObject staminaText;
-    [SerializeField] private GameObject collectCrystalText;
-    [SerializeField] private GameObject dialogText;
+    [SerializeField] private PlayerData _playerData;
 
-    void Start()
-    {
-        playerController = GameObject.FindWithTag("Player").GetComponent<PlayerController>();
-    }
+    [SerializeField] private GameObject _healthText;
+    [SerializeField] private GameObject _staminaText;
+    [SerializeField] private GameObject _dialogText;
 
-    void Update()
+    private void FixedUpdate()
     {
         UpdateGameStatistics();
     }
 
     public void UpdateGameStatistics()
     {
-        //healthText.GetComponent<UnityEngine.UI.Text>().text = "Health: " + playerController.statistic.Health;
-        //staminaText.GetComponent<UnityEngine.UI.Text>().text = "Stamina: " + playerController.statistic.Stamina;
-        //collectCrystalText.GetComponent<UnityEngine.UI.Text>().text = "Crystal count: " + playerController.statistic.CollectCrystal;
-        //dialogText.GetComponent<UnityEngine.UI.Text>().text = ;
+        _healthText.GetComponent<UnityEngine.UI.Text>().text = $"Здоровья: {_playerData.health}/{_playerData.maxHealth}";
+        _staminaText.GetComponent<UnityEngine.UI.Text>().text = $"Выносливости: {_playerData.stamina}/{_playerData.maxStamina}";
+        //_dialogText.GetComponent<UnityEngine.UI.Text>().text = ;
     }
 }

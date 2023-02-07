@@ -2,8 +2,6 @@
 
 public class InteractableDeadMobe : InteractableBase
 {
-    
-
     public override void OnInteract()
     {
         DropItem(transform.position);
