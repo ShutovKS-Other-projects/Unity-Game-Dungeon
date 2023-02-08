@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   className: No one
   health: 100
-  recoveryHealthSpeed: 10
+  healthRecoverySpeed: 10
   stamina: 100
   staminaRecoverySpeed: 10
   staminaRecoverySpeedIsFatigue: 7.5
@@ -34,12 +34,12 @@ MonoBehaviour:
   crouchColliderCenter: 0.9
   standColliderCenter: 0.6
   groundCheckRadius: 0.5
-  whatIsGround:
+  groundLayer:
     serializedVersion: 2
     m_Bits: 512
-  interCheckRadius: 2
+  interCheckDistance: 3
   interCheckSphereRadius: 0.5
-  layerInteractable:
+  interactableLayer:
     serializedVersion: 2
     m_Bits: 256
   interactionData: {fileID: 11400000, guid: 1c7c0fc237be1e941a1f6ddfdff759cd, type: 2}

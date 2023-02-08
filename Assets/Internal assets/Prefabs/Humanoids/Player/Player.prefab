@@ -118,6 +118,7 @@ GameObject:
   - component: {fileID: 2656519978458768518}
   - component: {fileID: 1246719871891814200}
   - component: {fileID: 3057348782107376441}
+  - component: {fileID: 2277231369872677175}
   - component: {fileID: 2596627835458191555}
   - component: {fileID: 3713910093249011704}
   m_Layer: 0
@@ -214,6 +215,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &2277231369872677175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629634057154321703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ac2f7be9b697448b05eddd84dc93bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: d5462428c7132324385be6ac8cb8f0b8, type: 2}
+  equipment: {fileID: 11400000, guid: 6ddb9e707e07fd545af818c9de29df5f, type: 2}
+  attributes: []
+  weaponTransform: {fileID: 963256154510749206, guid: 8ec4cd525e5f3a9468afc7a5ac81ea08,
+    type: 3}
 --- !u!114 &2596627835458191555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,3 +260,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa7e4313b92d894c946958f3caf381f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerData: {fileID: 0}

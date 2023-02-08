@@ -20,7 +20,7 @@ public class UIController : MonoBehaviour
         OnGame();
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (inputManager.GetAllMenuInput())
         {

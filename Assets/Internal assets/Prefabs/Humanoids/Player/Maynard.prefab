@@ -1774,11 +1774,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1951765050103022249}
+  - component: {fileID: 79381973179718254}
   - component: {fileID: 1058407882546948047}
   - component: {fileID: 3859839720391224270}
+  - component: {fileID: 1875532142387542509}
   - component: {fileID: -9163477678409114571}
   - component: {fileID: 1682005766502662926}
-  - component: {fileID: 79381973179718254}
   m_Layer: 0
   m_Name: Maynard
   m_TagString: Player
@@ -1804,6 +1805,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &79381973179718254
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269400773961662929}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 100f48dae8fc87a4a8027468df71f441, type: 3}
+  m_Controller: {fileID: 9100000, guid: 09472b2213027474fb25075ab883fb7a, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!54 &1058407882546948047
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1854,6 +1875,22 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &1875532142387542509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7269400773961662929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ac2f7be9b697448b05eddd84dc93bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventory: {fileID: 11400000, guid: d5462428c7132324385be6ac8cb8f0b8, type: 2}
+  equipment: {fileID: 11400000, guid: 6ddb9e707e07fd545af818c9de29df5f, type: 2}
+  attributes: []
+  weaponTransform: {fileID: 963256154510749206}
 --- !u!114 &-9163477678409114571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1882,26 +1919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa7e4313b92d894c946958f3caf381f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &79381973179718254
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7269400773961662929}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 100f48dae8fc87a4a8027468df71f441, type: 3}
-  m_Controller: {fileID: 9100000, guid: 09472b2213027474fb25075ab883fb7a, type: 2}
-  m_CullingMode: 1
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  playerData: {fileID: 0}
 --- !u!1 &7286212524585823549
 GameObject:
   m_ObjectHideFlags: 0
