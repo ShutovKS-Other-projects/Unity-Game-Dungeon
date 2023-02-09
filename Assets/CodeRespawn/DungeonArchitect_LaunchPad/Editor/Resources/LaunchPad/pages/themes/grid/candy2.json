@@ -1,0 +1,14 @@
+{
+  "title": "Candy Indoor",
+  "layout": "Details",
+
+  "header": "Candy Indoor",
+  "desc": "",
+  "image": "samples/images/sample_candy_02",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/grid/CandyIndoorDungeonTheme", "resource_path": true  }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Isaac Basic",
+  "layout": "Details",
+
+  "header": "Isaac Basic",
+  "desc": "",
+  "image": "samples/images/sample_isaac_01",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/isaac/Theme_DemoIsaac", "resource_path": true  }
+    }
+  ]
+}

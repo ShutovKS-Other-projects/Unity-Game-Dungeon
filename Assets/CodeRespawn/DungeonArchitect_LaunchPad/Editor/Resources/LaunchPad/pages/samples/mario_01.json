@@ -1,0 +1,26 @@
+{
+  "title": "Mario Demo Game",
+  "layout": "Details",
+
+  "header": "Mario Demo Game",
+  "desc": "Demo of the mario dungeon builder",
+  "image": "samples/images/sample_mario_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Mario/Scenes/MarioBuilderScene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Mario/Scenes/MarioBuilderScene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Mario/Scenes/MarioBuilderScene.unity", "resource_path": false }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=1QAG-pa4MFU" }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Isaac Demo",
+  "layout": "Details",
+
+  "header": "Isaac Demo",
+  "desc": "Builds levels like in the game Binding of Isaac",
+  "image": "samples/images/sample_isaac_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Isaac/Scenes/Demo_IsaacBuilder.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Isaac/Scenes/Demo_IsaacBuilder.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Isaac/Scenes/Demo_IsaacBuilder.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

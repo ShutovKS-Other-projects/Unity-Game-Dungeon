@@ -1,0 +1,25 @@
+{
+  "title": "GridFlow Template - No Caves",
+  "layout": "Details",
+
+  "header": "GridFlow Template - Default",
+  "desc": "A grid flow theme with various branches, treasure, enemies and key-locks. Caves and corridors are disabled",
+  "image": "templates_flow/templateflow_grid_nocave",
+  "actions": [
+    {
+      "type": "CloneGridFlow",
+      "data": {
+        "path": "gridflow/DemoGridFlow_NoCaves",
+        "resource_path": true
+      }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=aa8KcSligXs" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

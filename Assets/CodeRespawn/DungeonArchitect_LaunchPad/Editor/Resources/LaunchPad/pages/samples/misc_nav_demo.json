@@ -1,0 +1,26 @@
+{
+  "title": "Navigation Demo",
+  "layout": "Details",
+
+  "header": "Navigation Demo",
+  "desc": "Runtime navigation demo. Hit play to have the NPC follow you",
+  "image": "samples/images/sample_misc_nav_demo",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/NavigationSimpleDemo.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/NavigationSimpleDemo.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/NavigationSimpleDemo.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=4fVXaaxPpGw" }
+    }
+  ]
+}

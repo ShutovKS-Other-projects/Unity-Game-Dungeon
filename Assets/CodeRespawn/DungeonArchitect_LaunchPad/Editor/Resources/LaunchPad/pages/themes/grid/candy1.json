@@ -1,0 +1,14 @@
+{
+  "title": "Candy Default",
+  "layout": "Details",
+
+  "header": "Candy Default",
+  "desc": "",
+  "image": "samples/images/sample_candy_01",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/grid/CandyDungeonTheme", "resource_path": true  }
+    }
+  ]
+}

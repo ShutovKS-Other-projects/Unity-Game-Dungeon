@@ -1,0 +1,30 @@
+{
+  "title": "Grid Flow Game: Simple Candy",
+  "layout": "Details",
+
+  "header": "Grid Flow Game: Simple Candy",
+  "desc": "Grid Flow Game demo using the simple candy theme. It uses key-lock, cyclic paths, mini-map and more. Walls are placed on the edge of tiles, instead of taking up a full tile",
+  "image": "samples/images/sample_grid_flow_edge_candy",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/GridFlowBuilderEdgeSimpleDemo_Game.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/GridFlowBuilderEdgeSimpleDemo_Game.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/GridFlowBuilderEdgeSimpleDemo_Game.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=aa8KcSligXs" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

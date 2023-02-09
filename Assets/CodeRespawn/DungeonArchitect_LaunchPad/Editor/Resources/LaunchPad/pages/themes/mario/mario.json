@@ -1,0 +1,14 @@
+{
+  "title": "Mario Default",
+  "layout": "Details",
+
+  "header": "Mario Default",
+  "desc": "",
+  "image": "samples/images/sample_mario_01",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/mario/MarioDemoTheme", "resource_path": true  }
+    }
+  ]
+}

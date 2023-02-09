@@ -1,0 +1,31 @@
+﻿{
+  "title": "Grid Flow: Static Spawn Room",
+  "layout": "Details",
+
+  "header": "Grid Flow: Static Spawn Room",
+  "desc": "Make the spawn room and the goal room spawn in predictable positions so you can blend it with your static level geometry. Check the flow graph on how this is done",
+  "image": "samples/images/sample_grid_flow_static_spawn",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/GridFlowBuilderDemo_StaticStartEndRooms.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/GridFlowBuilderDemo_StaticStartEndRooms.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/GridFlowBuilderDemo_StaticStartEndRooms.unity" }
+    },
+    {
+      "type": "CloneGridFlow",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/FlowGraph/DemoGridFlow_FixedStartGoalRoom.asset" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}
+

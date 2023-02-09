@@ -1,0 +1,18 @@
+{
+  "title": "SnapFlow Template - Default",
+  "layout": "Details",
+
+  "header": "SnapFlow Template - Default",
+  "desc": "A flow graph with mini-boss, treasure rooms, shops, teleporters, key-locks and more. \nNOTE: Template compatibility - Unity 2019.x and above",
+  "image": "templates_flow/flow_template_snap_default",
+  "actions": [
+	{
+      "type": "CloneSnapFlow",
+      "data": { "path": "snapflow/SnapDungeonFlow", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=IKUw_EcHYyc" }
+    }
+  ]
+}

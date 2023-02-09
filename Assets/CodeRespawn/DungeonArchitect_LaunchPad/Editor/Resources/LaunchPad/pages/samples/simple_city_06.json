@@ -1,0 +1,26 @@
+{
+  "title": "Skyscrapers",
+  "layout": "Details",
+
+  "header": "Skyscrapers",
+  "desc": "Emit skyscrapers in the center of the city",
+  "image": "samples/images/sample_simple_city_06",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/UrbanCity_SkyscraperEmitter.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/UrbanCity_SkyscraperEmitter.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/UrbanCity_SkyscraperEmitter.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

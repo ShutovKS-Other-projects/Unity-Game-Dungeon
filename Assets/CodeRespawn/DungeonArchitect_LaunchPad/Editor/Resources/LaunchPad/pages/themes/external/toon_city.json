@@ -1,0 +1,18 @@
+{
+  "title": "Cartoon City",
+  "layout": "Details",
+
+  "header": "Cartoon City",
+  "desc": "",
+  "image": "themes/images/theme_toon_city",
+  "actions": [
+    {
+      "type": "Documentation",
+      "data": { "path": "https://coderespawn.github.io/dungeon-architect-quick-start-guide-unity/stage/html/quick_start_1.6.0.html#cartoon-town-theme-manufacturak4", "title": "View Online" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=NlqHnM1KG0g" }
+    }
+  ]
+}

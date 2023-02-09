@@ -1,0 +1,34 @@
+{
+  "title": "GridFlow Template - Script Path",
+  "layout": "Details",
+
+  "header": "GridFlow Template - Script Path",
+  "desc": "Control the path node positions using your own scripts",
+  "image": "samples/images/sample_grid_flow_path",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/GridFlowBuilderDemo_ScriptPath.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/GridFlowBuilderDemo_ScriptPath.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/Scenes/GridFlowBuilderDemo_ScriptPath.unity" }
+    },
+    {
+      "type": "CloneGridFlow",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/FlowGraph/DemoGridFlow_ScriptPaths.asset" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=aa8KcSligXs" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "ProgArt City",
+  "layout": "Details",
+
+  "header": "ProgArt City",
+  "desc": "",
+  "image": "samples/images/sample_simple_city_05",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/simple_city/SimpleCityTheme", "resource_path": true  }
+    }
+  ]
+}

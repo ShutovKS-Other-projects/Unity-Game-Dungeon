@@ -1,0 +1,26 @@
+{
+  "title": "Simple City",
+  "layout": "Details",
+
+  "header": "Simple City",
+  "desc": "Demos the simple city builder",
+  "image": "samples/images/sample_simple_city_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/SimpleCityScene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/SimpleCityScene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/SimpleCityScene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

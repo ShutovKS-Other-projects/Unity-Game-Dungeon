@@ -1,0 +1,26 @@
+{
+  "title": "Outdoor Cliffs",
+  "layout": "Details",
+
+  "header": "Outdoor Cliffs",
+  "desc": "Cliff theme with foliage, trees etc",
+  "image": "samples/images/sample_cliff_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_OutdoorCliffs/Scenes/Demo_OutdoorCliffs.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_OutdoorCliffs/Scenes/Demo_OutdoorCliffs.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_OutdoorCliffs/Scenes/Demo_OutdoorCliffs.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

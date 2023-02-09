@@ -1,0 +1,22 @@
+{
+  "title": "Grid Builder (3D)",
+  "layout": "Details",
+
+  "header": "Grid Builder",
+  "desc": "Build a dungeon on a grid based system with support for stairs",
+  "image": "templates_builder/builder_grid",
+  "actions": [
+    {
+      "type": "CloneSceneAndBuild",
+      "data": { "path": "scenes/grid/Scene_Grid", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=7UPgPL6nNj8" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "" }
+    }
+  ]
+}

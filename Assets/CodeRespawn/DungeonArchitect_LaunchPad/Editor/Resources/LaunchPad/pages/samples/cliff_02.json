@@ -1,0 +1,26 @@
+{
+  "title": "Outdoor Hills",
+  "layout": "Details",
+
+  "header": "Outdoor Hills",
+  "desc": "Alternate theme with hills instead of cliffs",
+  "image": "samples/images/sample_cliff_02",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_OutdoorCliffs/Scenes/Demo_OutdoorCliffs_Alternate.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_OutdoorCliffs/Scenes/Demo_OutdoorCliffs_Alternate.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_OutdoorCliffs/Scenes/Demo_OutdoorCliffs_Alternate.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

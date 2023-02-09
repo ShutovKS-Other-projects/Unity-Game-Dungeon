@@ -1,0 +1,22 @@
+{
+  "title": "GridFlow Template - Default",
+  "layout": "Details",
+
+  "header": "GridFlow Template - Default",
+  "desc": "A grid flow theme with various branches, treasure, enemies and key-locks",
+  "image": "templates_flow/flow_template_grid_default",
+  "actions": [
+	{
+      "type": "CloneGridFlow",
+      "data": { "path": "gridflow/DemoGridFlow", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=aa8KcSligXs" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

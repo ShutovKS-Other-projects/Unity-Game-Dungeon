@@ -1,0 +1,26 @@
+{
+  "title": "Shooter - Hill",
+  "layout": "Details",
+
+  "header": "Shooter - Hill",
+  "desc": "Sample game using the hill theme",
+  "image": "samples/images/sample_game_ss_hill_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game3D_SurvivalShooter/Scenes/HillSurvivalShooter.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game3D_SurvivalShooter/Scenes/HillSurvivalShooter.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game3D_SurvivalShooter/Scenes/HillSurvivalShooter.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

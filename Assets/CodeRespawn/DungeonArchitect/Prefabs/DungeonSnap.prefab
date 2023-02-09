@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &172936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 427560}
+  - component: {fileID: 11403994}
+  - component: {fileID: 876904021481137447}
+  - component: {fileID: 11400674}
+  - component: {fileID: 11416228}
+  - component: {fileID: 11472532}
+  - component: {fileID: 4591643431505671180}
+  m_Layer: 0
+  m_Name: DungeonSnap
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &427560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172936}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11403994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65b74248fe594982b0d9bfde7d96c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dungeonThemes: []
+  debugDraw: 0
+--- !u!114 &876904021481137447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0abe472f19a42d4e8f6efec44ea3dbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Seed: 0
+  Mode2D: 0
+  Modules: []
+  dungeonFlow: {fileID: 0}
+  runGraphGenerationScripts: 0
+  RotateModulesToFit: 1
+  CollisionTestContraction: 1
+  MaxProcessingPower: 1000000
+--- !u!114 &11400674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35068207f521e094c9c0a172876b2fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  asyncBuild: 0
+  maxBuildTimePerFrame: 32
+  asyncBuildStartPosition: {fileID: 0}
+--- !u!114 &11416228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7ca94bb2e6e140bdc9938b596d66a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToolData: {fileID: 0}
+  modules: []
+  connections: []
+--- !u!114 &11472532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0ef9172759d43928c6f1131063f690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemParent: {fileID: 0}
+--- !u!114 &4591643431505671180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f137194ce2e2ab2448b5f482deeca829, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modules: []

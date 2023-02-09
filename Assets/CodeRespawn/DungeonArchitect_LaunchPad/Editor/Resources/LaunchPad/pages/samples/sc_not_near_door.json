@@ -1,0 +1,26 @@
+{
+  "title": "Not Near Door",
+  "layout": "Details",
+
+  "header": "Not Near Door",
+  "desc": "Avoid items near doors",
+  "image": "samples/images/sample_sc_not_near_door",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/02_SCExample_NotNearDoor_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/02_SCExample_NotNearDoor_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/02_SCExample_NotNearDoor_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

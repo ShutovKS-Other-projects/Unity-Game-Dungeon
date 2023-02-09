@@ -1,0 +1,26 @@
+﻿{
+  "title": "Snap Grid Flow Side Scroller Setup",
+  "layout": "Details",
+
+  "header": "Snap Grid Flow Side Scroller Setup",
+  "desc": "Side scroller module setup using the snap grid flow builder",
+  "image": "samples/images/sample_sgf_ss",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_SideScroller/Scenes/SGF_Simple_SideScroller.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_SideScroller/Scenes/SGF_Simple_SideScroller.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_SideScroller/Scenes/SGF_Simple_SideScroller.unity" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/snap-grid-flow" }
+    }
+  ]
+}

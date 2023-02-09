@@ -1,0 +1,26 @@
+{
+  "title": "Diablo Top Down",
+  "layout": "Details",
+
+  "header": "Diablo Top Down",
+  "desc": "Remove walls facing the camera, ideal for top-down games",
+  "image": "samples/images/sample_sc_diablo",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/09_SCExample_DiabloTopDown_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/09_SCExample_DiabloTopDown_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/09_SCExample_DiabloTopDown_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

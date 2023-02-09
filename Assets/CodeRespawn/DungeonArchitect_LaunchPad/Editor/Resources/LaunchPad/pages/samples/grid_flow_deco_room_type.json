@@ -1,0 +1,26 @@
+{
+  "title": "Grid Flow - Decorate Room Types",
+  "layout": "Details",
+
+  "header": "Grid Flow - Decorate Room Types",
+  "desc": "Decorate different room types (like Caves, Rooms, Corridors) differently using theme engine and selector rules",
+  "image": "samples/images/sample_grid_flow_deco_room_types",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow_Query/Example_QueryRoomTypes/Scene_GridFlowQuery_RoomTypes.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow_Query/Example_QueryRoomTypes/Scene_GridFlowQuery_RoomTypes.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow_Query/Example_QueryRoomTypes/Scene_GridFlowQuery_RoomTypes.unity" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Multi Dungeon Layout",
+  "layout": "Details",
+
+  "header": "Multi Dungeon Layout",
+  "desc": "Blend multiple dungeons together with designer created content",
+  "image": "samples/images/sample_misc_multi_dungeon",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/DA_MutiDungeonLayout.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/DA_MutiDungeonLayout.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/DA_MutiDungeonLayout.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=uGArpwpoYaE" }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Outdoor Cliffs",
+  "layout": "Details",
+
+  "header": "Outdoor Cliffs",
+  "desc": "",
+  "image": "samples/images/sample_cliff_01",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/grid/OutdoorCliffTheme", "resource_path": true  }
+    }
+  ]
+}

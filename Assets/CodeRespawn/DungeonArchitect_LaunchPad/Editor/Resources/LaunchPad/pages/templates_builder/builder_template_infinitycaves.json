@@ -1,0 +1,22 @@
+{
+  "title": "Infinity Cave Template (3D)",
+  "layout": "Details",
+
+  "header": "Infinity Cave Builder",
+  "desc": "Infinite cave dungeons that builds in chunks as the player traverses the world",
+  "image": "templates_builder/builder_infinity_caves",
+  "actions": [
+    {
+      "type": "CloneInfinityScene",
+      "data": { "path": "scenes/infinity_caves/Scene_InfinityCaves", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=g5is5n4-LUE" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "" }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Outer Walls",
+  "layout": "Details",
+
+  "header": "Outer Walls",
+  "desc": "Custom meshes on the outer edges of the dungeons",
+  "image": "samples/images/sample_sc_outer_walls",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/05_SCExample_OuterWalls_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/05_SCExample_OuterWalls_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/05_SCExample_OuterWalls_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

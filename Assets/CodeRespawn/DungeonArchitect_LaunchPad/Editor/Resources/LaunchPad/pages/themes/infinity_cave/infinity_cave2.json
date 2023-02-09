@@ -1,0 +1,14 @@
+{
+  "title": "Simple Caves",
+  "layout": "Details",
+
+  "header": "Simple Caves",
+  "desc": "",
+  "image": "themes/images/theme_infinity_cave_basic",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/infinity_cave/Theme_CaveSimple", "resource_path": true  }
+    }
+  ]
+}

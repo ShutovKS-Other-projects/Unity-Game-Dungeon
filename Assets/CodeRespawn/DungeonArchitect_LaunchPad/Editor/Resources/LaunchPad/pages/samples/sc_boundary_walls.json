@@ -1,0 +1,26 @@
+{
+  "title": "Boundary Walls",
+  "layout": "Details",
+
+  "header": "Boundary Walls",
+  "desc": "Force walls on edges of a dungeon, fences on inside",
+  "image": "samples/images/sample_sc_boundary_walls",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/06_SCExample_BoundaryWalls_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/06_SCExample_BoundaryWalls_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/06_SCExample_BoundaryWalls_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+	"title": "Overview",
+	"layout": "CardGrid",
+	"showCategories": false,
+	"categories": 
+	[
+		{
+			"category": "default",
+			"cards":
+			[
+				{
+					"title": "Getting Started",
+					"desc": "A basic overview of the system",
+					"image": "thumb_videotut_vid1",
+					"link": ""
+				},
+				{
+					"title": "Your first dungeon",
+					"desc": "Build your first dungeon",
+					"image": "thumb_videotut_vid2",
+					"link": ""
+				}
+			]
+		}
+	]
+}

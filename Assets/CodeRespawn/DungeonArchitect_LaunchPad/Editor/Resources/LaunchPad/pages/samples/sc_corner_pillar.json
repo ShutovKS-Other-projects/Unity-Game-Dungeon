@@ -1,0 +1,26 @@
+{
+  "title": "Corner Pillar",
+  "layout": "Details",
+
+  "header": "Corner Pillar",
+  "desc": "Add pillars on the corner of rooms",
+  "image": "samples/images/sample_sc_corner_pillar",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/12_SCExample_CornerPillar_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/12_SCExample_CornerPillar_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/12_SCExample_CornerPillar_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Snap Builder Template (3D)",
+  "layout": "Details",
+
+  "header": "Snap Builder",
+  "desc": "Piece together existing room prefabs using a dungeon flow graph.  Since it pieces together existing room prefabs, it gives the designer control on decorating the individual rooms.  Control the flow of your dungeon using a graph, which is generated using easy to use graph grammars. The sample contains key/locks, shops, teleporters, boss rooms and much more",
+  "image": "templates_flow/flow_template_snap_default",
+  "actions": [
+    {
+      "type": "CloneSceneAndBuild",
+      "data": { "path": "scenes/snap/Scene_Snap", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=IKUw_EcHYyc" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "" }
+    }
+  ]
+}

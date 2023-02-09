@@ -1,0 +1,26 @@
+{
+  "title": "Shooter - Candy",
+  "layout": "Details",
+
+  "header": "Shooter - Candy",
+  "desc": "Sample game with procedural dungeon, AI and more",
+  "image": "samples/images/sample_game_ss_candy_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game3D_SurvivalShooter/Scenes/CandySurvivalShooter.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game3D_SurvivalShooter/Scenes/CandySurvivalShooter.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game3D_SurvivalShooter/Scenes/CandySurvivalShooter.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=kt8gRNio24Y" }
+    }
+  ]
+}

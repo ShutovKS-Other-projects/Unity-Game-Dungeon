@@ -1,0 +1,26 @@
+{
+  "title": "Landscape Transformer",
+  "layout": "Details",
+
+  "header": "Landscape Transformer",
+  "desc": "Non-destruction landscape transforms when building dungeons",
+  "image": "samples/images/sample_landscape_trans_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_LandscapeTransformer/Scenes/Demo_LandscapeTransformer.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_LandscapeTransformer/Scenes/Demo_LandscapeTransformer.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_LandscapeTransformer/Scenes/Demo_LandscapeTransformer.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=nm0aDeOX_qQ" }
+    }
+  ]
+}

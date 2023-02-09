@@ -1,0 +1,22 @@
+{
+  "title": "GridFlow Builder Template (3D)",
+  "layout": "Details",
+
+  "header": "Grid Flow Builder",
+  "desc": "The Grid Flow Builder comes with a powerful set of tools that help you design the flow of your dungeons. Build key-locks, design cyclic paths, blend room/cave structures, control placement of items like enemies/health/pickup/etc and much more",
+  "image": "templates_flow/flow_template_grid_default",
+  "actions": [
+    {
+      "type": "CloneSceneAndBuild",
+      "data": { "path": "scenes/grid_flow/Scene_GridFlow", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=aa8KcSligXs" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

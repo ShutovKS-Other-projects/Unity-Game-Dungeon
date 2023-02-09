@@ -1,0 +1,22 @@
+{
+  "title": "Floor Plan Builder (3D)",
+  "layout": "Details",
+
+  "header": "Floor Plan Builder",
+  "desc": "Create floor plans. Ideal for creating interior of buildings",
+  "image": "templates_builder/builder_floor_planner",
+  "actions": [
+    {
+      "type": "CloneSceneAndBuild",
+      "data": { "path": "scenes/floor_plan/Scene_FloorPlan", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "" }
+    }
+  ]
+}

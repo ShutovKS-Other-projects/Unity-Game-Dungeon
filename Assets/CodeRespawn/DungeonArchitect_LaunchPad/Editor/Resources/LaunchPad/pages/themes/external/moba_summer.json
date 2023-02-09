@@ -1,0 +1,18 @@
+{
+  "title": "Moba (Summer)",
+  "layout": "Details",
+
+  "header": "Moba (Summer)",
+  "desc": "",
+  "image": "themes/images/theme_moba_summer",
+  "actions": [
+    {
+      "type": "Documentation",
+      "data": { "path": "https://coderespawn.github.io/dungeon-architect-quick-start-guide-unity/stage/html/quick_start_1.6.0.html#summer-mode", "title": "View Online" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=vpaMyncs2l8" }
+    }
+  ]
+}

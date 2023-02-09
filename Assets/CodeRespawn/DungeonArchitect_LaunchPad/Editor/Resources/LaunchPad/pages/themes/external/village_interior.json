@@ -1,0 +1,18 @@
+{
+  "title": "Village Interiors",
+  "layout": "Details",
+
+  "header": "Village Interiors",
+  "desc": "",
+  "image": "themes/images/theme_village_interior",
+  "actions": [
+    {
+      "type": "Documentation",
+      "data": { "path": "https://coderespawn.github.io/dungeon-architect-quick-start-guide-unity/stage/html/quick_start_1.6.0.html#village-interiors-3dforge", "title": "View Online" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=-XEp_8kI-Us" }
+    }
+  ]
+}

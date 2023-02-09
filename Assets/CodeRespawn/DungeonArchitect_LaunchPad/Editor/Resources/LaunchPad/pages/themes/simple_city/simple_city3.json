@@ -1,0 +1,14 @@
+{
+  "title": "Tiny City",
+  "layout": "Details",
+
+  "header": "Tiny City",
+  "desc": "",
+  "image": "samples/images/sample_simple_city_01",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/simple_city/TinyCityTheme", "resource_path": true  }
+    }
+  ]
+}

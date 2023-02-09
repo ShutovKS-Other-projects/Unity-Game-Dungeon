@@ -1,0 +1,34 @@
+{
+	"title": "Documentation",
+	"layout": "CardGrid",
+	"description": "View online documentation",
+	"showCategories": false,
+	"heightOverride": 210,
+	"categories": 
+	[
+		{
+			"category": "default",
+			"cards":
+			[
+				{
+					"title": "Tutorials\n(Start Here)",
+					"desc": "Learn how to use DA with these step-by-step tutorials",
+					"image": "thumbs/thumb_docs_book",
+					"url": "https://docs.dungeonarchitect.dev/unity"
+				},
+				{
+					"title": "API Docs",
+					"desc": "Source Code API Documentation",
+					"image": "thumbs/thumb_docs_book",
+					"url": "https://coderespawn.github.io/dungeon-architect-api-doc-unity/namespace_dungeon_architect.html"
+				},
+				{
+					"title": "Change Log",
+					"desc": "Change log of Dungeon Architect",
+					"image": "thumbs/thumb_docs_book",
+					"url": "https://gist.github.com/coderespawn/bc5905290233c4d57372d2971d3db717"
+				}
+			]
+		}
+	]
+}

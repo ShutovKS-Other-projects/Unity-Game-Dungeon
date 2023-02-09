@@ -1,0 +1,18 @@
+{
+  "title": "Maze Builder Template (3D)",
+  "layout": "Details",
+
+  "header": "Maze Builder Template",
+  "desc": "Build a maze in a NxM grid",
+  "image": "templates_builder/builder_maze",
+  "actions": [
+    {
+      "type": "CloneSceneAndBuild",
+      "data": { "path": "scenes/maze/Scene_Maze", "resource_path": true }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "" }
+    }
+  ]
+}

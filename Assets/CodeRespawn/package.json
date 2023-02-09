@@ -1,0 +1,16 @@
+{
+  "name": "com.coderespawn.dungeonarchitect",
+  "displayName": "Dungeon Architect",
+  "version": "1.19.0",
+  "unity": "2021.1",
+  "description": "Winner of the Unity Awards 2016 Asset Store Award\n\nDungeon Architect is a procedural level generation tool. It lets you quickly author your own dungeons both at runtime and design-time with powerful editor tooling.",
+  "keywords": [
+    "Dungeon Architect",
+    "Dungeon",
+    "DA",
+    "Procedural",
+    "Level"
+  ],
+  "category": "Procedural",
+  "dependencies": {}
+}

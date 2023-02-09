@@ -1,0 +1,14 @@
+{
+  "title": "Stronghold",
+  "layout": "Details",
+
+  "header": "Stronghold",
+  "desc": "",
+  "image": "samples/images/sample_simple_city_03",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/simple_city/StrongholdBasicTheme", "resource_path": true  }
+    }
+  ]
+}

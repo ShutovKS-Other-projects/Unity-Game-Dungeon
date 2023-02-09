@@ -1803,7 +1803,7 @@ Transform:
   - {fileID: 3382985650460372924}
   - {fileID: 8315825083805321692}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &79381973179718254
 Animator:
@@ -1904,8 +1904,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 11400000, guid: da7c922a7022d144db5b364f494c3f61, type: 2}
-  groundCheck: {fileID: 0}
-  cellingCheck: {fileID: 0}
+  groundCheck: {fileID: 8315825083805321692}
+  cellingCheck: {fileID: 3382985650460372924}
   uiInteractionBare: {fileID: 0}
 --- !u!114 &1682005766502662926
 MonoBehaviour:
@@ -1919,7 +1919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa7e4313b92d894c946958f3caf381f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 0}
+  playerData: {fileID: 11400000, guid: da7c922a7022d144db5b364f494c3f61, type: 2}
 --- !u!1 &7286212524585823549
 GameObject:
   m_ObjectHideFlags: 0

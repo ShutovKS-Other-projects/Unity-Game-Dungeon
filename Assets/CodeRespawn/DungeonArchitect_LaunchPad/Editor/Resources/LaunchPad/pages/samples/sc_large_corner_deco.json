@@ -1,0 +1,26 @@
+{
+  "title": "Large Corner Deco",
+  "layout": "Details",
+
+  "header": "Large Corner Deco",
+  "desc": "Find and place large corner decorations, if we have the space",
+  "image": "samples/images/sample_sc_large_corner_deco",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/04_SCExample_LargeCornerDeco_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/04_SCExample_LargeCornerDeco_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/04_SCExample_LargeCornerDeco_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

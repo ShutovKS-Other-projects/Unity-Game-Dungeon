@@ -1,0 +1,21 @@
+﻿{
+  "title": "GridFlow Mirror - Symmetric Dungeons",
+  "layout": "Details",
+
+  "header": "GridFlow Mirror Dungeon",
+  "desc": "Create symmetric levels for your multi-player arena games using the Mirror Node",
+  "image": "templates_flow/flow_template_grid_flow_mirror",
+  "actions": [
+    {
+      "type": "CloneGridFlow",
+      "data": {
+        "path": "gridflow/DemoGridFlow_Mirror",
+        "resource_path": true
+      }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

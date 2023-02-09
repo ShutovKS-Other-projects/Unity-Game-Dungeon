@@ -1,0 +1,26 @@
+{
+  "title": "Urban City",
+  "layout": "Details",
+
+  "header": "Urban City",
+  "desc": "Urban city theme. Programmer art :)",
+  "image": "samples/images/sample_simple_city_05",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/UrbanCity.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/UrbanCity.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/UrbanCity.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

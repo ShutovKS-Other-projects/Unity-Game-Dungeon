@@ -1,0 +1,22 @@
+{
+  "title": "GridFlow Template - Script Path",
+  "layout": "Details",
+  "header": "GridFlow Template - Script Path",
+  "desc": "Control the path node positions using your own scripts",
+  "image": "samples/images/sample_grid_flow_path",
+  "actions": [
+    {
+      "type": "CloneGridFlow",
+      "data": {
+        "path": "gridflow/DemoGridFlow_ScriptPaths",
+        "resource_path": true
+      }
+    },
+    {
+      "type": "Documentation",
+      "data": {
+        "path": "https://docs.dungeonarchitect.dev/unity/grid-flow"
+      }
+    }
+  ]
+}

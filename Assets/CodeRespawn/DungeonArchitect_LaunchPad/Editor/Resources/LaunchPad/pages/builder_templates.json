@@ -1,0 +1,100 @@
+{
+	"title": "Builder Templates",
+	"layout": "CardGrid",
+	"description": "Create a new scene preconfigured with one of the following builders. Each builder generates a different type of a dungeon",
+	"showCategories": true,
+	"categories": 
+	[
+		{
+			"category": "3D Templates",
+			"cards":
+					[
+				{
+				  "title": "Grid Flow Builder",
+				  "desc": "Design and control the flow of your dungeons with this powerful new builder",
+				  "image": "thumbs/thumb_templateflow_grid",
+				  "link": "templates_builder/builder_template_gridflow"
+				},
+				{
+				  "title": "Snap Builder",
+				  "desc": "Design the flow of your dungeon using graph grammars and stitch together existing room prefabs",
+				  "image": "thumbs/thumb_templateflow_snap",
+				  "link": "templates_builder/builder_template_snap"
+				},
+				{
+					"title": "Snap Grid Flow",
+					"desc": "Combine Snap and Flow frameworks to stitch pre-made rooms in a 3D graph",
+					"image": "thumbs/thumb_builder_sgf",
+					"link": "templates_builder/builder_template_sgf"
+				},
+				{
+				  "title": "Grid Builder",
+				  "desc": "Build a dungeon on a grid based system with support for stairs",
+				  "image": "templates_builder/builder_grid",
+				  "link": "templates_builder/builder_template_grid"
+				},
+				{
+				  "title": "Mario Builder",
+				  "desc": "Build side scrolling levels with this builder",
+				  "image": "templates_builder/builder_mario",
+				  "link": "templates_builder/builder_template_mario"
+				},
+				{
+				  "title": "Simple City",
+				  "desc": "Build a simple city with roads, houses, parks, city walls, foliage etc",
+				  "image": "thumbs/thumb_builder_simplecity",
+				  "link": "templates_builder/builder_template_simplecity"
+				},
+				{
+				  "title": "Circular City",
+				  "desc": "Circular city builder with procedural roads",
+				  "image": "thumbs/thumb_builder_circular_city",
+				  "link": "templates_builder/builder_template_circularcity"
+				},
+				{
+				  "title": "Infinity Cave",
+				  "desc": "Infinite cave dungeons that builds in chunks as the player traverses the world",
+				  "image": "templates_builder/builder_infinity_caves",
+				  "link": "templates_builder/builder_template_infinitycaves"
+				},
+				{
+				  "title": "Spatial Partition",
+				  "desc": "Build a dungeon using binary spatial partitioning",
+				  "image": "thumbs/thumb_builder_bsp",
+				  "link": "templates_builder/builder_template_bsp"
+				},
+				{
+				  "title": "Floor Planner",
+				  "desc": "Create floor plans. Ideal for creating interior of buildings",
+				  "image": "templates_builder/builder_floor_planner",
+				  "link": "templates_builder/builder_template_floor_planner"
+				},
+				{
+				  "title": "Isaac Builder",
+				  "desc": "Build levels like in the game Binding of Isaac",
+				  "image": "templates_builder/builder_isaac",
+				  "link": "templates_builder/builder_template_isaac"
+				},
+				{
+				  "title": "Maze Builder",
+				  "desc": "Build a maze in a grid",
+				  "image": "templates_builder/builder_maze",
+				  "link": "templates_builder/builder_template_maze"
+				}
+			]
+		},
+		
+		{
+			"category": "2D Templates",
+			"cards":
+			[
+				{
+					"title": "Coming Soon",
+					"desc": "2D templates are coming soon in the next update. Stay tuned",
+					"image": "thumbs/thumb_coming_soon",
+					"link": ""
+				}
+			]
+		}
+	]
+}

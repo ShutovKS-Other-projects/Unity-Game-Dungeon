@@ -1,0 +1,26 @@
+{
+  "title": "Custom Blocks",
+  "layout": "Details",
+
+  "header": "Custom Blocks",
+  "desc": "Add bigger buildings (larger than 1x tiles)",
+  "image": "samples/images/sample_simple_city_02",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/SimpleCityScene_CustomBlocks.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/SimpleCityScene_CustomBlocks.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/SimpleCityScene_CustomBlocks.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

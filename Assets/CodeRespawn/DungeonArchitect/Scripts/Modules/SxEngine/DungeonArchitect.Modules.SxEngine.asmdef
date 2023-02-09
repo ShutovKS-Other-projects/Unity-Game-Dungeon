@@ -1,0 +1,15 @@
+{
+    "name": "DungeonArchitect.Modules.SxEngine",
+    "references": [
+        "GUID:725e3b18bf9c26848959c834ffc4d8db"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

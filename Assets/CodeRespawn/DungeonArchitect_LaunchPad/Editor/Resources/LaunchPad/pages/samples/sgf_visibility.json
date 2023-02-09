@@ -1,0 +1,26 @@
+﻿{
+  "title": "Snap Grid Flow - Visiblity Graph",
+  "layout": "Details",
+
+  "header": "Snap Grid Flow - Visiblity Graph",
+  "desc": "Hide rooms that are further away from the player to improve rendering performance",
+  "image": "samples/images/sample_sgf_visiblity",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_VisiblityGraph/SGF_VisiblityGraph_Simple.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_VisiblityGraph/SGF_VisiblityGraph_Simple.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_VisiblityGraph/SGF_VisiblityGraph_Simple.unity" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/snap-grid-flow" }
+    }
+  ]
+}

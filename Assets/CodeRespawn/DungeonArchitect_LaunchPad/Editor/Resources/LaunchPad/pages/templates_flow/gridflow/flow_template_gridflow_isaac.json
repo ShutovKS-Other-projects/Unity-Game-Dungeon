@@ -1,0 +1,25 @@
+{
+  "title": "GridFlow Template - Isaac",
+  "layout": "Details",
+
+  "header": "GridFlow Template - Isaac",
+  "desc": "Generates a level like in the game Binding of Isaac.  The template contains various branches, treasure, enemies and key-locks",
+  "image": "templates_flow/templateflow_grid_isaac",
+  "actions": [
+    {
+      "type": "CloneGridFlow",
+      "data": {
+        "path": "gridflow/DemoGridFlow_Isaac",
+        "resource_path": true
+      }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=aa8KcSligXs" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

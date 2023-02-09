@@ -61,7 +61,7 @@ public class PlayerStateController : MonoBehaviour
         groundCheck = transform.Find("GroundCheck");
         cellingCheck = transform.Find("CellingCheck");
 
-        uiInteractionBare = GameObject.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
+        uiInteractionBare = GameObject.Find("ManagerScene").transform.Find("Canvas").transform.Find("UIPanelGame").transform.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
 
         StateMachine.Initialize(IdleState);
     }

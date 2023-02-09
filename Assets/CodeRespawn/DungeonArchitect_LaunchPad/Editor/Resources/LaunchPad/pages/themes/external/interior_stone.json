@@ -1,0 +1,18 @@
+{
+  "title": "TopDown Stone",
+  "layout": "Details",
+
+  "header": "TopDown Stone",
+  "desc": "",
+  "image": "themes/images/theme_interior_stone",
+  "actions": [
+    {
+      "type": "Documentation",
+      "data": { "path": "https://coderespawn.github.io/dungeon-architect-quick-start-guide-unity/stage/html/quick_start_1.6.0.html#stone-theme", "title": "View Online" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://youtu.be/10fYqKMPqeA?t=46" }
+    }
+  ]
+}

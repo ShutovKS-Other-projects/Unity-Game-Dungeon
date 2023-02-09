@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &126202
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 438170}
+  - component: {fileID: 11419902}
+  - component: {fileID: 11474598}
+  - component: {fileID: 114820163125449884}
+  - component: {fileID: 11402302}
+  - component: {fileID: 11465646}
+  - component: {fileID: 11457014}
+  - component: {fileID: 114693332548506194}
+  m_Layer: 0
+  m_Name: DungeonSimpleCity
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &438170
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126202}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11402302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 148dcb7d2559c404eb2b7420330ceaeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11419902
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65b74248fe594982b0d9bfde7d96c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugDraw: 0
+  dungeonThemes:
+  - {fileID: 0}
+--- !u!114 &11457014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0ef9172759d43928c6f1131063f690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemParent: {fileID: 0}
+--- !u!114 &11465646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fc0b7b641bd1ec4a9c35d8ea9502e37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToolData: {fileID: 0}
+  Config: {fileID: 0}
+  CityWidth: 0
+  CityHeight: 0
+--- !u!114 &11474598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8114737d4a991c8409ea735d4ab715c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Seed: 0
+  Mode2D: 0
+  CellSize: {x: 4, y: 4}
+  minSize: 15
+  maxSize: 20
+  minBlockSize: 2
+  maxBlockSize: 4
+  biggerHouseProbability: 0
+  cityWallPadding: 1
+  cityDoorSize: 1
+  roadEdgeRemovalProbability: 0
+  customBlockDimensions: []
+  roadWidth: 1
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 126202}
+  m_IsPrefabParent: 1
+--- !u!114 &114693332548506194
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27e22d31ef6ed2e4a9490ec455a9c29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114820163125449884
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d008d22774767a42947f3af95e214a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enableRuntimeNavigation: 0
+  boundsPadding: {x: 0, y: 0, z: 0}
+  bakeTerrain: 1
+  terrain: {fileID: 0}

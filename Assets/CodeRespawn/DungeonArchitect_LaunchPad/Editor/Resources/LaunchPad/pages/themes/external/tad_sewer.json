@@ -1,0 +1,18 @@
+{
+  "title": "TaD Sewers",
+  "layout": "Details",
+
+  "header": "TaD Sewers",
+  "desc": "",
+  "image": "themes/images/theme_tad_sewer",
+  "actions": [
+    {
+      "type": "Documentation",
+      "data": { "path": "https://coderespawn.github.io/dungeon-architect-quick-start-guide-unity/stage/html/quick_start_1.6.0.html#tad-sewer-3dforge", "title": "View Online" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=jHYHTkLA134" }
+    }
+  ]
+}

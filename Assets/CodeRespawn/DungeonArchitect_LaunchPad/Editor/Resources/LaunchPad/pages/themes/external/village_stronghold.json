@@ -1,0 +1,18 @@
+{
+  "title": "Village Stronghold",
+  "layout": "Details",
+
+  "header": "Village Stronghold",
+  "desc": "",
+  "image": "themes/images/theme_village_stronghold",
+  "actions": [
+    {
+      "type": "Documentation",
+      "data": { "path": "https://coderespawn.github.io/dungeon-architect-quick-start-guide-unity/stage/html/quick_start_1.6.0.html#stronghold-theme", "title": "View Online" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=CoT-e_cX5Rc" }
+    }
+  ]
+}

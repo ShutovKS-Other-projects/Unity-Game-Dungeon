@@ -1,0 +1,18 @@
+﻿{
+  "title": "Snap Grid Flow Builder Template",
+  "layout": "Details",
+
+  "header": "Snap Grid Flow Builder",
+  "desc": "Combine Snap and Flow frameworks to stitch pre-made rooms in a 3D graph. \nNOTE: Template compatibility - Unity 2019.x and above",
+  "image": "templates_flow/flow_template_sgf",
+  "actions": [
+    {
+      "type": "CloneSceneAndBuild",
+      "data": { "path": "scenes/snap_grid_flow/Scene_SnapGridFlow", "resource_path": true }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/snap-grid-flow" }
+    }
+  ]
+}

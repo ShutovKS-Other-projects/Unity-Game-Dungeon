@@ -1,0 +1,26 @@
+{
+  "title": "Maze Demo",
+  "layout": "Details",
+
+  "header": "Maze Demo",
+  "desc": "Demos the maze builder",
+  "image": "samples/images/sample_maze_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Maze/Scenes/Demo_MazeBuilder.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Maze/Scenes/Demo_MazeBuilder.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Maze/Scenes/Demo_MazeBuilder.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

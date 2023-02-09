@@ -1,0 +1,26 @@
+{
+  "title": "Ground Deco 2",
+  "layout": "Details",
+
+  "header": "Ground Deco 2",
+  "desc": "Decorate the ground tiles using spatial constraints",
+  "image": "samples/images/sample_sc_ground_deco2",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/08_SCExample_GroundDeco2_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/08_SCExample_GroundDeco2_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/08_SCExample_GroundDeco2_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

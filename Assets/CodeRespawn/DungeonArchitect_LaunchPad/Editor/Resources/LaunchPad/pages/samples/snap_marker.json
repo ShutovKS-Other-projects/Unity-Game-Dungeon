@@ -1,0 +1,26 @@
+{
+  "title": "Snap Marker Support",
+  "layout": "Details",
+
+  "header": "Snap Marker Support",
+  "desc": "Add markers to your snap modules and decorate them using the theme engine",
+  "image": "samples/images/sample_snap_marker",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap_Extras/Snap_Marker_Support/Scenes/Snap_MarkerSupport_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap_Extras/Snap_Marker_Support/Scenes/Snap_MarkerSupport_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap_Extras/Snap_Marker_Support/Scenes/Snap_MarkerSupport_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=vfuhMAthljs" }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Grid Flow 2D Demo",
+  "layout": "Details",
+
+  "header": "Grid Flow 2D Demo",
+  "desc": "A theme to build 2D levels using the grid flow builder",
+  "image": "samples/images/sample_grid_flow2d_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow2D/Scenes/Demo_GridFlow2D.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow2D/Scenes/Demo_GridFlow2D.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow2D/Scenes/Demo_GridFlow2D.unity" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

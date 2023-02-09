@@ -1,0 +1,26 @@
+{
+  "title": "Isaac - Room Emitter",
+  "layout": "Details",
+
+  "header": "Isaac - Room Emitter",
+  "desc": "A room center and corner emitter allows you to customize the rooms in the theme editor",
+  "image": "samples/images/sample_isaac_02",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Isaac/Scenes/Demo_IsaacBuilder_RoomCenterEmitter.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Isaac/Scenes/Demo_IsaacBuilder_RoomCenterEmitter.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Isaac/Scenes/Demo_IsaacBuilder_RoomCenterEmitter.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

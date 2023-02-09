@@ -1,0 +1,26 @@
+{
+  "title": "Stronghold",
+  "layout": "Details",
+
+  "header": "Stronghold",
+  "desc": "A stronghold with city walls and ramps",
+  "image": "samples/images/sample_simple_city_03",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/StrongholdBasic.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/StrongholdBasic.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/StrongholdBasic.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

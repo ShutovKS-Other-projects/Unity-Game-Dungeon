@@ -1,0 +1,26 @@
+{
+  "title": "Volume Example",
+  "layout": "Details",
+
+  "header": "Volume Example",
+  "desc": "Create symmetric dungeons using Mirror Volumes",
+  "image": "samples/images/sample_mirror_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_MirrorVolume_Grid/DemoMirrorVolume.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_MirrorVolume_Grid/DemoMirrorVolume.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_MirrorVolume_Grid/DemoMirrorVolume.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

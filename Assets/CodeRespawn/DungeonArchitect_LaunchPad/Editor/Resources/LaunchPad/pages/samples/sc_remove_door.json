@@ -1,0 +1,26 @@
+{
+  "title": "Removal Rules: Door",
+  "layout": "Details",
+
+  "header": "Removal Rules: Door",
+  "desc": "Expand the doors to take 2 tiles, and remove nearby door",
+  "image": "samples/images/sample_sc_remove_door",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/11_SCExample_RemovalRules_Door_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/11_SCExample_RemovalRules_Door_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/11_SCExample_RemovalRules_Door_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}
