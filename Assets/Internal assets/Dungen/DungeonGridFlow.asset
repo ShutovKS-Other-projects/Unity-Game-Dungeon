@@ -398,7 +398,7 @@ MonoBehaviour:
   indexCounter:
     index: 80
   topZIndex:
-    index: 648
+    index: 671
   nodes:
   - {fileID: 6123658682125451623}
   - {fileID: -3281153045649556686}
@@ -594,7 +594,7 @@ MonoBehaviour:
   canBeSelected: 1
   canBeMoved: 1
   selected: 0
-  zIndex: 614
+  zIndex: 669
   inputPins:
   - {fileID: -4806427038245113776}
   outputPins:
@@ -1077,8 +1077,8 @@ MonoBehaviour:
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
-  selected: 1
-  zIndex: 648
+  selected: 0
+  zIndex: 668
   inputPins:
   - {fileID: 8012549894199959363}
   outputPins:
@@ -1816,7 +1816,7 @@ MonoBehaviour:
   wallGenerationMethod: 1
   caveAutomataNeighbors: 5
   caveAutomataIterations: 3
-  caveThickness: 2.25
+  caveThickness: 1.5
   roomColorSaturation: 0.3
   roomColorBrightness: 1.5
 --- !u!114 &1178578897903824497
@@ -2130,15 +2130,15 @@ MonoBehaviour:
   caption: 
   bounds:
     serializedVersion: 2
-    x: -123.30493
-    y: 205.32004
+    x: -117.98093
+    y: 206.65105
     width: 137
     height: 47
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
   selected: 0
-  zIndex: 620
+  zIndex: 664
   inputPins:
   - {fileID: -1462987565427232204}
   outputPins:
@@ -2283,7 +2283,7 @@ MonoBehaviour:
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
-  selected: 0
+  selected: 1
   zIndex: 624
   inputPins:
   - {fileID: 5074453950830501435}
@@ -2365,7 +2365,7 @@ MonoBehaviour:
   canBeSelected: 1
   canBeMoved: 1
   selected: 0
-  zIndex: 647
+  zIndex: 670
   inputPins:
   - {fileID: -5886279213983918460}
   outputPins:
@@ -2388,15 +2388,15 @@ MonoBehaviour:
   caption: 
   bounds:
     serializedVersion: 2
-    x: 164.41649
-    y: 210.52742
+    x: 165.74751
+    y: 209.1964
     width: 132
     height: 47
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
   selected: 0
-  zIndex: 646
+  zIndex: 671
   inputPins:
   - {fileID: 2502862700619881487}
   outputPins:
@@ -2654,7 +2654,7 @@ MonoBehaviour:
   canBeSelected: 1
   canBeMoved: 1
   selected: 0
-  zIndex: 625
+  zIndex: 662
   inputPins:
   - {fileID: -8041174764511363574}
   outputPins:

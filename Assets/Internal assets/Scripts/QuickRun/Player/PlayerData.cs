@@ -22,7 +22,7 @@ public class PlayerData : ScriptableObject
 
     [Header("Movement Speed")]
     public float jumpSpeed = 5f;
-    public float movementSpeed = 10f;
+    public float movementSpeed = 8f;
     public float inAirMovementSpeed = 8f;
     public float crouchMovementSpeed = 8f;
     public float blockMovementSpeed = 4f;
@@ -42,7 +42,7 @@ public class PlayerData : ScriptableObject
     public LayerMask groundLayer = LayerMask.GetMask("Ground");
 
     [Header("Inter Check")]
-    public float interCheckDistance = 3f;
+    public float interCheckDistance = 1.5f;
     public float interCheckSphereRadius = 0.5f;
     public LayerMask interactableLayer = LayerMask.GetMask("Interactable");
     public InteractionData interactionData = null;

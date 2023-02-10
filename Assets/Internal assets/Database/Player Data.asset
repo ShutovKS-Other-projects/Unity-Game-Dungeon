@@ -23,7 +23,7 @@ MonoBehaviour:
   maxHealth: 100
   maxStamina: 100
   jumpSpeed: 5
-  movementSpeed: 10
+  movementSpeed: 8
   inAirMovementSpeed: 8
   crouchMovementSpeed: 8
   blockMovementSpeed: 4
@@ -33,11 +33,11 @@ MonoBehaviour:
   standColliderHeight: 1.8
   crouchColliderCenter: 0.9
   standColliderCenter: 0.6
-  groundCheckRadius: 0.5
+  groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 512
-  interCheckDistance: 3
+  interCheckDistance: 1.5
   interCheckSphereRadius: 0.5
   interactableLayer:
     serializedVersion: 2

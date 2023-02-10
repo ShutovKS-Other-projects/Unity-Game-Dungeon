@@ -66,7 +66,9 @@ public class PlayerGroundedState : PlayerState
     {
         base.PhysicsUpdate();
 
-        RecoveryStamina();
+        if (!playerStateController.InputManager.GetPlayerSprintInput())
+            RecoveryStamina();
+            
         playerStateController.Rotation();
     }
 
