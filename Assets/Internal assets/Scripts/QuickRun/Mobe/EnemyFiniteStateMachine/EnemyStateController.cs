@@ -22,11 +22,6 @@ public class EnemyStateController : MonoBehaviour
     private void Awake()
     {
         StateMachine = new EnemyStateMachine();
-
-        AttackState = new EnemyAttackState(this, StateMachine, enemyData, "Attack");
-        DeathState = new EnemyDeathState(this, StateMachine, enemyData, "Death");
-        IdleState = new EnemyIdleState(this, StateMachine, enemyData, "Idle");
-        MoveState = new EnemyMoveState(this, StateMachine, enemyData, "Move");
     }
 
     private void Start()
@@ -35,7 +30,6 @@ public class EnemyStateController : MonoBehaviour
         RB = GetComponent<Rigidbody>();
         Collider = GetComponent<CapsuleCollider>();
         groundCheck = transform.Find("GroundCheck");
-        StateMachine.Initialize(IdleState);
     }
 
     private void Update()
@@ -50,7 +44,7 @@ public class EnemyStateController : MonoBehaviour
 
     public bool CheckIfGrounded()
     {
-        return Physics.CheckSphere(groundCheck.position, playerData.groundCheckRadius, playerData.groundLayer);
+        return Physics.CheckSphere(groundCheck.position, enemyData.groundCheckRadius, enemyData.groundLayer);
     }
 
     public bool ChecIfPlayer()

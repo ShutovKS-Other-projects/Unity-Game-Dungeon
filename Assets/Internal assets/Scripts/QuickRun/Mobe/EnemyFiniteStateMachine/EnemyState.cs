@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemyState : MonoBehaviour
 {
-    public EnemyData data;
+    protected EnemyStateController enemyStateController;
     protected EnemyStateMachine stateMachine;
-    protected EnemyState state;
+    protected EnemyState enemyState;
+    public EnemyData enemyData;
 
     protected bool isAnimationFinished;
     protected bool isExitingState;
