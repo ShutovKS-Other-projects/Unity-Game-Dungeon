@@ -5,7 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "newPlayerData", menuName = "Data/Player Data/Data Base")]
 public class PlayerData : ScriptableObject
 {
-
     [Header("Player Stats Now")]
     public string className = "No one";
     public float health = 100f;

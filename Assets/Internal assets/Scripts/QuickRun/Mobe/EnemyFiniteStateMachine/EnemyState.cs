@@ -2,31 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerState : MonoBehaviour
+public class EnemyState : MonoBehaviour
 {
-    protected PlayerStateController playerStateController;
-    protected PlayerStateMachine stateMachine;
-    public PlayerData playerData;
+    public EnemyData data;
+    protected EnemyStateMachine stateMachine;
+    protected EnemyState state;
 
     protected bool isAnimationFinished;
     protected bool isExitingState;
 
     protected float startTime;
-    
+
     private string animBoolName;
 
-    public PlayerState(PlayerStateController playerStateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
+    public EnemyState(EnemyStateController enemyStateController, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName)
     {
-        this.playerStateController = playerStateController;
+        this.enemyStateController = enemyStateController;
         this.stateMachine = stateMachine;
-        this.playerData = playerData;
+        this.enemyData = enemyData;
         this.animBoolName = animBoolName;
     }
 
     public virtual void Enter()
     {
         DoChecks();
-        playerStateController.Animator.SetBool(animBoolName, true);
+        enemyStateController.Animator.SetBool(animBoolName, true);
         startTime = Time.time;
         isAnimationFinished = false;
         isExitingState = false;
@@ -34,7 +34,7 @@ public class PlayerState : MonoBehaviour
 
     public virtual void Exit()
     {
-        playerStateController.Animator.SetBool(animBoolName, false);
+        enemyStateController.Animator.SetBool(animBoolName, false);
         isExitingState = true;
     }
 
