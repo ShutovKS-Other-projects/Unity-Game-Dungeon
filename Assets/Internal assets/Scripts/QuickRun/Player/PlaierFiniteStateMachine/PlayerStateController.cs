@@ -17,9 +17,8 @@ public class PlayerStateController : MonoBehaviour
     public PlayerAttackState AttackState { get; private set; }
     public PlayerBlockState BlockState { get; private set; }
     public PlayerInteractState InteractState { get; private set; }
-
-    [SerializeField] private PlayerData playerData;
     #endregion
+    [SerializeField] private PlayerData playerData;
 
     #region Check Transforms
     [SerializeField] private Transform groundCheck;

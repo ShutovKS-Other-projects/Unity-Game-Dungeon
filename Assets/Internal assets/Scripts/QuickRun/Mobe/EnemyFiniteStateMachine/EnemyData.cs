@@ -3,26 +3,28 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "newEnemyData", menuName = "Data/Enemy Data/Data Base")]
 public class EnemyData : ScriptableObject
 {
-    [Header("Enemy Stats Now")]
-    public string name = "Enemy";
+    [Header("Enemy Name")]
+    public string raceName = "Enemy";
+
+    [Header("Enemy Health")]
     public float health = 100f;
     public float healthRecoverySpeed = 10f;
-    public float damage = 10f;
+    
+    [Header("Enemy Movement")]
     public float movementSpeed = 10f;
 
-    [Header("Enemy Stats Max")]
-    public float maxHealth = 100f;
-    public float maxStamina = 100f;
+
+    [Header("Enemy Attack")]
+    public float[] attackDamage = new float[2] { 7.5f, 15f };
+    public float[] attackRetryTime = new float[2] { 2f, 3f };
+    public float attackDistance = 1f;
 
     [Header("IsStates")]
-    public bool isAbility = false;
     public bool isVisiblePlyer = false;
-
-    [Header("Ground Check")]
-    public float groundCheckRadius = 0.2f;
-    public LayerMask groundLayer = LayerMask.GetMask("Ground");
+    public bool isPlayer = false;
 
     [Header("Player Check")]
+    public LayerMask playerLayer = LayerMask.GetMask("Player");
     public GameObject playerGameObject;
     public float playerCheckDistance = 3f;
     public float playerCheckSphereRadius = 0.5f;
