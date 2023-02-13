@@ -60,7 +60,8 @@ public class PlayerStateController : MonoBehaviour
         groundCheck = transform.Find("GroundCheck");
         cellingCheck = transform.Find("CellingCheck");
 
-        uiInteractionBare = GameObject.Find("ManagerScene").transform.Find("Canvas").transform.Find("UIPanelGame").transform.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
+        uiInteractionBare = GameObject.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
+        //uiInteractionBare = GameObject.Find("ManagerScene").transform.Find("Canvas").transform.Find("UIPanelGame").transform.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
 
         StateMachine.Initialize(IdleState);
     }
@@ -143,10 +144,6 @@ public class PlayerStateController : MonoBehaviour
         MovementCollider.center = new Vector3(MovementCollider.center.x, center, MovementCollider.center.z);
     }
 
-    private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
-
-    private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
-
     private void Acceleration(out float acceleration)
     {
         if (!playerData.isFatigue)
@@ -184,5 +181,8 @@ public class PlayerStateController : MonoBehaviour
             }
         }
     }
+
+    private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
+    private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
     #endregion
 }

@@ -15,9 +15,10 @@ public class EnemyStateController : MonoBehaviour
 
     #region Components
     public Animator Animator { get; private set; }
+    public GameObject PlayerGameObject { get; private set; }
     public Rigidbody RB { get; private set; }
     public CapsuleCollider Collider { get; private set; }
-    [SerializeField] private EnemyData enemyData;
+    [SerializeField] public EnemyData enemyData;
     #endregion
 
     #region Unity Callbacks Functions
@@ -26,14 +27,15 @@ public class EnemyStateController : MonoBehaviour
         StateMachine = new EnemyStateMachine();
 
         AttackState = new EnemyAttackState(this, StateMachine, enemyData, "Attack");
-        DeathState = new EnemyDeathState(this, StateMachine, enemyData, "Dead");
+        DeathState = new EnemyDeathState(this, StateMachine, enemyData, "Death");
         IdleState = new EnemyIdleState(this, StateMachine, enemyData, "Idle");
         MoveState = new EnemyMoveState(this, StateMachine, enemyData, "Move");
     }
 
     private void Start()
     {
-        Animator = GetComponentInChildren<Animator>();
+        Animator = GetComponent<Animator>();
+        PlayerGameObject = GameObject.FindGameObjectWithTag("Player");
         RB = GetComponent<Rigidbody>();
         Collider = GetComponent<CapsuleCollider>();
 
@@ -54,8 +56,7 @@ public class EnemyStateController : MonoBehaviour
     #region Check Functions
     public bool CheckIfPlayer()
     {
-        Ray ray = new Ray(transform.position, enemyData.playerGameObject.transform.position - transform.position);
-        if (Physics.Raycast(ray, out RaycastHit hit, enemyData.playerCheckDistance))
+        if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), PlayerGameObject.transform.position - transform.position, out RaycastHit hit, enemyData.playerCheckDistance))
         {
             if (hit.collider.CompareTag("Player"))
             {
@@ -67,21 +68,22 @@ public class EnemyStateController : MonoBehaviour
 
     public float CheckPlayerDistance()
     {
-        return Vector3.Distance(transform.position, enemyData.playerGameObject.transform.position);
+        return Vector3.Distance(transform.position, PlayerGameObject.transform.position);
     }
     #endregion
 
     #region Movement
     public void Move()
     {
-
+        RB.AddRelativeForce(0f, 0f, enemyData.movementSpeed * Time.deltaTime, ForceMode.VelocityChange);
+        Animator.SetFloat("zVelocity", RB.velocity.z);
     }
     #endregion
 
     #region Rotation
     public void LookAtPlayer()
     {
-        transform.LookAt(enemyData.playerGameObject.transform.position);
+        transform.LookAt(PlayerGameObject.transform.position);
     }
     #endregion
 

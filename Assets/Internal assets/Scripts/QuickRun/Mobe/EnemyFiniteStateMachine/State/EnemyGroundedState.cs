@@ -1,33 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyGroundedState : EnemyState
 {
-    private bool isPlayer;
-    private float playerDistance;
+    protected float playerDistance;
+    protected bool isAttack;
+    protected bool isVisiblePlayer;
 
     public EnemyGroundedState(EnemyStateController enemyStateController, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(enemyStateController, stateMachine, enemyData, animBoolName)
     {
-    }
-
-    public override void DoChecks()
-    {
-        base.DoChecks();
-
-        isPlayer = enemyStateController.CheckIfPlayer();
     }
 
     public override void LogicUpdate()
     {
         base.LogicUpdate();
 
-        isPlayer = enemyStateController.CheckIfPlayer();
         playerDistance = enemyStateController.CheckPlayerDistance();
+        isVisiblePlayer = enemyStateController.CheckIfPlayer();
 
-        if (isPlayer)
+        if (enemyData.isDead)
         {
-            stateMachine.ChangeState(enemyStateController.MoveState);
+            stateMachine.ChangeState(enemyStateController.DeathState);
+        }
+        else if (!isVisiblePlayer)
+        {
+            stateMachine.ChangeState(enemyStateController.IdleState);
         }
     }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+
+        enemyStateController.LookAtPlayer();
+    }
+
 }

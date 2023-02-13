@@ -32,13 +32,13 @@ public class PlayerGroundedState : PlayerState
     {
         base.LogicUpdate();
 
-        movementInput = playerStateController.InputManager.GetPlayerMovementInput();
-        crouchInput = playerStateController.InputManager.GetPlayerCrouchInput();
-        jumpInput = playerStateController.InputManager.GetPlayerJumpInput();
-        attackInput = playerStateController.InputManager.GetPlayerAttackInput();
-        blockInput = playerStateController.InputManager.GetPlayerBlockInput();
-        interactInput = playerStateController.InputManager.GetPlayerInteractInput();
         isInteractable = CheckVisibleIfInteractable();
+        jumpInput = playerStateController.InputManager.GetPlayerJumpInput();
+        blockInput = playerStateController.InputManager.GetPlayerBlockInput();
+        crouchInput = playerStateController.InputManager.GetPlayerCrouchInput();
+        attackInput = playerStateController.InputManager.GetPlayerAttackInput();
+        movementInput = playerStateController.InputManager.GetPlayerMovementInput();
+        interactInput = playerStateController.InputManager.GetPlayerInteractInput();
 
         if (attackInput && !isTouchingCelling)
         {
