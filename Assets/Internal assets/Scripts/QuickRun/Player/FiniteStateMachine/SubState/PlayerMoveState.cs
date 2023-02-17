@@ -22,6 +22,10 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
                 {
                     StateMachine.ChangeState(StateController.CrouchMoveState);
                 }
+                else if (RunInput)
+                {
+                    StateMachine.ChangeState(StateController.RunState);
+                }
             }
         }
 

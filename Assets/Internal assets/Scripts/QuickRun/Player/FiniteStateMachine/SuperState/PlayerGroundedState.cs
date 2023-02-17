@@ -7,12 +7,14 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SuperState
         protected Vector2 MovementInput;
 
         protected bool CrouchInput;
+        protected bool RunInput;
         protected bool IsTouchingCelling;
 
         private bool _attackInput;
         private bool _blockInput;
         private bool _jumpInput;
         private bool _interactInput;
+        
         private bool _isInteractable;
         private bool _isGrounded;
 
@@ -34,6 +36,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SuperState
             base.LogicUpdate();
 
             CrouchInput = StateController.InputManager.GetPlayerCrouchInput();
+            RunInput = StateController.InputManager.GetPlayerSprintInput();
             MovementInput = StateController.InputManager.GetPlayerMovementInput();
             _attackInput = StateController.InputManager.GetPlayerAttackInput();
             _blockInput = StateController.InputManager.GetPlayerBlockInput();

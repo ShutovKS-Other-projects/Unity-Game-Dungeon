@@ -22,6 +22,7 @@ namespace Internal_assets.Scripts.QuickRun.Player
         [Header("Movement Speed")]
         public float jumpSpeed = 5f;
         public float movementSpeed = 10f;
+        public float runMovementSpeed = 15f;
         public float inAirMovementSpeed = 8f;
         public float crouchMovementSpeed = 8f;
         public float blockMovementSpeed = 4f;

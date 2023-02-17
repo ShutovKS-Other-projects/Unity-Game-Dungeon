@@ -27,6 +27,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
         public PlayerInteractState InteractState { get; private set; }
         public PlayerDamageState DamageState { get; private set; }
         public PlayerDeathState DeathState { get; private set; }
+        public PlayerRunState RunState { get; private set; }
 
         #endregion
 
@@ -71,6 +72,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
             InteractState = new PlayerInteractState(this, _stateMachine, playerData, "Interact");
             DamageState = new PlayerDamageState(this, _stateMachine, playerData, "Damage");
             DeathState = new PlayerDeathState(this, _stateMachine, playerData, "Death");
+            RunState = new PlayerRunState(this, _stateMachine, playerData, "Run");
         }
 
         private void Start()
@@ -159,7 +161,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
         {
             Acceleration(out float acceleration);
         
-            Vector3 move = new Vector3(movementInput.x, 0, movementInput.y);
+            var move = new Vector3(movementInput.x, 0, movementInput.y);
             Rb.AddRelativeForce(move * speed * acceleration * Time.deltaTime, ForceMode.VelocityChange);
 
             Animator.SetFloat(zSpeed, move.z * acceleration);
