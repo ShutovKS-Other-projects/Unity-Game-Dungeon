@@ -13,7 +13,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
         {
             base.LogicUpdate();
 
-            StateController.Movement(MovementInput, playerData.movementSpeed);
+            StateController.Movement(MovementInput, playerData.movementSpeedMax);
 
             if (IsExitingState)
                 return;

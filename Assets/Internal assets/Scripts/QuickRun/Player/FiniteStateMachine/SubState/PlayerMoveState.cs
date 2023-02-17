@@ -32,7 +32,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            StateController.Movement(MovementInput, playerData.movementSpeed);
+            StateController.Movement(MovementInput, playerData.movementSpeedMax);
         }
     }
 }

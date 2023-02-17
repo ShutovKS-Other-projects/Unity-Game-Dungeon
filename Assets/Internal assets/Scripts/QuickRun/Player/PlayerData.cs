@@ -1,5 +1,6 @@
 using Internal_assets.Scripts.QuickRun.Interactable;
 using UnityEngine;
+using UnityEngine.Serialization;
 namespace Internal_assets.Scripts.QuickRun.Player
 {
     [CreateAssetMenu(fileName = "newPlayerData", menuName = "Data/Player Data/Data Base")]
@@ -21,11 +22,18 @@ namespace Internal_assets.Scripts.QuickRun.Player
 
         [Header("Movement Speed")]
         public float jumpSpeed = 5f;
-        public float movementSpeed = 10f;
-        public float runMovementSpeed = 15f;
-        public float inAirMovementSpeed = 8f;
-        public float crouchMovementSpeed = 8f;
-        public float blockMovementSpeed = 4f;
+        [FormerlySerializedAs("movementForce")]
+        public float movementForce = 10f;
+        [FormerlySerializedAs("movementSpeed")]
+        public float movementSpeedMax = 4f;
+        [FormerlySerializedAs("runMovementSpeed")]
+        public float runMovementSpeedMax = 5f;
+        [FormerlySerializedAs("inAirMovementSpeed")]
+        public float inAirMovementSpeedMax = 4f;
+        [FormerlySerializedAs("crouchMovementSpeed")]
+        public float crouchMovementSpeedMax = 3f;
+        [FormerlySerializedAs("blockMovementSpeed")]
+        public float blockMovementSpeedMax = 3f;
 
         [Header("IsStates")]
         public bool isAbility = false;

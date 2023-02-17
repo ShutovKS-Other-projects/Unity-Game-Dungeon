@@ -159,13 +159,16 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
 
         public void Movement(Vector2 movementInput, float speed)
         {
-            Acceleration(out float acceleration);
-        
             var move = new Vector3(movementInput.x, 0, movementInput.y);
-            Rb.AddRelativeForce(move * speed * acceleration * Time.deltaTime, ForceMode.VelocityChange);
-
-            Animator.SetFloat(zSpeed, move.z * acceleration);
-            Animator.SetFloat(xSpeed, move.x * acceleration);
+            Rb.AddRelativeForce(move * playerData.movementForce * Time.deltaTime, ForceMode.VelocityChange);
+            
+            if(Rb.velocity.magnitude > speed)
+                Rb.velocity = Rb.velocity.normalized * speed;
+            
+            Debug.Log(Rb.velocity);
+            
+            Animator.SetFloat(zSpeed, move.z);
+            Animator.SetFloat(xSpeed, move.x);
         }
 
         #endregion
