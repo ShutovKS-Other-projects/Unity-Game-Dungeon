@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Vampire
   _damageMin: 1
-  _damageMax: 10
+  _damageMax: 5
   _health: 100
   _speed: 5.75
   _attackCooldown: 10

@@ -1,19 +1,23 @@
+using Internal_assets.Scripts.QuickRun.Inventory;
+using Internal_assets.Scripts.QuickRun.Item;
 using UnityEngine;
-
-public class InteractableItem : InteractableBase
+namespace Internal_assets.Scripts.QuickRun.Interactable.Interactable
 {
-    [SerializeField] private InventoryObject inventory;
-
-    public override void OnInteract()
+    public class InteractableItem : InteractableBase
     {
-        var groundItem = gameObject.GetComponent<GroundItem>();
+        [SerializeField] private InventoryObject inventory;
 
-        if (groundItem)
+        public override void OnInteract()
         {
-            Item _item = new Item(groundItem.item);
-            if (inventory.AddItem(_item, 1))
+            var groundItem = gameObject.GetComponent<GroundItem>();
+
+            if (groundItem)
             {
-                Destroy(gameObject);
+                Item.Item _item = new Item.Item(groundItem.item);
+                if (inventory.AddItem(_item, 1))
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }

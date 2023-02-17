@@ -1,11 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class ItemSurveillancePlayer : MonoBehaviour
+namespace Internal_assets.Scripts.QuickRun.Item
 {
-    private void LateUpdate()
+    public class ItemSurveillancePlayer : MonoBehaviour
     {
-        transform.forward = Camera.main.transform.forward;
+        private void LateUpdate()
+        {
+            transform.forward = UnityEngine.Camera.main.transform.forward;
+        }
     }
 }

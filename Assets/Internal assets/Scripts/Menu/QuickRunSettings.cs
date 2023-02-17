@@ -1,58 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class QuickRunSettings
+namespace Internal_assets.Scripts.Menu
 {
-    UIQuickRunSettings uiQuickRunSettings = new UIQuickRunSettings();
-
-    public bool isToggleMobe = false;
-    public bool isTimer = false;
-    public int[] sizeMaze = new int[2];
-
-
-    QuickRunSettings()
+    public class QuickRunSettings
     {
-        this.isToggleMobe = uiQuickRunSettings.isToggleMobe;
-        this.isTimer = uiQuickRunSettings.isTimer;
-        this.sizeMaze[0] = SizeMazeY();
-        this.sizeMaze[1] = SizeMazeX();
-    }
+        UIQuickRunSettings uiQuickRunSettings = new UIQuickRunSettings();
 
-    private int SizeMazeY()
-    {
-        System.Random random = new System.Random();
-        switch (uiQuickRunSettings.SizeMaze)
+        public bool isToggleMobe = false;
+        public bool isTimer = false;
+        public int[] sizeMaze = new int[2];
+
+
+        QuickRunSettings()
         {
-            case "Small":
-                return 10;
-            case "Middle":
-                return 15;
-            case "Large":
-                return 20;
-            case "Return":
-                return random.Next(10, 20); 
-            case "Custom":
-                return 0;
+            this.isToggleMobe = uiQuickRunSettings.isToggleMobe;
+            this.isTimer = uiQuickRunSettings.isTimer;
+            this.sizeMaze[0] = SizeMazeY();
+            this.sizeMaze[1] = SizeMazeX();
         }
-        return 0;
-    }
-    private int SizeMazeX()
-    {
-        System.Random random = new System.Random();
-        switch (uiQuickRunSettings.SizeMaze)
+
+        private int SizeMazeY()
         {
-            case "Small":
-                return 10;
-            case "Middle":
-                return 15;
-            case "Large":
-                return 20;
-            case "Return":
-                return random.Next(10, 20);
-            case "Custom":
-                return 0;
+            System.Random random = new System.Random();
+            switch (uiQuickRunSettings.SizeMaze)
+            {
+                case "Small":
+                    return 10;
+                case "Middle":
+                    return 15;
+                case "Large":
+                    return 20;
+                case "Return":
+                    return random.Next(10, 20); 
+                case "Custom":
+                    return 0;
+            }
+            return 0;
         }
-        return 0;
+        private int SizeMazeX()
+        {
+            System.Random random = new System.Random();
+            switch (uiQuickRunSettings.SizeMaze)
+            {
+                case "Small":
+                    return 10;
+                case "Middle":
+                    return 15;
+                case "Large":
+                    return 20;
+                case "Return":
+                    return random.Next(10, 20);
+                case "Custom":
+                    return 0;
+            }
+            return 0;
+        }
     }
 }

@@ -1,22 +1,24 @@
-using UnityEngine;
 using UnityEditor;
-
-public class GroundItem : MonoBehaviour, ISerializationCallbackReceiver
+using UnityEngine;
+namespace Internal_assets.Scripts.QuickRun.Item
 {
-    public ItemObject item;
-
-    public void OnAfterDeserialize()
+    public class GroundItem : MonoBehaviour, ISerializationCallbackReceiver
     {
-    }
+        public ItemObject item;
 
-    public void OnBeforeSerialize()
-    {
-#if UNITY_EDITOR
-        if (item != null && item.characterDisplay == null)
+        public void OnAfterDeserialize()
         {
-            GetComponentInChildren<SpriteRenderer>().sprite = item.uiDisplay;
-            EditorUtility.SetDirty(GetComponentInChildren<SpriteRenderer>());
         }
+
+        public void OnBeforeSerialize()
+        {
+#if UNITY_EDITOR
+            if (item != null && item.characterDisplay == null)
+            {
+                GetComponentInChildren<SpriteRenderer>().sprite = item.uiDisplay;
+                EditorUtility.SetDirty(GetComponentInChildren<SpriteRenderer>());
+            }
 #endif
+        }
     }
 }
