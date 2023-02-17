@@ -162,6 +162,12 @@ PrefabInstance:
       propertyPath: m_Center.y
       value: 1.1
       objectReference: {fileID: 0}
+    - target: {fileID: 6899769950132133034, guid: d880a284f588a674eb5b7e9498779c24,
+        type: 3}
+      propertyPath: enemyData
+      value: 
+      objectReference: {fileID: 11400000, guid: 5dad10ffd174ecd45a4eb4ec30dd0352,
+        type: 2}
     - target: {fileID: 8363760819105052315, guid: d880a284f588a674eb5b7e9498779c24,
         type: 3}
       propertyPath: m_Name

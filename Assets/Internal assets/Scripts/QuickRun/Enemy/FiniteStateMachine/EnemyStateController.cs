@@ -2,12 +2,14 @@ using Internal_assets.Scripts.QuickRun.Enemy.Delegate;
 using Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState;
 using Internal_assets.Scripts.QuickRun.Other;
 using UnityEngine;
+using UnityEngine.Serialization;
 namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine
 {
     public class EnemyStateController : MonoBehaviour
     {
-        [SerializeField] private EnemyData enemyDataStatic;
-        [System.NonSerialized] public EnemyData enemyData;
+        [FormerlySerializedAs("enemyData")]
+        [SerializeField] private EnemyData enemyData;
+        [System.NonSerialized] public EnemyStatistic enemyStatistic;
 
         #region State Machine
 
@@ -40,14 +42,14 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine
 
         private void Awake()
         {
-            enemyData = enemyDataStatic;
+            enemyStatistic = new EnemyStatistic(enemyData);
             StateMachine = new EnemyStateMachine();
 
-            AttackState = new EnemyAttackState(this, StateMachine, enemyData, "Attack");
-            DeathState = new EnemyDeathState(this, StateMachine, enemyData, "Death");
-            IdleState = new EnemyIdleState(this, StateMachine, enemyData, "Idle");
-            MoveState = new EnemyMoveState(this, StateMachine, enemyData, "Move");
-            DamageState = new EnemyDamageState(this, StateMachine, enemyData, "Damage");
+            AttackState = new EnemyAttackState(this, StateMachine, enemyStatistic, "Attack");
+            DeathState = new EnemyDeathState(this, StateMachine, enemyStatistic, "Death");
+            IdleState = new EnemyIdleState(this, StateMachine, enemyStatistic, "Idle");
+            MoveState = new EnemyMoveState(this, StateMachine, enemyStatistic, "Move");
+            DamageState = new EnemyDamageState(this, StateMachine, enemyStatistic, "Damage");
         }
 
         private void Start()
@@ -97,7 +99,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine
 
         public bool CheckIfPlayer()
         {
-            if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), PlayerGameObject.transform.position - transform.position, out RaycastHit hit, enemyData.playerCheckDistance))
+            if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), PlayerGameObject.transform.position - transform.position, out RaycastHit hit, enemyStatistic.playerCheckDistance))
             {
                 if (hit.collider.CompareTag("Player"))
                 {
@@ -118,7 +120,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine
 
         public void Move()
         {
-            Rb.AddRelativeForce(0f, 0f, enemyData.movementSpeed * Time.deltaTime, ForceMode.VelocityChange);
+            Rb.AddRelativeForce(0f, 0f, enemyStatistic.movementSpeed * Time.deltaTime, ForceMode.VelocityChange);
             Animator.SetFloat(zVelocity, Rb.velocity.z);
         }
 

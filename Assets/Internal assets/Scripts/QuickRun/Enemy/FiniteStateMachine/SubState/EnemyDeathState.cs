@@ -4,7 +4,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState
 {
     public class EnemyDeathState : EnemyAbilityState
     {
-        public EnemyDeathState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(stateController, stateMachine, enemyData, animBoolName)
+        public EnemyDeathState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
         {
         }
 

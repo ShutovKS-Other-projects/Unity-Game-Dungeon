@@ -11,7 +11,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState
             }
         }
 
-        public EnemyAttackState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(stateController, stateMachine, enemyData, animBoolName)
+        public EnemyAttackState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
         {
         }
 

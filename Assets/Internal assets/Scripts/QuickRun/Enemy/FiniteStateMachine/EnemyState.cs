@@ -7,7 +7,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine
         protected EnemyStateController StateController;
         protected EnemyStateMachine StateMachine;
         protected EnemyState enemyState;
-        [NonSerialized] public EnemyData enemyData;
+        [NonSerialized] public EnemyStatistic enemyStatistic;
 
         protected bool IsAnimationFinished;
         protected bool IsExitingState;
@@ -16,11 +16,11 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine
 
         private string _animBoolName;
 
-        public EnemyState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName)
+        public EnemyState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName)
         {
             this.StateController = stateController;
             this.StateMachine = stateMachine;
-            this.enemyData = enemyData;
+            this.enemyStatistic = enemyStatistic;
             this._animBoolName = animBoolName;
         }
 

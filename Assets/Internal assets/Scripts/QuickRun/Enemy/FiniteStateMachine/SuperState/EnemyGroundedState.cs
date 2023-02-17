@@ -7,7 +7,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SuperState
         protected bool isAttack;
         protected bool isVisiblePlayer;
 
-        public EnemyGroundedState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(stateController, stateMachine, enemyData, animBoolName)
+        public EnemyGroundedState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
         {
         }
 
@@ -18,7 +18,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SuperState
             playerDistance = StateController.CheckPlayerDistance();
             isVisiblePlayer = StateController.CheckIfPlayer();
 
-            if (enemyData.isDead)
+            if (enemyStatistic.isDead)
             {
                 StateMachine.ChangeState(StateController.DeathState);
             }

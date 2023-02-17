@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 88226a11354f42042a562c5616646cdf, type: 3}
-  m_Name: newEnemyData
+  m_Name: Vampire
   m_EditorClassIdentifier: 
-  raceName: Enemy
+  raceName: Vampire
   maxHealth: 100
-  movementSpeed: 6
+  movementSpeed: 10
   attackDamage:
   - 1
   - 5
   attackRetryTime:
   - 4
   - 6
-  attackDistance: 0.5
+  attackDistance: 2
   playerCheckDistance: 10
   AnimatorController: {fileID: 9100000, guid: 951733f3ca8c1cd4998a0cae860dc753, type: 2}

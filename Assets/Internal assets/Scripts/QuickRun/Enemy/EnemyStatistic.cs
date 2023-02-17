@@ -3,47 +3,32 @@ namespace Internal_assets.Scripts.QuickRun.Enemy
 {
     public class EnemyStatistic
     {
+        private readonly EnemyData _data;
+
         #region Parameters private
-        [Header("Health")]
-        private float maxHealth;
-        private float health;
-        private float healthRecoverySpeed;
 
-        [Header("Movement")]
-        private float movementSpeed;
+        private float _health;
 
-        [Header("Attack")]
-        private float[] attackDamage = new float[2];
-        private float[] attackRetryTime = new float[2];
-        private float attackDistance;
-
-        [Header("Player Check")]
-        private float playerCheckDistance;
         #endregion
 
         #region Parameters public
-        public float MaxHealth { get => maxHealth; }
-        public float Health { get => health; set => health = value; }
-        public float MovementSpeed { get => movementSpeed; }
-        public float[] AttackDamage { get => attackDamage; }
-        public float[] AttackRetryTime { get => attackRetryTime; }
-        public float AttackDistance { get => attackDistance; }
-        public float PlayerCheckDistance { get => playerCheckDistance; }
 
-        public bool IsDead { get => health <= 0; }
-        public bool IsVisiblePlayer { get; set; }
+        public string raceName { get { return _data.raceName; } }
+        public float maxHealth { get { return _data.maxHealth; } }
+        public float health { get { return _health; } set { _health = value; } }
+        public float movementSpeed { get { return _data.movementSpeed; } }
+        public float attackDamage { get { return Random.Range(_data.attackDamage[0], _data.attackDamage[1]); } }
+        public float attackRetryTime { get { return Random.Range(_data.attackRetryTime[0], _data.attackRetryTime[1]); } }
+        public float attackDistance;
+        public float playerCheckDistance { get { return _data.playerCheckDistance; } }
+        public bool isDead { get { return health <= 0; } }
         #endregion
 
         #region Constructor
-        public EnemyStatistic(EnemyData enemyData)
+        public EnemyStatistic(EnemyData data)
         {
-            //maxHealth = enemyData.maxHealth;
-            //health = maxHealth;
-            movementSpeed = enemyData.movementSpeed;
-            attackDamage = enemyData.attackDamage;
-            attackRetryTime = enemyData.attackRetryTime;
-            attackDistance = enemyData.attackDistance;
-            playerCheckDistance = enemyData.playerCheckDistance;
+            _data = data;
+            _health = data.maxHealth;
         }
         #endregion
     }

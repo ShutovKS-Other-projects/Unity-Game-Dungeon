@@ -4,13 +4,13 @@ namespace Internal_assets.Scripts.QuickRun.Enemy
 {
     public class EnemyStatisticUI : MonoBehaviour
     {
-        private EnemyData statistic;
+        private EnemyStatistic statistic;
         private GameObject nameText;
         private GameObject healthText;
 
         private void Start()
         {
-            statistic = GetComponentInParent<EnemyStateController>().enemyData;
+            statistic = GetComponentInParent<EnemyStateController>().enemyStatistic;
         
             nameText = transform.Find("Name").gameObject;
             healthText = transform.Find("Health").gameObject;

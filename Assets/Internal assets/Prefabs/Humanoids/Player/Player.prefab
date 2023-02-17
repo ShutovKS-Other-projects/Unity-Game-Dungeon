@@ -385,8 +385,8 @@ MonoBehaviour:
   playerData: {fileID: 11400000, guid: da7c922a7022d144db5b364f494c3f61, type: 2}
   groundCheckTransform: {fileID: 6321474988921279786}
   cellingCheckTransform: {fileID: 733837554699973450}
-  damageObjectWeaponTransform: {fileID: 0}
-  damageObjectNoWeaponTransform: {fileID: 0}
+  damageObjectWeaponTransform: {fileID: 736257618588429709}
+  damageObjectNoWeaponTransform: {fileID: 4176141973596014910}
   uiInteractionBare: {fileID: 0}
 --- !u!114 &3713910093249011704
 MonoBehaviour:

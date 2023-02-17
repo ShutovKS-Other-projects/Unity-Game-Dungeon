@@ -3,7 +3,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState
 {
     public class EnemyDamageState : EnemyAbilityState
     {
-        public EnemyDamageState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(stateController, stateMachine, enemyData, animBoolName)
+        public EnemyDamageState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
         {
         }
 
@@ -11,7 +11,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            enemyData.health = 0;
+            enemyStatistic.health = 0;
         }
 
         public override void LogicUpdate()
@@ -21,13 +21,13 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState
             if (!IsAnimationFinished)
                 return;
 
-            if (enemyData.health > 0)
+            if (enemyStatistic.isDead)
             {
-                StateMachine.ChangeState(StateController.IdleState);
+                StateMachine.ChangeState(StateController.DeathState);
             }
             else
             {
-                StateMachine.ChangeState(StateController.DeathState);
+                StateMachine.ChangeState(StateController.IdleState);
             }
         }
 

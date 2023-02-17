@@ -8,9 +8,8 @@ namespace Internal_assets.Scripts.QuickRun.Enemy
         public string raceName;
 
         [Header("Enemy Health")]
-        public static float maxHealth;
-        public float health = maxHealth;
-    
+        public float maxHealth;
+        
         [Header("Enemy Movement")]
         public float movementSpeed;
 
@@ -22,8 +21,6 @@ namespace Internal_assets.Scripts.QuickRun.Enemy
         [Header("Player Check")]
         public float playerCheckDistance;
 
-        public bool isDead { get { return health <= 0; } }
-        
         public RuntimeAnimatorController AnimatorController;
     }
 }

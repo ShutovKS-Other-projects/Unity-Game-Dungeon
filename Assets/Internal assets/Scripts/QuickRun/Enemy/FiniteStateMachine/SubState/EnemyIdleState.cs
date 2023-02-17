@@ -6,7 +6,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState
     {
         private float attackTimer;
 
-        public EnemyIdleState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(stateController, stateMachine, enemyData, animBoolName)
+        public EnemyIdleState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
         {
         }
 
@@ -17,7 +17,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState
             if (!isVisiblePlayer)
                 return;
             
-            if (playerDistance <= enemyData.attackDistance)
+            if (playerDistance <= enemyStatistic.attackDistance)
             {
                 isAttack = Attack();
 
@@ -26,7 +26,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState
                     StateMachine.ChangeState(StateController.AttackState);
                 }
             }
-            else if (playerDistance > enemyData.attackDistance)
+            else if (playerDistance > enemyStatistic.attackDistance)
             {
                 StateMachine.ChangeState(StateController.MoveState);
             }
@@ -34,10 +34,10 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState
 
         private bool Attack()
         {
-            if (isVisiblePlayer && playerDistance <= enemyData.attackDistance && !isAttack)
+            if (isVisiblePlayer && playerDistance <= enemyStatistic.attackDistance && !isAttack)
             {
                 attackTimer += Time.deltaTime;
-                if (attackTimer >= Random.Range(enemyData.attackRetryTime[0], enemyData.attackRetryTime[1]))
+                if (attackTimer >= enemyStatistic.attackRetryTime)
                 {
                     attackTimer = 0f;
                     return true;

@@ -3,7 +3,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState
 {
     public class EnemyMoveState : EnemyGroundedState
     {
-        public EnemyMoveState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyData enemyData, string animBoolName) : base(stateController, stateMachine, enemyData, animBoolName)
+        public EnemyMoveState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
         {
         }
 
@@ -11,7 +11,7 @@ namespace Internal_assets.Scripts.QuickRun.Enemy.FiniteStateMachine.SubState
         {
             base.LogicUpdate();
 
-            if (isVisiblePlayer && playerDistance <= enemyData.attackDistance)
+            if (isVisiblePlayer && playerDistance <= enemyStatistic.attackDistance)
             {
                 StateMachine.ChangeState(StateController.IdleState);
             }
