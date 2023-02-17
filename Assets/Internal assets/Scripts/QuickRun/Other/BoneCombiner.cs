@@ -1,51 +1,53 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class BoneCombiner
+namespace Internal_assets.Scripts.QuickRun.Other
 {
-    private readonly Dictionary<int, Transform> _rootBoneDictionary = new Dictionary<int, Transform>();
-    private readonly Transform[] _boneTransforms = new Transform[67];
-
-    private readonly Transform _transform;
-
-    public BoneCombiner(GameObject rootObj)
+    public class BoneCombiner
     {
-        _transform = rootObj.transform;
-        TraverseHierarchy(_transform);
-    }
+        private readonly Dictionary<int, Transform> _rootBoneDictionary = new Dictionary<int, Transform>();
+        private readonly Transform[] _boneTransforms = new Transform[67];
 
-    public Transform AddLimb(GameObject bonedObj, List<string> boneNames)
-    {
-        var limb = ProcessBonedObject(bonedObj.GetComponentInChildren<SkinnedMeshRenderer>(), boneNames);
-        limb.SetParent(_transform);
-        return limb;
-    }
+        private readonly Transform _transform;
 
-    private Transform ProcessBonedObject(SkinnedMeshRenderer renderer, IReadOnlyList<string> boneNames)
-    {
-        var bonedObject = new GameObject().transform;
-
-        var meshRenderer = bonedObject.gameObject.AddComponent<SkinnedMeshRenderer>();
-
-        for (var i = 0; i < boneNames.Count; i++)
+        public BoneCombiner(GameObject rootObj)
         {
-            _boneTransforms[i] = _rootBoneDictionary[boneNames[i].GetHashCode()];
+            _transform = rootObj.transform;
+            TraverseHierarchy(_transform);
         }
 
-        meshRenderer.bones = _boneTransforms;
-        meshRenderer.sharedMesh = renderer.sharedMesh;
-        meshRenderer.materials = renderer.sharedMaterials;
-
-        return bonedObject;
-    }
-    
-    private void TraverseHierarchy(IEnumerable transform)
-    {
-        foreach (Transform child in transform)
+        public Transform AddLimb(GameObject bonedObj, List<string> boneNames)
         {
-            _rootBoneDictionary.Add(child.name.GetHashCode(), child);
-            TraverseHierarchy(child);
+            var limb = ProcessBonedObject(bonedObj.GetComponentInChildren<SkinnedMeshRenderer>(), boneNames);
+            limb.SetParent(_transform);
+            return limb;
+        }
+
+        private Transform ProcessBonedObject(SkinnedMeshRenderer renderer, IReadOnlyList<string> boneNames)
+        {
+            var bonedObject = new GameObject().transform;
+
+            var meshRenderer = bonedObject.gameObject.AddComponent<SkinnedMeshRenderer>();
+
+            for (var i = 0; i < boneNames.Count; i++)
+            {
+                _boneTransforms[i] = _rootBoneDictionary[boneNames[i].GetHashCode()];
+            }
+
+            meshRenderer.bones = _boneTransforms;
+            meshRenderer.sharedMesh = renderer.sharedMesh;
+            meshRenderer.materials = renderer.sharedMaterials;
+
+            return bonedObject;
+        }
+    
+        private void TraverseHierarchy(IEnumerable transform)
+        {
+            foreach (Transform child in transform)
+            {
+                _rootBoneDictionary.Add(child.name.GetHashCode(), child);
+                TraverseHierarchy(child);
+            }
         }
     }
 }

@@ -1,29 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-[System.Serializable]
-public class Item
+namespace Internal_assets.Scripts.QuickRun.Item
 {
-    public string Name;
-    public int Id = -1;
-    public ItemBuff[] buffs;
-    public Item(ItemObject item)
+    [System.Serializable]
+    public class Item
     {
-        Name = item.name;
-        Id = item.data.Id;
-        buffs = new ItemBuff[item.data.buffs.Length];
-        for (int i = 0; i < buffs.Length; i++)
+        public string Name;
+        public int Id = -1;
+        public ItemBuff[] buffs;
+        public Item(ItemObject item)
         {
-            buffs[i] = new ItemBuff(item.data.buffs[i].min, item.data.buffs[i].max)
+            Name = item.name;
+            Id = item.data.Id;
+            buffs = new ItemBuff[item.data.buffs.Length];
+            for (int i = 0; i < buffs.Length; i++)
             {
-                attribute = item.data.buffs[i].attribute
-            };
+                buffs[i] = new ItemBuff(item.data.buffs[i].min, item.data.buffs[i].max)
+                {
+                    attribute = item.data.buffs[i].attribute
+                };
+            }
         }
-    }
-    public Item()
-    {
-        Name = "";
-        Id = -1;
+        public Item()
+        {
+            Name = "";
+            Id = -1;
+        }
     }
 }

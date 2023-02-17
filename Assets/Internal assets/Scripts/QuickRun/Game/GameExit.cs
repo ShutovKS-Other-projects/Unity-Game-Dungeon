@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class GameExit : MonoBehaviour
+namespace Internal_assets.Scripts.QuickRun.Game
 {
+    public class GameExit : MonoBehaviour
+    {
     
+    }
 }

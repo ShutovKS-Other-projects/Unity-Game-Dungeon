@@ -1,37 +1,37 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class UIInteractionBare : MonoBehaviour
+namespace Internal_assets.Scripts.QuickRun.Interactable
 {
-    [SerializeField] private Image _progresBar;
-    [SerializeField] private Text _toltipText;
-
-    private void Start()
+    public class UIInteractionBare : MonoBehaviour
     {
-        _progresBar = GetComponentInChildren<Image>();
-        _toltipText = GetComponentInChildren<Text>();
-    }
+        [SerializeField] private Image _progresBar;
+        [SerializeField] private Text _toltipText;
 
-    public void SetProgress(float progress)
-    {
-        _progresBar.fillAmount = progress;
-    }
+        private void Start()
+        {
+            _progresBar = GetComponentInChildren<Image>();
+            _toltipText = GetComponentInChildren<Text>();
+        }
 
-    public void SetTooltipText(string text)
-    {
-        _toltipText.text = text;
-    }
+        public void SetProgress(float progress)
+        {
+            _progresBar.fillAmount = progress;
+        }
 
-    public void SetActive(bool active)
-    {
-        gameObject.SetActive(active);
-    }
+        public void SetTooltipText(string text)
+        {
+            _toltipText.text = text;
+        }
 
-    public void Reset()
-    {
-        SetProgress(0);
-        SetTooltipText("");
+        public void SetActive(bool active)
+        {
+            gameObject.SetActive(active);
+        }
+
+        public void Reset()
+        {
+            SetProgress(0);
+            SetTooltipText("");
+        }
     }
 }

@@ -1,78 +1,79 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public delegate void ModifiedEvent();
-[System.Serializable]
-public class ModifiableInt
+namespace Internal_assets.Scripts.QuickRun.Other
 {
-    [SerializeField] private int baseValue;
-    public int BaseValue
+    public delegate void ModifiedEvent();
+    [System.Serializable]
+    public class ModifiableInt
     {
-        get { return baseValue; }
-        set
+        [SerializeField] private int baseValue;
+        public int BaseValue
         {
-            baseValue = value;
-            //UpdateModifiedValue();
+            get { return baseValue; }
+            set
+            {
+                baseValue = value;
+                //UpdateModifiedValue();
+            }
         }
-    }
 
-    [SerializeField] private int modifiedValue;
-    public int ModifiedValue
-    {
-        get { return modifiedValue; }
-        private set
+        [SerializeField] private int modifiedValue;
+        public int ModifiedValue
         {
-            modifiedValue = value;
+            get { return modifiedValue; }
+            private set
+            {
+                modifiedValue = value;
+            }
         }
-    }
 
-    public List<IModifiers> modifiers = new List<IModifiers>();
+        public List<IModifiers> modifiers = new List<IModifiers>();
 
-    public event ModifiedEvent ValueModified;
-    public ModifiableInt(ModifiedEvent method = null)
-    {
-        modifiedValue = baseValue;
-        if (method != null)
+        public event ModifiedEvent ValueModified;
+        public ModifiableInt(ModifiedEvent method = null)
+        {
+            modifiedValue = baseValue;
+            if (method != null)
+            {
+                ValueModified += method;
+            }
+        }
+
+        public void RegsiterModifier(ModifiedEvent method)
         {
             ValueModified += method;
         }
-    }
 
-    public void RegsiterModifier(ModifiedEvent method)
-    {
-        ValueModified += method;
-    }
-
-    public void UnregisterModifier(ModifiedEvent method)
-    {
-        ValueModified -= method;
-    }
-
-    public void UpdateModifiedValue()
-    {
-        var valueAdd = 0;
-        for(var i = 0; i < modifiers.Count; i++)
+        public void UnregisterModifier(ModifiedEvent method)
         {
-            modifiers[i].AddValue(ref valueAdd);
+            ValueModified -= method;
         }
-        ModifiedValue = baseValue + valueAdd;
-        if(ValueModified != null)
+
+        public void UpdateModifiedValue()
         {
-            ValueModified.Invoke();
+            var valueAdd = 0;
+            for(var i = 0; i < modifiers.Count; i++)
+            {
+                modifiers[i].AddValue(ref valueAdd);
+            }
+            ModifiedValue = baseValue + valueAdd;
+            if(ValueModified != null)
+            {
+                ValueModified.Invoke();
+            }
         }
-    }
 
-    public void AddModifier(IModifiers modifier)
-    {
-        modifiers.Add(modifier);
-        UpdateModifiedValue();
-    }
+        public void AddModifier(IModifiers modifier)
+        {
+            modifiers.Add(modifier);
+            UpdateModifiedValue();
+        }
 
-    public void RemoveModifier(IModifiers modifier)
-    {
-        modifiers.Remove(modifier);
-        UpdateModifiedValue();
-    }
+        public void RemoveModifier(IModifiers modifier)
+        {
+            modifiers.Remove(modifier);
+            UpdateModifiedValue();
+        }
 
+    }
 }

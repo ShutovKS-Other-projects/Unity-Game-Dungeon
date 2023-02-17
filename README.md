@@ -18,9 +18,17 @@
         <li>Implementation of the system of enemy states</li>
     </ul>
 </div>
-<h3>Version 2.8.1</h3>
+<h3>Version 2.9</h3>
 <div>
-    <li>Changed the generation of the dungeon, generation with a script replaced with asset Dungeon Generator</li>
+    <li>Enemy state system created</li>
+    <li>State list:</li>
+    <ul>
+        <li>Attack</li>
+        <li>Taking damage</li>
+        <li>Death</li>
+        <li>Peace</li>
+        <li>Movement</li>
+    </ul>
 </div>
 
 <h4>Русский</h4>
@@ -41,9 +49,17 @@
         <li>Реализация системы состояния врагов</li>
     </ul>
 </div>
-<h3>Версия 2.8.1</h3>
+<h3>Версия 2.9</h3>
 <div>
-    <li>Изменена генерация подземелья, генерация с помощью скрипта заменена на asset Dungeon Generator</li>
+    <li>Создана система состояния врагов</li>
+    <li>Список состояний:</li>
+    <ul>
+        <li>Атака</li>
+        <li>Получение урона</li>
+        <li>Смерть</li>
+        <li>Покой</li>
+        <li>Передвижение</li>
+    </ul>
 </div>
 
 <h2>Working time on the project/Время работы над проектом</h2>
