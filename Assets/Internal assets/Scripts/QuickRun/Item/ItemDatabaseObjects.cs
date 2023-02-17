@@ -1,23 +1,24 @@
-using System.Collections.Generic;
 using UnityEngine;
-
-[CreateAssetMenu(fileName = "New ItemDatabase", menuName = "Inventory System/Items/Database")]
-public class ItemDatabaseObjects : ScriptableObject, ISerializationCallbackReceiver
+namespace Internal_assets.Scripts.QuickRun.Item
 {
-    public ItemObject[] ItemObjects;
-
-    [ContextMenu("Update ID's")]
-    public void UpdateID()
+    [CreateAssetMenu(fileName = "New ItemDatabase", menuName = "Inventory System/Items/Database")]
+    public class ItemDatabaseObjects : ScriptableObject, ISerializationCallbackReceiver
     {
-        for (int i = 0; i < ItemObjects.Length; i++)
+        public ItemObject[] ItemObjects;
+
+        [ContextMenu("Update ID's")]
+        public void UpdateID()
         {
-            ItemObjects[i].data.Id = i;
+            for (int i = 0; i < ItemObjects.Length; i++)
+            {
+                ItemObjects[i].data.Id = i;
+            }
         }
-    }
 
-    public void OnAfterDeserialize()
-    {
-        UpdateID();
+        public void OnAfterDeserialize()
+        {
+            UpdateID();
+        }
+        public void OnBeforeSerialize() { }
     }
-    public void OnBeforeSerialize() { }
 }

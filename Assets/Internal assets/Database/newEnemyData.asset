@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: newEnemyData
   m_EditorClassIdentifier: 
   raceName: Enemy
-  health: 5
+  health: 0
   movementSpeed: 6
   attackDamage:
   - 1
@@ -23,3 +23,4 @@ MonoBehaviour:
   - 6
   attackDistance: 0.5
   playerCheckDistance: 10
+  AnimatorController: {fileID: 9100000, guid: 951733f3ca8c1cd4998a0cae860dc753, type: 2}

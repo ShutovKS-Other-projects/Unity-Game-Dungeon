@@ -1,8 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class GameController : MonoBehaviour
+namespace Internal_assets.Scripts.QuickRun.Game
 {
+    public class GameController : MonoBehaviour
+    {
     
+    }
 }

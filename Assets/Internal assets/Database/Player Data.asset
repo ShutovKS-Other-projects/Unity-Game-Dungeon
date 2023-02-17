@@ -29,17 +29,11 @@ MonoBehaviour:
   blockMovementSpeed: 4
   isAbility: 0
   isFatigue: 0
+  crouchColliderCenter: 0.6
   crouchColliderHeight: 1.2
+  standColliderCenter: 0.9
   standColliderHeight: 1.8
-  crouchColliderCenter: 0.9
-  standColliderCenter: 0.6
-  groundCheckRadius: 0.5
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 512
+  groundCheckRadius: 0.2
   interCheckDistance: 3
   interCheckSphereRadius: 0.5
-  interactableLayer:
-    serializedVersion: 2
-    m_Bits: 256
   interactionData: {fileID: 11400000, guid: 1c7c0fc237be1e941a1f6ddfdff759cd, type: 2}

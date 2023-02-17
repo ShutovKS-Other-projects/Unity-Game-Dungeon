@@ -1,8 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface IModifiers
+namespace Internal_assets.Scripts.QuickRun.Other
 {
-    void AddValue(ref int baseValue);
+    public interface IModifiers
+    {
+        void AddValue(ref int baseValue);
+    }
 }

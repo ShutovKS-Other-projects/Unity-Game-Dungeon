@@ -1,28 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-[CreateAssetMenu(fileName = "Interaction Data", menuName = "InteractionSystem/InteractionData", order = 0)]
-public class InteractionData : ScriptableObject
+namespace Internal_assets.Scripts.QuickRun.Interactable
 {
-    private InteractableBase _interactable;
-
-    public InteractableBase Interactable
+    [CreateAssetMenu(fileName = "Interaction Data", menuName = "InteractionSystem/InteractionData", order = 0)]
+    public class InteractionData : ScriptableObject
     {
-        get => _interactable;
-        set => _interactable = value;
-    }
+        private InteractableBase _interactable;
 
-    public void Interact()
-    {
-        if(_interactable != null)
+        public InteractableBase Interactable
         {
-            _interactable.OnInteract();
-            ResetData();
+            get => _interactable;
+            set => _interactable = value;
         }
-    }
 
-    public bool IsSameInteractable(InteractableBase _newInteractable) => _interactable == _newInteractable;
-    public bool IsEmpy() => _interactable == null;
-    public void ResetData() => _interactable = null;
+        public void Interact()
+        {
+            if(_interactable != null)
+            {
+                _interactable.OnInteract();
+                ResetData();
+            }
+        }
+
+        public bool IsSameInteractable(InteractableBase _newInteractable) => _interactable == _newInteractable;
+        public bool IsEmpy() => _interactable == null;
+        public void ResetData() => _interactable = null;
+    }
 }
