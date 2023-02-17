@@ -23,10 +23,12 @@ MonoBehaviour:
   maxHealth: 100
   maxStamina: 100
   jumpSpeed: 5
-  movementSpeed: 8
-  inAirMovementSpeed: 8
-  crouchMovementSpeed: 8
-  blockMovementSpeed: 4
+  movementForce: 10
+  movementSpeedMax: 4
+  runMovementSpeedMax: 6
+  inAirMovementSpeedMax: 4
+  crouchMovementSpeedMax: 3
+  blockMovementSpeedMax: 3
   isAbility: 0
   isFatigue: 0
   crouchColliderCenter: 0.6
