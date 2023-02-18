@@ -7,7 +7,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
         private Vector2 movementInput;
         private bool isGrounded;
 
-        public PlayerInAirState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(stateController, stateMachine, playerData, animBoolName)
+        public PlayerInAirState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
         }
 

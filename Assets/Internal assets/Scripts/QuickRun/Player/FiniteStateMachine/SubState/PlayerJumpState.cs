@@ -3,7 +3,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
 {
     public class PlayerJumpState : PlayerAbilityState
     {
-        public PlayerJumpState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(stateController, stateMachine, playerData, animBoolName)
+        public PlayerJumpState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
         }
 
@@ -11,8 +11,8 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            StateController.SetVelocityY(playerData.jumpSpeed);
-            playerData.stamina -= 10;
+            StateController.SetVelocityY(playerStatistic.JumpSpeed);
+            playerStatistic.Stamina -= 10;
             isAbilityDone = true;
         }
     }

@@ -46,6 +46,7 @@ namespace Internal_assets.Scripts.QuickRun.Player
             Debug.Log("OnRemoveItemStart");
             if (_slot.ItemObject == null)
                 return;
+            
             Debug.Log("OnRemoveItemSwitch");
             switch (_slot.parent.inventory.type)
             {

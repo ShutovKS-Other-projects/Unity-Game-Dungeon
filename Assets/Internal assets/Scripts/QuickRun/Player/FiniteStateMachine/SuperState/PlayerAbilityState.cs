@@ -6,7 +6,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SuperState
         protected bool isAbilityDone;
         protected bool isGrounded;
 
-        public PlayerAbilityState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(stateController, stateMachine, playerData, animBoolName)
+        public PlayerAbilityState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
         }
 

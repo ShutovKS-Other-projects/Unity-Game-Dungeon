@@ -5,7 +5,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
 {
     public class PlayerCrouchMoveState : PlayerGroundedState
     {
-        public PlayerCrouchMoveState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(stateController, stateMachine, playerData, animBoolName)
+        public PlayerCrouchMoveState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
         }
 
@@ -13,14 +13,14 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            StateController.SetColliderHeight(playerData.crouchColliderHeight, playerData.crouchColliderCenter);
+            StateController.SetColliderHeight(playerStatistic.CrouchColliderHeight, playerStatistic.CrouchColliderCenter);
         }
 
         public override void Exit()
         {
             base.Exit();
 
-            StateController.SetColliderHeight(playerData.standColliderHeight, playerData.standColliderCenter);
+            StateController.SetColliderHeight(playerStatistic.StandColliderHeight, playerStatistic.StandColliderCenter);
         }
 
         public override void LogicUpdate()
@@ -43,7 +43,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            StateController.Movement(MovementInput, playerData.crouchMovementSpeedMax);
+            StateController.Movement(MovementInput, playerStatistic.CrouchMovementSpeedMax);
 
         }
     }

@@ -18,7 +18,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SuperState
         private bool _isInteractable;
         private bool _isGrounded;
 
-        public PlayerGroundedState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(stateController, stateMachine, playerData, animBoolName)
+        public PlayerGroundedState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
         }
 
@@ -90,22 +90,22 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SuperState
             var cameraTransform = UnityEngine.Camera.main!.transform;
             var ray = new Ray(cameraTransform.position, cameraTransform.forward);
         
-            if (Physics.SphereCast(ray, playerData.interCheckSphereRadius, out var hitInfo, playerData.interCheckDistance, LayerMask.GetMask("Interactable")))
+            if (Physics.SphereCast(ray, playerStatistic.InterCheckSphereRadius, out var hitInfo, playerStatistic.InterCheckDistance, LayerMask.GetMask("Interactable")))
             {
                 var interactable = hitInfo.collider.GetComponent<InteractableBase>();
 
                 if (interactable != null)
                 {
-                    if (playerData.interactionData.IsEmpy() || playerData.interactionData.IsSameInteractable(interactable))
+                    if (playerStatistic.InteractionData.IsEmpy() || playerStatistic.InteractionData.IsSameInteractable(interactable))
                     {
-                        playerData.interactionData.Interactable = interactable;
+                        playerStatistic.InteractionData.Interactable = interactable;
                         StateController.uiInteractionBare.SetTooltipText(interactable.TooltipText);
 
                         return true;
                     }
                     else
                     {
-                        playerData.interactionData.ResetData();
+                        playerStatistic.InteractionData.ResetData();
                         StateController.uiInteractionBare.SetTooltipText("");
 
                         return false;
@@ -118,7 +118,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SuperState
             }
             else
             {
-                playerData.interactionData.ResetData();
+                playerStatistic.InteractionData.ResetData();
                 StateController.uiInteractionBare.SetTooltipText("");
                 return false;
             }
@@ -130,36 +130,36 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SuperState
 
         private void RecoveryStamina()
         {
-            if (playerData.stamina >= playerData.maxStamina)
+            if (playerStatistic.Stamina >= playerStatistic.MaxStamina)
             {
-                playerData.stamina = playerData.maxStamina;
+                playerStatistic.Stamina = playerStatistic.MaxStamina;
             }
             else
             {
-                if (playerData.isFatigue)
+                if (playerStatistic.IsFatigue)
                 {
-                    playerData.stamina += playerData.staminaRecoverySpeedIsFatigue * Time.deltaTime;
-                    if (playerData.stamina >= playerData.maxStamina / 4)
+                    playerStatistic.Stamina += playerStatistic.StaminaRecoverySpeedIsFatigue * Time.deltaTime;
+                    if (playerStatistic.Stamina >= playerStatistic.MaxStamina / 4)
                     {
-                        playerData.isFatigue = false;
+                        playerStatistic.IsFatigue = false;
                     }
                 }
                 else
                 {
-                    playerData.stamina += playerData.staminaRecoverySpeed * Time.deltaTime;
+                    playerStatistic.Stamina += playerStatistic.StaminaRecoverySpeed * Time.deltaTime;
                 }
             }
         }
 
         private void RecoveryHealth()
         {
-            if (playerData.health >= playerData.maxHealth)
+            if (playerStatistic.Health >= playerStatistic.MaxHealth)
             {
-                playerData.health = playerData.maxHealth;
+                playerStatistic.Health = playerStatistic.MaxHealth;
             }
             else
             {
-                playerData.health += playerData.healthRecoverySpeed * Time.deltaTime;
+                playerStatistic.Health += playerStatistic.HealthRecoverySpeed * Time.deltaTime;
             }
         }
 

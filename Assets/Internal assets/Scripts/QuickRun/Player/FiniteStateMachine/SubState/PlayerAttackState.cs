@@ -3,7 +3,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
 {
     public class PlayerAttackState : PlayerAbilityState
     {
-        public PlayerAttackState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(stateController, stateMachine, playerData, animBoolName)
+        public PlayerAttackState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
         }
 
@@ -20,7 +20,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
             base.Enter();
 
             SwitchCollider(true);
-            playerData.stamina -= 10;
+            playerStatistic.Stamina -= 10;
         }
 
         public override void Exit()

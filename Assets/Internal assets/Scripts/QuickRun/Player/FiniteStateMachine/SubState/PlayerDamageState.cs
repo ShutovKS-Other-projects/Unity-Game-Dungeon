@@ -3,7 +3,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
 {
     public class PlayerDamageState : PlayerAbilityState
     {   
-        public PlayerDamageState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(stateController, stateMachine, playerData, animBoolName)
+        public PlayerDamageState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
         }
     
@@ -12,7 +12,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
         {
             base.Enter();
         
-            playerData.health -= 5;
+            playerStatistic.Health -= 5;
         }
     
         // ReSharper disable Unity.PerformanceAnalysis
@@ -23,7 +23,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
             if (!IsAnimationFinished)
                 return;
         
-            if (playerData.health > 0)
+            if (playerStatistic.Health > 0)
             {
                 StateMachine.ChangeState(StateController.IdleState);
             }

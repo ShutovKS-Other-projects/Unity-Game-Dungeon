@@ -4,7 +4,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
 {
     public class PlayerMoveState : PlayerGroundedState
     {
-        public PlayerMoveState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(stateController, stateMachine, playerData, animBoolName)
+        public PlayerMoveState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
         }
 
@@ -32,7 +32,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            StateController.Movement(MovementInput, playerData.movementSpeedMax);
+            StateController.Movement(MovementInput, playerStatistic.MovementSpeedMax);
         }
     }
 }

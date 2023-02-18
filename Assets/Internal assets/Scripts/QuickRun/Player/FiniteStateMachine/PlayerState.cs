@@ -1,13 +1,15 @@
 using Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine;
 using UnityEngine;
+using UnityEngine.Serialization;
 namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
 {
     public class PlayerState : MonoBehaviour
     {
+        public PlayerStatistic playerStatistic;
+        
         protected PlayerStateController StateController;
         protected PlayerStateMachine StateMachine;
-        public PlayerData playerData;
-
+        
         protected bool IsAnimationFinished;
         protected bool IsExitingState;
 
@@ -15,11 +17,11 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
 
         private string _animBoolName;
 
-        public PlayerState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName)
+        public PlayerState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName)
         {
             this.StateController = stateController;
             this.StateMachine = stateMachine;
-            this.playerData = playerData;
+            this.playerStatistic = playerStatistic;
             this._animBoolName = animBoolName;
         }
 

@@ -3,7 +3,7 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
 {
     public class PlayerInteractState : PlayerAbilityState
     {
-        public PlayerInteractState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(stateController, stateMachine, playerData, animBoolName)
+        public PlayerInteractState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
         }
 
@@ -14,14 +14,14 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState
             StateController.SetVelocityX(0f);
             StateController.SetVelocityZ(0f);
 
-            playerData.interactionData.Interact();
+            playerStatistic.InteractionData.Interact();
         }
 
         public override void Exit()
         {
             base.Exit();
 
-            playerData.interactionData.ResetData();
+            playerStatistic.InteractionData.ResetData();
         }
 
         public override void AnimationFinishTrigger()

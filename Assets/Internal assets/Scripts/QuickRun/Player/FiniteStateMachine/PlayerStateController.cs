@@ -4,12 +4,14 @@ using Internal_assets.Scripts.QuickRun.Other;
 using Internal_assets.Scripts.QuickRun.Player.Delegate;
 using Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine.SubState;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
 {
     public class PlayerStateController : MonoBehaviour
     {
         [SerializeField] private PlayerData playerData;
+        private PlayerStatistic _playerStatistic;
 
         #region State Machine
 
@@ -58,21 +60,22 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
 
         private void Awake()
         {
+            _playerStatistic = new PlayerStatistic(playerData);
             _stateMachine = new PlayerStateMachine();
 
-            IdleState = new PlayerIdleState(this, _stateMachine, playerData, "Idle");
-            MoveState = new PlayerMoveState(this, _stateMachine, playerData, "Move");
-            JumpState = new PlayerJumpState(this, _stateMachine, playerData, "InAir");
-            InAirState = new PlayerInAirState(this, _stateMachine, playerData, "InAir");
-            LandState = new PlayerLandState(this, _stateMachine, playerData, "Land");
-            CrouchIdleState = new PlayerCrouchIdleState(this, _stateMachine, playerData, "CrouchIdle");
-            CrouchMoveState = new PlayerCrouchMoveState(this, _stateMachine, playerData, "CrouchMove");
-            AttackState = new PlayerAttackState(this, _stateMachine, playerData, "Attack");
-            BlockState = new PlayerBlockState(this, _stateMachine, playerData, "Block");
-            InteractState = new PlayerInteractState(this, _stateMachine, playerData, "Interact");
-            DamageState = new PlayerDamageState(this, _stateMachine, playerData, "Damage");
-            DeathState = new PlayerDeathState(this, _stateMachine, playerData, "Death");
-            RunState = new PlayerRunState(this, _stateMachine, playerData, "Run");
+            IdleState = new PlayerIdleState(this, _stateMachine, _playerStatistic, "Idle");
+            MoveState = new PlayerMoveState(this, _stateMachine, _playerStatistic, "Move");
+            JumpState = new PlayerJumpState(this, _stateMachine, _playerStatistic, "InAir");
+            InAirState = new PlayerInAirState(this, _stateMachine, _playerStatistic, "InAir");
+            LandState = new PlayerLandState(this, _stateMachine, _playerStatistic, "Land");
+            CrouchIdleState = new PlayerCrouchIdleState(this, _stateMachine, _playerStatistic, "CrouchIdle");
+            CrouchMoveState = new PlayerCrouchMoveState(this, _stateMachine, _playerStatistic, "CrouchMove");
+            AttackState = new PlayerAttackState(this, _stateMachine, _playerStatistic, "Attack");
+            BlockState = new PlayerBlockState(this, _stateMachine, _playerStatistic, "Block");
+            InteractState = new PlayerInteractState(this, _stateMachine, _playerStatistic, "Interact");
+            DamageState = new PlayerDamageState(this, _stateMachine, _playerStatistic, "Damage");
+            DeathState = new PlayerDeathState(this, _stateMachine, _playerStatistic, "Death");
+            RunState = new PlayerRunState(this, _stateMachine, _playerStatistic, "Run");
         }
 
         private void Start()
@@ -157,13 +160,13 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
 
         #region Movement
 
-        public void Movement(Vector2 movementInput, float speed)
+        public void Movement(Vector2 movementInput, float speedMax)
         {
             var move = new Vector3(movementInput.x, 0, movementInput.y);
-            Rb.AddRelativeForce(move * playerData.movementForce * Time.deltaTime, ForceMode.VelocityChange);
+            Rb.AddRelativeForce(move * _playerStatistic.MovementForce * Time.deltaTime, ForceMode.VelocityChange);
             
-            if(Rb.velocity.magnitude > speed)
-                Rb.velocity = Rb.velocity.normalized * speed;
+            if(Rb.velocity.magnitude > speedMax)
+                Rb.velocity = Rb.velocity.normalized * speedMax;
             
             Debug.Log(Rb.velocity);
             
@@ -187,12 +190,12 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
 
         public bool CheckIfGrounded()
         {
-            return Physics.CheckSphere(groundCheckTransform.position, playerData.groundCheckRadius, LayerMask.GetMask("Ground"));
+            return Physics.CheckSphere(groundCheckTransform.position, _playerStatistic.GroundCheckRadius, LayerMask.GetMask("Ground"));
         }
 
         public bool CheckIfTouchingCelling()
         {
-            return Physics.CheckSphere(cellingCheckTransform.position, playerData.groundCheckRadius, LayerMask.GetMask("Ground"));
+            return Physics.CheckSphere(cellingCheckTransform.position, _playerStatistic.GroundCheckRadius, LayerMask.GetMask("Ground"));
         }
 
         #endregion
@@ -209,20 +212,20 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
 
         private void Acceleration(out float acceleration)
         {
-            if (!playerData.isFatigue)
+            if (!_playerStatistic.IsFatigue)
             {
                 if (InputManager.GetPlayerSprintInput() && InputManager.GetPlayerMovementInput().y > 0)
                 {
-                    playerData.stamina -= 3f * Time.deltaTime;
+                    _playerStatistic.Stamina -= 3f * Time.deltaTime;
                     acceleration = 1.25f;
-                    if (playerData.stamina <= 0)
+                    if (_playerStatistic.Stamina <= 0)
                     {
-                        playerData.isFatigue = true;
+                        _playerStatistic.IsFatigue = true;
                     }
                 }
                 else
                 {
-                    playerData.stamina += 5f * Time.deltaTime;
+                    _playerStatistic.Stamina += 5f * Time.deltaTime;
                     acceleration = 1f;
                 }
             }
@@ -230,16 +233,16 @@ namespace Internal_assets.Scripts.QuickRun.Player.FiniteStateMachine
             {
                 if (InputManager.GetPlayerSprintInput() && InputManager.GetPlayerMovementInput().y > 0)
                 {
-                    playerData.stamina += 5f * Time.deltaTime;
+                    _playerStatistic.Stamina += 5f * Time.deltaTime;
                     acceleration = 1f;
-                    if (playerData.stamina >= 100)
+                    if (_playerStatistic.Stamina >= 100)
                     {
-                        playerData.isFatigue = false;
+                        _playerStatistic.IsFatigue = false;
                     }
                 }
                 else
                 {
-                    playerData.stamina += 5f * Time.deltaTime;
+                    _playerStatistic.Stamina += 5f * Time.deltaTime;
                     acceleration = 1f;
                 }
             }
