@@ -83,6 +83,7 @@ namespace Internal_assets.Scripts.QuickRun.Player
                             case ItemType.Weapon:
                                 Debug.Log("Destroying sword");
                                 Destroy(sword.gameObject);
+                                GetComponent<Animator>().SetLayerWeight(1,0f);
                                 break;
                         }
                     }
@@ -143,6 +144,7 @@ namespace Internal_assets.Scripts.QuickRun.Player
                             //    break;
                             case ItemType.Weapon:
                                 sword = Instantiate(_slot.ItemObject.characterDisplay, weaponTransform).transform;
+                                GetComponent<Animator>().SetLayerWeight(1,1f);
                                 break;
                         }
                     }
