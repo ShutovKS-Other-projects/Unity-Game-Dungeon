@@ -88,7 +88,7 @@ namespace TMPro
 
         private TMP_Text m_TextComponent;
 
-        private Camera m_Camera;
+        private UnityEngine.Camera m_Camera;
         private Canvas m_Canvas;
 
         private int m_selectedLink = -1;
@@ -115,17 +115,17 @@ namespace TMPro
             }
             else
             {
-                m_Camera = Camera.main;
+                m_Camera = UnityEngine.Camera.main;
             }
         }
 
 
         void LateUpdate()
         {
-            if (TMP_TextUtilities.IsIntersectingRectTransform(m_TextComponent.rectTransform, Input.mousePosition, m_Camera))
+            if (TMP_TextUtilities.IsIntersectingRectTransform(m_TextComponent.rectTransform, UnityEngine.Input.mousePosition, m_Camera))
             {
                 #region Example of Character or Sprite Selection
-                int charIndex = TMP_TextUtilities.FindIntersectingCharacter(m_TextComponent, Input.mousePosition, m_Camera, true);
+                int charIndex = TMP_TextUtilities.FindIntersectingCharacter(m_TextComponent, UnityEngine.Input.mousePosition, m_Camera, true);
                 if (charIndex != -1 && charIndex != m_lastCharIndex)
                 {
                     m_lastCharIndex = charIndex;
@@ -143,7 +143,7 @@ namespace TMPro
 
                 #region Example of Word Selection
                 // Check if Mouse intersects any words and if so assign a random color to that word.
-                int wordIndex = TMP_TextUtilities.FindIntersectingWord(m_TextComponent, Input.mousePosition, m_Camera);
+                int wordIndex = TMP_TextUtilities.FindIntersectingWord(m_TextComponent, UnityEngine.Input.mousePosition, m_Camera);
                 if (wordIndex != -1 && wordIndex != m_lastWordIndex)
                 {
                     m_lastWordIndex = wordIndex;
@@ -159,7 +159,7 @@ namespace TMPro
 
                 #region Example of Line Selection
                 // Check if Mouse intersects any words and if so assign a random color to that word.
-                int lineIndex = TMP_TextUtilities.FindIntersectingLine(m_TextComponent, Input.mousePosition, m_Camera);
+                int lineIndex = TMP_TextUtilities.FindIntersectingLine(m_TextComponent, UnityEngine.Input.mousePosition, m_Camera);
                 if (lineIndex != -1 && lineIndex != m_lastLineIndex)
                 {
                     m_lastLineIndex = lineIndex;
@@ -182,7 +182,7 @@ namespace TMPro
 
                 #region Example of Link Handling
                 // Check if mouse intersects with any links.
-                int linkIndex = TMP_TextUtilities.FindIntersectingLink(m_TextComponent, Input.mousePosition, m_Camera);
+                int linkIndex = TMP_TextUtilities.FindIntersectingLink(m_TextComponent, UnityEngine.Input.mousePosition, m_Camera);
 
                 // Handle new Link selection.
                 if (linkIndex != -1 && linkIndex != m_selectedLink)

@@ -1,4 +1,4 @@
-namespace Internal_assets.Scripts.Menu
+namespace Menu
 {
     public class QuickRunSettings
     {

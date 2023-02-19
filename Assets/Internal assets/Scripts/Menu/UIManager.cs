@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-namespace Internal_assets.Scripts.Menu
+namespace Menu
 {
     public class UIManager : MonoBehaviour
     {
