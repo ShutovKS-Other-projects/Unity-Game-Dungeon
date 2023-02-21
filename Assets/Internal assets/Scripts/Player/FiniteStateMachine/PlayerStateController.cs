@@ -7,7 +7,6 @@ namespace Player.FiniteStateMachine
 {
     public class PlayerStateController : MonoBehaviour
     {
-        [SerializeField] private PlayerData playerData;
         private PlayerStatistic _playerStatistic;
 
         #region State Machine
@@ -57,7 +56,7 @@ namespace Player.FiniteStateMachine
 
         private void Awake()
         {
-            _playerStatistic = new PlayerStatistic(playerData);
+            _playerStatistic = GetComponent<PlayerStatistic>();
             _stateMachine = new PlayerStateMachine();
 
             IdleState = new PlayerIdleState(this, _stateMachine, _playerStatistic, "Idle");
@@ -164,9 +163,7 @@ namespace Player.FiniteStateMachine
             
             if(Rb.velocity.magnitude > speedMax)
                 Rb.velocity = Rb.velocity.normalized * speedMax;
-            
-            Debug.Log(Rb.velocity);
-            
+
             Animator.SetFloat(zSpeed, move.z);
             Animator.SetFloat(xSpeed, move.x);
         }

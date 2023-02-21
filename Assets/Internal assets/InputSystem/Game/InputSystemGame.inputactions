@@ -38,8 +38,30 @@
                 },
                 {
                     "name": "",
+                    "id": "99a0460e-e04c-4960-9ca4-d3d38c68f2e3",
+                    "path": "<XInputController>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "8e32d1d6-6ae1-42fb-a3a3-3066a3db78f1",
                     "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PlayerInfo",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9bffaed2-a816-47bc-a7cf-dad296d2c0ef",
+                    "path": "<XInputController>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -195,6 +217,17 @@
                 },
                 {
                     "name": "",
+                    "id": "587540ad-9689-4fcc-810a-3ca64c1afd01",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "Hold",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d68c715c-b903-40df-b3ce-dcfeb58ed7c2",
                     "path": "<Keyboard>/space",
                     "interactions": "",
@@ -206,8 +239,30 @@
                 },
                 {
                     "name": "",
+                    "id": "4a7e15c4-5935-494b-a3ac-f5f3b0a48631",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "938193ec-ba8e-4ddb-8a5c-df726b498631",
                     "path": "<Keyboard>/f",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d0b09829-8f66-4119-9091-5ebc09c85972",
+                    "path": "<XInputController>/buttonNorth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -228,8 +283,30 @@
                 },
                 {
                     "name": "",
+                    "id": "8b4704bf-7fdf-4662-83aa-e0f930b84fd5",
+                    "path": "<XInputController>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "bdff80ac-0e01-46aa-bc1e-c1f9544fc09b",
                     "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Look",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "4efe3df2-b1b8-46ef-a0c1-135a66a5d52c",
+                    "path": "<XInputController>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -250,12 +327,45 @@
                 },
                 {
                     "name": "",
+                    "id": "e12566b6-262a-4636-b439-a3c0deaaaf0a",
+                    "path": "<XInputController>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Block",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "c70e758a-b2ab-4e21-bec4-3fc28d82deed",
                     "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "98fc5359-8211-45b4-9fe4-b28dea52f3aa",
+                    "path": "<XInputController>/leftStickPress",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Crouch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c22eb411-2abd-440f-824a-0df69c9b9e7a",
+                    "path": "<XInputController>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

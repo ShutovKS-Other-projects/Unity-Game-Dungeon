@@ -1,24 +1,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 namespace Inventory
 {
     public class DynamicInterface : UserInterface
     {
-        [SerializeField] private GameObject panelInvertory;
-        [SerializeField] private int X_START = -105;
-        [SerializeField] private int Y_START = 75;
-        [SerializeField] private int X_SPACE_BETWEEN_ITEM = 30;
-        [SerializeField] private int Y_SPACE_BETWEEN_ITEM = 30;
-        [SerializeField] private int NUMBER_OF_COLUMNS = 8;
-
+        [SerializeField] private GameObject panelInventory;
+        private const int XStart = -105;
+        private const int YStart = 75;
+        private const int XSpaceBetweenItem = 30;
+        private const int YSpaceBetweenItem = 30;
+        private const int NumberOfColumns = 8;
 
         public override void CreateSlots()
         {
             slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
             for (int i = 0; i < inventory.GetSlots.Length; i++)
             {
-                var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, panelInvertory.transform);
+                var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, panelInventory.transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
 
                 AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
@@ -33,15 +33,15 @@ namespace Inventory
 
         public override void AllSlotsUpdate()
         {
-            for (int i = 0; i < inventory.GetSlots.Length; i++)
+            foreach (var inventorySlot in inventory.GetSlots)
             {
-                inventory.GetSlots[i].UpdateSlot(inventory.GetSlots[i].item, inventory.GetSlots[i].amount);
+                inventorySlot.UpdateSlot(inventorySlot.item, inventorySlot.amount);
             }
         }
 
         private Vector3 GetPosition(int i)
         {
-            return new Vector3(X_START + (X_SPACE_BETWEEN_ITEM * (i % NUMBER_OF_COLUMNS)), Y_START + (-Y_SPACE_BETWEEN_ITEM * (i / NUMBER_OF_COLUMNS)), 0f);
+            return new Vector3((XStart + XSpaceBetweenItem * (i % NumberOfColumns)), (YStart - YSpaceBetweenItem * (i / NumberOfColumns)), (0f));
         }
     }
 }

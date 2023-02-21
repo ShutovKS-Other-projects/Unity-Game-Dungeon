@@ -257,6 +257,8 @@ GameObject:
   - component: {fileID: 2277231369872677175}
   - component: {fileID: 2596627835458191555}
   - component: {fileID: 3713910093249011704}
+  - component: {fileID: -6467950121392702133}
+  - component: {fileID: -6193070094088727074}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -367,9 +369,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: d5462428c7132324385be6ac8cb8f0b8, type: 2}
   equipment: {fileID: 11400000, guid: 6ddb9e707e07fd545af818c9de29df5f, type: 2}
-  attributes: []
-  weaponTransform: {fileID: 963256154510749206, guid: 8ec4cd525e5f3a9468afc7a5ac81ea08,
-    type: 3}
 --- !u!114 &2596627835458191555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -382,7 +381,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef81944e5f6e22140bd9ac5b9cb97bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: da7c922a7022d144db5b364f494c3f61, type: 2}
   groundCheckTransform: {fileID: 6321474988921279786}
   cellingCheckTransform: {fileID: 733837554699973450}
   damageObjectWeaponTransform: {fileID: 736257618588429709}
@@ -400,4 +398,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baa7e4313b92d894c946958f3caf381f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 11400000, guid: da7c922a7022d144db5b364f494c3f61, type: 2}
+--- !u!114 &-6467950121392702133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629634057154321703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dcf17b4b4dfd09f459a37a16948bf318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerData: {fileID: 11400000, guid: da7c922a7022d144db5b364f494c3f61, type: 2}
+--- !u!114 &-6193070094088727074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629634057154321703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e120e392dc87419585e2f24c06d4545b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attributes:
+  - type: 0
+  - type: 1
+  - type: 2
+  - type: 3
+  - type: 4
+  - type: 5
+  - type: 6
+  - type: 7
+  - type: 8
+  - type: 9
+  - type: 10
+  - type: 11
+  - type: 12
+  - type: 13

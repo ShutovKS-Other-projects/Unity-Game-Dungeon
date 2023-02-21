@@ -17,8 +17,8 @@ namespace UIGame
 
         public void UpdateGameStatistics()
         {
-            _healthText.GetComponent<UnityEngine.UI.Text>().text = $"Здоровья: {_playerData.health}/{_playerData.maxHealth}";
-            _staminaText.GetComponent<UnityEngine.UI.Text>().text = $"Выносливости: {_playerData.stamina}/{_playerData.maxStamina}";
+            _healthText.GetComponent<UnityEngine.UI.Text>().text = $"Здоровья: {_playerData.health}/{_playerData.healthMax}";
+            _staminaText.GetComponent<UnityEngine.UI.Text>().text = $"Выносливости: {_playerData.stamina}/{_playerData.staminaMax}";
             //_dialogText.GetComponent<UnityEngine.UI.Text>().text = ;
         }
     }

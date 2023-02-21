@@ -1,23 +1,26 @@
 ﻿using Item;
 using Other;
+using UnityEngine.Serialization;
 namespace Player
 {
     [System.Serializable]
     public class Attribute
     {
-        [System.NonSerialized] public PlayerInventory parent;
+        [System.NonSerialized] public PlayerAttribute Parent;
         public Attributes type;
-        public ModifiableInt value;
-
-        public void SetParent(PlayerInventory _parent)
+        public ModifiableFloat modifiableFloat;
+        
+        public float? Value => modifiableFloat.ModifiedValue;
+        
+        public void SetParent(PlayerAttribute parent)
         {
-            parent = _parent;
-            value = new ModifiableInt(AttributeModified);
+            Parent = parent;
+            modifiableFloat = new ModifiableFloat(AttributeModified);
         }
 
         public void AttributeModified()
         {
-            parent.AttributeModified(this);
+            PlayerAttribute.AttributeModified(this);
         }
     }
 }

@@ -7,8 +7,8 @@ namespace Other
     {
         private readonly Dictionary<int, Transform> _rootBoneDictionary = new Dictionary<int, Transform>();
         private readonly Transform[] _boneTransforms = new Transform[67];
-
         private readonly Transform _transform;
+        private const string ArmatureString = "armature";
 
         public BoneCombiner(GameObject rootObj)
         {
@@ -23,29 +23,36 @@ namespace Other
             return limb;
         }
 
-        private Transform ProcessBonedObject(SkinnedMeshRenderer renderer, IReadOnlyList<string> boneNames)
+        private Transform ProcessBonedObject(SkinnedMeshRenderer renderer, List<string> boneNames)
         {
+            /*      Create the SubObject        */
             var bonedObject = new GameObject().transform;
 
+
+            /*      Add the renderer        */
             var meshRenderer = bonedObject.gameObject.AddComponent<SkinnedMeshRenderer>();
 
+
+            /*      Assemble Bone Structure     */
             for (var i = 0; i < boneNames.Count; i++)
             {
                 _boneTransforms[i] = _rootBoneDictionary[boneNames[i].GetHashCode()];
             }
 
+            /*      Assemble Renderer       */
             meshRenderer.bones = _boneTransforms;
             meshRenderer.sharedMesh = renderer.sharedMesh;
             meshRenderer.materials = renderer.sharedMaterials;
 
             return bonedObject;
         }
-    
-        private void TraverseHierarchy(IEnumerable transform)
+
+        private void TraverseHierarchy(Transform root)
         {
-            foreach (Transform child in transform)
+            foreach (Transform child in root)
             {
-                _rootBoneDictionary.Add(child.name.GetHashCode(), child);
+                if (child.CompareTag(ArmatureString))
+                    _rootBoneDictionary.Add(child.name.GetHashCode(), child);
                 TraverseHierarchy(child);
             }
         }

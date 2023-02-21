@@ -12,11 +12,12 @@ namespace Item
         public ItemType type;
         [TextArea(15, 20)] public string description;
         public Item data = new Item();
+        
         public List<string> boneNames = new List<string>();
 
         public Item CreateItem()
         {
-            Item newItem = new Item(this);
+            var newItem = new Item(this);
             return newItem;
         }
 
@@ -25,6 +26,7 @@ namespace Item
             boneNames.Clear();
             if (characterDisplay == null)
                 return;
+            
             if (!characterDisplay.GetComponent<SkinnedMeshRenderer>())
                 return;
 

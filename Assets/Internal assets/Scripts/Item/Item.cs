@@ -13,9 +13,9 @@ namespace Item
             buffs = new ItemBuff[item.data.buffs.Length];
             for (int i = 0; i < buffs.Length; i++)
             {
-                buffs[i] = new ItemBuff(item.data.buffs[i].min, item.data.buffs[i].max)
+                buffs[i] = new ItemBuff(item.data.buffs[i].Min, item.data.buffs[i].Max)
                 {
-                    attribute = item.data.buffs[i].attribute
+                    stat = item.data.buffs[i].stat
                 };
             }
         }

@@ -79,6 +79,7 @@ namespace Player.FiniteStateMachine.SuperState
         {
             base.PhysicsUpdate();
 
+            RecoveryHealth();
             RecoveryStamina();
             StateController.Rotation();
         }
@@ -130,16 +131,16 @@ namespace Player.FiniteStateMachine.SuperState
 
         private void RecoveryStamina()
         {
-            if (playerStatistic.Stamina >= playerStatistic.MaxStamina)
+            if (playerStatistic.Stamina >= playerStatistic.StaminaMax)
             {
-                playerStatistic.Stamina = playerStatistic.MaxStamina;
+                playerStatistic.Stamina = playerStatistic.StaminaMax;
             }
             else
             {
                 if (playerStatistic.IsFatigue)
                 {
                     playerStatistic.Stamina += playerStatistic.StaminaRecoverySpeedIsFatigue * Time.deltaTime;
-                    if (playerStatistic.Stamina >= playerStatistic.MaxStamina / 4)
+                    if (playerStatistic.Stamina >= playerStatistic.StaminaMax / 4)
                     {
                         playerStatistic.IsFatigue = false;
                     }
@@ -153,9 +154,9 @@ namespace Player.FiniteStateMachine.SuperState
 
         private void RecoveryHealth()
         {
-            if (playerStatistic.Health >= playerStatistic.MaxHealth)
+            if (playerStatistic.Health >= playerStatistic.HealthMax)
             {
-                playerStatistic.Health = playerStatistic.MaxHealth;
+                playerStatistic.Health = playerStatistic.HealthMax;
             }
             else
             {

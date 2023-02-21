@@ -1,17 +1,27 @@
-﻿using Item;
+﻿using System;
 using UnityEngine;
+using Item;
 namespace Inventory
 {
     [System.Serializable]
     public class InventorySlot
     {
         public ItemType[] AllowedItems = new ItemType[0];
-        [System.NonSerialized] public UserInterface parent;
-        [System.NonSerialized] public GameObject slotDisplay;
-        [System.NonSerialized] public SlotUpdated OnAfterUpdate;
-        [System.NonSerialized] public SlotUpdated OnBeforeUpdate;
+        
+        [NonSerialized] public UserInterface parent;
+        [NonSerialized] public GameObject slotDisplay;
+
+        [NonSerialized] public Action<InventorySlot> onAfterUpdated;
+        [NonSerialized] public Action<InventorySlot> onBeforeUpdated;
+        
         public Item.Item item = new Item.Item();
         public int amount;
+        
+        public ItemObject GetItemObject()
+        {
+            return item.Id >= 0 ? parent.inventory.database.ItemObjects[item.Id] : null;
+        }
+        
         public ItemObject ItemObject
         {
             get
@@ -23,48 +33,27 @@ namespace Inventory
                 return null;
             }
         }
-        public InventorySlot()
+        public InventorySlot() => UpdateSlot(new Item.Item(), 0);
+        public InventorySlot(Item.Item item, int amount) => UpdateSlot(item, amount);
+        public void RemoveItem() => UpdateSlot(new Item.Item(), 0);
+        public void AddAmount(int value) => UpdateSlot(item, amount += value);
+
+        public void UpdateSlot(Item.Item itemValue, int amountValue)
         {
-            UpdateSlot(new Item.Item(), 0);
+            onBeforeUpdated?.Invoke(this);
+            item = itemValue;
+            amount = amountValue;
+            onAfterUpdated?.Invoke(this);
         }
-        public InventorySlot(Item.Item _item, int _amount)
+        
+        public bool CanPlaceInSlot(ItemObject itemObject)
         {
-            UpdateSlot(_item, _amount);
-        }
-        public void AddAmount(int value)
-        {
-            UpdateSlot(item, amount += value);
-        }
-        public void UpdateSlot(Item.Item _item, int _amount)
-        {
-            if (OnBeforeUpdate != null)
-            {
-                OnBeforeUpdate.Invoke(this);
-            }
-            item = _item;
-            amount = _amount;
-            if (OnAfterUpdate != null)
-            {
-                OnAfterUpdate.Invoke(this);
-            }
-        }
-        public void RemoveItem()
-        {
-            item = new Item.Item();
-            amount = 0;
-        }
-        public bool CanPlaceInSlot(ItemObject _itemObject)
-        {
-            if (AllowedItems.Length <= 0 || _itemObject == null || _itemObject.data.Id < 0)
-            {
+            if (AllowedItems.Length <= 0 || itemObject == null || itemObject.data.Id < 0)
                 return true;
-            }
             for (int i = 0; i < AllowedItems.Length; i++)
             {
-                if (_itemObject.type == AllowedItems[i])
-                {
+                if (itemObject.type == AllowedItems[i])
                     return true;
-                }
             }
             return false;
         }

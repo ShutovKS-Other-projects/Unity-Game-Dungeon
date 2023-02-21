@@ -1,13 +1,14 @@
+using System;
 using UnityEngine;
 namespace Player.FiniteStateMachine
 {
     public class PlayerState : MonoBehaviour
     {
-        public PlayerStatistic playerStatistic;
-        
+        [NonSerialized] public PlayerStatistic playerStatistic;
+
         protected PlayerStateController StateController;
         protected PlayerStateMachine StateMachine;
-        
+
         protected bool IsAnimationFinished;
         protected bool IsExitingState;
 
@@ -43,9 +44,9 @@ namespace Player.FiniteStateMachine
         public virtual void PhysicsUpdate() => DoChecks();
 
         protected virtual void DoChecks() { }
-    
+
         public virtual void TriggerEnter(Collider other) { }
-    
+
         public virtual void TriggerExit(Collider other) { }
 
         public virtual void AnimationTrigger() { }

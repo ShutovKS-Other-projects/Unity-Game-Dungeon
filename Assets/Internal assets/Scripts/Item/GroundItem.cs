@@ -2,22 +2,18 @@ using UnityEditor;
 using UnityEngine;
 namespace Item
 {
-    public class GroundItem : MonoBehaviour, ISerializationCallbackReceiver
+    public class GroundItem : MonoBehaviour
     {
         public ItemObject item;
 
-        public void OnAfterDeserialize()
-        {
-        }
-
-        public void OnBeforeSerialize()
+        private void OnValidate()
         {
 #if UNITY_EDITOR
-            if (item != null && item.characterDisplay == null)
-            {
-                GetComponentInChildren<SpriteRenderer>().sprite = item.uiDisplay;
-                EditorUtility.SetDirty(GetComponentInChildren<SpriteRenderer>());
-            }
+            if (item == null || item.characterDisplay != null)
+                return;
+
+            GetComponentInChildren<SpriteRenderer>().sprite = item.uiDisplay;
+            EditorUtility.SetDirty(GetComponentInChildren<SpriteRenderer>());
 #endif
         }
     }

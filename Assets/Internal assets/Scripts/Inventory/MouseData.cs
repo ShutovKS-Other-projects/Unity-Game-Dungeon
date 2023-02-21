@@ -3,8 +3,8 @@ namespace Inventory
 {
     public static class MouseData
     {
-        public static UserInterface interfaceMouseIsOver;
-        public static GameObject tempItemBeingDragged;
-        public static GameObject slotHoveredOver;
+        public static UserInterface InterfaceMouseIsOver;
+        public static GameObject TempItemBeingDragged;
+        public static GameObject SlotHoveredOver;
     }
 }
