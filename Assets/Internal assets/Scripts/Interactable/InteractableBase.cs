@@ -1,28 +1,29 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 namespace Interactable
 {
     public class InteractableBase : MonoBehaviour, IInteractable
     {
         #region Variables
-        [Header("Interectable Settings")]
-        [SerializeField] private float _holdDuration = 0f;
+        [Header("Interactable Settings")]
+        [SerializeField] private float holdDuration = 0f;
     
         [Space]
-        [SerializeField] private bool _holdInteract = false;
-        [SerializeField] private bool _multipleUse = false;
-        [SerializeField] private bool _isInteractable = true;
+        [SerializeField] private bool holdInteract = false;
+        [SerializeField] private bool multipleUse = false;
+        [SerializeField] private bool isInteractable = true;
 
         [Space]
         [TextArea(3, 10)]
-        [SerializeField] private string _tooltipText = "";
+        [SerializeField] private string tooltipText = "";
         #endregion
 
         #region Properties
-        public float HoldDuration => _holdDuration;
-        public bool HoldInteract => _holdInteract;
-        public bool MultipleUse => _multipleUse;
-        public bool IsInteractable => _isInteractable;
-        public string TooltipText => _tooltipText;
+        public float HoldDuration => holdDuration;
+        public bool HoldInteract => holdInteract;
+        public bool MultipleUse => multipleUse;
+        public bool IsInteractable => isInteractable;
+        public string TooltipText => tooltipText;
         #endregion
 
         #region Methods

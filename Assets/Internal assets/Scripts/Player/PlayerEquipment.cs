@@ -30,8 +30,8 @@ namespace Player
 
             for (int i = 0; i < _equipment.GetSlots.Length; i++)
             {
-                _equipment.GetSlots[i].onBeforeUpdated += OnRemoveItem;
-                _equipment.GetSlots[i].onAfterUpdated += OnEquipItem;
+                _equipment.GetSlots[i].OnBeforeUpdated += OnRemoveItem;
+                _equipment.GetSlots[i].OnAfterUpdated += OnEquipItem;
             }
         }
 
@@ -40,13 +40,13 @@ namespace Player
             var itemObject = slot.GetItemObject();
             if (itemObject == null)
                 return;
-            switch (slot.parent.inventory.type)
+            switch (slot.Parent.inventory.type)
             {
                 case InterfaceType.Equipment:
 
                     if (itemObject.characterDisplay != null)
                     {
-                        switch (slot.AllowedItems[0])
+                        switch (slot.allowedItems[0])
                         {
                             // case ItemType.Gloves:
                             // _gloves = _boneCombiner.AddLimb(itemObject.characterDisplay, itemObject.boneNames);
@@ -83,12 +83,12 @@ namespace Player
         {
             if (slot.GetItemObject() == null)
                 return;
-            switch (slot.parent.inventory.type)
+            switch (slot.Parent.inventory.type)
             {
                 case InterfaceType.Equipment:
                     if (slot.GetItemObject().characterDisplay != null)
                     {
-                        switch (slot.AllowedItems[0])
+                        switch (slot.allowedItems[0])
                         {
                             // case ItemType.Gloves:
                             //     Destroy(_gloves.gameObject);

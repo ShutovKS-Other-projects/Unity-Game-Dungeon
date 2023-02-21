@@ -6,31 +6,27 @@ namespace Inventory
     [System.Serializable]
     public class InventorySlot
     {
-        public ItemType[] AllowedItems = new ItemType[0];
+        public ItemType[] allowedItems = new ItemType[0];
         
-        [NonSerialized] public UserInterface parent;
-        [NonSerialized] public GameObject slotDisplay;
+        [NonSerialized] public UserInterface Parent;
+        [NonSerialized] public GameObject SlotDisplay;
 
-        [NonSerialized] public Action<InventorySlot> onAfterUpdated;
-        [NonSerialized] public Action<InventorySlot> onBeforeUpdated;
+        [NonSerialized] public Action<InventorySlot> OnAfterUpdated;
+        [NonSerialized] public Action<InventorySlot> OnBeforeUpdated;
         
         public Item.Item item = new Item.Item();
         public int amount;
         
         public ItemObject GetItemObject()
         {
-            return item.Id >= 0 ? parent.inventory.database.ItemObjects[item.Id] : null;
+            return item.Id >= 0 ? Parent.inventory.database.ItemObjects[item.Id] : null;
         }
         
         public ItemObject ItemObject
         {
             get
             {
-                if (item.Id >= 0)
-                {
-                    return parent.inventory.database.ItemObjects[item.Id];
-                }
-                return null;
+                return item.Id >= 0 ? Parent.inventory.database.ItemObjects[item.Id] : null;
             }
         }
         public InventorySlot() => UpdateSlot(new Item.Item(), 0);
@@ -40,19 +36,19 @@ namespace Inventory
 
         public void UpdateSlot(Item.Item itemValue, int amountValue)
         {
-            onBeforeUpdated?.Invoke(this);
+            OnBeforeUpdated?.Invoke(this);
             item = itemValue;
             amount = amountValue;
-            onAfterUpdated?.Invoke(this);
+            OnAfterUpdated?.Invoke(this);
         }
         
         public bool CanPlaceInSlot(ItemObject itemObject)
         {
-            if (AllowedItems.Length <= 0 || itemObject == null || itemObject.data.Id < 0)
+            if (allowedItems.Length <= 0 || itemObject == null || itemObject.data.Id < 0)
                 return true;
-            for (int i = 0; i < AllowedItems.Length; i++)
+            foreach (var itemType in allowedItems)
             {
-                if (itemObject.type == AllowedItems[i])
+                if (itemObject.type == itemType)
                     return true;
             }
             return false;

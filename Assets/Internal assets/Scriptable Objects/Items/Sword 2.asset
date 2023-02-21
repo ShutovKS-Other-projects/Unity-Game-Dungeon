@@ -20,10 +20,62 @@ MonoBehaviour:
   description: 
   data:
     Name: Sword
-    Id: 2
+    Id: 16
     buffs:
-    - attribute: 2
+    - stat: 0
       value: 0
-      min: 20
-      max: 50
+      min: 2
+      max: 10
+    - stat: 1
+      value: 0
+      min: 0
+      max: 0
+    - stat: 2
+      value: 0
+      min: 0
+      max: 0
+    - stat: 3
+      value: 0
+      min: 0
+      max: 0
+    - stat: 4
+      value: 0
+      min: 0
+      max: 0
+    - stat: 5
+      value: 0
+      min: 5
+      max: 25
+    - stat: 6
+      value: 0
+      min: -10
+      max: 10
+    - stat: 7
+      value: 0
+      min: 0
+      max: 0
+    - stat: 8
+      value: 0
+      min: -10
+      max: 25
+    - stat: 9
+      value: 0
+      min: 0
+      max: 0
+    - stat: 10
+      value: 0
+      min: 0
+      max: 0
+    - stat: 11
+      value: 0
+      min: 0
+      max: 25
+    - stat: 12
+      value: 0
+      min: 0
+      max: 10
+    - stat: 13
+      value: 0
+      min: 0
+      max: 0
   boneNames: []

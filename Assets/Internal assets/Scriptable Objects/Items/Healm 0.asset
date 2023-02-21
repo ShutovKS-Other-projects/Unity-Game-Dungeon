@@ -19,11 +19,62 @@ MonoBehaviour:
   description: 
   data:
     Name: Healn
-    Id: -1
+    Id: 10
     buffs:
-    - attribute: 3
+    - stat: 0
       value: 0
-      min: 10
-      max: 20
+      min: 1
+      max: 10
+    - stat: 1
+      value: 0
+      min: 0
+      max: 5
+    - stat: 2
+      value: 0
+      min: 0
+      max: 0
+    - stat: 3
+      value: 0
+      min: 0
+      max: 0
+    - stat: 4
+      value: 0
+      min: 0
+      max: 0
+    - stat: 5
+      value: 0
+      min: -2
+      max: 2
+    - stat: 6
+      value: 0
+      min: 0
+      max: 0
+    - stat: 7
+      value: 0
+      min: -2
+      max: 3
+    - stat: 8
+      value: 0
+      min: -5
+      max: 5
+    - stat: 9
+      value: 0
+      min: -1
+      max: 10
+    - stat: 10
+      value: 0
+      min: 0
+      max: 0
+    - stat: 11
+      value: 0
+      min: 0
+      max: 0
+    - stat: 12
+      value: 0
+      min: 0
+      max: 0
+    - stat: 13
+      value: 0
+      min: 0
+      max: 0
   boneNames: []
-  no3DModel: 1

@@ -11,17 +11,15 @@ namespace Player.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            StateController.SetVelocityX(0f);
-            StateController.SetVelocityZ(0f);
-
-            playerStatistic.InteractionData.Interact();
+            StateController.SetVelocityZero();
+            playerStatistic.interactionData.Interact();
         }
 
         public override void Exit()
         {
             base.Exit();
 
-            playerStatistic.InteractionData.ResetData();
+            playerStatistic.interactionData.ResetData();
         }
 
         public override void AnimationFinishTrigger()

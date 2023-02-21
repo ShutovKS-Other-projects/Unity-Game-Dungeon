@@ -11,21 +11,24 @@ namespace Player
         public float experience = 0f;
         
         [Header("Health")]
-        public float health = 100f;
+        public float healthMax = 100f;
         public float healthRecoverySpeed = 10f;
         
+        [FormerlySerializedAs("mannaMax")]
+        public float manaMax = 100f;
+        public float manaRecoverySpeed = 10f;
+
         [Header("Stamina")]
-        public float stamina = 100f;
+        public float staminaMax = 100f;
         public float staminaRecoverySpeed = 10f;
         public float staminaRecoverySpeedIsFatigue = 7.5f;
+        public float staminaDecreaseRate = 3f;
         
+        [Header("Attributes")]
+        public float agility = 10f;
         public float strength = 10f;
         public float armor = 10f;
         
-        [Header("Player Stats Max")]
-        public float healthMax = 100f;
-        public float staminaMax = 100f;
-
         [Header("Movement Speed")]
         public float jumpSpeed = 5f;
         public float movementForce = 10f;
@@ -34,10 +37,6 @@ namespace Player
         public float inAirMovementSpeedMax = 4f;
         public float crouchMovementSpeedMax = 3f;
         public float blockMovementSpeedMax = 3f;
-
-        [Header("IsStates")]
-        public bool isAbility = false;
-        public bool isFatigue = false;
 
         [Header("Collider Size")]
         public float crouchColliderCenter = 0.6f;
@@ -51,6 +50,5 @@ namespace Player
         [Header("Inter Check")]
         public float interCheckDistance = 3f;
         public float interCheckSphereRadius = 0.5f;
-        public InteractionData interactionData = null;
     }
 }

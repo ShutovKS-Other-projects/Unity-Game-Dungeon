@@ -19,11 +19,62 @@ MonoBehaviour:
   description: 
   data:
     Name: Apple
-    Id: -1
+    Id: 4
     buffs:
-    - attribute: 0
-      value: 20
+    - stat: 0
+      value: 0
+      min: 0
+      max: 0
+    - stat: 1
+      value: 0
+      min: 0
+      max: 0
+    - stat: 2
+      value: 0
+      min: 0
+      max: 0
+    - stat: 3
+      value: 0
+      min: 0
+      max: 0
+    - stat: 4
+      value: 0
+      min: 0
+      max: 0
+    - stat: 5
+      value: 0
+      min: 0
+      max: 0
+    - stat: 6
+      value: 0
+      min: 0
+      max: 0
+    - stat: 7
+      value: 0
+      min: 0
+      max: 0
+    - stat: 8
+      value: 0
+      min: 0
+      max: 0
+    - stat: 9
+      value: 0
+      min: 0
+      max: 0
+    - stat: 10
+      value: 0
+      min: 0
+      max: 0
+    - stat: 11
+      value: 0
+      min: 0
+      max: 0
+    - stat: 12
+      value: 0
+      min: 0
+      max: 0
+    - stat: 13
+      value: 0
       min: 0
       max: 0
   boneNames: []
-  no3DModel: 1

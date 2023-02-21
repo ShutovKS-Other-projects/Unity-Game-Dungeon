@@ -30,14 +30,14 @@ namespace Inventory
             return true;
         }
 
-        public int EmptySlotCount
+        private int EmptySlotCount
         {
             get
             {
                 int counter = 0;
-                for (int i = 0; i < GetSlots.Length; i++)
+                foreach (var inventorySlot in GetSlots)
                 {
-                    if (GetSlots[i].item.Id <= -1)
+                    if (inventorySlot.item.Id <= -1)
                     {
                         counter++;
                     }
@@ -46,37 +46,25 @@ namespace Inventory
             }
         }
 
-        public InventorySlot FindItemOnInventory(Item.Item item)
+        private InventorySlot FindItemOnInventory(Item.Item item)
         {
-            for (int i = 0; i < GetSlots.Length; i++)
+            foreach (var inventorySlot in GetSlots)
             {
-                if (GetSlots[i].item.Id == item.Id)
+                if (inventorySlot.item.Id == item.Id)
                 {
-                    return GetSlots[i];
+                    return inventorySlot;
                 }
             }
             return null;
         }
 
-        public bool IsItemInInventory(ItemObject item)
+        private InventorySlot GetEmptySlot()
         {
-            for (int i = 0; i < GetSlots.Length; i++)
+            foreach (var inventorySlot in GetSlots)
             {
-                if (GetSlots[i].item.Id == item.data.Id)
+                if (inventorySlot.item.Id <= -1)
                 {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public InventorySlot GetEmptySlot()
-        {
-            for (int i = 0; i < GetSlots.Length; i++)
-            {
-                if (GetSlots[i].item.Id <= -1)
-                {
-                    return GetSlots[i];
+                    return inventorySlot;
                 }
             }
             return null;
@@ -120,7 +108,7 @@ namespace Inventory
 
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Open, FileAccess.Read);
-            Inventory newContainer = (Inventory)formatter.Deserialize(stream);
+            var newContainer = (Inventory)formatter.Deserialize(stream);
             for (int i = 0; i < GetSlots.Length; i++)
             {
                 GetSlots[i].UpdateSlot(newContainer.slots[i].item, newContainer.slots[i].amount);

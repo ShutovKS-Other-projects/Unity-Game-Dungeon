@@ -97,16 +97,16 @@ namespace Player.FiniteStateMachine.SuperState
 
                 if (interactable != null)
                 {
-                    if (playerStatistic.InteractionData.IsEmpy() || playerStatistic.InteractionData.IsSameInteractable(interactable))
+                    if (playerStatistic.interactionData.IsEmpy() || playerStatistic.interactionData.IsSameInteractable(interactable))
                     {
-                        playerStatistic.InteractionData.Interactable = interactable;
+                        playerStatistic.interactionData.Interactable = interactable;
                         StateController.uiInteractionBare.SetTooltipText(interactable.TooltipText);
 
                         return true;
                     }
                     else
                     {
-                        playerStatistic.InteractionData.ResetData();
+                        playerStatistic.interactionData.ResetData();
                         StateController.uiInteractionBare.SetTooltipText("");
 
                         return false;
@@ -119,7 +119,7 @@ namespace Player.FiniteStateMachine.SuperState
             }
             else
             {
-                playerStatistic.InteractionData.ResetData();
+                playerStatistic.interactionData.ResetData();
                 StateController.uiInteractionBare.SetTooltipText("");
                 return false;
             }
@@ -137,6 +137,9 @@ namespace Player.FiniteStateMachine.SuperState
             }
             else
             {
+                if(RunInput)
+                    return;
+                
                 if (playerStatistic.IsFatigue)
                 {
                     playerStatistic.Stamina += playerStatistic.StaminaRecoverySpeedIsFatigue * Time.deltaTime;

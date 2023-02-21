@@ -1,32 +1,40 @@
 using Input;
+using Unity.VisualScripting;
 using UnityEngine;
 namespace UIGame
 {
     public class UIController : MonoBehaviour
     {
-        private InputManager inputManager;
+        private InputManager _inputManager;
 
-        [SerializeField] private GameObject uiPanelGame;
-        [SerializeField] private GameObject uiPanelMenu;
-        [SerializeField] private GameObject uiPanelPlayerInfo;
+        private GameObject _uiPanelGame;
+        private GameObject _uiPanelMenu;
+        private GameObject _uiPanelPlayerInfo;
 
-        private UIGame uiGameScript;
-        private UIMenu uiMenuScript;
-        private UIPlayerInfo uiPlayerInfoScript;
+        private UIGame _uiGameScript;
+        private UIMenu _uiMenuScript;
+        private UIPlayerInfo _uiPlayerInfoScript;
 
         void Start()
         {
-            inputManager = InputManager.Instance;
+            _inputManager = InputManager.Instance;
 
-            AddScript();
+            _uiPanelGame = transform.Find("UIPanelGame").gameObject; 
+            _uiPanelMenu = transform.Find("UIPanelMenu").gameObject;
+            _uiPanelPlayerInfo = transform.Find("UIPanelPlayerInfo").gameObject;
+
+            _uiGameScript = _uiPanelGame.GetComponent<UIGame>();
+            _uiMenuScript = _uiPanelMenu.GetComponent<UIMenu>();
+            _uiPlayerInfoScript = _uiPanelPlayerInfo.GetComponent<UIPlayerInfo>();
+
             OnGame();
         }
 
         void Update()
         {
-            if (inputManager.GetAllMenuInput())
+            if (_inputManager.GetAllMenuInput())
             {
-                if (uiPanelMenu.activeSelf)
+                if (_uiPanelMenu.activeSelf)
                 {
                     OnGame();
                 }
@@ -36,9 +44,9 @@ namespace UIGame
                 }
             }
 
-            if (inputManager.GetAllPlayerInfoInput())
+            if (_inputManager.GetAllPlayerInfoInput())
             {
-                if (uiPanelPlayerInfo.activeSelf)
+                if (_uiPanelPlayerInfo.activeSelf)
                 {
                     OnGame();
                 }
@@ -49,14 +57,14 @@ namespace UIGame
             }
         }
 
-        public void OnGame()
+        void OnGame()
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
-            uiPanelGame.SetActive(true);
-            uiPanelMenu.SetActive(false);
-            uiPanelPlayerInfo.SetActive(false);
+            _uiPanelGame.SetActive(true);
+            _uiPanelMenu.SetActive(false);
+            _uiPanelPlayerInfo.SetActive(false);
         }
 
         public void OnMenu()
@@ -64,58 +72,21 @@ namespace UIGame
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
 
-            uiPanelGame.SetActive(false);
-            uiPanelMenu.SetActive(true);
-            uiPanelPlayerInfo.SetActive(false);
+            _uiPanelGame.SetActive(false);
+            _uiPanelMenu.SetActive(true);
+            _uiPanelPlayerInfo.SetActive(false);
         }
 
         public void OnPlayerInfo()
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-
-            uiPanelGame.SetActive(false);
-            uiPanelMenu.SetActive(false);
-            uiPanelPlayerInfo.SetActive(true);
-
-            try
-            {
-                uiPlayerInfoScript.UpdateInventory();
-            }
-            catch (System.Exception)
-            {
-                Debug.Log("UpdateInventory error");
-            }
-        }
-
-        private void AddScript()
-        {
-            try
-            {
-                uiGameScript = uiPanelGame.GetComponent<UIGame>();
-            }
-            catch (System.Exception)
-            {
-                Debug.Log("UIGame script not found");
-            }
-
-            try
-            {
-                uiMenuScript = uiPanelMenu.GetComponent<UIMenu>();
-            }
-            catch (System.Exception)
-            {
-                Debug.Log("UIMenu script not found");
-            }
-
-            try
-            {
-                uiPlayerInfoScript = uiPanelPlayerInfo.GetComponent<UIPlayerInfo>();
-            }
-            catch (System.Exception)
-            {
-                Debug.Log("UIPlayerInfo script not found");
-            }
+            
+            _uiPanelGame.SetActive(false);
+            _uiPanelMenu.SetActive(false);
+            _uiPanelPlayerInfo.SetActive(true);
+            
+            _uiPlayerInfoScript.InventoryUpdate();
         }
     }
 }

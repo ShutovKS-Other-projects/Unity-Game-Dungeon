@@ -7,9 +7,9 @@ namespace Inventory
     {
         public GameObject[] slots;
 
-        public override void CreateSlots()
+        protected override void CreateSlots()
         {
-            slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
+            SlotsOnInterface = new Dictionary<GameObject, InventorySlot>();
             for (int i = 0; i < slots.Length; i++)
             {
                 var obj = slots[i];
@@ -19,12 +19,14 @@ namespace Inventory
                 AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
                 AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
                 AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
-                inventory.GetSlots[i].slotDisplay = obj;
-                slotsOnInterface.Add(obj, inventory.GetSlots[i]);
+                inventory.GetSlots[i].SlotDisplay = obj;
+                SlotsOnInterface.Add(obj, inventory.GetSlots[i]);
             }
         }
 
-        public override void AllSlotsUpdate()
+        public void AllSlotsInInventoryUpdate() => AllSlotsUpdate();
+
+        protected override void AllSlotsUpdate()
         {
             for (int index = 0; index < slots.Length; index++)
             {
@@ -32,6 +34,5 @@ namespace Inventory
                 inventorySlot.UpdateSlot(inventorySlot.item, inventorySlot.amount);
             }
         }
-
     }
 }

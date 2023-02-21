@@ -1,9 +1,13 @@
+using UnityEngine;
 namespace Player.FiniteStateMachine.SuperState
 {
     public class PlayerAbilityState : PlayerState
     {
+        protected Vector2 MovementInput; 
+            
         protected bool isAbilityDone;
         protected bool isGrounded;
+        
 
         public PlayerAbilityState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {

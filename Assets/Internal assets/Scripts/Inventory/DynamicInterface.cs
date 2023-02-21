@@ -13,9 +13,9 @@ namespace Inventory
         private const int YSpaceBetweenItem = 30;
         private const int NumberOfColumns = 8;
 
-        public override void CreateSlots()
+        protected override void CreateSlots()
         {
-            slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
+            SlotsOnInterface = new Dictionary<GameObject, InventorySlot>();
             for (int i = 0; i < inventory.GetSlots.Length; i++)
             {
                 var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, panelInventory.transform);
@@ -26,20 +26,22 @@ namespace Inventory
                 AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
                 AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
                 AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
-                inventory.GetSlots[i].slotDisplay = obj;
-                slotsOnInterface.Add(obj, inventory.GetSlots[i]);
+                inventory.GetSlots[i].SlotDisplay = obj;
+                SlotsOnInterface.Add(obj, inventory.GetSlots[i]);
             }
         }
+        
+        public void AllSlotsInInventoryUpdate() => AllSlotsUpdate();
 
-        public override void AllSlotsUpdate()
+        protected override void AllSlotsUpdate()
         {
             foreach (var inventorySlot in inventory.GetSlots)
             {
                 inventorySlot.UpdateSlot(inventorySlot.item, inventorySlot.amount);
             }
         }
-
-        private Vector3 GetPosition(int i)
+        
+        private static Vector3 GetPosition(int i)
         {
             return new Vector3((XStart + XSpaceBetweenItem * (i % NumberOfColumns)), (YStart - YSpaceBetweenItem * (i / NumberOfColumns)), (0f));
         }

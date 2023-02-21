@@ -14,14 +14,14 @@ namespace Interactable
 
         public void Interact()
         {
-            if(_interactable != null)
-            {
-                _interactable.OnInteract();
-                ResetData();
-            }
+            if (_interactable == null)
+                return;
+            
+            _interactable.OnInteract();
+            ResetData();
         }
 
-        public bool IsSameInteractable(InteractableBase _newInteractable) => _interactable == _newInteractable;
+        public bool IsSameInteractable(InteractableBase newInteractable) => _interactable == newInteractable;
         public bool IsEmpy() => _interactable == null;
         public void ResetData() => _interactable = null;
     }

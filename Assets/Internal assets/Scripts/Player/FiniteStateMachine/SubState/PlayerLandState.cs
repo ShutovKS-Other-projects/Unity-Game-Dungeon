@@ -10,9 +10,7 @@ namespace Player.FiniteStateMachine.SubState
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-
-            StateController.Movement(MovementInput, playerStatistic.MovementSpeedMax);
-
+            
             if (IsExitingState)
                 return;
             
@@ -24,6 +22,13 @@ namespace Player.FiniteStateMachine.SubState
             {
                 StateMachine.ChangeState(StateController.IdleState);
             }
+        }
+        
+        public override void PhysicsUpdate()
+        {
+            base.PhysicsUpdate();
+            
+            StateController.Movement(MovementInput, playerStatistic.MovementSpeedMax);
         }
         
         public override void AnimationFinishTrigger()

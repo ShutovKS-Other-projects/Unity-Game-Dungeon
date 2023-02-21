@@ -18,16 +18,16 @@ namespace Player.FiniteStateMachine.SubState
         {
             base.LogicUpdate();
 
-            if (!IsExitingState)
+            if (IsExitingState)
+                return;
+            
+            if (MovementInput != Vector2.zero)
             {
-                if (MovementInput != Vector2.zero)
-                {
-                    StateMachine.ChangeState(StateController.MoveState);
-                }
-                else if (CrouchInput)
-                {
-                    StateMachine.ChangeState(StateController.CrouchIdleState);
-                }
+                StateMachine.ChangeState(StateController.MoveState);
+            }
+            else if (CrouchInput)
+            {
+                StateMachine.ChangeState(StateController.CrouchIdleState);
             }
         }
     }

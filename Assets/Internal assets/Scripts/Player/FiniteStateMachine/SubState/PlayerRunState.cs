@@ -10,7 +10,7 @@ namespace Player.FiniteStateMachine.SubState
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-
+    
             if (IsExitingState)
                 return;
             
@@ -32,6 +32,7 @@ namespace Player.FiniteStateMachine.SubState
         {
             base.PhysicsUpdate();
             StateController.Movement(MovementInput, playerStatistic.RunMovementSpeedMax);
+            playerStatistic.Stamina -= playerStatistic.StaminaDecreaseRate * Time.deltaTime;
         }
     }
 }

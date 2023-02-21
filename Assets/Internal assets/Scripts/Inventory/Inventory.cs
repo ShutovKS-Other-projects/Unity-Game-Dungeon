@@ -10,10 +10,10 @@ namespace Inventory
         public InventorySlot[] slots = new InventorySlot[48];
         public void Clear()
         {
-            for (int i = 0; i < slots.Length; i++)
+            foreach (var inventorySlot in slots)
             {
-                slots[i].item = new Item.Item();
-                slots[i].amount = 0;
+                inventorySlot.item = new Item.Item();
+                inventorySlot.amount = 0;
             }
         }
 

@@ -13,48 +13,49 @@ namespace Inventory
         public GameObject inventoryPrefab;
         public InventoryObject inventory;
         private InventoryObject _previousInventory;
-        public Dictionary<GameObject, InventorySlot> slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
+        protected Dictionary<GameObject, InventorySlot> SlotsOnInterface = new Dictionary<GameObject, InventorySlot>();
 
         public void OnEnable()
         {
             CreateSlots();
-            for (int i = 0; i < inventory.GetSlots.Length; i++)
+            foreach (var inventorySlot in inventory.GetSlots)
             {
-                inventory.GetSlots[i].parent = this;
-                inventory.GetSlots[i].onAfterUpdated += OnSlotUpdate;
+                inventorySlot.Parent = this;
+                inventorySlot.OnAfterUpdated += OnSlotUpdate;
             }
             AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
             AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });
         }
 
-        public abstract void CreateSlots();
-        public abstract void AllSlotsUpdate();
+        protected abstract void CreateSlots();
 
-        public void UpdateInventoryLinks()
+        private void UpdateInventoryLinks()
         {
             int i = 0;
-            foreach (var key in slotsOnInterface.Keys.ToList())
+            foreach (var key in SlotsOnInterface.Keys.ToList())
             {
-                slotsOnInterface[key] = inventory.GetSlots[i];
+                SlotsOnInterface[key] = inventory.GetSlots[i];
                 i++;
             }
         }
 
-        private void OnSlotUpdate(InventorySlot _slot)
+        protected abstract void AllSlotsUpdate();
+
+        private void OnSlotUpdate(InventorySlot slot)
         {
-            if (_slot.item.Id >= 0)
+            if (slot.item.Id >= 0)
             {
-                _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = _slot.ItemObject.uiDisplay;
-                _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
-                _slot.slotDisplay.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 0);
-                _slot.slotDisplay.transform.GetChild(2).GetComponent<Text>().text = _slot.amount == 1 ? "" : _slot.amount.ToString("n0");
+                slot.SlotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = slot.ItemObject.uiDisplay;
+                slot.SlotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                slot.SlotDisplay.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                slot.SlotDisplay.transform.GetChild(2).GetComponent<Text>().text = slot.amount == 1 ? "" : slot.amount.ToString("n0");
             }
             else
             {
-                _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = null;
-                _slot.slotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
-                _slot.slotDisplay.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 1);
-                _slot.slotDisplay.transform.GetChild(2).GetComponent<Text>().text = "";
+                slot.SlotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = null;
+                slot.SlotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 0);
+                slot.SlotDisplay.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 1);
+                slot.SlotDisplay.transform.GetChild(2).GetComponent<Text>().text = "";
             }
         }
 
@@ -67,9 +68,9 @@ namespace Inventory
             _previousInventory = inventory;
         }
 
-        protected void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
+        protected static void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
         {
-            EventTrigger trigger = obj.GetComponent<EventTrigger>();
+            var trigger = obj.GetComponent<EventTrigger>();
             if (!trigger)
             {
                 Debug.LogWarning("No EventTrigger component found!");
@@ -81,57 +82,57 @@ namespace Inventory
             eventTrigger.callback.AddListener(action);
             trigger.triggers.Add(eventTrigger);
         }
-        public void OnEnter(GameObject obj)
+        protected static void OnEnter(GameObject obj)
         {
             MouseData.SlotHoveredOver = obj;
         }
-        public void OnExit(GameObject obj)
+        protected static void OnExit(GameObject obj)
         {
             MouseData.SlotHoveredOver = null;
         }
-        public void OnEnterInterface(GameObject obj)
+        private static void OnEnterInterface(GameObject obj)
         {
             MouseData.InterfaceMouseIsOver = obj.GetComponent<UserInterface>();
         }
-        public void OnExitInterface(GameObject obj)
+        private static void OnExitInterface(GameObject obj)
         {
             MouseData.InterfaceMouseIsOver = null;
         }
-        public void OnDragStart(GameObject obj)
+        protected void OnDragStart(GameObject obj)
         {
             MouseData.TempItemBeingDragged = CreateTempItem(obj);
         }
-        public GameObject CreateTempItem(GameObject obj)
+        private GameObject CreateTempItem(GameObject obj)
         {
+            if (SlotsOnInterface[obj].item.Id < 0)
+                return null;
+
             GameObject tempItem = null;
-            if (slotsOnInterface[obj].item.Id >= 0)
-            {
-                tempItem = new GameObject();
-                var rt = tempItem.AddComponent<RectTransform>();
-                rt.sizeDelta = new Vector2(30, 30);
-                tempItem.transform.SetParent(transform.parent.parent);
-                var img = tempItem.AddComponent<Image>();
-                img.sprite = slotsOnInterface[obj].ItemObject.uiDisplay;
-                img.raycastTarget = false;
-            }
+            tempItem = new GameObject();
+            var rt = tempItem.AddComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(30, 30);
+            tempItem.transform.SetParent(transform.parent.parent);
+            var img = tempItem.AddComponent<Image>();
+            img.sprite = SlotsOnInterface[obj].ItemObject.uiDisplay;
+            img.raycastTarget = false;
             return tempItem;
         }
-        public void OnDragEnd(GameObject obj)
+        protected void OnDragEnd(GameObject obj)
         {
             Destroy(MouseData.TempItemBeingDragged);
 
             if (MouseData.InterfaceMouseIsOver == null)
             {
-                slotsOnInterface[obj].RemoveItem();
+                SlotsOnInterface[obj].RemoveItem();
                 return;
             }
             if (MouseData.SlotHoveredOver)
             {
-                InventorySlot mouseHoverSlotData = MouseData.InterfaceMouseIsOver.slotsOnInterface[MouseData.SlotHoveredOver];
-                InventoryObject.SwapItems(slotsOnInterface[obj], mouseHoverSlotData);
+                var mouseHoverSlotData = MouseData.InterfaceMouseIsOver.SlotsOnInterface[MouseData.SlotHoveredOver];
+                InventoryObject.SwapItems(SlotsOnInterface[obj], mouseHoverSlotData);
             }
         }
-        public void OnDrag(GameObject obj)
+        protected static void OnDrag(GameObject obj)
         {
             if (MouseData.TempItemBeingDragged != null)
             {

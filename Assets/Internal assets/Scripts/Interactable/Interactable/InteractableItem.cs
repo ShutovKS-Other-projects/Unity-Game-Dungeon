@@ -11,13 +11,13 @@ namespace Interactable.Interactable
         {
             var groundItem = gameObject.GetComponent<GroundItem>();
 
-            if (groundItem)
+            if (!groundItem)
+                return;
+            
+            var item = new Item.Item(groundItem.item);
+            if (inventory.AddItem(item, 1))
             {
-                Item.Item _item = new Item.Item(groundItem.item);
-                if (inventory.AddItem(_item, 1))
-                {
-                    Destroy(gameObject);
-                }
+                Destroy(gameObject);
             }
         }
     }

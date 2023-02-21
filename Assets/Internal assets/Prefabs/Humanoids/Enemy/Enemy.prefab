@@ -125,13 +125,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efbbf1720c839cc4cb8913f640f99c00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _holdDuration: 0
-  _holdInteract: 0
-  _multipleUse: 0
-  _isInteractable: 1
-  _tooltipText: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 F \u0447\u0442\u043E\u0431\u044B
-    \u0437\u0430\u0431\u0440\u0430\u0442\u044C \u043A\u0430\u043C\u0435\u043D\u044C
-    \u0434\u0443\u0448\u0438"
+  holdDuration: 0
+  holdInteract: 0
+  multipleUse: 0
+  isInteractable: 1
+  tooltipText: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 F \u0447\u0442\u043E\u0431\u044B
+    \u043E\u0431\u043E\u0431\u0440\u0430\u0442\u044C \u043C\u0435\u0440\u0442\u0432\u0435\u0446\u0430"
+  interactableObjects:
+  - {fileID: 1889927820228970275, guid: 8b46dda91c07b6e499ec4b74fd80a9ae, type: 3}
+  - {fileID: 4936152064134126614, guid: 877b6c217f6e8f444abbe24a25111b20, type: 3}
+  - {fileID: 4936152064134126614, guid: 54e147b08e4bb55418cf9777a1f46e6d, type: 3}
+  - {fileID: 4936152064134126614, guid: 94dad8f0351846b439997f4844fc9c1b, type: 3}
+  - {fileID: 4936152064134126614, guid: 0812294e87b67694299a772d7ad320da, type: 3}
+  - {fileID: 4936152064134126614, guid: fe9a6ec1342f36b4a9f1143891e74009, type: 3}
+  - {fileID: 4936152064134126614, guid: 2fb76ee46f29e7a4091058707365e2ea, type: 3}
+  - {fileID: 4936152064134126614, guid: 7d6df1e00cf9e2a4db859b48e9a909d1, type: 3}
+  - {fileID: 4936152064134126614, guid: f3adfe104caaf774786959e462ca9372, type: 3}
+  - {fileID: 4936152064134126614, guid: b7762e7ac81871e44b27288ff6a4ba2d, type: 3}
+  - {fileID: 4936152064134126614, guid: 78681889da7f2a54a9d1ee3c0f36d0d7, type: 3}
+  - {fileID: 4936152064134126614, guid: 005e76f46b7bbda4a9f6db4d26390122, type: 3}
+  - {fileID: 4936152064134126614, guid: 85bea034249ec414790c107563d0d0d4, type: 3}
+  - {fileID: 7344682265217637477, guid: 472f782259c12b84199e77d8aa4883fb, type: 3}
+  - {fileID: 4936152064134126614, guid: 6cf37a9f5fad74141bf0bbc6f9faead5, type: 3}
+  - {fileID: 4936152064134126614, guid: 16f63680327eec64bac039442385608b, type: 3}
+  - {fileID: 5319688136100693980, guid: 1a8e0c5d6a2b192479df741e92bdff1c, type: 3}
+  - {fileID: 8120417097465526197, guid: 940abe3df67f0674184913cc70827b3a, type: 3}
 --- !u!95 &-8506668106476697281
 Animator:
   serializedVersion: 5
