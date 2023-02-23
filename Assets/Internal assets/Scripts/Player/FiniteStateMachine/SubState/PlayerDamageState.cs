@@ -1,20 +1,15 @@
+using System.Collections;
+using Enemy.FiniteStateMachine;
 using Player.FiniteStateMachine.SuperState;
+using UnityEngine;
 namespace Player.FiniteStateMachine.SubState
 {
     public class PlayerDamageState : PlayerAbilityState
-    {   
+    {
         public PlayerDamageState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
         }
-    
-        // ReSharper disable Unity.PerformanceAnalysis
-        public override void Enter()
-        {
-            base.Enter();
         
-            playerStatistic.Health -= 5;
-        }
-    
         // ReSharper disable Unity.PerformanceAnalysis
         public override void LogicUpdate()
         {
@@ -22,22 +17,18 @@ namespace Player.FiniteStateMachine.SubState
 
             if (!IsAnimationFinished)
                 return;
-        
-            if (playerStatistic.Health > 0)
-            {
+
+            if (PlayerStatistic.Health > 0)
                 StateMachine.ChangeState(StateController.IdleState);
-            }
             else
-            {
                 StateMachine.ChangeState(StateController.DeathState);
-            }
         }
-    
+
         public override void AnimationFinishTrigger()
         {
             base.AnimationFinishTrigger();
-        
-            isAbilityDone = true;
+
+            IsAbilityDone = true;
         }
     }
 }

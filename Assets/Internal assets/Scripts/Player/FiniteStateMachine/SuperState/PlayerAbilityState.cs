@@ -5,9 +5,8 @@ namespace Player.FiniteStateMachine.SuperState
     {
         protected Vector2 MovementInput; 
             
-        protected bool isAbilityDone;
-        protected bool isGrounded;
-        
+        protected bool IsAbilityDone;
+        protected bool IsGrounded;
 
         public PlayerAbilityState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
@@ -17,24 +16,24 @@ namespace Player.FiniteStateMachine.SuperState
         {
             base.DoChecks();
 
-            isGrounded = StateController.CheckIfGrounded();
+            IsGrounded = StateController.CheckIfGrounded();
         }
 
         public override void Enter()
         {
             base.Enter();
 
-            isAbilityDone = false;
+            IsAbilityDone = false;
         }
 
         public override void LogicUpdate()
         {
             base.LogicUpdate();
 
-            if (!isAbilityDone)
+            if (!IsAbilityDone)
                 return;
             
-            if(isGrounded && StateController.Rb.velocity.y < 0.01f)
+            if(IsGrounded && StateController.Rb.velocity.y < 0.01f)
             {
                 StateMachine.ChangeState(StateController.IdleState);
             }

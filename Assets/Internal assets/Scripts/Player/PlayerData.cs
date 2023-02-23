@@ -28,6 +28,11 @@ namespace Player
         public float agility = 10f;
         public float strength = 10f;
         public float armor = 10f;
+
+        [Header("CriticalDamage")]
+        public float criticalDamage = 25f;
+        [FormerlySerializedAs("criticalDamageChance")]
+        public float criticalChance = 15f;
         
         [Header("Movement Speed")]
         public float jumpSpeed = 5f;

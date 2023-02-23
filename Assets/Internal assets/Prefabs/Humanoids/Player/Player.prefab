@@ -53,9 +53,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.2
-  m_Height: 2.1841154
+  m_Height: 1.2608027
   m_Direction: 0
-  m_Center: {x: -0.19113663, y: 0, z: 0}
+  m_Center: {x: -0.65279293, y: 0, z: 0}
 --- !u!114 &4455518660711067266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,9 +227,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.1
-  m_Height: 2.1841154
+  m_Height: 1.2603788
   m_Direction: 0
-  m_Center: {x: -0.19113663, y: 0, z: 0}
+  m_Center: {x: -0.6530049, y: 0, z: 0}
 --- !u!114 &3023078268553641105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,6 +254,7 @@ GameObject:
   - component: {fileID: 2656519978458768518}
   - component: {fileID: 3057348782107376441}
   - component: {fileID: 1246719871891814200}
+  - component: {fileID: 573270494278477236}
   - component: {fileID: 2277231369872677175}
   - component: {fileID: 2596627835458191555}
   - component: {fileID: 3713910093249011704}
@@ -355,6 +356,21 @@ CapsuleCollider:
   m_Height: 1.8
   m_Direction: 1
   m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!114 &573270494278477236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4629634057154321703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 051a382d589649609e683a0f3cc1bfb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offhandWristTransform: {fileID: 0}
+  offhandHandTransform: {fileID: 0}
+  weaponTransform: {fileID: 0}
 --- !u!114 &2277231369872677175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -411,6 +427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerData: {fileID: 11400000, guid: da7c922a7022d144db5b364f494c3f61, type: 2}
+  interactionData: {fileID: 11400000, guid: 1c7c0fc237be1e941a1f6ddfdff759cd, type: 2}
 --- !u!114 &-6193070094088727074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,16 +442,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attributes:
   - type: 0
+    modifiableFloat:
+      modifiedValue: 0
   - type: 1
+    modifiableFloat:
+      modifiedValue: 0
   - type: 2
+    modifiableFloat:
+      modifiedValue: 0
   - type: 3
+    modifiableFloat:
+      modifiedValue: 0
   - type: 4
+    modifiableFloat:
+      modifiedValue: 0
   - type: 5
+    modifiableFloat:
+      modifiedValue: 0
   - type: 6
+    modifiableFloat:
+      modifiedValue: 0
   - type: 7
+    modifiableFloat:
+      modifiedValue: 0
   - type: 8
+    modifiableFloat:
+      modifiedValue: 0
   - type: 9
+    modifiableFloat:
+      modifiedValue: 0
   - type: 10
+    modifiableFloat:
+      modifiedValue: 0
   - type: 11
+    modifiableFloat:
+      modifiedValue: 0
   - type: 12
+    modifiableFloat:
+      modifiedValue: 0
   - type: 13
+    modifiableFloat:
+      modifiedValue: 0

@@ -33,9 +33,9 @@ namespace Item
             var renderer = characterDisplay.GetComponent<SkinnedMeshRenderer>();
             var bones = renderer.bones;
 
-            foreach (var t in bones)
+            foreach (var transform in bones)
             {
-                boneNames.Add(t.name);
+                boneNames.Add(transform.name);
             }
 
         }

@@ -19,8 +19,8 @@ MonoBehaviour:
   - 1
   - 5
   attackRetryTime:
+  - 2
   - 4
-  - 6
-  attackDistance: 0.5
+  attackDistance: 0.75
   playerCheckDistance: 10
   AnimatorController: {fileID: 9100000, guid: 951733f3ca8c1cd4998a0cae860dc753, type: 2}

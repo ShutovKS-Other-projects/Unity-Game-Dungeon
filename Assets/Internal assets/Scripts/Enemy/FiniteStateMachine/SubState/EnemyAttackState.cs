@@ -1,16 +1,10 @@
+using System.Collections;
 using Enemy.FiniteStateMachine.SuperState;
+using UnityEngine;
 namespace Enemy.FiniteStateMachine.SubState
 {
     public class EnemyAttackState : EnemyAbilityState
     {
-        Delegate.SwitchCollider SwitchCollider
-        {
-            get
-            {
-                return StateController.SwitchCollider;
-            }
-        }
-
         public EnemyAttackState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
         {
         }
@@ -19,6 +13,7 @@ namespace Enemy.FiniteStateMachine.SubState
         {
             base.Enter();
 
+            StateController.RegisterDelegateStrengthAttackFloat(AttackStart);
             SwitchCollider(true);
         }
 
@@ -27,6 +22,7 @@ namespace Enemy.FiniteStateMachine.SubState
             base.Exit();
 
             SwitchCollider(false);
+            StateController.RegisterDelegateStrengthAttackFloat(AttackEnd);
         }
 
         public override void AnimationFinishTrigger()
@@ -35,5 +31,10 @@ namespace Enemy.FiniteStateMachine.SubState
 
             isAbilityDone = true;
         }
+
+        Delegate.SwitchCollider SwitchCollider { get { return StateController.SwitchCollider; } }
+        
+        private float AttackStart() => EnemyStatistic.attackDamage;
+        private static float AttackEnd() => 0;
     }
 }

@@ -6,7 +6,7 @@ namespace Inventory
     [System.Serializable]
     public class InventorySlot
     {
-        public ItemType[] allowedItems = new ItemType[0];
+        public ItemType[] allowedItems = Array.Empty<ItemType>();
         
         [NonSerialized] public UserInterface Parent;
         [NonSerialized] public GameObject SlotDisplay;

@@ -27,7 +27,7 @@ namespace Player.FiniteStateMachine.SubState
 
             if (!StateController.InputManager.GetPlayerBlockInput())
             {
-                isAbilityDone = true;
+                IsAbilityDone = true;
             }
             else if (StateController.InputManager.GetPlayerAttackInput())
             {

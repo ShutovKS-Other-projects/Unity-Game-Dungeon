@@ -18,7 +18,7 @@ namespace Inventory
             SlotsOnInterface = new Dictionary<GameObject, InventorySlot>();
             for (int i = 0; i < inventory.GetSlots.Length; i++)
             {
-                var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, panelInventory.transform);
+                var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
 
                 AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
@@ -30,17 +30,18 @@ namespace Inventory
                 SlotsOnInterface.Add(obj, inventory.GetSlots[i]);
             }
         }
-        
+
         public void AllSlotsInInventoryUpdate() => AllSlotsUpdate();
 
         protected override void AllSlotsUpdate()
         {
-            foreach (var inventorySlot in inventory.GetSlots)
+            for (int i = 0; i < inventory.GetSlots.Length; i++)
             {
+                var inventorySlot = inventory.GetSlots[i];
                 inventorySlot.UpdateSlot(inventorySlot.item, inventorySlot.amount);
             }
         }
-        
+
         private static Vector3 GetPosition(int i)
         {
             return new Vector3((XStart + XSpaceBetweenItem * (i % NumberOfColumns)), (YStart - YSpaceBetweenItem * (i / NumberOfColumns)), (0f));

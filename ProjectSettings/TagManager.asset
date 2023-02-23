@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ObjectDamaging
   - Enemy
+  - EnemyDamageObject
   layers:
   - Default
   - TransparentFX

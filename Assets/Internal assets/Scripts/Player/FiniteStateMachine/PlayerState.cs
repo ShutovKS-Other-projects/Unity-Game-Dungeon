@@ -1,10 +1,11 @@
 using System;
+using System.Collections;
 using UnityEngine;
 namespace Player.FiniteStateMachine
 {
     public class PlayerState : MonoBehaviour
     {
-        [NonSerialized] public PlayerStatistic playerStatistic;
+        [NonSerialized] public PlayerStatistic PlayerStatistic;
 
         protected PlayerStateController StateController;
         protected PlayerStateMachine StateMachine;
@@ -13,14 +14,14 @@ namespace Player.FiniteStateMachine
         protected bool IsExitingState;
 
         protected float StartTime;
-
+        
         private string _animBoolName;
 
         public PlayerState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName)
         {
             this.StateController = stateController;
             this.StateMachine = stateMachine;
-            this.playerStatistic = playerStatistic;
+            this.PlayerStatistic = playerStatistic;
             this._animBoolName = animBoolName;
         }
 

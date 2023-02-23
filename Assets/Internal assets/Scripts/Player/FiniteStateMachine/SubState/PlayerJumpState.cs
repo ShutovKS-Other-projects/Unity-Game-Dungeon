@@ -11,9 +11,9 @@ namespace Player.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            StateController.SetVelocityY(playerStatistic.JumpSpeed);
-            playerStatistic.Stamina -= 10;
-            isAbilityDone = true;
+            StateController.SetVelocityY(PlayerStatistic.JumpSpeed);
+            PlayerStatistic.Stamina -= 10;
+            IsAbilityDone = true;
         }
     }
 }

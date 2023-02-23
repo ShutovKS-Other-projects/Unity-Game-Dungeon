@@ -12,7 +12,7 @@ namespace Player
         void Awake()
         {
             _playerAttribute = GetComponent<PlayerAttribute>();
-            
+
             _health = _playerData.healthMax;
             _stamina = _playerData.staminaMax;
             _mana = _playerData.manaMax;
@@ -34,12 +34,12 @@ namespace Player
         public float Health { get { return _health; } set { _health = value; } }
         public float HealthMax { get { return _playerData.healthMax + _playerAttribute.Health; } }
         public float HealthRecoverySpeed { get { return _playerData.healthRecoverySpeed + _playerAttribute.HealthRecoverySpeed; } }
-        
+
         public float Mana { get { return _playerData.manaMax; } set { _mana = value; } }
         public float ManaMax { get { return _playerData.manaMax + _playerAttribute.Mana; } }
         public float ManaRecoverySpeed { get { return _playerData.manaRecoverySpeed + _playerAttribute.ManaRecoverySpeed; } }
-        
-        
+
+
         public float Stamina { get { return _stamina; } set { _stamina = value; } }
         public float StaminaMax { get { return _playerData.staminaMax + _playerAttribute.Stamina; } }
         public float StaminaRecoverySpeed { get { return _playerData.staminaRecoverySpeed + _playerAttribute.StaminaRecoverySpeed; } }
@@ -51,6 +51,9 @@ namespace Player
         public float Strength { get { return _playerData.strength + _playerAttribute.Strength; } }
         public float Armor { get { return _playerData.armor + _playerAttribute.Armor; } }
         public float Agility { get { return _playerData.agility + _playerAttribute.Agility; } }
+
+        public float CriticalDamage { get { return _playerData.criticalDamage + _playerAttribute.CriticalDamage; } }
+        public float CriticalChance { get { return _playerData.criticalChance + _playerAttribute.CriticalChance; } }
 
         public float MovementForce { get { return _playerData.movementForce; } }
         public float JumpSpeed { get { return _playerData.jumpSpeed; } }
@@ -68,11 +71,13 @@ namespace Player
         public float GroundCheckRadius { get { return _playerData.groundCheckRadius; } }
         public float InterCheckDistance { get { return _playerData.interCheckDistance; } }
         public float InterCheckSphereRadius { get { return _playerData.interCheckSphereRadius; } }
+
         public InteractionData interactionData = null;
 
         [NonSerialized] public bool IsAbility;
         [NonSerialized] public bool IsFatigue;
 
         #endregion
+
     }
 }

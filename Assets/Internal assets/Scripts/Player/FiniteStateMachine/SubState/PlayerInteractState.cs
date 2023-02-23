@@ -12,21 +12,21 @@ namespace Player.FiniteStateMachine.SubState
             base.Enter();
 
             StateController.SetVelocityZero();
-            playerStatistic.interactionData.Interact();
+            PlayerStatistic.interactionData.Interact();
         }
 
         public override void Exit()
         {
             base.Exit();
 
-            playerStatistic.interactionData.ResetData();
+            PlayerStatistic.interactionData.ResetData();
         }
 
         public override void AnimationFinishTrigger()
         {
             base.AnimationFinishTrigger();
 
-            isAbilityDone = true;
+            IsAbilityDone = true;
         }
     }
 }

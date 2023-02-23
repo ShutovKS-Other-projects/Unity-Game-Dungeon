@@ -12,14 +12,14 @@ namespace Player.FiniteStateMachine.SubState
             base.Enter();
 
             StateController.SetVelocityZero();
-            StateController.SetColliderHeight(playerStatistic.CrouchColliderHeight, playerStatistic.CrouchColliderCenter);
+            StateController.SetColliderHeight(PlayerStatistic.CrouchColliderHeight, PlayerStatistic.CrouchColliderCenter);
         }
 
         public override void Exit()
         {
             base.Exit();
 
-            StateController.SetColliderHeight(playerStatistic.StandColliderHeight, playerStatistic.StandColliderCenter);
+            StateController.SetColliderHeight(PlayerStatistic.StandColliderHeight, PlayerStatistic.StandColliderCenter);
         }
 
         public override void LogicUpdate()

@@ -19,7 +19,7 @@ namespace Enemy
         public float movementSpeed { get { return _data.movementSpeed; } }
         public float attackDamage { get { return Random.Range(_data.attackDamage[0], _data.attackDamage[1]); } }
         public float attackRetryTime { get { return Random.Range(_data.attackRetryTime[0], _data.attackRetryTime[1]); } }
-        public float attackDistance;
+        public float attackDistance { get { return _data.attackDistance; } }
         public float playerCheckDistance { get { return _data.playerCheckDistance; } }
         public bool isDead { get { return health <= 0; } }
         #endregion

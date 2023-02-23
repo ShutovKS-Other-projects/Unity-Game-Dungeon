@@ -11,6 +11,8 @@ namespace Player.FiniteStateMachine.SubState
         {
             base.LogicUpdate();
     
+            RecoveryStaminaTime = 0;
+            
             if (IsExitingState)
                 return;
             
@@ -31,8 +33,8 @@ namespace Player.FiniteStateMachine.SubState
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            StateController.Movement(MovementInput, playerStatistic.RunMovementSpeedMax);
-            playerStatistic.Stamina -= playerStatistic.StaminaDecreaseRate * Time.deltaTime;
+            StateController.Movement(MovementInput, PlayerStatistic.RunMovementSpeedMax);
+            PlayerStatistic.Stamina -= PlayerStatistic.StaminaDecreaseRate * Time.deltaTime;
         }
     }
 }

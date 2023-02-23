@@ -32,7 +32,11 @@ namespace Enemy.FiniteStateMachine
 
         #region Delegate
 
-        public Delegate.SwitchCollider SwitchCollider;
+        public Delegate.SwitchCollider? SwitchCollider;
+        
+        // StrengthAttackFloat
+        public Delegate.StrengthAttackFloat? StrengthAttackFloat;
+        public void RegisterDelegateStrengthAttackFloat(Delegate.StrengthAttackFloat del) => StrengthAttackFloat = del;
 
         #endregion
 
@@ -88,7 +92,6 @@ namespace Enemy.FiniteStateMachine
         void OnTriggerExit(Collider other)
         {
             StateMachine.CurrentState.TriggerExit(other);
-            Debug.Log($"Trigger {other.GetType().Name}");
         }
 
         #endregion

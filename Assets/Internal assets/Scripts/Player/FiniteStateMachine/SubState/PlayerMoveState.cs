@@ -31,7 +31,7 @@ namespace Player.FiniteStateMachine.SubState
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            StateController.Movement(MovementInput, playerStatistic.MovementSpeedMax);
+            StateController.Movement(MovementInput, PlayerStatistic.MovementSpeedMax);
         }
     }
 }

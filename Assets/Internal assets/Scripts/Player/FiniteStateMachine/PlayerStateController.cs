@@ -1,3 +1,4 @@
+using System.Collections;
 using Input;
 using Interactable;
 using Other;
@@ -44,11 +45,22 @@ namespace Player.FiniteStateMachine
         public InputManager InputManager { get; private set; }
         public Rigidbody Rb { get; private set; }
         public UIInteractionBare uiInteractionBare;
+
         private CapsuleCollider _collider;
 
-        static readonly int xSpeed = Animator.StringToHash("xSpeed");
-        static readonly int ySpeed = Animator.StringToHash("ySpeed");
-        static readonly int zSpeed = Animator.StringToHash("zSpeed");
+        static readonly int XSpeed = Animator.StringToHash("xSpeed");
+        static readonly int YSpeed = Animator.StringToHash("ySpeed");
+        static readonly int ZSpeed = Animator.StringToHash("zSpeed");
+
+        #endregion
+
+        #region Delegate Functions
+
+        public Delegate.SwitchCollider? SwitchCollider;
+
+        // StrengthAttackFloat
+        public Delegate.StrengthAttackFloat? StrengthAttackFloat;
+        public void RegisterDelegateStrengthAttackFloat(Delegate.StrengthAttackFloat del) => StrengthAttackFloat = del;
 
         #endregion
 
@@ -86,35 +98,20 @@ namespace Player.FiniteStateMachine
 
             //Scene Test
             //uiInteractionBare = GameObject.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
-            
+
             //Scene QuickRun
             uiInteractionBare = GameObject.Find("ManagerScene").transform.Find("Canvas").transform.Find("UIPanelGame").transform.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
-        
+
             SwitchCollider += gameObject.transform.Find("DamageNoWeapon").GetComponent<GameObjectTriggerEnable>().EnableCollider;
             SwitchCollider += gameObject.transform.Find("DamageWeapon").GetComponent<GameObjectTriggerEnable>().EnableCollider;
-        
+
             _stateMachine.Initialize(IdleState);
         }
 
-        private void Update()
-        {
-            _stateMachine.CurrentState.LogicUpdate();
-        }
-
-        private void FixedUpdate()
-        {
-            _stateMachine.CurrentState.PhysicsUpdate();
-        }
-
-        void OnTriggerEnter(Collider other)
-        {
-            _stateMachine.CurrentState.TriggerEnter(other);
-        }
-
-        void OnTriggerExit(Collider other)
-        {
-            _stateMachine.CurrentState.TriggerExit(other);
-        }
+        private void Update() => _stateMachine.CurrentState.LogicUpdate();
+        private void FixedUpdate() => _stateMachine.CurrentState.PhysicsUpdate();
+        private void OnTriggerEnter(Collider other) => _stateMachine.CurrentState.TriggerEnter(other);
+        private void OnTriggerExit(Collider other) => _stateMachine.CurrentState.TriggerExit(other);
 
         #endregion
 
@@ -123,9 +120,9 @@ namespace Player.FiniteStateMachine
         public void SetVelocityZero()
         {
             Rb.velocity = Vector3.zero;
-            Animator.SetFloat(ySpeed, 0);
-            Animator.SetFloat(xSpeed, 0);
-            Animator.SetFloat(zSpeed, 0);
+            Animator.SetFloat(YSpeed, 0);
+            Animator.SetFloat(XSpeed, 0);
+            Animator.SetFloat(ZSpeed, 0);
         }
 
         public void SetVelocityY(float velocityY)
@@ -133,7 +130,7 @@ namespace Player.FiniteStateMachine
             var velocity = Rb.velocity;
             velocity = new Vector3(velocity.x, velocityY, velocity.z);
             Rb.velocity = velocity;
-            Animator.SetFloat(ySpeed, velocityY);
+            Animator.SetFloat(YSpeed, velocityY);
         }
 
         public void SetVelocityX(float velocityX)
@@ -141,7 +138,7 @@ namespace Player.FiniteStateMachine
             var velocity = Rb.velocity;
             velocity = new Vector3(velocityX, velocity.y, velocity.z);
             Rb.velocity = velocity;
-            Animator.SetFloat(xSpeed, velocityX);
+            Animator.SetFloat(XSpeed, velocityX);
         }
 
         public void SetVelocityZ(float velocityZ)
@@ -149,7 +146,7 @@ namespace Player.FiniteStateMachine
             var velocity = Rb.velocity;
             velocity = new Vector3(velocity.x, velocity.y, velocityZ);
             Rb.velocity = velocity;
-            Animator.SetFloat(zSpeed, velocityZ);
+            Animator.SetFloat(ZSpeed, velocityZ);
         }
 
         #endregion
@@ -160,12 +157,12 @@ namespace Player.FiniteStateMachine
         {
             var move = new Vector3(movementInput.x, 0, movementInput.y);
             Rb.AddRelativeForce(move * _playerStatistic.MovementForce * Time.deltaTime, ForceMode.VelocityChange);
-            
-            if(Rb.velocity.magnitude > speedMax)
+
+            if (Rb.velocity.magnitude > speedMax)
                 Rb.velocity = Rb.velocity.normalized * speedMax;
 
-            Animator.SetFloat(zSpeed, move.z);
-            Animator.SetFloat(xSpeed, move.x);
+            Animator.SetFloat(ZSpeed, move.z);
+            Animator.SetFloat(XSpeed, move.x);
         }
 
         #endregion
@@ -245,10 +242,6 @@ namespace Player.FiniteStateMachine
         private void AnimationTrigger() => _stateMachine.CurrentState.AnimationTrigger();
         private void AnimationFinishTrigger() => _stateMachine.CurrentState.AnimationFinishTrigger();
 
-        #endregion
-    
-        #region Delegate Functions
-        public Delegate.SwitchCollider SwitchCollider;
         #endregion
     }
 }

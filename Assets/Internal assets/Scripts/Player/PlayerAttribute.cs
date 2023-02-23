@@ -23,7 +23,7 @@ namespace Player
         public float Mana => attributes[9].Value ?? 0f;
         public float ManaRecoverySpeed => attributes[10].Value ?? 0f;
         public float CriticalDamage => attributes[11].Value ?? 0f;
-        public float CriticalDamageChance  => attributes[12].Value ?? 0f;
+        public float CriticalChance  => attributes[12].Value ?? 0f;
         public float Fortune => attributes[13].Value ?? 0f;
         #endregion
 

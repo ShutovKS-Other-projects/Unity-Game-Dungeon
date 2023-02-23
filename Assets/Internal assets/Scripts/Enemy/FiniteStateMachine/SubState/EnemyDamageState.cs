@@ -1,4 +1,6 @@
 using Enemy.FiniteStateMachine.SuperState;
+using Player.FiniteStateMachine;
+using UnityEngine;
 namespace Enemy.FiniteStateMachine.SubState
 {
     public class EnemyDamageState : EnemyAbilityState
@@ -11,7 +13,8 @@ namespace Enemy.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            enemyStatistic.health = 0;
+            var playerStateController = GameObject.FindWithTag("Player").GetComponent<PlayerStateController>();
+            EnemyStatistic.health -= playerStateController.StrengthAttackFloat!();
         }
 
         public override void LogicUpdate()
@@ -21,7 +24,7 @@ namespace Enemy.FiniteStateMachine.SubState
             if (!IsAnimationFinished)
                 return;
 
-            if (enemyStatistic.isDead)
+            if (EnemyStatistic.isDead)
             {
                 StateMachine.ChangeState(StateController.DeathState);
             }

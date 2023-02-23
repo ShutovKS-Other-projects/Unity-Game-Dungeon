@@ -28,7 +28,7 @@ namespace Player.FiniteStateMachine.SubState
         {
             base.PhysicsUpdate();
             
-            StateController.Movement(MovementInput, playerStatistic.MovementSpeedMax);
+            StateController.Movement(MovementInput, PlayerStatistic.MovementSpeedMax);
         }
         
         public override void AnimationFinishTrigger()

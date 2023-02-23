@@ -7,7 +7,8 @@ namespace Inventory
     [System.Serializable]
     public class Inventory
     {
-        public InventorySlot[] slots = new InventorySlot[48];
+        public InventorySlot[] slots;
+        
         public void Clear()
         {
             foreach (var inventorySlot in slots)

@@ -1,4 +1,7 @@
+using System;
 using Player.FiniteStateMachine.SuperState;
+using UnityEngine;
+
 namespace Player.FiniteStateMachine.SubState
 {
     public class PlayerAttackState : PlayerAbilityState
@@ -6,21 +9,17 @@ namespace Player.FiniteStateMachine.SubState
         public PlayerAttackState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {
         }
-
-        Delegate.SwitchCollider SwitchCollider
-        {
-            get
-            {
-                return StateController.SwitchCollider;
-            }
-        }
-
         public override void Enter()
         {
             base.Enter();
 
             SwitchCollider(true);
-            playerStatistic.Stamina -= 10;
+            PlayerStatistic.Stamina -= 10;
+
+            if (UnityEngine.Random.Range(0, 101) < PlayerStatistic.CriticalChance)
+                StateController.RegisterDelegateStrengthAttackFloat(AttackCritical);
+            else
+                StateController.RegisterDelegateStrengthAttackFloat(Attack);
         }
 
         public override void Exit()
@@ -28,13 +27,21 @@ namespace Player.FiniteStateMachine.SubState
             base.Exit();
 
             SwitchCollider(false);
+            
+            StateController.RegisterDelegateStrengthAttackFloat(AttackZero);
         }
 
         public override void AnimationFinishTrigger()
         {
             base.AnimationFinishTrigger();
 
-            isAbilityDone = true;
+            IsAbilityDone = true;
         }
+
+        Delegate.SwitchCollider SwitchCollider { get { return StateController.SwitchCollider; } }
+
+        private float Attack() => PlayerStatistic.Strength;
+        private float AttackCritical() => PlayerStatistic.Strength * (1 + PlayerStatistic.CriticalDamage / 100);
+        private static float AttackZero() => 0;
     }
 }

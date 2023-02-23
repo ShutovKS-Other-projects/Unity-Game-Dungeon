@@ -15,7 +15,7 @@ namespace Inventory
         private InventoryObject _previousInventory;
         protected Dictionary<GameObject, InventorySlot> SlotsOnInterface = new Dictionary<GameObject, InventorySlot>();
 
-        public void OnEnable()
+        public void Start()
         {
             CreateSlots();
             foreach (var inventorySlot in inventory.GetSlots)

@@ -194,6 +194,11 @@ PrefabInstance:
       propertyPath: m_Center.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 573270494278477236, guid: 43fecf5393149fb43bb42beb74c211fa,
+        type: 3}
+      propertyPath: weaponTransform
+      value: 
+      objectReference: {fileID: 4412220434985561323}
     - target: {fileID: 736257618588429709, guid: 43fecf5393149fb43bb42beb74c211fa,
         type: 3}
       propertyPath: m_LocalPosition.x

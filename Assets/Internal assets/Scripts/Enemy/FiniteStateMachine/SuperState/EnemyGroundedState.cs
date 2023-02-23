@@ -3,9 +3,9 @@ namespace Enemy.FiniteStateMachine.SuperState
 {
     public class EnemyGroundedState : EnemyState
     {
-        protected float playerDistance;
-        protected bool isAttack;
-        protected bool isVisiblePlayer;
+        protected float PlayerDistance;
+        protected bool IsAttack;
+        protected bool IsVisiblePlayer;
 
         public EnemyGroundedState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
         {
@@ -15,14 +15,14 @@ namespace Enemy.FiniteStateMachine.SuperState
         {
             base.LogicUpdate();
 
-            playerDistance = StateController.CheckPlayerDistance();
-            isVisiblePlayer = StateController.CheckIfPlayer();
+            PlayerDistance = StateController.CheckPlayerDistance();
+            IsVisiblePlayer = StateController.CheckIfPlayer();
 
-            if (enemyStatistic.isDead)
+            if (EnemyStatistic.isDead)
             {
                 StateMachine.ChangeState(StateController.DeathState);
             }
-            else if (!isVisiblePlayer)
+            else if (!IsVisiblePlayer)
             {
                 StateMachine.ChangeState(StateController.IdleState);
             }

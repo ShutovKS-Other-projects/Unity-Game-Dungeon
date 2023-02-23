@@ -7,12 +7,14 @@ namespace Enemy.FiniteStateMachine
         protected EnemyStateController StateController;
         protected EnemyStateMachine StateMachine;
         protected EnemyState enemyState;
-        [NonSerialized] public EnemyStatistic enemyStatistic;
+        [NonSerialized] public EnemyStatistic EnemyStatistic;
 
         protected bool IsAnimationFinished;
         protected bool IsExitingState;
 
         protected float StartTime;
+
+        protected Collider TriggerCollider;
 
         private string _animBoolName;
 
@@ -20,7 +22,7 @@ namespace Enemy.FiniteStateMachine
         {
             this.StateController = stateController;
             this.StateMachine = stateMachine;
-            this.enemyStatistic = enemyStatistic;
+            this.EnemyStatistic = enemyStatistic;
             this._animBoolName = animBoolName;
         }
 
@@ -45,9 +47,9 @@ namespace Enemy.FiniteStateMachine
 
         public virtual void DoChecks() { }
 
-        public virtual void TriggerEnter(Collider other) { }
-    
-        public virtual void TriggerExit(Collider other) { }
+        public virtual void TriggerEnter(Collider other) => TriggerCollider = other;
+
+        public virtual void TriggerExit(Collider other) => TriggerCollider = null;
 
         public virtual void AnimationTrigger() { }
 

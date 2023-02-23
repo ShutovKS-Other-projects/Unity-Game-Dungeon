@@ -18,8 +18,15 @@ namespace Enemy.FiniteStateMachine.SuperState
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-        
-            if (isAbilityDone)
+
+            if (!isAbilityDone)
+                return;
+            
+            if (EnemyStatistic.isDead)
+            {
+                StateMachine.ChangeState(StateController.DeathState);
+            }
+            else
             {
                 StateMachine.ChangeState(StateController.IdleState);
             }

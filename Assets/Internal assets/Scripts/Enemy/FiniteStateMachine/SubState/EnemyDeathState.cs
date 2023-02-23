@@ -10,8 +10,6 @@ namespace Enemy.FiniteStateMachine.SubState
 
         public override void AnimationFinishTrigger()
         {
-            base.AnimationFinishTrigger();
-
             StateController.gameObject.layer = LayerMask.NameToLayer("Interactable");
         }
     }

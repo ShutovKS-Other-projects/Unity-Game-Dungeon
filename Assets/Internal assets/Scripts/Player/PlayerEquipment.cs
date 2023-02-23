@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Inventory;
 using Item;
 using Other;
@@ -28,10 +29,10 @@ namespace Player
 
             //_boneCombiner = new BoneCombiner(gameObject);
 
-            for (int i = 0; i < _equipment.GetSlots.Length; i++)
+            foreach (var inventorySlot in _equipment.GetSlots)
             {
-                _equipment.GetSlots[i].OnBeforeUpdated += OnRemoveItem;
-                _equipment.GetSlots[i].OnAfterUpdated += OnEquipItem;
+                inventorySlot.OnBeforeUpdated += OnRemoveItem;
+                inventorySlot.OnAfterUpdated += OnEquipItem;
             }
         }
 
@@ -43,39 +44,46 @@ namespace Player
             switch (slot.Parent.inventory.type)
             {
                 case InterfaceType.Equipment:
-
                     if (itemObject.characterDisplay != null)
                     {
                         switch (slot.allowedItems[0])
                         {
-                            // case ItemType.Gloves:
-                            // _gloves = _boneCombiner.AddLimb(itemObject.characterDisplay, itemObject.boneNames);
-                            // break;
+                            case ItemType.Gloves:
+                                // _gloves = _boneCombiner.AddLimb(itemObject.characterDisplay, itemObject.boneNames);
+                                break;
 
-                            // case ItemType.Boots:
-                            // _boots = _boneCombiner.AddLimb(itemObject.characterDisplay, itemObject.boneNames);
-                            // break;
+                            case ItemType.Boots:
+                                // _boots = _boneCombiner.AddLimb(itemObject.characterDisplay, itemObject.boneNames);
+                                break;
 
-                            // case ItemType.Chest:
-                            // _chest = _boneCombiner.AddLimb(itemObject.characterDisplay, itemObject.boneNames);
-                            // break;
+                            case ItemType.Chest:
+                                // _chest = _boneCombiner.AddLimb(itemObject.characterDisplay, itemObject.boneNames);
+                                break;
 
-                            // case ItemType.Pants:
-                            // _pants = _boneCombiner.AddLimb(itemObject.characterDisplay, itemObject.boneNames);
-                            // break;
+                            case ItemType.Pants:
+                                // _pants = _boneCombiner.AddLimb(itemObject.characterDisplay, itemObject.boneNames);
+                                break;
 
-                            // case ItemType.Helmet:
-                            // _helmet = _boneCombiner.AddLimb(itemObject.characterDisplay, itemObject.boneNames);
-                            // break;
+                            case ItemType.Helmet:
+                                // _helmet = _boneCombiner.AddLimb(itemObject.characterDisplay, itemObject.boneNames);
+                                break;
 
                             case ItemType.Weapon:
+                                GetComponent<Animator>().SetLayerWeight(1, 1);
                                 _sword = Instantiate(itemObject.characterDisplay, weaponTransform).transform;
-
+                                break;
+                            default:
+                                Debug.LogWarning("Item Equipment non search type");
                                 break;
                         }
                     }
-
                     break;
+                case InterfaceType.Inventory:
+                    break;
+                case InterfaceType.Chest:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 
@@ -90,33 +98,42 @@ namespace Player
                     {
                         switch (slot.allowedItems[0])
                         {
-                            // case ItemType.Gloves:
-                            //     Destroy(_gloves.gameObject);
-                            //     break;
-                            //
-                            // case ItemType.Boots:
-                            //     Destroy(_boots.gameObject);
-                            //     break;
-                            //
-                            // case ItemType.Chest:
-                            //     Destroy(_chest.gameObject);
-                            //     break;
-                            //
-                            // case ItemType.Pants:
-                            //     Destroy(_pants.gameObject);
-                            //     break;
-                            //
-                            // case ItemType.Helmet:
-                            //     Destroy(_helmet.gameObject);
-                            //     break;
-                            
+                            case ItemType.Gloves:
+                                //Destroy(_gloves.gameObject);
+                                break;
+
+                            case ItemType.Boots:
+                                // Destroy(_boots.gameObject);
+                                break;
+
+                            case ItemType.Chest:
+                                // Destroy(_chest.gameObject);
+                                break;
+
+                            case ItemType.Pants:
+                                // Destroy(_pants.gameObject);
+                                break;
+
+                            case ItemType.Helmet:
+                                // Destroy(_helmet.gameObject);
+                                break;
+
                             case ItemType.Weapon:
+                                GetComponent<Animator>().SetLayerWeight(1, 0);
                                 Destroy(_sword.gameObject);
+                                break;
+                            default:
+                                Debug.LogWarning("Item Equipment non search type");
                                 break;
                         }
                     }
-
                     break;
+                case InterfaceType.Inventory:
+                    break;
+                case InterfaceType.Chest:
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
     }

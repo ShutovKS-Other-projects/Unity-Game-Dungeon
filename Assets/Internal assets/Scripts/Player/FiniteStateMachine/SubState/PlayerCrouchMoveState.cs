@@ -11,14 +11,14 @@ namespace Player.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            StateController.SetColliderHeight(playerStatistic.CrouchColliderHeight, playerStatistic.CrouchColliderCenter);
+            StateController.SetColliderHeight(PlayerStatistic.CrouchColliderHeight, PlayerStatistic.CrouchColliderCenter);
         }
 
         public override void Exit()
         {
             base.Exit();
 
-            StateController.SetColliderHeight(playerStatistic.StandColliderHeight, playerStatistic.StandColliderCenter);
+            StateController.SetColliderHeight(PlayerStatistic.StandColliderHeight, PlayerStatistic.StandColliderCenter);
         }
 
         public override void LogicUpdate()
@@ -41,7 +41,7 @@ namespace Player.FiniteStateMachine.SubState
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            StateController.Movement(MovementInput, playerStatistic.CrouchMovementSpeedMax);
+            StateController.Movement(MovementInput, PlayerStatistic.CrouchMovementSpeedMax);
 
         }
     }

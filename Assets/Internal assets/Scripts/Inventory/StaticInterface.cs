@@ -13,7 +13,7 @@ namespace Inventory
             for (int i = 0; i < slots.Length; i++)
             {
                 var obj = slots[i];
-                
+
                 AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
                 AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
                 AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
@@ -23,14 +23,13 @@ namespace Inventory
                 SlotsOnInterface.Add(obj, inventory.GetSlots[i]);
             }
         }
-
         public void AllSlotsInInventoryUpdate() => AllSlotsUpdate();
 
         protected override void AllSlotsUpdate()
         {
-            for (int index = 0; index < slots.Length; index++)
+            for (int i = 0; i < slots.Length; i++)
             {
-                var inventorySlot = inventory.GetSlots[index];
+                var inventorySlot = inventory.GetSlots[i];
                 inventorySlot.UpdateSlot(inventorySlot.item, inventorySlot.amount);
             }
         }
