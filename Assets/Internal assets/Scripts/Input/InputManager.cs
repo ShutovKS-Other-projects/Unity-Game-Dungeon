@@ -3,23 +3,21 @@ namespace Input
 {
     public class InputManager : MonoBehaviour
     {
-        private static InputManager _instance;
-
-        public static InputManager Instance { get { return _instance; } }
+        public static InputManager Instance { get; private set; }
 
         private InputSystemGame _inputSystemGame;
 
         private void Awake()
         {
-            if (_instance != null && _instance != this)
+            if (Instance != null && Instance != this)
             {
                 Destroy(this.gameObject);
             }
             else
             {
-                _instance = this;
+                Instance = this;
             }
-        
+            
             _inputSystemGame = new InputSystemGame();
         }
 
@@ -36,9 +34,9 @@ namespace Input
         }
 
 
-        //All
-        public bool GetAllMenuInput() => _inputSystemGame.All.Menu.triggered;
-        public bool GetAllPlayerInfoInput() => _inputSystemGame.All.PlayerInfo.triggered;
+        //UI
+        public bool GetAllMenuInput() => _inputSystemGame.UI.Menu.triggered;
+        public bool GetAllPlayerInfoInput() => _inputSystemGame.UI.PlayerInfo.triggered;
     
         //Game
         public Vector2 GetPlayerMovementInput() => _inputSystemGame.Player.Movement.ReadValue<Vector2>();
