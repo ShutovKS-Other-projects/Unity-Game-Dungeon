@@ -19,14 +19,14 @@ namespace Inventory
         
         public ItemObject GetItemObject()
         {
-            return item.Id >= 0 ? Parent.inventory.database.ItemObjects[item.Id] : null;
+            return item.id >= 0 ? Parent.inventory.database.ItemObjects[item.id] : null;
         }
         
         public ItemObject ItemObject
         {
             get
             {
-                return item.Id >= 0 ? Parent.inventory.database.ItemObjects[item.Id] : null;
+                return item.id >= 0 ? Parent.inventory.database.ItemObjects[item.id] : null;
             }
         }
         public InventorySlot() => UpdateSlot(new Item.Item(), 0);
@@ -44,7 +44,7 @@ namespace Inventory
         
         public bool CanPlaceInSlot(ItemObject itemObject)
         {
-            if (allowedItems.Length <= 0 || itemObject == null || itemObject.data.Id < 0)
+            if (allowedItems.Length <= 0 || itemObject == null || itemObject.data.id < 0)
                 return true;
             foreach (var itemType in allowedItems)
             {

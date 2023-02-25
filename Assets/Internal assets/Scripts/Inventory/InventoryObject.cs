@@ -21,7 +21,7 @@ namespace Inventory
                 return false;
 
             var slot = FindItemOnInventory(item);
-            if (!database.ItemObjects[item.Id].stackable || slot == null)
+            if (!database.ItemObjects[item.id].stackable || slot == null)
             {
                 GetEmptySlot().UpdateSlot(item, amount);
                 return true;
@@ -37,7 +37,7 @@ namespace Inventory
                 int counter = 0;
                 foreach (var inventorySlot in GetSlots)
                 {
-                    if (inventorySlot.item.Id <= -1)
+                    if (inventorySlot.item.id <= -1)
                     {
                         counter++;
                     }
@@ -50,7 +50,7 @@ namespace Inventory
         {
             foreach (var inventorySlot in GetSlots)
             {
-                if (inventorySlot.item.Id == item.Id)
+                if (inventorySlot.item.id == item.id)
                 {
                     return inventorySlot;
                 }
@@ -62,7 +62,7 @@ namespace Inventory
         {
             foreach (var inventorySlot in GetSlots)
             {
-                if (inventorySlot.item.Id <= -1)
+                if (inventorySlot.item.id <= -1)
                 {
                     return inventorySlot;
                 }

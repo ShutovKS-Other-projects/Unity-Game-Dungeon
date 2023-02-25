@@ -1,26 +1,30 @@
 using Enemy.FiniteStateMachine;
+using TMPro;
 using UnityEngine;
 namespace Enemy
 {
     public class EnemyStatisticUI : MonoBehaviour
     {
-        private EnemyStatistic statistic;
-        private GameObject nameText;
-        private GameObject healthText;
+        EnemyStatistic _statistic;
+        GameObject _nameText;
+        GameObject _healthText;
+        Transform _cameraTransform;
 
         private void Start()
         {
-            statistic = GetComponentInParent<EnemyStateController>().EnemyStatistic;
-        
-            nameText = transform.Find("Name").gameObject;
-            healthText = transform.Find("Health").gameObject;
-
-            nameText.GetComponent<TextMesh>().text = $"{statistic.raceName}";
+            _statistic = GetComponentInParent<EnemyStateController>().EnemyStatistic;
+            
+            _nameText = transform.Find("Name").gameObject;
+            _healthText = transform.Find("Health").gameObject;
+            
+            _nameText.GetComponent<TextMeshPro>().text = $"{_statistic.raceName}";
+            
+            _cameraTransform = UnityEngine.Camera.main!.transform;
         }
 
         private void FixedUpdate()
         {
-            if (statistic.health > 0)
+            if (_statistic.health > 0)
                 Display();
             else
                 NoDisplay();
@@ -29,15 +33,15 @@ namespace Enemy
         // ReSharper disable Unity.PerformanceAnalysis
         private void Display()
         {
-            nameText.SetActive(true);
-            healthText.SetActive(true);
-            transform.LookAt(UnityEngine.Camera.main.transform.position);
-            healthText.GetComponent<TextMesh>().text = $"XP: {statistic.health}";
+            _nameText.SetActive(true);
+            _healthText.SetActive(true);
+            transform.LookAt(_cameraTransform.transform.position);
+            _healthText.GetComponent<TextMeshPro>().text = $"XP: {_statistic.health}";
         }
         private void NoDisplay()
         {
-            nameText.SetActive(false);
-            healthText.SetActive(false);
+            _nameText.SetActive(false);
+            _healthText.SetActive(false);
         }
     }
 }

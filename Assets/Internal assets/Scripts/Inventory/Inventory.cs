@@ -20,12 +20,12 @@ namespace Inventory
 
         public bool ContainsItem(ItemObject itemObject)
         {
-            return Array.Find(slots, i => i.item.Id == itemObject.data.Id) != null;
+            return Array.Find(slots, i => i.item.id == itemObject.data.id) != null;
         }
 
         public bool ContainsItem(int id)
         {
-            return slots.FirstOrDefault(i => i.item.Id == id) != null;
+            return slots.FirstOrDefault(i => i.item.id == id) != null;
         }
     }
 }

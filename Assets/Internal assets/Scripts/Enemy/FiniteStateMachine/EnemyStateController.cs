@@ -57,7 +57,7 @@ namespace Enemy.FiniteStateMachine
         private void Start()
         {
             Animator = GetComponent<Animator>();
-            Animator.avatar = transform.GetChild(1).GetComponent<Animator>().avatar;
+            Animator.avatar = transform.GetChild(2).GetComponent<Animator>().avatar;
             //Animator.runtimeAnimatorController = enemyData.AnimatorController;
             PlayerGameObject = GameObject.FindGameObjectWithTag("Player");
             Rb = GetComponent<Rigidbody>();

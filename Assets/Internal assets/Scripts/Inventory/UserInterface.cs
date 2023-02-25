@@ -43,7 +43,7 @@ namespace Inventory
 
         private void OnSlotUpdate(InventorySlot slot)
         {
-            if (slot.item.Id >= 0)
+            if (slot.item.id >= 0)
             {
                 slot.SlotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = slot.ItemObject.uiDisplay;
                 slot.SlotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
@@ -104,7 +104,7 @@ namespace Inventory
         }
         private GameObject CreateTempItem(GameObject obj)
         {
-            if (SlotsOnInterface[obj].item.Id < 0)
+            if (SlotsOnInterface[obj].item.id < 0)
                 return null;
 
             GameObject tempItem = null;

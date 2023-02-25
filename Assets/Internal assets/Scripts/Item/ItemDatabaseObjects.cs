@@ -10,7 +10,7 @@ namespace Item
         {
             for (int i = 0; i < ItemObjects.Length; i++)
             {
-                ItemObjects[i].data.Id = i;
+                ItemObjects[i].data.id = i;
             }
         }
     }

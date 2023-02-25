@@ -13,15 +13,20 @@ MonoBehaviour:
   m_Name: Player Data
   m_EditorClassIdentifier: 
   className: No one
-  health: 100
+  experience: 0
+  healthMax: 100
   healthRecoverySpeed: 10
-  stamina: 100
+  manaMax: 100
+  manaRecoverySpeed: 10
+  staminaMax: 100
   staminaRecoverySpeed: 10
   staminaRecoverySpeedIsFatigue: 7.5
-  experience: 0
-  damage: 10
-  maxHealth: 100
-  maxStamina: 100
+  staminaDecreaseRate: 3
+  agility: 10
+  strength: 10
+  armor: 10
+  criticalDamage: 25
+  criticalChance: 15
   jumpSpeed: 5
   movementForce: 10
   movementSpeedMax: 4
@@ -29,8 +34,6 @@ MonoBehaviour:
   inAirMovementSpeedMax: 4
   crouchMovementSpeedMax: 3
   blockMovementSpeedMax: 3
-  isAbility: 0
-  isFatigue: 0
   crouchColliderCenter: 0.6
   crouchColliderHeight: 1.2
   standColliderCenter: 0.9
@@ -38,4 +41,3 @@ MonoBehaviour:
   groundCheckRadius: 0.2
   interCheckDistance: 3
   interCheckSphereRadius: 0.5
-  interactionData: {fileID: 11400000, guid: 1c7c0fc237be1e941a1f6ddfdff759cd, type: 2}

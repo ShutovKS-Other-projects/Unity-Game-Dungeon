@@ -45,6 +45,7 @@ namespace Player.FiniteStateMachine
         public InputManager InputManager { get; private set; }
         public Rigidbody Rb { get; private set; }
         public UIInteractionBare uiInteractionBare;
+        public CharacterController CharacterController;
 
         private CapsuleCollider _collider;
 
@@ -97,7 +98,7 @@ namespace Player.FiniteStateMachine
             cellingCheckTransform = transform.Find("CellingCheck");
 
             //Scene Test
-            //uiInteractionBare = GameObject.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
+            // uiInteractionBare = GameObject.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
 
             //Scene QuickRun
             uiInteractionBare = GameObject.Find("ManagerScene").transform.Find("Canvas").transform.Find("UIPanelGame").transform.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
@@ -156,6 +157,9 @@ namespace Player.FiniteStateMachine
         public void Movement(Vector2 movementInput, float speedMax)
         {
             var move = new Vector3(movementInput.x, 0, movementInput.y);
+
+            //move = transform.TransformDirection(move);
+            //Rb.AddForce(move * _playerStatistic.MovementForce * Time.deltaTime, ForceMode.VelocityChange);
             Rb.AddRelativeForce(move * _playerStatistic.MovementForce * Time.deltaTime, ForceMode.VelocityChange);
 
             if (Rb.velocity.magnitude > speedMax)
