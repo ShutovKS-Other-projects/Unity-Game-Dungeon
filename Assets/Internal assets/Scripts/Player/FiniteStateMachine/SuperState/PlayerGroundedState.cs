@@ -124,7 +124,7 @@ namespace Player.FiniteStateMachine.SuperState
                     }
             }
             PlayerStatistic.interactionData.ResetData();
-            StateController.uiInteractionBare.SetTooltipText("");
+            StateController.uiInteractionBare.SetTooltipText(" ");
             return false;
         }
 

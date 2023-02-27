@@ -1,26 +1,27 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 namespace Interactable
 {
     public class UIInteractionBare : MonoBehaviour
     {
-        [SerializeField] private Image _progresBar;
-        [SerializeField] private Text _toltipText;
+        Image _progressBar;
+        TextMeshProUGUI _tooltipText;
 
         private void Start()
         {
-            _progresBar = GetComponentInChildren<Image>();
-            _toltipText = GetComponentInChildren<Text>();
+            _progressBar = GetComponentInChildren<Image>();
+            _tooltipText = transform.Find("InteractionText").GetComponent<TextMeshProUGUI>();
         }
 
         public void SetProgress(float progress)
         {
-            _progresBar.fillAmount = progress;
+            _progressBar.fillAmount = progress;
         }
 
         public void SetTooltipText(string text)
         {
-            _toltipText.text = text;
+            _tooltipText.text = text;
         }
 
         public void SetActive(bool active)

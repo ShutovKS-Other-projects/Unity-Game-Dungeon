@@ -14,7 +14,6 @@ namespace Player
         public float healthMax = 100f;
         public float healthRecoverySpeed = 10f;
         
-        [FormerlySerializedAs("mannaMax")]
         public float manaMax = 100f;
         public float manaRecoverySpeed = 10f;
 
@@ -31,7 +30,6 @@ namespace Player
 
         [Header("CriticalDamage")]
         public float criticalDamage = 25f;
-        [FormerlySerializedAs("criticalDamageChance")]
         public float criticalChance = 15f;
         
         [Header("Movement Speed")]

@@ -23,8 +23,7 @@ namespace TMPro
 
         [Serializable]
         public class LinkSelectionEvent : UnityEvent<string, string, int> { }
-
-
+        
         /// <summary>
         /// Event delegate triggered when pointer is over a character.
         /// </summary>

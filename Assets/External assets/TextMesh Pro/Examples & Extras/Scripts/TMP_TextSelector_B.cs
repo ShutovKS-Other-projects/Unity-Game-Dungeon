@@ -86,7 +86,7 @@ namespace TMPro.Examples
                 #region Handle Character Selection
                 int charIndex = TMP_TextUtilities.FindIntersectingCharacter(m_TextMeshPro, UnityEngine.Input.mousePosition, m_Camera, true);
 
-                // Undo Swap and Vertex Attributes changes.
+                // Undo Swap and Vertex Attribute changes.
                 if (charIndex == -1 || charIndex != m_lastIndex)
                 {
                     RestoreCachedVertexAttributes(m_lastIndex);
@@ -311,7 +311,7 @@ namespace TMPro.Examples
             // Check if Mouse Intersects any of the characters. If so, assign a random color.
             #region Character Selection Handling
             /*
-            int charIndex = TMP_TextUtilities.FindIntersectingCharacter(m_TextMeshPro, Input.mousePosition, m_Camera, true);
+            int charIndex = TMP_TextUtilities.FindIntersectingCharacter(m_TextMeshPro, UnityEngine.Input.mousePosition, m_Camera, true);
             if (charIndex != -1 && charIndex != m_lastIndex)
             {
                 //Debug.Log("Character [" + m_TextMeshPro.textInfo.characterInfo[index].character + "] was selected at POS: " + eventData.position);
@@ -336,7 +336,7 @@ namespace TMPro.Examples
             #region Word Selection Handling
             //Check if Mouse intersects any words and if so assign a random color to that word.
             /*
-            int wordIndex = TMP_TextUtilities.FindIntersectingWord(m_TextMeshPro, Input.mousePosition, m_Camera);
+            int wordIndex = TMP_TextUtilities.FindIntersectingWord(m_TextMeshPro, UnityEngine.Input.mousePosition, m_Camera);
 
             // Clear previous word selection.
             if (m_TextPopup_RectTransform != null && m_selectedWord != -1 && (wordIndex == -1 || wordIndex != m_selectedWord))
@@ -396,7 +396,7 @@ namespace TMPro.Examples
             #region Link Selection Handling
             /*
             // Check if Mouse intersects any words and if so assign a random color to that word.
-            int linkIndex = TMP_TextUtilities.FindIntersectingLink(m_TextMeshPro, Input.mousePosition, m_Camera);
+            int linkIndex = TMP_TextUtilities.FindIntersectingLink(m_TextMeshPro, UnityEngine.Input.mousePosition, m_Camera);
             if (linkIndex != -1)
             {
                 TMP_LinkInfo linkInfo = m_TextMeshPro.textInfo.linkInfo[linkIndex];
@@ -421,7 +421,7 @@ namespace TMPro.Examples
                 }
 
                 // Example of how to modify vertex attributes like colors
-                #region Vertex Attributes Modification Example
+                #region Vertex Attribute Modification Example
                 UIVertex[] uiVertices = m_TextMeshPro.textInfo.meshInfo.uiVertices;
 
                 Color32 c = new Color32((byte)Random.Range(0, 255), (byte)Random.Range(0, 255), (byte)Random.Range(0, 255), 255);

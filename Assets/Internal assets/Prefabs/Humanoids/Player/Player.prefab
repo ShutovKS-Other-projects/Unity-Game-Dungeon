@@ -402,6 +402,7 @@ MonoBehaviour:
   damageObjectWeaponTransform: {fileID: 736257618588429709}
   damageObjectNoWeaponTransform: {fileID: 4176141973596014910}
   uiInteractionBare: {fileID: 0}
+  CharacterController: {fileID: 0}
 --- !u!114 &3713910093249011704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -426,7 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dcf17b4b4dfd09f459a37a16948bf318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerData: {fileID: 11400000, guid: da7c922a7022d144db5b364f494c3f61, type: 2}
+  playerData: {fileID: 11400000, guid: da7c922a7022d144db5b364f494c3f61, type: 2}
   interactionData: {fileID: 11400000, guid: 1c7c0fc237be1e941a1f6ddfdff759cd, type: 2}
 --- !u!114 &-6193070094088727074
 MonoBehaviour:

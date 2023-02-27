@@ -9,9 +9,9 @@ namespace Player
         [System.NonSerialized] public PlayerAttribute Parent;
         public Attributes type;
         public ModifiableFloat modifiableFloat;
-        
+
         public float? Value => modifiableFloat.ModifiedValue;
-        
+
         public void SetParent(PlayerAttribute parent)
         {
             Parent = parent;

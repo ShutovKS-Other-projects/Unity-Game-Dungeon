@@ -20,7 +20,8 @@ namespace Inventory
             {
                 var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
-
+                
+                AddEvent(obj, EventTriggerType.PointerClick, delegate { });
                 AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
                 AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
                 AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
@@ -35,9 +36,8 @@ namespace Inventory
 
         protected override void AllSlotsUpdate()
         {
-            for (int i = 0; i < inventory.GetSlots.Length; i++)
+            foreach (var inventorySlot in inventory.GetSlots)
             {
-                var inventorySlot = inventory.GetSlots[i];
                 inventorySlot.UpdateSlot(inventorySlot.item, inventorySlot.amount);
             }
         }

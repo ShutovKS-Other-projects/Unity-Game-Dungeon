@@ -45,7 +45,6 @@ namespace Player.FiniteStateMachine
         public InputManager InputManager { get; private set; }
         public Rigidbody Rb { get; private set; }
         public UIInteractionBare uiInteractionBare;
-        public CharacterController CharacterController;
 
         private CapsuleCollider _collider;
 

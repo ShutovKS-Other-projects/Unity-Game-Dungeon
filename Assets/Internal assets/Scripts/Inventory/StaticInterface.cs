@@ -1,6 +1,8 @@
 using System.Collections.Generic;
+using UnityEditor.EventSystems;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 namespace Inventory
 {
     public class StaticInterface : UserInterface
@@ -16,6 +18,7 @@ namespace Inventory
 
                 AddEvent(obj, EventTriggerType.PointerEnter, delegate { OnEnter(obj); });
                 AddEvent(obj, EventTriggerType.PointerExit, delegate { OnExit(obj); });
+                
                 AddEvent(obj, EventTriggerType.BeginDrag, delegate { OnDragStart(obj); });
                 AddEvent(obj, EventTriggerType.EndDrag, delegate { OnDragEnd(obj); });
                 AddEvent(obj, EventTriggerType.Drag, delegate { OnDrag(obj); });
@@ -27,9 +30,8 @@ namespace Inventory
 
         protected override void AllSlotsUpdate()
         {
-            for (int i = 0; i < slots.Length; i++)
+            foreach (var inventorySlot in inventory.GetSlots)
             {
-                var inventorySlot = inventory.GetSlots[i];
                 inventorySlot.UpdateSlot(inventorySlot.item, inventorySlot.amount);
             }
         }

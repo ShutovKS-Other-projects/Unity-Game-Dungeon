@@ -15,13 +15,7 @@ namespace Item
         
         public List<string> boneNames = new List<string>();
 
-        public Item CreateItem()
-        {
-            var newItem = new Item(this);
-            return newItem;
-        }
-
-        private void OnValidate()
+        void OnValidate()
         {
             boneNames.Clear();
             if (characterDisplay == null)

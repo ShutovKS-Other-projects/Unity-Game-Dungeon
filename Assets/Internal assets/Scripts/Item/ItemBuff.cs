@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Other;
 namespace Item
@@ -6,26 +7,26 @@ namespace Item
     public class ItemBuff : IModifiers
     {
         public Attributes stat;
-        public int value;
-        [SerializeField] private int min; //buff min value roll
-        public int Min => min;
-        [SerializeField] private int max; //buff max value roll
-        public int Max => max;
-        public ItemBuff(int _min, int _max)
+        public float value;
+        [SerializeField] private float min;
+        public float Min => min;
+        [SerializeField] private float max;
+        public float Max => max;
+        public ItemBuff(float min, float max)
         {
-            min = _min;
-            max = _max;
+            this.min = min;
+            this.max = max;
             GenerateField();
         }
 
-        public void AddValue(ref int v)
+        public void AddValue(ref float v)
         {
             v += value;
         }
 
         public void GenerateField()
         {
-            value = UnityEngine.Random.Range(min, max);
+            value = (float)Math.Round(UnityEngine.Random.Range(min, max), 2);
         }
     }
 }

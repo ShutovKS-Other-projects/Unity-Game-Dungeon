@@ -20,7 +20,7 @@ namespace Other
 
         private event Action ValueModified;
         
-        public List<IModifiers> modifiers = new List<IModifiers>();
+        public List<IModifiers> Modifiers = new List<IModifiers>();
 
         public ModifiableFloat(Action method = null)
         {
@@ -41,8 +41,8 @@ namespace Other
 
         public void UpdateModifiedValue()
         {
-            int valueAdd = 0;
-            foreach (var modifier in modifiers)
+            float valueAdd = 0;
+            foreach (var modifier in Modifiers)
             {
                 modifier.AddValue(ref valueAdd);
             }
@@ -52,13 +52,13 @@ namespace Other
 
         public void AddModifier(IModifiers modifier)
         {
-            modifiers.Add(modifier);
+            Modifiers.Add(modifier);
             UpdateModifiedValue();
         }
 
         public void RemoveModifier(IModifiers modifier)
         {
-            modifiers.Remove(modifier);
+            Modifiers.Remove(modifier);
             UpdateModifiedValue();
         }
 

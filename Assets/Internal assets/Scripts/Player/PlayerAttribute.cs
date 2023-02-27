@@ -51,7 +51,7 @@ namespace Player
 
         public static void AttributeModified(Attribute attribute)
         {
-            Debug.Log(string.Concat(attribute.type, " was updated! Value is now ", attribute.modifiableFloat.ModifiedValue));
+            // Debug.Log(string.Concat(attribute.type, " was updated! Value is now ", attribute.modifiableFloat.ModifiedValue));
         }
 
         private void OnRemoveItem(InventorySlot slot)

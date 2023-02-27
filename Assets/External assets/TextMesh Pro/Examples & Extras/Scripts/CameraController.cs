@@ -58,7 +58,7 @@ namespace TMPro.Examples
                 Application.targetFrameRate = -1;
 
             if (Application.platform == RuntimePlatform.IPhonePlayer || Application.platform == RuntimePlatform.Android)
-                UnityEngine.Input.simulateMouseWithTouches = false;
+               UnityEngine.Input.simulateMouseWithTouches = false;
 
             cameraTransform = transform;
             previousSmoothing = MovementSmoothing;
@@ -127,12 +127,12 @@ namespace TMPro.Examples
         {
             moveVector = Vector3.zero;
 
-            // Check Mouse Wheel Input prior to Shift Key so we can apply multiplier on Shift for Scrolling
-            mouseWheel = UnityEngine.Input.GetAxis("Mouse ScrollWheel");
+            // Check Mouse WheelUnityEngine.Input prior to Shift Key so we can apply multiplier on Shift for Scrolling
+            mouseWheel =UnityEngine.Input.GetAxis("Mouse ScrollWheel");
 
-            float touchCount = UnityEngine.Input.touchCount;
+            float touchCount =UnityEngine.Input.touchCount;
 
-            if (UnityEngine.Input.GetKey(KeyCode.LeftShift) || UnityEngine.Input.GetKey(KeyCode.RightShift) || touchCount > 0)
+            if (UnityEngine.Input.GetKey(KeyCode.LeftShift) ||UnityEngine.Input.GetKey(KeyCode.RightShift) || touchCount > 0)
             {
                 mouseWheel *= 10;
 
@@ -149,8 +149,8 @@ namespace TMPro.Examples
                 // Check for right mouse button to change camera follow and elevation angle
                 if (UnityEngine.Input.GetMouseButton(1))
                 {
-                    mouseY = UnityEngine.Input.GetAxis("Mouse Y");
-                    mouseX = UnityEngine.Input.GetAxis("Mouse X");
+                    mouseY =UnityEngine.Input.GetAxis("Mouse Y");
+                    mouseX =UnityEngine.Input.GetAxis("Mouse X");
 
                     if (mouseY > 0.01f || mouseY < -0.01f)
                     {
@@ -169,10 +169,10 @@ namespace TMPro.Examples
                     }
                 }
 
-                // Get Input from Mobile Device
-                if (touchCount == 1 && UnityEngine.Input.GetTouch(0).phase == TouchPhase.Moved)
+                // GetUnityEngine.Input from Mobile Device
+                if (touchCount == 1 &&UnityEngine.Input.GetTouch(0).phase == TouchPhase.Moved)
                 {
-                    Vector2 deltaPosition = UnityEngine.Input.GetTouch(0).deltaPosition;
+                    Vector2 deltaPosition =UnityEngine.Input.GetTouch(0).deltaPosition;
 
                     // Handle elevation changes
                     if (deltaPosition.y > 0.01f || deltaPosition.y < -0.01f)
@@ -242,8 +242,8 @@ namespace TMPro.Examples
                     }
 
 
-                    mouseY = UnityEngine.Input.GetAxis("Mouse Y");
-                    mouseX = UnityEngine.Input.GetAxis("Mouse X");
+                    mouseY =UnityEngine.Input.GetAxis("Mouse Y");
+                    mouseX =UnityEngine.Input.GetAxis("Mouse X");
 
                     moveVector = cameraTransform.TransformDirection(mouseX, mouseY, 0);
 
@@ -256,8 +256,8 @@ namespace TMPro.Examples
             // Check Pinching to Zoom in - out on Mobile device
             if (touchCount == 2)
             {
-                Touch touch1 = UnityEngine.Input.GetTouch(1);
-                Touch touch0 = UnityEngine.Input.GetTouch(0);
+                Touch touch0 =UnityEngine.Input.GetTouch(0);
+                Touch touch1 =UnityEngine.Input.GetTouch(1);
 
                 Vector2 touch0PrevPos = touch0.position - touch0.deltaPosition;
                 Vector2 touch1PrevPos = touch1.position - touch1.deltaPosition;

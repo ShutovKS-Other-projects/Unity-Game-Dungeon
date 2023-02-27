@@ -1,19 +1,26 @@
 using System;
+using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Image = UnityEngine.UI.Image;
 namespace Inventory
 {
     [RequireComponent(typeof(EventTrigger))]
     public abstract class UserInterface : MonoBehaviour
     {
         public GameObject inventoryPrefab;
+        public GameObject panelInfoItemPrefab;
+        public GameObject panelInfoItem;
         public InventoryObject inventory;
-        private InventoryObject _previousInventory;
         protected Dictionary<GameObject, InventorySlot> SlotsOnInterface = new Dictionary<GameObject, InventorySlot>();
+        InventoryObject _previousInventory;
+
+        #region Unity Methods
 
         public void Start()
         {
@@ -27,7 +34,18 @@ namespace Inventory
             AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });
         }
 
-        protected abstract void CreateSlots();
+        public void Update()
+        {
+            if (inventory != _previousInventory)
+            {
+                UpdateInventoryLinks();
+            }
+            _previousInventory = inventory;
+        }
+
+        #endregion
+
+        #region Inventory Methods
 
         private void UpdateInventoryLinks()
         {
@@ -39,9 +57,10 @@ namespace Inventory
             }
         }
 
+        protected abstract void CreateSlots();
         protected abstract void AllSlotsUpdate();
 
-        private void OnSlotUpdate(InventorySlot slot)
+        private static void OnSlotUpdate(InventorySlot slot)
         {
             if (slot.item.id >= 0)
             {
@@ -59,14 +78,9 @@ namespace Inventory
             }
         }
 
-        public void Update()
-        {
-            if (inventory != _previousInventory)
-            {
-                UpdateInventoryLinks();
-            }
-            _previousInventory = inventory;
-        }
+        #endregion
+
+        #region AddEvent
 
         protected static void AddEvent(GameObject obj, EventTriggerType type, UnityAction<BaseEventData> action)
         {
@@ -82,41 +96,26 @@ namespace Inventory
             eventTrigger.callback.AddListener(action);
             trigger.triggers.Add(eventTrigger);
         }
+
+        #endregion
+        
+        #region Events Slot
+
         protected static void OnEnter(GameObject obj)
         {
             MouseData.SlotHoveredOver = obj;
         }
+
         protected static void OnExit(GameObject obj)
         {
             MouseData.SlotHoveredOver = null;
         }
-        private static void OnEnterInterface(GameObject obj)
-        {
-            MouseData.InterfaceMouseIsOver = obj.GetComponent<UserInterface>();
-        }
-        private static void OnExitInterface(GameObject obj)
-        {
-            MouseData.InterfaceMouseIsOver = null;
-        }
+
         protected void OnDragStart(GameObject obj)
         {
             MouseData.TempItemBeingDragged = CreateTempItem(obj);
         }
-        private GameObject CreateTempItem(GameObject obj)
-        {
-            if (SlotsOnInterface[obj].item.id < 0)
-                return null;
 
-            GameObject tempItem = null;
-            tempItem = new GameObject();
-            var rt = tempItem.AddComponent<RectTransform>();
-            rt.sizeDelta = new Vector2(30, 30);
-            tempItem.transform.SetParent(transform.parent.parent);
-            var img = tempItem.AddComponent<Image>();
-            img.sprite = SlotsOnInterface[obj].ItemObject.uiDisplay;
-            img.raycastTarget = false;
-            return tempItem;
-        }
         protected void OnDragEnd(GameObject obj)
         {
             Destroy(MouseData.TempItemBeingDragged);
@@ -132,6 +131,7 @@ namespace Inventory
                 InventoryObject.SwapItems(SlotsOnInterface[obj], mouseHoverSlotData);
             }
         }
+
         protected static void OnDrag(GameObject obj)
         {
             if (MouseData.TempItemBeingDragged != null)
@@ -139,5 +139,60 @@ namespace Inventory
                 MouseData.TempItemBeingDragged.GetComponent<RectTransform>().position = UnityEngine.Input.mousePosition;
             }
         }
+
+        #endregion
+
+        #region Events Interface
+
+        static void OnEnterInterface(GameObject obj)
+        {
+            MouseData.InterfaceMouseIsOver = obj.GetComponent<UserInterface>();
+        }
+        static void OnExitInterface(GameObject obj)
+        {
+            MouseData.InterfaceMouseIsOver = null;
+        }
+
+        #endregion
+
+        #region Other Methods
+
+        GameObject CreateTempItem(GameObject obj)
+        {
+            if (SlotsOnInterface[obj].item.id < 0)
+                return null;
+
+            GameObject tempItem = null;
+            tempItem = new GameObject();
+            var rt = tempItem.AddComponent<RectTransform>();
+            rt.sizeDelta = new Vector2(30, 30);
+            tempItem.transform.SetParent(transform.parent.parent);
+            var img = tempItem.AddComponent<Image>();
+            img.sprite = SlotsOnInterface[obj].ItemObject.uiDisplay;
+            img.raycastTarget = false;
+            return tempItem;
+        }
+
+        #endregion
+        /*
+            Pointer Enter	- Указатель Введите     |   Обработчик ввода указателя при вводе указателя.         
+            Pointer Exit	- Указатель Выход       |   Обработчик выхода указателя при выходе указателя.
+            Pointer Down	- Указатель вниз        |   Обработчик указателя вниз при указателе вниз.
+            Pointer Up		- Указатель вверх       |   Обработчик указателя вверх при указателе вверх.
+            Pointer Click	- Указатель Нажмите     |   Обработчик щелчка указателя при щелчке указателя.
+            Drag			- Перетащите            |   Обработчик перетаскивания при перетаскивании
+            Drop			- падение               |   Обработчик сброса при сбросе
+            Scroll			- Прокрутите            |   Обработчик прокрутки при прокрутке.
+            Update Selected	- Обновить выбранное    |   Обновить выбранный обработчик при обновлении выбранного.
+            Select			- выбрать               |   Выберите обработчик при выборе
+            Deselect		- выбрать               |   Обработчик отмены выбора при отмене выбора.
+            Move			- двигаться             |   Обработчик перемещения при перемещении
+            Initialize Potential Drag           	|   Инициализировать потенциальное перетаскивание.
+            Begin Drag		- Начать перетаскивание |   Обработчик перетаскивания при перетаскивании.
+            End Drag		- Конец перетаскивания  |   Обработчик перетаскивания при перетаскивании.
+            Submit			- представить           |   Выберите обработчик при выборе.
+            Cancel			- Отмена                |   Обработчик прокрутки при прокрутке.
+         */
+
     }
 }
