@@ -1,9 +1,8 @@
 using Input;
-using UI.Menu;
 using UI.PlayerInfo;
-using Unity.VisualScripting;
 using UnityEngine;
-namespace UIGame
+
+namespace UI
 {
     public class UIController : MonoBehaviour
     {

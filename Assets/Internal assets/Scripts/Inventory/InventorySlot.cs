@@ -17,18 +17,9 @@ namespace Inventory
         public Item.Item item = new Item.Item();
         public int amount;
         
-        public ItemObject GetItemObject()
-        {
-            return item.id >= 0 ? Parent.inventory.database.ItemObjects[item.id] : null;
-        }
-        
-        public ItemObject ItemObject
-        {
-            get
-            {
-                return item.id >= 0 ? Parent.inventory.database.ItemObjects[item.id] : null;
-            }
-        }
+        public ItemObject GetItemObject() => item.id >= 0 ? Parent.inventory.database.ItemObjects[item.id] : null;
+
+        public ItemObject ItemObject => item.id >= 0 ? Parent.inventory.database.ItemObjects[item.id] : null;
         public InventorySlot() => UpdateSlot(new Item.Item(), 0);
         public InventorySlot(Item.Item item, int amount) => UpdateSlot(item, amount);
         public void RemoveItem() => UpdateSlot(new Item.Item(), 0);

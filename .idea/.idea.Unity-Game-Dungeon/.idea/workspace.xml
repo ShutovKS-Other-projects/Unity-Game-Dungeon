@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LabirintVR/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LabirintVR/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LabirintVR/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.LabirintVR/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon.dir/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon.dir/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon.dir/.idea/indexLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon.dir/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/External assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/External assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonGridFlow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonGridFlow.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonTheme.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonTheme.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Boots 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Boots 0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Boots 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Boots 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Chest 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Chest 0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Chest 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Chest 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Gloves 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Gloves 0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Gloves 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Gloves 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Healm 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Healm 0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Healm 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Healm 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Pants 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Pants 0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Pants 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Pants 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/DynamicInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/DynamicInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/InventorySlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/StaticInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/StaticInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/UserInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectId" id="2MNkZErsfffpSEmRHhvWcYyFKfo" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.C#&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\Кирилл\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\Кирилл\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\Кирилл\\AppData\\Local\\Symbols\\src&quot;
+    ]
+  }
+}</component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="open" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="D:\Programs\Unity\InstallsLocation\2022.2.8f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath D:\Work\Unity\Unity-Game-Dungeon -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\Work\Unity\Unity-Game-Dungeon" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="D:\Programs\Unity\InstallsLocation\2022.2.8f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Work\Unity\Unity-Game-Dungeon -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\Work\Unity\Unity-Game-Dungeon" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="D:\Programs\Unity\InstallsLocation\2022.2.8f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Work\Unity\Unity-Game-Dungeon -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="D:\Work\Unity\Unity-Game-Dungeon" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="" />
+      <created>1677615506530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677615506530</updated>
+      <workItem from="1677615523244" duration="908000" />
+      <workItem from="1677616533384" duration="225000" />
+      <workItem from="1677617551794" duration="733000" />
+      <workItem from="1677670236202" duration="3494000" />
+      <workItem from="1677762540141" duration="4628000" />
+    </task>
+    <servers />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>

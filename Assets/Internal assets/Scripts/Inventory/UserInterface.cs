@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
+
 namespace Inventory
 {
     [RequireComponent(typeof(EventTrigger))]
@@ -15,10 +17,10 @@ namespace Inventory
     {
         public GameObject inventoryPrefab;
         public GameObject panelInfoItemPrefab;
-        public GameObject panelInfoItem;
+        [NonSerialized] public GameObject panelInfoItem;
         public InventoryObject inventory;
         protected Dictionary<GameObject, InventorySlot> SlotsOnInterface = new Dictionary<GameObject, InventorySlot>();
-        InventoryObject _previousInventory;
+        private InventoryObject _previousInventory;
 
         #region Unity Methods
 
@@ -30,6 +32,7 @@ namespace Inventory
                 inventorySlot.Parent = this;
                 inventorySlot.OnAfterUpdated += OnSlotUpdate;
             }
+
             AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
             AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });
         }
@@ -40,6 +43,7 @@ namespace Inventory
             {
                 UpdateInventoryLinks();
             }
+
             _previousInventory = inventory;
         }
 
@@ -49,7 +53,7 @@ namespace Inventory
 
         private void UpdateInventoryLinks()
         {
-            int i = 0;
+            var i = 0;
             foreach (var key in SlotsOnInterface.Keys.ToList())
             {
                 SlotsOnInterface[key] = inventory.GetSlots[i];
@@ -58,7 +62,16 @@ namespace Inventory
         }
 
         protected abstract void CreateSlots();
-        protected abstract void AllSlotsUpdate();
+
+        public void AllSlotsInInventoryUpdate() => AllSlotsUpdate();
+
+        private void AllSlotsUpdate()
+        {
+            foreach (var inventorySlot in inventory.GetSlots)
+            {
+                inventorySlot.UpdateSlot(inventorySlot.item, inventorySlot.amount);
+            }
+        }
 
         private static void OnSlotUpdate(InventorySlot slot)
         {
@@ -67,7 +80,8 @@ namespace Inventory
                 slot.SlotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = slot.ItemObject.uiDisplay;
                 slot.SlotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
                 slot.SlotDisplay.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 0);
-                slot.SlotDisplay.transform.GetChild(2).GetComponent<Text>().text = slot.amount == 1 ? "" : slot.amount.ToString("n0");
+                slot.SlotDisplay.transform.GetChild(2).GetComponent<Text>().text =
+                    slot.amount == 1 ? "" : slot.amount.ToString("n0");
             }
             else
             {
@@ -90,7 +104,9 @@ namespace Inventory
                 Debug.LogWarning("No EventTrigger component found!");
                 return;
             }
-            var eventTrigger = new EventTrigger.Entry {
+
+            var eventTrigger = new EventTrigger.Entry
+            {
                 eventID = type
             };
             eventTrigger.callback.AddListener(action);
@@ -98,7 +114,7 @@ namespace Inventory
         }
 
         #endregion
-        
+
         #region Events Slot
 
         protected static void OnEnter(GameObject obj)
@@ -125,6 +141,7 @@ namespace Inventory
                 SlotsOnInterface[obj].RemoveItem();
                 return;
             }
+
             if (MouseData.SlotHoveredOver)
             {
                 var mouseHoverSlotData = MouseData.InterfaceMouseIsOver.SlotsOnInterface[MouseData.SlotHoveredOver];
@@ -140,6 +157,29 @@ namespace Inventory
             }
         }
 
+        protected void PopupPanelItemInformation(GameObject obj)
+        {
+            if (SlotsOnInterface[obj].amount == 0)
+                return;
+
+            panelInfoItem = Instantiate(panelInfoItemPrefab, obj.transform.parent);
+            panelInfoItem.transform.position = obj.transform.position + OffsetPositionPanelInfoItem();
+
+            var buffsList = "";
+            foreach (var buff in SlotsOnInterface[obj].item.buffs)
+            {
+                if (buff.value != 0)
+                    buffsList += $"{buff.stat}: {buff.value} \n";
+            }
+
+            panelInfoItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = buffsList;
+        }
+
+        protected void HiddenPanelItemInformation(GameObject obj)
+        {
+            Destroy(panelInfoItem);
+        }
+
         #endregion
 
         #region Events Interface
@@ -148,6 +188,7 @@ namespace Inventory
         {
             MouseData.InterfaceMouseIsOver = obj.GetComponent<UserInterface>();
         }
+
         static void OnExitInterface(GameObject obj)
         {
             MouseData.InterfaceMouseIsOver = null;
@@ -156,6 +197,8 @@ namespace Inventory
         #endregion
 
         #region Other Methods
+
+        protected abstract Vector3 OffsetPositionPanelInfoItem();
 
         GameObject CreateTempItem(GameObject obj)
         {
@@ -174,6 +217,7 @@ namespace Inventory
         }
 
         #endregion
+
         /*
             Pointer Enter	- Указатель Введите     |   Обработчик ввода указателя при вводе указателя.         
             Pointer Exit	- Указатель Выход       |   Обработчик выхода указателя при выходе указателя.
@@ -193,6 +237,5 @@ namespace Inventory
             Submit			- представить           |   Выберите обработчик при выборе.
             Cancel			- Отмена                |   Обработчик прокрутки при прокрутке.
          */
-
     }
 }
