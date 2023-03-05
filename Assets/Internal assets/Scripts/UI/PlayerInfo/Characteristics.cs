@@ -8,12 +8,12 @@ namespace UI.PlayerInfo
     {
         private PlayerStatistic _playerStatistic;
         
-        TextMeshProUGUI _healthText;
-        TextMeshProUGUI _manaText;
-        TextMeshProUGUI _staminaText;
-        TextMeshProUGUI _strengthText;
-        TextMeshProUGUI _armorText;
-        TextMeshProUGUI _agilityText;
+        private TextMeshProUGUI _healthText;
+        private TextMeshProUGUI _manaText;
+        private TextMeshProUGUI _staminaText;
+        private TextMeshProUGUI _strengthText;
+        private TextMeshProUGUI _armorText;
+        private TextMeshProUGUI _agilityText;
 
         private void OnEnable()
         {
@@ -42,12 +42,12 @@ namespace UI.PlayerInfo
             UpdateTextAgility($"Ловкость: {_playerStatistic.Agility}");
         }
 
-        void UpdateTextHealth(string text) => _healthText.text = text;
-        void UpdateTextMana(string text) => _manaText.text = text;
-        void UpdateTextStamina(string text) => _staminaText.text = text;
-        void UpdateTextDamage(string text) => _strengthText.text = text;
-        void UpdateTextArmor(string text) => _armorText.text = text;
-        void UpdateTextAgility(string text) => _agilityText.text = text;
+        private void UpdateTextHealth(string text) => _healthText.text = text;
+        private void UpdateTextMana(string text) => _manaText.text = text;
+        private void UpdateTextStamina(string text) => _staminaText.text = text;
+        private void UpdateTextDamage(string text) => _strengthText.text = text;
+        private void UpdateTextArmor(string text) => _armorText.text = text;
+        private void UpdateTextAgility(string text) => _agilityText.text = text;
 
     }
 }

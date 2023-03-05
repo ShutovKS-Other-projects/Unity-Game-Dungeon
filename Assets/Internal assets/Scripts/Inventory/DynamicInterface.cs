@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Item;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
@@ -7,7 +8,7 @@ namespace Inventory
 {
     public class DynamicInterface : UserInterface
     {
-        [SerializeField] private GameObject panelInventory;
+        [SerializeField] private Transform panelInventory;
         private const int X_START = -105;
         private const int Y_START = 75;
         private const int X_SPACE_BETWEEN_ITEM = 30;
@@ -19,7 +20,7 @@ namespace Inventory
             SlotsOnInterface = new Dictionary<GameObject, InventorySlot>();
             for (var i = 0; i < inventory.GetSlots.Length; i++)
             {
-                var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, transform);
+                var obj = Instantiate(inventoryPrefab, Vector3.zero, Quaternion.identity, panelInventory);
                 obj.GetComponent<RectTransform>().localPosition = GetPosition(i);
 
                 AddEvent(obj, EventTriggerType.PointerClick, delegate { });
@@ -38,12 +39,11 @@ namespace Inventory
                 SlotsOnInterface.Add(obj, inventory.GetSlots[i]);
             }
         }
-        
+
         protected override Vector3 OffsetPositionPanelInfoItem()
         {
             return new Vector3(48f, 0f);
         }
-
 
         private static Vector3 GetPosition(int i)
         {

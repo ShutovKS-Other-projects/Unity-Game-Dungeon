@@ -1,25 +1,25 @@
 ﻿using System;
 using UnityEngine;
 using Item;
+
 namespace Inventory
 {
     [System.Serializable]
     public class InventorySlot
     {
         public ItemType[] allowedItems = Array.Empty<ItemType>();
-        
+
         [NonSerialized] public UserInterface Parent;
         [NonSerialized] public GameObject SlotDisplay;
 
         [NonSerialized] public Action<InventorySlot> OnAfterUpdated;
         [NonSerialized] public Action<InventorySlot> OnBeforeUpdated;
-        
-        public Item.Item item = new Item.Item();
-        public int amount;
-        
-        public ItemObject GetItemObject() => item.id >= 0 ? Parent.inventory.database.ItemObjects[item.id] : null;
 
-        public ItemObject ItemObject => item.id >= 0 ? Parent.inventory.database.ItemObjects[item.id] : null;
+        public Item.Item item = new();
+        public int amount;
+
+        public ItemObject GetItemObject() => item.id >= 0 ? Parent.inventory.database.itemObjects[item.id] : null;
+
         public InventorySlot() => UpdateSlot(new Item.Item(), 0);
         public InventorySlot(Item.Item item, int amount) => UpdateSlot(item, amount);
         public void RemoveItem() => UpdateSlot(new Item.Item(), 0);
@@ -33,6 +33,12 @@ namespace Inventory
             OnAfterUpdated?.Invoke(this);
         }
         
+        public void UpdateSlot()
+        {
+            OnBeforeUpdated?.Invoke(this);
+            OnAfterUpdated?.Invoke(this);
+        }
+
         public bool CanPlaceInSlot(ItemObject itemObject)
         {
             if (allowedItems.Length <= 0 || itemObject == null || itemObject.data.id < 0)

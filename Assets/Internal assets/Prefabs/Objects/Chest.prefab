@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8000545821348749417}
+  - component: {fileID: 6672743822943017826}
+  - component: {fileID: 3026638447368352371}
+  - component: {fileID: 7025079913491200039}
   m_Layer: 0
   m_Name: Chest
   m_TagString: Untagged
@@ -30,8 +33,66 @@ Transform:
   m_Children:
   - {fileID: 3765108858519842877}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6672743822943017826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906639035202629773}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.8, y: 0.8, z: 0.8}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3026638447368352371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906639035202629773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c237f5ee889a494ebce2887e1f632c2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holdDuration: 0
+  holdInteract: 0
+  multipleUse: 0
+  isInteractable: 1
+  tooltipText: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 F \u0447\u0442\u043E\u0431\u044B
+    \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u0441\u0443\u043D\u0434\u0443\u043A"
+--- !u!114 &7025079913491200039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906639035202629773}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9306666159b4c6d8da357e16be3bd6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generated: 0
+  open: 0
+  itemsInChest: []
+  generatedItems: []
+  chestData: {fileID: 11400000, guid: f222bca6a548ded42a40f01ac0bfe9c7, type: 2}
+  chestUi: {fileID: 0}
+  itemDatabase: {fileID: 11400000, guid: 68ca834d6dbb39241aeb9aae5452adfb, type: 2}
 --- !u!1 &4542876529619643015
 GameObject:
   m_ObjectHideFlags: 0

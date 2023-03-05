@@ -17,21 +17,21 @@ namespace Inventory
     {
         public GameObject inventoryPrefab;
         public GameObject panelInfoItemPrefab;
-        [NonSerialized] public GameObject panelInfoItem;
+        [NonSerialized] public GameObject PanelInfoItem;
         public InventoryObject inventory;
-        protected Dictionary<GameObject, InventorySlot> SlotsOnInterface = new Dictionary<GameObject, InventorySlot>();
+        public Dictionary<GameObject, InventorySlot> SlotsOnInterface = new();
         private InventoryObject _previousInventory;
 
         #region Unity Methods
 
         public void Start()
         {
-            CreateSlots();
             foreach (var inventorySlot in inventory.GetSlots)
             {
                 inventorySlot.Parent = this;
                 inventorySlot.OnAfterUpdated += OnSlotUpdate;
             }
+            CreateSlots();
 
             AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
             AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });
@@ -48,36 +48,28 @@ namespace Inventory
         }
 
         #endregion
-
+        public void AllSlotsUpdate()
+        {
+            CreateSlots();
+        }
         #region Inventory Methods
 
         private void UpdateInventoryLinks()
         {
-            var i = 0;
-            foreach (var key in SlotsOnInterface.Keys.ToList())
+            for (var i = 0; i < SlotsOnInterface.Keys.ToList().Count; i++)
             {
+                var key = SlotsOnInterface.Keys.ToList()[i];
                 SlotsOnInterface[key] = inventory.GetSlots[i];
-                i++;
             }
         }
 
         protected abstract void CreateSlots();
 
-        public void AllSlotsInInventoryUpdate() => AllSlotsUpdate();
-
-        private void AllSlotsUpdate()
-        {
-            foreach (var inventorySlot in inventory.GetSlots)
-            {
-                inventorySlot.UpdateSlot(inventorySlot.item, inventorySlot.amount);
-            }
-        }
-
         private static void OnSlotUpdate(InventorySlot slot)
         {
             if (slot.item.id >= 0)
             {
-                slot.SlotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = slot.ItemObject.uiDisplay;
+                slot.SlotDisplay.transform.GetChild(0).GetComponent<Image>().sprite = slot.GetItemObject().uiDisplay;
                 slot.SlotDisplay.transform.GetChild(0).GetComponent<Image>().color = new Color(1, 1, 1, 1);
                 slot.SlotDisplay.transform.GetChild(1).GetComponent<Image>().color = new Color(1, 1, 1, 0);
                 slot.SlotDisplay.transform.GetChild(2).GetComponent<Text>().text =
@@ -162,8 +154,8 @@ namespace Inventory
             if (SlotsOnInterface[obj].amount == 0)
                 return;
 
-            panelInfoItem = Instantiate(panelInfoItemPrefab, obj.transform.parent);
-            panelInfoItem.transform.position = obj.transform.position + OffsetPositionPanelInfoItem();
+            PanelInfoItem = Instantiate(panelInfoItemPrefab, obj.transform.parent);
+            PanelInfoItem.transform.position = obj.transform.position + OffsetPositionPanelInfoItem();
 
             var buffsList = "";
             foreach (var buff in SlotsOnInterface[obj].item.buffs)
@@ -172,12 +164,12 @@ namespace Inventory
                     buffsList += $"{buff.stat}: {buff.value} \n";
             }
 
-            panelInfoItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = buffsList;
+            PanelInfoItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = buffsList;
         }
 
         protected void HiddenPanelItemInformation(GameObject obj)
         {
-            Destroy(panelInfoItem);
+            Destroy(PanelInfoItem);
         }
 
         #endregion
@@ -200,7 +192,7 @@ namespace Inventory
 
         protected abstract Vector3 OffsetPositionPanelInfoItem();
 
-        GameObject CreateTempItem(GameObject obj)
+        private GameObject CreateTempItem(GameObject obj)
         {
             if (SlotsOnInterface[obj].item.id < 0)
                 return null;
@@ -211,31 +203,11 @@ namespace Inventory
             rt.sizeDelta = new Vector2(30, 30);
             tempItem.transform.SetParent(transform.parent.parent);
             var img = tempItem.AddComponent<Image>();
-            img.sprite = SlotsOnInterface[obj].ItemObject.uiDisplay;
+            img.sprite = SlotsOnInterface[obj].GetItemObject().uiDisplay;
             img.raycastTarget = false;
             return tempItem;
         }
 
         #endregion
-
-        /*
-            Pointer Enter	- Указатель Введите     |   Обработчик ввода указателя при вводе указателя.         
-            Pointer Exit	- Указатель Выход       |   Обработчик выхода указателя при выходе указателя.
-            Pointer Down	- Указатель вниз        |   Обработчик указателя вниз при указателе вниз.
-            Pointer Up		- Указатель вверх       |   Обработчик указателя вверх при указателе вверх.
-            Pointer Click	- Указатель Нажмите     |   Обработчик щелчка указателя при щелчке указателя.
-            Drag			- Перетащите            |   Обработчик перетаскивания при перетаскивании
-            Drop			- падение               |   Обработчик сброса при сбросе
-            Scroll			- Прокрутите            |   Обработчик прокрутки при прокрутке.
-            Update Selected	- Обновить выбранное    |   Обновить выбранный обработчик при обновлении выбранного.
-            Select			- выбрать               |   Выберите обработчик при выборе
-            Deselect		- выбрать               |   Обработчик отмены выбора при отмене выбора.
-            Move			- двигаться             |   Обработчик перемещения при перемещении
-            Initialize Potential Drag           	|   Инициализировать потенциальное перетаскивание.
-            Begin Drag		- Начать перетаскивание |   Обработчик перетаскивания при перетаскивании.
-            End Drag		- Конец перетаскивания  |   Обработчик перетаскивания при перетаскивании.
-            Submit			- представить           |   Выберите обработчик при выборе.
-            Cancel			- Отмена                |   Обработчик прокрутки при прокрутке.
-         */
     }
 }

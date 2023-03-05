@@ -2,42 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LabirintVR/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LabirintVR/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LabirintVR/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.LabirintVR/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon.dir/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon.dir/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon.dir/.idea/indexLayout.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon.dir/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/External assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/External assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/UI/ChestUI.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/UI/ChestUI.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/Inventorys/Chest.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/Inventorys/Chest.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Chest.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Chest/Chest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Chest/Chest.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableChest.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableChest.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Database/Items Data.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Database/Items Data.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonGridFlow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonGridFlow.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonTheme.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonTheme.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Boots 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Boots 0.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Boots 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Boots 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Chest 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Chest 0.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Chest 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Chest 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 0.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 2.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Food 3.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Gloves 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Gloves 0.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Gloves 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Gloves 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Healm 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Healm 0.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Healm 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Healm 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Pants 0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Pants 0.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Pants 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/Pants 1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Menu.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Objects/Chest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Objects/Chest.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableDeadEnemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableDeadEnemy.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/DynamicInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/DynamicInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/Inventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/Inventory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/InventoryObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/InventoryObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/InventorySlot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/StaticInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/StaticInterface.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/UserInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Item/ItemDatabaseObjects.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Item/ItemDatabaseObjects.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Item/ItemObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Item/ItemObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/PlayerInfo/Characteristics.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/PlayerInfo/Characteristics.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/UIController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/testButton.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/testButton.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Sprites/Classic_RPG_GUI/Parts/lil_bar.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Sprites/Classic_RPG_GUI/Parts/lil_bar.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +40,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d303c2bf72cd4cec95665b89c457d265d2b8ef3ed6da17cd4f85587c2f9de7/System.Linq.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Chest/Chest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableDeadEnemy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableItem.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -63,7 +63,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.C#&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.splitter.proportion&quot;: &quot;0.1523046&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;rider.external.source.directories&quot;: [
@@ -78,9 +79,9 @@
       <command value="open" />
     </option>
   </component>
-  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Programs\Unity\InstallsLocation\2022.2.8f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Programs\Unity\InstallsLocation\2022.2.9f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\Work\Unity\Unity-Game-Dungeon -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Work\Unity\Unity-Game-Dungeon" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -96,7 +97,7 @@
       <method v="2" />
     </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Programs\Unity\InstallsLocation\2022.2.8f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Programs\Unity\InstallsLocation\2022.2.9f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Work\Unity\Unity-Game-Dungeon -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Work\Unity\Unity-Game-Dungeon" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -137,6 +138,23 @@
       <workItem from="1677617551794" duration="733000" />
       <workItem from="1677670236202" duration="3494000" />
       <workItem from="1677762540141" duration="4628000" />
+      <workItem from="1677785038246" duration="446000" />
+      <workItem from="1677785512847" duration="2934000" />
+      <workItem from="1677827390119" duration="928000" />
+      <workItem from="1677853338092" duration="1487000" />
+      <workItem from="1677873583767" duration="559000" />
+      <workItem from="1677874178516" duration="309000" />
+      <workItem from="1677874562911" duration="3457000" />
+      <workItem from="1677912471249" duration="4095000" />
+      <workItem from="1677919757436" duration="884000" />
+      <workItem from="1677936816884" duration="2667000" />
+      <workItem from="1677941532663" duration="11429000" />
+      <workItem from="1677956962205" duration="3624000" />
+      <workItem from="1677960647544" duration="2845000" />
+      <workItem from="1677996060341" duration="68000" />
+      <workItem from="1677996361924" duration="6815000" />
+      <workItem from="1678009079147" duration="1036000" />
+      <workItem from="1678020686151" duration="8571000" />
     </task>
     <servers />
   </component>

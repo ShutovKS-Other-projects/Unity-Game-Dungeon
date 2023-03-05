@@ -11,11 +11,11 @@ namespace Item
         public bool stackable;
         public ItemType type;
         [TextArea(15, 20)] public string description;
-        public Item data = new Item();
+        public Item data = new();
         
-        public List<string> boneNames = new List<string>();
+        public List<string> boneNames = new();
 
-        void OnValidate()
+        private void OnValidate()
         {
             boneNames.Clear();
             if (characterDisplay == null)

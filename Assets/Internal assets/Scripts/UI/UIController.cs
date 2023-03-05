@@ -1,22 +1,31 @@
+using System;
 using Input;
-using UI.PlayerInfo;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace UI
 {
     public class UIController : MonoBehaviour
     {
-        InputManager _inputManager;
+        private InputManager _inputManager;
 
-        GameObject _uiPanelGame;
-        GameObject _uiPanelMenu;
-        GameObject _uiPanelPlayerInfo;
+        private GameObject _uiPanelGame;
+        private GameObject _uiPanelMenu;
+        private GameObject _uiPanelPlayerInfo;
 
-        UI.Game.Statistic _statisticScript;
-        UI.Menu.Menu _menuScript;
-        Characteristics _characteristicsScript;
+        private Game.Statistic _statisticScript;
+        private Menu.Menu _menuScript;
+        private PlayerInfo.Characteristics _characteristicsScript;
 
-        void Start()
+        private void Awake()
+        {
+            InputGame += OnGame;
+            InputMenu += OnMenu;
+            InputPlayerInfo += OnPlayerInfo;
+        }
+
+        private void Start()
         {
             _inputManager = InputManager.Instance;
 
@@ -24,41 +33,50 @@ namespace UI
             _uiPanelMenu = transform.Find("UIPanelMenu").gameObject;
             _uiPanelPlayerInfo = transform.Find("UIPanelPlayerInfo").gameObject;
 
-            _statisticScript = _uiPanelGame.GetComponent<UI.Game.Statistic>();
-            _menuScript = _uiPanelMenu.GetComponent<UI.Menu.Menu>();
-            _characteristicsScript = _uiPanelPlayerInfo.GetComponent<Characteristics>();
+            _statisticScript = _uiPanelGame.GetComponent<Game.Statistic>();
+            _menuScript = _uiPanelMenu.GetComponent<Menu.Menu>();
+            _characteristicsScript = _uiPanelPlayerInfo.GetComponent<PlayerInfo.Characteristics>();
 
-            OnGame();
+            InputGame!();
         }
 
-        void Update()
+        private void Update()
         {
-            if (_inputManager.GetAllMenuInput())
-            {
-                if (_uiPanelMenu.activeSelf)
-                {
-                    OnGame();
-                }
-                else
-                {
-                    OnMenu();
-                }
-            }
+            // if (_inputManager.GetAllMenuInput())
+            // {
+            // if (_uiPanelMenu.activeSelf)
+            // {
+            // EnableGame!();
+            // }
+            // else
+            // {
+            // EnableMenu!();
+            // }
+            // }
 
             if (_inputManager.GetAllPlayerInfoInput())
             {
                 if (_uiPanelPlayerInfo.activeSelf)
                 {
-                    OnGame();
+                    InputGame!();
                 }
                 else
                 {
-                    OnPlayerInfo();
+                    InputPlayerInfo!();
                 }
             }
         }
 
-        void OnGame()
+        public delegate void InputPanel();
+
+        [CanBeNull] public event InputPanel InputGame;
+        [CanBeNull] public event InputPanel InputMenu;
+        [CanBeNull] public event InputPanel InputPlayerInfo;
+
+
+        #region Metode
+
+        private void OnGame()
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
@@ -68,7 +86,7 @@ namespace UI
             _uiPanelPlayerInfo.SetActive(false);
         }
 
-        public void OnMenu()
+        private void OnMenu()
         {
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -87,5 +105,7 @@ namespace UI
             _uiPanelMenu.SetActive(false);
             _uiPanelPlayerInfo.SetActive(true);
         }
+
+        #endregion
     }
 }

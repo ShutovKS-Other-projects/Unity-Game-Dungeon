@@ -4,11 +4,11 @@ using Item;
 
 namespace Inventory
 {
-    [System.Serializable]
+    [Serializable]
     public class Inventory
     {
         public InventorySlot[] slots;
-        
+
         public void Clear()
         {
             foreach (var inventorySlot in slots)
@@ -18,14 +18,9 @@ namespace Inventory
             }
         }
 
-        public bool ContainsItem(ItemObject itemObject)
-        {
-            return Array.Find(slots, i => i.item.id == itemObject.data.id) != null;
-        }
+        public bool ContainsItem(ItemObject itemObject) =>
+            Array.Find(slots, inventorySlot => inventorySlot.item.id == itemObject.data.id) != null;
 
-        public bool ContainsItem(int id)
-        {
-            return slots.FirstOrDefault(i => i.item.id == id) != null;
-        }
+        public bool ContainsItem(int id) => slots.FirstOrDefault(inventorySlot => inventorySlot.item.id == id) != null;
     }
 }
