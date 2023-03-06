@@ -2,13 +2,16 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Collections.Generic;
+using Item;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
+using Random = UnityEngine.Random;
 
 namespace Inventory
 {
@@ -17,10 +20,11 @@ namespace Inventory
     {
         public GameObject inventoryPrefab;
         public GameObject panelInfoItemPrefab;
-        [NonSerialized] public GameObject PanelInfoItem;
-        public InventoryObject inventory;
         public Dictionary<GameObject, InventorySlot> SlotsOnInterface = new();
+        public InventoryObject inventory;
+        private GameObject _panelInfoItem;
         private InventoryObject _previousInventory;
+        [SerializeField] private GameObject itemPrefab;
 
         #region Unity Methods
 
@@ -31,6 +35,7 @@ namespace Inventory
                 inventorySlot.Parent = this;
                 inventorySlot.OnAfterUpdated += OnSlotUpdate;
             }
+
             CreateSlots();
 
             AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
@@ -48,10 +53,12 @@ namespace Inventory
         }
 
         #endregion
+
         public void AllSlotsUpdate()
         {
             CreateSlots();
         }
+
         #region Inventory Methods
 
         private void UpdateInventoryLinks()
@@ -130,6 +137,7 @@ namespace Inventory
 
             if (MouseData.InterfaceMouseIsOver == null)
             {
+                DropItem(SlotsOnInterface[obj]);
                 SlotsOnInterface[obj].RemoveItem();
                 return;
             }
@@ -139,6 +147,33 @@ namespace Inventory
                 var mouseHoverSlotData = MouseData.InterfaceMouseIsOver.SlotsOnInterface[MouseData.SlotHoveredOver];
                 InventoryObject.SwapItems(SlotsOnInterface[obj], mouseHoverSlotData);
             }
+        }
+
+        private void DropItem(InventorySlot slot)
+        {
+            var item = slot.item;
+
+            if (item.id < 0) return;
+
+            GameObject itemDrop;
+            if (slot.GetItemObject().characterDisplay == null)
+            {
+                itemDrop = Instantiate(itemPrefab);
+                itemDrop.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = slot.GetItemObject().uiDisplay;
+            }
+            else
+            {
+                itemDrop = Instantiate(slot.GetItemObject().characterDisplay);
+            }
+
+            itemDrop.layer = LayerMask.NameToLayer("Interactable");
+            itemDrop.AddComponent<Rigidbody>();
+            itemDrop.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+            itemDrop.GetComponent<Rigidbody>().constraints =
+                RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
+            itemDrop.transform.position =
+                GameObject.FindWithTag("Player").transform.position + new Vector3(Random.Range(-1,2), 0, Random.Range(-1,2))*Random.Range(1f,2f) + new Vector3(0.75f,1.5f,0);
+            itemDrop.GetComponent<GroundItem>().item = slot.GetItemObject();
         }
 
         protected static void OnDrag(GameObject obj)
@@ -154,8 +189,8 @@ namespace Inventory
             if (SlotsOnInterface[obj].amount == 0)
                 return;
 
-            PanelInfoItem = Instantiate(panelInfoItemPrefab, obj.transform.parent);
-            PanelInfoItem.transform.position = obj.transform.position + OffsetPositionPanelInfoItem();
+            _panelInfoItem = Instantiate(panelInfoItemPrefab, obj.transform.parent);
+            _panelInfoItem.transform.position = obj.transform.position + OffsetPositionPanelInfoItem();
 
             var buffsList = "";
             foreach (var buff in SlotsOnInterface[obj].item.buffs)
@@ -164,12 +199,12 @@ namespace Inventory
                     buffsList += $"{buff.stat}: {buff.value} \n";
             }
 
-            PanelInfoItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = buffsList;
+            _panelInfoItem.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = buffsList;
         }
 
         protected void HiddenPanelItemInformation(GameObject obj)
         {
-            Destroy(PanelInfoItem);
+            Destroy(_panelInfoItem);
         }
 
         #endregion

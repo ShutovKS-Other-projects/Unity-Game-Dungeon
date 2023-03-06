@@ -22,8 +22,9 @@ namespace Inventory
 
         public InventorySlot() => UpdateSlot(new Item.Item(), 0);
         public InventorySlot(Item.Item item, int amount) => UpdateSlot(item, amount);
-        public void RemoveItem() => UpdateSlot(new Item.Item(), 0);
+        
         public void AddAmount(int value) => UpdateSlot(item, amount += value);
+        public void RemoveItem() => UpdateSlot(new Item.Item(), 0);
 
         public void UpdateSlot(Item.Item itemValue, int amountValue)
         {

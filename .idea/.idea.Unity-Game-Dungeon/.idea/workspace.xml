@@ -3,14 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/CodeRespawn/DungeonArchitect/Support/RenderTextures/DefaultMiniMapTexture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/CodeRespawn/DungeonArchitect/Support/RenderTextures/DefaultMiniMapTexture.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonGridFlow.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonGridFlow.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonTheme.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Dungen/DungeonTheme.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Objects/Chest.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Objects/Chest.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/_PaternNo3DModel.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Items/_PaternNo3DModel.prefab.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Chest/Chest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Chest/Chest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/InventorySlot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/InventorySlot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/UserInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/UserInterface.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -136,6 +133,9 @@
       <workItem from="1678009079147" duration="1036000" />
       <workItem from="1678020686151" duration="8571000" />
       <workItem from="1678083627645" duration="2707000" />
+      <workItem from="1678091306886" duration="780000" />
+      <workItem from="1678095833017" duration="8000" />
+      <workItem from="1678096094126" duration="4355000" />
     </task>
     <servers />
   </component>

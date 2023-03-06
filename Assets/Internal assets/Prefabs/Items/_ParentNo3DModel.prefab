@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 8367957065331894194}
   - component: {fileID: -3760231947940193854}
   m_Layer: 0
-  m_Name: _PaternNo3DModel
+  m_Name: _ParentNo3DModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
