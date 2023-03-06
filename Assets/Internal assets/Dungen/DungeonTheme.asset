@@ -65,8 +65,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 726.9788
     y: -39.83999
-    width: 125.23073
-    height: 33.641018
+    width: 123
+    height: 35
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -123,6 +123,29 @@ MonoBehaviour:
     width: 80
     height: 15
   tangent: {x: 0, y: 1}
+  tangentStrength: 50
+--- !u!114 &-8212528476050460919
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a4af758c5024ee3ad022895232667f, type: 3}
+  m_Name: _InputPin
+  m_EditorClassIdentifier: 
+  pinType: 0
+  node: {fileID: -2268944813759818054}
+  position: {x: 60, y: 0}
+  boundsOffset:
+    serializedVersion: 2
+    x: -40
+    y: 0
+    width: 80
+    height: 15
+  tangent: {x: 0, y: -1}
   tangentStrength: 50
 --- !u!114 &-7791695808891216566
 MonoBehaviour:
@@ -509,8 +532,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 432.9496
     y: 259.0301
-    width: 123.28201
-    height: 33.641018
+    width: 119
+    height: 35
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -758,8 +781,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 27.59993
     y: 260.2402
-    width: 60.92306
-    height: 33.641018
+    width: 59.935062
+    height: 35.626762
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -839,6 +862,29 @@ MonoBehaviour:
   input: {fileID: -3845299439966480368}
   output: {fileID: 7330266066350636196}
   graph: {fileID: 11400000}
+--- !u!114 &-3891112713502976372
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a4af758c5024ee3ad022895232667f, type: 3}
+  m_Name: MarkerNode_6c717667-4917-4c38-aa53-0debcee1a4a0_OutputPin
+  m_EditorClassIdentifier: 
+  pinType: 1
+  node: {fileID: 6651020810623556958}
+  position: {x: 60, y: 48}
+  boundsOffset:
+    serializedVersion: 2
+    x: -40
+    y: -15
+    width: 80
+    height: 15
+  tangent: {x: 0, y: 1}
+  tangentStrength: 50
 --- !u!114 &-3873926800646133208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -903,8 +949,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 783.84955
     y: 263.87015
-    width: 58.974342
-    height: 33.641018
+    width: 57
+    height: 35
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -955,6 +1001,29 @@ MonoBehaviour:
     height: 15
   tangent: {x: 0, y: -1}
   tangentStrength: 50
+--- !u!114 &-3064986998828768623
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a4af758c5024ee3ad022895232667f, type: 3}
+  m_Name: _OutputPin
+  m_EditorClassIdentifier: 
+  pinType: 1
+  node: {fileID: -2268944813759818054}
+  position: {x: 60, y: 120}
+  boundsOffset:
+    serializedVersion: 2
+    x: -40
+    y: -15
+    width: 80
+    height: 15
+  tangent: {x: 0, y: 1}
+  tangentStrength: 50
 --- !u!114 &-2861729873740564843
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -996,8 +1065,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 287.7505
     y: -39.839985
-    width: 133.0256
-    height: 33.641018
+    width: 128
+    height: 35
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -1097,8 +1166,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 564.8389
     y: 257.82016
-    width: 195.38455
-    height: 33.641018
+    width: 188
+    height: 35
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -1192,6 +1261,99 @@ MonoBehaviour:
   checkRelativeToMarkerRotation: 1
   hostThemeNode: {fileID: -6065345970091670958}
   graph: {fileID: 2620824140626171047}
+--- !u!114 &-2333125361616313426
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584263142da7e3f4ebae84cbbc5b4b65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 5db7cae4-9557-4373-b15b-0e9aabb53d74
+  caption: 
+  bounds:
+    serializedVersion: 2
+    x: 90
+    y: 90
+    width: 20
+    height: 20
+  canBeDeleted: 0
+  canBeSelected: 1
+  canBeMoved: 1
+  selected: 0
+  zIndex: 0
+  inputPins: []
+  outputPins: []
+  graph: {fileID: -885324761776732584}
+  ruleDomain: 0
+  isSnapped: 1
+  constraints: []
+  constraintEvaluationMode: 0
+  exclusionRuleSearchRadius: 0.1
+  exclusionRuleMarkersToRemove: []
+--- !u!114 &-2268944813759818054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfc1d246dd77b46a4aee970ab911ea63, type: 3}
+  m_Name: MeshNode_5df9923d-df32-410a-9072-04965e201c6f
+  m_EditorClassIdentifier: 
+  id: 5df9923d-df32-410a-9072-04965e201c6f
+  caption: Game Object Node
+  bounds:
+    serializedVersion: 2
+    x: 870.3091
+    y: 57.008842
+    width: 120
+    height: 120
+  canBeDeleted: 1
+  canBeSelected: 1
+  canBeMoved: 1
+  selected: 0
+  zIndex: 338
+  inputPins:
+  - {fileID: -8212528476050460919}
+  outputPins:
+  - {fileID: -3064986998828768623}
+  graph: {fileID: 11400000}
+  offset:
+    e00: 1
+    e01: 0
+    e02: 0
+    e03: 0
+    e10: 0
+    e11: 1
+    e12: 0
+    e13: 0.45
+    e20: 0
+    e21: 0
+    e22: 1
+    e23: 0
+    e30: 0
+    e31: 0
+    e32: 0
+    e33: 1
+  consumeOnAttach: 1
+  attachmentProbability: 1
+  IsStatic: 0
+  affectsNavigation: 1
+  selectionRuleEnabled: 0
+  selectionRuleClassName: 
+  transformRuleEnabled: 0
+  transformRuleClassName: 
+  useSpatialConstraint: 0
+  spatialConstraint: {fileID: 4844365991162875058}
+  Template: {fileID: 1906639035202629773, guid: 80165c3bcec45fd46b2fd63cb3c23eff,
+    type: 3}
 --- !u!114 &-2249941855291068144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1316,6 +1478,22 @@ MonoBehaviour:
     height: 15
   tangent: {x: 0, y: 1}
   tangentStrength: 50
+--- !u!114 &-1918091771095716681
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1574844e380142bb9f5e4a8003b85a1, type: 3}
+  m_Name: Link_21
+  m_EditorClassIdentifier: 
+  id: 21
+  input: {fileID: -8212528476050460919}
+  output: {fileID: -3891112713502976372}
+  graph: {fileID: 11400000}
 --- !u!114 &-1878968380775465460
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1459,6 +1637,26 @@ MonoBehaviour:
   outputPins:
   - {fileID: 7330266066350636196}
   graph: {fileID: 11400000}
+--- !u!114 &-885324761776732584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 473b3d45cb4f50043ba3a6be2df48e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indexCounter:
+    index: 0
+  topZIndex:
+    index: 0
+  nodes:
+  - {fileID: -2333125361616313426}
+  links: []
+  asset: {fileID: 4844365991162875058}
 --- !u!114 &-509745509386702988
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1550,8 +1748,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 305.90054
     y: 259.03015
-    width: 99.89741
-    height: 33.641018
+    width: 99.97121
+    height: 35.379078
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -1656,9 +1854,9 @@ MonoBehaviour:
   m_Name: DungeonTheme
   m_EditorClassIdentifier: 
   indexCounter:
-    index: 20
+    index: 21
   topZIndex:
-    index: 318
+    index: 338
   nodes:
   - {fileID: 4533139973544399042}
   - {fileID: -9172044261044166427}
@@ -1696,6 +1894,8 @@ MonoBehaviour:
   - {fileID: 6241862867108233961}
   - {fileID: -6481823836853347660}
   - {fileID: 4850501998001271448}
+  - {fileID: 6651020810623556958}
+  - {fileID: -2268944813759818054}
   links:
   - {fileID: 5215540805189588179}
   - {fileID: 3953953016415806470}
@@ -1709,6 +1909,7 @@ MonoBehaviour:
   - {fileID: -1358084110637967902}
   - {fileID: 5931264165648823991}
   - {fileID: 4180378001823841467}
+  - {fileID: -1918091771095716681}
 --- !u!114 &27725238625752098
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1727,8 +1928,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 167.95956
     y: 257.82013
-    width: 80.41023
-    height: 33.641018
+    width: 81.88198
+    height: 35.470493
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -2192,8 +2393,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 26.389921
     y: -39.839996
-    width: 62.871777
-    height: 33.641018
+    width: 59.935062
+    height: 35.626762
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -2262,8 +2463,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 572.09894
     y: -41.049995
-    width: 146.66663
-    height: 33.641018
+    width: 142
+    height: 35
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -2415,8 +2616,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 455.94
     y: -39.83999
-    width: 82.35895
-    height: 33.641018
+    width: 78
+    height: 35
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -2619,6 +2820,24 @@ MonoBehaviour:
     height: 15
   tangent: {x: 0, y: 1}
   tangentStrength: 50
+--- !u!114 &4844365991162875058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec8e932ba1f67d245ac1a041984c7f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateToFit: 1
+  applyFitRotation: 0
+  applyMarkerRotation: 1
+  checkRelativeToMarkerRotation: 1
+  hostThemeNode: {fileID: -2268944813759818054}
+  graph: {fileID: -885324761776732584}
 --- !u!114 &4850501998001271448
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2794,8 +3013,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 174.00977
     y: -41.05002
-    width: 58.974342
-    height: 33.641018
+    width: 60.785854
+    height: 35.470493
   canBeDeleted: 1
   canBeSelected: 1
   canBeMoved: 1
@@ -3050,6 +3269,35 @@ MonoBehaviour:
     height: 15
   tangent: {x: 0, y: -1}
   tangentStrength: 50
+--- !u!114 &6651020810623556958
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f86a247f92be461b8448085107abfca, type: 3}
+  m_Name: MarkerNode_6c717667-4917-4c38-aa53-0debcee1a4a0
+  m_EditorClassIdentifier: 
+  id: 6c717667-4917-4c38-aa53-0debcee1a4a0
+  caption: Chest
+  bounds:
+    serializedVersion: 2
+    x: 870.60583
+    y: 1.2890472
+    width: 120
+    height: 50
+  canBeDeleted: 1
+  canBeSelected: 1
+  canBeMoved: 1
+  selected: 0
+  zIndex: 330
+  inputPins: []
+  outputPins:
+  - {fileID: -3891112713502976372}
+  graph: {fileID: 11400000}
 --- !u!114 &6749507156521103739
 MonoBehaviour:
   m_ObjectHideFlags: 1

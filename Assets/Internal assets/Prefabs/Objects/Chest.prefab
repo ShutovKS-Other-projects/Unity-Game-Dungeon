@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6672743822943017826}
   - component: {fileID: 3026638447368352371}
   - component: {fileID: 7025079913491200039}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,12 +86,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9306666159b4c6d8da357e16be3bd6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  generated: 0
-  open: 0
+  isGenerated: 0
+  chestSize: 5
   itemsInChest: []
   generatedItems: []
   chestData: {fileID: 11400000, guid: f222bca6a548ded42a40f01ac0bfe9c7, type: 2}
-  chestUi: {fileID: 0}
+  chestUI: {fileID: 0}
   itemDatabase: {fileID: 11400000, guid: 68ca834d6dbb39241aeb9aae5452adfb, type: 2}
 --- !u!1 &4542876529619643015
 GameObject:

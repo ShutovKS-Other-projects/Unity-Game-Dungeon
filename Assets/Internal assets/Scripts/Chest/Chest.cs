@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Inventory;
 using Item;
 using UI;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Chest
 {
@@ -29,9 +31,14 @@ namespace Chest
 
         #region Unity Methods
 
-        private void OnEnable()
+        private void Awake()
         {
             _uiController = GameObject.Find("Canvas").GetComponent<UIController>();
+            chestUI = GameObject.Find("Canvas").transform.GetChild(1).GetChild(2).GetComponent<DynamicInterface>();
+        }
+
+        private void OnEnable()
+        {
             _uiController.InputGame += CloseChest;
             StartCoroutine(WaitOneFrame());
         }
