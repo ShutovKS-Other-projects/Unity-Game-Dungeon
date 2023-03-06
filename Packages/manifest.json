@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.marijnzwemmer.unity-toolbar-extender": "https://github.com/marijnz/unity-toolbar-extender.git",
     "com.unity.2d.psdimporter": "8.0.2",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.adaptiveperformance": "5.0.0-pre.4",
