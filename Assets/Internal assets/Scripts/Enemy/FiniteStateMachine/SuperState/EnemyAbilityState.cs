@@ -22,7 +22,7 @@ namespace Enemy.FiniteStateMachine.SuperState
             if (!isAbilityDone)
                 return;
             
-            if (EnemyStatistic.isDead)
+            if (EnemyStatistic.IsDead)
             {
                 StateMachine.ChangeState(StateController.DeathState);
             }

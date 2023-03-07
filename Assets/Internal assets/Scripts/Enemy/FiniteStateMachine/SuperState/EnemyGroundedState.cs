@@ -18,7 +18,7 @@ namespace Enemy.FiniteStateMachine.SuperState
             PlayerDistance = StateController.CheckPlayerDistance();
             IsVisiblePlayer = StateController.CheckIfPlayer();
 
-            if (EnemyStatistic.isDead)
+            if (EnemyStatistic.IsDead)
             {
                 StateMachine.ChangeState(StateController.DeathState);
             }

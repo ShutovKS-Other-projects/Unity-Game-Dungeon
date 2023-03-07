@@ -34,7 +34,7 @@ namespace Enemy.FiniteStateMachine.SubState
 
         Delegate.SwitchCollider SwitchCollider { get { return StateController.SwitchCollider; } }
         
-        private float AttackStart() => EnemyStatistic.attackDamage;
+        private float AttackStart() => EnemyStatistic.AttackDamage;
         private static float AttackEnd() => 0;
     }
 }

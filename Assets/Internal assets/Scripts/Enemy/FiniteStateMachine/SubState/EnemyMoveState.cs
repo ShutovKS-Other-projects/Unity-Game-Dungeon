@@ -11,7 +11,7 @@ namespace Enemy.FiniteStateMachine.SubState
         {
             base.LogicUpdate();
 
-            if (IsVisiblePlayer && PlayerDistance <= EnemyStatistic.attackDistance)
+            if (IsVisiblePlayer && PlayerDistance <= EnemyStatistic.AttackDistance)
             {
                 StateMachine.ChangeState(StateController.IdleState);
             }

@@ -14,7 +14,7 @@ namespace Enemy.FiniteStateMachine.SubState
             base.Enter();
 
             var playerStateController = GameObject.FindWithTag("Player").GetComponent<PlayerStateController>();
-            EnemyStatistic.health -= playerStateController.StrengthAttackFloat!();
+            EnemyStatistic.Health -= playerStateController.StrengthAttackFloat!();
         }
 
         public override void LogicUpdate()
@@ -24,7 +24,7 @@ namespace Enemy.FiniteStateMachine.SubState
             if (!IsAnimationFinished)
                 return;
 
-            if (EnemyStatistic.isDead)
+            if (EnemyStatistic.IsDead)
             {
                 StateMachine.ChangeState(StateController.DeathState);
             }

@@ -17,7 +17,7 @@ namespace Enemy.FiniteStateMachine.SubState
             if (!IsVisiblePlayer)
                 return;
             
-            if (PlayerDistance <= EnemyStatistic.attackDistance)
+            if (PlayerDistance <= EnemyStatistic.AttackDistance)
             {
                 IsAttack = Attack();
 
@@ -26,7 +26,7 @@ namespace Enemy.FiniteStateMachine.SubState
                     StateMachine.ChangeState(StateController.AttackState);
                 }
             }
-            else if (PlayerDistance > EnemyStatistic.attackDistance)
+            else if (PlayerDistance > EnemyStatistic.AttackDistance)
             {
                 StateMachine.ChangeState(StateController.MoveState);
             }
@@ -34,11 +34,11 @@ namespace Enemy.FiniteStateMachine.SubState
 
         private bool Attack()
         {
-            if (!IsVisiblePlayer || !(PlayerDistance <= EnemyStatistic.attackDistance) || IsAttack)
+            if (!IsVisiblePlayer || !(PlayerDistance <= EnemyStatistic.AttackDistance) || IsAttack)
                 return false;
             
             attackTimer += Time.deltaTime;
-            if (!(attackTimer >= EnemyStatistic.attackRetryTime))
+            if (!(attackTimer >= EnemyStatistic.AttackRetryTime))
                 return false;
             
             attackTimer = 0f;

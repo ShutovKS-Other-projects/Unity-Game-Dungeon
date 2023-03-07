@@ -1,35 +1,42 @@
 using UnityEngine;
+
 namespace Enemy
 {
     public class EnemyStatistic
     {
         private readonly EnemyData _data;
 
-        #region Parameters private
-
-        private float _health;
-
-        #endregion
-
         #region Parameters public
 
-        public string raceName { get { return _data.raceName; } }
-        public float maxHealth { get { return _data.maxHealth; } }
-        public float health { get { return _health; } set { _health = value; } }
-        public float movementSpeed { get { return _data.movementSpeed; } }
-        public float attackDamage { get { return Random.Range(_data.attackDamage[0], _data.attackDamage[1]); } }
-        public float attackRetryTime { get { return Random.Range(_data.attackRetryTime[0], _data.attackRetryTime[1]); } }
-        public float attackDistance { get { return _data.attackDistance; } }
-        public float playerCheckDistance { get { return _data.playerCheckDistance; } }
-        public bool isDead { get { return health <= 0; } }
+        public string RaceName => _data.raceName;
+
+        public int Level { get; }
+
+        public float MaxHealth => _data.maxHealth;
+
+        public float Health { get; set; }
+
+        public float MovementSpeed => _data.movementSpeed;
+        public float AttackDamage => Random.Range(_data.attackDamage[0], _data.attackDamage[1]);
+        public float AttackRetryTime => Random.Range(_data.attackRetryTime[0], _data.attackRetryTime[1]);
+        public float AttackDistance => _data.attackDistance;
+        public float PlayerCheckDistance => _data.playerCheckDistance;
+        public bool IsDead => Health <= 0;
+
         #endregion
 
         #region Constructor
+
         public EnemyStatistic(EnemyData data)
         {
             _data = data;
-            _health = data.maxHealth;
+            Health = data.maxHealth;
+            
+            var playerLevelStatistic = GameObject.FindWithTag("Player").GetComponent<Player.PlayerStatistic>();
+            var playerLevel = playerLevelStatistic.Level;
+            Level = playerLevel < 3 ? playerLevel + Random.Range(0, 2) : playerLevel + Random.Range(-2, 3);
         }
+
         #endregion
     }
 }

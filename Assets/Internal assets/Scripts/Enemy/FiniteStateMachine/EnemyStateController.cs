@@ -1,5 +1,6 @@
 using Enemy.FiniteStateMachine.SubState;
 using Other;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
 namespace Enemy.FiniteStateMachine
@@ -100,7 +101,7 @@ namespace Enemy.FiniteStateMachine
 
         public bool CheckIfPlayer()
         {
-            if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), PlayerGameObject.transform.position - transform.position, out RaycastHit hit, EnemyStatistic.playerCheckDistance))
+            if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), PlayerGameObject.transform.position - transform.position, out RaycastHit hit, EnemyStatistic.PlayerCheckDistance))
             {
                 if (hit.collider.CompareTag("Player"))
                 {
@@ -121,7 +122,7 @@ namespace Enemy.FiniteStateMachine
 
         public void Move()
         {
-            Rb.AddRelativeForce(0f, 0f, EnemyStatistic.movementSpeed * Time.deltaTime, ForceMode.VelocityChange);
+            Rb.AddRelativeForce(0f, 0f, EnemyStatistic.MovementSpeed * Time.deltaTime, ForceMode.VelocityChange);
             Animator.SetFloat(zVelocity, Rb.velocity.z);
         }
 
