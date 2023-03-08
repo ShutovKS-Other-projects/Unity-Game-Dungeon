@@ -5,8 +5,8 @@ namespace Interactable
 {
     public class UIInteractionBare : MonoBehaviour
     {
-        Image _progressBar;
-        TextMeshProUGUI _tooltipText;
+        private Image _progressBar;
+        private TextMeshProUGUI _tooltipText;
 
         private void Start()
         {

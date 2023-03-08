@@ -44,7 +44,7 @@ namespace Player
             switch (slot.Parent.inventory.type)
             {
                 case InterfaceType.Equipment:
-                    if (itemObject.characterDisplay != null)
+                    if (itemObject.swordModel != null)
                     {
                         switch (slot.allowedItems[0])
                         {
@@ -70,7 +70,7 @@ namespace Player
 
                             case ItemType.Weapon:
                                 GetComponent<Animator>().SetLayerWeight(1, 1);
-                                _sword = Instantiate(itemObject.characterDisplay, weaponTransform).transform;
+                                _sword = Instantiate(itemObject.swordModel, weaponTransform).transform;
                                 break;
                             default:
                                 Debug.LogWarning("Item Equipment non search type");
@@ -94,7 +94,7 @@ namespace Player
             switch (slot.Parent.inventory.type)
             {
                 case InterfaceType.Equipment:
-                    if (slot.GetItemObject().characterDisplay != null)
+                    if (slot.GetItemObject().swordModel != null)
                     {
                         switch (slot.allowedItems[0])
                         {

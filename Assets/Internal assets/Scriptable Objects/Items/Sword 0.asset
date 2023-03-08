@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e49adb187d183fc4f82d190c1962da9e, type: 3}
   m_Name: Sword 0
   m_EditorClassIdentifier: 
+  type: 10
   uiDisplay: {fileID: -1645009880, guid: 61a4c9c5bdaf3da4ba2e80758c2231a7, type: 3}
-  characterDisplay: {fileID: 1889927820228970275, guid: 8b46dda91c07b6e499ec4b74fd80a9ae,
+  swordModel: {fileID: 1889927820228970275, guid: 8b46dda91c07b6e499ec4b74fd80a9ae,
     type: 3}
   stackable: 0
-  type: 10
+  itemName: 
   description: 
   data:
-    Name: Sword
-    Id: 14
+    id: -1
+    name: 
+    level: 0
     buffs:
     - stat: 0
       value: 0

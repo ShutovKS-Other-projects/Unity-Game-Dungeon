@@ -9,7 +9,7 @@ namespace Item
         private void OnValidate()
         {
 #if UNITY_EDITOR
-            if (item == null || item.characterDisplay != null)
+            if (item == null || item.swordModel != null)
                 return;
 
             GetComponentInChildren<SpriteRenderer>().sprite = item.uiDisplay;

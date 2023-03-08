@@ -156,14 +156,14 @@ namespace Inventory
             if (item.id < 0) return;
 
             GameObject itemDrop;
-            if (slot.GetItemObject().characterDisplay == null)
+            if (slot.GetItemObject().swordModel == null)
             {
                 itemDrop = Instantiate(itemPrefab);
                 itemDrop.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = slot.GetItemObject().uiDisplay;
             }
             else
             {
-                itemDrop = Instantiate(slot.GetItemObject().characterDisplay);
+                itemDrop = Instantiate(slot.GetItemObject().swordModel);
             }
 
             itemDrop.layer = LayerMask.NameToLayer("Interactable");

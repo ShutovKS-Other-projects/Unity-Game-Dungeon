@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using UnityEngine;
 namespace Player.FiniteStateMachine
 {
@@ -15,7 +14,7 @@ namespace Player.FiniteStateMachine
 
         protected float StartTime;
         
-        private string _animBoolName;
+        private readonly string _animBoolName;
 
         public PlayerState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName)
         {

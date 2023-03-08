@@ -13,14 +13,14 @@ MonoBehaviour:
   m_Name: Sword 3
   m_EditorClassIdentifier: 
   uiDisplay: {fileID: 1154175624, guid: 61a4c9c5bdaf3da4ba2e80758c2231a7, type: 3}
-  characterDisplay: {fileID: 8120417097465526197, guid: 940abe3df67f0674184913cc70827b3a,
+  swordModel: {fileID: 8120417097465526197, guid: 940abe3df67f0674184913cc70827b3a,
     type: 3}
   stackable: 0
   type: 10
   description: 
   data:
-    Name: Sword
-    Id: 17
+    name: 
+    id: -1
     buffs:
     - stat: 0
       value: 0
