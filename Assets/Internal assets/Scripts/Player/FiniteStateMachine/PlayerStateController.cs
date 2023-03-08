@@ -58,7 +58,6 @@ namespace Player.FiniteStateMachine
 
         public Delegate.SwitchCollider? SwitchCollider;
 
-        // StrengthAttackFloat
         public Delegate.StrengthAttackFloat? StrengthAttackFloat;
         public void RegisterDelegateStrengthAttackFloat(Delegate.StrengthAttackFloat del) => StrengthAttackFloat = del;
 

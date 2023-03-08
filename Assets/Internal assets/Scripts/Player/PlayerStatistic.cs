@@ -1,6 +1,7 @@
 using System;
 using Interactable;
 using Level;
+using Player.Delegate;
 using UnityEngine;
 
 namespace Player
@@ -10,11 +11,14 @@ namespace Player
         [SerializeField] private PlayerData playerData;
         private PlayerAttribute _playerAttribute;
         public LevelSystem LevelSystem;
-
+        public event ObtainingExperience ObtainingExperienceEvent;
+        
         private void Awake()
         {
             _playerAttribute = GetComponent<PlayerAttribute>();
             LevelSystem = new LevelSystem();
+            
+            ObtainingExperienceEvent += LevelSystem.AddExperience;
         }
 
         private void Start()

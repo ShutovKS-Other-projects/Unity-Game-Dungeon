@@ -11,6 +11,7 @@ namespace Enemy
         public string RaceName => _data.raceName;
 
         public int Level { get; }
+        public int Experience => Level * 100;
 
         public float MaxHealth => _data.maxHealth;
 
