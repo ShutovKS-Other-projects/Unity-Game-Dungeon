@@ -66,6 +66,7 @@ namespace Player
 
         public float ManaMax => playerData.manaMax + _playerAttribute.Mana;
         public float ManaRecoverySpeed => playerData.manaRecoverySpeed + _playerAttribute.ManaRecoverySpeed;
+        public float MagicAttackDamage => playerData.magicAttackDamage + _playerAttribute.MagicAttackDamage;
 
 
         public float Stamina
@@ -85,7 +86,8 @@ namespace Player
 
         public float CriticalDamage => playerData.criticalDamage + _playerAttribute.CriticalDamage;
         public float CriticalChance => playerData.criticalChance + _playerAttribute.CriticalChance;
-
+        
+        
         public float MovementForce => playerData.movementForce;
         public float JumpSpeed => playerData.jumpSpeed;
         public float MovementSpeedMax => playerData.movementSpeedMax + _playerAttribute.MoveSpeed / 100f;

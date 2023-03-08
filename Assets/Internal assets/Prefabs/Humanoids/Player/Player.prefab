@@ -306,6 +306,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!54 &3057348782107376441
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -402,7 +403,6 @@ MonoBehaviour:
   damageObjectWeaponTransform: {fileID: 736257618588429709}
   damageObjectNoWeaponTransform: {fileID: 4176141973596014910}
   uiInteractionBare: {fileID: 0}
-  CharacterController: {fileID: 0}
 --- !u!114 &3713910093249011704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,5 +482,8 @@ MonoBehaviour:
     modifiableFloat:
       modifiedValue: 0
   - type: 13
+    modifiableFloat:
+      modifiedValue: 0
+  - type: 14
     modifiableFloat:
       modifiedValue: 0

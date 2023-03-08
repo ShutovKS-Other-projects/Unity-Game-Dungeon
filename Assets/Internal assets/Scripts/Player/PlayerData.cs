@@ -32,6 +32,9 @@ namespace Player
         public float criticalDamage = 25f;
         public float criticalChance = 15f;
         
+        [Header("MagicAttack")]
+        public float magicAttackDamage = 10f;
+
         [Header("Movement Speed")]
         public float jumpSpeed = 5f;
         public float movementForce = 10f;

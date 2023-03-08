@@ -6,9 +6,12 @@ namespace Player.FiniteStateMachine.SubState
 {
     public class PlayerAttackState : PlayerAbilityState
     {
-        public PlayerAttackState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
+        public PlayerAttackState(PlayerStateController stateController, PlayerStateMachine stateMachine,
+            PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
+            animBoolName)
         {
         }
+
         public override void Enter()
         {
             base.Enter();
@@ -27,7 +30,7 @@ namespace Player.FiniteStateMachine.SubState
             base.Exit();
 
             SwitchCollider(false);
-            
+
             StateController.RegisterDelegateStrengthAttackFloat(AttackZero);
         }
 
@@ -38,7 +41,7 @@ namespace Player.FiniteStateMachine.SubState
             IsAbilityDone = true;
         }
 
-        Delegate.SwitchCollider SwitchCollider { get { return StateController.SwitchCollider; } }
+        private Delegate.SwitchCollider SwitchCollider => StateController.SwitchCollider;
 
         private float Attack() => PlayerStatistic.Strength;
         private float AttackCritical() => PlayerStatistic.Strength * (1 + PlayerStatistic.CriticalDamage / 100);

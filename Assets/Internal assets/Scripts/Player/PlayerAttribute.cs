@@ -25,6 +25,7 @@ namespace Player
         public float CriticalDamage => attributes[11].Value ?? 0f;
         public float CriticalChance  => attributes[12].Value ?? 0f;
         public float Fortune => attributes[13].Value ?? 0f;
+        public float MagicAttackDamage => attributes[14].Value ?? 0f;
         #endregion
 
         #region Unity Callbacks Functions

@@ -1,14 +1,23 @@
 using Enemy.FiniteStateMachine;
 using Interactable;
 using UnityEngine;
+
 namespace Player.FiniteStateMachine.SuperState
 {
     public class PlayerGroundedState : PlayerState
     {
+        public PlayerGroundedState(PlayerStateController stateController, PlayerStateMachine stateMachine,
+            PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
+            animBoolName)
+        {
+        }
+
         #region Variables
 
         protected Vector2 MovementInput;
         protected float RecoveryStaminaTime = 0;
+        protected float RecoveryHealthTime = 0;
+        protected float RecoveryManaTime = 0;
 
         protected bool CrouchInput;
         protected bool RunInput;
@@ -18,17 +27,12 @@ namespace Player.FiniteStateMachine.SuperState
         private bool _blockInput;
         private bool _jumpInput;
         private bool _interactInput;
+        private bool _magicAttackInput;
 
         private bool _isInteractable;
         private bool _isGrounded;
 
-        private float _recoveryHealthTime = 0;
-
         #endregion
-
-        public PlayerGroundedState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
-        {
-        }
 
         #region StateMachine
 
@@ -52,11 +56,17 @@ namespace Player.FiniteStateMachine.SuperState
             _blockInput = StateController.InputManager.GetPlayerBlockInput();
             _interactInput = StateController.InputManager.GetPlayerInteractInput();
             _jumpInput = StateController.InputManager.GetPlayerJumpInput();
+            _magicAttackInput = StateController.InputManager.GetPlayerMagicAttackInput();
             _isInteractable = CheckVisibleIfInteractable();
 
             if (_attackInput && !IsTouchingCelling)
             {
                 StateMachine.ChangeState(StateController.AttackState);
+                RecoveryStaminaTime = 0;
+            }
+            else if (_magicAttackInput && !IsTouchingCelling)
+            {
+                StateMachine.ChangeState(StateController.MagicAttackState);
                 RecoveryStaminaTime = 0;
             }
             else if (_blockInput && !IsTouchingCelling)
@@ -98,6 +108,7 @@ namespace Player.FiniteStateMachine.SuperState
 
             //RecoveryHealth();
             RecoveryStamina();
+            RecoveryMana();
             StateController.Rotation();
         }
 
@@ -110,12 +121,14 @@ namespace Player.FiniteStateMachine.SuperState
             var cameraTransform = UnityEngine.Camera.main!.transform;
             var ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
-            if (Physics.SphereCast(ray, PlayerStatistic.InterCheckSphereRadius, out var hitInfo, PlayerStatistic.InterCheckDistance, LayerMask.GetMask("Interactable")))
+            if (Physics.SphereCast(ray, PlayerStatistic.InterCheckSphereRadius, out var hitInfo,
+                    PlayerStatistic.InterCheckDistance, LayerMask.GetMask("Interactable")))
             {
                 var interactable = hitInfo.collider.GetComponent<InteractableBase>();
 
                 if (interactable != null)
-                    if (PlayerStatistic.interactionData.IsEmpy() || PlayerStatistic.interactionData.IsSameInteractable(interactable))
+                    if (PlayerStatistic.interactionData.IsEmpy() ||
+                        PlayerStatistic.interactionData.IsSameInteractable(interactable))
                     {
                         PlayerStatistic.interactionData.Interactable = interactable;
                         StateController.uiInteractionBare.SetTooltipText(interactable.TooltipText);
@@ -123,6 +136,7 @@ namespace Player.FiniteStateMachine.SuperState
                         return true;
                     }
             }
+
             PlayerStatistic.interactionData.ResetData();
             StateController.uiInteractionBare.SetTooltipText(" ");
             return false;
@@ -132,7 +146,7 @@ namespace Player.FiniteStateMachine.SuperState
 
         #region Recovery Methods
 
-        void RecoveryStamina()
+        private void RecoveryStamina()
         {
             if (PlayerStatistic.Stamina >= PlayerStatistic.StaminaMax)
             {
@@ -159,13 +173,29 @@ namespace Player.FiniteStateMachine.SuperState
             }
         }
 
+        private void RecoveryMana()
+        {
+            if (PlayerStatistic.Mana >= PlayerStatistic.ManaMax)
+            {
+                PlayerStatistic.Mana = PlayerStatistic.ManaMax;
+            }
+            else if (RecoveryManaTime > 5f)
+            {
+                PlayerStatistic.Mana += PlayerStatistic.ManaRecoverySpeed * Time.deltaTime;
+            }
+            else
+            {
+                RecoveryManaTime += Time.deltaTime;
+            }
+        }
+
         private void RecoveryHealth()
         {
             if (PlayerStatistic.Health >= PlayerStatistic.HealthMax)
             {
                 PlayerStatistic.Health = PlayerStatistic.HealthMax;
             }
-            else if (_recoveryHealthTime >= 10f)
+            else if (RecoveryHealthTime >= 10f)
             {
                 PlayerStatistic.Health += PlayerStatistic.HealthRecoverySpeed * Time.deltaTime;
             }

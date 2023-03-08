@@ -47,6 +47,7 @@ namespace Input
         public bool GetPlayerCrouchInput() => _inputSystemGame.Player.Crouch.inProgress;
 
         public bool GetPlayerAttackInput() => _inputSystemGame.Player.Attack.triggered;
+        public bool GetPlayerMagicAttackInput() => _inputSystemGame.Player.MagicAttack.triggered;
         public bool GetPlayerJumpInput() => _inputSystemGame.Player.Jump.triggered;
         public bool GetPlayerInteractInput() => _inputSystemGame.Player.Interact.triggered;
     }

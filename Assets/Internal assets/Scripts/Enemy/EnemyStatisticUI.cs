@@ -44,6 +44,7 @@ namespace Enemy
         private void NoDisplay()
         {
             _nameText.SetActive(false);
+            _levelText.SetActive(false);
             _healthText.SetActive(false);
         }
     }

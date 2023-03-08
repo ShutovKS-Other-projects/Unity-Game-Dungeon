@@ -4,10 +4,10 @@ namespace Player.FiniteStateMachine
 {
     public class PlayerState : MonoBehaviour
     {
-        [NonSerialized] public PlayerStatistic PlayerStatistic;
+        [NonSerialized] protected readonly PlayerStatistic PlayerStatistic;
 
-        protected PlayerStateController StateController;
-        protected PlayerStateMachine StateMachine;
+        protected readonly PlayerStateController StateController;
+        protected readonly PlayerStateMachine StateMachine;
 
         protected bool IsAnimationFinished;
         protected bool IsExitingState;

@@ -70,7 +70,11 @@
         /// <summary>
         /// Удача
         /// </summary>
-        Fortune
+        Fortune,
 
+        /// <summary>
+        /// Магический урон
+        /// </summary>
+        MagicAttackDamage
     }
 }

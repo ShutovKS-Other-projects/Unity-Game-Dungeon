@@ -1,9 +1,11 @@
 using System.Collections;
 using Input;
 using Interactable;
+using Magic;
 using Other;
 using Player.FiniteStateMachine.SubState;
 using UnityEngine;
+
 namespace Player.FiniteStateMachine
 {
     public class PlayerStateController : MonoBehaviour
@@ -27,6 +29,7 @@ namespace Player.FiniteStateMachine
         public PlayerDamageState DamageState { get; private set; }
         public PlayerDeathState DeathState { get; private set; }
         public PlayerRunState RunState { get; private set; }
+        public PlayerMagicAttackState MagicAttackState { get; private set; }
 
         #endregion
 
@@ -48,9 +51,9 @@ namespace Player.FiniteStateMachine
 
         private CapsuleCollider _collider;
 
-        static readonly int XSpeed = Animator.StringToHash("xSpeed");
-        static readonly int YSpeed = Animator.StringToHash("ySpeed");
-        static readonly int ZSpeed = Animator.StringToHash("zSpeed");
+        private static readonly int XSpeed = Animator.StringToHash("xSpeed");
+        private static readonly int YSpeed = Animator.StringToHash("ySpeed");
+        private static readonly int ZSpeed = Animator.StringToHash("zSpeed");
 
         #endregion
 
@@ -83,6 +86,7 @@ namespace Player.FiniteStateMachine
             DamageState = new PlayerDamageState(this, _stateMachine, _playerStatistic, "Damage");
             DeathState = new PlayerDeathState(this, _stateMachine, _playerStatistic, "Death");
             RunState = new PlayerRunState(this, _stateMachine, _playerStatistic, "Run");
+            MagicAttackState = new PlayerMagicAttackState(this, _stateMachine, _playerStatistic, "MagicAttack");
         }
 
         private void Start()
@@ -99,10 +103,13 @@ namespace Player.FiniteStateMachine
             // uiInteractionBare = GameObject.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
 
             //Scene QuickRun
-            uiInteractionBare = GameObject.Find("ManagerScene").transform.Find("Canvas").transform.Find("UIPanelGame").transform.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
+            uiInteractionBare = GameObject.Find("ManagerScene").transform.Find("Canvas").transform.Find("UIPanelGame")
+                .transform.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
 
-            SwitchCollider += gameObject.transform.Find("DamageNoWeapon").GetComponent<GameObjectTriggerEnable>().EnableCollider;
-            SwitchCollider += gameObject.transform.Find("DamageWeapon").GetComponent<GameObjectTriggerEnable>().EnableCollider;
+            SwitchCollider += gameObject.transform.Find("DamageNoWeapon").GetComponent<GameObjectTriggerEnable>()
+                .EnableCollider;
+            SwitchCollider += gameObject.transform.Find("DamageWeapon").GetComponent<GameObjectTriggerEnable>()
+                .EnableCollider;
 
             _stateMachine.Initialize(IdleState);
         }
@@ -183,12 +190,14 @@ namespace Player.FiniteStateMachine
 
         public bool CheckIfGrounded()
         {
-            return Physics.CheckSphere(groundCheckTransform.position, _playerStatistic.GroundCheckRadius, LayerMask.GetMask("Ground"));
+            return Physics.CheckSphere(groundCheckTransform.position, _playerStatistic.GroundCheckRadius,
+                LayerMask.GetMask("Ground"));
         }
 
         public bool CheckIfTouchingCelling()
         {
-            return Physics.CheckSphere(cellingCheckTransform.position, _playerStatistic.GroundCheckRadius, LayerMask.GetMask("Ground"));
+            return Physics.CheckSphere(cellingCheckTransform.position, _playerStatistic.GroundCheckRadius,
+                LayerMask.GetMask("Ground"));
         }
 
         #endregion
