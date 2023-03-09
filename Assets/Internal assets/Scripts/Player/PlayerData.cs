@@ -1,6 +1,4 @@
-using Interactable;
 using UnityEngine;
-using UnityEngine.Serialization;
 namespace Player
 {
     [CreateAssetMenu(fileName = "newPlayerData", menuName = "Data/Player Data/Data Base")]
@@ -34,6 +32,7 @@ namespace Player
         
         [Header("MagicAttack")]
         public float magicAttackDamage = 10f;
+        public Skill.SkillMagicType magicAttackType = Skill.SkillMagicType.Default;
 
         [Header("Movement Speed")]
         public float jumpSpeed = 5f;

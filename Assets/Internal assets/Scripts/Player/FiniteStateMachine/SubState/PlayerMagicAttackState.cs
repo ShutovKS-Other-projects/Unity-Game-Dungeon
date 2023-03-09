@@ -1,12 +1,16 @@
-﻿using Magic;
+﻿using System;
+using Magic;
 using Player.FiniteStateMachine.SuperState;
+using Skill;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Player.FiniteStateMachine.SubState
 {
     public class PlayerMagicAttackState : PlayerAbilityState
     {
         private GameObject _magicAttack;
+        private PlayerSkills _playerSkills;
 
         public PlayerMagicAttackState(PlayerStateController stateController, PlayerStateMachine stateMachine,
             PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
@@ -17,6 +21,8 @@ namespace Player.FiniteStateMachine.SubState
         public override void Enter()
         {
             base.Enter();
+
+            _playerSkills = StateController.GetComponent<PlayerSkills>();
 
             _magicAttack = GameObject.CreatePrimitive(PrimitiveType.Sphere);
 
@@ -37,10 +43,19 @@ namespace Player.FiniteStateMachine.SubState
             _magicAttack.GetComponent<Rigidbody>().useGravity = false;
             _magicAttack.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 
-            _magicAttack.GetComponent<Renderer>().material.color = Color.blue;
-
+            _magicAttack.GetComponent<Renderer>().material.color = PlayerStatistic.MagicAttackType switch
+            {
+                SkillMagicType.Fire => Color.red,
+                SkillMagicType.Air => Color.white,
+                SkillMagicType.Water => Color.blue,
+                SkillMagicType.Earth => Color.green,
+                SkillMagicType.Light => Color.yellow,
+                SkillMagicType.Dark => Color.black,
+                SkillMagicType.Default => Color.magenta,
+                _ => _magicAttack.GetComponent<Renderer>().material.color
+            };
             _magicAttack.tag = "ObjectDamaging";
-            
+
             _magicAttack.AddComponent<MagicAttack>();
             if (Random.Range(0, 101) < PlayerStatistic.CriticalChance)
                 StateController.RegisterDelegateStrengthAttackFloat(CriticalMagicAttack);

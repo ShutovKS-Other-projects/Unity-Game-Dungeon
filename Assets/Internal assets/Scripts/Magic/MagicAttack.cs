@@ -1,17 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 namespace Magic
 {
     public class MagicAttack : MonoBehaviour
     {
-        private void Start()
-        {
-            Destroy(gameObject, 5f);
-        }
+        private void Start() => Destroy(gameObject, 2f);
+        private void OnTriggerEnter(Collider other) => StartCoroutine(MagicDestroy());
 
-        private void OnTriggerEnter(Collider other)
+        private IEnumerator MagicDestroy()
         {
-            Destroy(gameObject, 0.1f);
+            yield return null;
+            Destroy(gameObject);
         }
     }
 }
