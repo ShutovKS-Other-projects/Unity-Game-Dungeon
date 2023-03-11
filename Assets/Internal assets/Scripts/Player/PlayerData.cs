@@ -1,4 +1,7 @@
+using Skill.Enum;
 using UnityEngine;
+using UnityEngine.Serialization;
+
 namespace Player
 {
     [CreateAssetMenu(fileName = "newPlayerData", menuName = "Data/Player Data/Data Base")]
@@ -30,9 +33,8 @@ namespace Player
         public float criticalDamage = 25f;
         public float criticalChance = 15f;
         
-        [Header("MagicAttack")]
-        public float magicAttackDamage = 10f;
-        public Skill.SkillMagicType magicAttackType = Skill.SkillMagicType.Default;
+        public float magicStrength = 10f;
+        public SkillMagicType magicAttackType = SkillMagicType.Default;
 
         [Header("Movement Speed")]
         public float jumpSpeed = 5f;

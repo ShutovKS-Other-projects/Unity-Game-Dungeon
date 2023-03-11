@@ -2,18 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillButton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillCharacteristic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Player/PlayerAnimacionController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Player/PlayerAnimacionController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Default/Damage AnimationFinishTrigger.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Default/Damage AnimationFinishTrigger.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Default/Land AnimationFinishTrigger.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Default/Land AnimationFinishTrigger.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Default/Magic Attack AnimationFinishTrigger.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Default/Magic Attack AnimationFinishTrigger.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/Player.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/MagicAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/MagicAttack.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/DynamicInterface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Inventory/DynamicInterface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Menu/Menu.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Menu/Menu.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerMagicAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerMagicAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkills.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerStatistic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerStatistic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/UIController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/UIController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillButtons.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillButtons.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillButton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillMagicType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Enum/SkillMagicType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillMagicType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Enum/SkillMagicType.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTreeType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Enum/SkillTreeType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTreeType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Enum/SkillTreeType.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Skills.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Skills.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/Game/Dialog.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/Game/Dialog.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -27,6 +34,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20ec2084e3e54ecaa99fcb1c13b2e6c216e400/5e/71ed7b09/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20ec2084e3e54ecaa99fcb1c13b2e6c216e400/6e/9ea2be06/Random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d303c2bf72cd4cec95665b89c457d265d2b8ef3ed6da17cd4f85587c2f9de7/System.Linq.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/External assets/N♥TES/Editor/Notes.cs" root0="FORCE_HIGHLIGHTING" />
@@ -161,7 +169,15 @@
       <workItem from="1678355736944" duration="5581000" />
       <workItem from="1678363248171" duration="2651000" />
       <workItem from="1678375960098" duration="593000" />
-      <workItem from="1678382315818" duration="659000" />
+      <workItem from="1678382315818" duration="1793000" />
+      <workItem from="1678384318170" duration="7134000" />
+      <workItem from="1678429207787" duration="3108000" />
+      <workItem from="1678432430394" duration="202000" />
+      <workItem from="1678434283981" duration="8883000" />
+      <workItem from="1678448568713" duration="2968000" />
+      <workItem from="1678458461514" duration="12000" />
+      <workItem from="1678458616573" duration="89000" />
+      <workItem from="1678459972534" duration="2870000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using Magic;
 using Player.FiniteStateMachine.SuperState;
 using Skill;
+using Skill.Enum;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -42,18 +44,19 @@ namespace Player.FiniteStateMachine.SubState
             _magicAttack.GetComponent<Rigidbody>().AddForce(main.transform.forward * 1500);
             _magicAttack.GetComponent<Rigidbody>().useGravity = false;
             _magicAttack.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-
-            _magicAttack.GetComponent<Renderer>().material.color = PlayerStatistic.MagicAttackType switch
-            {
-                SkillMagicType.Fire => Color.red,
-                SkillMagicType.Air => Color.white,
-                SkillMagicType.Water => Color.blue,
-                SkillMagicType.Earth => Color.green,
-                SkillMagicType.Light => Color.yellow,
-                SkillMagicType.Dark => Color.black,
-                SkillMagicType.Default => Color.magenta,
-                _ => _magicAttack.GetComponent<Renderer>().material.color
-            };
+            
+            _magicAttack.GetComponent<Renderer>().material.color =
+                Regex.Split(Convert.ToString(PlayerStatistic.MagicAttackType), "(?=\\p{Lu})")[1] switch
+                {
+                    "Fire" => Color.red,
+                    "Water" => Color.blue,
+                    "Earth" => Color.green,
+                    "Air" => Color.yellow,
+                    "Ice" => Color.cyan,
+                    "Lightning" => Color.white,
+                    "Default" => Color.magenta,
+                    _ => Color.black
+                };
             _magicAttack.tag = "ObjectDamaging";
 
             _magicAttack.AddComponent<MagicAttack>();

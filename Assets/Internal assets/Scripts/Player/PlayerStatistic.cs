@@ -3,6 +3,7 @@ using Interactable;
 using Level;
 using Player.Delegate;
 using Skill;
+using Skill.Enum;
 using UnityEngine;
 
 namespace Player
@@ -78,7 +79,7 @@ namespace Player
 
         public float ManaMax => playerData.manaMax + PlayerAttribute.Mana;
         public float ManaRecoverySpeed => playerData.manaRecoverySpeed + PlayerAttribute.ManaRecoverySpeed;
-        public float MagicAttackDamage => playerData.magicAttackDamage + PlayerAttribute.MagicAttackDamage;
+        public float MagicAttackDamage => playerData.magicStrength + PlayerAttribute.MagicAttackDamage;
 
         public SkillMagicType MagicAttackType
         {
