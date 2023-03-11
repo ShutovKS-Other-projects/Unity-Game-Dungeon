@@ -1,0 +1,18 @@
+{
+    "name": "DungeonArchitect.Core",
+    "references": [
+        "GUID:725e3b18bf9c26848959c834ffc4d8db",
+        "GUID:bb3da1cdcc3977743a1ef5518b6f2a88",
+        "GUID:e65f9d7f3bc397e4db8279146a0a737e",
+        "GUID:39cd8726cb0467b43b3c231f54235efc"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

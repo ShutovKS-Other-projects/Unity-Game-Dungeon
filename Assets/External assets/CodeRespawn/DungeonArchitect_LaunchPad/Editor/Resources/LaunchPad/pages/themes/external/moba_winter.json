@@ -1,0 +1,18 @@
+{
+  "title": "Moba (Winter)",
+  "layout": "Details",
+
+  "header": "Moba (Winter)",
+  "desc": "",
+  "image": "themes/images/theme_moba_winter",
+  "actions": [
+    {
+      "type": "Documentation",
+      "data": { "path": "https://coderespawn.github.io/dungeon-architect-quick-start-guide-unity/stage/html/quick_start_1.6.0.html#winter-mode", "title": "View Online" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=vpaMyncs2l8" }
+    }
+  ]
+}

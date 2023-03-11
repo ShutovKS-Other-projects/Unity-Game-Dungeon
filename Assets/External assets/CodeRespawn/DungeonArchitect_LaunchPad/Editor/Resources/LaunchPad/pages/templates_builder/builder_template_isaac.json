@@ -1,0 +1,22 @@
+{
+  "title": "Isaac Builder Template (3D)",
+  "layout": "Details",
+
+  "header": "Isaac Builder Template",
+  "desc": "Build levels like in the game Binding of Isaac",
+  "image": "templates_builder/builder_isaac",
+  "actions": [
+    {
+      "type": "CloneSceneAndBuild",
+      "data": { "path": "scenes/isaac/Scene_Isaac", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "" }
+    }
+  ]
+}

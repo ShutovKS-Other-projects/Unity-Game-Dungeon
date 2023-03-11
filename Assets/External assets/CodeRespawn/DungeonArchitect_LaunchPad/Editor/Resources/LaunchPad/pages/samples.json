@@ -1,0 +1,650 @@
+{
+  "title": "Samples",
+  "layout": "CardGrid",
+  "showCategories": true,
+  "categories": [
+    {
+      "category": "Featured",
+      "cards": [
+        {
+          "title": "Grid Flow Demo",
+          "desc": "Design your dungeon flow with this powerful new dungeon builder",
+          "image": "samples/thumbs/sample_thumb_grid_flow_01",
+          "link": "samples/grid_flow_01"
+        },
+        {
+          "title": "Snap Demo",
+          "desc": "Stitch together pre-made room prefabs using graph grammars",
+          "image": "samples/thumbs/sample_thumb_snap_01",
+          "link": "samples/snap_01"
+        },
+        {
+          "title": "Snap Grid Flow\nGame",
+          "desc": "A 3D flow graph with main path, key-locks and two alternate paths",
+          "image": "thumbs/thumb_builder_sgf",
+          "link": "samples/sgf_01"
+        },
+        {
+          "title": "Grid Builder",
+          "desc": "Procedural dungeon built using a simple theme.   The art asset is free to use",
+          "image": "samples/thumbs/sample_thumb_candy_01",
+          "link": "samples/candy_01"
+        },
+        {
+          "title": "Grid Flow Game",
+          "desc": "Game demonstrating key-lock implementation and item placements",
+          "image": "samples/thumbs/sample_thumb_grid_flow_02",
+          "link": "samples/grid_flow_02"
+        },
+        {
+          "title": "Shooter - Candy",
+          "desc": "Sample game with procedural dungeon, AI and more",
+          "image": "samples/thumbs/sample_thumb_game_ss_candy_01",
+          "link": "samples/game_ss_candy_01"
+        }
+      ]
+    },
+    {
+      "category": "Grid Flow",
+      "cards": [
+        {
+          "title": "Grid Flow Demo",
+          "desc": "Design your dungeon flow with this powerful new dungeon builder",
+          "image": "samples/thumbs/sample_thumb_grid_flow_01",
+          "link": "samples/grid_flow_01"
+        },
+        {
+          "title": "Grid Flow Game",
+          "desc": "Game demonstrating key-lock implementation and item placements",
+          "image": "samples/thumbs/sample_thumb_grid_flow_02",
+          "link": "samples/grid_flow_02"
+        },
+        {
+          "title": "Edge Walls",
+          "desc": "Walls are placed on the edge of tiles, instead of taking up a full tile",
+          "image": "samples/thumbs/sample_thumb_grid_flow_edge",
+          "link": "samples/grid_flow_edge"
+        },
+        {
+          "title": "Static Spawn Room",
+          "desc": "Blend the spawn room of the dungeon with your existing static level geometry",
+          "image": "samples/thumbs/sample_thumb_grid_flow_static_spawn",
+          "link": "samples/grid_flow_static_rooms"
+        },
+        {
+          "title": "Script Path",
+          "desc": "Control the path node positions using your own scripts",
+          "image": "samples/thumbs/sample_thumb_grid_flow_path",
+          "link": "samples/grid_flow_script_path"
+        },
+        {
+          "title": "Game: EdgeWalls",
+          "desc": "Grid Flow Game demo using the Edge Wall grid flow and theme",
+          "image": "samples/thumbs/sample_thumb_grid_flow_edge",
+          "link": "samples/grid_flow_edge_game"
+        },
+        {
+          "title": "Grid Flow 2D",
+          "desc": "A 2D theme using sprites",
+          "image": "samples/thumbs/sample_thumb_grid_flow2d_01",
+          "link": "samples/grid_flow2d_01"
+        },
+        {
+          "title": "Grid Flow Mirror",
+          "desc": "Use the Mirror node to create symmetric dungeons",
+          "image": "samples/thumbs/sample_thumb_gridflow_mirror",
+          "link": "samples/grid_flow_mirror"
+        },
+        {
+          "title": "Decorate Paths",
+          "desc": "Theme various paths differently (like treasure rooms, shops etc)",
+          "image": "samples/thumbs/sample_thumb_grid_flow_deco_path",
+          "link": "samples/grid_flow_deco_path"
+        },
+        {
+          "title": "Decorate Caves",
+          "desc": "Theme rooms, caves and corridors differently",
+          "image": "samples/thumbs/sample_thumb_grid_flow_deco_room_type",
+          "link": "samples/grid_flow_deco_room_type"
+        },
+        {
+          "title": "Simple Candy",
+          "desc": "A simple grid flow scene using the candy theme",
+          "image": "samples/thumbs/sample_thumb_grid_flow_edge_candy",
+          "link": "samples/grid_flow_edge_candy"
+        },
+        {
+          "title": "Game: Candy",
+          "desc": "Grid Flow Game demo using the simple candy theme",
+          "image": "samples/thumbs/sample_thumb_grid_flow_edge_candy",
+          "link": "samples/grid_flow_edge_candy_game"
+        }
+      ]
+    },
+    {
+      "category": "Snap Builder",
+      "cards": [
+        {
+          "title": "Snap Demo",
+          "desc": "Stitch together pre-made room prefabs using graph grammars",
+          "image": "samples/thumbs/sample_thumb_snap_01",
+          "link": "samples/snap_01"
+        },
+        {
+          "title": "Procedural Graphs",
+          "desc": "Example on creating your graph rules procedurally using a script",
+          "image": "samples/thumbs/sample_thumb_snap_02",
+          "link": "samples/snap_02"
+        },
+        {
+          "title": "Side Scroller",
+          "desc": "Build platform levels using the snap builder",
+          "image": "samples/thumbs/sample_thumb_snap_ss_01",
+          "link": "samples/snap_ss_01"
+        },
+        {
+          "title": "Snap Theming",
+          "desc": "Add markers to your snap modules and decorate them using the theme engine",
+          "image": "samples/thumbs/sample_thumb_snap_marker",
+          "link": "samples/snap_marker"
+        },
+        {
+          "title": "Snap 2D Demo",
+          "desc": "Design rooms in individual tilemaps and stitch them together using the snap builder",
+          "image": "samples/thumbs/sample_thumb_snap2d",
+          "link": "samples/snap_2d_01"
+        },
+        {
+          "title": "Snap Query Demo",
+          "desc": "Query various information about the rooms in the snap builder (room size, door locations etc)",
+          "image": "samples/thumbs/sample_thumb_snap_query",
+          "link": "samples/snap_query_01"
+        }
+      ]
+    },
+    {
+      "category": "Snap Grid Flow Builder",
+      "cards": [
+        {
+          "title": "Snap Grid Flow\nGame",
+          "desc": "A 3D flow graph with main path, key-locks and two alternate paths",
+          "image": "thumbs/thumb_builder_sgf",
+          "link": "samples/sgf_01"
+        },
+        {
+          "title": "Non-Repeating\nRooms",
+          "desc": "Disallow the same room prefab from being stitched next to it",
+          "image": "samples/thumbs/sample_thumb_sgf_repeating_rooms",
+          "link": "samples/sgf_repeating_rooms"
+        },
+        {
+          "title": "Door Categories",
+          "desc": "Specify different door categories so they stitch through the compatible ones",
+          "image": "samples/thumbs/sample_thumb_sgf_door_category",
+          "link": "samples/sgf_door_category"
+        },
+        {
+          "title": "SGF Visibility Graph",
+          "desc": "Hide rooms that are further away from the player to improve rendering performance",
+          "image": "samples/thumbs/sample_thumb_sgf_visiblity",
+          "link": "samples/sgf_visibility"
+        },
+        {
+          "title": "SGF Query",
+          "desc": "Use the SGF query interface to know more about the dungeon and its underlying graph",
+          "image": "samples/thumbs/sample_thumb_sgf_query",
+          "link": "samples/sgf_query"
+        },
+        {
+          "title": "Snap Grid Flow\nSide Scroller Setup",
+          "desc": "Modules setup for a side scroller game",
+          "image": "samples/thumbs/sample_thumb_sgf_ss",
+          "link": "samples/sgf_side_scroller"
+        }
+      ]
+    },
+    {
+      "category": "Grid Builder",
+      "cards": [
+        {
+          "title": "Demo",
+          "desc": "Scene using the candy theme.   The art asset is free to use",
+          "image": "samples/thumbs/sample_thumb_candy_01",
+          "link": "samples/candy_01"
+        },
+        {
+          "title": "Indoor",
+          "desc": "Indoor dungeon. A ceiling is added on top of the dungeon",
+          "image": "samples/thumbs/sample_thumb_candy_02",
+          "link": "samples/candy_02"
+        },
+        {
+          "title": "Rooms Ceilings",
+          "desc": "Only rooms have ceilings",
+          "image": "samples/thumbs/sample_thumb_candy_03",
+          "link": "samples/candy_03"
+        },
+        {
+          "title": "Runtime Dungeons",
+          "desc": "Build dungeons at runtime. Play and hit space",
+          "image": "samples/thumbs/sample_thumb_candy_04",
+          "link": "samples/candy_04"
+        },
+        {
+          "title": "Runtime (Indoor)",
+          "desc": "Runtime dungeon using the indoor theme",
+          "image": "samples/thumbs/sample_thumb_candy_05",
+          "link": "samples/candy_05"
+        },
+        {
+          "title": "Volume Example",
+          "desc": "Runtime dungeon using the room ceiling theme",
+          "image": "samples/thumbs/sample_thumb_candy_06",
+          "link": "samples/candy_06"
+        },
+        {
+          "title": "Mirror Volume",
+          "desc": "Create symmetric dungeons using Mirror Volumes",
+          "image": "samples/thumbs/sample_thumb_mirror_01",
+          "link": "samples/mirror_grid_01"
+        }
+      ]
+    },
+    {
+      "category": "Outdoor Cliffs",
+      "cards": [
+        {
+          "title": "Outdoor Cliffs",
+          "desc": "Cliff theme with foliage, trees etc",
+          "image": "samples/thumbs/sample_thumb_cliff_01",
+          "link": "samples/cliff_01"
+        },
+        {
+          "title": "Outdoor Hills",
+          "desc": "Alternate theme with hills instead of cliffs",
+          "image": "samples/thumbs/sample_thumb_cliff_02",
+          "link": "samples/cliff_02"
+        },
+        {
+          "title": "Runtime Dungeon",
+          "desc": "Runtime demo with the cliff theme",
+          "image": "samples/thumbs/sample_thumb_cliff_03",
+          "link": "samples/cliff_03"
+        }
+      ]
+    },
+    {
+      "category": "Mario",
+      "cards": [
+        {
+          "title": "Mario Demo Game",
+          "desc": "Demo of the mario dungeon builder",
+          "image": "samples/thumbs/sample_thumb_mario_01",
+          "link": "samples/mario_01"
+        },
+        {
+          "title": "Mario Alt Theme",
+          "desc": "Alternate way of theming the mario builder",
+          "image": "samples/thumbs/sample_thumb_mario_02",
+          "link": "samples/mario_02"
+        }
+      ]
+    },
+    {
+      "category": "Simple City",
+      "cards": [
+        {
+          "title": "Simple City",
+          "desc": "Demos the simple city builder",
+          "image": "samples/thumbs/sample_thumb_simple_city_01",
+          "link": "samples/simple_city_01"
+        },
+        {
+          "title": "Custom Blocks",
+          "desc": "Add bigger buildings (larger than 1x tiles)",
+          "image": "samples/thumbs/sample_thumb_simple_city_02",
+          "link": "samples/simple_city_02"
+        },
+        {
+          "title": "Stronghold",
+          "desc": "A stronghold with city walls and ramps",
+          "image": "samples/thumbs/sample_thumb_simple_city_03",
+          "link": "samples/simple_city_03"
+        },
+        {
+          "title": "Medieval City",
+          "desc": "A medieval theme to the stronghold",
+          "image": "samples/thumbs/sample_thumb_simple_city_04",
+          "link": "samples/simple_city_04"
+        },
+        {
+          "title": "Urban City",
+          "desc": "Urban city theme. Programmer art :)",
+          "image": "samples/thumbs/sample_thumb_simple_city_05",
+          "link": "samples/simple_city_05"
+        },
+        {
+          "title": "Skyscrapers",
+          "desc": "Emit skyscrapers in the center of the city",
+          "image": "samples/thumbs/sample_thumb_simple_city_06",
+          "link": "samples/simple_city_06"
+        },
+        {
+          "title": "Realtime City",
+          "desc": "Runtime city building",
+          "image": "samples/thumbs/sample_thumb_simple_city_07",
+          "link": "samples/simple_city_07"
+        }
+      ]
+    },
+    {
+      "category": "Snap Builder Side Scroller",
+      "cards": [
+        {
+          "title": "Side Scroller",
+          "desc": "Build platform levels using the snap builder",
+          "image": "samples/thumbs/sample_thumb_snap_ss_01",
+          "link": "samples/snap_ss_01"
+        }
+      ]
+    },
+    {
+      "category": "Game: Grid Flow Demo",
+      "cards": [
+        {
+          "title": "Grid Flow Game",
+          "desc": "Game demo with key-lock, cyclic paths, mini-map and more",
+          "image": "samples/thumbs/sample_thumb_grid_flow_02",
+          "link": "samples/grid_flow_02"
+        }
+      ]
+    },
+    {
+      "category": "Game: Grid Shooter",
+      "cards": [
+        {
+          "title": "Shooter - Candy",
+          "desc": "Sample game with procedural dungeon, AI and more",
+          "image": "samples/thumbs/sample_thumb_game_ss_candy_01",
+          "link": "samples/game_ss_candy_01"
+        },
+        {
+          "title": "Shooter - City",
+          "desc": "Sample game using the city theme",
+          "image": "samples/thumbs/sample_thumb_game_ss_city_01",
+          "link": "samples/game_ss_city_01"
+        },
+        {
+          "title": "Shooter - Cliff",
+          "desc": "Sample game using the cliff theme",
+          "image": "samples/thumbs/sample_thumb_game_ss_cliff_01",
+          "link": "samples/game_ss_cliff_01"
+        },
+        {
+          "title": "Shooter - Hill",
+          "desc": "Sample game using the hill theme",
+          "image": "samples/thumbs/sample_thumb_game_ss_hill_01",
+          "link": "samples/game_ss_hill_01"
+        }
+      ]
+    },
+    {
+      "category": "Game: 2D Jack Rabbit",
+      "cards": [
+        {
+          "title": "2D Game Demo",
+          "desc": "Sample 2D game demo with AI, navigation and more",
+          "image": "samples/thumbs/sample_thumb_game_jack_01",
+          "link": "samples/game_jack_01"
+        }
+      ]
+    },
+    {
+      "category": "Game: Mario",
+      "cards": [
+        {
+          "title": "Mario Game Demo",
+          "desc": "Demo game built using the Mario builder",
+          "image": "samples/thumbs/sample_thumb_mario_01",
+          "link": "samples/mario_01"
+        }
+      ]
+    },
+    {
+      "category": "Landscape",
+      "cards": [
+        {
+          "title": "Landscape Transformer",
+          "desc": "Non-destruction landscape transforms when building dungeons",
+          "image": "samples/thumbs/sample_thumb_landscape_trans_01",
+          "link": "samples/landscape_trans_01"
+        }
+      ]
+    },
+    {
+      "category": "Spatial Constraints",
+      "cards": [
+        {
+          "title": "Near Door",
+          "desc": "Add items near doors",
+          "image": "samples/thumbs/sample_thumb_sc_near_door",
+          "link": "samples/sc_near_door"
+        },
+        {
+          "title": "Not Near Door",
+          "desc": "Avoid items near doors",
+          "image": "samples/thumbs/sample_thumb_sc_not_near_door",
+          "link": "samples/sc_not_near_door"
+        },
+        {
+          "title": "Adjacent To Doors",
+          "desc": "Custom walls next to doors",
+          "image": "samples/thumbs/sample_thumb_sc_adjacent_to_doors",
+          "link": "samples/sc_adjacent_to_doors"
+        },
+        {
+          "title": "Large Corner Deco",
+          "desc": "Find and place large corner decorations, if we have the space",
+          "image": "samples/thumbs/sample_thumb_sc_large_corner_deco",
+          "link": "samples/sc_large_corner_deco"
+        },
+        {
+          "title": "Outer Walls",
+          "desc": "Custom meshes on the outer edges of the dungeons",
+          "image": "samples/thumbs/sample_thumb_sc_outer_walls",
+          "link": "samples/sc_outer_walls"
+        },
+        {
+          "title": "Boundary Walls",
+          "desc": "Force walls on edges of a dungeon, fences on inside",
+          "image": "samples/thumbs/sample_thumb_sc_boundary_walls",
+          "link": "samples/sc_boundary_walls"
+        },
+        {
+          "title": "Ground Deco 1",
+          "desc": "Decorate the ground tiles using spatial constraints",
+          "image": "samples/thumbs/sample_thumb_sc_ground_deco1",
+          "link": "samples/sc_ground_deco1"
+        },
+        {
+          "title": "Ground Deco 2",
+          "desc": "Decorate the ground tiles using spatial constraints",
+          "image": "samples/thumbs/sample_thumb_sc_ground_deco2",
+          "link": "samples/sc_ground_deco2"
+        },
+        {
+          "title": "Diablo Top Down",
+          "desc": "Remove walls facing the camera, ideal for top-down games",
+          "image": "samples/thumbs/sample_thumb_sc_diablo",
+          "link": "samples/sc_diablo"
+        },
+        {
+          "title": "Bridge",
+          "desc": "Convert single lane corridors into bridges",
+          "image": "samples/thumbs/sample_thumb_sc_bridge",
+          "link": "samples/sc_bridge"
+        },
+        {
+          "title": "Removal Rules 1",
+          "desc": "Remove nearby objects to make way for a larger tile (2x curved tile)",
+          "image": "samples/thumbs/sample_thumb_sc_remove_corner",
+          "link": "samples/sc_remove_corner"
+        },
+        {
+          "title": "Removal Rules 2",
+          "desc": "Expand the doors to take 2 tiles, and remove nearby door",
+          "image": "samples/thumbs/sample_thumb_sc_remove_door",
+          "link": "samples/sc_remove_door"
+        },
+        {
+          "title": "Corner Pillar",
+          "desc": "Add pillars on the corner of rooms",
+          "image": "samples/thumbs/sample_thumb_sc_corner_pillar",
+          "link": "samples/sc_corner_pillar"
+        },
+        {
+          "title": "Roof Slopes",
+          "desc": "Rule to create gable roofs",
+          "image": "samples/thumbs/sample_thumb_sc_roof_gable",
+          "link": "samples/sc_roof_gable"
+        }
+      ]
+    },
+    {
+      "category": "Circular City",
+      "cards": [
+        {
+          "title": "Circular City",
+          "desc": "Demos the Circular City builder",
+          "image": "samples/thumbs/sample_thumb_circular_city",
+          "link": "samples/circular_city"
+        }
+      ]
+    },
+    {
+      "category": "Floor Planner",
+      "cards": [
+        {
+          "title": "Floor Planner",
+          "desc": "Demos the Floor plan builder",
+          "image": "samples/thumbs/sample_thumb_floor_planner_01",
+          "link": "samples/floor_planner_01"
+        }
+      ]
+    },
+    {
+      "category": "Infinity Caves",
+      "cards": [
+        {
+          "title": "Infinity Caves",
+          "desc": "Demos infinite dungeons. Hit play and move player object",
+          "image": "samples/thumbs/sample_thumb_infinity_cave_01",
+          "link": "samples/infinity_cave_01"
+        }
+      ]
+    },
+    {
+      "category": "Isaac",
+      "cards": [
+        {
+          "title": "Isaac Demo",
+          "desc": "Builds levels like in the game Binding of Isaac",
+          "image": "samples/thumbs/sample_thumb_isaac_01",
+          "link": "samples/isaac_01"
+        },
+        {
+          "title": "Isaac: Emitter",
+          "desc": "A room center and corner emitter allows you to customize the rooms",
+          "image": "samples/thumbs/sample_thumb_isaac_02",
+          "link": "samples/isaac_02"
+        }
+      ]
+    },
+    {
+      "category": "Maze",
+      "cards": [
+        {
+          "title": "Maze Demo",
+          "desc": "Demos the maze builder",
+          "image": "samples/thumbs/sample_thumb_maze_01",
+          "link": "samples/maze_01"
+        }
+      ]
+    },
+    {
+      "category": "Spatial Partitioning",
+      "cards": [
+        {
+          "title": "Spatial Partitioning",
+          "desc": "Demos the spatial constriaint builder",
+          "image": "samples/thumbs/sample_thumb_bsp_01",
+          "link": "samples/bsp_01"
+        }
+      ]
+    },
+    {
+      "category": "Simple Shapes",
+      "cards": [
+        {
+          "title": "Simple Shapes",
+          "desc": "A simple theme made out of basic shapes",
+          "image": "samples/thumbs/sample_thumb_simple_shapes_01",
+          "link": "samples/simple_shapes_01"
+        }
+      ]
+    },
+    {
+      "category": "Misc",
+      "cards": [
+        {
+          "title": "Mesh Merge",
+          "desc": "Demos the Mesh Merge feature to reduce batch calls",
+          "image": "samples/thumbs/sample_thumb_misc_mesh_merge",
+          "link": "samples/misc_mesh_merge"
+        },
+        {
+          "title": "Connected Cells",
+          "desc": "Find connected rooms. Hit play and hover mouse over cells",
+          "image": "samples/thumbs/sample_thumb_misc_connected_corridor",
+          "link": "samples/misc_connected_corridor"
+        },
+        {
+          "title": "Multiple Dungeon",
+          "desc": "Blend multiple dungeons together with designer created content",
+          "image": "samples/thumbs/sample_thumb_misc_multi_dungeon",
+          "link": "samples/misc_multi_dungeon"
+        },
+        {
+          "title": "Dynamic Volumes",
+          "desc": "Dynamically wrap volumes around dungeon rooms.",
+          "image": "samples/thumbs/sample_thumb_misc_wrap_volume",
+          "link": "samples/misc_wrap_volume"
+        },
+        {
+          "title": "Find Room Doors",
+          "desc": "Grab all the doors of the room the player is currently in",
+          "image": "samples/thumbs/sample_thumb_misc_find_room_doors",
+          "link": "samples/misc_find_room_doors"
+        },
+        {
+          "title": "Free Space Deco",
+          "desc": "Decorate the space outside the dungeon bounds",
+          "image": "samples/thumbs/sample_thumb_misc_decorate_outer",
+          "link": "samples/misc_decorate_outer"
+        },
+        {
+          "title": "Navigation Demo",
+          "desc": "Runtime navigation demo. Hit play to have the NPC follow you",
+          "image": "samples/thumbs/sample_thumb_misc_nav_demo",
+          "link": "samples/misc_nav_demo"
+        },
+        {
+          "title": "MultiObject Node",
+          "desc": "Demos GameObject Array node",
+          "image": "samples/thumbs/sample_thumb_misc_multi_obj_node",
+          "link": "samples/misc_multi_obj_node"
+        }
+      ]
+    }
+  ]
+}

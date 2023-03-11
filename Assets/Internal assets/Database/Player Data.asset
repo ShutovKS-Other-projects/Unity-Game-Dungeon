@@ -27,6 +27,8 @@ MonoBehaviour:
   armor: 10
   criticalDamage: 25
   criticalChance: 15
+  magicStrength: 10
+  magicAttackType: 19
   jumpSpeed: 5
   movementForce: 10
   movementSpeedMax: 4

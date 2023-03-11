@@ -1,0 +1,14 @@
+{
+  "title": "Candy Room Ceil",
+  "layout": "Details",
+
+  "header": "Candy Room Ceil",
+  "desc": "",
+  "image": "samples/images/sample_candy_03",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/grid/CandyRoomCeilingsDungeonTheme", "resource_path": true  }
+    }
+  ]
+}

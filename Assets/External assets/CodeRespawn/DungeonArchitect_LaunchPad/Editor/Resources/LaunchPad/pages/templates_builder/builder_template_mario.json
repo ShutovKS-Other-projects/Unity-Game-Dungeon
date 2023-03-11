@@ -1,0 +1,22 @@
+{
+  "title": "Mario Builder Template (3D)",
+  "layout": "Details",
+
+  "header": "Mario Builder Template",
+  "desc": "Build side scrolling levels with this builder",
+  "image": "templates_builder/builder_mario",
+  "actions": [
+    {
+      "type": "CloneSceneAndBuild",
+      "data": { "path": "scenes/mario/Scene_Mario", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=1QAG-pa4MFU" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "" }
+    }
+  ]
+}

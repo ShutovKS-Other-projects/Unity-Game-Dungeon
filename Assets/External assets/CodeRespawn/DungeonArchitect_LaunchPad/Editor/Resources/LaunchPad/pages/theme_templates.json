@@ -1,0 +1,246 @@
+{
+	"title": "Theme Templates",
+	"layout": "CardGrid",
+	"description": "Create a new theme from one of these templates",
+	"showCategories": true,
+	"showDescription": false,
+	"heightOverride": 135,
+	"categories": 
+	[
+		{
+			"category": "Grid Flow Themes",
+			"cards": [{
+				"title": "Prehistoric",
+				"desc": "",
+				"image": "samples/thumbs/sample_thumb_grid_flow_02",
+				"link": "themes/grid_flow/prehistoric"
+			}]
+		},
+		{
+			"category": "Grid Themes",
+			"cards": [{
+					"title": "Candy Default",
+					"desc": "",
+					"image": "samples/thumbs/sample_thumb_candy_01",
+					"link": "themes/grid/candy1"
+				},
+				{
+					"title": "Candy Indoor",
+					"desc": "",
+					"image": "samples/thumbs/sample_thumb_candy_02",
+					"link": "themes/grid/candy2"
+				},
+				{
+					"title": "Candy Room Ceil",
+					"desc": "",
+					"image": "samples/thumbs/sample_thumb_candy_03",
+					"link": "themes/grid/candy3"
+				},
+				{
+					"title": "Outdoor Cliffs",
+					"desc": "",
+					"image": "samples/thumbs/sample_thumb_cliff_01",
+					"link": "themes/grid/cliff1"
+				},
+				{
+					"title": "Outdoor Hills",
+					"desc": "",
+					"image": "samples/thumbs/sample_thumb_cliff_02",
+					"link": "themes/grid/cliff2"
+				},
+				{
+					"title": "Simple (White)",
+					"desc": "",
+					"image": "samples/thumbs/sample_thumb_simple_shapes_01",
+					"link": "themes/grid/shapes"
+				}
+			]
+		},
+		{
+			"category": "Mario Builder Themes",
+			"cards": [{
+				"title": "Mario Default",
+				"desc": "",
+				"image": "samples/thumbs/sample_thumb_mario_01",
+				"link": "themes/mario/mario"
+			}]
+		},
+		{
+			"category": "Simple City Themes",
+			"cards": [{
+					"title": "Medieval City",
+					"desc": "",
+					"image": "samples/thumbs/sample_thumb_simple_city_04",
+					"link": "themes/simple_city/simple_city1"
+				},
+				{
+					"title": "Stronghold",
+					"desc": "",
+					"image": "samples/thumbs/sample_thumb_simple_city_03",
+					"link": "themes/simple_city/simple_city2"
+				},
+				{
+					"title": "Tiny City",
+					"desc": "",
+					"image": "samples/thumbs/sample_thumb_simple_city_01",
+					"link": "themes/simple_city/simple_city3"
+				},
+				{
+					"title": "ProgArt City",
+					"desc": "",
+					"image": "samples/thumbs/sample_thumb_simple_city_05",
+					"link": "themes/simple_city/simple_city4"
+				}
+			]
+		},
+		{
+			"category": "Infinity Cave Themes",
+			"cards": [{
+					"title": "Rocky Caves",
+					"desc": "",
+					"image": "samples/thumbs/sample_thumb_infinity_cave_01",
+					"link": "themes/infinity_cave/infinity_cave1"
+				},
+				{
+					"title": "Simple Caves",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_infinity_cave_basic",
+					"link": "themes/infinity_cave/infinity_cave2"
+				}
+			]
+		},
+		{
+			"category": "Circular City Themes",
+			"cards": [{
+				"title": "Circular City",
+				"desc": "",
+				"image": "samples/thumbs/sample_thumb_circular_city",
+				"link": "themes/circular_city/circular_city_basic"
+			}]
+		},
+		{
+			"category": "Floor Plan Themes",
+			"cards": [{
+				"title": "Candy Floor",
+				"desc": "",
+				"image": "samples/thumbs/sample_thumb_floor_planner_01",
+				"link": "themes/floor_plan/floor_plan_candy"
+			}]
+		},
+		{
+			"category": "Spatial Partition Themes",
+			"cards": [{
+				"title": "BSP Default",
+				"desc": "",
+				"image": "samples/thumbs/sample_thumb_bsp_01",
+				"link": "themes/bsp/bsp_basic"
+			}]
+		},
+		{
+			"category": "Isaac Builder Themes",
+			"cards": [{
+				"title": "Isaac Basic",
+				"desc": "",
+				"image": "samples/thumbs/sample_thumb_isaac_01",
+				"link": "themes/isaac/isaac_basic"
+			}]
+		},
+		{
+			"category": "Maze Builder Themes",
+			"cards": [{
+				"title": "Maze Basic",
+				"desc": "",
+				"image": "samples/thumbs/sample_thumb_maze_01",
+				"link": "themes/maze/maze_basic"
+			}]
+		},
+		{
+			"category": "External Asset Themes",
+			"cards": [{
+					"title": "Moba (Summer)",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_moba_summer",
+					"link": "themes/external/moba_summer"
+				},
+				{
+					"title": "Moba (Winter)",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_moba_winter",
+					"link": "themes/external/moba_winter"
+				},
+				{
+					"title": "Desert City",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_desert_city",
+					"link": "themes/external/desert_city"
+				},
+				{
+					"title": "Graveyard",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_graveyard",
+					"link": "themes/external/graveyard"
+				},
+				{
+					"title": "Multi-Story",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_multi_story",
+					"link": "themes/external/multi_story"
+				},
+				{
+					"title": "Cartoon City",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_toon_city",
+					"link": "themes/external/toon_city"
+				},
+				{
+					"title": "TopDown Wood",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_interior_wood",
+					"link": "themes/external/interior_wood"
+				},
+				{
+					"title": "TopDown Stone",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_interior_stone",
+					"link": "themes/external/interior_stone"
+				},
+				{
+					"title": "TaD Sewers",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_tad_sewer",
+					"link": "themes/external/tad_sewer"
+				},
+				{
+					"title": "Village Exteriors",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_village_exterior",
+					"link": "themes/external/village_exterior"
+				},
+				{
+					"title": "Village Interiors",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_village_interior",
+					"link": "themes/external/village_interior"
+				},
+				{
+					"title": "Village Stronghold",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_village_stronghold",
+					"link": "themes/external/village_stronghold"
+				},
+				{
+					"title": "TopDown Dungeon",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_topdown_dungeon",
+					"link": "themes/external/topdown_dungeon"
+				},
+				{
+					"title": "Isaac Hand Paint",
+					"desc": "",
+					"image": "themes/thumbs/theme_thumb_isaac_hand_paint",
+					"link": "themes/external/isaac_hand_paint"
+				}
+			]
+		}
+	]
+}

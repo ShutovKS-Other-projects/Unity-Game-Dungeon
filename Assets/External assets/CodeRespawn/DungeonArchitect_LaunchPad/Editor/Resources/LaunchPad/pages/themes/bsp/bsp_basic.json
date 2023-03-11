@@ -1,0 +1,14 @@
+{
+  "title": "BSP Default",
+  "layout": "Details",
+
+  "header": "BSP Default",
+  "desc": "",
+  "image": "samples/images/sample_bsp_01",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/bsp/BSPTheme", "resource_path": true  }
+    }
+  ]
+}

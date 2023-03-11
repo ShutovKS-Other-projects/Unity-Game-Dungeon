@@ -1,0 +1,26 @@
+{
+  "title": "Removal Rules: Corner",
+  "layout": "Details",
+
+  "header": "Removal Rules: Corner",
+  "desc": "Remove nearby objects to make way for a larger tile (2x curved tile)",
+  "image": "samples/images/sample_sc_remove_corner",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/11_SCExample_RemovalRules_Corner_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/11_SCExample_RemovalRules_Corner_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/11_SCExample_RemovalRules_Corner_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

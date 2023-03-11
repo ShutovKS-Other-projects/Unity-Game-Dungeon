@@ -1,0 +1,22 @@
+{
+  "title": "Circular City Builder (3D)",
+  "layout": "Details",
+
+  "header": "Circular City Builder",
+  "desc": "Build a large circular city with procedural roads",
+  "image": "templates_builder/builder_circular_city",
+  "actions": [
+    {
+      "type": "CloneSceneAndBuild",
+      "data": { "path": "scenes/circular_city/Scene_CircularCity", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "" }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Dynamic Volumes",
+  "layout": "Details",
+
+  "header": "Dynamic Volumes",
+  "desc": "Dynamically wrap volumes around dungeon rooms.",
+  "image": "samples/images/sample_misc_wrap_volume",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/DynamicVolumeSpawning.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/DynamicVolumeSpawning.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/DynamicVolumeSpawning.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

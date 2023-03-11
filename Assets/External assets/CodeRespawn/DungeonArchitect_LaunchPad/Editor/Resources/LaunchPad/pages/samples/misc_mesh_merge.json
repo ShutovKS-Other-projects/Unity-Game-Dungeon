@@ -1,0 +1,26 @@
+{
+  "title": "Mesh Merge Feature",
+  "layout": "Details",
+
+  "header": "Mesh Merge Feature",
+  "desc": "Demos the Mesh Merge feature to reduce batch calls",
+  "image": "samples/images/sample_misc_mesh_merge",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Feature_MeshMerge/Scenes/Demo_MeshMerge.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Feature_MeshMerge/Scenes/Demo_MeshMerge.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Feature_MeshMerge/Scenes/Demo_MeshMerge.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

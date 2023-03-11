@@ -1,0 +1,26 @@
+{
+  "title": "Spatial Partitioning",
+  "layout": "Details",
+
+  "header": "Spatial Partitioning",
+  "desc": "Demos the spatial constriaint builder",
+  "image": "samples/images/sample_bsp_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SpatialPartition/Scenes/DemoBuilder_BSP.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SpatialPartition/Scenes/DemoBuilder_BSP.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SpatialPartition/Scenes/DemoBuilder_BSP.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "GridFlow Template - Edge Simple",
+  "layout": "Details",
+
+  "header": "GridFlow Template - Edge Simple",
+  "desc": "A simpler version without all the overlays and background rocks.  The template contains various branches, treasure, enemies and key-locks",
+  "image": "templates_flow/templateflow_grid_edge_simple",
+  "actions": [
+    {
+      "type": "CloneGridFlow",
+      "data": {
+        "path": "gridflow/DemoGridFlow_EdgeSimple",
+        "resource_path": true
+      }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=aa8KcSligXs" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

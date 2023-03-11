@@ -1,0 +1,26 @@
+{
+  "title": "Adjacent To Doors",
+  "layout": "Details",
+
+  "header": "Adjacent To Doors",
+  "desc": "Custom walls next to doors",
+  "image": "samples/images/sample_sc_adjacent_to_doors",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/03_SCExample_AdjacentToDoors_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/03_SCExample_AdjacentToDoors_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/03_SCExample_AdjacentToDoors_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

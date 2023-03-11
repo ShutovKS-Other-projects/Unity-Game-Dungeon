@@ -1,0 +1,26 @@
+{
+  "title": "Realtime City",
+  "layout": "Details",
+
+  "header": "Realtime City",
+  "desc": "Runtime city building",
+  "image": "samples/images/sample_simple_city_07",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/X_SimpleCityRealtimeScene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/X_SimpleCityRealtimeScene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/X_SimpleCityRealtimeScene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

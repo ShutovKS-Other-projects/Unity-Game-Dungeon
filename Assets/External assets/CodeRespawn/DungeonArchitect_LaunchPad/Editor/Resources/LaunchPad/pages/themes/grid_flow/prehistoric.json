@@ -1,0 +1,14 @@
+{
+  "title": "Prehistoric",
+  "layout": "Details",
+
+  "header": "Prehistoric",
+  "desc": "",
+  "image": "samples/images/sample_grid_flow_02",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/grid_flow/ThemePrehistoric", "resource_path": true  }
+    }
+  ]
+}

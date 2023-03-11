@@ -1,0 +1,26 @@
+{
+  "title": "Circular City",
+  "layout": "Details",
+
+  "header": "Circular City",
+  "desc": "Demos the Circular City builder",
+  "image": "samples/images/sample_circular_city",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_CircularCity/Scenes/DemoCircularCity.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_CircularCity/Scenes/DemoCircularCity.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_CircularCity/Scenes/DemoCircularCity.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

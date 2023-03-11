@@ -1,0 +1,26 @@
+{
+  "title": "Simple Shapes",
+  "layout": "Details",
+
+  "header": "Simple Shapes",
+  "desc": "A simple theme made out of basic shapes",
+  "image": "samples/images/sample_simple_shapes_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_SimpleShapes/Scenes/BasicShapesDemo.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_SimpleShapes/Scenes/BasicShapesDemo.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_SimpleShapes/Scenes/BasicShapesDemo.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

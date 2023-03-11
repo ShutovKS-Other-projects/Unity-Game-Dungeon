@@ -1,0 +1,26 @@
+{
+  "title": "Find Room Doors",
+  "layout": "Details",
+
+  "header": "Find Room Doors",
+  "desc": "Grab all the doors of the room the player is currently in",
+  "image": "samples/images/sample_misc_find_room_doors",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/FindRoomDoors.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/FindRoomDoors.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/FindRoomDoors.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=IHNhLA72bOA" }
+    }
+  ]
+}

@@ -1,3 +1,4 @@
+using Magic.Type;
 using Skill.Enum;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -33,8 +34,9 @@ namespace Player
         public float criticalDamage = 25f;
         public float criticalChance = 15f;
         
+        [Header("Magic")]
         public float magicStrength = 10f;
-        public SkillMagicType magicAttackType = SkillMagicType.Default;
+        [FormerlySerializedAs("magicAttackType")] public MagicAttackType magicAttackAttackType = MagicAttackType.None;
 
         [Header("Movement Speed")]
         public float jumpSpeed = 5f;

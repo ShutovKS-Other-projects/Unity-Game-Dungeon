@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Magic.Type;
 using Skill.Enum;
 using UnityEngine;
 
@@ -7,14 +8,14 @@ namespace Skill.SkillTree
 {
     public class SkillMagic
     {
-        public SkillMagic() => _unlockedSkillsTypeList = new List<SkillMagicType>();
+        public SkillMagic() => _unlockedSkillsTypeList = new List<MagicAttackType>();
 
         #region List
 
         /// <summary>
         /// Список разблокированных скилов
         /// </summary>
-        private readonly List<SkillMagicType> _unlockedSkillsTypeList;
+        private readonly List<MagicAttackType> _unlockedSkillsTypeList;
 
         #endregion
 
@@ -28,14 +29,14 @@ namespace Skill.SkillTree
         /// <summary>
         /// Вызывается при смене скила
         /// </summary>
-        public event EventHandler<SkillMagicType> OnSkillSwitched;
+        public event EventHandler<MagicAttackType> OnSkillSwitched;
 
         /// <summary>
         /// Аргументы для события OnSkillUnlocked
         /// </summary>
         public class OnSkillUnlockedEventArgs : EventArgs
         {
-            public SkillMagicType SkillMagicType { get; set; }
+            public MagicAttackType MagicAttackType { get; set; }
         }
 
         #endregion
@@ -45,94 +46,94 @@ namespace Skill.SkillTree
         /// <summary>
         /// Попытка разблокировки скила
         /// </summary>
-        /// <param name="skillMagicType"> Тип скила, который необходимо разблокировать</param>
+        /// <param name="magicAttackType"> Тип скила, который необходимо разблокировать</param>
         /// <returns> Возвращает true, если скил разблокирован, иначе false</returns>
-        public bool TryUnlockSkill(SkillMagicType skillMagicType)
+        public bool TryUnlockSkill(MagicAttackType magicAttackType)
         {
-            if (!CanUnlockSkill(skillMagicType)) return false;
-            UnlockSkill(skillMagicType);
-            SwitchingSkill(skillMagicType);
+            if (!CanUnlockSkill(magicAttackType)) return false;
+            UnlockSkill(magicAttackType);
+            SwitchingSkill(magicAttackType);
             return true;
         }
 
         /// <summary>
         /// Проверка на разблокировку скила 
         /// </summary>
-        /// <param name="skillMagicType"> Тип скила, который необходимо проверить</param>
+        /// <param name="magicAttackType"> Тип скила, который необходимо проверить</param>
         /// <returns> Возвращает true, если скил разблокирован, иначе false</returns>
-        private bool IsSkillUnlocked(SkillMagicType skillMagicType)
+        private bool IsSkillUnlocked(MagicAttackType magicAttackType)
         {
-            if (!_unlockedSkillsTypeList.Contains(skillMagicType)) return false;
-            SwitchingSkill(skillMagicType);
+            if (!_unlockedSkillsTypeList.Contains(magicAttackType)) return false;
+            SwitchingSkill(magicAttackType);
             return true;
         }
 
         /// <summary>
         /// Проверка на возможность разблокировки скила 
         /// </summary>
-        /// <param name="skillMagicType"> Тип скила, который необходимо разблокировать</param>
+        /// <param name="magicAttackType"> Тип скила, который необходимо разблокировать</param>
         /// <returns> Возвращает true, если скил можно разблокировать, иначе false</returns>
-        private bool CanUnlockSkill(SkillMagicType skillMagicType)
+        private bool CanUnlockSkill(MagicAttackType magicAttackType)
         {
-            var skillRequired = GetSkillRequired(skillMagicType);
-            if (skillRequired == SkillMagicType.None) return true;
+            var skillRequired = GetSkillRequired(magicAttackType);
+            if (skillRequired == MagicAttackType.None) return true;
             return skillRequired != null && IsSkillUnlocked(skillRequired.Value);
         }
 
         /// <summary>
         /// Разблокировка скила
         /// </summary>
-        /// <param name="skillMagicType">Тип разблокируемого скила</param>
-        private void UnlockSkill(SkillMagicType skillMagicType)
+        /// <param name="magicAttackType">Тип разблокируемого скила</param>
+        private void UnlockSkill(MagicAttackType magicAttackType)
         {
-            _unlockedSkillsTypeList.Add(skillMagicType);
-            OnSkillUnlocked?.Invoke(this, new OnSkillUnlockedEventArgs { SkillMagicType = skillMagicType });
-            Debug.Log($"Skill {skillMagicType} unlocked");
+            _unlockedSkillsTypeList.Add(magicAttackType);
+            OnSkillUnlocked?.Invoke(this, new OnSkillUnlockedEventArgs { MagicAttackType = magicAttackType });
+            Debug.Log($"Skill {magicAttackType} unlocked");
         }
 
         /// <summary>
         /// Смена скила
         /// </summary>
-        /// <param name="skillMagicType"> Тип скила, на который необходимо сменить</param>
-        private void SwitchingSkill(SkillMagicType skillMagicType)
+        /// <param name="magicAttackType"> Тип скила, на который необходимо сменить</param>
+        private void SwitchingSkill(MagicAttackType magicAttackType)
         {
-            OnSkillSwitched?.Invoke(this, skillMagicType);
-            Debug.Log($"Skill {skillMagicType} switched");
+            OnSkillSwitched?.Invoke(this, magicAttackType);
+            Debug.Log($"Skill {magicAttackType} switched");
         }
 
 
         /// <summary>
         /// Получение скила, который необходим для разблокировки
         /// </summary>
-        /// <param name="skillMagicType"> Тип скила, который необходимо разблокировать</param>
+        /// <param name="magicAttackType"> Тип скила, который необходимо разблокировать</param>
         /// <returns> Тип скила, который необходим для разблокировки выбраного скила, если такого скила нет, то возвращается None</returns>
-        private static SkillMagicType? GetSkillRequired(SkillMagicType skillMagicType) => skillMagicType switch
+        private static MagicAttackType? GetSkillRequired(MagicAttackType magicAttackType) => magicAttackType switch
         {
             //1 LVL
-            SkillMagicType.FireIgnition => SkillMagicType.Default,
-            SkillMagicType.IceFrostbite => SkillMagicType.Default,
-            SkillMagicType.LightningStaticShock => SkillMagicType.Default,
-            SkillMagicType.EarthRockslide => SkillMagicType.Default,
-            SkillMagicType.WaterTorrent => SkillMagicType.Default,
-            SkillMagicType.AirGust => SkillMagicType.Default,
+            MagicAttackType.FireIgnition => MagicAttackType.Default,
+            MagicAttackType.IceFrostbite => MagicAttackType.Default,
+            MagicAttackType.LightningStaticShock => MagicAttackType.Default,
+            MagicAttackType.EarthRockslide => MagicAttackType.Default,
+            MagicAttackType.WaterTorrent => MagicAttackType.Default,
+            MagicAttackType.AirGust => MagicAttackType.Default,
 
             //2 LVL
-            SkillMagicType.FireInferno => SkillMagicType.FireIgnition,
-            SkillMagicType.IceGlacialChill => SkillMagicType.IceFrostbite,
-            SkillMagicType.LightningThunderbolt => SkillMagicType.LightningStaticShock,
-            SkillMagicType.EarthTremor => SkillMagicType.EarthRockslide,
-            SkillMagicType.WaterTsunami => SkillMagicType.WaterTorrent,
-            SkillMagicType.AirHurricane => SkillMagicType.AirGust,
+            MagicAttackType.FireInferno => MagicAttackType.FireIgnition,
+            MagicAttackType.IceGlacialChill => MagicAttackType.IceFrostbite,
+            MagicAttackType.LightningThunderbolt => MagicAttackType.LightningStaticShock,
+            MagicAttackType.EarthTremor => MagicAttackType.EarthRockslide,
+            MagicAttackType.WaterTsunami => MagicAttackType.WaterTorrent,
+            MagicAttackType.AirHurricane => MagicAttackType.AirGust,
 
             //3 LVL
-            SkillMagicType.FireMeteor => SkillMagicType.FireInferno,
-            SkillMagicType.IceAbsoluteZero => SkillMagicType.IceGlacialChill,
-            SkillMagicType.LightningLightningStorm => SkillMagicType.LightningThunderbolt,
-            SkillMagicType.EarthEarthquake => SkillMagicType.EarthTremor,
-            SkillMagicType.WaterCyclone => SkillMagicType.WaterTsunami,
-            SkillMagicType.AirTornado => SkillMagicType.AirHurricane,
+            MagicAttackType.FireMeteor => MagicAttackType.FireInferno,
+            MagicAttackType.IceAbsoluteZero => MagicAttackType.IceGlacialChill,
+            MagicAttackType.LightningLightningStorm => MagicAttackType.LightningThunderbolt,
+            MagicAttackType.EarthEarthquake => MagicAttackType.EarthTremor,
+            MagicAttackType.WaterCyclone => MagicAttackType.WaterTsunami,
+            MagicAttackType.AirTornado => MagicAttackType.AirHurricane,
 
-            _ => SkillMagicType.None
+            _ => MagicAttackType.None
         };
 
         #endregion

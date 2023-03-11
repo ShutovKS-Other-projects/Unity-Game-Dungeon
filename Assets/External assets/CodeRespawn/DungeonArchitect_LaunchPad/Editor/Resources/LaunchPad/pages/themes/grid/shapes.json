@@ -1,0 +1,14 @@
+{
+  "title": "Simple (White)",
+  "layout": "Details",
+
+  "header": "Simple (White)",
+  "desc": "",
+  "image": "samples/images/sample_simple_shapes_01",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/grid/Theme_Basic_White", "resource_path": true  }
+    }
+  ]
+}

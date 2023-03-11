@@ -1,0 +1,26 @@
+{
+	"title": "Theme Editor",
+	"layout": "CardGrid",
+	"showCategories": false,
+	"categories": 
+	[
+		{
+			"category": "default",
+			"cards":
+			[
+				{
+					"title": "Theme Editor Basics",
+					"desc": "An intro to the theme editor",
+					"image": "thumb_videotut_theme_editor",
+					"link": ""
+				},
+				{
+					"title": "Your First Theme",
+					"desc": "Walks you through creaeting your first theme",
+					"image": "thumb_videotut_first_theme",
+					"link": ""
+				}
+			]
+		}
+	]
+}

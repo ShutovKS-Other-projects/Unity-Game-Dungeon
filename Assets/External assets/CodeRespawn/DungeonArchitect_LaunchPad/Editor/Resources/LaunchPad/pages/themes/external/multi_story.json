@@ -1,0 +1,18 @@
+{
+  "title": "Multi-Story Dungeon",
+  "layout": "Details",
+
+  "header": "Multi-Story Dungeon",
+  "desc": "",
+  "image": "themes/images/theme_multi_story",
+  "actions": [
+    {
+      "type": "Documentation",
+      "data": { "path": "https://coderespawn.github.io/dungeon-architect-quick-start-guide-unity/stage/html/quick_start_1.6.0.html#multistory-dungeon-ms", "title": "View Online" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=fbIwQFKBUWE" }
+    }
+  ]
+}

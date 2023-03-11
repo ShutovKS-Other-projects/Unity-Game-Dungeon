@@ -1,6 +1,7 @@
 using System;
 using Interactable;
 using Level;
+using Magic.Type;
 using Player.Delegate;
 using Skill;
 using Skill.Enum;
@@ -35,15 +36,12 @@ namespace Player
             _health = playerData.healthMax;
             _stamina = playerData.staminaMax;
             _mana = playerData.manaMax;
-            _magicAttackType = playerData.magicAttackType;
+            _magicAttackType = playerData.magicAttackAttackType;
         }
 
         private void Update()
         {
-            if (UnityEngine.Input.GetKeyDown(KeyCode.C) && LevelSystem.Level < 10)
-            {
-                LevelSystem.AddExperience(100);
-            }
+            if (UnityEngine.Input.GetKeyDown(KeyCode.C) && LevelSystem.Level < 10) LevelSystem.AddExperience(100);
         }
 
         #endregion
@@ -53,7 +51,7 @@ namespace Player
         private float _health;
         private float _mana;
         private float _stamina;
-        private SkillMagicType _magicAttackType;
+        private MagicAttackType _magicAttackType;
 
         #endregion
 
@@ -81,7 +79,7 @@ namespace Player
         public float ManaRecoverySpeed => playerData.manaRecoverySpeed + PlayerAttribute.ManaRecoverySpeed;
         public float MagicAttackDamage => playerData.magicStrength + PlayerAttribute.MagicAttackDamage;
 
-        public SkillMagicType MagicAttackType
+        public MagicAttackType MagicAttackType
         {
             get { return _magicAttackType; }
             set { _magicAttackType = value; }

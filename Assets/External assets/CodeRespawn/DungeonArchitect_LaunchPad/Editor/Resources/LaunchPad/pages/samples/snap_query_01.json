@@ -1,0 +1,22 @@
+{
+  "title": "Snap Query Demo",
+  "layout": "Details",
+
+  "header": "Snap Query Demo",
+  "desc": "Query various information about the rooms in the snap builder (room size, door locations etc). Build the dungeon, select the door tracker and move it around in the scene view in wireframe mode",
+  "image": "samples/images/sample_snap_query",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap_Query/DemoScene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap_Query/DemoScene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap_Query/DemoScene.unity" }
+    }
+  ]
+}

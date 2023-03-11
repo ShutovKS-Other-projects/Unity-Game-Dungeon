@@ -1,0 +1,26 @@
+{
+  "title": "Snap 2D Demo",
+  "layout": "Details",
+
+  "header": "Snap 2D Demo",
+  "desc": "Design rooms in individual tilemaps and stitch them together using the snap builder",
+  "image": "samples/images/sample_snap2d",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap2D/Test2DScene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap2D/Test2DScene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap2D/Test2DScene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=IKUw_EcHYyc" }
+    }
+  ]
+}

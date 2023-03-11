@@ -1,0 +1,14 @@
+{
+  "title": "Medieval City",
+  "layout": "Details",
+
+  "header": "Medieval City",
+  "desc": "",
+  "image": "samples/images/sample_simple_city_04",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/simple_city/StrongholdMedievalTheme", "resource_path": true  }
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Spatial Partitioning Builder (3D)",
+  "layout": "Details",
+
+  "header": "Spatial Partitioning Builder",
+  "desc": "Build a dungeon using binary spatial partitioning",
+  "image": "templates_builder/builder_bsp_layout",
+  "actions": [
+    {
+      "type": "CloneSceneAndBuild",
+      "data": { "path": "scenes/bsp/Scene_BSP", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "" }
+    }
+  ]
+}

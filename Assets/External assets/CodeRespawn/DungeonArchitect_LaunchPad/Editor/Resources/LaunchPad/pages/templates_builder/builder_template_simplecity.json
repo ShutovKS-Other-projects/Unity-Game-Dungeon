@@ -1,0 +1,22 @@
+{
+  "title": "Simple City Builder (3D)",
+  "layout": "Details",
+
+  "header": "Simple City Builder",
+  "desc": "Build a simple city with roads, houses, parks, city walls etc. It also supports foliage placement",
+  "image": "templates_builder/builder_simple_city",
+  "actions": [
+    {
+      "type": "CloneSceneAndBuild",
+      "data": { "path": "scenes/simple_city/Scene_SimpleCity", "resource_path": true }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=7UPgPL6nNj8" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "" }
+    }
+  ]
+}

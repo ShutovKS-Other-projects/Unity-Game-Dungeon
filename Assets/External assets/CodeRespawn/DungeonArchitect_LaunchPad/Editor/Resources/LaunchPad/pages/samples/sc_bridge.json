@@ -1,0 +1,26 @@
+{
+  "title": "Bridge",
+  "layout": "Details",
+
+  "header": "Bridge",
+  "desc": "Convert single lane corridors into bridges",
+  "image": "samples/images/sample_sc_bridge",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/10_SCExample_Bridge_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/10_SCExample_Bridge_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/10_SCExample_Bridge_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

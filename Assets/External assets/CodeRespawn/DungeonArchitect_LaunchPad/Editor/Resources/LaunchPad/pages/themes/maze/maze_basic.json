@@ -1,0 +1,14 @@
+{
+  "title": "Maze Basic",
+  "layout": "Details",
+
+  "header": "Maze Basic",
+  "desc": "",
+  "image": "samples/images/sample_maze_01",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/maze/", "resource_path": true  }
+    }
+  ]
+}

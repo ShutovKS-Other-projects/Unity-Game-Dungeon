@@ -1,0 +1,26 @@
+{
+  "title": "Infinity Caves",
+  "layout": "Details",
+
+  "header": "Infinity Caves",
+  "desc": "Demos infinite dungeons. Hit play and move player object",
+  "image": "samples/images/sample_infinity_cave_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_InfinityCaves/Scenes/Demo_InfinityCaves.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_InfinityCaves/Scenes/Demo_InfinityCaves.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_InfinityCaves/Scenes/Demo_InfinityCaves.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=g5is5n4-LUE" }
+    }
+  ]
+}

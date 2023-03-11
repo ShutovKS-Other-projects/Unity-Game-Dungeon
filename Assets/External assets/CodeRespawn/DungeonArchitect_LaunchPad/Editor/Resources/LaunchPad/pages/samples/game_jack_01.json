@@ -1,0 +1,26 @@
+{
+  "title": "2D Game Demo",
+  "layout": "Details",
+
+  "header": "2D Game Demo",
+  "desc": "Sample 2D game demo with AI, navigation and more",
+  "image": "samples/images/sample_game_jack_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game2D_JackRabbit/Scenes/01_MainScene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game2D_JackRabbit/Scenes/01_MainScene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game2D_JackRabbit/Scenes/01_MainScene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=21nWfcIvzyg" }
+    }
+  ]
+}

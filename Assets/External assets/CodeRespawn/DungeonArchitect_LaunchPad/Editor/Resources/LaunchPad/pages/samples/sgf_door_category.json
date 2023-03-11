@@ -1,0 +1,26 @@
+﻿{
+  "title": "Snap Grid Flow Door Category",
+  "layout": "Details",
+
+  "header": "Snap Grid Flow Door Category",
+  "desc": "Use door categories to have different art assets for your doors (round doors, larger doors etc) and make sure only the compatible ones are stitched together",
+  "image": "samples/images/sample_sgf_door_category",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_DoorCategories/SGF_DoorConstraints_Demo.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_DoorCategories/SGF_DoorConstraints_Demo.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_DoorCategories/SGF_DoorConstraints_Demo.unity" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/snap-grid-flow" }
+    }
+  ]
+}

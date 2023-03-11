@@ -1,0 +1,14 @@
+{
+  "title": "Outdoor Hills",
+  "layout": "Details",
+
+  "header": "Outdoor Hills",
+  "desc": "",
+  "image": "samples/images/sample_cliff_02",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/grid/OutdoorCliffHillTheme", "resource_path": true  }
+    }
+  ]
+}

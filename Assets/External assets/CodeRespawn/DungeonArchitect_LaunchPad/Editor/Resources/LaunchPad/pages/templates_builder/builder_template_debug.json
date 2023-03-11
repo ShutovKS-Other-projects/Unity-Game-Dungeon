@@ -1,0 +1,54 @@
+{
+  "title": "GridFlow Scene Template (3D)",
+  "layout": "Details",
+
+  "header": "Grid Flow Builder",
+  "desc": "Design and control the flow of your dungeons",
+  "image": "candy_01",
+  "actions": [
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/DemoScene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=10fYqKMPqeA" }
+    },
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/DemoScene.unity" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "http://docs/link" }
+    },
+    {
+      "type": "OpenTheme",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Themes/CandyDungeonTheme.asset" }
+    },
+    {
+      "type": "OpenSnapFlow",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap/DungeonFlow/GameDungeonFlow.asset" }
+    },
+    {
+      "type": "OpenGridFlow",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow/FlowGraph/DemoGridFlow.asset" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "scenes/Scene_GridBuilder", "resource_path": true }
+    },
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/CandyDungeonTheme", "resource_path": true }
+    },
+    {
+      "type": "CloneSnapFlow",
+      "data": { "path": "snapflow/SnapDungeonFlow", "resource_path": true }
+    },
+    {
+      "type": "CloneGridFlow",
+      "data": { "path": "gridflow/DemoGridFlow", "resource_path": true }
+    }
+  ]
+}

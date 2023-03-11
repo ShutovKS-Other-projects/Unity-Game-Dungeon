@@ -1,0 +1,26 @@
+{
+  "title": "Shooter - City",
+  "layout": "Details",
+
+  "header": "Shooter - City",
+  "desc": "Sample game using the city theme",
+  "image": "samples/images/sample_game_ss_city_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game3D_SurvivalShooter/Scenes/CityShooter.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game3D_SurvivalShooter/Scenes/CityShooter.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Game3D_SurvivalShooter/Scenes/CityShooter.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

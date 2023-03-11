@@ -1,5 +1,7 @@
 ﻿using System;
+using Magic.Type;
 using Skill.Enum;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Skill
@@ -7,7 +9,7 @@ namespace Skill
     [Serializable]
     public class SkillUnlockPath
     {
-        public SkillMagicType SkillMagicType;
+        [FormerlySerializedAs("SkillMagicType")] public MagicAttackType magicAttackType;
         public Image[] SkillUnlockPathImages;
 
         public void UpdateVisuals()

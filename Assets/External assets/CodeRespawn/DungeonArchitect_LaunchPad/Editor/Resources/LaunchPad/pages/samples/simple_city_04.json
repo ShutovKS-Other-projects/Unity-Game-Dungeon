@@ -1,0 +1,26 @@
+{
+  "title": "Medivial City",
+  "layout": "Details",
+
+  "header": "Medivial City",
+  "desc": "A medivial theme to the stronghold",
+  "image": "samples/images/sample_simple_city_04",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/StrongholdMedieval.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/StrongholdMedieval.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SimpleCity/Scenes/StrongholdMedieval.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Runtime Dungeons",
+  "layout": "Details",
+
+  "header": "Runtime Dungeons",
+  "desc": "Build dungeons at runtime. Play and hit space",
+  "image": "samples/images/sample_candy_04",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/RuntimeGeneration.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/RuntimeGeneration.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/RuntimeGeneration.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

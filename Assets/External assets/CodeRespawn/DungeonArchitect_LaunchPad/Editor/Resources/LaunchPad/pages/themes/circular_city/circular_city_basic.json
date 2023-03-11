@@ -1,0 +1,14 @@
+{
+  "title": "Circular City",
+  "layout": "Details",
+
+  "header": "Circular City",
+  "desc": "",
+  "image": "samples/images/sample_circular_city",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/circular_city/CircularCityDemoTheme", "resource_path": true  }
+    }
+  ]
+}

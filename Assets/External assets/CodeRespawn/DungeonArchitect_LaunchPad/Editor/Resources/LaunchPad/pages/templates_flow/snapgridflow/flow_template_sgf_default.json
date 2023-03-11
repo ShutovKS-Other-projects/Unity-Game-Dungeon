@@ -1,0 +1,18 @@
+﻿{
+  "title": "Snap Grid Flow Template - Default",
+  "layout": "Details",
+
+  "header": "Snap Grid Flow Template - Default",
+  "desc": "A flow graph with main path, key-locks and two alternate paths",
+  "image": "templates_flow/flow_template_sgf",
+  "actions": [
+    {
+      "type": "CloneSnapGridFlow",
+      "data": { "path": "snapgridflow/SnapGridFlow", "resource_path": true }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/snap-grid-flow" }
+    }
+  ]
+}

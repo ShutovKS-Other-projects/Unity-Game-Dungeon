@@ -1,0 +1,26 @@
+{
+  "title": "Grid Flow - Decorate Paths",
+  "layout": "Details",
+
+  "header": "Grid Flow - Decorate Paths",
+  "desc": "Decorate the various paths differently (e.g. different look and feel for treasure rooms, shops, alt paths, main path etc)",
+  "image": "samples/images/sample_grid_flow_deco_path",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow_Query/Example_QueryPathName/Scene_GridFlowQuery_PathName.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow_Query/Example_QueryPathName/Scene_GridFlowQuery_PathName.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_GridFlow_Query/Example_QueryPathName/Scene_GridFlowQuery_PathName.unity" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

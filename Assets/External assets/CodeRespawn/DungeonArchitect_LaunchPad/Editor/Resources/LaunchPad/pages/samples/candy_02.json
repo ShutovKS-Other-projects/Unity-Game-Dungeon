@@ -1,0 +1,26 @@
+{
+  "title": "Indoor",
+  "layout": "Details",
+
+  "header": "Indoor",
+  "desc": "Indoor dungeon. A ceiling is added on top of the dungeon",
+  "image": "samples/images/sample_candy_02",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/DemoScene_Indoor.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/DemoScene_Indoor.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/DemoScene_Indoor.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

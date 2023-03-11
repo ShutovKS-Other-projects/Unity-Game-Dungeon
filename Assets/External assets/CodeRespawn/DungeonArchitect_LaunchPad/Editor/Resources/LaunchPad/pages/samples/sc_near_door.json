@@ -1,0 +1,26 @@
+{
+  "title": "Near Door",
+  "layout": "Details",
+
+  "header": "Near Door",
+  "desc": "Add items near doors",
+  "image": "samples/images/sample_sc_near_door",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/01_SCExample_NearDoor_Scene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/01_SCExample_NearDoor_Scene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_SpatialConstraints/01_SCExample_NearDoor_Scene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

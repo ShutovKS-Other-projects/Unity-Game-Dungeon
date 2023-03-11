@@ -1,0 +1,14 @@
+{
+  "title": "Rocky Caves",
+  "layout": "Details",
+
+  "header": "Rocky Caves",
+  "desc": "",
+  "image": "samples/images/sample_infinity_cave_01",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/infinity_cave/Theme_RockyCaves", "resource_path": true  }
+    }
+  ]
+}

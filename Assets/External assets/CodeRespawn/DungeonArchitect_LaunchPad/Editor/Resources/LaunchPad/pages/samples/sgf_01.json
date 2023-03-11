@@ -1,0 +1,26 @@
+﻿{
+  "title": "Snap Grid Flow Game Demo",
+  "layout": "Details",
+
+  "header": "Snap Grid Flow Game Demo",
+  "desc": "The Snap Grid Flow Builder allows you to stitch snap modules using a flow graph.   The sample contains an FPS character with inventory to pick up the keys to open the locked doors",
+  "image": "templates_flow/flow_template_sgf",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow/Scenes/SnapGridFlowSampleScene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow/Scenes/SnapGridFlowSampleScene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow/Scenes/SnapGridFlowSampleScene.unity" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/snap-grid-flow" }
+    }
+  ]
+}

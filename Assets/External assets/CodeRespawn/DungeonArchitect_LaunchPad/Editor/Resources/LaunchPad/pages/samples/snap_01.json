@@ -1,0 +1,26 @@
+{
+  "title": "Snap Demo",
+  "layout": "Details",
+
+  "header": "Snap Demo",
+  "desc": "Stitch together pre-made room prefabs using graph grammars",
+  "image": "samples/images/sample_snap_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap/Scenes/DemoScene.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap/Scenes/DemoScene.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap/Scenes/DemoScene.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=IKUw_EcHYyc" }
+    }
+  ]
+}

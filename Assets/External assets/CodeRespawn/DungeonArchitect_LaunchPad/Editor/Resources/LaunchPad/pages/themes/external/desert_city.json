@@ -1,0 +1,18 @@
+{
+  "title": "Desert City",
+  "layout": "Details",
+
+  "header": "Desert City",
+  "desc": "",
+  "image": "themes/images/theme_desert_city",
+  "actions": [
+    {
+      "type": "Documentation",
+      "data": { "path": "https://coderespawn.github.io/dungeon-architect-quick-start-guide-unity/stage/html/quick_start_1.6.0.html#desert-theme-manufacturak4", "title": "View Online" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=s15dYrR213M" }
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "GridFlow Template - Walls as Edges",
+  "layout": "Details",
+
+  "header": "GridFlow Template - Walls as Edges",
+  "desc": "Walls are placed on the edge of tiles, instead of taking up a full tile",
+  "image": "templates_flow/templateflow_grid_edge",
+  "actions": [
+    {
+      "type": "CloneGridFlow",
+      "data": {
+        "path": "gridflow/DemoGridFlow_Edge",
+        "resource_path": true
+      }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "https://www.youtube.com/watch?v=aa8KcSligXs" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/grid-flow" }
+    }
+  ]
+}

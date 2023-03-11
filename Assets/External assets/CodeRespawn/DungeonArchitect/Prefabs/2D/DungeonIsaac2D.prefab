@@ -1,0 +1,619 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &142950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 404016}
+  - 114: {fileID: 11417342}
+  - 114: {fileID: 11407090}
+  - 114: {fileID: 11477836}
+  - 114: {fileID: 11434014}
+  - 114: {fileID: 11468038}
+  - 114: {fileID: 11430262}
+  - 114: {fileID: 11468770}
+  m_Layer: 0
+  m_Name: DungeonIsaac2D
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &404016
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11407090
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42dd847eff5d7044ab8bba820078dd3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Seed: 0
+  Mode2D: 1
+  minRooms: 20
+  maxRooms: 30
+  roomWidth: 6
+  roomHeight: 5
+  tileSize: {x: 12, y: 12}
+  roomPadding: {x: 20, y: 20}
+  growForwardProbablity: 0.85
+  growSidewaysProbablity: 0.25
+  spawnRoomBranchProbablity: 0.75
+  cycleProbability: 0.5
+--- !u!114 &11417342
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e65b74248fe594982b0d9bfde7d96c6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugDraw: 0
+  dungeonThemes:
+  - {fileID: 11400000, guid: 6b8ad2205f54e3549a25881a82bc6240, type: 2}
+--- !u!114 &11430262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51eb409aa7e47a143a1b701cd06d66ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11434014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9b63ca95e97056438135e605e87a57c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToolData: {fileID: 0}
+  config: {fileID: 11407090}
+  rooms:
+  - roomId: 0
+    position:
+      x: 0
+      y: 0
+      z: 0
+    adjacentRooms: 01000000020000000300000004000000
+    doorPositions:
+    - x: 6
+      y: 0
+      z: 4
+    - x: 0
+      y: 0
+      z: 5
+    - x: -1
+      y: 0
+      z: 3
+    - x: 4
+      y: 0
+      z: -1
+  - roomId: 1
+    position:
+      x: 1
+      y: 0
+      z: 0
+    adjacentRooms: 000000000500000006000000
+    doorPositions:
+    - x: -1
+      y: 0
+      z: 4
+    - x: 6
+      y: 0
+      z: 4
+    - x: 3
+      y: 0
+      z: -1
+  - roomId: 2
+    position:
+      x: 0
+      y: 0
+      z: 1
+    adjacentRooms: 0000000007000000
+    doorPositions:
+    - x: 0
+      y: 0
+      z: -1
+    - x: 5
+      y: 0
+      z: 5
+  - roomId: 3
+    position:
+      x: -1
+      y: 0
+      z: 0
+    adjacentRooms: 00000000
+    doorPositions:
+    - x: 6
+      y: 0
+      z: 3
+  - roomId: 4
+    position:
+      x: 0
+      y: 0
+      z: -1
+    adjacentRooms: 000000000800000006000000
+    doorPositions:
+    - x: 4
+      y: 0
+      z: 5
+    - x: 4
+      y: 0
+      z: -1
+    - x: 6
+      y: 0
+      z: 1
+  - roomId: 5
+    position:
+      x: 2
+      y: 0
+      z: 0
+    adjacentRooms: 01000000090000000a000000
+    doorPositions:
+    - x: -1
+      y: 0
+      z: 4
+    - x: 6
+      y: 0
+      z: 3
+    - x: 0
+      y: 0
+      z: -1
+  - roomId: 6
+    position:
+      x: 1
+      y: 0
+      z: -1
+    adjacentRooms: 01000000040000000b000000
+    doorPositions:
+    - x: 3
+      y: 0
+      z: 5
+    - x: -1
+      y: 0
+      z: 1
+    - x: 1
+      y: 0
+      z: -1
+  - roomId: 7
+    position:
+      x: 0
+      y: 0
+      z: 2
+    adjacentRooms: 020000000c0000000d000000
+    doorPositions:
+    - x: 5
+      y: 0
+      z: -1
+    - x: 1
+      y: 0
+      z: 5
+    - x: -1
+      y: 0
+      z: 3
+  - roomId: 8
+    position:
+      x: 0
+      y: 0
+      z: -2
+    adjacentRooms: 040000000e000000
+    doorPositions:
+    - x: 4
+      y: 0
+      z: 5
+    - x: 0
+      y: 0
+      z: -1
+  - roomId: 9
+    position:
+      x: 3
+      y: 0
+      z: 0
+    adjacentRooms: 050000000f00000010000000
+    doorPositions:
+    - x: -1
+      y: 0
+      z: 3
+    - x: 6
+      y: 0
+      z: 3
+    - x: 0
+      y: 0
+      z: 5
+  - roomId: 10
+    position:
+      x: 2
+      y: 0
+      z: -1
+    adjacentRooms: 050000001100000012000000
+    doorPositions:
+    - x: 0
+      y: 0
+      z: 5
+    - x: 3
+      y: 0
+      z: -1
+    - x: 6
+      y: 0
+      z: 4
+  - roomId: 11
+    position:
+      x: 1
+      y: 0
+      z: -2
+    adjacentRooms: 06000000
+    doorPositions:
+    - x: 1
+      y: 0
+      z: 5
+  - roomId: 12
+    position:
+      x: 0
+      y: 0
+      z: 3
+    adjacentRooms: 0700000013000000
+    doorPositions:
+    - x: 1
+      y: 0
+      z: -1
+    - x: 5
+      y: 0
+      z: 5
+  - roomId: 13
+    position:
+      x: -1
+      y: 0
+      z: 2
+    adjacentRooms: 070000001400000015000000
+    doorPositions:
+    - x: 6
+      y: 0
+      z: 3
+    - x: -1
+      y: 0
+      z: 1
+    - x: 1
+      y: 0
+      z: -1
+  - roomId: 14
+    position:
+      x: 0
+      y: 0
+      z: -3
+    adjacentRooms: 080000001600000017000000
+    doorPositions:
+    - x: 0
+      y: 0
+      z: 5
+    - x: 4
+      y: 0
+      z: -1
+    - x: -1
+      y: 0
+      z: 1
+  - roomId: 15
+    position:
+      x: 4
+      y: 0
+      z: 0
+    adjacentRooms: 090000001800000019000000
+    doorPositions:
+    - x: -1
+      y: 0
+      z: 3
+    - x: 1
+      y: 0
+      z: 5
+    - x: 3
+      y: 0
+      z: -1
+  - roomId: 16
+    position:
+      x: 3
+      y: 0
+      z: 1
+    adjacentRooms: 090000001a000000
+    doorPositions:
+    - x: 0
+      y: 0
+      z: -1
+    - x: 1
+      y: 0
+      z: 5
+  - roomId: 17
+    position:
+      x: 2
+      y: 0
+      z: -2
+    adjacentRooms: 0a0000001b000000
+    doorPositions:
+    - x: 3
+      y: 0
+      z: 5
+    - x: 4
+      y: 0
+      z: -1
+  - roomId: 18
+    position:
+      x: 3
+      y: 0
+      z: -1
+    adjacentRooms: 0a00000019000000
+    doorPositions:
+    - x: -1
+      y: 0
+      z: 4
+    - x: 6
+      y: 0
+      z: 1
+  - roomId: 19
+    position:
+      x: 0
+      y: 0
+      z: 4
+    adjacentRooms: 0c0000001c000000
+    doorPositions:
+    - x: 5
+      y: 0
+      z: -1
+    - x: 3
+      y: 0
+      z: 5
+  - roomId: 20
+    position:
+      x: -2
+      y: 0
+      z: 2
+    adjacentRooms: 0d000000
+    doorPositions:
+    - x: 6
+      y: 0
+      z: 1
+  - roomId: 21
+    position:
+      x: -1
+      y: 0
+      z: 1
+    adjacentRooms: 0d000000
+    doorPositions:
+    - x: 1
+      y: 0
+      z: 5
+  - roomId: 22
+    position:
+      x: 0
+      y: 0
+      z: -4
+    adjacentRooms: 0e000000
+    doorPositions:
+    - x: 4
+      y: 0
+      z: 5
+  - roomId: 23
+    position:
+      x: -1
+      y: 0
+      z: -3
+    adjacentRooms: 0e000000
+    doorPositions:
+    - x: 6
+      y: 0
+      z: 1
+  - roomId: 24
+    position:
+      x: 4
+      y: 0
+      z: 1
+    adjacentRooms: 0f000000
+    doorPositions:
+    - x: 1
+      y: 0
+      z: -1
+  - roomId: 25
+    position:
+      x: 4
+      y: 0
+      z: -1
+    adjacentRooms: 0f00000012000000
+    doorPositions:
+    - x: 3
+      y: 0
+      z: 5
+    - x: -1
+      y: 0
+      z: 1
+  - roomId: 26
+    position:
+      x: 3
+      y: 0
+      z: 2
+    adjacentRooms: 10000000
+    doorPositions:
+    - x: 1
+      y: 0
+      z: -1
+  - roomId: 27
+    position:
+      x: 2
+      y: 0
+      z: -3
+    adjacentRooms: 11000000
+    doorPositions:
+    - x: 4
+      y: 0
+      z: 5
+  - roomId: 28
+    position:
+      x: 0
+      y: 0
+      z: 5
+    adjacentRooms: 13000000
+    doorPositions:
+    - x: 3
+      y: 0
+      z: -1
+  doors:
+  - roomA: 0
+    roomB: 1
+    ratio: 0.999287
+  - roomA: 0
+    roomB: 2
+    ratio: 0.12184776
+  - roomA: 0
+    roomB: 3
+    ratio: 0.78345793
+  - roomA: 0
+    roomB: 4
+    ratio: 0.8147632
+  - roomA: 1
+    roomB: 5
+    ratio: 0.88409454
+  - roomA: 1
+    roomB: 6
+    ratio: 0.6394484
+  - roomA: 2
+    roomB: 7
+    ratio: 0.85896456
+  - roomA: 4
+    roomB: 8
+    ratio: 0.7364983
+  - roomA: 4
+    roomB: 6
+    ratio: 0.2394518
+  - roomA: 5
+    roomB: 9
+    ratio: 0.6766494
+  - roomA: 5
+    roomB: 10
+    ratio: 0.05883858
+  - roomA: 6
+    roomB: 11
+    ratio: 0.23661846
+  - roomA: 7
+    roomB: 12
+    ratio: 0.2997173
+  - roomA: 7
+    roomB: 13
+    ratio: 0.6573754
+  - roomA: 8
+    roomB: 14
+    ratio: 0.15466811
+  - roomA: 9
+    roomB: 15
+    ratio: 0.7069126
+  - roomA: 9
+    roomB: 16
+    ratio: 0.012229941
+  - roomA: 10
+    roomB: 17
+    ratio: 0.62036204
+  - roomA: 10
+    roomB: 18
+    ratio: 0.8940808
+  - roomA: 12
+    roomB: 19
+    ratio: 0.9086584
+  - roomA: 13
+    roomB: 20
+    ratio: 0.22740558
+  - roomA: 13
+    roomB: 21
+    ratio: 0.31587082
+  - roomA: 14
+    roomB: 22
+    ratio: 0.68582743
+  - roomA: 14
+    roomB: 23
+    ratio: 0.32812786
+  - roomA: 15
+    roomB: 24
+    ratio: 0.21226431
+  - roomA: 15
+    roomB: 25
+    ratio: 0.6662847
+  - roomA: 16
+    roomB: 26
+    ratio: 0.17993303
+  - roomA: 17
+    roomB: 27
+    ratio: 0.82368785
+  - roomA: 18
+    roomB: 25
+    ratio: 0.3433563
+  - roomA: 19
+    roomB: 28
+    ratio: 0.5629876
+--- !u!114 &11468038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd0ef9172759d43928c6f1131063f690, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemParent: {fileID: 0}
+--- !u!114 &11468770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a0987f8cce55c4a85cffadc0930d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minBrushSize: 1
+  maxBrushSize: 3
+--- !u!114 &11477836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 142950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575a45c90419d81459a5afd9ed2a8a2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 142950}
+  m_IsPrefabParent: 1

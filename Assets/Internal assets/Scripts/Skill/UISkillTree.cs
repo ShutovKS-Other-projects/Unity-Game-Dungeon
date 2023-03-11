@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Magic.Type;
 using Player;
 using Skill.Enum;
 using TMPro;
@@ -23,7 +24,7 @@ namespace Skill.SkillTree
 
             for (var i = 0; i < transform.childCount; i++)
             {
-                _skillButtonList.Add(new SkillButton(transform.GetChild(i), skillMagic, (SkillMagicType)i));
+                _skillButtonList.Add(new SkillButton(transform.GetChild(i), skillMagic, (MagicAttackType)i));
             }
 
             _skillMagic.OnSkillUnlocked += SkillMagic_OnSkillUnlocked;

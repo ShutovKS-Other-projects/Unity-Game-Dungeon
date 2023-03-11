@@ -1,0 +1,26 @@
+﻿{
+  "title": "Snap Grid Flow - Non repeating rooms",
+  "layout": "Details",
+
+  "header": "Snap Grid Flow - Non repeating rooms",
+  "desc": "Disallow the same room from being stitched next to each other",
+  "image": "samples/images/sample_sgf_repeating_rooms",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_NonRepeatingRooms/SGF_NonRepeatingRooms.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_NonRepeatingRooms/SGF_NonRepeatingRooms.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_NonRepeatingRooms/SGF_NonRepeatingRooms.unity" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/snap-grid-flow" }
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "title": "Procedural Graphs",
+  "layout": "Details",
+
+  "header": "Procedural Graphs",
+  "desc": "Example on creating your graph rules procedurally using a script",
+  "image": "samples/images/sample_snap_02",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap/Scenes/DemoScene_ProceduralGraph.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap/Scenes/DemoScene_ProceduralGraph.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_Snap/Scenes/DemoScene_ProceduralGraph.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

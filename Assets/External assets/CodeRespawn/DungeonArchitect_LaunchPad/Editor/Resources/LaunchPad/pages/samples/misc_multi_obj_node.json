@@ -1,0 +1,26 @@
+{
+  "title": "MultiObject Node",
+  "layout": "Details",
+
+  "header": "MultiObject Node",
+  "desc": "Demos GameObject Array node",
+  "image": "samples/images/sample_misc_multi_obj_node",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/ThemeGraph_MultiNode_Demo.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/ThemeGraph_MultiNode_Demo.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Misc_Examples/Scenes/ThemeGraph_MultiNode_Demo.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

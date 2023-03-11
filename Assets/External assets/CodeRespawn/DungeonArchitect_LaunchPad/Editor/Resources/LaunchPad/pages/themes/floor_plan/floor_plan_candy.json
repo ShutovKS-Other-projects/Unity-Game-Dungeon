@@ -1,0 +1,14 @@
+{
+  "title": "Candy Floor",
+  "layout": "Details",
+
+  "header": "Candy Floor",
+  "desc": "",
+  "image": "samples/images/sample_floor_planner_01",
+  "actions": [
+    {
+      "type": "CloneTheme",
+      "data": { "path": "themes/floor_plan/FloorPlanBasicTheme", "resource_path": true  }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "title": "Theme Templates",
+  "layout": "CardGrid",
+  "description": "Create a new graph from one of these templates",
+  "showCategories": true,
+  "categories": [
+    {
+      "category": "Featured",
+      "cards": [
+        {
+          "title": "Grid Flow",
+          "desc": "A grid flow theme with various branches, treasure, enemies and key-locks",
+          "image": "thumbs/thumb_templateflow_grid_02",
+          "link": "templates_flow/gridflow/flow_template_gridflow_default"
+        },
+        {
+          "title": "Snap Grid Flow",
+          "desc": "A flow graph with main path, key-locks and two alternate paths",
+          "image": "thumbs/thumb_builder_sgf",
+          "link": "templates_flow/snapgridflow/flow_template_sgf_default"
+        },
+        {
+          "title": "Snap Flow",
+          "desc": "A flow graph with mini-boss, treasure rooms, shops, teleporters, key-locks and more",
+          "image": "thumbs/thumb_templateflow_snap",
+          "link": "templates_flow/snapflow/flow_template_snapflow_default"
+        }
+      ]
+    },
+    {
+      "category": "Grid Flow Templates",
+      "cards": [
+        {
+          "title": "Default",
+          "desc": "A grid flow theme with various branches, treasure, enemies and key-locks",
+          "image": "thumbs/thumb_templateflow_grid_02",
+          "link": "templates_flow/gridflow/flow_template_gridflow_default"
+        },
+        {
+          "title": "No Caves",
+          "desc": "Caves and corridors are disabled",
+          "image": "thumbs/thumb_templateflow_grid_nocave",
+          "link": "templates_flow/gridflow/flow_template_gridflow_nocave"
+        },
+        {
+          "title": "Walls as Edge",
+          "desc": "Walls are placed on the edge of tiles, instead of taking up a full tile",
+          "image": "thumbs/thumb_templateflow_grid_edge",
+          "link": "templates_flow/gridflow/flow_template_gridflow_edge"
+        },
+        {
+          "title": "Mirror",
+          "desc": "Create symmetric levels for your multi-player arena games",
+          "image": "thumbs/thumb_templateflow_gridflow_mirror",
+          "link": "templates_flow/gridflow/flow_template_gridflow_mirror"
+        },
+        {
+          "title": "Script Path",
+          "desc": "Control the path node positions using your own scripts",
+          "image": "samples/thumbs/sample_thumb_grid_flow_path",
+          "link": "templates_flow/gridflow/flow_template_gridflow_script_path"
+        },
+        {
+          "title": "Edge Simple",
+          "desc": "A simpler version without all the overlays and background rocks",
+          "image": "thumbs/thumb_templateflow_grid_edge_simple",
+          "link": "templates_flow/gridflow/flow_template_gridflow_edgesimple"
+        },
+        {
+          "title": "Grid Flow: Isaac",
+          "desc": "Generates a level like in the game Binding of Isaac",
+          "image": "thumbs/thumb_templateflow_grid_isaac",
+          "link": "templates_flow/gridflow/flow_template_gridflow_isaac"
+        }
+      ]
+    },
+    {
+      "category": "Snap Flow Templates",
+      "cards": [
+        {
+          "title": "Default",
+          "desc": "A flow graph with mini-boss, treasure rooms, shops, teleporters, key-locks and more",
+          "image": "thumbs/thumb_templateflow_snap",
+          "link": "templates_flow/snapflow/flow_template_snapflow_default"
+        }
+      ]
+    },
+    {
+      "category": "Snap Grid Flow Templates",
+      "cards": [
+        {
+          "title": "Default",
+          "desc": "A flow graph with main path, key-locks and two alternate paths",
+          "image": "thumbs/thumb_builder_sgf",
+          "link": "templates_flow/snapgridflow/flow_template_sgf_default"
+        }
+      ]
+    }
+  ]
+}

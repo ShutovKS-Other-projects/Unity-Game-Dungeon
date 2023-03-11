@@ -1,0 +1,26 @@
+{
+  "title": "Runtime (Indoor)",
+  "layout": "Details",
+
+  "header": "Runtime (Indoor)",
+  "desc": "Runtime dungeon using the indoor theme",
+  "image": "samples/images/sample_candy_05",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/RuntimeGeneration_Indoor.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/RuntimeGeneration_Indoor.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/RuntimeGeneration_Indoor.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

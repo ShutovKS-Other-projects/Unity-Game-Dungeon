@@ -1,0 +1,26 @@
+{
+  "title": "Floor Planner",
+  "layout": "Details",
+
+  "header": "Floor Planner",
+  "desc": "Demos the Floor plan builder",
+  "image": "samples/images/sample_floor_planner_01",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_FloorPlanner/Scenes/FloorPlannerDemo.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_FloorPlanner/Scenes/FloorPlannerDemo.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_FloorPlanner/Scenes/FloorPlannerDemo.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

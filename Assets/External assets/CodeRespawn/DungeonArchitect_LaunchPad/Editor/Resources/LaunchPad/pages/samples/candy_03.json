@@ -1,0 +1,26 @@
+{
+  "title": "Rooms with Ceilings",
+  "layout": "Details",
+
+  "header": "Rooms with Ceilings",
+  "desc": "Only rooms have ceilings",
+  "image": "samples/images/sample_candy_03",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/DemoScene_RoomCeilings.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/DemoScene_RoomCeilings.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/Demo_Theme_Candy/Scenes/DemoScene_RoomCeilings.unity" }
+    },
+    {
+      "type": "Video",
+      "data": { "path": "" }
+    }
+  ]
+}

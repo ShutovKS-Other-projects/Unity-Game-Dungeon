@@ -1,0 +1,38 @@
+{
+  "title": "News",
+  "layout": "News",
+  "thumbHeight": 150,
+  "cardHeight": 270,
+  "featured": {
+    "title": "New Snap Grid Flow Builder",
+    "desc": "Combine the power of the Snap and Flow frameworks with this powerful new builder. Design the layout of your dungeons using the flow framework and stitch pre-made rooms together using the snap system",
+    "image": "templates_flow/flow_template_sgf",
+    "url": "https://docs.dungeonarchitect.dev/unity/snap-grid-flow"
+  },
+  "cards": [
+    {
+      "title": "Marker Guides",
+      "desc": "When designing your themes, use these visual guides to easily align your prefabs",
+      "image": "news/news_marker_vis",
+      "link": ""
+    },
+    {
+      "title": "Flow Framework\nRewrite",
+      "desc": "Expect some new and interesting builders soon",
+      "image": "news/news_flow_rewrite",
+      "link": ""
+    },
+    {
+      "title": "Improved UI",
+      "desc": "The snap flow editor's graph panels can be resized, improving the usability",
+      "image": "news/news_improved_ui_thumb",
+      "link": ""
+    },
+    {
+      "title": "Launch Pad",
+      "desc": "Dungeon Architect now has a central place to manage the samples, templates and themes",
+      "image": "news/news_launcher_thumb",
+      "link": ""
+    }
+  ]
+}

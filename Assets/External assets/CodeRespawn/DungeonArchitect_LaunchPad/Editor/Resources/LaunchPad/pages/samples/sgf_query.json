@@ -1,0 +1,26 @@
+﻿{
+  "title": "Snap Grid Flow - Query Interface",
+  "layout": "Details",
+
+  "header": "Snap Grid Flow - Query Interface",
+  "desc": "Use the SGF query interface to know more about the dungeon and it's underlying graph.  This sample detects the room the player is in and draws a bounding box around it in the scene view",
+  "image": "samples/images/sample_sgf_query",
+  "actions": [
+    {
+      "type": "OpenScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_Query/Demo_SGF_Query.unity" }
+    },
+    {
+      "type": "OpenFolder",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_Query/Demo_SGF_Query.unity" }
+    },
+    {
+      "type": "CloneScene",
+      "data": { "path": "Assets/CodeRespawn/DungeonArchitect_Samples/DemoBuilder_SnapGridFlow_Query/Demo_SGF_Query.unity" }
+    },
+    {
+      "type": "Documentation",
+      "data": { "path": "https://docs.dungeonarchitect.dev/unity/snap-grid-flow" }
+    }
+  ]
+}
