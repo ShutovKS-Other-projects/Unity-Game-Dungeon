@@ -20,8 +20,8 @@ namespace Skill.SkillTree
         public void SetMagicSkills(SkillMagic skillMagic)
         {
             _skillMagic = skillMagic;
+            _skillButtonList = new List<SkillButton>();
             
-
             for (var i = 0; i < transform.childCount; i++)
             {
                 _skillButtonList.Add(new SkillButton(transform.GetChild(i), skillMagic, (MagicAttackType)i));

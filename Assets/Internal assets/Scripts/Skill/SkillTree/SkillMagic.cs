@@ -22,14 +22,14 @@ namespace Skill.SkillTree
         #region Events
 
         /// <summary>
-        /// Вызывается при разблокировке нового скила
-        /// </summary>
-        public event EventHandler<OnSkillUnlockedEventArgs> OnSkillUnlocked;
-
-        /// <summary>
         /// Вызывается при смене скила
         /// </summary>
         public event EventHandler<MagicAttackType> OnSkillSwitched;
+        
+        /// <summary>
+        /// Вызывается при разблокировке нового скила
+        /// </summary>
+        public event EventHandler<OnSkillUnlockedEventArgs> OnSkillUnlocked;
 
         /// <summary>
         /// Аргументы для события OnSkillUnlocked
@@ -52,19 +52,6 @@ namespace Skill.SkillTree
         {
             if (!CanUnlockSkill(magicAttackType)) return false;
             UnlockSkill(magicAttackType);
-            SwitchingSkill(magicAttackType);
-            return true;
-        }
-
-        /// <summary>
-        /// Проверка на разблокировку скила 
-        /// </summary>
-        /// <param name="magicAttackType"> Тип скила, который необходимо проверить</param>
-        /// <returns> Возвращает true, если скил разблокирован, иначе false</returns>
-        private bool IsSkillUnlocked(MagicAttackType magicAttackType)
-        {
-            if (!_unlockedSkillsTypeList.Contains(magicAttackType)) return false;
-            SwitchingSkill(magicAttackType);
             return true;
         }
 
@@ -79,6 +66,18 @@ namespace Skill.SkillTree
             if (skillRequired == MagicAttackType.None) return true;
             return skillRequired != null && IsSkillUnlocked(skillRequired.Value);
         }
+        
+        /// <summary>
+        /// Проверка на разблокировку скила 
+        /// </summary>
+        /// <param name="magicAttackType"> Тип скила, который необходимо проверить</param>
+        /// <returns> Возвращает true, если скил разблокирован, иначе false</returns>
+        private bool IsSkillUnlocked(MagicAttackType magicAttackType)
+        {
+            if (!_unlockedSkillsTypeList.Contains(magicAttackType)) return false;
+            SwitchingSkill(magicAttackType);
+            return true;
+        }
 
         /// <summary>
         /// Разблокировка скила
@@ -89,6 +88,7 @@ namespace Skill.SkillTree
             _unlockedSkillsTypeList.Add(magicAttackType);
             OnSkillUnlocked?.Invoke(this, new OnSkillUnlockedEventArgs { MagicAttackType = magicAttackType });
             Debug.Log($"Skill {magicAttackType} unlocked");
+            SwitchingSkill(magicAttackType);
         }
 
         /// <summary>

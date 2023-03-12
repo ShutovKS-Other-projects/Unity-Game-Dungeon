@@ -1,3 +1,5 @@
+using Magic.SubMagic;
+using Magic.SuperMagic;
 using Magic.Type;
 using Skill.Enum;
 using UnityEngine;
@@ -36,7 +38,7 @@ namespace Player
         
         [Header("Magic")]
         public float magicStrength = 10f;
-        [FormerlySerializedAs("magicAttackType")] public MagicAttackType magicAttackAttackType = MagicAttackType.None;
+        public MagicAttackType magicAttackType = MagicAttackType.None;
 
         [Header("Movement Speed")]
         public float jumpSpeed = 5f;

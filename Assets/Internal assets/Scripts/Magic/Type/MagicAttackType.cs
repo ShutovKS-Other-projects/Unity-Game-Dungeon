@@ -4,6 +4,16 @@
     {
         Default,
         
+        //Воздух
+        AirGust,
+        AirHurricane,
+        AirTornado,
+        
+        //Земля
+        EarthRockslide,
+        EarthTremor,
+        EarthEarthquake,
+        
         //Огонь
         FireIgnition,
         FireInferno,
@@ -18,22 +28,12 @@
         LightningStaticShock,
         LightningThunderbolt,
         LightningLightningStorm,
-        
-        //Земля
-        EarthRockslide,
-        EarthTremor,
-        EarthEarthquake,
-        
+
         //Вода
         WaterTorrent,
         WaterTsunami,
         WaterCyclone,
-        
-        //Воздух
-        AirGust,
-        AirHurricane,
-        AirTornado,
-        
+
         //Исцеление
         // HealingSoothingBreeze,
         // HealingRestorativeTouch,

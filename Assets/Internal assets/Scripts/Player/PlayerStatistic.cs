@@ -1,6 +1,7 @@
 using System;
 using Interactable;
 using Level;
+using Magic.SuperMagic;
 using Magic.Type;
 using Player.Delegate;
 using Skill;
@@ -36,7 +37,7 @@ namespace Player
             _health = playerData.healthMax;
             _stamina = playerData.staminaMax;
             _mana = playerData.manaMax;
-            _magicAttackType = playerData.magicAttackAttackType;
+            _magicAttackType = playerData.magicAttackType;
         }
 
         private void Update()
@@ -78,13 +79,11 @@ namespace Player
         public float ManaMax => playerData.manaMax + PlayerAttribute.Mana;
         public float ManaRecoverySpeed => playerData.manaRecoverySpeed + PlayerAttribute.ManaRecoverySpeed;
         public float MagicAttackDamage => playerData.magicStrength + PlayerAttribute.MagicAttackDamage;
-
         public MagicAttackType MagicAttackType
         {
             get { return _magicAttackType; }
             set { _magicAttackType = value; }
         }
-
 
         public float Stamina
         {
