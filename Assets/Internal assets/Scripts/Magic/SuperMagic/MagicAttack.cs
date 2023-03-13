@@ -8,7 +8,7 @@ namespace Magic.SuperMagic
     {
         #region Fields
 
-        public override MagicAttackType MagicAttackType { get; set; }
+        public override MagicType MagicType { get; set; }
         protected override Color ColorSphere { get; set; }
         protected abstract float ForceFlight { get; set; }
         protected abstract float Radius { get; set; }

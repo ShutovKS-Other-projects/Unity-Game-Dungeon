@@ -17,7 +17,7 @@ namespace Player
         [SerializeField] private PlayerData playerData;
         public LevelSystem LevelSystem { get; private set; }
         private PlayerAttribute PlayerAttribute { get; set; }
-
+        private PlayerSkillCharacteristic PlayerSkillCharacteristic { get; set; }
         #endregion
 
         public event ObtainingExperience ObtainingExperienceEvent;
@@ -28,6 +28,7 @@ namespace Player
         {
             PlayerAttribute = GetComponent<PlayerAttribute>();
             LevelSystem = new LevelSystem();
+            PlayerSkillCharacteristic = GetComponent<PlayerSkillCharacteristic>();
 
             ObtainingExperienceEvent += LevelSystem.AddExperience;
         }
@@ -37,7 +38,7 @@ namespace Player
             _health = playerData.healthMax;
             _stamina = playerData.staminaMax;
             _mana = playerData.manaMax;
-            _magicAttackType = playerData.magicAttackType;
+            _magicType = playerData.magicType;
         }
 
         private void Update()
@@ -52,7 +53,7 @@ namespace Player
         private float _health;
         private float _mana;
         private float _stamina;
-        private MagicAttackType _magicAttackType;
+        private MagicType _magicType;
 
         #endregion
 
@@ -67,7 +68,7 @@ namespace Player
             set { _health = value; }
         }
 
-        public float HealthMax => playerData.healthMax + PlayerAttribute.Health;
+        public float HealthMax => playerData.healthMax + PlayerAttribute.Health + PlayerSkillCharacteristic.Health!;
         public float HealthRecoverySpeed => playerData.healthRecoverySpeed + PlayerAttribute.HealthRecoverySpeed;
 
         public float Mana
@@ -76,28 +77,29 @@ namespace Player
             set { _mana = value; }
         }
 
-        public float ManaMax => playerData.manaMax + PlayerAttribute.Mana;
+        public float ManaMax => playerData.manaMax + PlayerAttribute.Mana + PlayerSkillCharacteristic.Mana!;
         public float ManaRecoverySpeed => playerData.manaRecoverySpeed + PlayerAttribute.ManaRecoverySpeed;
         public float MagicAttackDamage => playerData.magicStrength + PlayerAttribute.MagicAttackDamage;
-        public MagicAttackType MagicAttackType
+
+        public MagicType MagicType
         {
-            get { return _magicAttackType; }
-            set { _magicAttackType = value; }
+            get { return _magicType; }
+            set { _magicType = value; }
         }
+
+        public float StaminaMax => playerData.staminaMax + PlayerAttribute.Stamina + PlayerSkillCharacteristic.Stamina!;
+        public float StaminaRecoverySpeed => playerData.staminaRecoverySpeed + PlayerAttribute.StaminaRecoverySpeed;
+        public float StaminaRecoverySpeedIsFatigue => playerData.staminaRecoverySpeedIsFatigue;
+        public float StaminaDecreaseRate => playerData.staminaDecreaseRate;
 
         public float Stamina
         {
             get { return _stamina; }
             set { _stamina = value; }
         }
-
-        public float StaminaMax => playerData.staminaMax + PlayerAttribute.Stamina;
-        public float StaminaRecoverySpeed => playerData.staminaRecoverySpeed + PlayerAttribute.StaminaRecoverySpeed;
-        public float StaminaRecoverySpeedIsFatigue => playerData.staminaRecoverySpeedIsFatigue;
-        public float StaminaDecreaseRate => playerData.staminaDecreaseRate;
-
-        public float Strength => playerData.strength + PlayerAttribute.Strength;
-        public float Armor => playerData.armor + PlayerAttribute.Armor;
+        
+        public float Strength => playerData.strength + PlayerAttribute.Strength + PlayerSkillCharacteristic.Strength!;
+        public float Armor => playerData.armor + PlayerAttribute.Armor + PlayerSkillCharacteristic.Armor!;
         public float Agility => playerData.agility + PlayerAttribute.Agility;
 
         public float CriticalDamage => playerData.criticalDamage + PlayerAttribute.CriticalDamage;

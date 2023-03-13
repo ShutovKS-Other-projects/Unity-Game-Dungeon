@@ -38,7 +38,7 @@ namespace Player
         
         [Header("Magic")]
         public float magicStrength = 10f;
-        public MagicAttackType magicAttackType = MagicAttackType.None;
+        public MagicType magicType = MagicType.None;
 
         [Header("Movement Speed")]
         public float jumpSpeed = 5f;

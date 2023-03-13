@@ -7,7 +7,7 @@ namespace Magic.SuperMagic
 {
     public abstract class Magic : MonoBehaviour
     {
-        public abstract MagicAttackType MagicAttackType { get; set; }
+        public abstract MagicType MagicType { get; set; }
         protected abstract Color ColorSphere { get; set; }
 
         protected abstract void OnTriggerEnter(Collider other);

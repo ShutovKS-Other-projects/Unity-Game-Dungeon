@@ -8,11 +8,6 @@ namespace UI.PlayerInfo
         [SerializeField] private GameObject uiInventory;
         [SerializeField] private GameObject uiSkills;
 
-        private void OnEnable()
-        {
-            OnInventory();
-        }
-        
         private void OnDisable()
         {
             OnInventory();

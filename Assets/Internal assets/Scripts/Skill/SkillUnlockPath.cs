@@ -9,7 +9,7 @@ namespace Skill
     [Serializable]
     public class SkillUnlockPath
     {
-        [FormerlySerializedAs("SkillMagicType")] public MagicAttackType magicAttackType;
+        [FormerlySerializedAs("magicAttackType")] [FormerlySerializedAs("SkillMagicType")] public MagicType magicType;
         public Image[] SkillUnlockPathImages;
 
         public void UpdateVisuals()
