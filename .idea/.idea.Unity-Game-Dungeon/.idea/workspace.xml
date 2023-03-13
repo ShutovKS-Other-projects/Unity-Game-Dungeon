@@ -2,65 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/AirGust.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/AirGust.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/AirHurricane.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/AirHurricane.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/AirTornado.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/AirTornado.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/EarthEarthquake.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/EarthEarthquake.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/EarthRockslide.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/EarthRockslide.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/EarthTremor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/EarthTremor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/FireIgnition.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/FireIgnition.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/FireInferno.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/FireInferno.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/FireMeteor.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/FireMeteor.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/IceAbsoluteZero.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/IceAbsoluteZero.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/IceFrostbite.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/IceFrostbite.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/IceGlacialChill.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/IceGlacialChill.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/LightningLightningStorm.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/LightningLightningStorm.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/LightningStaticShock.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/LightningStaticShock.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/LightningThunderbolt.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/LightningThunderbolt.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/WaterCyclone.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/WaterCyclone.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/WaterTorrent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/WaterTorrent.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/WaterTsunami.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SubMagic/WaterTsunami.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SuperMagic.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect/Support/RenderTextures/DefaultMiniMapTexture.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect/Support/RenderTextures/DefaultMiniMapTexture.renderTexture" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/Magic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SuperMagic/Magic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/Magic.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SuperMagic/Magic.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/MagicAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SuperMagic/MagicAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/MagicAttack.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/SuperMagic/MagicAttack.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/Object.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/Object/MagicAttackDatabaseObject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/Object/MagicAttackDatabaseObject.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/Object/MagicAttackObject.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/Object/MagicAttackObject.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/TestMagic.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/TestMagic.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/Type/MagicAttackType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Magic/Type/MagicAttackType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerMagicAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerMagicAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkills.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkillMagicAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkills.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkillMagicAttack.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerStatistic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerStatistic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillMagic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillMagic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/UISkillTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/UISkillTree.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,6 +174,10 @@
       <workItem from="1678562451452" duration="6784000" />
       <workItem from="1678602337096" duration="7044000" />
       <workItem from="1678611975972" duration="6210000" />
+      <workItem from="1678628508129" duration="596000" />
+      <workItem from="1678644112054" duration="591000" />
+      <workItem from="1678645901719" duration="597000" />
+      <workItem from="1678688162941" duration="109000" />
     </task>
     <servers />
   </component>
