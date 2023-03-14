@@ -18,6 +18,7 @@ namespace Player
         public LevelSystem LevelSystem { get; private set; }
         private PlayerAttribute PlayerAttribute { get; set; }
         private PlayerSkillCharacteristic PlayerSkillCharacteristic { get; set; }
+        private PlayerSkillMagicAttack PlayerSkillMagicAttack { get; set; }
         #endregion
 
         public event ObtainingExperience ObtainingExperienceEvent;
@@ -29,6 +30,7 @@ namespace Player
             PlayerAttribute = GetComponent<PlayerAttribute>();
             LevelSystem = new LevelSystem();
             PlayerSkillCharacteristic = GetComponent<PlayerSkillCharacteristic>();
+            PlayerSkillMagicAttack = GetComponent<PlayerSkillMagicAttack>();
 
             ObtainingExperienceEvent += LevelSystem.AddExperience;
         }
@@ -43,7 +45,12 @@ namespace Player
 
         private void Update()
         {
-            if (UnityEngine.Input.GetKeyDown(KeyCode.C) && LevelSystem.Level < 10) LevelSystem.AddExperience(100);
+            if (UnityEngine.Input.GetKeyDown(KeyCode.C) && LevelSystem.Level < 10)
+            {
+                LevelSystem.AddExperience(100);
+                PlayerSkillCharacteristic.AddSkillPont();
+                PlayerSkillMagicAttack.AddSkillPont();
+            }
         }
 
         #endregion

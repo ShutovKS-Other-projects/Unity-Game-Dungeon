@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Magic.Type;
 using Skill.SkillTree;
+using TMPro;
 using UnityEngine;
 
 namespace Skill.Magic
@@ -9,6 +10,7 @@ namespace Skill.Magic
     {
         private SkillMagic _skillMagic;
         private List<SkillButtonMagic> _skillButtonList;
+        [SerializeField] private GameObject skillPoints;
 
         /// <summary>
         /// Обновление визуальных элементов скилов
@@ -25,7 +27,13 @@ namespace Skill.Magic
             }
 
             _skillMagic.OnSkillUnlocked += SkillMagic_OnSkillUnlocked;
+            _skillMagic.OnSkillPointsUpdate += SkillCharacteristic_OnSkillPointsUpdate;
             UpdateVisuals();
+        }
+
+        private void SkillCharacteristic_OnSkillPointsUpdate()
+        {
+            SkillPointsUpdate();
         }
 
         /// <summary>
@@ -36,6 +44,11 @@ namespace Skill.Magic
         private void SkillMagic_OnSkillUnlocked(object sender, SkillMagic.OnSkillUnlockedEventArgs e)
         {
             UpdateVisuals();
+        }
+
+        private void SkillPointsUpdate()
+        {
+            skillPoints.GetComponent<TextMeshProUGUI>().text = _skillMagic.GetSkillPoints().ToString();
         }
 
         /// <summary>

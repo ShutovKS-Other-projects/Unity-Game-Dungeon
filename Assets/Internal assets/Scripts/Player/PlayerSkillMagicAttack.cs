@@ -26,6 +26,8 @@ namespace Player
             _playerStateController = GetComponent<PlayerStateController>();
         }
 
+        public void AddSkillPont() => _skillMagic.AddSkillPoint();
+
         private void PlayerOnSwitched(object sender, MagicType magicType)
         {
             switch (magicType)

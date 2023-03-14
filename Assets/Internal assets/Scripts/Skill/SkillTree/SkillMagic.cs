@@ -18,9 +18,13 @@ namespace Skill.SkillTree
         /// </summary>
         private readonly List<MagicType> _unlockedSkillsTypeList;
 
+        private int _skillPoints;
+
         #endregion
 
         #region Events
+
+        public event Action OnSkillPointsUpdate;
 
         /// <summary>
         /// Вызывается при смене скила
@@ -43,6 +47,14 @@ namespace Skill.SkillTree
         #endregion
 
         #region Methods
+
+        public void AddSkillPoint()
+        {
+            _skillPoints++;
+        OnSkillPointsUpdate?.Invoke();
+        }
+
+        public int GetSkillPoints() => _skillPoints;
 
         /// <summary>
         /// Попытка разблокировки скила
@@ -75,6 +87,9 @@ namespace Skill.SkillTree
                 return false;
             }
 
+            if (_skillPoints <= 0)
+                return false;
+
             var skillRequired = GetSkillRequired(magicType);
             return skillRequired != null
                    && (skillRequired == MagicType.None
@@ -98,6 +113,8 @@ namespace Skill.SkillTree
         private void UnlockSkill(MagicType magicType)
         {
             _unlockedSkillsTypeList.Add(magicType);
+            _skillPoints--;
+            OnSkillPointsUpdate?.Invoke();
             OnSkillUnlocked?.Invoke(this, new OnSkillUnlockedEventArgs { MagicType = magicType });
             Debug.Log($"Skill {magicType} unlocked");
             SwitchingSkill(magicType);

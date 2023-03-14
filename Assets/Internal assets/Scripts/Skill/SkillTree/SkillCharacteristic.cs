@@ -10,7 +10,9 @@ namespace Skill.SkillTree
         public SkillCharacteristic() => _unlockedSkillsTypeList = new List<SkillCharacteristicType>();
 
         private readonly List<SkillCharacteristicType> _unlockedSkillsTypeList;
+        private int _skillPoints;
 
+        public event Action OnSkillPointsUpdate;
         public event EventHandler<SkillCharacteristicType> AssignmentsValue;
         public event EventHandler<OnSkillUnlockedEventArgs> OnSkillUnlocked;
 
@@ -18,7 +20,7 @@ namespace Skill.SkillTree
         {
             public SkillCharacteristicType SkillCharacteristicType { get; set; }
         }
-    
+
         public bool TryUnlockSkill(SkillCharacteristicType skillCharacteristicType)
         {
             if (CanUnlockSkill(skillCharacteristicType))
@@ -30,6 +32,14 @@ namespace Skill.SkillTree
 
             return false;
         }
+
+        public void AddSkillPoint()
+        {
+            _skillPoints++;
+            OnSkillPointsUpdate?.Invoke();
+        }
+
+        public int GetSkillPoints() => _skillPoints;
 
         public float GetSkillValue(SkillCharacteristicType skillCharacteristicType) => skillCharacteristicType switch
         {
@@ -74,7 +84,7 @@ namespace Skill.SkillTree
         private bool CanUnlockSkill(SkillCharacteristicType skillCharacteristicType)
         {
             if (IsSkillUnlocked(skillCharacteristicType)) return false;
-
+            if (_skillPoints <= 0) return false;
             var skillRequired = GetSkillRequired(skillCharacteristicType);
             return skillRequired != null
                    && (skillRequired == SkillCharacteristicType.None
@@ -89,6 +99,8 @@ namespace Skill.SkillTree
         private void UnlockSkill(SkillCharacteristicType skillCharacteristicType)
         {
             _unlockedSkillsTypeList.Add(skillCharacteristicType);
+            _skillPoints--;
+            OnSkillPointsUpdate?.Invoke();
             OnSkillUnlocked?.Invoke(this,
                 new OnSkillUnlockedEventArgs { SkillCharacteristicType = skillCharacteristicType });
             Debug.Log($"Skill {skillCharacteristicType} unlocked");
