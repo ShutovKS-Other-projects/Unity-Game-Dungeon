@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Player/PlayerAnimacionController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Player/PlayerAnimacionController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/InputSystem/Game/InputSystemGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/InputSystem/Game/InputSystemGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/InputSystem/Game/InputSystemGame.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/InputSystem/Game/InputSystemGame.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/EnemyStatisticUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/EnemyStatisticUI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Input/InputManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Input/InputManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Item/Attributes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Item/Attributes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/PlayerState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/PlayerState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/PlayerStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/PlayerStateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SuperState/PlayerGroundedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SuperState/PlayerGroundedState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerStatistic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerStatistic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/game_ss_candy_01.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/game_ss_candy_01.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/infinity_cave_01.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/infinity_cave_01.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/sc_remove_door.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/sc_remove_door.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkillCharacteristic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkillCharacteristic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Characteristic/SkillButtonCharacteristic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Characteristic/SkillButtonCharacteristic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Characteristic/UISkillTreeCharacteristic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Characteristic/UISkillTreeCharacteristic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Magic/UISkillTreeMagic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Magic/UISkillTreeMagic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillCharacteristic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillCharacteristic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillMagic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillMagic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,35 +19,44 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <branch-grouping />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20ec2084e3e54ecaa99fcb1c13b2e6c216e400/5e/71ed7b09/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/20ec2084e3e54ecaa99fcb1c13b2e6c216e400/6e/9ea2be06/Random.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/7d303c2bf72cd4cec95665b89c457d265d2b8ef3ed6da17cd4f85587c2f9de7/System.Linq.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/d44b17e136d09081da1e8fd0e8c83fde60e11818b9f2442d7ed8cb733fae895e/System.Collections.Generic.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/External assets/N♥TES/Editor/Notes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Chest/Chest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableDeadEnemy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableItem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Level/LevelSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillMagic.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/PlayerInfo/Main.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/PlayerInfo/Skills.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.3.2/UnityEngine.TestRunner/Assertions/LogScope/LogScope.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectId" id="2MNkZErsfffpSEmRHhvWcYyFKfo" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.handlebarsOptions&quot;,
     &quot;settings.editor.splitter.proportion&quot;: &quot;0.1523046&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -69,7 +74,7 @@
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Programs\Unity\InstallsLocation\2022.2.9f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Programs\Unity\InstallsLocation\2022.2.10f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath D:\Work\Unity\Unity-Game-Dungeon -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Work\Unity\Unity-Game-Dungeon" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -85,7 +90,7 @@
       <method v="2" />
     </configuration>
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="D:\Programs\Unity\InstallsLocation\2022.2.9f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="D:\Programs\Unity\InstallsLocation\2022.2.10f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath D:\Work\Unity\Unity-Game-Dungeon -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="D:\Work\Unity\Unity-Game-Dungeon" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -159,6 +164,34 @@
       <workItem from="1678262799357" duration="6481000" />
       <workItem from="1678270547241" duration="57000" />
       <workItem from="1678270712220" duration="14303000" />
+      <workItem from="1678355736944" duration="5581000" />
+      <workItem from="1678363248171" duration="2651000" />
+      <workItem from="1678375960098" duration="593000" />
+      <workItem from="1678382315818" duration="1793000" />
+      <workItem from="1678384318170" duration="7134000" />
+      <workItem from="1678429207787" duration="3108000" />
+      <workItem from="1678432430394" duration="202000" />
+      <workItem from="1678434283981" duration="8883000" />
+      <workItem from="1678448568713" duration="2968000" />
+      <workItem from="1678458461514" duration="12000" />
+      <workItem from="1678458616573" duration="89000" />
+      <workItem from="1678459972534" duration="2870000" />
+      <workItem from="1678546163409" duration="62000" />
+      <workItem from="1678546380846" duration="9471000" />
+      <workItem from="1678560297725" duration="621000" />
+      <workItem from="1678562451452" duration="6784000" />
+      <workItem from="1678602337096" duration="7044000" />
+      <workItem from="1678611975972" duration="6210000" />
+      <workItem from="1678628508129" duration="596000" />
+      <workItem from="1678644112054" duration="591000" />
+      <workItem from="1678645901719" duration="597000" />
+      <workItem from="1678688162941" duration="109000" />
+      <workItem from="1678688329865" duration="2910000" />
+      <workItem from="1678712530754" duration="4000" />
+      <workItem from="1678712587824" duration="5691000" />
+      <workItem from="1678722301140" duration="12154000" />
+      <workItem from="1678780192056" duration="3162000" />
+      <workItem from="1678808055104" duration="5371000" />
     </task>
     <servers />
   </component>
@@ -170,7 +203,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

@@ -1,47 +1,33 @@
-﻿using Magic;
+﻿using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
+using Magic;
+using Magic.SubMagic;
+using Magic.SuperMagic;
+using Magic.Type;
 using Player.FiniteStateMachine.SuperState;
+using Skill;
+using Skill.Enum;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Player.FiniteStateMachine.SubState
 {
     public class PlayerMagicAttackState : PlayerAbilityState
     {
-        private GameObject _magicAttack;
-
         public PlayerMagicAttackState(PlayerStateController stateController, PlayerStateMachine stateMachine,
             PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
             animBoolName)
         {
         }
 
+
         public override void Enter()
         {
             base.Enter();
-
-            _magicAttack = GameObject.CreatePrimitive(PrimitiveType.Sphere);
-
-            var main = UnityEngine.Camera.main;
-            var magicTransform = _magicAttack.transform;
-            var magicPosition = main!.transform.position;
-            magicPosition += main!.transform.forward * 1;
-
-            magicTransform.position = magicPosition;
-            magicTransform.localScale = new Vector3(0.25f, 0.25f, 0.25f);
-            magicTransform.rotation = main.transform.rotation;
-
-            _magicAttack.AddComponent<SphereCollider>();
-            _magicAttack.GetComponent<SphereCollider>().isTrigger = true;
-
-            _magicAttack.AddComponent<Rigidbody>();
-            _magicAttack.GetComponent<Rigidbody>().AddForce(main.transform.forward * 1500);
-            _magicAttack.GetComponent<Rigidbody>().useGravity = false;
-            _magicAttack.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-
-            _magicAttack.GetComponent<Renderer>().material.color = Color.blue;
-
-            _magicAttack.tag = "ObjectDamaging";
             
-            _magicAttack.AddComponent<MagicAttack>();
+            StateController.MagicAttackDelegate.Invoke();
+
             if (Random.Range(0, 101) < PlayerStatistic.CriticalChance)
                 StateController.RegisterDelegateStrengthAttackFloat(CriticalMagicAttack);
             else

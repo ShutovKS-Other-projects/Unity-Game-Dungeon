@@ -78,8 +78,8 @@ namespace UI
 
         private void OnGame()
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            // Cursor.lockState = CursorLockMode.Locked;
+            // Cursor.visible = false;
 
             _uiPanelGame.SetActive(true);
             _uiPanelMenu.SetActive(false);
@@ -88,8 +88,8 @@ namespace UI
 
         private void OnMenu()
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            // Cursor.lockState = CursorLockMode.None;
+            // Cursor.visible = true;
 
             _uiPanelGame.SetActive(false);
             _uiPanelMenu.SetActive(true);
@@ -98,8 +98,8 @@ namespace UI
 
         public void OnPlayerInfo()
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            // Cursor.lockState = CursorLockMode.None;
+            // Cursor.visible = true;
 
             _uiPanelGame.SetActive(false);
             _uiPanelMenu.SetActive(false);

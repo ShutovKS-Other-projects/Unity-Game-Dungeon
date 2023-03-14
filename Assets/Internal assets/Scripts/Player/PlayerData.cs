@@ -1,6 +1,10 @@
-using Interactable;
+using Magic.SubMagic;
+using Magic.SuperMagic;
+using Magic.Type;
+using Skill.Enum;
 using UnityEngine;
 using UnityEngine.Serialization;
+
 namespace Player
 {
     [CreateAssetMenu(fileName = "newPlayerData", menuName = "Data/Player Data/Data Base")]
@@ -32,8 +36,9 @@ namespace Player
         public float criticalDamage = 25f;
         public float criticalChance = 15f;
         
-        [Header("MagicAttack")]
-        public float magicAttackDamage = 10f;
+        [Header("Magic")]
+        public float magicStrength = 10f;
+        public MagicType magicType = MagicType.None;
 
         [Header("Movement Speed")]
         public float jumpSpeed = 5f;

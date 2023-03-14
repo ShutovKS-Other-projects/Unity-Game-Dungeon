@@ -1,6 +1,7 @@
 using System.Collections;
 using Input;
 using Interactable;
+using JetBrains.Annotations;
 using Magic;
 using Other;
 using Player.FiniteStateMachine.SubState;
@@ -60,8 +61,11 @@ namespace Player.FiniteStateMachine
         #region Delegate Functions
 
         public Delegate.SwitchCollider? SwitchCollider;
-
+        public Delegate.OnMagicAttackDelegate MagicAttackDelegate;
         public Delegate.StrengthAttackFloat? StrengthAttackFloat;
+
+        public void RegisterDelegateSwitchCollider(Delegate.SwitchCollider del) => SwitchCollider = del;
+        public void RegisterDelegateMagicAttackDelegate(Delegate.OnMagicAttackDelegate del) => MagicAttackDelegate = del;
         public void RegisterDelegateStrengthAttackFloat(Delegate.StrengthAttackFloat del) => StrengthAttackFloat = del;
 
         #endregion

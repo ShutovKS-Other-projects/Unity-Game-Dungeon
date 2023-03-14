@@ -8,13 +8,13 @@ namespace UI.Game
     {
         //Add event system
 
-        TextMeshProUGUI _dialogText;
+        private TextMeshProUGUI _dialogText;
 
-        void OnEnable()
+        private void OnEnable()
         {
             _dialogText = transform.Find("DialogText").GetComponent<TextMeshProUGUI>();
         }
         
-        void UpdateTextDialog(string text) => _dialogText.text = text;
+        private void UpdateTextDialog(string text) => _dialogText.text = text;
     }
 }

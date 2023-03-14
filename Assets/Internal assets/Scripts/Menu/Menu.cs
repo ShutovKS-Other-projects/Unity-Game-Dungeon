@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 namespace Menu
 {
     public class Menu : MonoBehaviour
@@ -33,8 +35,10 @@ namespace Menu
                 _scaleCitationText -= 0.15f * Time.deltaTime;
             }
 
-            _citationText.GetComponent<UnityEngine.UI.Text>().rectTransform.localScale = new Vector3(_scaleCitationText, _scaleCitationText, 1f);
+            _citationText.GetComponent<TextMeshProUGUI>().rectTransform.localScale = new Vector3(_scaleCitationText, _scaleCitationText, 1f);
         }
+
+
         private string ReturnCitationText()
         {
             List<string> citations = new List<string>()
