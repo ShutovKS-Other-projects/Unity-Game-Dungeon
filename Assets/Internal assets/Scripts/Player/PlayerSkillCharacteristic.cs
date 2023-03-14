@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Diagnostics;
 using Player.FiniteStateMachine;
 using Skill.Characteristic;
 using Skill.SkillTree;
 using UnityEngine;
+using Debug = UnityEngine.Debug;
 
 namespace Player
 {

@@ -51,7 +51,7 @@ namespace Skill.SkillTree
         public void AddSkillPoint()
         {
             _skillPoints++;
-        OnSkillPointsUpdate?.Invoke();
+            OnSkillPointsUpdate?.Invoke();
         }
 
         public int GetSkillPoints() => _skillPoints;
@@ -63,13 +63,10 @@ namespace Skill.SkillTree
         /// <returns> Возвращает true, если скил разблокирован, иначе false</returns>
         public bool TryUnlockSkill(MagicType magicType)
         {
-            if (CanUnlockSkill(magicType))
-            {
-                UnlockSkill(magicType);
-                return true;
-            }
+            if (!IsSkillPointEnough() || !CanUnlockSkill(magicType)) return false;
+            UnlockSkill(magicType);
+            return true;
 
-            return false;
         }
 
 
@@ -78,7 +75,7 @@ namespace Skill.SkillTree
         /// </summary>
         /// <param name="magicType"> Тип скила, который необходимо разблокировать</param>
         /// <returns> Возвращает true, если скил можно разблокировать, иначе false</returns>
-        private bool CanUnlockSkill(MagicType magicType)
+        public bool CanUnlockSkill(MagicType magicType)
         {
             if (IsSkillUnlocked(magicType))
             {
@@ -86,9 +83,6 @@ namespace Skill.SkillTree
                     SwitchingSkill(magicType);
                 return false;
             }
-
-            if (_skillPoints <= 0)
-                return false;
 
             var skillRequired = GetSkillRequired(magicType);
             return skillRequired != null
@@ -101,10 +95,12 @@ namespace Skill.SkillTree
         /// </summary>
         /// <param name="magicType"> Тип скила, который необходимо проверить</param>
         /// <returns> Возвращает true, если скил разблокирован, иначе false</returns>
-        private bool IsSkillUnlocked(MagicType magicType)
+        public bool IsSkillUnlocked(MagicType magicType)
         {
             return _unlockedSkillsTypeList.Contains(magicType);
         }
+
+        private bool IsSkillPointEnough() => _skillPoints > 0;
 
         /// <summary>
         /// Разблокировка скила

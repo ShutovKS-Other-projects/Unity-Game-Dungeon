@@ -3,6 +3,7 @@ using Magic.Type;
 using Skill.SkillTree;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Skill.Magic
 {
@@ -26,24 +27,9 @@ namespace Skill.Magic
                 _skillButtonList.Add(new SkillButtonMagic(transform.GetChild(i), skillMagic, (MagicType)i));
             }
 
-            _skillMagic.OnSkillUnlocked += SkillMagic_OnSkillUnlocked;
-            _skillMagic.OnSkillPointsUpdate += SkillCharacteristic_OnSkillPointsUpdate;
-            UpdateVisuals();
-        }
-
-        private void SkillCharacteristic_OnSkillPointsUpdate()
-        {
-            SkillPointsUpdate();
-        }
-
-        /// <summary>
-        /// Вызывается при разблокировке скила
-        /// </summary>
-        /// <param name="sender"> Объект, который вызвал событие</param>
-        /// <param name="e"> Аргументы события</param>
-        private void SkillMagic_OnSkillUnlocked(object sender, SkillMagic.OnSkillUnlockedEventArgs e)
-        {
-            UpdateVisuals();
+            _skillMagic.OnSkillUnlocked += UpdateVisuals;
+            _skillMagic.OnSkillPointsUpdate += SkillPointsUpdate;
+            UpdateVisuals(null, null);
         }
 
         private void SkillPointsUpdate()
@@ -52,10 +38,22 @@ namespace Skill.Magic
         }
 
         /// <summary>
-        /// Обновление визуальных элементов
+        /// Вызывается при разблокировке скила
         /// </summary>
-        private void UpdateVisuals()
+        /// <param name="sender"> Объект, который вызвал событие</param>
+        /// <param name="e"> Аргументы события</param>
+        private void UpdateVisuals(object sender, SkillMagic.OnSkillUnlockedEventArgs e)
         {
+            for (var i = 0; i < transform.childCount; i++)
+            {
+                var skillType = (MagicType)i;
+                if (_skillMagic.IsSkillUnlocked(skillType))
+                    transform.GetChild(i).GetComponent<Image>().color = Color.white;
+                else if (_skillMagic.CanUnlockSkill(skillType))
+                    transform.GetChild(i).GetComponent<Image>().color = Color.gray;
+                else
+                    transform.GetChild(i).GetComponent<Image>().color = Color.black;
+            }
         }
     }
 }

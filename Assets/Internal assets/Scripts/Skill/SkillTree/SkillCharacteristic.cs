@@ -23,14 +23,10 @@ namespace Skill.SkillTree
 
         public bool TryUnlockSkill(SkillCharacteristicType skillCharacteristicType)
         {
-            if (CanUnlockSkill(skillCharacteristicType))
-            {
-                UnlockSkill(skillCharacteristicType);
-                AssignmentsValue?.Invoke(this, skillCharacteristicType);
-                return true;
-            }
-
-            return false;
+            if (!IsSkillPointEnough() || !CanUnlockSkill(skillCharacteristicType)) return false;
+            UnlockSkill(skillCharacteristicType);
+            AssignmentsValue?.Invoke(this, skillCharacteristicType);
+            return true;
         }
 
         public void AddSkillPoint()
@@ -81,20 +77,21 @@ namespace Skill.SkillTree
             _ => throw new ArgumentOutOfRangeException(nameof(skillCharacteristicType), skillCharacteristicType, null)
         };
 
-        private bool CanUnlockSkill(SkillCharacteristicType skillCharacteristicType)
+        public bool CanUnlockSkill(SkillCharacteristicType skillCharacteristicType)
         {
             if (IsSkillUnlocked(skillCharacteristicType)) return false;
-            if (_skillPoints <= 0) return false;
             var skillRequired = GetSkillRequired(skillCharacteristicType);
             return skillRequired != null
                    && (skillRequired == SkillCharacteristicType.None
                        || IsSkillUnlocked(skillRequired.Value));
         }
 
-        private bool IsSkillUnlocked(SkillCharacteristicType skillCharacteristicType)
+        public bool IsSkillUnlocked(SkillCharacteristicType skillCharacteristicType)
         {
             return _unlockedSkillsTypeList.Contains(skillCharacteristicType);
         }
+
+        private bool IsSkillPointEnough() => _skillPoints > 0;
 
         private void UnlockSkill(SkillCharacteristicType skillCharacteristicType)
         {
@@ -113,27 +110,32 @@ namespace Skill.SkillTree
                 SkillCharacteristicType.Armor3 => SkillCharacteristicType.Armor2,
                 SkillCharacteristicType.Armor4 => SkillCharacteristicType.Armor3,
                 SkillCharacteristicType.Armor5 => SkillCharacteristicType.Armor4,
+                SkillCharacteristicType.Armor6 => SkillCharacteristicType.Armor5,
 
                 SkillCharacteristicType.Stamina2 => SkillCharacteristicType.Stamina1,
                 SkillCharacteristicType.Stamina3 => SkillCharacteristicType.Stamina2,
                 SkillCharacteristicType.Stamina4 => SkillCharacteristicType.Stamina3,
                 SkillCharacteristicType.Stamina5 => SkillCharacteristicType.Stamina4,
-
+                SkillCharacteristicType.Stamina6 => SkillCharacteristicType.Stamina5,
+                
                 SkillCharacteristicType.Health2 => SkillCharacteristicType.Health1,
                 SkillCharacteristicType.Health3 => SkillCharacteristicType.Health2,
                 SkillCharacteristicType.Health4 => SkillCharacteristicType.Health3,
                 SkillCharacteristicType.Health5 => SkillCharacteristicType.Health4,
+                SkillCharacteristicType.Health6 => SkillCharacteristicType.Health5,
 
                 SkillCharacteristicType.Mana2 => SkillCharacteristicType.Mana1,
                 SkillCharacteristicType.Mana3 => SkillCharacteristicType.Mana2,
                 SkillCharacteristicType.Mana4 => SkillCharacteristicType.Mana3,
                 SkillCharacteristicType.Mana5 => SkillCharacteristicType.Mana4,
+                SkillCharacteristicType.Mana6 => SkillCharacteristicType.Mana5,
 
                 SkillCharacteristicType.Strength2 => SkillCharacteristicType.Strength1,
                 SkillCharacteristicType.Strength3 => SkillCharacteristicType.Strength2,
                 SkillCharacteristicType.Strength4 => SkillCharacteristicType.Strength3,
                 SkillCharacteristicType.Strength5 => SkillCharacteristicType.Strength4,
-
+                SkillCharacteristicType.Strength6 => SkillCharacteristicType.Strength5,
+                
                 _ => SkillCharacteristicType.None
             };
     }

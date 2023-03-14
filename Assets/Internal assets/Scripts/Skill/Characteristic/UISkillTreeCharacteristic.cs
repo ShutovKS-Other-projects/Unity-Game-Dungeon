@@ -2,6 +2,7 @@
 using Skill.SkillTree;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Skill.Characteristic
 {
@@ -23,19 +24,9 @@ namespace Skill.Characteristic
                     (SkillCharacteristicType)i));
             }
 
-            _skillCharacteristic.OnSkillUnlocked += SkillCharacteristic_OnSkillUnlocked;
-            _skillCharacteristic.OnSkillPointsUpdate += SkillCharacteristic_OnSkillPointsUpdate;
-            UpdateVisuals();
-        }
-
-        private void SkillCharacteristic_OnSkillPointsUpdate()
-        {
-            SkillPointsUpdate();
-        }
-
-        private void SkillCharacteristic_OnSkillUnlocked(object sender, SkillCharacteristic.OnSkillUnlockedEventArgs e)
-        {
-            UpdateVisuals();
+            _skillCharacteristic.OnSkillUnlocked += UpdateVisuals;
+            _skillCharacteristic.OnSkillPointsUpdate += SkillPointsUpdate;
+            UpdateVisuals(null, null);
         }
 
         private void SkillPointsUpdate()
@@ -43,8 +34,18 @@ namespace Skill.Characteristic
             skillPoints.GetComponent<TextMeshProUGUI>().text = _skillCharacteristic.GetSkillPoints().ToString();
         }
 
-        private void UpdateVisuals()
+        private void UpdateVisuals(object sender, SkillCharacteristic.OnSkillUnlockedEventArgs e)
         {
+            for (var i = 0; i < transform.childCount; i++)
+            {
+                var skillType = (SkillCharacteristicType)i;
+                if (_skillCharacteristic.IsSkillUnlocked(skillType))
+                    transform.GetChild(i).GetComponent<Image>().color = Color.white;
+                else if (_skillCharacteristic.CanUnlockSkill(skillType))
+                    transform.GetChild(i).GetComponent<Image>().color = Color.gray;
+                else
+                    transform.GetChild(i).GetComponent<Image>().color = Color.black;
+            }
         }
     }
 }

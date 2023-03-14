@@ -23,11 +23,9 @@ namespace Skill.Characteristic
             });
         }
         
-        public void UpdateVisuals()
+        public void UpdateVisuals(bool isUnlocked)
         {
-            Debug.Log($"Update visuals {_skillCharacteristicType}");
-            // _image.sprite = _skillMagic.GetSkillSprite(_skillMagicType);
-            // _backgroundImage.sprite = _skillMagic.GetSkillBackgroundSprite(_skillMagicType);
+            
         }
     }
 }

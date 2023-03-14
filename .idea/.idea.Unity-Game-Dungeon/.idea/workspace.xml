@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/QuickRun.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/game_ss_candy_01.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/game_ss_candy_01.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/infinity_cave_01.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/infinity_cave_01.json.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/sc_remove_door.json.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/External assets/CodeRespawn/DungeonArchitect_LaunchPad/Editor/Resources/LaunchPad/pages/samples/sc_remove_door.json.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkillCharacteristic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkillCharacteristic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkillMagicAttack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerSkillMagicAttack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerStatistic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerStatistic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Characteristic/SkillButtonCharacteristic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Characteristic/SkillButtonCharacteristic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Characteristic/UISkillTreeCharacteristic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Characteristic/UISkillTreeCharacteristic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Magic/UISkillTreeMagic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/Magic/UISkillTreeMagic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillCharacteristic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillCharacteristic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillMagic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillMagic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +35,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Skill/SkillTree/SkillMagic.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/PlayerInfo/Main.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/UI/PlayerInfo/Skills.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.3.2/UnityEngine.TestRunner/Assertions/LogScope/LogScope.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -189,6 +191,7 @@
       <workItem from="1678712587824" duration="5691000" />
       <workItem from="1678722301140" duration="12154000" />
       <workItem from="1678780192056" duration="3162000" />
+      <workItem from="1678808055104" duration="5371000" />
     </task>
     <servers />
   </component>
