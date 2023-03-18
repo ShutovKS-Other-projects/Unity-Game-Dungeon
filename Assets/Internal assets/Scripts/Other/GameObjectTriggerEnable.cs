@@ -5,7 +5,7 @@ namespace Other
     {
         private Collider _collider;
 
-        void Start()
+        private void Start()
         {
             _collider = GetComponent<Collider>();
             _collider.enabled = false;

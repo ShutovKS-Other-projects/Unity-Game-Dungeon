@@ -1,51 +1,38 @@
+using System;
 using Enemy.FiniteStateMachine;
 using TMPro;
 using UnityEngine;
+
 namespace Enemy
 {
     public class EnemyStatisticUI : MonoBehaviour
     {
+        private EnemyStateController _stateController;
         private EnemyStatistic _statistic;
-        private GameObject _nameText;
-        private GameObject _levelText;
-        private GameObject _healthText;
+        private TextMeshProUGUI _healthText;
         private Transform _cameraTransform;
 
         private void Start()
         {
-            _statistic = GetComponentInParent<EnemyStateController>().EnemyStatistic;
-            
-            _nameText = transform.Find("Name").gameObject;
-            _levelText = transform.Find("Level").gameObject;
-            _healthText = transform.Find("Health").gameObject;
-            
-            _nameText.GetComponent<TextMeshPro>().text = $"{_statistic.RaceName}";
-            _levelText.GetComponent<TextMeshPro>().text = $"Level: {_statistic.Level}";
-            
+            _stateController = GetComponentInParent<EnemyStateController>();
+            _statistic = _stateController.EnemyStatistic;
             _cameraTransform = UnityEngine.Camera.main!.transform;
+
+            _healthText = transform.Find("Health").GetComponent<TextMeshProUGUI>();
+
+            transform.Find("Name").GetComponent<TextMeshPro>().text = $"{_statistic.RaceName}";
+            transform.Find("Level").GetComponent<TextMeshPro>().text = $"Level: {_statistic.Level}";
+            _healthText.GetComponent<TextMeshPro>().text = $"XP: {_statistic.Health}";
+
+
+            _stateController.UpdateStatistic += UpdateStatistic;
         }
 
         private void FixedUpdate()
         {
-            if (_statistic.Health > 0)
-                Display();
-            else
-                NoDisplay();
+            transform.LookAt(_cameraTransform.transform.position);
         }
 
-        // ReSharper disable Unity.PerformanceAnalysis
-        private void Display()
-        {
-            _nameText.SetActive(true);
-            _healthText.SetActive(true);
-            transform.LookAt(_cameraTransform.transform.position);
-            _healthText.GetComponent<TextMeshPro>().text = $"XP: {_statistic.Health}";
-        }
-        private void NoDisplay()
-        {
-            _nameText.SetActive(false);
-            _levelText.SetActive(false);
-            _healthText.SetActive(false);
-        }
+        private void UpdateStatistic() => _healthText.GetComponent<TextMeshPro>().text = $"XP: {_statistic.Health}";
     }
 }

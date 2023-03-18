@@ -211,12 +211,12 @@ namespace Inventory
 
         #region Events Interface
 
-        static void OnEnterInterface(GameObject obj)
+        private static void OnEnterInterface(GameObject obj)
         {
             MouseData.InterfaceMouseIsOver = obj.GetComponent<UserInterface>();
         }
 
-        static void OnExitInterface(GameObject obj)
+        private static void OnExitInterface(GameObject obj)
         {
             MouseData.InterfaceMouseIsOver = null;
         }

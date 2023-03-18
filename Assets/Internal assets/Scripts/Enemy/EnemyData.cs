@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Serialization;
+
 namespace Enemy
 {
     [CreateAssetMenu(fileName = "newEnemyData", menuName = "Data/Enemy Data/Data Base")]
@@ -21,6 +23,7 @@ namespace Enemy
         [Header("Player Check")]
         public float playerCheckDistance;
 
-        public RuntimeAnimatorController AnimatorController;
+        [Header("Animation")]
+        public RuntimeAnimatorController animatorController;
     }
 }

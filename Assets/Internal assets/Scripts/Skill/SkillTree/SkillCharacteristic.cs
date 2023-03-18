@@ -37,7 +37,7 @@ namespace Skill.SkillTree
 
         public int GetSkillPoints() => _skillPoints;
 
-        public float GetSkillValue(SkillCharacteristicType skillCharacteristicType) => skillCharacteristicType switch
+        public static float GetSkillValue(SkillCharacteristicType skillCharacteristicType) => skillCharacteristicType switch
         {
             SkillCharacteristicType.Stamina1 => 100,
             SkillCharacteristicType.Stamina2 => 150,

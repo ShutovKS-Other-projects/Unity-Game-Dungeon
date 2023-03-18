@@ -4,10 +4,10 @@ namespace Enemy.FiniteStateMachine
 {
     public class EnemyState : MonoBehaviour
     {
-        protected EnemyStateController StateController;
-        protected EnemyStateMachine StateMachine;
+        protected readonly EnemyStateController StateController;
+        protected readonly EnemyStateMachine StateMachine;
         protected EnemyState enemyState;
-        [NonSerialized] public EnemyStatistic EnemyStatistic;
+        protected readonly EnemyStatistic EnemyStatistic;
 
         protected bool IsAnimationFinished;
         protected bool IsExitingState;

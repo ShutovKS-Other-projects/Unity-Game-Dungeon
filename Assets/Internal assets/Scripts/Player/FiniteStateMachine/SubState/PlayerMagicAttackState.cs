@@ -25,8 +25,8 @@ namespace Player.FiniteStateMachine.SubState
         public override void Enter()
         {
             base.Enter();
-            
-            StateController.MagicAttackDelegate.Invoke();
+
+            StateController.MagicAttackDelegate!.Invoke();
 
             if (Random.Range(0, 101) < PlayerStatistic.CriticalChance)
                 StateController.RegisterDelegateStrengthAttackFloat(CriticalMagicAttack);

@@ -53,9 +53,6 @@ namespace Level
 
         #region Constructor
         
-        /// <param name="level">1</param>
-        /// <param name="experience">0</param>
-        /// <param name="experienceToNextLevel">100</param>
         public LevelSystem()
         {
             Level = 1;

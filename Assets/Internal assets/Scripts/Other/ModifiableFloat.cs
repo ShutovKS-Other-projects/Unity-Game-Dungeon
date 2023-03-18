@@ -9,11 +9,8 @@ namespace Other
         [SerializeField] private float modifiedValue = 0;
         public float ModifiedValue
         {
-            get { return modifiedValue; }
-            private set
-            {
-                modifiedValue = value;
-            }
+            get => modifiedValue;
+            private set => modifiedValue = value;
         }
 
         public ModifiableFloat() => modifiedValue = 0;

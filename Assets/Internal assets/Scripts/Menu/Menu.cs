@@ -1,21 +1,24 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+
 namespace Menu
 {
     public class Menu : MonoBehaviour
     {
-        System.Random random = new System.Random();
-        [SerializeField] private GameObject _citationText;
+        private readonly System.Random _random = new System.Random();
+        [SerializeField] private GameObject citationText;
         private float _scaleCitationText = 1f;
         private bool _isScaleCitationText = false;
-        void Start()
+
+        private void Start()
         {
-            _citationText.GetComponent<UnityEngine.UI.Text>().text = ReturnCitationText();
+            citationText.GetComponent<UnityEngine.UI.Text>().text = ReturnCitationText();
         }
 
-        void FixedUpdate()
+        private void FixedUpdate()
         {
             ChangeScaleCitationText();
         }
@@ -26,6 +29,7 @@ namespace Menu
             {
                 _isScaleCitationText = !_isScaleCitationText;
             }
+
             if (_isScaleCitationText)
             {
                 _scaleCitationText += 0.15f * Time.deltaTime;
@@ -35,7 +39,8 @@ namespace Menu
                 _scaleCitationText -= 0.15f * Time.deltaTime;
             }
 
-            _citationText.GetComponent<TextMeshProUGUI>().rectTransform.localScale = new Vector3(_scaleCitationText, _scaleCitationText, 1f);
+            citationText.GetComponent<TextMeshProUGUI>().rectTransform.localScale =
+                new Vector3(_scaleCitationText, _scaleCitationText, 1f);
         }
 
 
@@ -59,7 +64,7 @@ namespace Menu
                 "“Покорение подземельеа заключается не в том, чтобы никогда не заблудиться, а в том, чтобы иметь смелость продолжать двигаться вперед”",
             };
 
-            return citations[random.Next(0, citations.Count)];
+            return citations[_random.Next(0, citations.Count)];
         }
     }
 }

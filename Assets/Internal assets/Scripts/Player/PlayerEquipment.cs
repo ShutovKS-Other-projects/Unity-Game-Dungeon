@@ -23,7 +23,7 @@ namespace Player
         private Transform _sword;
 
 
-        void Start()
+        private void Start()
         {
             _equipment = GetComponent<PlayerInventory>().equipment;
 

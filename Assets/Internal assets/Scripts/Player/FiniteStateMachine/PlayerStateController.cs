@@ -60,9 +60,9 @@ namespace Player.FiniteStateMachine
 
         #region Delegate Functions
 
-        public Delegate.SwitchCollider? SwitchCollider;
-        public Delegate.OnMagicAttackDelegate MagicAttackDelegate;
-        public Delegate.StrengthAttackFloat? StrengthAttackFloat;
+        [CanBeNull] public Delegate.SwitchCollider SwitchCollider;
+        [CanBeNull] public Delegate.OnMagicAttackDelegate MagicAttackDelegate;
+        [CanBeNull] public Delegate.StrengthAttackFloat StrengthAttackFloat;
 
         public void RegisterDelegateSwitchCollider(Delegate.SwitchCollider del) => SwitchCollider = del;
         public void RegisterDelegateMagicAttackDelegate(Delegate.OnMagicAttackDelegate del) => MagicAttackDelegate = del;
@@ -214,44 +214,6 @@ namespace Player.FiniteStateMachine
             var colliderCenter = _collider.center;
             colliderCenter = new Vector3(colliderCenter.x, center, colliderCenter.z);
             _collider.center = colliderCenter;
-        }
-
-        private void Acceleration(out float acceleration)
-        {
-            if (!_playerStatistic.IsFatigue)
-            {
-                if (InputManager.GetPlayerSprintInput() && InputManager.GetPlayerMovementInput().y > 0)
-                {
-                    _playerStatistic.Stamina -= 3f * Time.deltaTime;
-                    acceleration = 1.25f;
-                    if (_playerStatistic.Stamina <= 0)
-                    {
-                        _playerStatistic.IsFatigue = true;
-                    }
-                }
-                else
-                {
-                    _playerStatistic.Stamina += 5f * Time.deltaTime;
-                    acceleration = 1f;
-                }
-            }
-            else
-            {
-                if (InputManager.GetPlayerSprintInput() && InputManager.GetPlayerMovementInput().y > 0)
-                {
-                    _playerStatistic.Stamina += 5f * Time.deltaTime;
-                    acceleration = 1f;
-                    if (_playerStatistic.Stamina >= 100)
-                    {
-                        _playerStatistic.IsFatigue = false;
-                    }
-                }
-                else
-                {
-                    _playerStatistic.Stamina += 5f * Time.deltaTime;
-                    acceleration = 1f;
-                }
-            }
         }
 
         private void AnimationTrigger() => _stateMachine.CurrentState.AnimationTrigger();

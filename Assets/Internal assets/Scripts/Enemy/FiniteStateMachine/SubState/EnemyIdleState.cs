@@ -4,7 +4,7 @@ namespace Enemy.FiniteStateMachine.SubState
 {
     public class EnemyIdleState : EnemyGroundedState
     {
-        private float attackTimer;
+        private float _attackTimer;
 
         public EnemyIdleState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
         {
@@ -37,11 +37,11 @@ namespace Enemy.FiniteStateMachine.SubState
             if (!IsVisiblePlayer || !(PlayerDistance <= EnemyStatistic.AttackDistance) || IsAttack)
                 return false;
             
-            attackTimer += Time.deltaTime;
-            if (!(attackTimer >= EnemyStatistic.AttackRetryTime))
+            _attackTimer += Time.deltaTime;
+            if (!(_attackTimer >= EnemyStatistic.AttackRetryTime))
                 return false;
             
-            attackTimer = 0f;
+            _attackTimer = 0f;
             return true;
         }
     }

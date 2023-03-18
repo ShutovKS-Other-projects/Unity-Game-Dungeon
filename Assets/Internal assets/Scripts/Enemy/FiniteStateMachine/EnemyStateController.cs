@@ -1,8 +1,11 @@
+using System;
 using Enemy.FiniteStateMachine.SubState;
+using JetBrains.Annotations;
 using Other;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Serialization;
+
 namespace Enemy.FiniteStateMachine
 {
     public class EnemyStateController : MonoBehaviour
@@ -25,18 +28,18 @@ namespace Enemy.FiniteStateMachine
         #region Components
 
         public Animator Animator { get; private set; }
-        GameObject PlayerGameObject { get; set; }
-        Rigidbody Rb { get; set; }
-        static readonly int zVelocity = Animator.StringToHash("zVelocity");
+        private GameObject PlayerGameObject { get; set; }
+        private Rigidbody Rb { get; set; }
+
+        private static readonly int zVelocity = Animator.StringToHash("zVelocity");
 
         #endregion
 
-        #region Delegate
+        #region Delegate/Events
 
-        public Delegate.SwitchCollider? SwitchCollider;
-        
-        // StrengthAttackFloat
-        public Delegate.StrengthAttackFloat? StrengthAttackFloat;
+        [CanBeNull] public Delegate.SwitchCollider SwitchCollider;
+        [CanBeNull] public Delegate.StrengthAttackFloat StrengthAttackFloat;
+        [CanBeNull] public event Action UpdateStatistic;
         public void RegisterDelegateStrengthAttackFloat(Delegate.StrengthAttackFloat del) => StrengthAttackFloat = del;
 
         #endregion
@@ -45,7 +48,7 @@ namespace Enemy.FiniteStateMachine
 
         private void Awake()
         {
-            EnemyStatistic = new EnemyStatistic(enemyData);
+            EnemyStatistic = new EnemyStatistic(enemyData, this);
             StateMachine = new EnemyStateMachine();
 
             AttackState = new EnemyAttackState(this, StateMachine, EnemyStatistic, "Attack");
@@ -60,11 +63,15 @@ namespace Enemy.FiniteStateMachine
             Animator = GetComponent<Animator>();
             Animator.avatar = transform.GetChild(2).GetComponent<Animator>().avatar;
             //Animator.runtimeAnimatorController = enemyData.AnimatorController;
+
+            // TODO: Created GameObject and script for link to player  
             PlayerGameObject = GameObject.FindGameObjectWithTag("Player");
+
             Rb = GetComponent<Rigidbody>();
+
             GetComponent<CapsuleCollider>();
 
-            for (int i = 0; i < transform.childCount; i++)
+            for (var i = 0; i < transform.childCount; i++)
             {
                 if (transform.GetChild(i).TryGetComponent<GameObjectTriggerEnable>(out var component))
                 {
@@ -75,25 +82,11 @@ namespace Enemy.FiniteStateMachine
             StateMachine.Initialize(IdleState);
         }
 
-        private void Update()
-        {
-            StateMachine.CurrentState.LogicUpdate();
-        }
+        private void Update() => StateMachine.CurrentState.LogicUpdate();
+        private void FixedUpdate() => StateMachine.CurrentState.PhysicsUpdate();
 
-        private void FixedUpdate()
-        {
-            StateMachine.CurrentState.PhysicsUpdate();
-        }
-
-        void OnTriggerEnter(Collider other)
-        {
-            StateMachine.CurrentState.TriggerEnter(other);
-        }
-
-        void OnTriggerExit(Collider other)
-        {
-            StateMachine.CurrentState.TriggerExit(other);
-        }
+        private void OnTriggerEnter(Collider other) => StateMachine.CurrentState.TriggerEnter(other);
+        private void OnTriggerExit(Collider other) => StateMachine.CurrentState.TriggerExit(other);
 
         #endregion
 
@@ -101,14 +94,10 @@ namespace Enemy.FiniteStateMachine
 
         public bool CheckIfPlayer()
         {
-            if (Physics.Raycast(transform.position + new Vector3(0, 0.5f, 0), PlayerGameObject.transform.position - transform.position, out RaycastHit hit, EnemyStatistic.PlayerCheckDistance))
-            {
-                if (hit.collider.CompareTag("Player"))
-                {
-                    return true;
-                }
-            }
-            return false;
+            var position = transform.position;
+            return Physics.Raycast(position + new Vector3(0, 0.5f, 0),
+                PlayerGameObject.transform.position - position, out var hit,
+                EnemyStatistic.PlayerCheckDistance) && hit.collider.CompareTag("Player");
         }
 
         public float CheckPlayerDistance()
@@ -143,6 +132,5 @@ namespace Enemy.FiniteStateMachine
         private void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
 
         #endregion
-        
     }
 }

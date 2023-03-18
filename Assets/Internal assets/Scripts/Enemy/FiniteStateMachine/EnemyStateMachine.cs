@@ -4,13 +4,13 @@ namespace Enemy.FiniteStateMachine
     {
         public EnemyState CurrentState { get; private set; }
 
-        public void Initialize(EnemyState startingState) //инициализация
+        public void Initialize(EnemyState startingState) 
         {
             CurrentState = startingState; 
             CurrentState.Enter();   
         }
 
-        public void ChangeState(EnemyState newState) //смена состояния
+        public void ChangeState(EnemyState newState) 
         {
             CurrentState.Exit();
             CurrentState = newState;

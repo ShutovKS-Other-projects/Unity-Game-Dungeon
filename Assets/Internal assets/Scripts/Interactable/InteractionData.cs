@@ -4,25 +4,19 @@ namespace Interactable
     [CreateAssetMenu(fileName = "Interaction Data", menuName = "InteractionSystem/InteractionData", order = 0)]
     public class InteractionData : ScriptableObject
     {
-        private InteractableBase _interactable;
-
-        public InteractableBase Interactable
-        {
-            get => _interactable;
-            set => _interactable = value;
-        }
+        public InteractableBase Interactable { get; set; }
 
         public void Interact()
         {
-            if (_interactable == null)
+            if (Interactable == null)
                 return;
             
-            _interactable.OnInteract();
+            Interactable.OnInteract();
             ResetData();
         }
 
-        public bool IsSameInteractable(InteractableBase newInteractable) => _interactable == newInteractable;
-        public bool IsEmpy() => _interactable == null;
-        public void ResetData() => _interactable = null;
+        public bool IsSameInteractable(InteractableBase newInteractable) => Interactable == newInteractable;
+        public bool IsEmpty() => Interactable == null;
+        public void ResetData() => Interactable = null;
     }
 }

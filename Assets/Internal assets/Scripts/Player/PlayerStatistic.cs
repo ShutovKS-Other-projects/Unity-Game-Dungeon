@@ -45,12 +45,10 @@ namespace Player
 
         private void Update()
         {
-            if (UnityEngine.Input.GetKeyDown(KeyCode.C) && LevelSystem.Level < 10)
-            {
-                LevelSystem.AddExperience(100);
-                PlayerSkillCharacteristic.AddSkillPont();
-                PlayerSkillMagicAttack.AddSkillPont();
-            }
+            if (!UnityEngine.Input.GetKeyDown(KeyCode.C) || LevelSystem.Level >= 10) return;
+            LevelSystem.AddExperience(100);
+            PlayerSkillCharacteristic.AddSkillPont();
+            PlayerSkillMagicAttack.AddSkillPont();
         }
 
         #endregion
@@ -71,8 +69,8 @@ namespace Player
 
         public float Health
         {
-            get { return _health; }
-            set { _health = value; }
+            get => _health;
+            set => _health = value;
         }
 
         public float HealthMax => playerData.healthMax + PlayerAttribute.Health + PlayerSkillCharacteristic.Health!;
@@ -80,19 +78,13 @@ namespace Player
 
         public float Mana
         {
-            get { return playerData.manaMax; }
-            set { _mana = value; }
+            get => playerData.manaMax;
+            set => _mana = value;
         }
 
         public float ManaMax => playerData.manaMax + PlayerAttribute.Mana + PlayerSkillCharacteristic.Mana!;
         public float ManaRecoverySpeed => playerData.manaRecoverySpeed + PlayerAttribute.ManaRecoverySpeed;
         public float MagicAttackDamage => playerData.magicStrength + PlayerAttribute.MagicAttackDamage;
-
-        public MagicType MagicType
-        {
-            get { return _magicType; }
-            set { _magicType = value; }
-        }
 
         public float StaminaMax => playerData.staminaMax + PlayerAttribute.Stamina + PlayerSkillCharacteristic.Stamina!;
         public float StaminaRecoverySpeed => playerData.staminaRecoverySpeed + PlayerAttribute.StaminaRecoverySpeed;
@@ -101,8 +93,8 @@ namespace Player
 
         public float Stamina
         {
-            get { return _stamina; }
-            set { _stamina = value; }
+            get => _stamina;
+            set => _stamina = value;
         }
         
         public float Strength => playerData.strength + PlayerAttribute.Strength + PlayerSkillCharacteristic.Strength!;

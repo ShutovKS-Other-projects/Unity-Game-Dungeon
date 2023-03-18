@@ -14,7 +14,6 @@ namespace Enemy.FiniteStateMachine.SubState
             base.Enter();
 
             var playerStateController = GameObject.FindWithTag("Player").GetComponent<PlayerStateController>();
-            EnemyStatistic.Health -= playerStateController.StrengthAttackFloat!();
         }
 
         public override void LogicUpdate()

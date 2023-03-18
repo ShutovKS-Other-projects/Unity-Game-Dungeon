@@ -93,12 +93,10 @@ namespace Player.FiniteStateMachine.SuperState
         public override void TriggerEnter(Collider other)
         {
             base.TriggerEnter(other);
-            if (other.gameObject.CompareTag($"EnemyDamageObject"))
-            {
-                if (other.transform.parent.TryGetComponent(out EnemyStateController enemyStateController))
-                    PlayerStatistic.Health -= enemyStateController.StrengthAttackFloat!();
-                StateMachine.ChangeState(StateController.DamageState);
-            }
+            if (!other.gameObject.CompareTag($"EnemyDamageObject")) return;
+            if (other.transform.parent.TryGetComponent(out EnemyStateController enemyStateController))
+                PlayerStatistic.Health -= enemyStateController.StrengthAttackFloat!();
+            StateMachine.ChangeState(StateController.DamageState);
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
@@ -127,7 +125,7 @@ namespace Player.FiniteStateMachine.SuperState
                 var interactable = hitInfo.collider.GetComponent<InteractableBase>();
 
                 if (interactable != null)
-                    if (PlayerStatistic.interactionData.IsEmpy() ||
+                    if (PlayerStatistic.interactionData.IsEmpty() ||
                         PlayerStatistic.interactionData.IsSameInteractable(interactable))
                     {
                         PlayerStatistic.interactionData.Interactable = interactable;

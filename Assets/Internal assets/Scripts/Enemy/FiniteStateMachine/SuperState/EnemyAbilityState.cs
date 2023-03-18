@@ -2,7 +2,7 @@ namespace Enemy.FiniteStateMachine.SuperState
 {
     public class EnemyAbilityState : EnemyState
     {
-        protected bool isAbilityDone;
+        protected bool IsAbilityDone;
 
         public EnemyAbilityState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
         {
@@ -12,14 +12,14 @@ namespace Enemy.FiniteStateMachine.SuperState
         {
             base.Enter();
 
-            isAbilityDone = false;
+            IsAbilityDone = false;
         }
 
         public override void LogicUpdate()
         {
             base.LogicUpdate();
 
-            if (!isAbilityDone)
+            if (!IsAbilityDone)
                 return;
             
             if (EnemyStatistic.IsDead)

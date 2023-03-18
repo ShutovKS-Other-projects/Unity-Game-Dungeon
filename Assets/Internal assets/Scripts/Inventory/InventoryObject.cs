@@ -183,7 +183,7 @@ namespace Inventory
             Stream stream = new FileStream(string.Concat(Application.persistentDataPath, savePath), FileMode.Open,
                 FileAccess.Read);
             var newContainer = (Inventory)formatter.Deserialize(stream);
-            for (int i = 0; i < GetSlots.Length; i++)
+            for (var i = 0; i < GetSlots.Length; i++)
             {
                 GetSlots[i].UpdateSlot(newContainer.slots[i].item, newContainer.slots[i].amount);
             }

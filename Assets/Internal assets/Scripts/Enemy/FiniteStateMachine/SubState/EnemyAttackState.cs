@@ -29,11 +29,11 @@ namespace Enemy.FiniteStateMachine.SubState
         {
             base.AnimationFinishTrigger();
 
-            isAbilityDone = true;
+            IsAbilityDone = true;
         }
 
-        Delegate.SwitchCollider SwitchCollider { get { return StateController.SwitchCollider; } }
-        
+        private Delegate.SwitchCollider SwitchCollider => StateController.SwitchCollider;
+
         private float AttackStart() => EnemyStatistic.AttackDamage;
         private static float AttackEnd() => 0;
     }

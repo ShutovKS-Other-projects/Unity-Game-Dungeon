@@ -4,9 +4,9 @@ namespace Item
 {
     public class ItemSurveillancePlayer : MonoBehaviour
     {
-        static Transform cameraTransform;
+        private static Transform cameraTransform;
 
-        void Start()
+        private void Start()
         {
             cameraTransform = UnityEngine.Camera.main!.transform;
         }

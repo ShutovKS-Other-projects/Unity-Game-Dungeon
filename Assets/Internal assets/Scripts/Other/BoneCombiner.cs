@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 namespace Other
 {
     public class BoneCombiner
@@ -8,7 +9,7 @@ namespace Other
         private readonly Dictionary<int, Transform> _rootBoneDictionary = new Dictionary<int, Transform>();
         private readonly Transform[] _boneTransforms = new Transform[67];
         private readonly Transform _transform;
-        private const string ArmatureString = "armature";
+        private const string ARMATURE_STRING = "armature";
 
         public BoneCombiner(GameObject rootObj)
         {
@@ -51,7 +52,7 @@ namespace Other
         {
             foreach (Transform child in root)
             {
-                if (child.CompareTag(ArmatureString))
+                if (child.CompareTag(ARMATURE_STRING))
                     _rootBoneDictionary.Add(child.name.GetHashCode(), child);
                 TraverseHierarchy(child);
             }
