@@ -2,118 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/LowPolyDungeonsLite_2020.3.0_HDRP_v1.1.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/LowPolyDungeonsLite_2020.3.0_URP_v1.1.unitypackage.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Materials/LowPolyDungeonsLite_BG.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Materials/LowPolyDungeonsLite_BG.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Materials/LowPolyDungeonsLite_Light.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Materials/LowPolyDungeonsLite_Light.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Materials/LowPolyDungeonsLite_MAIN.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Materials/LowPolyDungeonsLite_MAIN.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Book_09.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Book_09.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Bottle_05.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Bottle_05.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Box_02.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Box_02.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Candle_01.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Candle_01.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Chair_05.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Chair_05.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Column_01.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Column_01.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Ground_01.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Ground_01.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Ground_03.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Ground_03.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Jug_02.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Jug_02.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Light_08.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Light_08.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Mud_04.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Mud_04.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Pot_01.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Pot_01.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Rock_01.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Rock_01.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Table_01.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Table_01.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/WallDecor_05.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/WallDecor_05.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Wall_27.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Wall_27.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Wood_02.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Models/Wood_02.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Book_09.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Book_09.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Bottle_05.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Bottle_05.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Box_02.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Box_02.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Candle_01.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Candle_01.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Chair_05.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Chair_05.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Column_01.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Column_01.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Ground_01.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Ground_01.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Ground_03.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Ground_03.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Jug_02.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Jug_02.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Light_08.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Light_08.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Mud_04.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Mud_04.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Particles_Dust.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Particles_Dust.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Particles_Pot.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Particles_Pot.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Pot_01.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Pot_01.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Rock_01.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Rock_01.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Table_01.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Table_01.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/WallDecor_05.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/WallDecor_05.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Wall_27.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Wall_27.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Wood_02.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Prefabs/Wood_02.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes/LowPolyDungeonsLite_Demo.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes/LowPolyDungeonsLite_Demo.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes/LowPolyDungeonsLite_Overview.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes/LowPolyDungeonsLite_Overview.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes/Settings.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes/Settings/PostProcessing_LowPolyDungeonsLite.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes/Settings/PostProcessing_LowPolyDungeonsLite.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes/Settings/URP_DungeonsLite.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes/Settings/URP_DungeonsLite.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes/Settings/URP_DungeonsLite_Renderer.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Scenes/Settings/URP_DungeonsLite_Renderer.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Textures.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Textures/LowPolyDungeonsLite_Texture_01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/External assets/LowPolyDungeonsLite/Textures/LowPolyDungeonsLite_Texture_01.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RiderFlow.UserData.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RiderFlow.UserData/Editor.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RiderFlow.UserData/Editor/Scenes.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RiderFlow.UserData/Editor/Scenes/Bookmarks.Map.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Test.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Test.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -303,6 +194,7 @@
       <workItem from="1679166427848" duration="254000" />
       <workItem from="1679167669630" duration="734000" />
       <workItem from="1679248277204" duration="1170000" />
+      <workItem from="1679302314782" duration="826000" />
     </task>
     <servers />
   </component>
