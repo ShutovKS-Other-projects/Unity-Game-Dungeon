@@ -1,4 +1,5 @@
 using UnityEngine;
+
 namespace Interactable
 {
     [CreateAssetMenu(fileName = "Interaction Data", menuName = "InteractionSystem/InteractionData", order = 0)]

@@ -1,10 +1,12 @@
+using UnityEngine;
+
 namespace Interactable.Interactable
 {
     public class PortalHome : InteractableBase
     {
         public override void OnInteract()
         {
-            UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+            Debug.Log("Interacted with " + gameObject.name);
         }
     }
 }

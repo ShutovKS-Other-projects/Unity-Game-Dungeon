@@ -1,4 +1,4 @@
-﻿using UI;
+﻿using Old.UI;
 using UnityEngine;
 
 namespace Interactable.Interactable
@@ -10,7 +10,7 @@ namespace Interactable.Interactable
         public override void OnInteract()
         {
             _uiController = GameObject.Find("Canvas").GetComponent<UIController>();
-            GetComponent<Chest.Chest>().enabled = true;
+            GetComponent<Old.Chest.Chest>().enabled = true;
             _uiController.OnPlayerInfo();
         }
     }

@@ -1,5 +1,6 @@
 using UnityEngine;
-namespace Input
+
+namespace Old.Input
 {
     public class InputManager : MonoBehaviour
     {

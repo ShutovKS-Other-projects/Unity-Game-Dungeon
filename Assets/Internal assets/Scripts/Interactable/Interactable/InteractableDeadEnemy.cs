@@ -1,6 +1,4 @@
-﻿using System;
-using Item;
-using UnityEngine;
+﻿using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Interactable.Interactable

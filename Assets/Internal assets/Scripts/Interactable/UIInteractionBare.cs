@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 namespace Interactable
 {
     public class UIInteractionBare : MonoBehaviour

@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Serialization;
+
 namespace Interactable
 {
     public class InteractableBase : MonoBehaviour, IInteractable

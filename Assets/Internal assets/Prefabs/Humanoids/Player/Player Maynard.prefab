@@ -254,6 +254,11 @@ PrefabInstance:
       propertyPath: weaponTransform
       value: 
       objectReference: {fileID: 4412220434985561323}
+    - target: {fileID: 2656519978458768518, guid: 43fecf5393149fb43bb42beb74c211fa,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 100f48dae8fc87a4a8027468df71f441, type: 3}
     - target: {fileID: 3942446677508288703, guid: 43fecf5393149fb43bb42beb74c211fa,
         type: 3}
       propertyPath: m_Height

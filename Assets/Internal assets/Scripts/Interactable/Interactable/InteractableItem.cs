@@ -1,6 +1,7 @@
-using Inventory;
-using Item;
+using Old.Inventory;
+using Old.Item;
 using UnityEngine;
+
 namespace Interactable.Interactable
 {
     public class InteractableItem : InteractableBase
@@ -14,7 +15,7 @@ namespace Interactable.Interactable
             if (!groundItem)
                 return;
             
-            var item = new Item.Item(groundItem.item);
+            var item = new Old.Item.Item(groundItem.item);
             if (inventory.AddItem(item, 1))
             {
                 Destroy(gameObject);
