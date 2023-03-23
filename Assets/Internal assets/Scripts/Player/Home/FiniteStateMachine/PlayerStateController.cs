@@ -69,8 +69,7 @@ namespace Player.Home.FiniteStateMachine
 
             groundCheckTransform = transform.Find("GroundCheck");
 
-            uiInteractionBare = GameObject.Find("Canvas").transform.Find("UIInteractionBare")
-                .GetComponent<UIInteractionBare>();
+            uiInteractionBare = FindObjectOfType<UIInteractionBare>();
 
 
             _stateMachine.Initialize(IdleState);
