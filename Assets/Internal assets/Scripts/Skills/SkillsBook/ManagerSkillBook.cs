@@ -24,8 +24,6 @@ namespace Skills.SkillsBook
         [NonSerialized] public int DefenseBoost;
         [NonSerialized] public int IncreasingDodgeChance;
         
-        public int skillPoints = 30;
-        
         private void UpdateCharacterStats()
         {
             ExtraLife = 0;

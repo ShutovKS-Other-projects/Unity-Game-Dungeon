@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43863bf9e3e840d98c7c3c4adebe759e, type: 3}
   m_Name: MiningObjectDefault
   m_EditorClassIdentifier: 
-  Mining1: 0
+  Mining1: 3
   Mining2: 0
   Mining3: 0
   MiningBose1: 0

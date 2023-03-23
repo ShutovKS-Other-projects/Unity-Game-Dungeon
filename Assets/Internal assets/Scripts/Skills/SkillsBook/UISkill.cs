@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using Mining;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -22,8 +23,8 @@ namespace Skills.SkillsBook
             buffText = transform.GetChild(2).GetComponent<TMP_Text>();
             levelText = transform.GetChild(3).GetComponent<TMP_Text>();
             transform.GetChild(4).GetComponent<Button>().onClick.AddListener(skill.Buy);
-            // transform.GetChild(4).GetComponent<Button>().on
-            ManagerSkillBook.Instance.SkillUnlocked += UpdateUI;
+            // ManagerSkillBook.Instance.SkillUnlocked += UpdateUI;
+            ManagerMining.Instance.MiningChanged += UpdateUI;
             UpdateUI();
         }
 
@@ -36,7 +37,7 @@ namespace Skills.SkillsBook
 
             GetComponent<Image>().color = skill.Level >= skill.LevelMax
                 ? Color.yellow
-                : ManagerSkillBook.Instance.skillPoints > skill.Price
+                : ManagerMining.Instance.Mining1 > skill.Price
                     ? Color.green
                     : Color.white;
         }
