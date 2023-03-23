@@ -22,6 +22,7 @@ namespace Skills.SkillsBook
             buffText = transform.GetChild(2).GetComponent<TMP_Text>();
             levelText = transform.GetChild(3).GetComponent<TMP_Text>();
             transform.GetChild(4).GetComponent<Button>().onClick.AddListener(skill.Buy);
+            // transform.GetChild(4).GetComponent<Button>().on
             ManagerSkillBook.Instance.SkillUnlocked += UpdateUI;
             UpdateUI();
         }

@@ -16,13 +16,13 @@ namespace Skills.SkillsBook
         public event Action SkillUnlocked;
         public void OnSkillUnlocked() => SkillUnlocked!.Invoke();
         
-        public int ExtraLife;
-        public int RestoringLife;
-        public int HealthBoost;
-        public int StrengthBoost;
-        public int FirstStrikePowerUp;
-        public int DefenseBoost;
-        public int IncreasingDodgeChance;
+        [NonSerialized] public int ExtraLife;
+        [NonSerialized] public int RestoringLife;
+        [NonSerialized] public int HealthBoost;
+        [NonSerialized] public int StrengthBoost;
+        [NonSerialized] public int FirstStrikePowerUp;
+        [NonSerialized] public int DefenseBoost;
+        [NonSerialized] public int IncreasingDodgeChance;
         
         public int skillPoints = 30;
         

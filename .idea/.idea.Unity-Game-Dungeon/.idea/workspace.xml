@@ -3,21 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 2 Restoring Life.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 2 Restoring Life.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 3 Health Boost.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 3 Health Boost.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 4 Strength Boost.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 4 Strength Boost.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 5 First Strike Power Up.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 5 First Strike Power Up.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 6 Defense Boost.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 6 Defense Boost.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 7 Increasing Dodge Chance.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scriptable Objects/SkillBook/SkillBook 7 Increasing Dodge Chance.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Camera/CineMachinePovExtension.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Camera/CineMachinePovExtension.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerScene/ManagerScenes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerScene/ManagerScenes.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerScene/Scene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerScene/SceneType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerScene/Scene.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/Skill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/Skill.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerScenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/ManagerSkillBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/ManagerSkillBook.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/SkillObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/SkillObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/SkillTree.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/ManagerSkillBook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/SkillTree.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/ManagerSkillBook.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/UISkill.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/UISkill.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -218,7 +206,7 @@
       <workItem from="1679505034680" duration="1346000" />
       <workItem from="1679506872918" duration="6154000" />
       <workItem from="1679558504349" duration="9488000" />
-      <workItem from="1679580915511" duration="5452000" />
+      <workItem from="1679580915511" duration="7946000" />
     </task>
     <servers />
   </component>

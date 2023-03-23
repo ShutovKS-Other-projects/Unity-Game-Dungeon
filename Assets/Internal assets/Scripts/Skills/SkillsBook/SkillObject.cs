@@ -9,10 +9,12 @@ namespace Skills.SkillsBook
         public int levelMax;
         public Sprite iconSprite;
         public string nameSkill;
+        public string descriptionSkill;
         public SkillType skillType;
+        public SkillBuff[] skillBuffs;
+
         public int Buff(int level) => skillBuffs[level].buff;
         public int Price(int level) => skillBuffs[level].price;
-        public SkillBuff[] skillBuffs;
 
         [Serializable]
         public struct SkillBuff
