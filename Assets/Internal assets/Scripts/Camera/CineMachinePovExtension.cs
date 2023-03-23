@@ -22,11 +22,11 @@ namespace Camera
         {
             transform.GetComponent<CinemachineVirtualCameraBase>().Follow = GameObject.Find("PositionCamera").transform;
 
-            if (GameObject.Find("ManagerScene").GetComponent<ManagerScene.ManagerScene>().currentScene ==
-                ManagerScene.Scene.Home)
+            if (GameObject.Find("ManagerScene").GetComponent<ManagerScene.ManagerScene>().currentSceneType ==
+                ManagerScene.SceneType.Home)
                 _getLookInput = GetLookInputHome;
-            else if (GameObject.Find("ManagerScene").GetComponent<ManagerScene.ManagerScene>().currentScene ==
-                     ManagerScene.Scene.Game)
+            else if (GameObject.Find("ManagerScene").GetComponent<ManagerScene.ManagerScene>().currentSceneType ==
+                     ManagerScene.SceneType.Game)
                 _getLookInput = GetLookInputGame;
 
             _inputManagerGame = InputManagerGame.Instance;

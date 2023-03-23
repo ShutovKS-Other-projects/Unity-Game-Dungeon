@@ -16,7 +16,7 @@ MonoBehaviour:
   iconSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   nameSkill: "\u0412\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435
     \u0436\u0438\u0437\u043D\u0438 "
-  buff: 0000000001000000020000000300000004000000
+  skillType: 1
   skillBuffs:
   - buff: 1
     price: 5

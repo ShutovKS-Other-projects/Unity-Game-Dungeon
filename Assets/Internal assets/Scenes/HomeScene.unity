@@ -3502,6 +3502,58 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 225208324}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &226335697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 226335698}
+  - component: {fileID: 226335699}
+  m_Layer: 0
+  m_Name: ManagerSkillBook
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &226335698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226335697}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1103252771}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &226335699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 226335697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca76ce2f50e2b7b49be2e1d88db36cd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ExtraLife: 0
+  RestoringLife: 0
+  HealthBoost: 0
+  StrengthBoost: 0
+  FirstStrikePowerUp: 0
+  DefenseBoost: 0
+  IncreasingDodgeChance: 0
+  skillPoints: 100
 --- !u!1 &227401137
 GameObject:
   m_ObjectHideFlags: 0
@@ -10177,7 +10229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0621d6b6f1804d0e928a4bd7ff1cd808, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentScene: 0
+  currentSceneType: 0
 --- !u!1001 &665933378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18971,6 +19023,7 @@ Transform:
   m_Children:
   - {fileID: 660109042}
   - {fileID: 66827384}
+  - {fileID: 226335698}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25441,7 +25494,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1482981762}
-  - component: {fileID: 1482981763}
   m_Layer: 5
   m_Name: UISkills
   m_TagString: Untagged
@@ -25470,19 +25522,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1482981763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1482981761}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca76ce2f50e2b7b49be2e1d88db36cd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  skillPoints: 100
 --- !u!1001 &1483635508
 PrefabInstance:
   m_ObjectHideFlags: 0

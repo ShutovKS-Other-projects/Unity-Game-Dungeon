@@ -22,7 +22,7 @@ namespace Skills.SkillsBook
             buffText = transform.GetChild(2).GetComponent<TMP_Text>();
             levelText = transform.GetChild(3).GetComponent<TMP_Text>();
             transform.GetChild(4).GetComponent<Button>().onClick.AddListener(skill.Buy);
-            SkillTree.Instance.SkillUnlocked += UpdateUI;
+            ManagerSkillBook.Instance.SkillUnlocked += UpdateUI;
             UpdateUI();
         }
 
@@ -35,7 +35,7 @@ namespace Skills.SkillsBook
 
             GetComponent<Image>().color = skill.Level >= skill.LevelMax
                 ? Color.yellow
-                : SkillTree.Instance.skillPoints > skill.Price
+                : ManagerSkillBook.Instance.skillPoints > skill.Price
                     ? Color.green
                     : Color.white;
         }

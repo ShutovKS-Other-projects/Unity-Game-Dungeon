@@ -9,6 +9,7 @@ namespace Skills.SkillsBook
         public int levelMax;
         public Sprite iconSprite;
         public string nameSkill;
+        public SkillType skillType;
         public int Buff(int level) => skillBuffs[level].buff;
         public int Price(int level) => skillBuffs[level].price;
         public SkillBuff[] skillBuffs;

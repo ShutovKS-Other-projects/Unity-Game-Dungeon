@@ -1,6 +1,6 @@
 ﻿namespace ManagerScene
 {
-    public enum Scene
+    public enum SceneType
     {
         Home,
         Game

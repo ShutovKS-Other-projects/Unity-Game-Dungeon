@@ -15,7 +15,7 @@ MonoBehaviour:
   levelMax: 5
   iconSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   nameSkill: "\u041F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u0435 \u0421\u0438\u043B\u044B "
-  buff: 00000000050000000a0000000f0000001400000019000000
+  skillType: 3
   skillBuffs:
   - buff: 5
     price: 5

@@ -5,6 +5,6 @@ namespace ManagerScene
 {
     public class ManagerScene : MonoBehaviour
     {
-        public Scene currentScene;
+        [FormerlySerializedAs("currentScene")] public SceneType currentSceneType;
     }
 }

@@ -14,22 +14,27 @@ namespace Skills.SkillsBook
         public int Price => skillObject.Price(_level);
         public int Level => _level;
         public int LevelMax => skillObject.levelMax;
-
-
+        public SkillType SkillType => skillObject.skillType;
+        
         public void Buy()
         {
-            if (_level >= skillObject.levelMax || SkillTree.Instance.skillPoints < Price) return;
+            if (_level >= skillObject.levelMax || ManagerSkillBook.Instance.skillPoints < Price) return;
 
             Debug.Log($"Skill {NameSkill} level up to {_level} price: {Price}");
-            SkillTree.Instance.skillPoints -= Price;
+            ManagerSkillBook.Instance.skillPoints -= Price;
             _level++;
             StartCoroutine(OnSkillUnlocked());
+        }
+        
+        public (SkillType, int) GetSkillTypeAndBuff()
+        {
+            return (SkillType, BuffSkill);
         }
 
         private static IEnumerator OnSkillUnlocked()
         {
             yield return null;
-            SkillTree.Instance.OnSkillUnlocked();
+            ManagerSkillBook.Instance.OnSkillUnlocked();
         }
     }
 }
