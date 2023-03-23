@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5ef1d2d70141f097e2d226d26f7255, type: 3}
+  m_Name: SkillBook 6 Defense Boost
+  m_EditorClassIdentifier: 
+  levelMax: 4
+  iconSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  nameSkill: "\u041F\u043E\u0432\u044B\u0448\u0435\u043D\u0438\u0435 \u0417\u0430\u0449\u0438\u0442\u044B "
+  buff: 000000000200000005000000070000000a000000
+  skillBuffs:
+  - buff: 2
+    price: 5
+  - buff: 5
+    price: 7
+  - buff: 7
+    price: 10
+  - buff: 10
+    price: 15

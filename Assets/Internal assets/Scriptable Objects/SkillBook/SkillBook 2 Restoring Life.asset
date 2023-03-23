@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e5ef1d2d70141f097e2d226d26f7255, type: 3}
+  m_Name: SkillBook 2 Restoring Life
+  m_EditorClassIdentifier: 
+  levelMax: 4
+  iconSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  nameSkill: "\u0412\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435
+    \u0436\u0438\u0437\u043D\u0438 "
+  buff: 0000000001000000020000000300000004000000
+  skillBuffs:
+  - buff: 1
+    price: 5
+  - buff: 2
+    price: 10
+  - buff: 3
+    price: 15
+  - buff: 4
+    price: 20

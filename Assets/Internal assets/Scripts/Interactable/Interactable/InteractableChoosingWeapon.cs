@@ -9,7 +9,5 @@ namespace Interactable.Interactable
             base.OnInteract();
             Debug.Log("InteractableChoosingWeapon");
         }
-        
-        
     }
 }
