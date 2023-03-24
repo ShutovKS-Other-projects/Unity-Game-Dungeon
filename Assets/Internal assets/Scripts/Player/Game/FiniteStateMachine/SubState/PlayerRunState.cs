@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Player.Home.FiniteStateMachine.SubState
+namespace Player.Game.FiniteStateMachine.SubState
 {
     public class PlayerRunState : SuperState.PlayerGroundedState
     {
@@ -9,11 +9,13 @@ namespace Player.Home.FiniteStateMachine.SubState
             animBoolName)
         {
         }
-        
+
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-            
+
+            RecoveryStaminaTime = 0;
+
             if (IsExitingState)
                 return;
 

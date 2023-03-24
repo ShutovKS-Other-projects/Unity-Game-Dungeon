@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using Interactable;
-using Old.Player;
 using UnityEngine;
 
 namespace Player.Home
@@ -9,8 +6,7 @@ namespace Player.Home
     public class PlayerStatistic : MonoBehaviour
     {
         [SerializeField] private PlayerData playerData;
-
-
+        
         public float MovementForce => playerData.movementForce;
         public float JumpSpeed => playerData.jumpSpeed;
         public float MovementSpeedMax => playerData.movementSpeedMax;

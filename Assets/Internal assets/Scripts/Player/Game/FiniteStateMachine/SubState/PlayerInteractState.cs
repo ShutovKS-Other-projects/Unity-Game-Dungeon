@@ -1,4 +1,4 @@
-﻿namespace Player.Home.FiniteStateMachine.SubState
+namespace Player.Game.FiniteStateMachine.SubState
 {
     public class PlayerInteractState : SuperState.PlayerAbilityState
     {

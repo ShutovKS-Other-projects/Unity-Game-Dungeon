@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Player.Home.FiniteStateMachine.SubState
+namespace Player.Game.FiniteStateMachine.SubState
 {
-    public class PlayerLandState: SuperState.PlayerGroundedState
+    public class PlayerLandState : SuperState.PlayerGroundedState
     {
         public PlayerLandState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
         {

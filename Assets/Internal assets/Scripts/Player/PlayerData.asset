@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f8a0412539649298a37439e6bf71dde, type: 3}
+  m_Name: PlayerData
+  m_EditorClassIdentifier: 
+  className: No one
+  experience: 0
+  healthMax: 100
+  healthRecoverySpeed: 10
+  manaMax: 100
+  manaRecoverySpeed: 10
+  staminaMax: 100
+  staminaRecoverySpeed: 10
+  staminaRecoverySpeedIsFatigue: 7.5
+  staminaDecreaseRate: 3
+  agility: 10
+  strength: 10
+  armor: 10
+  criticalDamage: 25
+  criticalChance: 15
+  magicStrength: 10
+  jumpSpeed: 5
+  movementForce: 10
+  movementSpeedMax: 4
+  runMovementSpeedMax: 5
+  inAirMovementSpeedMax: 4
+  crouchMovementSpeedMax: 3
+  blockMovementSpeedMax: 3
+  crouchColliderCenter: 0.6
+  crouchColliderHeight: 1.2
+  standColliderCenter: 0.9
+  standColliderHeight: 1.8
+  groundCheckRadius: 0.2
+  interCheckDistance: 3
+  interCheckSphereRadius: 0.5

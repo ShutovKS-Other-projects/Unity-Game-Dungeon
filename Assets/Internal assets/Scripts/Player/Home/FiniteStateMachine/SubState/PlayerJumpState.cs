@@ -1,8 +1,6 @@
-﻿using Player.Home.FiniteStateMachine.SuperState;
-
-namespace Player.Home.FiniteStateMachine.SubState
+﻿namespace Player.Home.FiniteStateMachine.SubState
 {
-    public class PlayerJumpState : PlayerAbilityState
+    public class PlayerJumpState : SuperState.PlayerAbilityState
     {
         public PlayerJumpState(PlayerStateController stateController, PlayerStateMachine stateMachine,
             PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,

@@ -1,19 +1,19 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Player.Home.FiniteStateMachine.SubState
+namespace Player.Game.FiniteStateMachine.SubState
 {
-    public class PlayerRunState : SuperState.PlayerGroundedState
+    public class PlayerMoveState : SuperState.PlayerGroundedState
     {
-        public PlayerRunState(PlayerStateController stateController, PlayerStateMachine stateMachine,
+        public PlayerMoveState(PlayerStateController stateController, PlayerStateMachine stateMachine,
             PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
             animBoolName)
         {
         }
-        
+
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-            
+
             if (IsExitingState)
                 return;
 
@@ -25,16 +25,16 @@ namespace Player.Home.FiniteStateMachine.SubState
             {
                 StateMachine.ChangeState(StateController.CrouchMoveState);
             }
-            else if (!RunInput)
+            else if (RunInput)
             {
-                StateMachine.ChangeState(StateController.MoveState);
+                StateMachine.ChangeState(StateController.RunState);
             }
         }
 
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            StateController.Movement(MovementInput, PlayerStatistic.RunMovementSpeedMax);
+            StateController.Movement(MovementInput, PlayerStatistic.MovementSpeedMax);
         }
     }
 }

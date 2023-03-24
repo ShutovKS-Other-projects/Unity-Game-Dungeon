@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Player.Home.FiniteStateMachine.SubState
+namespace Player.Game.FiniteStateMachine.SubState
 {
     public class PlayerCrouchIdleState : SuperState.PlayerGroundedState
     {
@@ -23,8 +23,7 @@ namespace Player.Home.FiniteStateMachine.SubState
         {
             base.Exit();
 
-            StateController.SetColliderHeight(PlayerStatistic.StandColliderHeight, 
-                PlayerStatistic.StandColliderCenter);
+            StateController.SetColliderHeight(PlayerStatistic.StandColliderHeight, PlayerStatistic.StandColliderCenter);
         }
 
         public override void LogicUpdate()
@@ -38,7 +37,7 @@ namespace Player.Home.FiniteStateMachine.SubState
             {
                 StateMachine.ChangeState(StateController.CrouchMoveState);
             }
-            else if (!CrouchInput)
+            else if (!CrouchInput )
             {
                 StateMachine.ChangeState(StateController.IdleState);
             }

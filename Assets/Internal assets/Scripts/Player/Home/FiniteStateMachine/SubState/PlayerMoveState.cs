@@ -1,9 +1,8 @@
-﻿using Player.Home.FiniteStateMachine.SuperState;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Player.Home.FiniteStateMachine.SubState
 {
-    public class PlayerMoveState : PlayerGroundedState
+    public class PlayerMoveState : SuperState.PlayerGroundedState
     {
         public PlayerMoveState(PlayerStateController stateController, PlayerStateMachine stateMachine,
             PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
