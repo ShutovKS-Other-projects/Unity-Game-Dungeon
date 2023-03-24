@@ -6,23 +6,19 @@ namespace Player
     public class PlayerData : ScriptableObject
     {
         [Header("Health")]
-        public float healthMax = 100f;
-        public float healthRecoverySpeed = 10f;
+        public int healthMax = 100;
         
-        public float manaMax = 100f;
-        public float manaRecoverySpeed = 10f;
-
         [Header("Attributes")]
-        public float agility = 10f;
-        public float strength = 10f;
-        public float armor = 10f;
+        public int agility = 10;
+        public int strength = 10;
+        public int armor = 10;
 
         [Header("CriticalDamage")]
-        public float criticalDamage = 25f;
-        public float criticalChance = 15f;
+        public int criticalDamage = 25;
+        public int criticalChance = 15;
         
         [Header("Magic")]
-        public float magicStrength = 10f;
+        public int magicStrength = 10;
         // public MagicType magicType = MagicType.None;
 
         [Header("Movement Speed")]

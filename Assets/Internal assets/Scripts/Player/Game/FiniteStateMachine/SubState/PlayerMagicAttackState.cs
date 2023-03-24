@@ -16,7 +16,7 @@ namespace Player.Game.FiniteStateMachine.SubState
             base.Enter();
 
             // StateController.MagicAttackDelegate!.Invoke();
-            // if (Random.Range(0, 101) < PlayerStatistic.CriticalChance)
+            // if (Random.Range(0, 101) < PlayerStatistic.characteristicCriticalChance.Value)
                 // StateController.RegisterDelegateStrengthAttackFloat(CriticalMagicAttack);
             // else
                 // StateController.RegisterDelegateStrengthAttackFloat(MagicAttack);
@@ -37,9 +37,9 @@ namespace Player.Game.FiniteStateMachine.SubState
         }
 
         private float CriticalMagicAttack() =>
-            PlayerStatistic.MagicAttackDamage * (1 + PlayerStatistic.CriticalDamage / 100);
+            PlayerStatistic.CharacteristicStrengthMagic.Value * (1 + PlayerStatistic.CharacteristicCriticalAttack.Value / 100);
 
-        private float MagicAttack() => PlayerStatistic.MagicAttackDamage;
+        private float MagicAttack() => PlayerStatistic.CharacteristicStrengthMagic.Value;
         private static float AttackZero() => 0;
     }
 }

@@ -14,7 +14,7 @@ namespace Player.Game.FiniteStateMachine.SubState
 
             // SwitchCollider(true);
 
-            if (UnityEngine.Random.Range(0, 101) < PlayerStatistic.CriticalChance)
+            if (UnityEngine.Random.Range(0, 101) < PlayerStatistic.CharacteristicCriticalChance.Value)
                 StateController.RegisterDelegateStrengthAttackFloat(AttackCritical);
             else
                 StateController.RegisterDelegateStrengthAttackFloat(Attack);
@@ -38,8 +38,8 @@ namespace Player.Game.FiniteStateMachine.SubState
 
         private Delegate.SwitchCollider SwitchCollider => StateController.SwitchCollider;
 
-        private float Attack() => PlayerStatistic.Strength;
-        private float AttackCritical() => PlayerStatistic.Strength * (1 + PlayerStatistic.CriticalDamage / 100);
+        private float Attack() => PlayerStatistic.CharacteristicStrength.Value;
+        private float AttackCritical() => PlayerStatistic.CharacteristicStrength.Value * (1 + PlayerStatistic.CharacteristicCriticalAttack.Value / 100);
         private static float AttackZero() => 0;
     }
 }

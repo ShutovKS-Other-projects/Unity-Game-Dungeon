@@ -14,7 +14,7 @@ namespace Player.Game.FiniteStateMachine.SubState
             if (!IsAnimationFinished)
                 return;
 
-            if (PlayerStatistic.Health > 0)
+            if (PlayerStatistic.CharacteristicHealth.Value > 0)
                 StateMachine.ChangeState(StateController.IdleState);
             else
                 StateMachine.ChangeState(StateController.DeathState);

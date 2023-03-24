@@ -93,7 +93,7 @@ namespace Player.Game.FiniteStateMachine.SuperState
             base.TriggerEnter(other);
             if (!other.gameObject.CompareTag($"EnemyDamageObject")) return;
             if (other.transform.parent.TryGetComponent(out EnemyStateController enemyStateController))
-                PlayerStatistic.Health -= enemyStateController.StrengthAttackFloat!();
+                PlayerStatistic.CharacteristicHealth.AddValue(-(int)enemyStateController.StrengthAttackFloat!());
             StateMachine.ChangeState(StateController.DamageState);
         }
 

@@ -1,4 +1,5 @@
 ﻿using Interactable;
+using Player.Game.Characteristics;
 using UnityEngine;
 
 namespace Player.Game
@@ -8,6 +9,13 @@ namespace Player.Game
         #region Singleton
 
         [SerializeField] private PlayerData playerData;
+        public CharacteristicHealth CharacteristicHealth;
+        public CharacteristicBase CharacteristicStrength;
+        public CharacteristicBase CharacteristicArmor;
+        public CharacteristicBase CharacteristicAgility;
+        public CharacteristicBase CharacteristicStrengthMagic;
+        public CharacteristicBase CharacteristicCriticalAttack;
+        public CharacteristicBase CharacteristicCriticalChance;
 
         #endregion
 
@@ -15,37 +23,18 @@ namespace Player.Game
 
         private void Start()
         {
-            _health = playerData.healthMax;
+            CharacteristicHealth = new CharacteristicHealth(playerData.healthMax);
+            CharacteristicStrength = new CharacteristicBase(playerData.strength);
+            CharacteristicArmor = new CharacteristicBase(playerData.armor);
+            CharacteristicAgility = new CharacteristicBase(playerData.agility);
+            CharacteristicStrengthMagic = new CharacteristicBase(playerData.magicStrength);
+            CharacteristicCriticalAttack = new CharacteristicBase(playerData.criticalDamage);
+            CharacteristicCriticalChance = new CharacteristicBase(playerData.criticalChance);
         }
-
-        #endregion
-
-        #region Parameters private
-
-        private float _health;
 
         #endregion
 
         #region Parameters public
-        
-        public float Health
-        {
-            get => _health;
-            set => _health = value;
-        }
-
-        public float HealthMax => playerData.healthMax;
-        public float HealthRecoverySpeed => playerData.healthRecoverySpeed;
-
-        public float MagicAttackDamage => playerData.magicStrength;
-
-        public float Strength => playerData.strength;
-        public float Armor => playerData.armor;
-        public float Agility => playerData.agility;
-
-        public float CriticalDamage => playerData.criticalDamage;
-        public float CriticalChance => playerData.criticalChance;
-
 
         public float MovementForce => playerData.movementForce;
         public float JumpSpeed => playerData.jumpSpeed;
