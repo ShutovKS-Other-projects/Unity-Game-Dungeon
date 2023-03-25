@@ -12,7 +12,7 @@ namespace Player.Game.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            // SwitchCollider(true);
+            SwitchCollider(true);
 
             if (UnityEngine.Random.Range(0, 101) < PlayerStatistic.CharacteristicCriticalChance.Value)
                 StateController.RegisterDelegateStrengthAttackFloat(AttackCritical);
@@ -24,7 +24,7 @@ namespace Player.Game.FiniteStateMachine.SubState
         {
             base.Exit();
 
-            // SwitchCollider(false);
+            SwitchCollider(false);
 
             StateController.RegisterDelegateStrengthAttackFloat(AttackZero);
         }

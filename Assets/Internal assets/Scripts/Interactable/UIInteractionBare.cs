@@ -6,6 +6,13 @@ namespace Interactable
 {
     public class UIInteractionBare : MonoBehaviour
     {
+        public static UIInteractionBare Instance { get; private set; }
+        
+        private void Awake()
+        {
+            Instance = this;
+        }
+        
         private Image _progressBar;
         private TextMeshProUGUI _tooltipText;
 

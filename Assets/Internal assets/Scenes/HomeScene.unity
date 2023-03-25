@@ -2046,6 +2046,12 @@ PrefabInstance:
       propertyPath: uiInteractionBare
       value: 
       objectReference: {fileID: 1662095481}
+    - target: {fileID: 8741495646759813239, guid: 77985f920c29c6945838c98130d47367,
+        type: 3}
+      propertyPath: playerData
+      value: 
+      objectReference: {fileID: 11400000, guid: 7444f2f86306a144082c32c1be7ca95b,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

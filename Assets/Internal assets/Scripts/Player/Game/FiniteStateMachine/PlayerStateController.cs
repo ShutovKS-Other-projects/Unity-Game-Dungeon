@@ -1,9 +1,7 @@
-using Input;
-using Interactable;
 using JetBrains.Annotations;
-using Old.Other;
 using Player.Game.FiniteStateMachine.SubState;
 using UnityEngine;
+using Weapon;
 
 namespace Player.Game.FiniteStateMachine
 {
@@ -34,18 +32,15 @@ namespace Player.Game.FiniteStateMachine
 
         #region Transforms
 
-        [SerializeField] private Transform groundCheckTransform;
-        [SerializeField] [CanBeNull] public Transform damageObjectWeaponTransform;
-        [SerializeField] [CanBeNull] public Transform damageObjectNoWeaponTransform;
+        private Transform _groundCheckTransform;
+        [CanBeNull] public Transform damageObjectWeaponTransform;
 
         #endregion
 
         #region Components
 
         public Animator Animator { get; private set; }
-        public InputManagerGame InputManagerGame { get; private set; }
         public Rigidbody Rb { get; private set; }
-        public UIInteractionBare uiInteractionBare;
 
         private CapsuleCollider _collider;
 
@@ -62,7 +57,10 @@ namespace Player.Game.FiniteStateMachine
         [CanBeNull] public Delegate.StrengthAttackFloat StrengthAttackFloat;
 
         public void RegisterDelegateSwitchCollider(Delegate.SwitchCollider del) => SwitchCollider = del;
-        public void RegisterDelegateMagicAttackDelegate(Delegate.OnMagicAttackDelegate del) => MagicAttackDelegate = del;
+
+        public void RegisterDelegateMagicAttackDelegate(Delegate.OnMagicAttackDelegate del) =>
+            MagicAttackDelegate = del;
+
         public void RegisterDelegateStrengthAttackFloat(Delegate.StrengthAttackFloat del) => StrengthAttackFloat = del;
 
         #endregion
@@ -93,20 +91,13 @@ namespace Player.Game.FiniteStateMachine
         private void Start()
         {
             Animator = GetComponentInChildren<Animator>();
-            InputManagerGame = InputManagerGame.Instance;
             Rb = GetComponent<Rigidbody>();
             _collider = GetComponent<CapsuleCollider>();
 
-            groundCheckTransform = transform.Find("GroundCheck");
-            
-            //Scene QuickRun
-            // uiInteractionBare = GameObject.Find("ManagerScene").transform.Find("Canvas").transform.Find("UIPanelGame")
-                // .transform.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
-
-            // SwitchCollider += gameObject.transform.Find("DamageNoWeapon").GetComponent<GameObjectTriggerEnable>()
-                // .EnableCollider;
-            // SwitchCollider += gameObject.transform.Find("DamageWeapon").GetComponent<GameObjectTriggerEnable>()
-                // .EnableCollider;
+            _groundCheckTransform = transform.Find("GroundCheck").transform;
+            if (FindObjectOfType<WeaponColliderEnable>())
+                SwitchCollider += FindObjectOfType<WeaponColliderEnable>().EnableCollider;
+    
 
             _stateMachine.Initialize(IdleState);
         }
@@ -160,8 +151,6 @@ namespace Player.Game.FiniteStateMachine
         {
             var move = new Vector3(movementInput.x, 0, movementInput.y);
 
-            //move = transform.TransformDirection(move);
-            //Rb.AddForce(move * _playerStatistic.MovementForce * Time.deltaTime, ForceMode.VelocityChange);
             Rb.AddRelativeForce(move * _playerStatistic.MovementForce * Time.deltaTime, ForceMode.VelocityChange);
 
             if (Rb.velocity.magnitude > speedMax)
@@ -187,7 +176,7 @@ namespace Player.Game.FiniteStateMachine
 
         public bool CheckIfGrounded()
         {
-            return Physics.CheckSphere(groundCheckTransform.position, _playerStatistic.GroundCheckRadius,
+            return Physics.CheckSphere(_groundCheckTransform.position, _playerStatistic.GroundCheckRadius,
                 LayerMask.GetMask("Ground"));
         }
 

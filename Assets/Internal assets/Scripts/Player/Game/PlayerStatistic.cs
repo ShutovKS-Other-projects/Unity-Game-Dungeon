@@ -6,6 +6,8 @@ namespace Player.Game
 {
     public class PlayerStatistic : MonoBehaviour
     {
+        public static PlayerStatistic Instance { get; private set; }
+
         #region Singleton
 
         [SerializeField] private PlayerData playerData;
@@ -20,6 +22,11 @@ namespace Player.Game
         #endregion
 
         #region Unity methods
+
+        private void Awake()
+        {
+            Instance = this;
+        }
 
         private void Start()
         {

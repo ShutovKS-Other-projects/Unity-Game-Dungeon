@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Old.Other
+namespace Weapon
 {
-    public class GameObjectTriggerEnable : MonoBehaviour
+    public class WeaponColliderEnable : MonoBehaviour
     {
         private Collider _collider;
 

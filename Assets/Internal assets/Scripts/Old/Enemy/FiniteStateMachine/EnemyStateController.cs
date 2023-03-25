@@ -3,6 +3,7 @@ using JetBrains.Annotations;
 using Old.Enemy.FiniteStateMachine.SubState;
 using Old.Other;
 using UnityEngine;
+using Weapon;
 
 namespace Old.Enemy.FiniteStateMachine
 {
@@ -71,7 +72,7 @@ namespace Old.Enemy.FiniteStateMachine
 
             for (var i = 0; i < transform.childCount; i++)
             {
-                if (transform.GetChild(i).TryGetComponent<GameObjectTriggerEnable>(out var component))
+                if (transform.GetChild(i).TryGetComponent<WeaponColliderEnable>(out var component))
                 {
                     SwitchCollider += component.EnableCollider;
                 }

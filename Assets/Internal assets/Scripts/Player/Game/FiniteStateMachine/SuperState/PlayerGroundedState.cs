@@ -1,3 +1,4 @@
+using Input;
 using Interactable;
 using Old.Enemy.FiniteStateMachine;
 using UnityEngine;
@@ -47,14 +48,14 @@ namespace Player.Game.FiniteStateMachine.SuperState
         {
             base.LogicUpdate();
 
-            CrouchInput = StateController.InputManagerGame.GetPlayerCrouchInput();
-            RunInput = StateController.InputManagerGame.GetPlayerSprintInput();
-            MovementInput = StateController.InputManagerGame.GetPlayerMovementInput();
-            _attackInput = StateController.InputManagerGame.GetPlayerAttackInput();
-            _blockInput = StateController.InputManagerGame.GetPlayerBlockInput();
-            _interactInput = StateController.InputManagerGame.GetPlayerInteractInput();
-            _jumpInput = StateController.InputManagerGame.GetPlayerJumpInput();
-            _magicAttackInput = StateController.InputManagerGame.GetPlayerMagicAttackInput();
+            CrouchInput = InputManagerGame.Instance.GetPlayerCrouchInput();
+            RunInput = InputManagerGame.Instance.GetPlayerSprintInput();
+            MovementInput = InputManagerGame.Instance.GetPlayerMovementInput();
+            _attackInput = InputManagerGame.Instance.GetPlayerAttackInput();
+            _blockInput = InputManagerGame.Instance.GetPlayerBlockInput();
+            _interactInput = InputManagerGame.Instance.GetPlayerInteractInput();
+            _jumpInput = InputManagerGame.Instance.GetPlayerJumpInput();
+            _magicAttackInput = InputManagerGame.Instance.GetPlayerMagicAttackInput();
             _isInteractable = CheckVisibleIfInteractable();
 
             if (_attackInput)
@@ -110,7 +111,6 @@ namespace Player.Game.FiniteStateMachine.SuperState
 
         private bool CheckVisibleIfInteractable()
         {
-            return false;
             var cameraTransform = UnityEngine.Camera.main!.transform;
             var ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
@@ -124,14 +124,14 @@ namespace Player.Game.FiniteStateMachine.SuperState
                         PlayerStatistic.interactionData.IsSameInteractable(interactable))
                     {
                         PlayerStatistic.interactionData.Interactable = interactable;
-                        StateController.uiInteractionBare.SetTooltipText(interactable.TooltipText);
+                        UIInteractionBare.Instance.SetTooltipText(interactable.TooltipText);
 
                         return true;
                     }
             }
 
             PlayerStatistic.interactionData.ResetData();
-            StateController.uiInteractionBare.SetTooltipText(" ");
+            UIInteractionBare.Instance.SetTooltipText(" ");
             return false;
         }
 

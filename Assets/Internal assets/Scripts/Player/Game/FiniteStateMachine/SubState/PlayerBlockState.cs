@@ -1,3 +1,5 @@
+using Input;
+
 namespace Player.Game.FiniteStateMachine.SubState
 {
     public class PlayerBlockState : SuperState.PlayerAbilityState
@@ -24,11 +26,11 @@ namespace Player.Game.FiniteStateMachine.SubState
         {
             base.LogicUpdate();
 
-            if (!StateController.InputManagerGame.GetPlayerBlockInput())
+            if (!InputManagerGame.Instance.GetPlayerBlockInput())
             {
                 IsAbilityDone = true;
             }
-            else if (StateController.InputManagerGame.GetPlayerAttackInput())
+            else if (InputManagerGame.Instance.GetPlayerAttackInput())
             {
                 StateMachine.ChangeState(StateController.AttackState);
             }

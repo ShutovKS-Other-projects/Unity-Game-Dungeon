@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 using Old.Other;
 using Old.Player.FiniteStateMachine.SubState;
 using UnityEngine;
+using Weapon;
 
 namespace Old.Player.FiniteStateMachine
 {
@@ -105,9 +106,9 @@ namespace Old.Player.FiniteStateMachine
             uiInteractionBare = GameObject.Find("ManagerScene").transform.Find("Canvas").transform.Find("UIPanelGame")
                 .transform.Find("UIInteractionBare").GetComponent<UIInteractionBare>();
 
-            SwitchCollider += gameObject.transform.Find("DamageNoWeapon").GetComponent<GameObjectTriggerEnable>()
+            SwitchCollider += gameObject.transform.Find("DamageNoWeapon").GetComponent<WeaponColliderEnable>()
                 .EnableCollider;
-            SwitchCollider += gameObject.transform.Find("DamageWeapon").GetComponent<GameObjectTriggerEnable>()
+            SwitchCollider += gameObject.transform.Find("DamageWeapon").GetComponent<WeaponColliderEnable>()
                 .EnableCollider;
 
             _stateMachine.Initialize(IdleState);
