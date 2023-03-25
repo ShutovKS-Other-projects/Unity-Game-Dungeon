@@ -9,8 +9,11 @@ EditorBuildSettings:
     path: Assets/Internal assets/Scenes/Menu.unity
     guid: 078a950d59a37214ab55fedc0954366f
   - enabled: 1
-    path: Assets/Internal assets/Scenes/QuickRun.unity
-    guid: 5e3e600bc15858948abf3e59b13e4ba9
+    path: Assets/Internal assets/Scenes/HomeScene.unity
+    guid: d325567df6e7e4142ab68a60d20c7045
+  - enabled: 1
+    path: Assets/Internal assets/Scenes/Fights/InitialScene.unity
+    guid: 402f502c7d4f4174e9d90ea9642c5184
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 92835fb9fe50fc9428fc915e9a0b836a,
       type: 2}
@@ -18,4 +21,3 @@ EditorBuildSettings:
       guid: b2c74c7c7218c8e48b5a13f54749ff42, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: f03d31c722dba4b4896ec51702f0a79a,
       type: 2}
-  m_UseUCBPForAssetBundles: 0

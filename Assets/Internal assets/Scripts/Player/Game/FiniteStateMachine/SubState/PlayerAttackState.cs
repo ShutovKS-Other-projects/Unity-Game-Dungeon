@@ -12,7 +12,7 @@ namespace Player.Game.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            SwitchCollider(true);
+            StateController.SwitchCollider?.Invoke(true);
 
             if (UnityEngine.Random.Range(0, 101) < PlayerStatistic.CharacteristicCriticalChance.Value)
                 StateController.RegisterDelegateStrengthAttackFloat(AttackCritical);
@@ -24,7 +24,7 @@ namespace Player.Game.FiniteStateMachine.SubState
         {
             base.Exit();
 
-            SwitchCollider(false);
+            StateController.SwitchCollider?.Invoke(false);
 
             StateController.RegisterDelegateStrengthAttackFloat(AttackZero);
         }
@@ -36,7 +36,6 @@ namespace Player.Game.FiniteStateMachine.SubState
             IsAbilityDone = true;
         }
 
-        private Delegate.SwitchCollider SwitchCollider => StateController.SwitchCollider;
 
         private float Attack() => PlayerStatistic.CharacteristicStrength.Value;
         private float AttackCritical() => PlayerStatistic.CharacteristicStrength.Value * (1 + PlayerStatistic.CharacteristicCriticalAttack.Value / 100);

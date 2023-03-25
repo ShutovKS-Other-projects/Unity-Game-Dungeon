@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Interactable.Interactable
 {
@@ -6,7 +7,7 @@ namespace Interactable.Interactable
     {
         public override void OnInteract()
         {
-            Debug.Log("Interacted with " + gameObject.name);
+            SceneManager.LoadScene($"InitialScene");
         }
     }
 }
