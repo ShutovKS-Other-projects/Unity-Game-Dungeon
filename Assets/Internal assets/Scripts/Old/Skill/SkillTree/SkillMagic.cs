@@ -65,7 +65,6 @@ namespace Old.Skill.SkillTree
             if (!IsSkillPointEnough() || !CanUnlockSkill(magicType)) return false;
             UnlockSkill(magicType);
             return true;
-
         }
 
 

@@ -7,7 +7,9 @@ namespace Old.Enemy.FiniteStateMachine.SubState
     {
         private float _attackTimer;
 
-        public EnemyIdleState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
+        public EnemyIdleState(EnemyStateController stateController, EnemyStateMachine stateMachine,
+            EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic,
+            animBoolName)
         {
         }
 
@@ -17,7 +19,7 @@ namespace Old.Enemy.FiniteStateMachine.SubState
 
             if (!IsVisiblePlayer)
                 return;
-            
+
             if (PlayerDistance <= EnemyStatistic.AttackDistance)
             {
                 IsAttack = Attack();
@@ -37,11 +39,11 @@ namespace Old.Enemy.FiniteStateMachine.SubState
         {
             if (!IsVisiblePlayer || !(PlayerDistance <= EnemyStatistic.AttackDistance) || IsAttack)
                 return false;
-            
+
             _attackTimer += Time.deltaTime;
             if (!(_attackTimer >= EnemyStatistic.AttackRetryTime))
                 return false;
-            
+
             _attackTimer = 0f;
             return true;
         }

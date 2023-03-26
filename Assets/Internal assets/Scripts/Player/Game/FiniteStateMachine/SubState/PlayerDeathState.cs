@@ -4,7 +4,9 @@ namespace Player.Game.FiniteStateMachine.SubState
 {
     public class PlayerDeathState : SuperState.PlayerAbilityState
     {
-        public PlayerDeathState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
+        public PlayerDeathState(PlayerStateController stateController, PlayerStateMachine stateMachine,
+            PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
+            animBoolName)
         {
         }
 

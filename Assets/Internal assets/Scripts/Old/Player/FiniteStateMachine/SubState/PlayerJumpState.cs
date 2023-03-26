@@ -4,7 +4,9 @@ namespace Old.Player.FiniteStateMachine.SubState
 {
     public class PlayerJumpState : PlayerAbilityState
     {
-        public PlayerJumpState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
+        public PlayerJumpState(PlayerStateController stateController, PlayerStateMachine stateMachine,
+            PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
+            animBoolName)
         {
         }
 

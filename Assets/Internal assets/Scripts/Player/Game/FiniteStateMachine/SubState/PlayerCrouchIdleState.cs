@@ -37,7 +37,7 @@ namespace Player.Game.FiniteStateMachine.SubState
             {
                 StateMachine.ChangeState(StateController.CrouchMoveState);
             }
-            else if (!CrouchInput )
+            else if (!CrouchInput)
             {
                 StateMachine.ChangeState(StateController.IdleState);
             }

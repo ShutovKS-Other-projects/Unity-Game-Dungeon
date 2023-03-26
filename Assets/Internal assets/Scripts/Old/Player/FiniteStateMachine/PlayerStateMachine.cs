@@ -4,10 +4,10 @@ namespace Old.Player.FiniteStateMachine
     {
         public PlayerState CurrentState { get; private set; }
 
-        public void Initialize(PlayerState startingState) 
+        public void Initialize(PlayerState startingState)
         {
-            CurrentState = startingState; 
-            CurrentState.Enter();   
+            CurrentState = startingState;
+            CurrentState.Enter();
         }
 
         // ReSharper disable Unity.PerformanceAnalysis

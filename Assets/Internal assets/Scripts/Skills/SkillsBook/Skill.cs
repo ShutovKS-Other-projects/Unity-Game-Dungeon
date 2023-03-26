@@ -16,7 +16,7 @@ namespace Skills.SkillsBook
         public int Level => _level;
         public int LevelMax => skillObject.levelMax;
         public SkillType SkillType => skillObject.skillType;
-        
+
         public void Buy()
         {
             if (_level >= skillObject.levelMax || ManagerMining.Instance.Mining1 < Price) return;
@@ -26,7 +26,7 @@ namespace Skills.SkillsBook
             _level++;
             StartCoroutine(OnSkillUnlocked());
         }
-        
+
         public (SkillType, int) GetSkillTypeAndBuff()
         {
             return (SkillType, BuffSkill);

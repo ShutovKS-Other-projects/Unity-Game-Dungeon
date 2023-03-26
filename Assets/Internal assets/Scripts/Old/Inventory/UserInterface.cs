@@ -168,7 +168,9 @@ namespace Old.Inventory
             itemDrop.GetComponent<Rigidbody>().constraints =
                 RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ;
             itemDrop.transform.position =
-                GameObject.FindWithTag("Player").transform.position + new Vector3(Random.Range(-1,2), 0, Random.Range(-1,2))*Random.Range(1f,2f) + new Vector3(0.75f,1.5f,0);
+                GameObject.FindWithTag("Player").transform.position +
+                new Vector3(Random.Range(-1, 2), 0, Random.Range(-1, 2)) * Random.Range(1f, 2f) +
+                new Vector3(0.75f, 1.5f, 0);
             itemDrop.GetComponent<GroundItem>().item = slot.GetItemObject();
         }
 

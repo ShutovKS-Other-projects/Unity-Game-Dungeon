@@ -8,6 +8,7 @@ namespace Old.Other
     public class ModifiableFloat
     {
         [SerializeField] private float modifiedValue = 0;
+
         public float ModifiedValue
         {
             get => modifiedValue;
@@ -17,7 +18,7 @@ namespace Old.Other
         public ModifiableFloat() => modifiedValue = 0;
 
         private event Action ValueModified;
-        
+
         public List<IModifiers> Modifiers = new List<IModifiers>();
 
         public ModifiableFloat(Action method = null)
@@ -27,12 +28,12 @@ namespace Old.Other
                 ValueModified += method;
         }
 
-        public void RegisterModifier(Action  method)
+        public void RegisterModifier(Action method)
         {
             ValueModified += method;
         }
 
-        public void UnregisterModifier(Action  method)
+        public void UnregisterModifier(Action method)
         {
             ValueModified -= method;
         }
@@ -44,6 +45,7 @@ namespace Old.Other
             {
                 modifier.AddValue(ref valueAdd);
             }
+
             ModifiedValue = valueAdd;
             ValueModified?.Invoke();
         }
@@ -59,6 +61,5 @@ namespace Old.Other
             Modifiers.Remove(modifier);
             UpdateModifiedValue();
         }
-
     }
 }

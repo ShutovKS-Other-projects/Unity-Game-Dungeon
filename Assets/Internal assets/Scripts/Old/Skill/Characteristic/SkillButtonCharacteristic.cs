@@ -8,24 +8,24 @@ namespace Old.Skill.Characteristic
     {
         private Transform _transform;
         private readonly SkillCharacteristicType _skillCharacteristicType;
-        
+
         private Image _image;
         private Image _backgroundImage;
-        
-        public SkillButtonCharacteristic(Transform transform, SkillCharacteristic skillCharacteristic, SkillCharacteristicType skillCharacteristicType)
+
+        public SkillButtonCharacteristic(Transform transform, SkillCharacteristic skillCharacteristic,
+            SkillCharacteristicType skillCharacteristicType)
         {
             _transform = transform;
             _skillCharacteristicType = skillCharacteristicType;
-            
+
             transform.GetComponent<Button>().onClick.AddListener(() =>
             {
                 skillCharacteristic.TryUnlockSkill(_skillCharacteristicType);
             });
         }
-        
+
         public void UpdateVisuals(bool isUnlocked)
         {
-            
         }
     }
 }

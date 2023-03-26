@@ -14,7 +14,7 @@ namespace Interactable.Interactable
 
             if (!groundItem)
                 return;
-            
+
             var item = new Old.Item.Item(groundItem.item);
             if (inventory.AddItem(item, 1))
             {

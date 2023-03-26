@@ -6,13 +6,13 @@
         Food,
         Helmet,
         Chest,
-        Pants, 
-        Boots, 
-        Back, 
-        Bracers, 
-        Gloves, 
-        Ring, 
-        Weapon, 
+        Pants,
+        Boots,
+        Back,
+        Bracers,
+        Gloves,
+        Ring,
+        Weapon,
         Shield
     }
 }

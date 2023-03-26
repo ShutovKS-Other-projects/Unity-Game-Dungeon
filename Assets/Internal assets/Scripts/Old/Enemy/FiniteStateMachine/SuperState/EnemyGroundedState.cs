@@ -8,7 +8,9 @@ namespace Old.Enemy.FiniteStateMachine.SuperState
         protected bool IsAttack;
         protected bool IsVisiblePlayer;
 
-        public EnemyGroundedState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
+        public EnemyGroundedState(EnemyStateController stateController, EnemyStateMachine stateMachine,
+            EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic,
+            animBoolName)
         {
         }
 
@@ -37,14 +39,13 @@ namespace Old.Enemy.FiniteStateMachine.SuperState
         }
 
         public override void TriggerEnter(Collider other)
-        {   
+        {
             base.TriggerEnter(other);
-        
+
             if (other.CompareTag($"ObjectDamaging"))
             {
                 StateMachine.ChangeState(StateController.DamageState);
             }
         }
-
     }
 }

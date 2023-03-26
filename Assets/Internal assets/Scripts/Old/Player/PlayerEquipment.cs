@@ -10,8 +10,9 @@ namespace Old.Player
     {
         private InventoryObject _equipment;
 
-        [Header("Equip Transforms")]
-        [SerializeField] private Transform offhandWristTransform;
+        [Header("Equip Transforms")] [SerializeField]
+        private Transform offhandWristTransform;
+
         [SerializeField] private Transform offhandHandTransform;
         [SerializeField] private Transform weaponTransform;
 
@@ -78,6 +79,7 @@ namespace Old.Player
                                 break;
                         }
                     }
+
                     break;
                 case InterfaceType.Inventory:
                     break;
@@ -128,6 +130,7 @@ namespace Old.Player
                                 break;
                         }
                     }
+
                     break;
                 case InterfaceType.Inventory:
                     break;

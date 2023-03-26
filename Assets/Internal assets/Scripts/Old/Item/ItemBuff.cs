@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Old.Item
 {
-    
     [Serializable]
     public class ItemBuff : IModifiers
     {
@@ -12,32 +11,32 @@ namespace Old.Item
         /// Стат, к которому применяется баф
         /// </summary>
         public Attributes stat;
-        
+
         /// <summary>
         /// Значение бафа
         /// </summary>
         public float value;
-        
+
         [SerializeField] private float min;
         [SerializeField] private float max;
-        
+
         /// <summary>
         /// Минимальное значение бафа
         /// </summary>
         public float Min => min;
-        
+
         /// <summary>
         /// Максимальное значение бафа
         /// </summary>
         public float Max => max;
-        
+
         /// <summary>
         /// Конструктор бафа предмета
         /// </summary>
         /// <param name="min"> Минимальное значение бафа </param>
         /// <param name="max"> Максимальное значение бафа </param>
         /// <param name="level"> Уровень предмета </param>
-        public ItemBuff(float min, float max, int level) 
+        public ItemBuff(float min, float max, int level)
         {
             this.min = min;
             this.max = max;

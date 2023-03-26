@@ -16,6 +16,7 @@ namespace Old.Player
         private PlayerAttribute PlayerAttribute { get; set; }
         private PlayerSkillCharacteristic PlayerSkillCharacteristic { get; set; }
         private PlayerSkillMagicAttack PlayerSkillMagicAttack { get; set; }
+
         #endregion
 
         public event ObtainingExperience ObtainingExperienceEvent;
@@ -93,7 +94,7 @@ namespace Old.Player
             get => _stamina;
             set => _stamina = value;
         }
-        
+
         public float Strength => playerData.strength + PlayerAttribute.Strength + PlayerSkillCharacteristic.Strength!;
         public float Armor => playerData.armor + PlayerAttribute.Armor + PlayerSkillCharacteristic.Armor!;
         public float Agility => playerData.agility + PlayerAttribute.Agility;

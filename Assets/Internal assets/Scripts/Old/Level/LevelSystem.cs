@@ -20,7 +20,7 @@ namespace Old.Level
         public event System.Action OnExperienceChanged;
 
         #endregion
-        
+
         #region Singleton
 
         private int _experienceToNextLevel;
@@ -43,7 +43,7 @@ namespace Old.Level
         /// Очки опыта до следующего уровня
         /// </summary>
         public int ExperienceToNextLevel => _experienceToNextLevel;
-            
+
         /// <summary>
         /// Очки опыта до следующего уровня в процентах
         /// </summary>
@@ -52,7 +52,7 @@ namespace Old.Level
         #endregion
 
         #region Constructor
-        
+
         public LevelSystem()
         {
             Level = 1;

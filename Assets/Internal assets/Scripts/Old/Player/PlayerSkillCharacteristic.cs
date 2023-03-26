@@ -27,7 +27,7 @@ namespace Old.Player
             _uiSkillTreeCharacteristic = FindObjectOfType<UISkillTreeCharacteristic>();
             _uiSkillTreeCharacteristic.SetCharacteristicSkills(_skillCharacteristic);
         }
-        
+
         public void AddSkillPont() => _skillCharacteristic.AddSkillPoint();
 
         private void AssignmentsValue(object sender, SkillCharacteristicType skillCharacteristicType)

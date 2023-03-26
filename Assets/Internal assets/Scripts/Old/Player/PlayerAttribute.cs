@@ -11,6 +11,7 @@ namespace Old.Player
         public Attribute[] attributes;
 
         #region Attributes
+
         public float Armor => attributes[0].Value ?? 0f;
         public float Health => attributes[1].Value ?? 0f;
         public float HealthRecoverySpeed => attributes[2].Value ?? 0f;
@@ -23,9 +24,10 @@ namespace Old.Player
         public float Mana => attributes[9].Value ?? 0f;
         public float ManaRecoverySpeed => attributes[10].Value ?? 0f;
         public float CriticalDamage => attributes[11].Value ?? 0f;
-        public float CriticalChance  => attributes[12].Value ?? 0f;
+        public float CriticalChance => attributes[12].Value ?? 0f;
         public float Fortune => attributes[13].Value ?? 0f;
         public float MagicAttackDamage => attributes[14].Value ?? 0f;
+
         #endregion
 
         #region Unity Callbacks Functions
@@ -62,11 +64,13 @@ namespace Old.Player
             switch (slot.Parent.inventory.type)
             {
                 case InterfaceType.Inventory:
-                    print("Removed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type + ", Allowed items: " + string.Join(", ", slot.allowedItems));
+                    print("Removed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type +
+                          ", Allowed items: " + string.Join(", ", slot.allowedItems));
                     break;
 
                 case InterfaceType.Equipment:
-                    print("Removed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type + ", Allowed items: " + string.Join(", ", slot.allowedItems));
+                    print("Removed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type +
+                          ", Allowed items: " + string.Join(", ", slot.allowedItems));
                     foreach (var itemBuff in slot.item.buffs)
                     {
                         foreach (var attribute in attributes)
@@ -75,10 +79,12 @@ namespace Old.Player
                                 attribute.modifiableFloat.RemoveModifier(itemBuff);
                         }
                     }
+
                     break;
 
                 case InterfaceType.Chest:
-                    print("Removed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type + ", Allowed items: " + string.Join(", ", slot.allowedItems));
+                    print("Removed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type +
+                          ", Allowed items: " + string.Join(", ", slot.allowedItems));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -92,11 +98,13 @@ namespace Old.Player
             switch (slot.Parent.inventory.type)
             {
                 case InterfaceType.Inventory:
-                    print("Placed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type + ", Allowed items: " + string.Join(", ", slot.allowedItems));
+                    print("Placed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type +
+                          ", Allowed items: " + string.Join(", ", slot.allowedItems));
                     break;
 
                 case InterfaceType.Equipment:
-                    print("Placed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type + ", Allowed items: " + string.Join(", ", slot.allowedItems));
+                    print("Placed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type +
+                          ", Allowed items: " + string.Join(", ", slot.allowedItems));
                     foreach (var itemBuff in slot.item.buffs)
                     {
                         foreach (var attribute in attributes)
@@ -105,10 +113,12 @@ namespace Old.Player
                                 attribute.modifiableFloat.AddModifier(itemBuff);
                         }
                     }
+
                     break;
 
                 case InterfaceType.Chest:
-                    print("Placed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type + ", Allowed items: " + string.Join(", ", slot.allowedItems));
+                    print("Placed " + slot.GetItemObject() + " on: " + slot.Parent.inventory.type +
+                          ", Allowed items: " + string.Join(", ", slot.allowedItems));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

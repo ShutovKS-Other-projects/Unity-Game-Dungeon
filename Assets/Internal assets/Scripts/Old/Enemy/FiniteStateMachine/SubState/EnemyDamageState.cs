@@ -6,7 +6,9 @@ namespace Old.Enemy.FiniteStateMachine.SubState
 {
     public class EnemyDamageState : EnemyAbilityState
     {
-        public EnemyDamageState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
+        public EnemyDamageState(EnemyStateController stateController, EnemyStateMachine stateMachine,
+            EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic,
+            animBoolName)
         {
         }
 

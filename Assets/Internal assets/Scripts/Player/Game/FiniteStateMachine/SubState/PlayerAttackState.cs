@@ -38,7 +38,10 @@ namespace Player.Game.FiniteStateMachine.SubState
 
 
         private float Attack() => PlayerStatistic.CharacteristicStrength.Value;
-        private float AttackCritical() => PlayerStatistic.CharacteristicStrength.Value * (1 + PlayerStatistic.CharacteristicCriticalAttack.Value / 100);
+
+        private float AttackCritical() => PlayerStatistic.CharacteristicStrength.Value *
+                                          (1 + PlayerStatistic.CharacteristicCriticalAttack.Value / 100);
+
         private static float AttackZero() => 0;
     }
 }

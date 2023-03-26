@@ -14,10 +14,11 @@ namespace Old.Player.FiniteStateMachine
         protected bool IsExitingState;
 
         protected float StartTime;
-        
+
         private readonly string _animBoolName;
 
-        public PlayerState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName)
+        public PlayerState(PlayerStateController stateController, PlayerStateMachine stateMachine,
+            PlayerStatistic playerStatistic, string animBoolName)
         {
             this.StateController = stateController;
             this.StateMachine = stateMachine;
@@ -40,17 +41,27 @@ namespace Old.Player.FiniteStateMachine
             IsExitingState = true;
         }
 
-        public virtual void LogicUpdate() { }
+        public virtual void LogicUpdate()
+        {
+        }
 
         public virtual void PhysicsUpdate() => DoChecks();
 
-        protected virtual void DoChecks() { }
+        protected virtual void DoChecks()
+        {
+        }
 
-        public virtual void TriggerEnter(Collider other) { }
+        public virtual void TriggerEnter(Collider other)
+        {
+        }
 
-        public virtual void TriggerExit(Collider other) { }
+        public virtual void TriggerExit(Collider other)
+        {
+        }
 
-        public virtual void AnimationTrigger() { }
+        public virtual void AnimationTrigger()
+        {
+        }
 
         public virtual void AnimationFinishTrigger() => IsAnimationFinished = true;
     }

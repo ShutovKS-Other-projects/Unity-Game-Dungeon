@@ -18,7 +18,8 @@ namespace Old.Enemy.FiniteStateMachine
 
         private string _animBoolName;
 
-        public EnemyState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName)
+        public EnemyState(EnemyStateController stateController, EnemyStateMachine stateMachine,
+            EnemyStatistic enemyStatistic, string animBoolName)
         {
             this.StateController = stateController;
             this.StateMachine = stateMachine;
@@ -41,17 +42,23 @@ namespace Old.Enemy.FiniteStateMachine
             IsExitingState = true;
         }
 
-        public virtual void LogicUpdate() { }
+        public virtual void LogicUpdate()
+        {
+        }
 
         public virtual void PhysicsUpdate() => DoChecks();
 
-        public virtual void DoChecks() { }
+        public virtual void DoChecks()
+        {
+        }
 
         public virtual void TriggerEnter(Collider other) => TriggerCollider = other;
 
         public virtual void TriggerExit(Collider other) => TriggerCollider = null;
 
-        public virtual void AnimationTrigger() { }
+        public virtual void AnimationTrigger()
+        {
+        }
 
         public virtual void AnimationFinishTrigger() => IsAnimationFinished = true;
     }

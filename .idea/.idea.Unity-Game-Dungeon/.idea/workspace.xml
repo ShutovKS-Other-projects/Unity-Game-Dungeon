@@ -2,11 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Fights/InitialScene/NavMesh-ManagerNavMash.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Fights/InitialScene/NavMesh-ManagerNavMash.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/EnemyData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/EnemyData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/EnemyStatistic.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/EnemyStatistic.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/EnemyState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/EnemyState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/EnemyStateController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/EnemyStateController.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/EnemyStateMachine.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/EnemyStateMachine.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SubState.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SubState/EnemyIdleState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SubState/EnemyIdleState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SubState/EnemyMoveState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SubState/EnemyMoveState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SuperState.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SuperState/EnemyGroundedState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SuperState/EnemyGroundedState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerNavMash.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerNavMash/ManagerNavMash.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerNavMash/ManagerNavMash.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/ManagerPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/ManagerPlayer.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Menu.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Menu.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Fights/InitialScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Fights/InitialScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Fights/InitialScene.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerScenes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerScene/ManagerScenes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerScenes.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerScene/ManagerScenes.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/SceneType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerScene/SceneType.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/SceneType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerScene/SceneType.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Old/Enemy/EnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/EnemyData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Old/Enemy/EnemyData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/EnemyData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Old/Enemy/EnemyStatistic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Old/Enemy/EnemyStatistic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Old/Enemy/FiniteStateMachine/EnemyStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Old/Enemy/FiniteStateMachine/EnemyStateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +61,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Input/InputManagerHomeScene.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableChoosingWeapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableMagicBook.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerScenes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerNavMash/ManagerNavMash.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/ManagerScene/ManagerScenes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/SubState/PlayerCrouchMoveState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/SubState/PlayerInteractState.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Internal assets/Scripts/Weapon/ManagerWeapon.cs" root0="FORCE_HIGHLIGHTING" />
@@ -38,6 +73,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectId" id="2MNkZErsfffpSEmRHhvWcYyFKfo" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -46,24 +84,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.handlebarsOptions&quot;,
-    &quot;settings.editor.splitter.proportion&quot;: &quot;0.1523046&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "settings.editor.splitter.proportion": "0.1523046"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\Кирилл\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\Кирилл\\AppData\\Roaming\\JetBrains\\Rider2022.3\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\Кирилл\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\Кирилл\\AppData\\Local\\JetBrains\\Shared\\vAny\\DecompilerCache",
+      "C:\\Users\\Кирилл\\AppData\\Local\\JetBrains\\Shared\\vAny\\SourcesCache",
+      "C:\\Users\\Кирилл\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="open" />
@@ -217,6 +255,7 @@
       <workItem from="1679682864992" duration="636000" />
       <workItem from="1679683540596" duration="8914000" />
       <workItem from="1679758441130" duration="8168000" />
+      <workItem from="1679856036586" duration="338000" />
     </task>
     <servers />
   </component>

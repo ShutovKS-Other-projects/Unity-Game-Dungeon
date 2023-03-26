@@ -15,6 +15,7 @@ namespace Old.Player
                 inventory.Save();
                 equipment.Save();
             }
+
             if (UnityEngine.Input.GetKeyDown(KeyCode.KeypadEnter))
             {
                 inventory.Load();

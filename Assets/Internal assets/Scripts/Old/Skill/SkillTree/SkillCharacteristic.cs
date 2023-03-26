@@ -37,45 +37,47 @@ namespace Old.Skill.SkillTree
 
         public int GetSkillPoints() => _skillPoints;
 
-        public static float GetSkillValue(SkillCharacteristicType skillCharacteristicType) => skillCharacteristicType switch
-        {
-            SkillCharacteristicType.Stamina1 => 100,
-            SkillCharacteristicType.Stamina2 => 150,
-            SkillCharacteristicType.Stamina3 => 200,
-            SkillCharacteristicType.Stamina4 => 400,
-            SkillCharacteristicType.Stamina5 => 450,
-            SkillCharacteristicType.Stamina6 => 500,
+        public static float GetSkillValue(SkillCharacteristicType skillCharacteristicType) =>
+            skillCharacteristicType switch
+            {
+                SkillCharacteristicType.Stamina1 => 100,
+                SkillCharacteristicType.Stamina2 => 150,
+                SkillCharacteristicType.Stamina3 => 200,
+                SkillCharacteristicType.Stamina4 => 400,
+                SkillCharacteristicType.Stamina5 => 450,
+                SkillCharacteristicType.Stamina6 => 500,
 
-            SkillCharacteristicType.Health1 => 100,
-            SkillCharacteristicType.Health2 => 150,
-            SkillCharacteristicType.Health3 => 200,
-            SkillCharacteristicType.Health4 => 400,
-            SkillCharacteristicType.Health5 => 450,
-            SkillCharacteristicType.Health6 => 500,
+                SkillCharacteristicType.Health1 => 100,
+                SkillCharacteristicType.Health2 => 150,
+                SkillCharacteristicType.Health3 => 200,
+                SkillCharacteristicType.Health4 => 400,
+                SkillCharacteristicType.Health5 => 450,
+                SkillCharacteristicType.Health6 => 500,
 
-            SkillCharacteristicType.Mana1 => 100,
-            SkillCharacteristicType.Mana2 => 150,
-            SkillCharacteristicType.Mana3 => 200,
-            SkillCharacteristicType.Mana4 => 400,
-            SkillCharacteristicType.Mana5 => 450,
-            SkillCharacteristicType.Mana6 => 500,
+                SkillCharacteristicType.Mana1 => 100,
+                SkillCharacteristicType.Mana2 => 150,
+                SkillCharacteristicType.Mana3 => 200,
+                SkillCharacteristicType.Mana4 => 400,
+                SkillCharacteristicType.Mana5 => 450,
+                SkillCharacteristicType.Mana6 => 500,
 
-            SkillCharacteristicType.Strength1 => 10,
-            SkillCharacteristicType.Strength2 => 15,
-            SkillCharacteristicType.Strength3 => 20,
-            SkillCharacteristicType.Strength4 => 40,
-            SkillCharacteristicType.Strength5 => 45,
-            SkillCharacteristicType.Strength6 => 50,
+                SkillCharacteristicType.Strength1 => 10,
+                SkillCharacteristicType.Strength2 => 15,
+                SkillCharacteristicType.Strength3 => 20,
+                SkillCharacteristicType.Strength4 => 40,
+                SkillCharacteristicType.Strength5 => 45,
+                SkillCharacteristicType.Strength6 => 50,
 
-            SkillCharacteristicType.Armor1 => 10,
-            SkillCharacteristicType.Armor2 => 15,
-            SkillCharacteristicType.Armor3 => 20,
-            SkillCharacteristicType.Armor4 => 40,
-            SkillCharacteristicType.Armor5 => 45,
-            SkillCharacteristicType.Armor6 => 50,
+                SkillCharacteristicType.Armor1 => 10,
+                SkillCharacteristicType.Armor2 => 15,
+                SkillCharacteristicType.Armor3 => 20,
+                SkillCharacteristicType.Armor4 => 40,
+                SkillCharacteristicType.Armor5 => 45,
+                SkillCharacteristicType.Armor6 => 50,
 
-            _ => throw new ArgumentOutOfRangeException(nameof(skillCharacteristicType), skillCharacteristicType, null)
-        };
+                _ => throw new ArgumentOutOfRangeException(nameof(skillCharacteristicType), skillCharacteristicType,
+                    null)
+            };
 
         public bool CanUnlockSkill(SkillCharacteristicType skillCharacteristicType)
         {
@@ -117,7 +119,7 @@ namespace Old.Skill.SkillTree
                 SkillCharacteristicType.Stamina4 => SkillCharacteristicType.Stamina3,
                 SkillCharacteristicType.Stamina5 => SkillCharacteristicType.Stamina4,
                 SkillCharacteristicType.Stamina6 => SkillCharacteristicType.Stamina5,
-                
+
                 SkillCharacteristicType.Health2 => SkillCharacteristicType.Health1,
                 SkillCharacteristicType.Health3 => SkillCharacteristicType.Health2,
                 SkillCharacteristicType.Health4 => SkillCharacteristicType.Health3,
@@ -135,7 +137,7 @@ namespace Old.Skill.SkillTree
                 SkillCharacteristicType.Strength4 => SkillCharacteristicType.Strength3,
                 SkillCharacteristicType.Strength5 => SkillCharacteristicType.Strength4,
                 SkillCharacteristicType.Strength6 => SkillCharacteristicType.Strength5,
-                
+
                 _ => SkillCharacteristicType.None
             };
     }

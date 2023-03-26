@@ -1,6 +1,7 @@
 using Old.Player;
 using TMPro;
 using UnityEngine;
+
 // using PlayerStatistic = Player.Home.PlayerStatistic;
 
 namespace Old.UI.PlayerInfo
@@ -8,7 +9,7 @@ namespace Old.UI.PlayerInfo
     public class Characteristics : MonoBehaviour
     {
         private PlayerStatistic _playerStatistic;
-        
+
         private TextMeshProUGUI _healthText;
         private TextMeshProUGUI _manaText;
         private TextMeshProUGUI _staminaText;
@@ -19,7 +20,7 @@ namespace Old.UI.PlayerInfo
         private void OnEnable()
         {
             _playerStatistic = GameObject.FindWithTag("Player").GetComponent<PlayerStatistic>();
-            
+
             _healthText = transform.GetChild(0).GetComponent<TextMeshProUGUI>();
             _manaText = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
             _staminaText = transform.GetChild(2).GetComponent<TextMeshProUGUI>();
@@ -49,6 +50,5 @@ namespace Old.UI.PlayerInfo
         private void UpdateTextDamage(string text) => _strengthText.text = text;
         private void UpdateTextArmor(string text) => _armorText.text = text;
         private void UpdateTextAgility(string text) => _agilityText.text = text;
-
     }
 }

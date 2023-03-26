@@ -97,7 +97,7 @@ namespace Player.Game.FiniteStateMachine
             _groundCheckTransform = transform.Find("GroundCheck").transform;
             if (FindObjectOfType<WeaponColliderEnable>())
                 SwitchCollider += FindObjectOfType<WeaponColliderEnable>().EnableCollider;
-    
+
 
             _stateMachine.Initialize(IdleState);
         }

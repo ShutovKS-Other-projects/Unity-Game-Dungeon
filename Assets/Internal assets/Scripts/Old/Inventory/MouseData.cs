@@ -8,10 +8,12 @@ namespace Old.Inventory
         /// Интерфейс Мышь закончилась
         /// </summary>
         public static UserInterface InterfaceMouseIsOver;
+
         /// <summary>
         /// Перетаскиваемый временный элемент
         /// </summary>
         public static GameObject TempItemBeingDragged;
+
         /// <summary>
         /// Слот завис над
         /// </summary>

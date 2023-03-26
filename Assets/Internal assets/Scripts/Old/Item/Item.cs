@@ -6,22 +6,21 @@ namespace Old.Item
     [System.Serializable]
     public class Item
     {
-        
         /// <summary>
         /// ID предмета
         /// </summary>
         public int id;
-        
+
         /// <summary>
         /// Имя предмета
         /// </summary>
         public string name;
-        
+
         /// <summary>
         /// Уровень предмета
         /// </summary>
         public int level;
-         
+
         /// <summary>
         /// Список баффов
         /// </summary>

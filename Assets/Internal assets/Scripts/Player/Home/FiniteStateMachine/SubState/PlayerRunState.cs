@@ -9,11 +9,11 @@ namespace Player.Home.FiniteStateMachine.SubState
             animBoolName)
         {
         }
-        
+
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-            
+
             if (IsExitingState)
                 return;
 

@@ -4,10 +4,12 @@ namespace Old.Player.FiniteStateMachine.SubState
 {
     public class PlayerDamageState : PlayerAbilityState
     {
-        public PlayerDamageState(PlayerStateController stateController, PlayerStateMachine stateMachine, PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic, animBoolName)
+        public PlayerDamageState(PlayerStateController stateController, PlayerStateMachine stateMachine,
+            PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
+            animBoolName)
         {
         }
-        
+
         // ReSharper disable Unity.PerformanceAnalysis
         public override void LogicUpdate()
         {

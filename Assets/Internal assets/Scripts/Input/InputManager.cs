@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Old.Input
+namespace Input
 {
     public class InputManager : MonoBehaviour
     {
@@ -18,10 +18,9 @@ namespace Old.Input
             {
                 Instance = this;
             }
-            
+
             _inputSystemGame = new InputSystemGame();
         }
-
 
 
         private void OnEnable()
@@ -38,7 +37,7 @@ namespace Old.Input
         //UI
         public bool GetAllMenuInput() => _inputSystemGame.UI.Menu.triggered;
         public bool GetAllPlayerInfoInput() => _inputSystemGame.UI.PlayerInfo.triggered;
-    
+
         //Game
         public Vector2 GetPlayerMovementInput() => _inputSystemGame.Player.Movement.ReadValue<Vector2>();
         public Vector2 GetLookInput() => _inputSystemGame.Player.Look.ReadValue<Vector2>();

@@ -17,7 +17,7 @@ namespace Old.UI.PlayerInfo
             uiInventory.SetActive(true);
             uiSkills.SetActive(false);
         }
-        
+
         public void OnSkills()
         {
             uiInventory.SetActive(false);

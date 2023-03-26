@@ -13,7 +13,7 @@ namespace Old.UI.Game
         {
             _dialogText = transform.Find("DialogText").GetComponent<TextMeshProUGUI>();
         }
-        
+
         private void UpdateTextDialog(string text) => _dialogText.text = text;
     }
 }

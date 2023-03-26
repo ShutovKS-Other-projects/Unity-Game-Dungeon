@@ -6,6 +6,7 @@ namespace Skills.SkillsBook
     public class ManagerSkillBook : MonoBehaviour
     {
         public static ManagerSkillBook Instance;
+
         private void Awake()
         {
             Instance = this;
@@ -15,7 +16,7 @@ namespace Skills.SkillsBook
 
         public event Action SkillUnlocked;
         public void OnSkillUnlocked() => SkillUnlocked!.Invoke();
-        
+
         [NonSerialized] public int ExtraLife;
         [NonSerialized] public int RestoringLife;
         [NonSerialized] public int HealthBoost;
@@ -23,7 +24,7 @@ namespace Skills.SkillsBook
         [NonSerialized] public int FirstStrikePowerUp;
         [NonSerialized] public int DefenseBoost;
         [NonSerialized] public int IncreasingDodgeChance;
-        
+
         private void UpdateCharacterStats()
         {
             ExtraLife = 0;
@@ -33,7 +34,7 @@ namespace Skills.SkillsBook
             FirstStrikePowerUp = 0;
             DefenseBoost = 0;
             IncreasingDodgeChance = 0;
-            
+
             foreach (var skill in FindObjectsOfType<Skill>())
             {
                 var (skillType, buff) = skill.GetSkillTypeAndBuff();

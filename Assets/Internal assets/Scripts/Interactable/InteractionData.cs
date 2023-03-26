@@ -11,7 +11,7 @@ namespace Interactable
         {
             if (Interactable == null)
                 return;
-            
+
             Interactable.OnInteract();
             ResetData();
         }

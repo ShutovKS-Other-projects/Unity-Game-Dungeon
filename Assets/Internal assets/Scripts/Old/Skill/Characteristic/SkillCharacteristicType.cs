@@ -36,7 +36,7 @@
         Armor4,
         Armor5,
         Armor6,
-        
+
         None
     }
 }

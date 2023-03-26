@@ -23,7 +23,7 @@ namespace Player.Home.FiniteStateMachine.SubState
         {
             base.Exit();
 
-            StateController.SetColliderHeight(PlayerStatistic.StandColliderHeight, 
+            StateController.SetColliderHeight(PlayerStatistic.StandColliderHeight,
                 PlayerStatistic.StandColliderCenter);
         }
 

@@ -2,7 +2,6 @@ namespace Interactable
 {
     public interface IInteractable
     {
-
         public float HoldDuration { get; }
 
         public bool HoldInteract { get; }

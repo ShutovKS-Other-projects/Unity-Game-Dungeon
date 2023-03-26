@@ -64,7 +64,10 @@ namespace Old.Player.FiniteStateMachine
         [CanBeNull] public Delegate.StrengthAttackFloat StrengthAttackFloat;
 
         public void RegisterDelegateSwitchCollider(Delegate.SwitchCollider del) => SwitchCollider = del;
-        public void RegisterDelegateMagicAttackDelegate(Delegate.OnMagicAttackDelegate del) => MagicAttackDelegate = del;
+
+        public void RegisterDelegateMagicAttackDelegate(Delegate.OnMagicAttackDelegate del) =>
+            MagicAttackDelegate = del;
+
         public void RegisterDelegateStrengthAttackFloat(Delegate.StrengthAttackFloat del) => StrengthAttackFloat = del;
 
         #endregion
@@ -101,7 +104,7 @@ namespace Old.Player.FiniteStateMachine
 
             groundCheckTransform = transform.Find("GroundCheck");
             cellingCheckTransform = transform.Find("CellingCheck");
-            
+
             //Scene QuickRun
             uiInteractionBare = GameObject.Find("ManagerScene").transform.Find("Canvas").transform.Find("UIPanelGame")
                 .transform.Find("UIInteractionBare").GetComponent<UIInteractionBare>();

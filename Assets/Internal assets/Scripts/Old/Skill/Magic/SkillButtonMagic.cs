@@ -18,17 +18,14 @@ namespace Old.Skill.Magic
             _transform = transform;
             _magicType = magicType;
 
-            transform.GetComponent<Button>().onClick.AddListener(() =>
-            {
-                skillMagic.TryUnlockSkill(_magicType);
-            });
+            transform.GetComponent<Button>().onClick.AddListener(() => { skillMagic.TryUnlockSkill(_magicType); });
         }
-        
+
         public void UpdateVisuals()
         {
             Debug.Log($"Update visuals {_magicType}");
             // _image.sprite = _skillMagic.GetSkillSprite(_skillMagicType);
             // _backgroundImage.sprite = _skillMagic.GetSkillBackgroundSprite(_skillMagicType);
-        } 
+        }
     }
 }

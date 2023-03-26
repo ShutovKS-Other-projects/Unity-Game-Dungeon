@@ -10,11 +10,11 @@ namespace Mining
         public int Mining1;
         public int Mining2;
         public int Mining3;
-        
+
         public int MiningBose1;
         public int MiningBose2;
         public int MiningBose3;
-        
+
         public void Clear()
         {
             Mining1 = 0;

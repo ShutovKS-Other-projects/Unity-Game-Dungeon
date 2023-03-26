@@ -4,7 +4,9 @@ namespace Old.Enemy.FiniteStateMachine.SuperState
     {
         protected bool IsAbilityDone;
 
-        public EnemyAbilityState(EnemyStateController stateController, EnemyStateMachine stateMachine, EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic, animBoolName)
+        public EnemyAbilityState(EnemyStateController stateController, EnemyStateMachine stateMachine,
+            EnemyStatistic enemyStatistic, string animBoolName) : base(stateController, stateMachine, enemyStatistic,
+            animBoolName)
         {
         }
 
@@ -21,7 +23,7 @@ namespace Old.Enemy.FiniteStateMachine.SuperState
 
             if (!IsAbilityDone)
                 return;
-            
+
             if (EnemyStatistic.IsDead)
             {
                 StateMachine.ChangeState(StateController.DeathState);

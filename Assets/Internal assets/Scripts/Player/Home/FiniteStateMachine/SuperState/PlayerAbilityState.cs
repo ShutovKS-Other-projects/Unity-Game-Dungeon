@@ -9,7 +9,7 @@ namespace Player.Home.FiniteStateMachine.SuperState
             animBoolName)
         {
         }
-        
+
         protected Vector2 MovementInput;
 
         protected bool IsAbilityDone;

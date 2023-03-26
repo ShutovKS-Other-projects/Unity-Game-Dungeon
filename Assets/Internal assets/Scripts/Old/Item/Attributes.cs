@@ -31,7 +31,7 @@
         /// Сила
         /// </summary>
         Strength,
-        
+
         /// <summary>
         /// Скорость атаки
         /// </summary>

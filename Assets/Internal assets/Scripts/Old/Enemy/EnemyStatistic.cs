@@ -1,3 +1,4 @@
+using Enemy;
 using Old.Enemy.FiniteStateMachine;
 using UnityEngine;
 
@@ -9,11 +10,11 @@ namespace Old.Enemy
         private readonly EnemyStateController _stateController;
 
         #region Parameters private
-        
+
         private float _health;
 
         #endregion
-        
+
         #region Parameters public
 
         public string RaceName => _data.raceName;

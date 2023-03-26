@@ -7,9 +7,9 @@ namespace Weapon
     {
         public static ManagerWeapon Instance;
         public void Awake() => Instance = this;
-        
+
         private WeaponType _weaponType;
-        
+
         public void ChooseWeapon(WeaponType weaponType)
         {
             _weaponType = weaponType;

@@ -44,7 +44,7 @@ namespace Old.Inventory
         }
 
         private static Vector3 GetPosition(int i)
-        {   
+        {
             return new Vector3((X_START + X_SPACE_BETWEEN_ITEM * (i % NUMBER_OF_COLUMNS)),
                 (Y_START - Y_SPACE_BETWEEN_ITEM * (i / NUMBER_OF_COLUMNS)), (0f));
         }

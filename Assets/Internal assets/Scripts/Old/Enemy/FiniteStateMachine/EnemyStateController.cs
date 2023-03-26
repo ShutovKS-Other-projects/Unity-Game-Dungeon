@@ -1,4 +1,5 @@
 using System;
+using Enemy;
 using JetBrains.Annotations;
 using Old.Enemy.FiniteStateMachine.SubState;
 using Old.Other;

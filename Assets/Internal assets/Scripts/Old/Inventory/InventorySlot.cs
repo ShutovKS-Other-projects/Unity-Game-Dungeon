@@ -22,7 +22,7 @@ namespace Old.Inventory
 
         public InventorySlot() => UpdateSlot(new Item.Item(), 0);
         public InventorySlot(Item.Item item, int amount) => UpdateSlot(item, amount);
-        
+
         public void AddAmount(int value) => UpdateSlot(item, amount += value);
         public void RemoveItem() => UpdateSlot(new Item.Item(), 0);
 
@@ -33,7 +33,7 @@ namespace Old.Inventory
             amount = amountValue;
             OnAfterUpdated?.Invoke(this);
         }
-        
+
         public void UpdateSlot()
         {
             OnBeforeUpdated?.Invoke(this);
@@ -49,6 +49,7 @@ namespace Old.Inventory
                 if (itemObject.type == itemType)
                     return true;
             }
+
             return false;
         }
     }

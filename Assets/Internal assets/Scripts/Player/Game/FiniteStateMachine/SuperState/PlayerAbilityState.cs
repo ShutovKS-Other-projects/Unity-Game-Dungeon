@@ -4,7 +4,6 @@ namespace Player.Game.FiniteStateMachine.SuperState
 {
     public class PlayerAbilityState : PlayerState
     {
-
         public PlayerAbilityState(PlayerStateController stateController, PlayerStateMachine stateMachine,
             PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
             animBoolName)

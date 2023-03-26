@@ -14,7 +14,7 @@ namespace Old.Magic.SuperMagic
         protected abstract float Radius { get; set; }
 
         #endregion
-        
+
         public void Enter()
         {
             CreateMagicModel();
