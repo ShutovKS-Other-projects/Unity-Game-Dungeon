@@ -11,11 +11,13 @@ namespace Enemy.FiniteStateMachine
         [SerializeField] private EnemyData enemyData;
         private EnemyStatistic _enemyStatistic;
 
-
         #region State Machine
 
         public EnemyStateMachine StateMachine { get; private set; }
 
+        public EnemyAttackState AttackState { get; private set; }
+        public EnemyDamageState DamageState { get; private set; }
+        public EnemyDeathState DeathState { get; private set; }
         public EnemyIdleState IdleState { get; private set; }
         public EnemyMoveState MoveState { get; private set; }
 
@@ -25,7 +27,7 @@ namespace Enemy.FiniteStateMachine
 
         public Animator Animator { get; private set; }
         public NavMeshAgent NavMeshAgent { get; private set; }
-        private Rigidbody Rb { get; set; }
+        public Rigidbody Rb { get; set; }
 
         #endregion
 
@@ -38,6 +40,9 @@ namespace Enemy.FiniteStateMachine
             _enemyStatistic = new EnemyStatistic(enemyData, this);
             StateMachine = new EnemyStateMachine();
 
+            AttackState = new EnemyAttackState(this, StateMachine, _enemyStatistic, "Attack");
+            DamageState = new EnemyDamageState(this, StateMachine, _enemyStatistic, "Damage");
+            DeathState = new EnemyDeathState(this, StateMachine, _enemyStatistic, "Death");
             IdleState = new EnemyIdleState(this, StateMachine, _enemyStatistic, "Idle");
             MoveState = new EnemyMoveState(this, StateMachine, _enemyStatistic, "Move");
         }

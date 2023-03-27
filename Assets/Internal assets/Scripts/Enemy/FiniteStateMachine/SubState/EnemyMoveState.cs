@@ -25,9 +25,15 @@ namespace Enemy.FiniteStateMachine.SubState
         {
             base.LogicUpdate();
 
-            if (!(CheckPlayerDistance() <= EnemyStatistic.AttackDistance)) return;
-            StateMachine.ChangeState(StateController.IdleState);
-            StateController.NavMeshAgent.isStopped = true;
+            if (PlayerDistance < EnemyStatistic.AttackDistance)
+            {
+                StateMachine.ChangeState(StateController.IdleState);
+                StateController.NavMeshAgent.isStopped = true;
+            }
+            else
+            {
+                StateController.NavMeshAgent.SetDestination(ManagerPlayer.Instance.PlayerPosition);
+            }
         }
     }
 }

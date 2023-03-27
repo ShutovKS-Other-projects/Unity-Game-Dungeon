@@ -1,6 +1,6 @@
+using Enemy.FiniteStateMachine;
 using Input;
 using Interactable;
-using Old.Enemy.FiniteStateMachine;
 using UnityEngine;
 
 namespace Player.Game.FiniteStateMachine.SuperState
@@ -93,8 +93,8 @@ namespace Player.Game.FiniteStateMachine.SuperState
         {
             base.TriggerEnter(other);
             if (!other.gameObject.CompareTag($"EnemyDamageObject")) return;
-            if (other.transform.parent.TryGetComponent(out EnemyStateController enemyStateController))
-                PlayerStatistic.CharacteristicHealth.AddValue(-(int)enemyStateController.StrengthAttackFloat!());
+            // if (other.transform.parent.TryGetComponent(out EnemyStateController enemyStateController))
+                // PlayerStatistic.CharacteristicHealth.AddValue(-(int)enemyStateController.StrengthAttackFloat!());
             StateMachine.ChangeState(StateController.DamageState);
         }
 

@@ -1,8 +1,10 @@
-﻿using Enemy.FiniteStateMachine;
+﻿using System;
+using Enemy.FiniteStateMachine;
 using Player.Game;
 using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 namespace Enemy
 {
@@ -40,7 +42,7 @@ namespace Enemy
         public float PlayerCheckDistance => _data.playerCheckDistance;
 
         public bool IsDead => Health <= 0;
-        public bool isVisiblePlayer;
+        [NonSerialized] public bool isVisiblePlayer;
 
         public AnimatorController AnimatorController => _data.animatorController;
 

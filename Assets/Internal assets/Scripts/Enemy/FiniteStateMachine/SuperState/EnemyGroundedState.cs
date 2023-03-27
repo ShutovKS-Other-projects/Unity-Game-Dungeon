@@ -11,6 +11,8 @@ namespace Enemy.FiniteStateMachine.SuperState
             animBoolName)
         {
         }
+        
+        protected float PlayerDistance => CheckPlayerDistance();
 
         public override void DoChecks()
         {
@@ -28,6 +30,13 @@ namespace Enemy.FiniteStateMachine.SuperState
             }
         }
 
+        public override void TriggerEnter(Collider other)
+        {
+            base.TriggerEnter(other);
+            if(other.CompareTag("Player"))
+                StateMachine.ChangeState(StateController.DamageState);
+        }
+
         private void CheckIfPlayer(ref bool isVisible)
         {
             var position = StateController.transform.position;
@@ -36,7 +45,7 @@ namespace Enemy.FiniteStateMachine.SuperState
                 EnemyStatistic.PlayerCheckDistance) && hit.collider.CompareTag("Player");
         }
 
-        protected float CheckPlayerDistance()
+        private float CheckPlayerDistance()
         {
             return Vector3.Distance(StateController.transform.position,
                 ManagerPlayer.Instance.playerTransform.position);
