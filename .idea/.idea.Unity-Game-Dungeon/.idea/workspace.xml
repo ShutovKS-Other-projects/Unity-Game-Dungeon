@@ -2,7 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/New Avatar Mask.mask" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Idle.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Idle.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Test.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Test.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/PlayerData.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Enemy.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Enemy.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Enemy/EnemyAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Enemy/EnemyAnimator.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Enemy/EnemyAnimator.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Enemy/EnemyAnimator.controller.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Player.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Player/PlayerAnimacionController.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Player/PlayerAnimacionController.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskTorsoAndArms.mask" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskTorsoAndArms.mask" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/AnimationFinishTrigger.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/AnimationFinishTrigger.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/New Avatar Mask.mask.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/PlayerGame.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/PlayerGame.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/PlayerHomeScene.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/PlayerHomeScene.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/PlayerStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/PlayerStateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/PlayerStatistic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/PlayerStatistic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/PlayerStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/PlayerStateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/PlayerStatistic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/PlayerStatistic.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/PlayerData/PlayerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/PlayerData/PlayerData.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -219,6 +246,7 @@
       <workItem from="1679856036586" duration="338000" />
       <workItem from="1679945783478" duration="30000" />
       <workItem from="1679945902891" duration="3593000" />
+      <workItem from="1680018854840" duration="5099000" />
     </task>
     <servers />
   </component>

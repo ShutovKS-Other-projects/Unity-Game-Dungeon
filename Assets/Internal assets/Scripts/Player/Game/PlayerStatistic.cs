@@ -10,7 +10,7 @@ namespace Player.Game
 
         #region Singleton
 
-        [SerializeField] private PlayerData playerData;
+        [SerializeField] public PlayerData playerData;
         public CharacteristicHealth CharacteristicHealth;
         public CharacteristicBase CharacteristicStrength;
         public CharacteristicBase CharacteristicArmor;

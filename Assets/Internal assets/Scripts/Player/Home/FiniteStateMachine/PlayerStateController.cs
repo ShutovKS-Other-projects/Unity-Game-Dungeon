@@ -2,6 +2,7 @@ using System;
 using Input;
 using Interactable;
 using Player.Home.FiniteStateMachine.SubState;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Player.Home.FiniteStateMachine
@@ -46,7 +47,17 @@ namespace Player.Home.FiniteStateMachine
 
         private void Awake()
         {
-            _playerStatistic = GetComponent<PlayerStatistic>();
+            if (TryGetComponent<PlayerStatistic>(out var playerStatistic))
+            {
+                _playerStatistic = playerStatistic;
+            }
+            else
+            {
+                _playerStatistic = gameObject.AddComponent<PlayerStatistic>();
+                _playerStatistic.playerData = Resources.Load<PlayerData>("ScriptableObject/PlayerData/PlayerData");
+                _playerStatistic.interactionData = ScriptableObject.CreateInstance<InteractionData>();
+            }
+
             _stateMachine = new PlayerStateMachine();
 
             IdleState = new PlayerIdleState(this, _stateMachine, _playerStatistic, "Idle");
@@ -62,15 +73,27 @@ namespace Player.Home.FiniteStateMachine
 
         private void Start()
         {
-            Animator = GetComponentInChildren<Animator>();
             InputManagerHomeScene = InputManagerHomeScene.Instance;
-            Rb = GetComponent<Rigidbody>();
-            _collider = GetComponent<CapsuleCollider>();
 
+            if (transform.GetChild(0).TryGetComponent<Animator>(out var animator))
+            {
+                Animator = animator;
+            }
+            else
+            {
+                Animator = transform.GetChild(0).gameObject.AddComponent<Animator>();
+                Animator.runtimeAnimatorController =
+                    Resources.Load<RuntimeAnimatorController>($"AnimationControllers/Player/PlayerAnimationController");
+            }
+
+            Resources.Load<RuntimeAnimatorController>($"AnimationControllers/Player/PlayerAnimationController");
+
+            _collider = TryGetComponent<CapsuleCollider>(out var capsuleCollider)
+                ? capsuleCollider
+                : gameObject.AddComponent<CapsuleCollider>();
+            Rb = TryGetComponent<Rigidbody>(out var rb) ? rb : gameObject.AddComponent<Rigidbody>();
             groundCheckTransform = transform.Find("GroundCheck");
-
             uiInteractionBare = FindObjectOfType<UIInteractionBare>();
-
 
             _stateMachine.Initialize(IdleState);
         }

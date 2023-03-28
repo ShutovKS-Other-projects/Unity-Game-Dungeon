@@ -819,7 +819,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PlayerAnimacionController
+  m_Name: PlayerAnimationController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: Attack
@@ -928,7 +928,7 @@ AnimatorController:
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
     m_DefaultWeight: 0
-    m_IKPass: 0
+    m_IKPass: 1
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
@@ -938,65 +938,55 @@ AnimatorController:
     m_Motions:
     - serializedVersion: 2
       m_State: {fileID: 165356209547326289}
-      m_Motion: {fileID: -203655887218126122, guid: 6088e39e62d3d8f47b9eb0d70f0027f7,
-        type: 3}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: -7742646971938722199}
-      m_Motion: {fileID: 7400000, guid: b7e6ad4264f8e0a4ca4727480fad703b, type: 2}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 8851296708174268081}
-      m_Motion: {fileID: 7400000, guid: 890c371c38bcf434fa89a6437d774a10, type: 2}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 3432967251177649919}
-      m_Motion: {fileID: -203655887218126122, guid: dd8ebfea7d1b75c4c9707709a3fb8f09,
-        type: 3}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 4535823824831806400}
-      m_Motion: {fileID: -203655887218126122, guid: ee21652d105f07e43893ef8ec0d7744f,
-        type: 3}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 9026082313086799381}
-      m_Motion: {fileID: -203655887218126122, guid: e4a86abb49f3d5e48b1bdb7807392181,
-        type: 3}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 8741314086168908945}
-      m_Motion: {fileID: 7400000, guid: 39cc55fc08481c94aa33e8ad8d014e43, type: 2}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 0}
       m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: -8684098424341821538}
-      m_Motion: {fileID: -203655887218126122, guid: 8d0290a96c93bbc43b4a6a08746f8e55,
-        type: 3}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 8178087356625216585}
-      m_Motion: {fileID: -203655887218126122, guid: dd8ebfea7d1b75c4c9707709a3fb8f09,
-        type: 3}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: -5915079423034837218}
-      m_Motion: {fileID: -203655887218126122, guid: a77f66b711a42634bae8f5abe15534ec,
-        type: 3}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: -7195028037764578894}
-      m_Motion: {fileID: -203655887218126122, guid: d6adbc24aa1488745a853db384678f19,
-        type: 3}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 7472640616578946417}
-      m_Motion: {fileID: -203655887218126122, guid: 4a53e4b0b06188c4985ee4f3a9683ef1,
-        type: 3}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 1356142210624609180}
-      m_Motion: {fileID: -203655887218126122, guid: 4fc3cb30475f6154a80766bd92df5e1c,
-        type: 3}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 2511555544690002431}
-      m_Motion: {fileID: 7400000, guid: 61a243514627ca34d920c74efa65301b, type: 2}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 7703505696865423767}
-      m_Motion: {fileID: 7400000, guid: eebf6b60bfd55f84c9f4414bea1fcfa2, type: 2}
+      m_Motion: {fileID: 0}
     - serializedVersion: 2
       m_State: {fileID: 2020472497888363454}
-      m_Motion: {fileID: 7400000, guid: 171661842cd59444aa2d559e9c2273f4, type: 2}
+      m_Motion: {fileID: 0}
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: 0
@@ -1642,7 +1632,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 24083a162ac30154097cb45ae8734800,
+  m_Motion: {fileID: -203655887218126122, guid: 79c495dc4eb2e4745a5f49127f181e07,
     type: 3}
   m_Tag: 
   m_SpeedParameter: 

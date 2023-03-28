@@ -5,7 +5,7 @@ namespace Player.Home
 {
     public class PlayerStatistic : MonoBehaviour
     {
-        [SerializeField] private PlayerData playerData;
+        [SerializeField] public PlayerData playerData;
 
         public float MovementForce => playerData.movementForce;
         public float JumpSpeed => playerData.jumpSpeed;

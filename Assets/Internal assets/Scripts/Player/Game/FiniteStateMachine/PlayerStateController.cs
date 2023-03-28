@@ -1,5 +1,8 @@
+using Input;
+using Interactable;
 using JetBrains.Annotations;
 using Player.Game.FiniteStateMachine.SubState;
+using Unity.VisualScripting;
 using UnityEngine;
 using Weapon;
 
@@ -7,8 +10,6 @@ namespace Player.Game.FiniteStateMachine
 {
     public sealed class PlayerStateController : MonoBehaviour
     {
-        private PlayerStatistic _playerStatistic;
-
         #region State Machine
 
         private PlayerStateMachine _stateMachine;
@@ -38,6 +39,8 @@ namespace Player.Game.FiniteStateMachine
         #endregion
 
         #region Components
+
+        private PlayerStatistic _playerStatistic;
 
         public Animator Animator { get; private set; }
         public Rigidbody Rb { get; private set; }
@@ -69,7 +72,17 @@ namespace Player.Game.FiniteStateMachine
 
         private void Awake()
         {
-            _playerStatistic = GetComponent<PlayerStatistic>();
+            if (TryGetComponent<PlayerStatistic>(out var playerStatistic))
+            {
+                _playerStatistic = playerStatistic;
+            }
+            else
+            {
+                _playerStatistic = gameObject.AddComponent<PlayerStatistic>();
+                _playerStatistic.playerData = Resources.Load<PlayerData>("ScriptableObject/PlayerData/PlayerData");
+                _playerStatistic.interactionData = ScriptableObject.CreateInstance<InteractionData>();
+            }
+
             _stateMachine = new PlayerStateMachine();
 
             IdleState = new PlayerIdleState(this, _stateMachine, _playerStatistic, "Idle");
@@ -90,9 +103,15 @@ namespace Player.Game.FiniteStateMachine
 
         private void Start()
         {
-            Animator = GetComponentInChildren<Animator>();
-            Rb = GetComponent<Rigidbody>();
-            _collider = GetComponent<CapsuleCollider>();
+            Animator = transform.GetChild(0).TryGetComponent<Animator>(out var animator)
+                ? animator
+                : transform.GetChild(0).AddComponent<Animator>();
+            Animator.runtimeAnimatorController =
+                Resources.Load<RuntimeAnimatorController>($"AnimationControllers/Player/PlayerAnimatorController");
+            Rb = TryGetComponent<Rigidbody>(out var rb) ? rb : gameObject.AddComponent<Rigidbody>();
+            _collider = TryGetComponent<CapsuleCollider>(out var capsuleCollider)
+                ? capsuleCollider
+                : gameObject.AddComponent<CapsuleCollider>();
 
             _groundCheckTransform = transform.Find("GroundCheck").transform;
             if (FindObjectOfType<WeaponColliderEnable>())
