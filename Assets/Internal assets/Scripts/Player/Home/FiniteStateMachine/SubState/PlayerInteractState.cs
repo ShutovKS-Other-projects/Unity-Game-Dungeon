@@ -22,13 +22,12 @@ namespace Player.Home.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            _interactTransform = OnInteractTransform?.Invoke();
-            Debug.Log(_interactTransform);
-            _isInteracting = false;
-            if (_handIKTarget == null)
-                _handIKTarget = StateController.transform.Find("Rig Interaction").transform.Find("R_Hand (1)").transform.Find("R_Hand_Target");
-            _handIKTarget.position = _interactTransform.position;
             StateController.SetVelocityZero();
+            _interactTransform = OnInteractTransform?.Invoke();
+            if (_handIKTarget == null)
+                _handIKTarget = StateController.transform.Find("Rig Interaction").transform.Find("R_Hand (1)").transform
+                    .Find("R_Hand_Target");
+            _handIKTarget.position = _interactTransform.position;
         }
 
         public override void Exit()
@@ -36,6 +35,7 @@ namespace Player.Home.FiniteStateMachine.SubState
             base.Exit();
 
             PlayerStatistic.interactionData.ResetData();
+            _isInteracting = false;
         }
 
         public override void AnimationTrigger()
@@ -43,8 +43,8 @@ namespace Player.Home.FiniteStateMachine.SubState
             base.AnimationTrigger();
 
             if (_isInteracting) return;
-            
             PlayerStatistic.interactionData.Interact();
+            Debug.Log(Time.time);
             _isInteracting = true;
         }
 

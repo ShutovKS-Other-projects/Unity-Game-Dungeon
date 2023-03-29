@@ -1,3 +1,4 @@
+using UI.Home_Scene;
 using UnityEngine;
 
 namespace Interactable.Interactable
@@ -6,7 +7,8 @@ namespace Interactable.Interactable
     {
         public override void OnInteract()
         {
-            Debug.Log("InteractableSkillsBook");
+            ManagerUI.Instance.SwitchSkillsBookUI(true);
+            ManagerScene.ManagerScene.SwitchCursor(true);
         }
     }
 }

@@ -2525,6 +2525,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 81512726}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &86732628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 86732629}
+  - component: {fileID: 86732630}
+  m_Layer: 0
+  m_Name: ManagerUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &86732629
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86732628}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1103252771}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &86732630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 86732628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce56295ff7f03224689a970a0f8ac71c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &89751991
 GameObject:
   m_ObjectHideFlags: 0
@@ -2995,12 +3039,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6603488554207994483, guid: 98f5378049f9b5745a77677f581b32b1,
     type: 3}
   m_PrefabInstance: {fileID: 144929334}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &148944636 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4957231571477918332, guid: 92d4430c1aabefa4691079bac409cbf9,
-    type: 3}
-  m_PrefabInstance: {fileID: 1548282163}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &153834330
 PrefabInstance:
@@ -19486,6 +19524,7 @@ Transform:
   - {fileID: 226335698}
   - {fileID: 894166786}
   - {fileID: 1032788656}
+  - {fileID: 86732629}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -26039,8 +26078,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1482981762}
+  - component: {fileID: 1482981763}
   m_Layer: 5
-  m_Name: UISkills
+  m_Name: UISkillsBook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26067,6 +26107,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1482981763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482981761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca8bbf25df22a6f46859ac78167be3b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1483635508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27417,11 +27469,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4957231571477918332, guid: 92d4430c1aabefa4691079bac409cbf9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1548282165}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92d4430c1aabefa4691079bac409cbf9, type: 3}
 --- !u!4 &1548282164 stripped
 Transform:
@@ -27429,24 +27477,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1548282163}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1548282165
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 148944636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 459c351f619d39e49b6b09157d483dc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  holdDuration: 0
-  holdInteract: 0
-  multipleUse: 0
-  isInteractable: 1
-  tooltipText: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 F \u0447\u0442\u043E\u0431\u044B
-    \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u043A\u043D\u0438\u0433\u0443 \u043C\u0430\u0433\u0438\u0438"
 --- !u!1001 &1553858233
 PrefabInstance:
   m_ObjectHideFlags: 0
