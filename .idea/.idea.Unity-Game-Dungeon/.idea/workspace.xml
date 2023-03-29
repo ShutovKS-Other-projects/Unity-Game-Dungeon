@@ -2,34 +2,189 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/New Avatar Mask.mask" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Idle.fbx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Idle.fbx.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Test.unity" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Test.unity.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/PlayerData.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Idle.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Idle.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch To Stand.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch To Stand.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Forward.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Forward.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Left.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Left.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Right.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Right.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/In Air.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/In Air.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Interactable.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Back.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Back.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Idle.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Idle.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Run.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Run.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Back.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Back.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Idle.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Idle.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Run.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Run.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Forward.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Forward.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Left.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Left.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Right.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Right.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Forward.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Forward.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Left.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Left.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Right.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Right.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController HomeScene.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController HomeScene.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_Blend.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_Blend.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_ChainIk.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_ChainIk.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_Damp.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_Damp.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_LookAround.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_LookAround.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_Offsets.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_Offsets.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_gunFire.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_gunFire.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_gunUp.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_gunUp.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_mRef.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_mRef.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_onBack.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_onBack.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_pickup.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_pickup.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_twist.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_twist.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_twistChain.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_twistChain.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_walk.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_walk.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_walkLegs.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/Anim_walkLegs.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/aimTarget.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/aimTarget.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/chainIKtarget.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Animation/chainIKtarget.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/aimTarget.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/aimTarget.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/root2bIK.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/root2bIK.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootBlend.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootBlend.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootCAim.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootCAim.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootChainIK.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootChainIK.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootDamp.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootDamp.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootOver.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootOver.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootParent.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootParent.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootPos.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootPos.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootRot.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootRot.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootTwist.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootTwist.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootTwistChain.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootTwistChain.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootmRef.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/rootmRef.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/target.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Controllers/target.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Info.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Info/Icons.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Info/Icons/ARicon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Info/Icons/ARicon.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Info/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Info/Scripts/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Info/Scripts/Editor/ReadmeEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Info/Scripts/Editor/ReadmeEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Info/Scripts/Readme.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Info/Scripts/Readme.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/A.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/A.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/AB.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/AB.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/B.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/B.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/ground.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/ground.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/red.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/red.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/target.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/target.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/yellow.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Materials/yellow.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Prefabs/aimTarget.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Prefabs/aimTarget.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Prefabs/env.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Prefabs/env.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Prefabs/lights.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Prefabs/lights.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Prefabs/sword.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Prefabs/sword.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Prefabs/target.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Prefabs/target.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Readme.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Readme.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/2BoneIK.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/2BoneIK.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/Aim.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/Aim.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/Blend.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/Blend.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/ChainIK.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/ChainIK.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/Damp.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/Damp.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/Override.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/Override.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/TwistChain.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/TwistChain.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/TwistCorrection.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/TwistCorrection.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/mParent.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/mParent.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/mPosition.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/mPosition.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/mRef.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/mRef.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/mRotation.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scenes/mRotation.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scripts.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scripts/mParent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Samples/Animation Rigging/1.2.0/Animation Rigging Constraint Samples/Scripts/mParent.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Enemy.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Enemy.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Enemy/EnemyAnimator.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Enemy/EnemyAnimator.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Enemy/EnemyAnimator.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Enemy/EnemyAnimator.controller.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Player.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Player/PlayerAnimacionController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Controllers/Player/PlayerAnimacionController.controller.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskTorsoAndArms.mask" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskTorsoAndArms.mask" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/AnimationFinishTrigger.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/AnimationFinishTrigger.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/New Avatar Mask.mask.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/PlayerGame.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/PlayerGame.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/PlayerHomeScene.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Prefabs/Humanoids/Player/PlayerHomeScene.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/New Avatar Mask.mask" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/New Avatar Mask.mask.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Interactable.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/PlayerStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/PlayerStateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/PlayerStatistic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/PlayerStatistic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/PlayerStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/PlayerStateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/PlayerStatistic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/PlayerStatistic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/PlayerData/PlayerData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/PlayerData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/PlayerData/PlayerData.asset.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/SubState/PlayerInteractState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/SubState/PlayerInteractState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/SuperState/PlayerGroundedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/SuperState/PlayerGroundedState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +234,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.C#&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
     &quot;settings.editor.splitter.proportion&quot;: &quot;0.1523046&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -246,7 +401,11 @@
       <workItem from="1679856036586" duration="338000" />
       <workItem from="1679945783478" duration="30000" />
       <workItem from="1679945902891" duration="3593000" />
-      <workItem from="1680018854840" duration="5099000" />
+      <workItem from="1680018854840" duration="7913000" />
+      <workItem from="1680032614656" duration="2158000" />
+      <workItem from="1680066856311" duration="916000" />
+      <workItem from="1680111430387" duration="1561000" />
+      <workItem from="1680113232645" duration="2369000" />
     </task>
     <servers />
   </component>

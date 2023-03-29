@@ -28,7 +28,6 @@ namespace Player.Home.FiniteStateMachine
         #region Component
 
         public Animator Animator { get; private set; }
-        public InputManagerHomeScene InputManagerHomeScene { get; private set; }
         public Rigidbody Rb { get; private set; }
         public UIInteractionBare uiInteractionBare;
 
@@ -73,25 +72,40 @@ namespace Player.Home.FiniteStateMachine
 
         private void Start()
         {
-            InputManagerHomeScene = InputManagerHomeScene.Instance;
-
-            if (transform.GetChild(0).TryGetComponent<Animator>(out var animator))
+            if (TryGetComponent<Animator>(out var animator))
             {
                 Animator = animator;
             }
             else
             {
-                Animator = transform.GetChild(0).gameObject.AddComponent<Animator>();
+                Animator = gameObject.AddComponent<Animator>();
                 Animator.runtimeAnimatorController =
-                    Resources.Load<RuntimeAnimatorController>($"AnimationControllers/Player/PlayerAnimationController");
+                    Resources.Load<RuntimeAnimatorController>(
+                        $"AnimationControllers/Player/PlayerAnimationController HomeScene");
             }
 
-            Resources.Load<RuntimeAnimatorController>($"AnimationControllers/Player/PlayerAnimationController");
+            if (TryGetComponent<CapsuleCollider>(out var capsuleCollider))
+            {
+                _collider = capsuleCollider;
+            }
+            else
+            {
+                _collider = gameObject.AddComponent<CapsuleCollider>();
+                _collider.radius = 0.2f;
+                _collider.height = 1.8f;
+                _collider.center = new Vector3(0, 0.9f, 0f);
+            }
+            
+            if (TryGetComponent<Rigidbody>(out var rb))
+            {
+                Rb = rb;
+            }
+            else
+            {
+                Rb = gameObject.AddComponent<Rigidbody>();
+                Rb.freezeRotation = true;
+            }
 
-            _collider = TryGetComponent<CapsuleCollider>(out var capsuleCollider)
-                ? capsuleCollider
-                : gameObject.AddComponent<CapsuleCollider>();
-            Rb = TryGetComponent<Rigidbody>(out var rb) ? rb : gameObject.AddComponent<Rigidbody>();
             groundCheckTransform = transform.Find("GroundCheck");
             uiInteractionBare = FindObjectOfType<UIInteractionBare>();
 

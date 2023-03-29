@@ -1,4 +1,6 @@
-﻿using Interactable;
+﻿using Input;
+using Interactable;
+using Player.Home.FiniteStateMachine.SubState;
 using UnityEngine;
 
 namespace Player.Home.FiniteStateMachine.SuperState
@@ -40,11 +42,11 @@ namespace Player.Home.FiniteStateMachine.SuperState
         {
             base.LogicUpdate();
 
-            CrouchInput = StateController.InputManagerHomeScene.GetPlayerCrouchInput();
-            RunInput = StateController.InputManagerHomeScene.GetPlayerSprintInput();
-            MovementInput = StateController.InputManagerHomeScene.GetPlayerMovementInput();
-            _interactInput = StateController.InputManagerHomeScene.GetPlayerInteractInput();
-            _jumpInput = StateController.InputManagerHomeScene.GetPlayerJumpInput();
+            CrouchInput = InputManagerHomeScene.Instance.GetPlayerCrouchInput();
+            RunInput = InputManagerHomeScene.Instance.GetPlayerSprintInput();
+            MovementInput = InputManagerHomeScene.Instance.GetPlayerMovementInput();
+            _interactInput = InputManagerHomeScene.Instance.GetPlayerInteractInput();
+            _jumpInput = InputManagerHomeScene.Instance.GetPlayerJumpInput();
             _isInteractable = CheckVisibleIfInteractable();
 
             if (_jumpInput)
@@ -89,6 +91,8 @@ namespace Player.Home.FiniteStateMachine.SuperState
                         PlayerStatistic.interactionData.Interactable = interactable;
                         StateController.uiInteractionBare.SetTooltipText(interactable.TooltipText);
 
+                        PlayerInteractState.OnInteractTransform =
+                            () => _isInteractable ? hitInfo.collider.transform : null;
                         return true;
                     }
             }
