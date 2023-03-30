@@ -3637,7 +3637,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e428ff178df04aebbb0b8ef0c69f67e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageObjectWeaponTransform: {fileID: 0}
 --- !u!114 &1401023962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5542,7 +5541,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 09472b2213027474fb25075ab883fb7a, type: 2}
+      objectReference: {fileID: 9100000, guid: 4a1d867394bfe034d92f391e2ba2f868, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 47ee85fca8c06214d9e42a36e3099518,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

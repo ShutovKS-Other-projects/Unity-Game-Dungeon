@@ -2,18 +2,102 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskLegs.mask" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskLegs.mask.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Hammer.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Hammer/Attack1.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Hammer/Attack1.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Hammer/Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Hammer/Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/AttackMagic.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/AttackMagic.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Forward.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Forward.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Damage.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Damage.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Dead.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Dead.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/In Air.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/In Air.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Forward.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Forward.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Forward.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Forward.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Spear.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Spear/Attack1.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Spear/Attack1.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Spear/Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/Spear/Idle.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/TwoSwords.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/TwoSwords/Attack.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/TwoSwords/Attack.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/TwoSwords/AttackSuper.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/TwoSwords/AttackSuper.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/TwoSwords/Idle.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/TwoSwords/Idle.anim.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskTorsoAndArms.mask" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskHands.mask" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskTorsoAndArms.mask.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskHands.mask.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/AnimationFinishTrigger.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/AnimationFinishTrigger.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/AnimationFinishTrigger.anim.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/AnimationFinishTrigger.anim.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Idle.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Idle.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch To Stand.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch To Stand.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Forward.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Forward.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Left.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Left.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Right.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Crouch Walk Right.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Idle.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Idle.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/In Air.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/In Air.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Back.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Back.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Idle.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Idle.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Run.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Jump Run.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Back.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Back.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Idle.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Idle.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Run.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Land Run.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Forward.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Forward.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Left.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Left.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Right.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Run Right.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Forward.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Forward.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Left.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Left.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Right.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Walk Right.fbx.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Fights/InitialScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Fights/InitialScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Test.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Test.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/PlayerStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/PlayerStateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/PlayerStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/PlayerStateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Weapon/WeaponType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Weapon/WeaponType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SubState/PlayerBlockState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SubState/PlayerAttackSuperState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SubState/PlayerBlockState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SubState/PlayerAttackSuperState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SubState/PlayerMagicAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SubState/PlayerAttackMagicState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SubState/PlayerMagicAttackState.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SubState/PlayerAttackMagicState.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SuperState/PlayerGroundedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SuperState/PlayerGroundedState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController Game.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController.controller.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController Game.controller.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -240,6 +324,11 @@
       <workItem from="1680113232645" duration="6222000" />
       <workItem from="1680153413454" duration="3379000" />
       <workItem from="1680156991394" duration="3012000" />
+      <workItem from="1680166239547" duration="824000" />
+      <workItem from="1680188453771" duration="76000" />
+      <workItem from="1680190054840" duration="5377000" />
+      <workItem from="1680201221747" duration="1318000" />
+      <workItem from="1680205473087" duration="238000" />
     </task>
     <servers />
   </component>

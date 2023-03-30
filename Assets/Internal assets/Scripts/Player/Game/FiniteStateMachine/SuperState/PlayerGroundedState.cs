@@ -65,12 +65,12 @@ namespace Player.Game.FiniteStateMachine.SuperState
             }
             else if (_magicAttackInput)
             {
-                StateMachine.ChangeState(StateController.MagicAttackState);
+                StateMachine.ChangeState(StateController.AttackMagicState);
                 RecoveryStaminaTime = 0;
             }
             else if (_blockInput)
             {
-                StateMachine.ChangeState(StateController.BlockState);
+                StateMachine.ChangeState(StateController.AttackSuperState);
                 RecoveryStaminaTime = 0;
             }
             else if (_jumpInput)

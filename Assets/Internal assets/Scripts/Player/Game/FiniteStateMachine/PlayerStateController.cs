@@ -22,12 +22,12 @@ namespace Player.Game.FiniteStateMachine
         public PlayerCrouchIdleState CrouchIdleState { get; private set; }
         public PlayerCrouchMoveState CrouchMoveState { get; private set; }
         public PlayerAttackState AttackState { get; private set; }
-        public PlayerBlockState BlockState { get; private set; }
+        public PlayerAttackSuperState AttackSuperState { get; private set; }
         public PlayerInteractState InteractState { get; private set; }
         public PlayerDamageState DamageState { get; private set; }
         public PlayerDeathState DeathState { get; private set; }
         public PlayerRunState RunState { get; private set; }
-        public PlayerMagicAttackState MagicAttackState { get; private set; }
+        public PlayerAttackMagicState AttackMagicState { get; private set; }
 
         #endregion
         
@@ -86,12 +86,12 @@ namespace Player.Game.FiniteStateMachine
             CrouchIdleState = new PlayerCrouchIdleState(this, _stateMachine, _playerStatistic, "CrouchIdle");
             CrouchMoveState = new PlayerCrouchMoveState(this, _stateMachine, _playerStatistic, "CrouchMove");
             AttackState = new PlayerAttackState(this, _stateMachine, _playerStatistic, "Attack");
-            BlockState = new PlayerBlockState(this, _stateMachine, _playerStatistic, "Block");
+            AttackSuperState = new PlayerAttackSuperState(this, _stateMachine, _playerStatistic, "AttackSuper");
             InteractState = new PlayerInteractState(this, _stateMachine, _playerStatistic, "Interact");
             DamageState = new PlayerDamageState(this, _stateMachine, _playerStatistic, "Damage");
             DeathState = new PlayerDeathState(this, _stateMachine, _playerStatistic, "Death");
             RunState = new PlayerRunState(this, _stateMachine, _playerStatistic, "Run");
-            MagicAttackState = new PlayerMagicAttackState(this, _stateMachine, _playerStatistic, "MagicAttack");
+            AttackMagicState = new PlayerAttackMagicState(this, _stateMachine, _playerStatistic, "AttackMagic");
         }
 
         private void Start()
@@ -105,7 +105,7 @@ namespace Player.Game.FiniteStateMachine
                 Animator = gameObject.AddComponent<Animator>();
                 Animator.runtimeAnimatorController =
                     Resources.Load<RuntimeAnimatorController>(
-                        $"AnimationControllers/Player/PlayerAnimatorController");
+                        $"AnimationControllers/Player/PlayerAnimationController Game");
             }
 
             if (TryGetComponent<CapsuleCollider>(out var capsuleCollider))
