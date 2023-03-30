@@ -30,14 +30,7 @@ namespace Player.Game.FiniteStateMachine
         public PlayerMagicAttackState MagicAttackState { get; private set; }
 
         #endregion
-
-        #region Transforms
-
-        private Transform _groundCheckTransform;
-        [CanBeNull] public Transform damageObjectWeaponTransform;
-
-        #endregion
-
+        
         #region Components
 
         private PlayerStatistic _playerStatistic;
@@ -103,21 +96,43 @@ namespace Player.Game.FiniteStateMachine
 
         private void Start()
         {
-            Animator = transform.GetChild(0).TryGetComponent<Animator>(out var animator)
-                ? animator
-                : transform.GetChild(0).AddComponent<Animator>();
-            Animator.runtimeAnimatorController =
-                Resources.Load<RuntimeAnimatorController>($"AnimationControllers/Player/PlayerAnimatorController");
-            Rb = TryGetComponent<Rigidbody>(out var rb) ? rb : gameObject.AddComponent<Rigidbody>();
-            _collider = TryGetComponent<CapsuleCollider>(out var capsuleCollider)
-                ? capsuleCollider
-                : gameObject.AddComponent<CapsuleCollider>();
+            if (TryGetComponent<Animator>(out var animator))
+            {
+                Animator = animator;
+            }
+            else
+            {
+                Animator = gameObject.AddComponent<Animator>();
+                Animator.runtimeAnimatorController =
+                    Resources.Load<RuntimeAnimatorController>(
+                        $"AnimationControllers/Player/PlayerAnimatorController");
+            }
 
-            _groundCheckTransform = transform.Find("GroundCheck").transform;
+            if (TryGetComponent<CapsuleCollider>(out var capsuleCollider))
+            {
+                _collider = capsuleCollider;
+            }
+            else
+            {
+                _collider = gameObject.AddComponent<CapsuleCollider>();
+                _collider.radius = 0.2f;
+                _collider.height = 1.8f;
+                _collider.center = new Vector3(0, 0.9f, 0f);
+            }
+
+            if (TryGetComponent<Rigidbody>(out var rb))
+            {
+                Rb = rb;
+            }
+            else
+            {
+                Rb = gameObject.AddComponent<Rigidbody>();
+                Rb.freezeRotation = true;
+            }
+
             if (FindObjectOfType<WeaponColliderEnable>())
                 SwitchCollider += FindObjectOfType<WeaponColliderEnable>().EnableCollider;
-
-
+            
             _stateMachine.Initialize(IdleState);
         }
 
@@ -195,7 +210,7 @@ namespace Player.Game.FiniteStateMachine
 
         public bool CheckIfGrounded()
         {
-            return Physics.CheckSphere(_groundCheckTransform.position, _playerStatistic.GroundCheckRadius,
+            return Physics.CheckSphere(new Vector3(0, 0.12f, 0), _playerStatistic.GroundCheckRadius,
                 LayerMask.GetMask("Ground"));
         }
 

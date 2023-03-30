@@ -1,8 +1,5 @@
-using System;
-using Input;
 using Interactable;
 using Player.Home.FiniteStateMachine.SubState;
-using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Player.Home.FiniteStateMachine
@@ -30,9 +27,7 @@ namespace Player.Home.FiniteStateMachine
         public Animator Animator { get; private set; }
         public Rigidbody Rb { get; private set; }
         public UIInteractionBare uiInteractionBare;
-
-        [SerializeField] private Transform groundCheckTransform;
-
+        
         private PlayerStatistic _playerStatistic;
         private CapsuleCollider _collider;
 
@@ -95,7 +90,7 @@ namespace Player.Home.FiniteStateMachine
                 _collider.height = 1.8f;
                 _collider.center = new Vector3(0, 0.9f, 0f);
             }
-            
+
             if (TryGetComponent<Rigidbody>(out var rb))
             {
                 Rb = rb;
@@ -106,7 +101,6 @@ namespace Player.Home.FiniteStateMachine
                 Rb.freezeRotation = true;
             }
 
-            groundCheckTransform = transform.Find("GroundCheck");
             uiInteractionBare = FindObjectOfType<UIInteractionBare>();
 
             _stateMachine.Initialize(IdleState);
@@ -186,7 +180,7 @@ namespace Player.Home.FiniteStateMachine
 
         public bool CheckIfGrounded()
         {
-            return Physics.CheckSphere(groundCheckTransform.position, _playerStatistic.GroundCheckRadius,
+            return Physics.CheckSphere(new Vector3(0f, 0.012f, 0f), _playerStatistic.GroundCheckRadius,
                 LayerMask.GetMask("Ground"));
         }
 
