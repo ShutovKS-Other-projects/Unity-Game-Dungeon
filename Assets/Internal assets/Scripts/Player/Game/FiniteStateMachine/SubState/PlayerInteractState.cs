@@ -13,14 +13,14 @@ namespace Player.Game.FiniteStateMachine.SubState
             base.Enter();
 
             StateController.SetVelocityZero();
-            PlayerStatistic.interactionData.Interact();
+            PlayerStatistic.interactionObject.Interact();
         }
 
         public override void Exit()
         {
             base.Exit();
 
-            PlayerStatistic.interactionData.ResetData();
+            PlayerStatistic.interactionObject.ResetData();
         }
 
         public override void AnimationFinishTrigger()

@@ -85,10 +85,10 @@ namespace Player.Home.FiniteStateMachine.SuperState
                 var interactable = hitInfo.collider.GetComponent<InteractableBase>();
 
                 if (interactable != null)
-                    if (PlayerStatistic.interactionData.IsEmpty() ||
-                        PlayerStatistic.interactionData.IsSameInteractable(interactable))
+                    if (PlayerStatistic.interactionObject.IsEmpty() ||
+                        PlayerStatistic.interactionObject.IsSameInteractable(interactable))
                     {
-                        PlayerStatistic.interactionData.Interactable = interactable;
+                        PlayerStatistic.interactionObject.Interactable = interactable;
                         StateController.uiInteractionBare.SetTooltipText(interactable.TooltipText);
 
                         PlayerInteractState.OnInteractTransform =
@@ -97,7 +97,7 @@ namespace Player.Home.FiniteStateMachine.SuperState
                     }
             }
 
-            PlayerStatistic.interactionData.ResetData();
+            PlayerStatistic.interactionObject.ResetData();
             StateController.uiInteractionBare.SetTooltipText(" ");
             return false;
         }

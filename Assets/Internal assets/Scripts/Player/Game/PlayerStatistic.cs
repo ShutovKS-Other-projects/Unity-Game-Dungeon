@@ -1,6 +1,7 @@
 ﻿using Interactable;
 using Player.Game.Characteristics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Player.Game
 {
@@ -60,7 +61,7 @@ namespace Player.Game
         public float InterCheckDistance => playerData.interCheckDistance;
         public float InterCheckSphereRadius => playerData.interCheckSphereRadius;
 
-        public InteractionData interactionData = null;
+        [FormerlySerializedAs("interactionData")] public InteractionObject interactionObject = null;
 
         #endregion
     }

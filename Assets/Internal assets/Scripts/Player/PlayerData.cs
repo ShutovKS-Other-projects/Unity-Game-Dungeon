@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Player
 {
-    [CreateAssetMenu(fileName = "newPlayerData", menuName = "Data/Player Data/Data Base")]
+    [CreateAssetMenu(fileName = "newPlayerData", menuName = "Data/Player Data")]
     public class PlayerData : ScriptableObject
     {
         [Header("Health")] public int healthMax = 100;

@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Skills.SkillsBook
 {
-    [CreateAssetMenu(fileName = "new SkillBook", menuName = "Skill/SkillBook", order = 0)]
+    [CreateAssetMenu(fileName = "new SkillBook", menuName = "Data/SkillBook Data", order = 0)]
     public class SkillObject : ScriptableObject
     {
         public int levelMax;

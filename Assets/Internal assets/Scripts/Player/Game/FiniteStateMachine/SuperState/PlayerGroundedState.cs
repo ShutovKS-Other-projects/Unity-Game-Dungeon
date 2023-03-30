@@ -120,17 +120,17 @@ namespace Player.Game.FiniteStateMachine.SuperState
                 var interactable = hitInfo.collider.GetComponent<InteractableBase>();
 
                 if (interactable != null)
-                    if (PlayerStatistic.interactionData.IsEmpty() ||
-                        PlayerStatistic.interactionData.IsSameInteractable(interactable))
+                    if (PlayerStatistic.interactionObject.IsEmpty() ||
+                        PlayerStatistic.interactionObject.IsSameInteractable(interactable))
                     {
-                        PlayerStatistic.interactionData.Interactable = interactable;
+                        PlayerStatistic.interactionObject.Interactable = interactable;
                         UIInteractionBare.Instance.SetTooltipText(interactable.TooltipText);
 
                         return true;
                     }
             }
 
-            PlayerStatistic.interactionData.ResetData();
+            PlayerStatistic.interactionObject.ResetData();
             UIInteractionBare.Instance.SetTooltipText(" ");
             return false;
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace Mining
 {
     [Serializable]
-    [CreateAssetMenu(fileName = "new Mining database", menuName = "Mining Database", order = 0)]
+    [CreateAssetMenu(fileName = "newMiningData", menuName = "Data/Mining Data", order = 0)]
     public class MiningObject : ScriptableObject
     {
         public int Mining1;

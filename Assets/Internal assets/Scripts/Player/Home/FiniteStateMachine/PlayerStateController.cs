@@ -53,8 +53,8 @@ namespace Player.Home.FiniteStateMachine
             else
             {
                 _playerStatistic = gameObject.AddComponent<PlayerStatistic>();
-                _playerStatistic.playerData = Resources.Load<PlayerData>("ScriptableObject/PlayerData/PlayerData");
-                _playerStatistic.interactionData = ScriptableObject.CreateInstance<InteractionData>();
+                _playerStatistic.playerData = Resources.Load<PlayerData>($"ScriptableObject/Player/PlayerData");
+                _playerStatistic.interactionObject = ScriptableObject.CreateInstance<InteractionObject>();
             }
 
             _stateMachine = new PlayerStateMachine();

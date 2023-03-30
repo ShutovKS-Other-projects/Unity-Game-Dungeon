@@ -34,7 +34,7 @@ namespace Player.Home.FiniteStateMachine.SubState
         {
             base.Exit();
 
-            PlayerStatistic.interactionData.ResetData();
+            PlayerStatistic.interactionObject.ResetData();
             _isInteracting = false;
         }
 
@@ -43,8 +43,7 @@ namespace Player.Home.FiniteStateMachine.SubState
             base.AnimationTrigger();
 
             if (_isInteracting) return;
-            PlayerStatistic.interactionData.Interact();
-            Debug.Log(Time.time);
+            PlayerStatistic.interactionObject.Interact();
             _isInteracting = true;
         }
 

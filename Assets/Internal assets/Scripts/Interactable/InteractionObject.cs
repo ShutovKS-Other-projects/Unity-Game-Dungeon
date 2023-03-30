@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace Interactable
 {
-    [CreateAssetMenu(fileName = "Interaction Data", menuName = "InteractionSystem/InteractionData", order = 0)]
-    public class InteractionData : ScriptableObject
+    [CreateAssetMenu(fileName = "new Interaction", menuName = "Data/Interaction Data", order = 0)]
+    public class InteractionObject : ScriptableObject
     {
         public InteractableBase Interactable { get; set; }
 

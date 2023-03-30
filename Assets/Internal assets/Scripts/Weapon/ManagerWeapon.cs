@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Weapon
@@ -6,14 +5,17 @@ namespace Weapon
     public class ManagerWeapon : MonoBehaviour
     {
         public static ManagerWeapon Instance;
-        public void Awake() => Instance = this;
-
-        private WeaponType _weaponType;
-
-        public void ChooseWeapon(WeaponType weaponType)
+        public void Awake()
         {
-            _weaponType = weaponType;
-            Debug.Log($"You chose {weaponType}");
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(gameObject);
+        }
+
+        public static void ChooseWeapon(WeaponType weaponType)
+        {
+            Resources.Load<ChosenWeaponObject>($"ScriptableObject/Weapon/ChosenWeaponData").weaponType = weaponType;
         }
     }
 }
