@@ -13,9 +13,8 @@ namespace Enemy.FiniteStateMachine.SubState
         public override void Enter()
         {
             base.Enter();
-            Debug.Log("Enter Damage State");
-            if (EnemyStatistic.IsDead)
-                StateMachine.ChangeState(StateController.DeathState);
+
+            Debug.Log($"Damage State {EnemyStatistic.Health}");
             IsAbilityDone = true;
         }
     }

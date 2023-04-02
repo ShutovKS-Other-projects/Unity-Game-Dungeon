@@ -115,9 +115,6 @@ namespace Player.Game.FiniteStateMachine
                 Rb.freezeRotation = true;
             }
 
-            // if (FindObjectOfType<WeaponColliderEnable>())
-                // SwitchCollider += FindObjectOfType<WeaponColliderEnable>().EnableCollider;
-
             _stateMachine.Initialize(IdleState);
         }
 

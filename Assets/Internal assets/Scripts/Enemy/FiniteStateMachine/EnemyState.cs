@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Weapon;
 
 namespace Enemy.FiniteStateMachine
 {
@@ -6,15 +7,16 @@ namespace Enemy.FiniteStateMachine
     {
         protected readonly EnemyStateController StateController;
         protected readonly EnemyStateMachine StateMachine;
-        protected EnemyState enemyState;
         protected readonly EnemyStatistic EnemyStatistic;
+        protected EnemyState enemyState;
+
+        protected GameObject TriggerCollider;
 
         protected bool IsAnimationFinished;
         protected bool IsExitingState;
 
         protected float StartTime;
 
-        protected Collider TriggerCollider;
 
         private string _animBoolName;
 
@@ -52,7 +54,10 @@ namespace Enemy.FiniteStateMachine
         {
         }
 
-        public virtual void TriggerEnter(Collider other) => TriggerCollider = other;
+        public virtual void TriggerEnter(Collider other)
+        {
+            TriggerCollider = other.gameObject;
+        }
 
         public virtual void TriggerExit(Collider other) => TriggerCollider = null;
 

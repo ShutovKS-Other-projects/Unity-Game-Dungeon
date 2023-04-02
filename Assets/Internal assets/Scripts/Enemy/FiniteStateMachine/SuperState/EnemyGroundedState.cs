@@ -13,7 +13,7 @@ namespace Enemy.FiniteStateMachine.SuperState
             animBoolName)
         {
         }
-        
+
         protected float PlayerDistance => CheckPlayerDistance();
 
         public override void DoChecks()
@@ -35,8 +35,16 @@ namespace Enemy.FiniteStateMachine.SuperState
         public override void TriggerEnter(Collider other)
         {
             base.TriggerEnter(other);
-            if(other.TryGetComponent<ObjectDamage>(out _))
+            if (other.TryGetComponent<ObjectDamage>(out var damageComponent))
+            {
+                EnemyStatistic.Health -= damageComponent.GetComponent<ObjectDamage>().Damage;
+                if (EnemyStatistic.Health <= 0)
+                {
+                    StateMachine.ChangeState(StateController.DeathState);
+                    return;
+                }
                 StateMachine.ChangeState(StateController.DamageState);
+            }
         }
 
         private void CheckIfPlayer(ref bool isVisible)

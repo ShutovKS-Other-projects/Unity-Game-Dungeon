@@ -19,12 +19,7 @@ namespace Weapon
                 Destroy(gameObject);
         }
 
-        private void Start()
-        {
-
-        }
-
-        public void OnSwitchTriggerColliderWeapon(bool value) => OnSwitchTriggerCollider.Invoke(value);
+        public void OnSwitchTriggerColliderWeapon(bool value) => OnSwitchTriggerCollider?.Invoke(value);
 
         public static void ChooseWeapon(WeaponType weaponType)
         {

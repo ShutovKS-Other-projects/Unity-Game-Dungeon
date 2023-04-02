@@ -10,6 +10,7 @@ namespace Enemy.FiniteStateMachine.SubState
         {
         }
         
+        
         public override void Enter()
         {
             base.Enter();
@@ -18,6 +19,7 @@ namespace Enemy.FiniteStateMachine.SubState
             StateController.Rb.velocity = Vector3.zero;
             StateController.Rb.isKinematic = true;
             StateController.Rb.constraints = RigidbodyConstraints.FreezeAll;
+            StateController.transform.GetComponent<MeshRenderer>().material.color = Color.red;
             Debug.Log("Enter Death State");
         }
     }

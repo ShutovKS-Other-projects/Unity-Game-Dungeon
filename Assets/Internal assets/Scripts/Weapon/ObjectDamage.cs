@@ -6,7 +6,7 @@ namespace Weapon
     public class ObjectDamage : MonoBehaviour
     {
         // public WeaponType WeaponType { get; protected set; }
-        public float Damage { get; protected set; }
+        public float Damage { get; private set; } = 40f;
         private Collider Collider { get; set; }
 
         private void Awake()
