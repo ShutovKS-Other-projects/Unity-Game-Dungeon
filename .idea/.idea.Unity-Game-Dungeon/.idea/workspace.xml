@@ -2,22 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Fights/InitialScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/Fights/InitialScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SubState/EnemyMoveState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SubState/EnemyMoveState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SuperState/EnemyGroundedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Enemy/FiniteStateMachine/SuperState/EnemyGroundedState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRig/ManagerRigGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRig/ManagerRigGame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SubState/PlayerInteractState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/FiniteStateMachine/SubState/PlayerInteractState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/ManagerPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/ManagerPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/ManagerPlayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/PlayerStatistic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Game/PlayerStatistic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/PlayerStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/PlayerStateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/SubState/PlayerInteractState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/SubState/PlayerInteractState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/SuperState/PlayerGroundedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/FiniteStateMachine/SuperState/PlayerGroundedState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/PlayerStatistic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/Home/PlayerStatistic.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController HomeScene.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController HomeScene.controller.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
@@ -264,6 +248,7 @@
       <workItem from="1680425327908" duration="1174000" />
       <workItem from="1680427232965" duration="1504000" />
       <workItem from="1680428777283" duration="662000" />
+      <workItem from="1680433534411" duration="555000" />
     </task>
     <servers />
   </component>
