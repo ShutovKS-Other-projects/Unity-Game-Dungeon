@@ -2,6 +2,7 @@
 using Player;
 using Player.Game;
 using UnityEngine;
+using Weapon;
 
 namespace Enemy.FiniteStateMachine.SuperState
 {
@@ -34,7 +35,7 @@ namespace Enemy.FiniteStateMachine.SuperState
         public override void TriggerEnter(Collider other)
         {
             base.TriggerEnter(other);
-            if(other.CompareTag("Player"))
+            if(other.TryGetComponent<ObjectDamage>(out _))
                 StateMachine.ChangeState(StateController.DamageState);
         }
 

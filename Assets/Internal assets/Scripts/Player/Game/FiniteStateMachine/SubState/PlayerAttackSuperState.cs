@@ -1,4 +1,5 @@
 using Input;
+using Weapon;
 
 namespace Player.Game.FiniteStateMachine.SubState
 {
@@ -14,14 +15,14 @@ namespace Player.Game.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            //OnEnable trigger weapon collider
+            ManagerWeapon.Instance.OnSwitchTriggerColliderWeapon(true);
         }
 
         public override void Exit()
         {
             base.Exit();
 
-            //OnDisable trigger weapon collider
+            ManagerWeapon.Instance.OnSwitchTriggerColliderWeapon(false);
         }
 
         public override void LogicUpdate()

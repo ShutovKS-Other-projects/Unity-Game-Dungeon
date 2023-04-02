@@ -1,5 +1,6 @@
 using ManagerRig;
 using UnityEngine;
+using Weapon;
 
 namespace Player.Game.FiniteStateMachine.SubState
 {
@@ -15,25 +16,23 @@ namespace Player.Game.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            StateController.SwitchCollider?.Invoke(true);
-
+            ManagerWeapon.Instance.OnSwitchTriggerColliderWeapon(true);
             SetTransformTarget(new Vector3(-0.5f, 0.75f, -0.25f), new Quaternion(-0.5f, 0.75f, -0.25f, 0f));
 
-            if (Random.Range(0, 101) < PlayerStatistic.CharacteristicCriticalChance.Value)
-                StateController.RegisterDelegateStrengthAttackFloat(AttackCritical);
-            else
-                StateController.RegisterDelegateStrengthAttackFloat(Attack);
+            // if (Random.Range(0, 101) < PlayerStatistic.CharacteristicCriticalChance.Value)
+                // StateController.RegisterDelegateStrengthAttackFloat(AttackCritical);
+            // else
+                // StateController.RegisterDelegateStrengthAttackFloat(Attack);
         }
 
         public override void Exit()
         {
             base.Exit();
 
-            StateController.SwitchCollider?.Invoke(false);
 
             SetTransformTargetZero();
-
-            StateController.RegisterDelegateStrengthAttackFloat(AttackZero);
+            ManagerWeapon.Instance.OnSwitchTriggerColliderWeapon(false);
+            // StateController.RegisterDelegateStrengthAttackFloat(AttackZero);
         }
 
         public override void AnimationFinishTrigger()

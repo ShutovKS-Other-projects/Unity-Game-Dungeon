@@ -27,7 +27,7 @@ namespace Player.Game.FiniteStateMachine.SubState
             base.Exit();
 
             SetTransformTargetZero();
-            StateController.RegisterDelegateStrengthAttackFloat(AttackZero);
+            // StateController.RegisterDelegateStrengthAttackFloat(AttackZero);
         }
 
         public override void AnimationTrigger()

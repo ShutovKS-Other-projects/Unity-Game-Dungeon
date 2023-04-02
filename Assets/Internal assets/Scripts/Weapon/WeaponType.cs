@@ -6,6 +6,7 @@
         BowAndArrow,
         SwordAndShield,
         Hammer,
-        TwoSwords
+        TwoSwords,
+        Other
     }
 }

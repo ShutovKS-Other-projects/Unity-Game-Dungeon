@@ -30,7 +30,7 @@ namespace Player.Game.FiniteStateMachine
         public PlayerAttackMagicState AttackMagicState { get; private set; }
 
         #endregion
-        
+
         #region Components
 
         private PlayerStatistic _playerStatistic;
@@ -43,21 +43,6 @@ namespace Player.Game.FiniteStateMachine
         private static readonly int XSpeed = Animator.StringToHash("xSpeed");
         private static readonly int YSpeed = Animator.StringToHash("ySpeed");
         private static readonly int ZSpeed = Animator.StringToHash("zSpeed");
-
-        #endregion
-
-        #region Delegate Functions
-
-        [CanBeNull] public Delegate.SwitchCollider SwitchCollider;
-        [CanBeNull] public Delegate.OnMagicAttackDelegate MagicAttackDelegate;
-        [CanBeNull] public Delegate.StrengthAttackFloat StrengthAttackFloat;
-
-        public void RegisterDelegateSwitchCollider(Delegate.SwitchCollider del) => SwitchCollider = del;
-
-        public void RegisterDelegateMagicAttackDelegate(Delegate.OnMagicAttackDelegate del) =>
-            MagicAttackDelegate = del;
-
-        public void RegisterDelegateStrengthAttackFloat(Delegate.StrengthAttackFloat del) => StrengthAttackFloat = del;
 
         #endregion
 
@@ -130,9 +115,9 @@ namespace Player.Game.FiniteStateMachine
                 Rb.freezeRotation = true;
             }
 
-            if (FindObjectOfType<WeaponColliderEnable>())
-                SwitchCollider += FindObjectOfType<WeaponColliderEnable>().EnableCollider;
-            
+            // if (FindObjectOfType<WeaponColliderEnable>())
+                // SwitchCollider += FindObjectOfType<WeaponColliderEnable>().EnableCollider;
+
             _stateMachine.Initialize(IdleState);
         }
 
