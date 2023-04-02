@@ -76,7 +76,7 @@ namespace Player.Home.FiniteStateMachine
                 Animator = gameObject.AddComponent<Animator>();
                 Animator.runtimeAnimatorController =
                     Resources.Load<RuntimeAnimatorController>(
-                        $"AnimationControllers/Player/PlayerAnimationController HomeScene");
+                        $"AnimationControllers/Player/PlayerAnimationController Home");
             }
 
             if (TryGetComponent<CapsuleCollider>(out var capsuleCollider))

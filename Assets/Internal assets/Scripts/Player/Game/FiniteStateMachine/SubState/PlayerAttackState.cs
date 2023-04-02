@@ -1,3 +1,6 @@
+using ManagerRig;
+using UnityEngine;
+
 namespace Player.Game.FiniteStateMachine.SubState
 {
     public class PlayerAttackState : SuperState.PlayerAbilityState
@@ -14,7 +17,9 @@ namespace Player.Game.FiniteStateMachine.SubState
 
             StateController.SwitchCollider?.Invoke(true);
 
-            if (UnityEngine.Random.Range(0, 101) < PlayerStatistic.CharacteristicCriticalChance.Value)
+            SetTransformTarget(new Vector3(-0.5f, 0.75f, -0.25f), new Quaternion(-0.5f, 0.75f, -0.25f, 0f));
+
+            if (Random.Range(0, 101) < PlayerStatistic.CharacteristicCriticalChance.Value)
                 StateController.RegisterDelegateStrengthAttackFloat(AttackCritical);
             else
                 StateController.RegisterDelegateStrengthAttackFloat(Attack);
@@ -25,6 +30,8 @@ namespace Player.Game.FiniteStateMachine.SubState
             base.Exit();
 
             StateController.SwitchCollider?.Invoke(false);
+
+            SetTransformTargetZero();
 
             StateController.RegisterDelegateStrengthAttackFloat(AttackZero);
         }
@@ -43,5 +50,14 @@ namespace Player.Game.FiniteStateMachine.SubState
                                           (1 + PlayerStatistic.CharacteristicCriticalAttack.Value / 100);
 
         private static float AttackZero() => 0;
+
+        private static void SetTransformTarget(Vector3 position, Quaternion rotation)
+        {
+            ManagerRigGame.Instance.lHandTargetTransform.localPosition = position;
+            ManagerRigGame.Instance.lHandTargetTransform.localRotation = rotation;
+        }
+
+        private static void SetTransformTargetZero() =>
+            ManagerRigGame.Instance.SetTransformTargetZero(ManagerRigGame.Instance.lHandTargetTransform);
     }
 }

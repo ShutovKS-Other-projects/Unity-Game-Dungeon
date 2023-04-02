@@ -89,10 +89,9 @@ namespace Player.Home.FiniteStateMachine.SuperState
                         PlayerStatistic.interactionObject.IsSameInteractable(interactable))
                     {
                         PlayerStatistic.interactionObject.Interactable = interactable;
-                        StateController.uiInteractionBare.SetTooltipText(interactable.TooltipText);
+                        PlayerStatistic.Instance.interactionTransform = hitInfo.transform;
+                        UIInteractionBare.Instance.SetTooltipText(interactable.TooltipText);
 
-                        PlayerInteractState.OnInteractTransform =
-                            () => _isInteractable ? hitInfo.collider.transform : null;
                         return true;
                     }
             }

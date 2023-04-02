@@ -16,6 +16,7 @@ namespace Player.Game.FiniteStateMachine.SuperState
         #region Variables
 
         protected Vector2 MovementInput;
+
         protected float RecoveryStaminaTime = 0;
         protected float RecoveryHealthTime = 0;
         protected float RecoveryManaTime = 0;
@@ -23,14 +24,15 @@ namespace Player.Game.FiniteStateMachine.SuperState
         protected bool CrouchInput;
         protected bool RunInput;
 
+        private GameObject _gameObjectInteractable;
+
         private bool _attackInput;
         private bool _blockInput;
         private bool _jumpInput;
-        private bool _interactInput;
-        private bool _magicAttackInput;
-
         private bool _isInteractable;
         private bool _isGrounded;
+        private bool _interactInput;
+        private bool _magicAttackInput;
 
         #endregion
 
@@ -94,7 +96,7 @@ namespace Player.Game.FiniteStateMachine.SuperState
             base.TriggerEnter(other);
             if (!other.gameObject.CompareTag($"EnemyDamageObject")) return;
             // if (other.transform.parent.TryGetComponent(out EnemyStateController enemyStateController))
-                // PlayerStatistic.CharacteristicHealth.AddValue(-(int)enemyStateController.StrengthAttackFloat!());
+            // PlayerStatistic.CharacteristicHealth.AddValue(-(int)enemyStateController.StrengthAttackFloat!());
             StateMachine.ChangeState(StateController.DamageState);
         }
 
@@ -124,6 +126,7 @@ namespace Player.Game.FiniteStateMachine.SuperState
                         PlayerStatistic.interactionObject.IsSameInteractable(interactable))
                     {
                         PlayerStatistic.interactionObject.Interactable = interactable;
+                        PlayerStatistic.Instance.interactionTransform = hitInfo.transform;
                         UIInteractionBare.Instance.SetTooltipText(interactable.TooltipText);
 
                         return true;

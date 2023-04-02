@@ -1,15 +1,14 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Player.Game
+namespace Player
 {
     public class ManagerPlayer : MonoBehaviour
     {
         public static ManagerPlayer Instance { get; private set; }
 
-        public GameObject player;
-        public Transform playerTransform;
+        [NonSerialized] public GameObject player;
+        [NonSerialized] public Transform playerTransform;
         public Vector3 PlayerPosition => playerTransform.position;
 
         private void Awake()

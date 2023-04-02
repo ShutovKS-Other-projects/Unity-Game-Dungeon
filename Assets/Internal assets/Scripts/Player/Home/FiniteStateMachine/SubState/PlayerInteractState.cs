@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using ManagerRig;
+using UnityEngine;
 
 namespace Player.Home.FiniteStateMachine.SubState
 {
@@ -10,12 +11,6 @@ namespace Player.Home.FiniteStateMachine.SubState
         {
         }
 
-        public delegate Transform InteractTransform();
-
-        public static InteractTransform OnInteractTransform;
-
-        private Transform _interactTransform;
-        private Transform _handIKTarget;
         private bool _isInteracting;
 
         public override void Enter()
@@ -23,11 +18,8 @@ namespace Player.Home.FiniteStateMachine.SubState
             base.Enter();
 
             StateController.SetVelocityZero();
-            _interactTransform = OnInteractTransform?.Invoke();
-            if (_handIKTarget == null)
-                _handIKTarget = StateController.transform.Find("Rig Interaction").transform.Find("R_Hand (1)").transform
-                    .Find("R_Hand_Target");
-            _handIKTarget.position = _interactTransform.position;
+            SetTransformTarget(PlayerStatistic.Instance.interactionTransform,
+                new Quaternion(63.077f, -72.323f, -33.995f, 0));
         }
 
         public override void Exit()
@@ -36,6 +28,7 @@ namespace Player.Home.FiniteStateMachine.SubState
 
             PlayerStatistic.interactionObject.ResetData();
             _isInteracting = false;
+            SetTransformTargetZero();
         }
 
         public override void AnimationTrigger()
@@ -53,5 +46,14 @@ namespace Player.Home.FiniteStateMachine.SubState
 
             IsAbilityDone = true;
         }
+
+        private void SetTransformTarget(Transform transform, Quaternion rotation)
+        {
+            ManagerRigHome.Instance.rHandTargetTransform.position = transform.position;
+            ManagerRigHome.Instance.rHandTargetTransform.rotation = rotation;
+        }
+
+        private void SetTransformTargetZero() =>
+                ManagerRigHome.Instance.SetTransformTargetZero(ManagerRigHome.Instance.rHandTargetTransform);
     }
 }

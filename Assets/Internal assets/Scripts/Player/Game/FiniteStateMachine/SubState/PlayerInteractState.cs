@@ -1,3 +1,6 @@
+using ManagerRig;
+using UnityEngine;
+
 namespace Player.Game.FiniteStateMachine.SubState
 {
     public class PlayerInteractState : SuperState.PlayerAbilityState
@@ -8,12 +11,15 @@ namespace Player.Game.FiniteStateMachine.SubState
         {
         }
 
+        private bool _isInteracting;
+
         public override void Enter()
         {
             base.Enter();
 
             StateController.SetVelocityZero();
-            PlayerStatistic.interactionObject.Interact();
+            SetTransformTarget(PlayerStatistic.Instance.interactionTransform,
+                new Quaternion(63.077f, -72.323f, -33.995f, 0));
         }
 
         public override void Exit()
@@ -21,6 +27,17 @@ namespace Player.Game.FiniteStateMachine.SubState
             base.Exit();
 
             PlayerStatistic.interactionObject.ResetData();
+            _isInteracting = false;
+            SetTransformTargetZero();
+        }
+
+        public override void AnimationTrigger()
+        {
+            base.AnimationTrigger();
+
+            if (_isInteracting) return;
+            PlayerStatistic.interactionObject.Interact();
+            _isInteracting = true;
         }
 
         public override void AnimationFinishTrigger()
@@ -29,5 +46,15 @@ namespace Player.Game.FiniteStateMachine.SubState
 
             IsAbilityDone = true;
         }
+
+
+        private static void SetTransformTarget(Transform transform, Quaternion rotation)
+        {
+            ManagerRigGame.Instance.rHandTargetTransform.localPosition = transform.position;
+            ManagerRigGame.Instance.rHandTargetTransform.localRotation = rotation;
+        }
+
+        private static void SetTransformTargetZero() =>
+            ManagerRigGame.Instance.SetTransformTargetZero(ManagerRigGame.Instance.rHandTargetTransform);
     }
 }

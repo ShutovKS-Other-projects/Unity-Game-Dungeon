@@ -6,7 +6,21 @@ namespace Player.Home
 {
     public class PlayerStatistic : MonoBehaviour
     {
+        public static PlayerStatistic Instance { get; private set; }
+
         [SerializeField] public PlayerData playerData;
+
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
 
         public float MovementForce => playerData.movementForce;
         public float JumpSpeed => playerData.jumpSpeed;
@@ -24,6 +38,7 @@ namespace Player.Home
         public float InterCheckDistance => playerData.interCheckDistance;
         public float InterCheckSphereRadius => playerData.interCheckSphereRadius;
 
-        [FormerlySerializedAs("interactionData")] public InteractionObject interactionObject = null;
+        public InteractionObject interactionObject = null;
+        public Transform interactionTransform = null;
     }
 }

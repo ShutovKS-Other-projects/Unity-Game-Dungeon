@@ -26,7 +26,14 @@ namespace Player.Game
 
         private void Awake()
         {
-            Instance = this;
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
 
         private void Start()
@@ -61,7 +68,8 @@ namespace Player.Game
         public float InterCheckDistance => playerData.interCheckDistance;
         public float InterCheckSphereRadius => playerData.interCheckSphereRadius;
 
-        [FormerlySerializedAs("interactionData")] public InteractionObject interactionObject = null;
+        public InteractionObject interactionObject = null;
+        public Transform interactionTransform = null;
 
         #endregion
     }
