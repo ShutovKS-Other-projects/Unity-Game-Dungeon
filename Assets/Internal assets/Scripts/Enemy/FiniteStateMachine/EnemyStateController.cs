@@ -33,8 +33,6 @@ namespace Enemy.FiniteStateMachine
 
         #region Unity Callbacks Functions
 
-        #endregion
-
         private void Awake()
         {
             _enemyStatistic = new EnemyStatistic(enemyData, this);
@@ -45,9 +43,9 @@ namespace Enemy.FiniteStateMachine
             DeathState = new EnemyDeathState(this, StateMachine, _enemyStatistic, "Death");
             IdleState = new EnemyIdleState(this, StateMachine, _enemyStatistic, "Idle");
             MoveState = new EnemyMoveState(this, StateMachine, _enemyStatistic, "Move");
+            
+            ManagerEnemies.ManagerEnemies.Instance.AddEnemy(gameObject);
         }
-
-        #region Components
 
         private void Start()
         {
