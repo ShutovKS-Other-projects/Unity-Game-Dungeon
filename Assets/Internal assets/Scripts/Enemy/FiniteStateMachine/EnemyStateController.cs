@@ -1,5 +1,6 @@
 ﻿using System;
 using Enemy.FiniteStateMachine.SubState;
+using Manager;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -44,7 +45,7 @@ namespace Enemy.FiniteStateMachine
             IdleState = new EnemyIdleState(this, StateMachine, _enemyStatistic, "Idle");
             MoveState = new EnemyMoveState(this, StateMachine, _enemyStatistic, "Move");
             
-            ManagerEnemies.ManagerEnemies.Instance.AddEnemy(gameObject);
+            ManagerEnemies.Instance.AddEnemy(gameObject);
         }
 
         private void Start()

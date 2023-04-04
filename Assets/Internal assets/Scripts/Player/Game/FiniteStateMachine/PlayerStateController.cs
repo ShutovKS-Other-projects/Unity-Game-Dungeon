@@ -1,4 +1,3 @@
-using Input;
 using Interactable;
 using JetBrains.Annotations;
 using Player.Game.FiniteStateMachine.SubState;

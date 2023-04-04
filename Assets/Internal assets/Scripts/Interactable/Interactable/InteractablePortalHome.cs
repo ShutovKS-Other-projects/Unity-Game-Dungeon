@@ -1,3 +1,4 @@
+using Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,7 @@ namespace Interactable.Interactable
     {
         public override void OnInteract()
         {
-            SceneManager.LoadScene($"InitialScene");
+            ManagerScene.Instance.SwitchScene(SceneType.StartGame);
         }
     }
 }

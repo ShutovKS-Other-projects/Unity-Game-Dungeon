@@ -1,4 +1,4 @@
-﻿using ManagerRig;
+﻿using Manager;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -61,11 +61,11 @@ namespace Player.Game.FiniteStateMachine.SubState
 
         private static void SetTransformTarget(Vector3 position, Quaternion rotation)
         {
-            ManagerRigGame.Instance.rHandTargetTransform.localPosition = position;
-            ManagerRigGame.Instance.rHandTargetTransform.localRotation = rotation;
+            ManagerRig.Instance.rHandTargetTransform.localPosition = position;
+            ManagerRig.Instance.rHandTargetTransform.localRotation = rotation;
         }
 
         private static void SetTransformTargetZero() =>
-            ManagerRigGame.Instance.SetTransformTargetZero(ManagerRigGame.Instance.rHandTargetTransform);
+            ManagerRig.Instance.SetTransformTargetZero(ManagerRig.Instance.rHandTargetTransform);
     }
 }

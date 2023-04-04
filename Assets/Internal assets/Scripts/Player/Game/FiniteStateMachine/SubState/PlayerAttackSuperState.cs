@@ -1,4 +1,4 @@
-using Input;
+using Manager;
 using Weapon;
 
 namespace Player.Game.FiniteStateMachine.SubState
@@ -29,11 +29,11 @@ namespace Player.Game.FiniteStateMachine.SubState
         {
             base.LogicUpdate();
 
-            if (!InputManagerGame.Instance.GetPlayerBlockInput())
+            if (!ManagerInput.Instance.GetPlayerBlockInput())
             {
                 IsAbilityDone = true;
             }
-            else if (InputManagerGame.Instance.GetPlayerAttackInput())
+            else if (ManagerInput.Instance.GetPlayerAttackInput())
             {
                 StateMachine.ChangeState(StateController.AttackState);
             }

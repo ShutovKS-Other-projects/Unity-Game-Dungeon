@@ -3,19 +3,23 @@ using UnityEngine.Serialization;
 
 namespace UI.Home_Scene
 {
-    public class ManagerUI : MonoBehaviour
+    public class UIHomeSceneController : MonoBehaviour
     {
-        public static ManagerUI Instance { get; private set; }
+        public static UIHomeSceneController Instance { get; private set; }
 
         private GameObject _interactUI;
         private GameObject _skillsBookUI;
 
         private void Awake()
         {
-            if (Instance == null)
-                Instance = this;
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this.gameObject);
+            }
             else
-                Destroy(gameObject);
+            {
+                Instance = this;
+            }
         }
         
         private void Start()

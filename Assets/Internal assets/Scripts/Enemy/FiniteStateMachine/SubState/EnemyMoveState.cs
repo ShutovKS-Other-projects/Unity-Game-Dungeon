@@ -1,4 +1,5 @@
-﻿using Player;
+﻿using Manager;
+using Player;
 using Player.Game;
 using UnityEngine;
 using UnityEngine.AI;

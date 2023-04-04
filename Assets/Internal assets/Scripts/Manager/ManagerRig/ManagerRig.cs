@@ -1,24 +1,21 @@
-using System;
-using Player;
-using Player.Game;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
-namespace ManagerRig
+namespace Manager
 {
-    public class ManagerRigGame : MonoBehaviour
+    public class ManagerRig : MonoBehaviour
     {
-        public static ManagerRigGame Instance { get; private set; }
+        public static ManagerRig Instance { get; private set; }
 
         private void Awake()
         {
-            if (Instance == null)
+            if (Instance != null && Instance != this)
             {
-                Instance = this;
+                Destroy(this.gameObject);
             }
             else
             {
-                Destroy(gameObject);
+                Instance = this;
             }
         }
 
@@ -46,6 +43,18 @@ namespace ManagerRig
 
         private void Start()
         {
+            FindRig();
+            ManagerScene.Instance.OnNewSceneLoaded += FindRig;
+        }
+
+        public void SetTransformTargetZero(Transform transform)
+        {
+            transform.localPosition = new Vector3(0, 0, 0);
+            transform.localRotation = new Quaternion(0, 0, 0, 0);
+        }
+
+        private void FindRig()
+        {
             rigBuilder = ManagerPlayer.Instance.playerTransform.GetComponentInChildren<RigBuilder>();
 
             var collectionRig = rigBuilder.transform.Find("Collection Rig");
@@ -62,12 +71,6 @@ namespace ManagerRig
 
             lHandCapture = grab.transform.Find("L_Grab").GetComponent<MultiParentConstraint>();
             rHandCapture = grab.transform.Find("R_Grab").GetComponent<MultiParentConstraint>();
-        }
-
-        public void SetTransformTargetZero(Transform transform)
-        {
-            transform.localPosition = new Vector3(0, 0, 0);
-            transform.localRotation = new Quaternion(0, 0, 0, 0);
         }
     }
 }

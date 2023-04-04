@@ -1,3 +1,4 @@
+using Manager;
 using UnityEngine;
 using Weapon;
 

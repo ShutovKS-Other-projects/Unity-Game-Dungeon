@@ -1,4 +1,4 @@
-using ManagerRig;
+using Manager;
 using UnityEngine;
 
 namespace Player.Game.FiniteStateMachine.SubState
@@ -50,11 +50,11 @@ namespace Player.Game.FiniteStateMachine.SubState
 
         private static void SetTransformTarget(Transform transform, Quaternion rotation)
         {
-            ManagerRigGame.Instance.rHandTargetTransform.localPosition = transform.position;
-            ManagerRigGame.Instance.rHandTargetTransform.localRotation = rotation;
+            ManagerRig.Instance.rHandTargetTransform.localPosition = transform.position;
+            ManagerRig.Instance.rHandTargetTransform.localRotation = rotation;
         }
 
         private static void SetTransformTargetZero() =>
-            ManagerRigGame.Instance.SetTransformTargetZero(ManagerRigGame.Instance.rHandTargetTransform);
+            ManagerRig.Instance.SetTransformTargetZero(ManagerRig.Instance.rHandTargetTransform);
     }
 }

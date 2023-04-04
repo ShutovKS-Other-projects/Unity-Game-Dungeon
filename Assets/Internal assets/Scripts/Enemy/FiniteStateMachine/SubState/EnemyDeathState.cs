@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Manager;
+using UnityEngine;
 
 namespace Enemy.FiniteStateMachine.SubState
 {
@@ -20,7 +21,7 @@ namespace Enemy.FiniteStateMachine.SubState
             StateController.Rb.isKinematic = true;
             StateController.Rb.constraints = RigidbodyConstraints.FreezeAll;
             StateController.transform.GetComponent<MeshRenderer>().material.color = Color.red;
-            ManagerEnemies.ManagerEnemies.Instance.RemoveEnemy(StateController.gameObject);
+            ManagerEnemies.Instance.RemoveEnemy(StateController.gameObject);
             Debug.Log("Enter Death State");
         }
     }

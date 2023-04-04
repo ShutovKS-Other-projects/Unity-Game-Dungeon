@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ManagerEnemies
+namespace Manager
 {
     public class ManagerEnemies : MonoBehaviour
     {
@@ -13,16 +13,17 @@ namespace ManagerEnemies
 
         private void Awake()
         {
-            if (Instance == null)
+            if (Instance != null && Instance != this)
             {
-                Instance = this;
+                Destroy(this.gameObject);
             }
             else
             {
-                Destroy(gameObject);
+                Instance = this;
             }
 
             AllEnemiesAreDead += () => Debug.Log("AllEnemiesAreDead");
+            // ManagerScene.Instance.OnNewSceneLoaded += TODO: Generation Enemies
         }
 
         public void AddEnemy(GameObject enemy)
@@ -33,8 +34,8 @@ namespace ManagerEnemies
         public void RemoveEnemy(GameObject enemy)
         {
             _enemies.Remove(enemy.GetInstanceID());
-            
-            if(_enemies.Count == 0)
+
+            if (_enemies.Count == 0)
                 AllEnemiesAreDead?.Invoke();
         }
     }

@@ -1,3 +1,4 @@
+using Manager;
 using UnityEngine.SceneManagement;
 
 namespace Player.Game.FiniteStateMachine.SubState
@@ -13,8 +14,7 @@ namespace Player.Game.FiniteStateMachine.SubState
         public override void Enter()
         {
             base.Enter();
-
-            SceneManager.LoadScene("Menu");
+            ManagerScene.Instance.SwitchScene(SceneType.Home);
         }
     }
 }

@@ -1,21 +1,31 @@
+using Unity.AI.Navigation;
 using UnityEngine;
 
-namespace ManagerNavMash
+namespace Manager
 {
     public class ManagerNavMash : MonoBehaviour
     {
         public static ManagerNavMash Instance { get; private set; }
+        public static NavMeshSurface NavMeshSurface { get; private set; }
 
         private void Awake()
         {
-            if (Instance == null)
+            if (Instance != null && Instance != this)
             {
-                Instance = this;
+                Destroy(this.gameObject);
             }
             else
             {
-                Destroy(gameObject);
+                Instance = this;
             }
+
+            FindNavMeshSurface();
+            ManagerScene.Instance.OnNewSceneLoaded += FindNavMeshSurface;
+        }
+
+        private static void FindNavMeshSurface()
+        {
+            NavMeshSurface = FindObjectOfType<NavMeshSurface>();
         }
     }
 }

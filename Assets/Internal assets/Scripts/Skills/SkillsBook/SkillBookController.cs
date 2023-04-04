@@ -3,13 +3,21 @@ using UnityEngine;
 
 namespace Skills.SkillsBook
 {
-    public class ManagerSkillBook : MonoBehaviour
+    public class SkillBookController : MonoBehaviour
     {
-        public static ManagerSkillBook Instance;
+        public static SkillBookController Instance;
 
         private void Awake()
         {
-            Instance = this;
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this.gameObject);
+            }
+            else
+            {
+                Instance = this;
+            }
+
             UpdateCharacterStats();
             SkillUnlocked += UpdateCharacterStats;
         }

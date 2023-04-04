@@ -1,5 +1,5 @@
-﻿using Input;
-using Interactable;
+﻿using Interactable;
+using Manager;
 using Player.Home.FiniteStateMachine.SubState;
 using UnityEngine;
 
@@ -42,11 +42,11 @@ namespace Player.Home.FiniteStateMachine.SuperState
         {
             base.LogicUpdate();
 
-            CrouchInput = InputManagerHomeScene.Instance.GetPlayerCrouchInput();
-            RunInput = InputManagerHomeScene.Instance.GetPlayerSprintInput();
-            MovementInput = InputManagerHomeScene.Instance.GetPlayerMovementInput();
-            _interactInput = InputManagerHomeScene.Instance.GetPlayerInteractInput();
-            _jumpInput = InputManagerHomeScene.Instance.GetPlayerJumpInput();
+            CrouchInput = ManagerInput.Instance.GetPlayerCrouchInput();
+            RunInput = ManagerInput.Instance.GetPlayerSprintInput();
+            MovementInput = ManagerInput.Instance.GetPlayerMovementInput();
+            _interactInput = ManagerInput.Instance.GetPlayerInteractInput();
+            _jumpInput = ManagerInput.Instance.GetPlayerJumpInput();
             _isInteractable = CheckVisibleIfInteractable();
 
             if (_jumpInput)

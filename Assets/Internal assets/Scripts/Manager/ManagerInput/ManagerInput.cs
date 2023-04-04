@@ -1,12 +1,12 @@
 using UnityEngine;
 
-namespace Input
+namespace Manager
 {
-    public class InputManager : MonoBehaviour
+    public class ManagerInput : MonoBehaviour
     {
-        public static InputManager Instance { get; private set; }
+        public static ManagerInput Instance { get; private set; }
 
-        private InputSystemGame _inputSystemGame;
+        private InputSystem _inputSystemGame;
 
         private void Awake()
         {
@@ -19,7 +19,7 @@ namespace Input
                 Instance = this;
             }
 
-            _inputSystemGame = new InputSystemGame();
+            _inputSystemGame = new InputSystem();
         }
 
 

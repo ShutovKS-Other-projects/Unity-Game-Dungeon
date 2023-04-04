@@ -1,6 +1,6 @@
 using Enemy.FiniteStateMachine;
-using Input;
 using Interactable;
+using Manager;
 using UnityEngine;
 
 namespace Player.Game.FiniteStateMachine.SuperState
@@ -50,14 +50,14 @@ namespace Player.Game.FiniteStateMachine.SuperState
         {
             base.LogicUpdate();
 
-            CrouchInput = InputManagerGame.Instance.GetPlayerCrouchInput();
-            RunInput = InputManagerGame.Instance.GetPlayerSprintInput();
-            MovementInput = InputManagerGame.Instance.GetPlayerMovementInput();
-            _attackInput = InputManagerGame.Instance.GetPlayerAttackInput();
-            _blockInput = InputManagerGame.Instance.GetPlayerBlockInput();
-            _interactInput = InputManagerGame.Instance.GetPlayerInteractInput();
-            _jumpInput = InputManagerGame.Instance.GetPlayerJumpInput();
-            _magicAttackInput = InputManagerGame.Instance.GetPlayerMagicAttackInput();
+            CrouchInput = ManagerInput.Instance.GetPlayerCrouchInput();
+            RunInput = ManagerInput.Instance.GetPlayerSprintInput();
+            MovementInput = ManagerInput.Instance.GetPlayerMovementInput();
+            _attackInput = ManagerInput.Instance.GetPlayerAttackInput();
+            _blockInput = ManagerInput.Instance.GetPlayerBlockInput();
+            _interactInput = ManagerInput.Instance.GetPlayerInteractInput();
+            _jumpInput = ManagerInput.Instance.GetPlayerJumpInput();
+            _magicAttackInput = ManagerInput.Instance.GetPlayerMagicAttackInput();
             _isInteractable = CheckVisibleIfInteractable();
 
             if (_attackInput)

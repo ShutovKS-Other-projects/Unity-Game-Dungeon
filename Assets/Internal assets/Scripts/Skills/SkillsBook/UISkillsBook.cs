@@ -1,5 +1,5 @@
 using System;
-using Input;
+using Manager;
 using UI.Home_Scene;
 using UnityEngine;
 
@@ -9,25 +9,25 @@ namespace Skills.SkillsBook
     {
         public void LateUpdate()
         {
-            if (InputManagerHomeScene.Instance.GetPlayerMovementInput() != Vector2.zero)
+            if (ManagerInput.Instance.GetPlayerMovementInput() != Vector2.zero)
             {
-                ManagerScene.ManagerScene.SwitchCursor(false);
-                ManagerUI.Instance.SwitchSkillsBookUI(false);
+                ManagerScene.SwitchCursor(false);
+                UIHomeSceneController.Instance.SwitchSkillsBookUI(false);
             }
-            else if (InputManagerHomeScene.Instance.GetPlayerCrouchInput())
+            else if (ManagerInput.Instance.GetPlayerCrouchInput())
             {
-                ManagerScene.ManagerScene.SwitchCursor(false);
-                ManagerUI.Instance.SwitchSkillsBookUI(false);
+                ManagerScene.SwitchCursor(false);
+                UIHomeSceneController.Instance.SwitchSkillsBookUI(false);
             }
-            else if (InputManagerHomeScene.Instance.GetPlayerJumpInput())
+            else if (ManagerInput.Instance.GetPlayerJumpInput())
             {
-                ManagerScene.ManagerScene.SwitchCursor(false);
-                ManagerUI.Instance.SwitchSkillsBookUI(false);
+                ManagerScene.SwitchCursor(false);
+                UIHomeSceneController.Instance.SwitchSkillsBookUI(false);
             }
-            else if (InputManagerHomeScene.Instance.GetPlayerInteractInput())
+            else if (ManagerInput.Instance.GetPlayerInteractInput())
             {
-                ManagerScene.ManagerScene.SwitchCursor(false);
-                ManagerUI.Instance.SwitchSkillsBookUI(false);
+                ManagerScene.SwitchCursor(false);
+                UIHomeSceneController.Instance.SwitchSkillsBookUI(false);
             }
         }
     }

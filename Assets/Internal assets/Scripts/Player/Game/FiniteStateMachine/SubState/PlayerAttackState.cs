@@ -1,4 +1,4 @@
-using ManagerRig;
+using Manager;
 using UnityEngine;
 using Weapon;
 
@@ -52,11 +52,11 @@ namespace Player.Game.FiniteStateMachine.SubState
 
         private static void SetTransformTarget(Vector3 position, Quaternion rotation)
         {
-            ManagerRigGame.Instance.lHandTargetTransform.localPosition = position;
-            ManagerRigGame.Instance.lHandTargetTransform.localRotation = rotation;
+            ManagerRig.Instance.lHandTargetTransform.localPosition = position;
+            ManagerRig.Instance.lHandTargetTransform.localRotation = rotation;
         }
 
         private static void SetTransformTargetZero() =>
-            ManagerRigGame.Instance.SetTransformTargetZero(ManagerRigGame.Instance.lHandTargetTransform);
+            ManagerRig.Instance.SetTransformTargetZero(ManagerRig.Instance.lHandTargetTransform);
     }
 }
