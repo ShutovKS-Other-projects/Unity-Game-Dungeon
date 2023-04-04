@@ -13,16 +13,17 @@ namespace Weapon
         private void Awake()
         {
             Collider = GetComponent<Collider>();
+            Collider.isTrigger = true;
         }
 
         private void Start()
         {
-            ManagerWeapon.Instance.OnSwitchTriggerCollider += SwitchTriggerCollider;
+            ManagerWeapon.Instance.OnSwitchCollider += SwitchCollider;
         }
 
-        private void SwitchTriggerCollider(bool value)
+        private void SwitchCollider(bool value)
         {
-            Collider.isTrigger = value;
+            Collider.enabled = value;
         }
 
         public void SetDamageValue(object value)

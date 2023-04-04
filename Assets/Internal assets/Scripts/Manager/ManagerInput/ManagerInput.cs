@@ -43,7 +43,7 @@ namespace Manager
         public Vector2 GetLookInput() => _inputSystemGame.Player.Look.ReadValue<Vector2>();
 
         public bool GetPlayerSprintInput() => _inputSystemGame.Player.Sprint.inProgress;
-        public bool GetPlayerBlockInput() => _inputSystemGame.Player.Block.inProgress;
+        public bool GetPlayerAttackSuperInput() => _inputSystemGame.Player.Block.inProgress;
         public bool GetPlayerCrouchInput() => _inputSystemGame.Player.Crouch.inProgress;
 
         public bool GetPlayerAttackInput() => _inputSystemGame.Player.Attack.triggered;

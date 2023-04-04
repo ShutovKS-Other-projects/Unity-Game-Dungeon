@@ -10,9 +10,9 @@ namespace Manager
         public static WeaponType WeaponType =>
             Resources.Load<ChosenWeaponObject>($"ScriptableObject/Weapon/ChosenWeaponData").weaponType;
 
-        public delegate void SwitchTriggerCollider(bool value);
+        public delegate void SwitchCollider(bool value);
 
-        public event SwitchTriggerCollider OnSwitchTriggerCollider;
+        public event SwitchCollider OnSwitchCollider;
 
         private void Awake()
         {
@@ -26,7 +26,7 @@ namespace Manager
             }
         }
 
-        public void OnSwitchTriggerColliderWeapon(bool value) => OnSwitchTriggerCollider?.Invoke(value);
+        public void OnSwitchColliderWeapon(bool value) => OnSwitchCollider?.Invoke(value);
 
         public static void ChooseWeapon(WeaponType weaponType)
         {

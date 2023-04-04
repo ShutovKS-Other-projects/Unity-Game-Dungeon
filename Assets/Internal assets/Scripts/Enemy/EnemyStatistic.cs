@@ -1,9 +1,7 @@
 ﻿using System;
 using Enemy.FiniteStateMachine;
-using Player.Game;
 using UnityEditor.Animations;
 using UnityEngine;
-using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Enemy

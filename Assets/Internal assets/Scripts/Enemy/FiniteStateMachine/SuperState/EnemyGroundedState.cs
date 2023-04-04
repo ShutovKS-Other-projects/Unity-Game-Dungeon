@@ -1,7 +1,5 @@
 ﻿using System;
 using Manager;
-using Player;
-using Player.Game;
 using UnityEngine;
 using Weapon;
 
