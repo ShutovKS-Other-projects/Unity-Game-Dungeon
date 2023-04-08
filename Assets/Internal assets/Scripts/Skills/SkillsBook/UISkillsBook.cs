@@ -1,5 +1,6 @@
 using System;
 using Manager;
+using Scene;
 using UI.Home_Scene;
 using UnityEngine;
 
@@ -11,22 +12,22 @@ namespace Skills.SkillsBook
         {
             if (ManagerInput.Instance.GetPlayerMovementInput() != Vector2.zero)
             {
-                ManagerScene.SwitchCursor(false);
+                SceneController.SwitchCursor(false);
                 UIHomeSceneController.Instance.SwitchSkillsBookUI(false);
             }
             else if (ManagerInput.Instance.GetPlayerCrouchInput())
             {
-                ManagerScene.SwitchCursor(false);
+                SceneController.SwitchCursor(false);
                 UIHomeSceneController.Instance.SwitchSkillsBookUI(false);
             }
             else if (ManagerInput.Instance.GetPlayerJumpInput())
             {
-                ManagerScene.SwitchCursor(false);
+                SceneController.SwitchCursor(false);
                 UIHomeSceneController.Instance.SwitchSkillsBookUI(false);
             }
             else if (ManagerInput.Instance.GetPlayerInteractInput())
             {
-                ManagerScene.SwitchCursor(false);
+                SceneController.SwitchCursor(false);
                 UIHomeSceneController.Instance.SwitchSkillsBookUI(false);
             }
         }

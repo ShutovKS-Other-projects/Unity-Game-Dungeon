@@ -1,5 +1,6 @@
 ﻿using System;
 using JetBrains.Annotations;
+using Scene;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -25,7 +26,7 @@ namespace Manager
             }
 
             FindPlayer();
-            ManagerScene.Instance.OnNewSceneLoaded += () => { playerTransform!.position = new Vector3(0, 0, 0); };
+            SceneController.OnNewSceneLoaded += () => { playerTransform!.position = new Vector3(0, 0, 0); };
         }
 
         private void FindPlayer()

@@ -1,4 +1,5 @@
 using Manager;
+using Scene;
 
 namespace Player.FiniteStateMachine.SubState
 {
@@ -13,7 +14,7 @@ namespace Player.FiniteStateMachine.SubState
         public override void Enter()
         {
             base.Enter();
-            ManagerScene.Instance.SwitchScene(SceneType.Home);
+            SceneController.SwitchScene(SceneType.Home);
         }
     }
 }

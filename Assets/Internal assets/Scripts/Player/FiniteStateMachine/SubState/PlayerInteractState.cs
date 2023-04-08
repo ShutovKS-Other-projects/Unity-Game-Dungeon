@@ -58,7 +58,7 @@ namespace Player.FiniteStateMachine.SubState
 
         private static void SetTransformTargetZero()
         {
-            ManagerRig.Instance.SetTransformTargetZero(ManagerRig.Instance.rHandTargetTransform);
+            ManagerRig.SetTransformTargetZero(ManagerRig.Instance.rHandTargetTransform);
         }
     }
 }

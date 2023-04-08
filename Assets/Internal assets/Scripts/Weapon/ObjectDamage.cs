@@ -13,6 +13,7 @@ namespace Weapon
         private void Awake()
         {
             Collider = GetComponent<Collider>();
+            Collider = GetComponent<Collider>();
             Collider.isTrigger = true;
         }
 

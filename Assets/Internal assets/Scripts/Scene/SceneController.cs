@@ -1,26 +1,14 @@
 ﻿using System;
+using Manager;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Manager
+namespace Scene
 {
-    public class ManagerScene : MonoBehaviour
+    public class SceneController : MonoBehaviour
     {
-        public static ManagerScene Instance { get; private set; }
         public static SceneType currentSceneType;
-        public Action OnNewSceneLoaded;
-
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                Instance = this;
-            }
-        }
+        public static Action OnNewSceneLoaded;
 
         private void Start()
         {
@@ -33,7 +21,7 @@ namespace Manager
             Cursor.lockState = isLocked ? CursorLockMode.None : CursorLockMode.Locked;
         }
 
-        public void SwitchScene(SceneType sceneType)
+        public static void SwitchScene(SceneType sceneType)
         {
             switch (sceneType)
             {

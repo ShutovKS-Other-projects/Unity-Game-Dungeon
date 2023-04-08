@@ -1,3 +1,4 @@
+using Scene;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -44,10 +45,10 @@ namespace Manager
         private void Start()
         {
             FindRig();
-            ManagerScene.Instance.OnNewSceneLoaded += FindRig;
+            // SceneController.OnNewSceneLoaded += FindRig;
         }
 
-        public void SetTransformTargetZero(Transform transform)
+        public static void SetTransformTargetZero(Transform transform)
         {
             transform.localPosition = new Vector3(0, 0, 0);
             transform.localRotation = new Quaternion(0, 0, 0, 0);
@@ -55,7 +56,7 @@ namespace Manager
 
         private void FindRig()
         {
-            rigBuilder = ManagerPlayer.Instance.playerTransform.GetComponentInChildren<RigBuilder>();
+            rigBuilder = ManagerPlayer.Instance.playerTransform!.GetComponentInChildren<RigBuilder>();
 
             var collectionRig = rigBuilder.transform.Find("Collection Rig");
 

@@ -1,4 +1,5 @@
 using Manager;
+using Scene;
 using UI.Home_Scene;
 using UnityEngine;
 
@@ -9,7 +10,7 @@ namespace Interactable.Interactable
         public override void OnInteract()
         {
             UIHomeSceneController.Instance.SwitchSkillsBookUI(true);
-            ManagerScene.SwitchCursor(true);
+            SceneController.SwitchCursor(true);
         }
     }
 }

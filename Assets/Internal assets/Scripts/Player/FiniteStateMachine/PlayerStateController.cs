@@ -2,6 +2,7 @@ using System;
 using Interactable;
 using Manager;
 using Player.FiniteStateMachine.SubState;
+using Scene;
 using UnityEngine;
 
 namespace Player.FiniteStateMachine
@@ -81,7 +82,7 @@ namespace Player.FiniteStateMachine
         {
             Animator = TryGetComponent<Animator>(out var animator) ? animator : gameObject.AddComponent<Animator>();
             ChangeAnimatorController();
-            ManagerScene.Instance.OnNewSceneLoaded += () =>
+            SceneController.OnNewSceneLoaded += () =>
             {
                 ChangeAnimatorController();
                 _stateMachine.Initialize(IdleState);
@@ -196,7 +197,7 @@ namespace Player.FiniteStateMachine
 
         private void ChangeAnimatorController()
         {
-            Animator.runtimeAnimatorController = ManagerScene.currentSceneType switch
+            Animator.runtimeAnimatorController = SceneController.currentSceneType switch
             {
                 SceneType.Home => Resources.Load<RuntimeAnimatorController>(
                     $"AnimationControllers/Player/PlayerAnimationController Home"),

@@ -1,5 +1,6 @@
 using Interactable;
 using Manager;
+using Scene;
 using UnityEngine;
 
 namespace Player.FiniteStateMachine.SuperState
@@ -60,17 +61,17 @@ namespace Player.FiniteStateMachine.SuperState
             _isInteractable = CheckVisibleIfInteractable();
             
             
-            if (_attackInput && ManagerScene.currentSceneType != SceneType.Home)
+            if (_attackInput && SceneController.currentSceneType != SceneType.Home)
             {
                 StateMachine.ChangeState(StateController.AttackState);
                 RecoveryStaminaTime = 0;
             }
-            else if (_magicAttackInput && ManagerScene.currentSceneType != SceneType.Home)
+            else if (_magicAttackInput && SceneController.currentSceneType != SceneType.Home)
             {
                 StateMachine.ChangeState(StateController.AttackMagicState);
                 RecoveryStaminaTime = 0;
             }
-            else if (_attackSuperInput && ManagerScene.currentSceneType != SceneType.Home)
+            else if (_attackSuperInput && SceneController.currentSceneType != SceneType.Home)
             {
                 StateMachine.ChangeState(StateController.AttackSuperState);
                 RecoveryStaminaTime = 0;

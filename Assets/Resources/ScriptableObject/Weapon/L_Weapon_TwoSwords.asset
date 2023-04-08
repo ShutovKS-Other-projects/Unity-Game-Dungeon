@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b373d5dcd6ab48b6bd70edff9ec9c86e, type: 3}
+  m_Name: L_Weapon_TwoSwords
+  m_EditorClassIdentifier: 
+  position: {x: 0.025, y: 0.0815, z: 0.03}
+  rotation: {x: -0.070682086, y: -0.023458177, z: 0.6783915, w: 0.7309164}
+  scale: {x: 1, y: 1, z: 1}

@@ -1,5 +1,6 @@
 using System;
 using Mining;
+using Scene;
 using UnityEngine;
 
 namespace Manager
@@ -9,8 +10,9 @@ namespace Manager
         #region Singleton
 
         public static ManagerRiches Instance { get; private set; }
-        public RichesObject richesObjectDefault;
-        public RichesObject richesObjectTime;
+        
+        [NonSerialized] public RichesObject richesObjectDefault;
+        [NonSerialized] public RichesObject richesObjectTime;
 
         #endregion
 
@@ -31,7 +33,7 @@ namespace Manager
             richesObjectTime = Resources.Load<RichesObject>($"ScriptableObject/Mining/MiningObjectTime");
 
             OnRichesChanged();
-            ManagerScene.Instance.OnNewSceneLoaded += LoadScene;
+            SceneController.OnNewSceneLoaded += LoadScene;
         }
 
         #endregion
