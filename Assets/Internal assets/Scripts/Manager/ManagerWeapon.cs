@@ -51,34 +51,41 @@ namespace Manager
         private void InstantiateWeapon()
         {
             Debug.Log("InstantiateWeapon");
-            
+
             for (var i = 0; i < RWeapon.childCount; i++)
                 Destroy(RWeapon.GetChild(i).gameObject);
             for (var i = 0; i < LWeapon.childCount; i++)
                 Destroy(LWeapon.GetChild(i).gameObject);
 
             if (SceneController.currentSceneType == SceneType.Home) return;
- 
+
             GameObject lWeapon = null;
             GameObject rWeapon = null;
 
             switch (WeaponType)
             {
                 case WeaponType.Spear:
+                    Debug.Log("No weapon settings");
                     break;
                 case WeaponType.BowAndArrow:
+                    Debug.Log("No weapon settings");
                     break;
                 case WeaponType.SwordAndShield:
+                    Debug.Log("No weapon settings");    
                     break;
                 case WeaponType.Hammer:
+                    Debug.Log("No weapon settings");
                     break;
                 case WeaponType.TwoSwords:
                     lWeapon = Instantiate(Resources.Load<GameObject>($"Weapon/Sword"), LWeapon);
                     rWeapon = Instantiate(Resources.Load<GameObject>($"Weapon/Sword"), RWeapon);
                     break;
                 case WeaponType.Other:
+                    Debug.Log("No weapon settings");
+
                     break;
                 default:
+                    Debug.Log("No weapon settings");
                     throw new ArgumentOutOfRangeException();
             }
 

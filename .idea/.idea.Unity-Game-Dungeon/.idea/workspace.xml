@@ -5,72 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerWeapon.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Weapon/WeaponTransformObject.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Weapon/WeaponTransformObject.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Weapon/L_Weapon_TwoSwords.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Weapon/L_Weapon_TwoSwords.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Weapon/R_Weapon_TwoSwords.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/ScriptableObject/Weapon/R_Weapon_TwoSwords.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Arrow.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Bow.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Bow.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Dagger.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Dagger.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Hammer.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Hammer.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Shield.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Shield.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Sword.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Sword.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" beforeDir="false" afterPath="$PROJECT_DIR$/Assembly-CSharp.csproj.DotSettings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractablePortalHome.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractablePortalHome.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableSkillsBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Interactable/Interactable/InteractableSkillsBook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerEnemies.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerEnemies/ManagerEnemies.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerEnemies.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerEnemies/ManagerEnemies.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerEnemies.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerInput.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerInput/ManagerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerInput/ManagerInput.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerInput.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerManagers.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerManagers.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerNavMash.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Weapon/Arrow.prefab.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerNavMash/ManagerNavMash.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerNavMash/ManagerNavMash.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerPlayer.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerPlayer/ManagerPlayer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerPlayer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerPlayer/ManagerPlayer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerPlayer.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRiches.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRiches/ManagerRiches.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRiches.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRiches/ManagerRiches.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRiches.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRig.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Weapon.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRig/ManagerRig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRig/ManagerRig.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerRig.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerScene.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Scene.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerScene/ManagerScene.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Scene/SceneController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerScene/ManagerScene.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Scene/SceneController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerScene/SceneType.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Scene/SceneType.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerScene/SceneType.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Scene/SceneType.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerWeapon.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerWeapon/ManagerWeapon.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerWeapon/ManagerWeapon.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Manager/ManagerWeapon.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/PlayerStateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/PlayerStateController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerAttackMagicState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerAttackMagicState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerDeathState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerDeathState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerInteractState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerInteractState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SuperState/PlayerGroundedState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SuperState/PlayerGroundedState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/UISkillsBook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Skills/SkillsBook/UISkillsBook.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Weapon/ChosenWeaponObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Weapon/ChosenWeaponObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Weapon/ObjectDamage.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Weapon/ObjectDamage.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -330,6 +265,7 @@
       <workItem from="1680879194514" duration="2506000" />
       <workItem from="1680973441700" duration="11000" />
       <workItem from="1680973486908" duration="7780000" />
+      <workItem from="1681039409343" duration="982000" />
     </task>
     <servers />
   </component>
