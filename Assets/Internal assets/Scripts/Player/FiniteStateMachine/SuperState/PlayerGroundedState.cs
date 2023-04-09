@@ -76,19 +76,9 @@ namespace Player.FiniteStateMachine.SuperState
                 StateMachine.ChangeState(StateController.AttackSuperState);
                 RecoveryStaminaTime = 0;
             }
-            else if (_jumpInput)
-            {
-                StateMachine.ChangeState(StateController.JumpState);
-                RecoveryStaminaTime = 0;
-            }
             else if (_isInteractable && _interactInput)
             {
                 StateMachine.ChangeState(StateController.InteractState);
-            }
-            else if (!_isGrounded)
-            {
-                StateMachine.ChangeState(StateController.InAirState);
-                RecoveryStaminaTime = 0;
             }
         }
 

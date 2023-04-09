@@ -15,11 +15,6 @@ namespace Player.FiniteStateMachine
 
         public PlayerIdleState IdleState { get; private set; }
         public PlayerMoveState MoveState { get; private set; }
-        public PlayerJumpState JumpState { get; private set; }
-        public PlayerInAirState InAirState { get; private set; }
-        public PlayerLandState LandState { get; private set; }
-        public PlayerCrouchIdleState CrouchIdleState { get; private set; }
-        public PlayerCrouchMoveState CrouchMoveState { get; private set; }
         public PlayerAttackState AttackState { get; private set; }
         public PlayerAttackSuperState AttackSuperState { get; private set; }
         public PlayerInteractState InteractState { get; private set; }
@@ -64,11 +59,6 @@ namespace Player.FiniteStateMachine
 
             IdleState = new PlayerIdleState(this, _stateMachine, _playerStatistic, "Idle");
             MoveState = new PlayerMoveState(this, _stateMachine, _playerStatistic, "Move");
-            JumpState = new PlayerJumpState(this, _stateMachine, _playerStatistic, "InAir");
-            InAirState = new PlayerInAirState(this, _stateMachine, _playerStatistic, "InAir");
-            LandState = new PlayerLandState(this, _stateMachine, _playerStatistic, "Land");
-            CrouchIdleState = new PlayerCrouchIdleState(this, _stateMachine, _playerStatistic, "CrouchIdle");
-            CrouchMoveState = new PlayerCrouchMoveState(this, _stateMachine, _playerStatistic, "CrouchMove");
             AttackState = new PlayerAttackState(this, _stateMachine, _playerStatistic, "Attack");
             AttackMagicState = new PlayerAttackMagicState(this, _stateMachine, _playerStatistic, "AttackMagic");
             AttackSuperState = new PlayerAttackSuperState(this, _stateMachine, _playerStatistic, "AttackSuper");

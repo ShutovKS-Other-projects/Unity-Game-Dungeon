@@ -33,17 +33,7 @@ namespace Player.FiniteStateMachine.SuperState
         {
             base.LogicUpdate();
 
-            if (!IsAbilityDone)
-                return;
-
-            if (IsGrounded && StateController.Rb.velocity.y < 0.01f)
-            {
-                StateMachine.ChangeState(StateController.IdleState);
-            }
-            else
-            {
-                StateMachine.ChangeState(StateController.InAirState);
-            }
+            if (IsAbilityDone) StateMachine.ChangeState(StateController.IdleState);
         }
     }
 }

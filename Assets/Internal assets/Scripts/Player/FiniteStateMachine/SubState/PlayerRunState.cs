@@ -23,10 +23,6 @@ namespace Player.FiniteStateMachine.SubState
             {
                 StateMachine.ChangeState(StateController.IdleState);
             }
-            else if (CrouchInput)
-            {
-                StateMachine.ChangeState(StateController.CrouchMoveState);
-            }
             else if (!RunInput)
             {
                 StateMachine.ChangeState(StateController.MoveState);

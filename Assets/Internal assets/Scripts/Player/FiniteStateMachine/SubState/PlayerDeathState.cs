@@ -3,7 +3,7 @@ using Scene;
 
 namespace Player.FiniteStateMachine.SubState
 {
-    public class PlayerDeathState : SuperState.PlayerAbilityState
+    public class PlayerDeathState : PlayerState
     {
         public PlayerDeathState(PlayerStateController stateController, PlayerStateMachine stateMachine,
             PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
