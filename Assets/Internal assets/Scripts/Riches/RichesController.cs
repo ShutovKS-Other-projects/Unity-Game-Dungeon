@@ -1,34 +1,20 @@
 using System;
-using Mining;
 using Scene;
 using UnityEngine;
 
-namespace Manager
+namespace Riches
 {
-    public class ManagerRiches : MonoBehaviour
+    public class RichesController : MonoBehaviour
     {
-        #region Singleton
+        [NonSerialized] public static RichesObject richesObjectDefault;
+        [NonSerialized] public static RichesObject richesObjectTime;
 
-        public static ManagerRiches Instance { get; private set; }
-        
-        [NonSerialized] public RichesObject richesObjectDefault;
-        [NonSerialized] public RichesObject richesObjectTime;
-
-        #endregion
+        public static event Action RichesChanged;
 
         #region Unity Methods
 
         private void Awake()
         {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(this.gameObject);
-            }
-            else
-            {
-                Instance = this;
-            }
-
             richesObjectDefault = Resources.Load<RichesObject>($"ScriptableObject/Mining/MiningObjectDefault");
             richesObjectTime = Resources.Load<RichesObject>($"ScriptableObject/Mining/MiningObjectTime");
 
@@ -38,15 +24,13 @@ namespace Manager
 
         #endregion
 
-        private void LoadScene()
+        private static void LoadScene()
         {
             richesObjectDefault += richesObjectTime;
             richesObjectTime.Clear();
         }
 
-        public event Action RichesChanged;
-
-        public void OnRichesChanged()
+        public static void OnRichesChanged()
         {
             RichesChanged?.Invoke();
         }

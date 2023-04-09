@@ -22,7 +22,7 @@ namespace Enemy.FiniteStateMachine.SubState
             StateController.Rb.constraints = RigidbodyConstraints.FreezeAll;
             StateController.transform.GetComponent<MeshRenderer>().material.color = Color.red;
             Debug.Log("Enter Death State");
-            ManagerEnemies.Instance.RemoveEnemy(StateController.gameObject);
+            EnemiesController.RemoveEnemy(StateController.gameObject);
         }
     }
 }

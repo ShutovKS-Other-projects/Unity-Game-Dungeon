@@ -1,5 +1,5 @@
 ﻿using Manager;
-using Mining;
+using Riches;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -25,7 +25,7 @@ namespace Skills.SkillsBook
             levelText = transform.GetChild(3).GetComponent<TMP_Text>();
             transform.GetChild(4).GetComponent<Button>().onClick.AddListener(skill.Buy);
             // ManagerSkillBook.Instance.SkillUnlocked += UpdateUI;
-            ManagerRiches.Instance.RichesChanged += UpdateUI;
+            RichesController.RichesChanged += UpdateUI;
             UpdateUI();
         }
 
@@ -38,7 +38,7 @@ namespace Skills.SkillsBook
 
             GetComponent<Image>().color = skill.Level >= skill.LevelMax
                 ? Color.yellow
-                : ManagerRiches.Instance.richesObjectDefault.riches1 > skill.Price
+                : RichesController.richesObjectDefault.riches1 > skill.Price
                     ? Color.green
                     : Color.white;
         }

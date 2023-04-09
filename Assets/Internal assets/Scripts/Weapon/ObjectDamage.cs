@@ -19,7 +19,7 @@ namespace Weapon
 
         private void Start()
         {
-            ManagerWeapon.Instance.OnSwitchCollider += SwitchCollider;
+            WeaponController.OnSwitchCollider += SwitchCollider;
         }
 
         private void SwitchCollider(bool value)

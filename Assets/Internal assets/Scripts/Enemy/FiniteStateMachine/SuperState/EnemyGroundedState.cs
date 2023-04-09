@@ -1,5 +1,6 @@
 ﻿using System;
 using Manager;
+using Player;
 using UnityEngine;
 using Weapon;
 
@@ -50,14 +51,14 @@ namespace Enemy.FiniteStateMachine.SuperState
         {
             var position = StateController.transform.position;
             isVisible = Physics.Raycast(position + new Vector3(0, 0.5f, 0),
-                ManagerPlayer.Instance.PlayerPosition - position, out var hit,
+                PlayerController.PlayerPosition - position, out var hit,
                 EnemyStatistic.PlayerCheckDistance) && hit.collider.CompareTag("Player");
         }
 
         private float CheckPlayerDistance()
         {
             return Vector3.Distance(StateController.transform.position,
-                ManagerPlayer.Instance.playerTransform.position);
+                PlayerController.playerTransform.position);
         }
     }
 }

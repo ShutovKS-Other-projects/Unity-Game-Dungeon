@@ -1,4 +1,5 @@
 using Manager;
+using Weapon;
 
 namespace Player.FiniteStateMachine.SubState
 {
@@ -14,14 +15,14 @@ namespace Player.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            ManagerWeapon.Instance.OnSwitchColliderWeapon(true);
+            WeaponController.OnSwitchColliderWeapon(true);
         }
 
         public override void Exit()
         {
             base.Exit();
 
-            ManagerWeapon.Instance.OnSwitchColliderWeapon(false);
+            WeaponController.OnSwitchColliderWeapon(false);
         }
 
         public override void LogicUpdate()

@@ -1,8 +1,7 @@
 ﻿using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
-namespace Mining
+namespace Riches
 {
     [Serializable]
     [CreateAssetMenu(fileName = "newMiningData", menuName = "Data/Mining Data", order = 0)]

@@ -1,4 +1,5 @@
 using Manager;
+using Rig;
 using UnityEngine;
 
 namespace Player.FiniteStateMachine.SubState
@@ -36,8 +37,8 @@ namespace Player.FiniteStateMachine.SubState
             base.AnimationTrigger();
 
             if (_isInteracting) return;
-            ManagerRig.Instance.rHand.weight = 0;
-            ManagerRig.Instance.lHand.weight = 0;
+            RigController.rHand.weight = 0;
+            RigController.lHand.weight = 0;
             PlayerStatistic.interactionObject.Interact();
             _isInteracting = true;
         }
@@ -52,13 +53,13 @@ namespace Player.FiniteStateMachine.SubState
 
         private static void SetTransformTarget(Transform transform, Quaternion rotation)
         {
-            ManagerRig.Instance.rHandTargetTransform.localPosition = transform.position;
-            ManagerRig.Instance.rHandTargetTransform.localRotation = rotation;
+            RigController.rHandTargetTransform.localPosition = transform.position;
+            RigController.rHandTargetTransform.localRotation = rotation;
         }
 
         private static void SetTransformTargetZero()
         {
-            ManagerRig.SetTransformTargetZero(ManagerRig.Instance.rHandTargetTransform);
+            RigController.SetTransformTargetZero(RigController.rHandTargetTransform);
         }
     }
 }

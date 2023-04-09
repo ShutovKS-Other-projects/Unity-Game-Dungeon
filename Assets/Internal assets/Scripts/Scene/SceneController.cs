@@ -35,6 +35,7 @@ namespace Scene
                     break;
                 case SceneType.Game:
                     currentSceneType = SceneType.Game;
+                    SceneManager.LoadScene($"InitialScene");
                     break;
                 case SceneType.Boss:
                     currentSceneType = SceneType.Boss;

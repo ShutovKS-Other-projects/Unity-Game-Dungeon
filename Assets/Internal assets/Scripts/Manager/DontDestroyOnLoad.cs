@@ -2,7 +2,7 @@
 
 namespace Manager
 {
-    public class ManagerController : MonoBehaviour
+    public class DontDestroyOnLoad : MonoBehaviour
     {
         private void Awake()
         {

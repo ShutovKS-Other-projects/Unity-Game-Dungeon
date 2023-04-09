@@ -11,7 +11,7 @@ namespace Interactable.Interactable
         public override void OnInteract()
         {
             base.OnInteract();
-            ManagerWeapon.ChooseWeapon(weaponType);
+            WeaponController.ChooseWeapon(weaponType);
         }
     }
 }

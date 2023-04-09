@@ -1,61 +1,46 @@
 using System;
+using Player;
 using Scene;
-using Unity.VisualScripting;
 using UnityEngine;
-using Weapon;
 
-namespace Manager
+namespace Weapon
 {
-    public class ManagerWeapon : MonoBehaviour
+    public class WeaponController : MonoBehaviour
     {
-        public static ManagerWeapon Instance { get; private set; }
-
-        private Transform RWeapon;
-        private Transform LWeapon;
+        private static Transform _rWeapon;
+        private static Transform _lWeapon;
 
         public static WeaponType WeaponType =>
             Resources.Load<ChosenWeaponObject>($"ScriptableObject/Weapon/ChosenWeaponData").weaponType;
 
         public delegate void SwitchCollider(bool value);
 
-        public event SwitchCollider OnSwitchCollider;
-
-        private void Awake()
-        {
-            if (Instance != null && Instance != this)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                Instance = this;
-            }
-        }
+        public static event SwitchCollider OnSwitchCollider;
 
         private void Start()
         {
-            RWeapon = ManagerPlayer.Instance.playerTransform!.Find("Weapons").Find("L_Weapon");
-            LWeapon = ManagerPlayer.Instance.playerTransform!.Find("Weapons").Find("R_Weapon");
-            if (RWeapon == null && LWeapon == null) Debug.LogError("RWeapon or LWeapon not found");
+            _rWeapon = PlayerController.playerTransform!.Find("Weapons").Find("L_Weapon");
+            _lWeapon = PlayerController.playerTransform!.Find("Weapons").Find("R_Weapon");
+            if (_rWeapon == null && _lWeapon == null) Debug.LogError("RWeapon or LWeapon not found");
             InstantiateWeapon();
             SceneController.OnNewSceneLoaded += InstantiateWeapon;
         }
 
-        public void OnSwitchColliderWeapon(bool value) => OnSwitchCollider?.Invoke(value);
+        public static void OnSwitchColliderWeapon(bool value) => OnSwitchCollider?.Invoke(value);
 
         public static void ChooseWeapon(WeaponType weaponType)
         {
             Resources.Load<ChosenWeaponObject>($"ScriptableObject/Weapon/ChosenWeaponData").weaponType = weaponType;
         }
 
-        private void InstantiateWeapon()
+        private static void InstantiateWeapon()
         {
             Debug.Log("InstantiateWeapon");
 
-            for (var i = 0; i < RWeapon.childCount; i++)
-                Destroy(RWeapon.GetChild(i).gameObject);
-            for (var i = 0; i < LWeapon.childCount; i++)
-                Destroy(LWeapon.GetChild(i).gameObject);
+            for (var i = 0; i < _rWeapon.childCount; i++)
+                Destroy(_rWeapon.GetChild(i).gameObject);
+            for (var i = 0; i < _lWeapon.childCount; i++)
+                Destroy(_lWeapon.GetChild(i).gameObject);
 
             if (SceneController.currentSceneType == SceneType.Home) return;
 
@@ -71,14 +56,14 @@ namespace Manager
                     Debug.Log("No weapon settings");
                     break;
                 case WeaponType.SwordAndShield:
-                    Debug.Log("No weapon settings");    
+                    Debug.Log("No weapon settings");
                     break;
                 case WeaponType.Hammer:
                     Debug.Log("No weapon settings");
                     break;
                 case WeaponType.TwoSwords:
-                    lWeapon = Instantiate(Resources.Load<GameObject>($"Weapon/Sword"), LWeapon);
-                    rWeapon = Instantiate(Resources.Load<GameObject>($"Weapon/Sword"), RWeapon);
+                    lWeapon = Instantiate(Resources.Load<GameObject>($"Weapon/Sword"), _lWeapon);
+                    rWeapon = Instantiate(Resources.Load<GameObject>($"Weapon/Sword"), _rWeapon);
                     break;
                 case WeaponType.Other:
                     Debug.Log("No weapon settings");

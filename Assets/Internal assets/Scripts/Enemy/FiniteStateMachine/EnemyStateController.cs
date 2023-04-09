@@ -45,7 +45,7 @@ namespace Enemy.FiniteStateMachine
             IdleState = new EnemyIdleState(this, StateMachine, _enemyStatistic, "Idle");
             MoveState = new EnemyMoveState(this, StateMachine, _enemyStatistic, "Move");
             
-            ManagerEnemies.Instance.AddEnemy(gameObject);
+            EnemiesController.AddEnemy(gameObject);
         }
 
         private void Start()

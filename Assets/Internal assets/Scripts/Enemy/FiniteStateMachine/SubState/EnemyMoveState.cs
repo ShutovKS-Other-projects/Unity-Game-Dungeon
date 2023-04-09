@@ -1,4 +1,5 @@
 ﻿using Manager;
+using Player;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -18,7 +19,7 @@ namespace Enemy.FiniteStateMachine.SubState
             Debug.Log("Move");
 
             StateController.NavMeshAgent.isStopped = false;
-            StateController.NavMeshAgent.SetDestination(ManagerPlayer.Instance.PlayerPosition);
+            StateController.NavMeshAgent.SetDestination(PlayerController.PlayerPosition);
         }
 
         public override void LogicUpdate()
@@ -32,7 +33,7 @@ namespace Enemy.FiniteStateMachine.SubState
             }
             else
             {
-                StateController.NavMeshAgent.SetDestination(ManagerPlayer.Instance.PlayerPosition);
+                StateController.NavMeshAgent.SetDestination(PlayerController.PlayerPosition);
             }
         }
     }

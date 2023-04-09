@@ -1,4 +1,4 @@
-﻿namespace Manager
+﻿namespace Scene
 {
     public enum SceneType
     {

@@ -7,14 +7,14 @@ namespace Interactable
         #region Variables
 
         [Header("Interactable Settings")] [SerializeField]
-        private float holdDuration = 0f;
+        protected float holdDuration = 0f;
 
-        [Space] [SerializeField] private bool holdInteract = false;
-        [SerializeField] private bool multipleUse = false;
-        [SerializeField] private bool isInteractable = true;
+        [Space] [SerializeField] protected bool holdInteract = false;
+        [SerializeField] protected bool multipleUse = false;
+        [SerializeField] protected bool isInteractable = true;
 
         [Space] [TextArea(3, 10)] [SerializeField]
-        private string tooltipText = "";
+        protected string tooltipText = "";
 
         #endregion
 

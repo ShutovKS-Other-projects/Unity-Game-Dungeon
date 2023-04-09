@@ -1,6 +1,6 @@
 using System.Collections;
 using Manager;
-using Mining;
+using Riches;
 using UnityEngine;
 
 namespace Skills.SkillsBook
@@ -20,10 +20,10 @@ namespace Skills.SkillsBook
 
         public void Buy()
         {
-            if (_level >= skillObject.levelMax || ManagerRiches.Instance.richesObjectDefault.riches1 < Price) return;
+            if (_level >= skillObject.levelMax || RichesController.richesObjectDefault.riches1 < Price) return;
 
             Debug.Log($"Skill {NameSkill} level up to {_level} price: {Price}");
-            ManagerRiches.Instance.richesObjectDefault.riches1 -= Price;
+            RichesController.richesObjectDefault.riches1 -= Price;
             _level++;
             StartCoroutine(OnSkillUnlocked());
         }
@@ -37,7 +37,7 @@ namespace Skills.SkillsBook
         {
             yield return null;
             SkillBookController.Instance.OnSkillUnlocked();
-            ManagerRiches.Instance.OnRichesChanged();
+            RichesController.OnRichesChanged();
         }
     }
 }
