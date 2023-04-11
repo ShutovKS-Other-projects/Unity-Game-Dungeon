@@ -12,9 +12,15 @@ EditorBuildSettings:
     path: Assets/Internal assets/Scenes/Fights/InitialScene.unity
     guid: 402f502c7d4f4174e9d90ea9642c5184
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 05502b550abf7034293e53ff55baf411,
+      type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 92835fb9fe50fc9428fc915e9a0b836a,
       type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: b2c74c7c7218c8e48b5a13f54749ff42, type: 2}
     com.unity.addressableassets: {fileID: 11400000, guid: f03d31c722dba4b4896ec51702f0a79a,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: ecdc2df62bae3a249b2f3bb31b19640f,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 90626888c6756804f940a1b5ffa7166b,
       type: 2}
