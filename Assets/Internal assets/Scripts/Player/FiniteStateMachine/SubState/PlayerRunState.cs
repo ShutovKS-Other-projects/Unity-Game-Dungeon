@@ -13,17 +13,15 @@ namespace Player.FiniteStateMachine.SubState
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-
-            RecoveryStaminaTime = 0;
-
+            
             if (IsExitingState)
                 return;
 
-            if (MovementInput == Vector2.zero)
+            if (StateController.MovementInput == Vector2.zero)
             {
                 StateMachine.ChangeState(StateController.IdleState);
             }
-            else if (!RunInput)
+            else if (!StateController.RunInput)
             {
                 StateMachine.ChangeState(StateController.MoveState);
             }
@@ -32,7 +30,7 @@ namespace Player.FiniteStateMachine.SubState
         public override void PhysicsUpdate()
         {
             base.PhysicsUpdate();
-            StateController.Movement(MovementInput, PlayerStatistic.RunMovementSpeedMax);
+            StateController.Movement(PlayerStatistic.RunMovementSpeedMax);
         }
     }
 }

@@ -1,27 +1,27 @@
 {
-    "name": "InputSystemGame",
+    "name": "InputSystem",
     "maps": [
         {
-            "name": "Player",
+            "name": "Gameplay",
             "id": "06b8300d-4ace-4f2c-aaa8-cee18099545f",
             "actions": [
                 {
                     "name": "Look",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "553cbe32-dd62-4cfc-a8f8-d3c53902dec7",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Movement",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "4fd9f421-168f-4efc-9f23-7d203568cfa4",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Attack",
@@ -33,34 +33,16 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Block",
+                    "name": "AttackSuper",
                     "type": "Button",
                     "id": "9dba041a-4c5d-40d9-96f7-e392cd419e52",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Crouch",
-                    "type": "Button",
-                    "id": "7a5162ab-ad8d-4b40-b6e2-c9413d4f305e",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
-                    "name": "Jump",
-                    "type": "Button",
-                    "id": "2ee9a427-0270-483d-8149-6065f5452112",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
                 },
                 {
-                    "name": "MagicAttack",
+                    "name": "AttackMagic",
                     "type": "Button",
                     "id": "90cec87d-f4b8-4fb9-981a-daf4a336f4ae",
                     "expectedControlType": "Button",
@@ -75,12 +57,21 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
-                    "initialStateCheck": false
+                    "initialStateCheck": true
                 },
                 {
                     "name": "Interact",
                     "type": "Button",
                     "id": "7f4de484-983a-4abd-badd-31d0258459c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Pause",
+                    "type": "Button",
+                    "id": "dd0cfc7b-9432-436a-8447-a094f9320c81",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -233,28 +224,6 @@
                 },
                 {
                     "name": "",
-                    "id": "4d712160-1bc5-4e51-9e66-225b55c1962c",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard & Mouse",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "399df438-19e6-4cc4-b4c6-3e6b1908e131",
-                    "path": "<XInputController>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Jump",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "a9e08596-bf28-4bee-99bd-a3d8e961ce44",
                     "path": "<Keyboard>/f",
                     "interactions": "",
@@ -315,7 +284,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
-                    "action": "Block",
+                    "action": "AttackSuper",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -326,29 +295,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Block",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "4fee0007-4283-41dd-82f2-b901d1ab752f",
-                    "path": "<Keyboard>/ctrl",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard & Mouse",
-                    "action": "Crouch",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "2910f9f1-2b6f-482a-99ae-02748f606baa",
-                    "path": "<XInputController>/leftShoulder",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Crouch",
+                    "action": "AttackSuper",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -370,7 +317,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
-                    "action": "MagicAttack",
+                    "action": "AttackMagic",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -381,7 +328,29 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
-                    "action": "MagicAttack",
+                    "action": "AttackMagic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3595bc67-f3a0-42b9-bbbc-a2d82131750e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "07962374-d50f-4e90-a914-abf95070b41a",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Pause",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -392,18 +361,9 @@
             "id": "facf1ee1-0e9d-417c-b0b9-5bcceff59b18",
             "actions": [
                 {
-                    "name": "Menu",
+                    "name": "Resume",
                     "type": "Button",
-                    "id": "bed7c927-31c3-47e6-9a17-1a674ea91746",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "PlayerInfo",
-                    "type": "Button",
-                    "id": "6bc3d829-c199-4aa0-b2a9-0addebf5fa14",
+                    "id": "cec997c9-9962-4c36-a0ce-2422a95b1069",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -413,45 +373,23 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "9844bf59-bc9e-401b-96b4-c28bce588ccb",
+                    "id": "db33fe05-52cc-475d-bcce-9b937cab106d",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard & Mouse",
-                    "action": "Menu",
+                    "groups": "",
+                    "action": "Resume",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "8ccd8185-74aa-4872-ab30-cd7f23f3db29",
-                    "path": "<XInputController>/start",
+                    "id": "9deccf38-5129-4f63-ae24-835f2d965b34",
+                    "path": "<Gamepad>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "Menu",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8d635956-c4d0-4f65-a8ab-af32b98a55f4",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard & Mouse",
-                    "action": "PlayerInfo",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "15b89991-fb67-48d2-9730-aa32a41adf10",
-                    "path": "<XInputController>/select",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "PlayerInfo",
+                    "action": "Resume",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -24,19 +24,12 @@ namespace Player.FiniteStateMachine.SubState
 
             WeaponController.OnSwitchColliderWeapon(false);
         }
-
-        public override void LogicUpdate()
+        
+        public override void AnimationFinishTrigger()
         {
-            base.LogicUpdate();
+            base.AnimationFinishTrigger();
 
-            if (!ManagerInput.Instance.GetPlayerAttackSuperInput())
-            {
-                IsAbilityDone = true;
-            }
-            else if (ManagerInput.Instance.GetPlayerAttackInput())
-            {
-                StateMachine.ChangeState(StateController.AttackState);
-            }
+            IsAbilityDone = true;
         }
     }
 }

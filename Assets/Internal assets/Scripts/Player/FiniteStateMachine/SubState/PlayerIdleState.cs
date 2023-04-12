@@ -10,14 +10,6 @@ namespace Player.FiniteStateMachine.SubState
             animBoolName)
         {
         }
-
-        public override void Enter()
-        {
-            base.Enter();
-            
-            StateController.SetVelocityZero();
-        }
-
         public override void LogicUpdate()
         {
             base.LogicUpdate();
@@ -25,7 +17,7 @@ namespace Player.FiniteStateMachine.SubState
             if (IsExitingState)
                 return;
 
-            if (MovementInput != Vector2.zero)
+            if (StateController.MovementInput != Vector2.zero)
             {
                 StateMachine.ChangeState(StateController.MoveState);
             }

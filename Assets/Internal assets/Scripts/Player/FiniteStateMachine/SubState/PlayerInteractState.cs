@@ -18,7 +18,6 @@ namespace Player.FiniteStateMachine.SubState
         {
             base.Enter();
 
-            StateController.SetVelocityZero();
             SetTransformTarget(PlayerStatistic.Instance.interactionTransform,
                 new Quaternion(63.077f, -72.323f, -33.995f, 0));
         }

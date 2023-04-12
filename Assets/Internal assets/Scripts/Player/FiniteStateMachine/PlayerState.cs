@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Input;
+using UnityEngine;
 
 namespace Player.FiniteStateMachine
 {

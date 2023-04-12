@@ -1,4 +1,5 @@
 using System;
+using Input;
 using Interactable;
 using Manager;
 using Player.FiniteStateMachine.SubState;
@@ -27,6 +28,7 @@ namespace Player.FiniteStateMachine
 
         #region Components
 
+        private InputReader _inputReader;
         private PlayerStatistic _playerStatistic;
 
         public Animator Animator { get; private set; }
@@ -66,17 +68,24 @@ namespace Player.FiniteStateMachine
             DamageState = new PlayerDamageState(this, _stateMachine, _playerStatistic, "Damage");
             DeathState = new PlayerDeathState(this, _stateMachine, _playerStatistic, "Death");
             RunState = new PlayerRunState(this, _stateMachine, _playerStatistic, "Run");
+
+            _inputReader = Resources.Load<InputReader>($"ScriptableObject/Input/InputReader");
+            _inputReader.MoveEvent += HandlerMovement;
+            _inputReader.AttackEvent += HandlerAttack;
+            _inputReader.AttackCancelledEvent += HandlerAttackCancelled;
+            _inputReader.AttackSuperEvent += HandlerAttackSuper;
+            _inputReader.AttackSuperCancelledEvent += HandlerAttackSuperCancelled;
+            _inputReader.AttackMagicEvent += HandlerAttackMagic;
+            _inputReader.AttackMagicCancelledEvent += HandlerAttackMagicCancelled;
+            _inputReader.SprintEvent += HandlerRun;
+            _inputReader.SprintCancelledEvent += HandlerRunCancelled;
+            _inputReader.InteractEvent += HandlerInteract;
+            _inputReader.InteractCancelledEvent += HandlerInteractCancelled;
         }
 
         private void Start()
         {
             Animator = TryGetComponent<Animator>(out var animator) ? animator : gameObject.AddComponent<Animator>();
-            ChangeAnimatorController();
-            SceneController.OnNewSceneLoaded += () =>
-            {
-                ChangeAnimatorController();
-                _stateMachine.Initialize(IdleState);
-            };
 
             if (TryGetComponent<CapsuleCollider>(out var capsuleCollider))
             {
@@ -109,48 +118,12 @@ namespace Player.FiniteStateMachine
         private void OnTriggerExit(Collider other) => _stateMachine.CurrentState.TriggerExit(other);
 
         #endregion
-
-        #region Velocity
-
-        public void SetVelocityZero()
-        {
-            Rb.velocity = Vector3.zero;
-            Animator.SetFloat(YSpeed, 0);
-            Animator.SetFloat(XSpeed, 0);
-            Animator.SetFloat(ZSpeed, 0);
-        }
-
-        public void SetVelocityY(float velocityY)
-        {
-            var velocity = Rb.velocity;
-            velocity = new Vector3(velocity.x, velocityY, velocity.z);
-            Rb.velocity = velocity;
-            Animator.SetFloat(YSpeed, velocityY);
-        }
-
-        public void SetVelocityX(float velocityX)
-        {
-            var velocity = Rb.velocity;
-            velocity = new Vector3(velocityX, velocity.y, velocity.z);
-            Rb.velocity = velocity;
-            Animator.SetFloat(XSpeed, velocityX);
-        }
-
-        public void SetVelocityZ(float velocityZ)
-        {
-            var velocity = Rb.velocity;
-            velocity = new Vector3(velocity.x, velocity.y, velocityZ);
-            Rb.velocity = velocity;
-            Animator.SetFloat(ZSpeed, velocityZ);
-        }
-
-        #endregion
-
+        
         #region Movement
 
-        public void Movement(Vector2 movementInput, float speedMax)
+        public void Movement(float speedMax)
         {
-            var move = new Vector3(movementInput.x, 0, movementInput.y);
+            var move = new Vector3(MovementInput.x, 0, MovementInput.y);
 
             Rb.AddRelativeForce(move * _playerStatistic.MovementForce * Time.deltaTime, ForceMode.VelocityChange);
 
@@ -185,28 +158,31 @@ namespace Player.FiniteStateMachine
 
         #region Other Functions
 
-        private void ChangeAnimatorController()
-        {
-            Animator.runtimeAnimatorController = SceneController.currentSceneType switch
-            {
-                SceneType.Home => Resources.Load<RuntimeAnimatorController>(
-                    $"AnimationControllers/Player/PlayerAnimationController Home"),
-                SceneType.StartGame => Resources.Load<RuntimeAnimatorController>(
-                    $"AnimationControllers/Player/PlayerAnimationController Game"),
-                _ => Animator.runtimeAnimatorController
-            };
-        }
-
-        public void SetColliderHeight(float height, float center)
-        {
-            _collider.height = height;
-            var colliderCenter = _collider.center;
-            colliderCenter = new Vector3(colliderCenter.x, center, colliderCenter.z);
-            _collider.center = colliderCenter;
-        }
-
         private void AnimationTrigger() => _stateMachine.CurrentState.AnimationTrigger();
         private void AnimationFinishTrigger() => _stateMachine.CurrentState.AnimationFinishTrigger();
+
+        #endregion
+
+        #region Handler Input
+
+        public Vector2 MovementInput { get; private set; }
+        public bool RunInput { get; private set; }
+        public bool AttackInput { get; private set; }
+        public bool AttackSuperInput { get; private set; }
+        public bool AttackMagicInput { get; private set; }
+        public bool InteractInput { get; private set; }
+
+        private void HandlerMovement(Vector2 value) => MovementInput = value;
+        private void HandlerRun() => RunInput = true;
+        private void HandlerRunCancelled() => RunInput = false;
+        private void HandlerAttack() => AttackInput = true;
+        private void HandlerAttackCancelled() => AttackInput = false;
+        private void HandlerAttackSuper() => AttackSuperInput = true;
+        private void HandlerAttackSuperCancelled() => AttackSuperInput = false;
+        private void HandlerAttackMagic() => AttackMagicInput = true;
+        private void HandlerAttackMagicCancelled() => AttackMagicInput = false;
+        private void HandlerInteract() => InteractInput = true;
+        private void HandlerInteractCancelled() => InteractInput = false;
 
         #endregion
     }

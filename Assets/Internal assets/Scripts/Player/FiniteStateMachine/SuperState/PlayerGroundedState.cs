@@ -15,68 +15,32 @@ namespace Player.FiniteStateMachine.SuperState
 
         #region Variables
 
-        protected Vector2 MovementInput;
-
-        protected float RecoveryStaminaTime = 0;
-        protected float RecoveryHealthTime = 0;
-        protected float RecoveryManaTime = 0;
-
-        protected bool CrouchInput;
-        protected bool RunInput;
-
         private GameObject _gameObjectInteractable;
-
-        private bool _attackInput;
-        private bool _attackSuperInput;
-        private bool _jumpInput;
-        private bool _isInteractable;
-        private bool _isGrounded;
-        private bool _interactInput;
-        private bool _magicAttackInput;
 
         #endregion
 
         #region StateMachine
 
-        protected override void DoChecks()
-        {
-            base.DoChecks();
-
-            _isGrounded = StateController.CheckIfGrounded();
-        }
-
         // ReSharper disable Unity.PerformanceAnalysis
         public override void LogicUpdate()
         {
             base.LogicUpdate();
+            
+            var isInteractable = CheckVisibleIfInteractable();
 
-            CrouchInput = ManagerInput.Instance.GetPlayerCrouchInput();
-            RunInput = ManagerInput.Instance.GetPlayerSprintInput();
-            MovementInput = ManagerInput.Instance.GetPlayerMovementInput();
-            _attackInput = ManagerInput.Instance.GetPlayerAttackInput();
-            _attackSuperInput = ManagerInput.Instance.GetPlayerAttackSuperInput();
-            _interactInput = ManagerInput.Instance.GetPlayerInteractInput();
-            _jumpInput = ManagerInput.Instance.GetPlayerJumpInput();
-            _magicAttackInput = ManagerInput.Instance.GetPlayerMagicAttackInput();
-            _isInteractable = CheckVisibleIfInteractable();
-            
-            
-            if (_attackInput && SceneController.currentSceneType != SceneType.Home)
+            if (StateController.AttackInput && SceneController.currentSceneType != SceneType.Home)
             {
                 StateMachine.ChangeState(StateController.AttackState);
-                RecoveryStaminaTime = 0;
             }
-            else if (_magicAttackInput && SceneController.currentSceneType != SceneType.Home)
+            else if (StateController.AttackMagicInput && SceneController.currentSceneType != SceneType.Home)
             {
                 StateMachine.ChangeState(StateController.AttackMagicState);
-                RecoveryStaminaTime = 0;
             }
-            else if (_attackSuperInput && SceneController.currentSceneType != SceneType.Home)
+            else if (StateController.AttackSuperInput && SceneController.currentSceneType != SceneType.Home)
             {
                 StateMachine.ChangeState(StateController.AttackSuperState);
-                RecoveryStaminaTime = 0;
             }
-            else if (_isInteractable && _interactInput)
+            else if (isInteractable && StateController.InteractInput)
             {
                 StateMachine.ChangeState(StateController.InteractState);
             }
