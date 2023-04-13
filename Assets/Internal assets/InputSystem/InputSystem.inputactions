@@ -78,18 +78,54 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "XRTriggeredHandLeft",
+                    "name": "ActionRight",
+                    "type": "Button",
+                    "id": "b56f2845-87fc-4511-a2f7-e4c464b7d5a1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ActionLeft",
+                    "type": "Button",
+                    "id": "c1befcb9-26c8-4c60-a88a-3d1bd8fedf8d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "GripRight",
                     "type": "Value",
-                    "id": "2ca98c09-ff36-404c-bf38-74f4524fe964",
+                    "id": "2d38ba14-f6a5-420f-8383-ed6163d4cc52",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "GripLeft",
+                    "type": "Button",
+                    "id": "72dc1c65-790c-40ff-867a-ee5fae9deb9a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TrackingHandRight",
+                    "type": "Value",
+                    "id": "3a94efe9-c8d6-4c5c-9a76-afdb61a629d3",
                     "expectedControlType": "Integer",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
                 },
                 {
-                    "name": "XRTriggeredHandRight",
+                    "name": "TrackingHandLeft",
                     "type": "Value",
-                    "id": "9ef44c4c-3a54-479f-be2e-1385c8edd5ed",
+                    "id": "17d564aa-3dda-4e03-ab7b-556dc8097e6a",
                     "expectedControlType": "Integer",
                     "processors": "",
                     "interactions": "",
@@ -385,23 +421,67 @@
                 },
                 {
                     "name": "",
-                    "id": "3989aa52-48c4-4dbf-bc99-7687b66b6e9b",
+                    "id": "52da9199-a8ca-49bf-9410-a9934d2c5f31",
                     "path": "<XRController>{LeftHand}/trackingState",
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "XRTriggeredHandLeft",
+                    "action": "TrackingHandLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "5302cdfe-4a06-485f-8e71-e9a0d1acdf3d",
+                    "id": "50be8aa5-989e-4b6e-970d-7c6a92b28b0e",
                     "path": "<XRController>{RightHand}/trackingState",
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "XRTriggeredHandRight",
+                    "action": "TrackingHandRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b85f44d0-515b-4ad7-a17f-7f5df9ad6991",
+                    "path": "<XRSimulatedController>{LeftHand}/gripButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "GripLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a43f0223-2e86-4a40-a8c7-8d8eddee2937",
+                    "path": "<XRSimulatedController>{RightHand}/gripButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "GripRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2b818abb-2d5b-40e5-85dc-68d4b090428e",
+                    "path": "<XRSimulatedController>{LeftHand}/triggerButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dbd70276-4b5f-449d-bed8-a9fd4ac907c2",
+                    "path": "<XRSimulatedController>{RightHand}/triggerButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ActionRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

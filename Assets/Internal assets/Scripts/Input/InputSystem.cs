@@ -100,18 +100,54 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""XRTriggeredHandLeft"",
+                    ""name"": ""ActionRight"",
+                    ""type"": ""Button"",
+                    ""id"": ""b56f2845-87fc-4511-a2f7-e4c464b7d5a1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ActionLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""c1befcb9-26c8-4c60-a88a-3d1bd8fedf8d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GripRight"",
                     ""type"": ""Value"",
-                    ""id"": ""2ca98c09-ff36-404c-bf38-74f4524fe964"",
+                    ""id"": ""2d38ba14-f6a5-420f-8383-ed6163d4cc52"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""GripLeft"",
+                    ""type"": ""Button"",
+                    ""id"": ""72dc1c65-790c-40ff-867a-ee5fae9deb9a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""TrackingHandRight"",
+                    ""type"": ""Value"",
+                    ""id"": ""3a94efe9-c8d6-4c5c-9a76-afdb61a629d3"",
                     ""expectedControlType"": ""Integer"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""XRTriggeredHandRight"",
+                    ""name"": ""TrackingHandLeft"",
                     ""type"": ""Value"",
-                    ""id"": ""9ef44c4c-3a54-479f-be2e-1385c8edd5ed"",
+                    ""id"": ""17d564aa-3dda-4e03-ab7b-556dc8097e6a"",
                     ""expectedControlType"": ""Integer"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -407,23 +443,67 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""3989aa52-48c4-4dbf-bc99-7687b66b6e9b"",
+                    ""id"": ""52da9199-a8ca-49bf-9410-a9934d2c5f31"",
                     ""path"": ""<XRController>{LeftHand}/trackingState"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
-                    ""action"": ""XRTriggeredHandLeft"",
+                    ""action"": ""TrackingHandLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""5302cdfe-4a06-485f-8e71-e9a0d1acdf3d"",
+                    ""id"": ""50be8aa5-989e-4b6e-970d-7c6a92b28b0e"",
                     ""path"": ""<XRController>{RightHand}/trackingState"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
-                    ""action"": ""XRTriggeredHandRight"",
+                    ""action"": ""TrackingHandRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b85f44d0-515b-4ad7-a17f-7f5df9ad6991"",
+                    ""path"": ""<XRSimulatedController>{LeftHand}/gripButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""GripLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a43f0223-2e86-4a40-a8c7-8d8eddee2937"",
+                    ""path"": ""<XRSimulatedController>{RightHand}/gripButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""GripRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2b818abb-2d5b-40e5-85dc-68d4b090428e"",
+                    ""path"": ""<XRSimulatedController>{LeftHand}/triggerButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActionLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""dbd70276-4b5f-449d-bed8-a9fd4ac907c2"",
+                    ""path"": ""<XRSimulatedController>{RightHand}/triggerButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ActionRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -513,8 +593,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_Gameplay_Sprint = m_Gameplay.FindAction("Sprint", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
-        m_Gameplay_XRTriggeredHandLeft = m_Gameplay.FindAction("XRTriggeredHandLeft", throwIfNotFound: true);
-        m_Gameplay_XRTriggeredHandRight = m_Gameplay.FindAction("XRTriggeredHandRight", throwIfNotFound: true);
+        m_Gameplay_ActionRight = m_Gameplay.FindAction("ActionRight", throwIfNotFound: true);
+        m_Gameplay_ActionLeft = m_Gameplay.FindAction("ActionLeft", throwIfNotFound: true);
+        m_Gameplay_GripRight = m_Gameplay.FindAction("GripRight", throwIfNotFound: true);
+        m_Gameplay_GripLeft = m_Gameplay.FindAction("GripLeft", throwIfNotFound: true);
+        m_Gameplay_TrackingHandRight = m_Gameplay.FindAction("TrackingHandRight", throwIfNotFound: true);
+        m_Gameplay_TrackingHandLeft = m_Gameplay.FindAction("TrackingHandLeft", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Resume = m_UI.FindAction("Resume", throwIfNotFound: true);
@@ -587,8 +671,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Sprint;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_Pause;
-    private readonly InputAction m_Gameplay_XRTriggeredHandLeft;
-    private readonly InputAction m_Gameplay_XRTriggeredHandRight;
+    private readonly InputAction m_Gameplay_ActionRight;
+    private readonly InputAction m_Gameplay_ActionLeft;
+    private readonly InputAction m_Gameplay_GripRight;
+    private readonly InputAction m_Gameplay_GripLeft;
+    private readonly InputAction m_Gameplay_TrackingHandRight;
+    private readonly InputAction m_Gameplay_TrackingHandLeft;
     public struct GameplayActions
     {
         private @InputSystem m_Wrapper;
@@ -601,8 +689,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_Gameplay_Sprint;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
-        public InputAction @XRTriggeredHandLeft => m_Wrapper.m_Gameplay_XRTriggeredHandLeft;
-        public InputAction @XRTriggeredHandRight => m_Wrapper.m_Gameplay_XRTriggeredHandRight;
+        public InputAction @ActionRight => m_Wrapper.m_Gameplay_ActionRight;
+        public InputAction @ActionLeft => m_Wrapper.m_Gameplay_ActionLeft;
+        public InputAction @GripRight => m_Wrapper.m_Gameplay_GripRight;
+        public InputAction @GripLeft => m_Wrapper.m_Gameplay_GripLeft;
+        public InputAction @TrackingHandRight => m_Wrapper.m_Gameplay_TrackingHandRight;
+        public InputAction @TrackingHandLeft => m_Wrapper.m_Gameplay_TrackingHandLeft;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -636,12 +728,24 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
-            @XRTriggeredHandLeft.started += instance.OnXRTriggeredHandLeft;
-            @XRTriggeredHandLeft.performed += instance.OnXRTriggeredHandLeft;
-            @XRTriggeredHandLeft.canceled += instance.OnXRTriggeredHandLeft;
-            @XRTriggeredHandRight.started += instance.OnXRTriggeredHandRight;
-            @XRTriggeredHandRight.performed += instance.OnXRTriggeredHandRight;
-            @XRTriggeredHandRight.canceled += instance.OnXRTriggeredHandRight;
+            @ActionRight.started += instance.OnActionRight;
+            @ActionRight.performed += instance.OnActionRight;
+            @ActionRight.canceled += instance.OnActionRight;
+            @ActionLeft.started += instance.OnActionLeft;
+            @ActionLeft.performed += instance.OnActionLeft;
+            @ActionLeft.canceled += instance.OnActionLeft;
+            @GripRight.started += instance.OnGripRight;
+            @GripRight.performed += instance.OnGripRight;
+            @GripRight.canceled += instance.OnGripRight;
+            @GripLeft.started += instance.OnGripLeft;
+            @GripLeft.performed += instance.OnGripLeft;
+            @GripLeft.canceled += instance.OnGripLeft;
+            @TrackingHandRight.started += instance.OnTrackingHandRight;
+            @TrackingHandRight.performed += instance.OnTrackingHandRight;
+            @TrackingHandRight.canceled += instance.OnTrackingHandRight;
+            @TrackingHandLeft.started += instance.OnTrackingHandLeft;
+            @TrackingHandLeft.performed += instance.OnTrackingHandLeft;
+            @TrackingHandLeft.canceled += instance.OnTrackingHandLeft;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -670,12 +774,24 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
-            @XRTriggeredHandLeft.started -= instance.OnXRTriggeredHandLeft;
-            @XRTriggeredHandLeft.performed -= instance.OnXRTriggeredHandLeft;
-            @XRTriggeredHandLeft.canceled -= instance.OnXRTriggeredHandLeft;
-            @XRTriggeredHandRight.started -= instance.OnXRTriggeredHandRight;
-            @XRTriggeredHandRight.performed -= instance.OnXRTriggeredHandRight;
-            @XRTriggeredHandRight.canceled -= instance.OnXRTriggeredHandRight;
+            @ActionRight.started -= instance.OnActionRight;
+            @ActionRight.performed -= instance.OnActionRight;
+            @ActionRight.canceled -= instance.OnActionRight;
+            @ActionLeft.started -= instance.OnActionLeft;
+            @ActionLeft.performed -= instance.OnActionLeft;
+            @ActionLeft.canceled -= instance.OnActionLeft;
+            @GripRight.started -= instance.OnGripRight;
+            @GripRight.performed -= instance.OnGripRight;
+            @GripRight.canceled -= instance.OnGripRight;
+            @GripLeft.started -= instance.OnGripLeft;
+            @GripLeft.performed -= instance.OnGripLeft;
+            @GripLeft.canceled -= instance.OnGripLeft;
+            @TrackingHandRight.started -= instance.OnTrackingHandRight;
+            @TrackingHandRight.performed -= instance.OnTrackingHandRight;
+            @TrackingHandRight.canceled -= instance.OnTrackingHandRight;
+            @TrackingHandLeft.started -= instance.OnTrackingHandLeft;
+            @TrackingHandLeft.performed -= instance.OnTrackingHandLeft;
+            @TrackingHandLeft.canceled -= instance.OnTrackingHandLeft;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -776,8 +892,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
-        void OnXRTriggeredHandLeft(InputAction.CallbackContext context);
-        void OnXRTriggeredHandRight(InputAction.CallbackContext context);
+        void OnActionRight(InputAction.CallbackContext context);
+        void OnActionLeft(InputAction.CallbackContext context);
+        void OnGripRight(InputAction.CallbackContext context);
+        void OnGripLeft(InputAction.CallbackContext context);
+        void OnTrackingHandRight(InputAction.CallbackContext context);
+        void OnTrackingHandLeft(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

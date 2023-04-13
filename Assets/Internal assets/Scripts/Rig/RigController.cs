@@ -12,7 +12,7 @@ namespace Rig
 
         [Space] public static RigBuilder rigBuilder;
 
-        [Space] [Header("Hand Rig")] public static UnityEngine.Animations.Rigging.Rig rigGrabs;
+        [Space] [Header("Hand Rig")] public static UnityEngine.Animations.Rigging.Rig rigGrips;
         public static UnityEngine.Animations.Rigging.Rig rigHands;
 
         [Space] [Header("Hand")] public static TwoBoneIKConstraint lHand;
@@ -21,8 +21,8 @@ namespace Rig
         [Space] [Header("Target")] public static Transform lHandTargetTransform;
         public static Transform rHandTargetTransform;
 
-        [Space] [Header("Capture Weapon")] public static MultiParentConstraint lHandGrab;
-        public static MultiParentConstraint rHandGrab;
+        [Space] [Header("Capture Weapon")] public static MultiParentConstraint lHandGrip;
+        public static MultiParentConstraint rHandGrip;
 
         private void Start()
         {
@@ -31,10 +31,10 @@ namespace Rig
             
             _inputReader = Resources.Load<InputReader>($"ScriptableObject/Input/InputReader");
 
-            _inputReader.XRTriggeredHandLeftEvent += OnEnableLeftHand;
-            _inputReader.XRTriggeredHandLeftCancelledEvent += OnDisableLeftHand;
-            _inputReader.XRTriggeredHandRightEvent += OnEnableRightHand;
-            _inputReader.XRTriggeredHandRightCancelledEvent += OnDisableRightHand;
+            _inputReader.XRTrackingHandLeftEvent += OnEnableLeftHand;
+            _inputReader.XRTrackingHandLeftCancelledEvent += OnDisableLeftHand;
+            _inputReader.XRTrackingHandRightEvent += OnEnableRightHand;
+            _inputReader.XRTrackingHandRightCancelledEvent += OnDisableRightHand;
         }
 
         public static void SetTransformTargetZero(Transform transform)
@@ -54,9 +54,9 @@ namespace Rig
             lHandTargetTransform = lHand.transform.Find("Target");
             rHandTargetTransform = rHand.transform.Find("Target");
 
-            rigGrabs = _transform.Find("Grabs").GetComponent<UnityEngine.Animations.Rigging.Rig>();
-            lHandGrab = rigGrabs.transform.Find("L_Grab").GetComponent<MultiParentConstraint>();
-            rHandGrab = rigGrabs.transform.Find("R_Grab").GetComponent<MultiParentConstraint>();
+            rigGrips = _transform.Find("Grips").GetComponent<UnityEngine.Animations.Rigging.Rig>();
+            lHandGrip = rigGrips.transform.Find("L_Grip").GetComponent<MultiParentConstraint>();
+            rHandGrip = rigGrips.transform.Find("R_Grip").GetComponent<MultiParentConstraint>();
         }
 
         private static void OnEnableLeftHand() => lHand.weight = 1;

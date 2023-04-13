@@ -1,7 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
 
 namespace Input
 {
@@ -22,6 +21,8 @@ namespace Input
             }
         }
 
+        #region Action Maps
+
         public void SetGameplay()
         {
             _inputSystem.Gameplay.Enable();
@@ -33,6 +34,10 @@ namespace Input
             _inputSystem.UI.Enable();
             _inputSystem.Gameplay.Disable();
         }
+
+        #endregion
+
+        #region Actions
 
         //Gameplay
         public event Action<Vector2> LookEvent;
@@ -47,16 +52,28 @@ namespace Input
         public event Action SprintCancelledEvent;
         public event Action InteractEvent;
         public event Action InteractCancelledEvent;
-        public event Action XRTriggeredHandLeftEvent;
-        public event Action XRTriggeredHandLeftCancelledEvent;
-        public event Action XRTriggeredHandRightEvent;
-        public event Action XRTriggeredHandRightCancelledEvent;
+        public event Action XRTrackingHandLeftEvent;
+        public event Action XRTrackingHandLeftCancelledEvent;
+        public event Action XRTrackingHandRightEvent;
+        public event Action XRTrackingHandRightCancelledEvent;
+        public event Action XRGripLeftEvent;
+        public event Action XRGripLeftCancelledEvent;
+        public event Action XRGripRightEvent;
+        public event Action XRGripRightCancelledEvent;
+        public event Action XRActionLeftEvent;
+        public event Action XRActionLeftCancelledEvent;
+        public event Action XRActionRightEvent;
+        public event Action XRActionRightCancelledEvent;
+
+
         public event Action PauseEvent;
 
         //UI
         public event Action ResumeEvent;
 
-        //Scheme
+        #endregion
+
+        #region Actions Invoke
 
         public void OnLook(InputAction.CallbackContext context)
         {
@@ -115,20 +132,52 @@ namespace Input
             SetUI();
         }
 
-        public void OnXRTriggeredHandLeft(InputAction.CallbackContext context)
+        public void OnTrackingHandLeft(InputAction.CallbackContext context)
         {
-            if (context.ReadValue<int>() != 0)
-                XRTriggeredHandLeftEvent?.Invoke();
+            if (context.phase == InputActionPhase.Performed)
+                XRTrackingHandLeftEvent?.Invoke();
             else
-                XRTriggeredHandLeftCancelledEvent?.Invoke();
+                XRTrackingHandLeftCancelledEvent?.Invoke();
         }
 
-        public void OnXRTriggeredHandRight(InputAction.CallbackContext context)
+        public void OnTrackingHandRight(InputAction.CallbackContext context)
         {
-            if (context.ReadValue<int>() != 0)
-                XRTriggeredHandRightEvent?.Invoke();
+            if (context.phase == InputActionPhase.Performed)
+                XRTrackingHandRightEvent?.Invoke();
             else
-                XRTriggeredHandRightCancelledEvent?.Invoke();
+                XRTrackingHandRightCancelledEvent?.Invoke();
+        }
+
+        public void OnGripLeft(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+                XRGripLeftEvent?.Invoke();
+            else
+                XRGripLeftCancelledEvent?.Invoke();
+        }
+
+        public void OnGripRight(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+                XRGripRightEvent?.Invoke();
+            else
+                XRGripRightCancelledEvent?.Invoke();
+        }
+
+        public void OnActionLeft(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+                XRActionLeftEvent?.Invoke();
+            else
+                XRActionLeftCancelledEvent?.Invoke();
+        }
+
+        public void OnActionRight(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+                XRActionRightEvent?.Invoke();
+            else
+                XRActionRightCancelledEvent?.Invoke();
         }
 
         public void OnResume(InputAction.CallbackContext context)
@@ -137,5 +186,7 @@ namespace Input
             ResumeEvent?.Invoke();
             SetGameplay();
         }
+
+        #endregion
     }
 }

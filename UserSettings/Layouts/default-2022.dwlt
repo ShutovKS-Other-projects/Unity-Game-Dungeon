@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: InputSystem (Input Actions)
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 190
+  controlID: 223
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 191
+  controlID: 108
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: InputActionEditorWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -190,15 +190,15 @@ MonoBehaviour:
     y: 0
     width: 697
     height: 544
-  m_MinSize: {x: 201, y: 221}
+  m_MinSize: {x: 601, y: 321}
   m_MaxSize: {x: 4001, y: 4021}
-  m_ActualView: {fileID: 22}
+  m_ActualView: {fileID: 24}
   m_Panes:
   - {fileID: 22}
   - {fileID: 23}
   - {fileID: 24}
-  m_Selected: 0
-  m_LastSelected: 2
+  m_Selected: 2
+  m_LastSelected: 0
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -218,8 +218,8 @@ MonoBehaviour:
     y: 0
     width: 374
     height: 544
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 25}
   m_Panes:
   - {fileID: 25}
@@ -377,8 +377,8 @@ MonoBehaviour:
     y: 740
     width: 448
     height: 247
-  m_MinSize: {x: 102, y: 121}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 100, y: 100}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 33}
   m_Panes:
   - {fileID: 33}
@@ -765,7 +765,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 1
+      displayed: 0
       snapOffset: {x: 185, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -921,7 +921,7 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 1
+      displayed: 0
       snapOffset: {x: 48, y: 48}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
@@ -1156,8 +1156,8 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_ActionMapsTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e94b0ef7
-    m_LastClickedID: -150058007
+    m_SelectedIDs: 235c736f
+    m_LastClickedID: 1869831203
     m_ExpandedIDs: 00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1177,10 +1177,10 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 8}
     m_SearchString: 
   m_ActionsTreeState:
-    scrollPos: {x: 0, y: 220}
-    m_SelectedIDs: a75a6b86
-    m_LastClickedID: -2039784793
-    m_ExpandedIDs: fe10598504a99785341dca8b3bc4348d1c8109a64e5799a66eb5adb1a2af25b3efeef6c5a29bcbc930463cd8e94593e80f531af4e94b0ef7d20478fc23aa951194afc616c199cd1b1cfe1e1d8bdb422221259824ad62e82e34d7d65f235c736f
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: a29bcbc9
+    m_LastClickedID: -909403230
+    m_ExpandedIDs: fe10598504a99785341dca8b3bc4348d1c8109a64e5799a6a2af25b3efeef6c5a29bcbc930463cd8e94593e80f531af4e94b0ef723aa951194afc616c199cd1b1cfe1e1d8bdb422221259824ad62e82e34d7d65f235c736f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1362,15 +1362,6 @@ MonoBehaviour:
       \"type\": \"Button\",\n                    \"id\": \"dd0cfc7b-9432-436a-8447-a094f9320c81\",\n                   
       \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
       \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
-      },\n                {\n                    \"name\": \"XRTriggeredHandLeft\",\n                   
-      \"type\": \"Value\",\n                    \"id\": \"2ca98c09-ff36-404c-bf38-74f4524fe964\",\n                   
-      \"expectedControlType\": \"Integer\",\n                    \"processors\":
-      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
-      true\n                },\n                {\n                    \"name\":
-      \"XRTriggeredHandRight\",\n                    \"type\": \"Value\",\n                   
-      \"id\": \"9ef44c4c-3a54-479f-be2e-1385c8edd5ed\",\n                    \"expectedControlType\":
-      \"Integer\",\n                    \"processors\": \"\",\n                   
-      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
       }\n            ],\n            \"bindings\": [\n                {\n                   
       \"name\": \"WASD\",\n                    \"id\": \"2a26aa94-db24-4ba0-af20-d948f0bfa9ec\",\n                   
       \"path\": \"2DVector\",\n                    \"interactions\": \"\",\n                   
@@ -1511,17 +1502,68 @@ MonoBehaviour:
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
       \"Gamepad\",\n                    \"action\": \"Pause\",\n                   
       \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
-      },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"3989aa52-48c4-4dbf-bc99-7687b66b6e9b\",\n                    \"path\":
-      \"<XRController>{LeftHand}/trackingState\",\n                    \"interactions\":
-      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"XR\",\n                    \"action\": \"XRTriggeredHandLeft\",\n                   
+      }\n            ]\n        },\n        {\n            \"name\": \"GameplayXR\",\n           
+      \"id\": \"10354a49-2825-4d16-8055-32b62910e909\",\n            \"actions\":
+      [\n                {\n                    \"name\": \"TrackingHandLeft\",\n                   
+      \"type\": \"Value\",\n                    \"id\": \"3536e506-c5ff-48ef-9b2f-558255c82597\",\n                   
+      \"expectedControlType\": \"Integer\",\n                    \"processors\":
+      \"\",\n                    \"interactions\": \"\",\n                    \"initialStateCheck\":
+      true\n                },\n                {\n                    \"name\":
+      \"TrackingHandRight\",\n                    \"type\": \"Value\",\n                   
+      \"id\": \"a2b375aa-d45d-44e7-b88a-5d2d8197ec8d\",\n                    \"expectedControlType\":
+      \"Integer\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
+      },\n                {\n                    \"name\": \"GripLeft\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"ce42f8da-972d-4ac7-a27a-720d32cccdc6\",\n                   
+      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
+      },\n                {\n                    \"name\": \"GripRight\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"4aa6bdc3-b33d-40dc-8493-42f756fd2106\",\n                   
+      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
+      },\n                {\n                    \"name\": \"ActionLeft\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"c45f1585-d1c6-44ec-b99b-e2544afe5b0b\",\n                   
+      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\",\n                    \"initialStateCheck\": false\n               
+      },\n                {\n                    \"name\": \"ActionRight\",\n                   
+      \"type\": \"Button\",\n                    \"id\": \"8e9d0a81-3d30-453d-993d-5789f7a248f7\",\n                   
+      \"expectedControlType\": \"Button\",\n                    \"processors\": \"\",\n                   
+      \"interactions\": \"\",\n                    \"initialStateCheck\": true\n               
+      }\n            ],\n            \"bindings\": [\n                {\n                   
+      \"name\": \"\",\n                    \"id\": \"fbe875a3-4ff4-473d-bb9f-6344d35c6ea0\",\n                   
+      \"path\": \"<XRController>{LeftHand}/trackingState\",\n                   
+      \"interactions\": \"\",\n                    \"processors\": \"\",\n                   
+      \"groups\": \"XR\",\n                    \"action\": \"TrackingHandLeft\",\n                   
       \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
       },\n                {\n                    \"name\": \"\",\n                   
-      \"id\": \"5302cdfe-4a06-485f-8e71-e9a0d1acdf3d\",\n                    \"path\":
+      \"id\": \"3351f47b-8acf-4edb-9a83-c560212f4c00\",\n                    \"path\":
       \"<XRController>{RightHand}/trackingState\",\n                    \"interactions\":
       \"\",\n                    \"processors\": \"\",\n                    \"groups\":
-      \"XR\",\n                    \"action\": \"XRTriggeredHandRight\",\n                   
+      \"XR\",\n                    \"action\": \"TrackingHandRight\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"bd6f5513-7083-4e51-b099-6131e4e742db\",\n                    \"path\":
+      \"<XRController>{LeftHand}/gripPressed\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"XR\",\n                    \"action\": \"GripLeft\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"da9f4fae-28d8-4808-a1e0-89c04d30c696\",\n                    \"path\":
+      \"<XRController>{RightHand}/gripPressed\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"XR\",\n                    \"action\": \"GripRight\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"c0fa63f9-62b4-48d2-a180-e9ab2da358e2\",\n                    \"path\":
+      \"<XRController>{RightHand}/triggerPressed\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"XR\",\n                    \"action\": \"ActionRight\",\n                   
+      \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
+      },\n                {\n                    \"name\": \"\",\n                   
+      \"id\": \"3a933e41-e99c-4cd4-b3d1-895bf0a470c7\",\n                    \"path\":
+      \"<XRController>{LeftHand}/triggerPressed\",\n                    \"interactions\":
+      \"\",\n                    \"processors\": \"\",\n                    \"groups\":
+      \"\",\n                    \"action\": \"ActionLeft\",\n                   
       \"isComposite\": false,\n                    \"isPartOfComposite\": false\n               
       }\n            ]\n        },\n        {\n            \"name\": \"UI\",\n           
       \"id\": \"facf1ee1-0e9d-417c-b0b9-5bcceff59b18\",\n            \"actions\":
@@ -1930,7 +1972,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 31974
+  m_LastSelectedObjectID: 32062
 --- !u!114 &29
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1969,9 +2011,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 067d0000
-      m_LastClickedID: 32006
-      m_ExpandedIDs: aafafffff4ffffffe67c0000427d0000007e0000488000003281000066820000
+      m_SelectedIDs: ac0d0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: d0faffffe27c00003e7d00004680000070850000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -2072,7 +2114,7 @@ MonoBehaviour:
     m_CachedPref: -393
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -39218
+  m_LastInspectedObjectInstanceID: 32062
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
@@ -2127,23 +2169,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Internal assets/Scripts/XR
+    - Assets/Internal assets/Scripts/Input
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Internal assets/Scripts/XR
+  - Assets/Internal assets/Scripts/Input
   m_LastFoldersGridSize: 16
   m_LastProjectPath: D:\Work\Unity\Unity-Game-Dungeon
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 113}
-    m_SelectedIDs: fa8d0000
-    m_LastClickedID: 36346
-    m_ExpandedIDs: 00000000aa8d0000be8d0000c08d0000c28d0000ca8d0000ec8d00003c8e00008c8e00001aef0000
+    scrollPos: {x: 0, y: 0}
+    m_SelectedIDs: c08d0000
+    m_LastClickedID: 36288
+    m_ExpandedIDs: 00000000848d0000988d00009c8d0000a48d0000e68d0000e88d0000f08d0000f28d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2171,7 +2213,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000aa8d0000
+    m_ExpandedIDs: 00000000848d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2199,21 +2241,21 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 70900000328f0000b868000052680000246a000034790000648800009ea4000052b900002eb900004ab90000fc6b0000f4a000007c1d0000c4840000626b0000a8650000886500006c7700009a0701002676000002a6f3ff824b0200687d01006c7d01006a7d0100b84c020070c2000078c50000b8570400fa31020010910000229100001c910000d89400002415010074f700008aaa030072b800004c4001002640010088150100403e0100000000004a14020004a60000248c0000feae0000707d000084d50400728300000ca30000fe8600000e870000f68600000687000016870000ee860000d2870000ee7300009287000096870000c6870000be870000b2870000a68700009a870000aa87000012c200000cc2000006c2000000c20000fac10000f4c10000eec10000d6fc0000dcfc0000fafc0000f4fc0000eefc0000e8fc0000e2fc0000e4400100fa410100ae5d0100c45e010064190100b47b000050130100881301006c130100228c00004a1301004c1301005a1301004e13010048130100302b010046130100528c000086130100442b01002e130100d6870000
+    m_ExpandedInstanceIDs: 70900000328f0000b868000052680000246a000034790000648800009ea4000052b900002eb900004ab90000fc6b0000f4a000007c1d0000c4840000626b0000a8650000886500006c7700009a0701002676000002a6f3ff824b0200687d01006c7d01006a7d0100b84c020070c2000078c50000b8570400fa31020010910000229100001c910000d89400002415010074f700008aaa030072b800004c4001002640010088150100403e0100000000004a14020004a60000248c0000feae0000707d000084d50400728300000ca30000fe8600000e870000f68600000687000016870000ee860000d2870000ee7300009287000096870000c6870000be870000b2870000a68700009a870000aa87000012c200000cc2000006c2000000c20000fac10000f4c10000eec10000d6fc0000dcfc0000fafc0000f4fc0000eefc0000e8fc0000e2fc0000e4400100fa410100ae5d0100c45e010064190100b47b000050130100881301006c130100228c00004a1301004c1301005a1301004e13010048130100302b010046130100528c000086130100442b01002e130100d687000056890000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: XRI Default Input Actions
-      m_OriginalName: XRI Default Input Actions
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 34774
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 14}
     m_CreateAssetUtility:
@@ -2326,7 +2368,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 22fb0000
     m_LastClickedID: 64290
-    m_ExpandedIDs: 00000000aa8d0000
+    m_ExpandedIDs: 00000000848d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -2354,7 +2396,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000aa8d0000
+    m_ExpandedIDs: 00000000848d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

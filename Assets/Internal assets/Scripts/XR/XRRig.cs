@@ -15,10 +15,10 @@ namespace XR
         {
             _inputReader = Resources.Load<InputReader>($"ScriptableObject/Input/InputReader");
 
-            _inputReader.XRTriggeredHandLeftEvent += OnEnableLeftHand;
-            _inputReader.XRTriggeredHandLeftCancelledEvent += OnDisableLeftHand;
-            _inputReader.XRTriggeredHandRightEvent += OnEnableRightHand;
-            _inputReader.XRTriggeredHandRightCancelledEvent += OnDisableRightHand;
+            _inputReader.XRTrackingHandLeftEvent += OnEnableLeftHand;
+            _inputReader.XRTrackingHandLeftCancelledEvent += OnDisableLeftHand;
+            _inputReader.XRTrackingHandRightEvent += OnEnableRightHand;
+            _inputReader.XRTrackingHandRightCancelledEvent += OnDisableRightHand;
         }
 
         private void LateUpdate()
