@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.LowLevel;
 
 namespace Input
 {
@@ -46,10 +47,16 @@ namespace Input
         public event Action SprintCancelledEvent;
         public event Action InteractEvent;
         public event Action InteractCancelledEvent;
+        public event Action XRTriggeredHandLeftEvent;
+        public event Action XRTriggeredHandLeftCancelledEvent;
+        public event Action XRTriggeredHandRightEvent;
+        public event Action XRTriggeredHandRightCancelledEvent;
         public event Action PauseEvent;
 
         //UI
         public event Action ResumeEvent;
+
+        //Scheme
 
         public void OnLook(InputAction.CallbackContext context)
         {
@@ -106,6 +113,22 @@ namespace Input
             if (context.phase != InputActionPhase.Performed) return;
             PauseEvent?.Invoke();
             SetUI();
+        }
+
+        public void OnXRTriggeredHandLeft(InputAction.CallbackContext context)
+        {
+            if (context.ReadValue<int>() != 0)
+                XRTriggeredHandLeftEvent?.Invoke();
+            else
+                XRTriggeredHandLeftCancelledEvent?.Invoke();
+        }
+
+        public void OnXRTriggeredHandRight(InputAction.CallbackContext context)
+        {
+            if (context.ReadValue<int>() != 0)
+                XRTriggeredHandRightEvent?.Invoke();
+            else
+                XRTriggeredHandRightCancelledEvent?.Invoke();
         }
 
         public void OnResume(InputAction.CallbackContext context)

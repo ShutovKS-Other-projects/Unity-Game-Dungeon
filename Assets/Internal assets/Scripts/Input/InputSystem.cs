@@ -41,7 +41,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""4fd9f421-168f-4efc-9f23-7d203568cfa4"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },
@@ -98,6 +98,24 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""XRTriggeredHandLeft"",
+                    ""type"": ""Value"",
+                    ""id"": ""2ca98c09-ff36-404c-bf38-74f4524fe964"",
+                    ""expectedControlType"": ""Integer"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""XRTriggeredHandRight"",
+                    ""type"": ""Value"",
+                    ""id"": ""9ef44c4c-3a54-479f-be2e-1385c8edd5ed"",
+                    ""expectedControlType"": ""Integer"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -326,7 +344,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""id"": ""15671382-71a0-44bf-b5b4-99f5f0f7683a"",
                     ""path"": ""<XInputController>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=17.5,y=12.5)"",
+                    ""processors"": ""ScaleVector2(x=17.5,y=12.5),NormalizeVector2"",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Look"",
                     ""isComposite"": false,
@@ -356,6 +374,17 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""bc943c04-f4fe-4bc0-b644-062bf3cdcc12"",
+                    ""path"": ""<XInputController>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""AttackMagic"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""3595bc67-f3a0-42b9-bbbc-a2d82131750e"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
@@ -368,11 +397,33 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""07962374-d50f-4e90-a914-abf95070b41a"",
-                    ""path"": ""<Gamepad>/select"",
+                    ""path"": ""<XInputController>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3989aa52-48c4-4dbf-bc99-7687b66b6e9b"",
+                    ""path"": ""<XRController>{LeftHand}/trackingState"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""XRTriggeredHandLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5302cdfe-4a06-485f-8e71-e9a0d1acdf3d"",
+                    ""path"": ""<XRController>{RightHand}/trackingState"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""XRTriggeredHandRight"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -399,7 +450,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""Resume"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -407,7 +458,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""9deccf38-5129-4f63-ae24-835f2d965b34"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""path"": ""<XInputController>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -444,6 +495,11 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""isOR"": false
                 }
             ]
+        },
+        {
+            ""name"": ""XR"",
+            ""bindingGroup"": ""XR"",
+            ""devices"": []
         }
     ]
 }");
@@ -457,6 +513,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_Gameplay_Sprint = m_Gameplay.FindAction("Sprint", throwIfNotFound: true);
         m_Gameplay_Interact = m_Gameplay.FindAction("Interact", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_XRTriggeredHandLeft = m_Gameplay.FindAction("XRTriggeredHandLeft", throwIfNotFound: true);
+        m_Gameplay_XRTriggeredHandRight = m_Gameplay.FindAction("XRTriggeredHandRight", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Resume = m_UI.FindAction("Resume", throwIfNotFound: true);
@@ -529,6 +587,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Sprint;
     private readonly InputAction m_Gameplay_Interact;
     private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_XRTriggeredHandLeft;
+    private readonly InputAction m_Gameplay_XRTriggeredHandRight;
     public struct GameplayActions
     {
         private @InputSystem m_Wrapper;
@@ -541,6 +601,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         public InputAction @Sprint => m_Wrapper.m_Gameplay_Sprint;
         public InputAction @Interact => m_Wrapper.m_Gameplay_Interact;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        public InputAction @XRTriggeredHandLeft => m_Wrapper.m_Gameplay_XRTriggeredHandLeft;
+        public InputAction @XRTriggeredHandRight => m_Wrapper.m_Gameplay_XRTriggeredHandRight;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -574,6 +636,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @XRTriggeredHandLeft.started += instance.OnXRTriggeredHandLeft;
+            @XRTriggeredHandLeft.performed += instance.OnXRTriggeredHandLeft;
+            @XRTriggeredHandLeft.canceled += instance.OnXRTriggeredHandLeft;
+            @XRTriggeredHandRight.started += instance.OnXRTriggeredHandRight;
+            @XRTriggeredHandRight.performed += instance.OnXRTriggeredHandRight;
+            @XRTriggeredHandRight.canceled += instance.OnXRTriggeredHandRight;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -602,6 +670,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @XRTriggeredHandLeft.started -= instance.OnXRTriggeredHandLeft;
+            @XRTriggeredHandLeft.performed -= instance.OnXRTriggeredHandLeft;
+            @XRTriggeredHandLeft.canceled -= instance.OnXRTriggeredHandLeft;
+            @XRTriggeredHandRight.started -= instance.OnXRTriggeredHandRight;
+            @XRTriggeredHandRight.performed -= instance.OnXRTriggeredHandRight;
+            @XRTriggeredHandRight.canceled -= instance.OnXRTriggeredHandRight;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -683,6 +757,15 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             return asset.controlSchemes[m_GamepadSchemeIndex];
         }
     }
+    private int m_XRSchemeIndex = -1;
+    public InputControlScheme XRScheme
+    {
+        get
+        {
+            if (m_XRSchemeIndex == -1) m_XRSchemeIndex = asset.FindControlSchemeIndex("XR");
+            return asset.controlSchemes[m_XRSchemeIndex];
+        }
+    }
     public interface IGameplayActions
     {
         void OnLook(InputAction.CallbackContext context);
@@ -693,6 +776,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         void OnSprint(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnXRTriggeredHandLeft(InputAction.CallbackContext context);
+        void OnXRTriggeredHandRight(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

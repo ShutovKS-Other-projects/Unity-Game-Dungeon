@@ -19,7 +19,7 @@
                     "type": "Value",
                     "id": "4fd9f421-168f-4efc-9f23-7d203568cfa4",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "NormalizeVector2",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -76,6 +76,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "XRTriggeredHandLeft",
+                    "type": "Value",
+                    "id": "2ca98c09-ff36-404c-bf38-74f4524fe964",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "XRTriggeredHandRight",
+                    "type": "Value",
+                    "id": "9ef44c4c-3a54-479f-be2e-1385c8edd5ed",
+                    "expectedControlType": "Integer",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -304,7 +322,7 @@
                     "id": "15671382-71a0-44bf-b5b4-99f5f0f7683a",
                     "path": "<XInputController>/rightStick",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=17.5,y=12.5)",
+                    "processors": "ScaleVector2(x=17.5,y=12.5),NormalizeVector2",
                     "groups": "Gamepad",
                     "action": "Look",
                     "isComposite": false,
@@ -334,6 +352,17 @@
                 },
                 {
                     "name": "",
+                    "id": "bc943c04-f4fe-4bc0-b644-062bf3cdcc12",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "AttackMagic",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "3595bc67-f3a0-42b9-bbbc-a2d82131750e",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -346,11 +375,33 @@
                 {
                     "name": "",
                     "id": "07962374-d50f-4e90-a914-abf95070b41a",
-                    "path": "<Gamepad>/select",
+                    "path": "<XInputController>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3989aa52-48c4-4dbf-bc99-7687b66b6e9b",
+                    "path": "<XRController>{LeftHand}/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "XRTriggeredHandLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5302cdfe-4a06-485f-8e71-e9a0d1acdf3d",
+                    "path": "<XRController>{RightHand}/trackingState",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "XRTriggeredHandRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -377,7 +428,7 @@
                     "path": "<Keyboard>/escape",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "Keyboard & Mouse",
                     "action": "Resume",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -385,7 +436,7 @@
                 {
                     "name": "",
                     "id": "9deccf38-5129-4f63-ae24-835f2d965b34",
-                    "path": "<Gamepad>/start",
+                    "path": "<XInputController>/start",
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
@@ -422,6 +473,11 @@
                     "isOR": false
                 }
             ]
+        },
+        {
+            "name": "XR",
+            "bindingGroup": "XR",
+            "devices": []
         }
     ]
 }

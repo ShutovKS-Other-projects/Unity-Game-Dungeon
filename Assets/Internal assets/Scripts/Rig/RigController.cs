@@ -1,3 +1,4 @@
+using Input;
 using Player;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
@@ -6,11 +7,13 @@ namespace Rig
 {
     public class RigController : MonoBehaviour
     {
+        private InputReader _inputReader;
+        private static Transform _transform;
+
         [Space] public static RigBuilder rigBuilder;
 
-        [Space] [Header("Hand Rig")] public static UnityEngine.Animations.Rigging.Rig grab;
-        public static UnityEngine.Animations.Rigging.Rig lHandRig;
-        public static UnityEngine.Animations.Rigging.Rig rHandRig;
+        [Space] [Header("Hand Rig")] public static UnityEngine.Animations.Rigging.Rig rigGrabs;
+        public static UnityEngine.Animations.Rigging.Rig rigHands;
 
         [Space] [Header("Hand")] public static TwoBoneIKConstraint lHand;
         public static TwoBoneIKConstraint rHand;
@@ -18,19 +21,20 @@ namespace Rig
         [Space] [Header("Target")] public static Transform lHandTargetTransform;
         public static Transform rHandTargetTransform;
 
-        [Space] [Header("Capture Weapon")] public static MultiParentConstraint lHandCapture;
-        public static MultiParentConstraint rHandCapture;
-
-        //[Space] [Header("")]
-
-        //[Space] [Header("")]
-
-        //[Space] [Header("")]
+        [Space] [Header("Capture Weapon")] public static MultiParentConstraint lHandGrab;
+        public static MultiParentConstraint rHandGrab;
 
         private void Start()
         {
+            _transform = transform;
             FindRig();
-            // SceneController.OnNewSceneLoaded += FindRig;
+            
+            _inputReader = Resources.Load<InputReader>($"ScriptableObject/Input/InputReader");
+
+            _inputReader.XRTriggeredHandLeftEvent += OnEnableLeftHand;
+            _inputReader.XRTriggeredHandLeftCancelledEvent += OnDisableLeftHand;
+            _inputReader.XRTriggeredHandRightEvent += OnEnableRightHand;
+            _inputReader.XRTriggeredHandRightCancelledEvent += OnDisableRightHand;
         }
 
         public static void SetTransformTargetZero(Transform transform)
@@ -41,22 +45,23 @@ namespace Rig
 
         private static void FindRig()
         {
-            rigBuilder = PlayerController.playerTransform!.GetComponentInChildren<RigBuilder>();
+            rigBuilder = _transform.GetComponentInParent<RigBuilder>();
 
-            var collectionRig = rigBuilder.transform.Find("Collection Rig");
-
-            grab = collectionRig.transform.Find("Grab").GetComponent<UnityEngine.Animations.Rigging.Rig>();
-            lHandRig = collectionRig.transform.Find("L_Hand").GetComponent<UnityEngine.Animations.Rigging.Rig>();
-            rHandRig = collectionRig.transform.Find("R_Hand").GetComponent<UnityEngine.Animations.Rigging.Rig>();
-
-            lHand = lHandRig.transform.Find("Hand").GetComponent<TwoBoneIKConstraint>();
-            rHand = rHandRig.transform.Find("Hand").GetComponent<TwoBoneIKConstraint>();
+            rigHands = _transform.Find("Hands").GetComponent<UnityEngine.Animations.Rigging.Rig>();
+            lHand = rigHands.transform.Find("L_Hand").GetComponent<TwoBoneIKConstraint>();
+            rHand = rigHands.transform.Find("R_Hand").GetComponent<TwoBoneIKConstraint>();
 
             lHandTargetTransform = lHand.transform.Find("Target");
             rHandTargetTransform = rHand.transform.Find("Target");
 
-            lHandCapture = grab.transform.Find("L_Grab").GetComponent<MultiParentConstraint>();
-            rHandCapture = grab.transform.Find("R_Grab").GetComponent<MultiParentConstraint>();
+            rigGrabs = _transform.Find("Grabs").GetComponent<UnityEngine.Animations.Rigging.Rig>();
+            lHandGrab = rigGrabs.transform.Find("L_Grab").GetComponent<MultiParentConstraint>();
+            rHandGrab = rigGrabs.transform.Find("R_Grab").GetComponent<MultiParentConstraint>();
         }
+
+        private static void OnEnableLeftHand() => lHand.weight = 1;
+        private static void OnDisableLeftHand() => lHand.weight = 0;
+        private static void OnEnableRightHand() => rHand.weight = 1;
+        private static void OnDisableRightHand() => rHand.weight = 0;
     }
 }
