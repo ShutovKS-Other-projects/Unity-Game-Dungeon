@@ -52,6 +52,8 @@ namespace Input
         public event Action SprintCancelledEvent;
         public event Action InteractEvent;
         public event Action InteractCancelledEvent;
+        public event Action TakeEvent;
+        public event Action TakeCancelledEvent;
         public event Action XRTrackingArmLeftEvent;
         public event Action XRTrackingArmLeftCancelledEvent;
         public event Action XRTrackingArmRightEvent;
@@ -125,11 +127,19 @@ namespace Input
                 InteractCancelledEvent?.Invoke();
         }
 
+        public void OnTake(InputAction.CallbackContext context)
+        {
+            if (context.phase == InputActionPhase.Performed)
+                TakeEvent?.Invoke();
+            else
+                TakeCancelledEvent?.Invoke();
+        }
+
         public void OnPause(InputAction.CallbackContext context)
         {
             if (context.phase != InputActionPhase.Performed) return;
             PauseEvent?.Invoke();
-            SetUI();
+            // SetUI();
         }
 
         public void OnTrackingHandLeft(InputAction.CallbackContext context)

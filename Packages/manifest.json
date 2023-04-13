@@ -19,6 +19,7 @@
     "com.unity.postprocessing": "3.2.2",
     "com.unity.render-pipelines.universal": "14.0.7",
     "com.unity.settings-manager": "2.0.1",
+    "com.unity.subsystemregistration": "1.1.2",
     "com.unity.test-framework": "1.3.2",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.8.0",

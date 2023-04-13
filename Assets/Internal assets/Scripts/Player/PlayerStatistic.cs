@@ -1,4 +1,4 @@
-﻿using Interactable;
+﻿using Interactive;
 using Player.Characteristics;
 using UnityEngine;
 
@@ -51,23 +51,14 @@ namespace Player
         #region Parameters public
 
         public float MovementForce => playerData.movementForce;
-        public float JumpSpeed => playerData.jumpSpeed;
         public float MovementSpeedMax => playerData.movementSpeedMax;
         public float RunMovementSpeedMax => playerData.runMovementSpeedMax;
-        public float InAirMovementSpeedMax => playerData.inAirMovementSpeedMax;
-        public float CrouchMovementSpeedMax => playerData.crouchMovementSpeedMax;
-        public float BlockMovementSpeedMax => playerData.blockMovementSpeedMax;
-
-        public float CrouchColliderCenter => playerData.crouchColliderCenter;
-        public float CrouchColliderHeight => playerData.crouchColliderHeight;
-        public float StandColliderCenter => playerData.standColliderCenter;
-        public float StandColliderHeight => playerData.standColliderHeight;
 
         public float GroundCheckRadius => playerData.groundCheckRadius;
         public float InterCheckDistance => playerData.interCheckDistance;
         public float InterCheckSphereRadius => playerData.interCheckSphereRadius;
 
-        public InteractionObject interactionObject = null;
+        public InteractionObject interactionObject = new InteractionObject();
         public Transform interactionTransform = null;
 
         #endregion

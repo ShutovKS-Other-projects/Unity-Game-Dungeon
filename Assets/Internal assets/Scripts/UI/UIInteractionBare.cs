@@ -1,8 +1,9 @@
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Interactable
+namespace UI
 {
     public class UIInteractionBare : MonoBehaviour
     {
@@ -27,9 +28,9 @@ namespace Interactable
             _progressBar.fillAmount = progress;
         }
 
-        public void SetTooltipText(string text)
+        public void SetTooltipText([CanBeNull] string text)
         {
-            _tooltipText.text = text;
+            _tooltipText.text = text == null ? "" : text;
         }
 
         public void SetActive(bool active)

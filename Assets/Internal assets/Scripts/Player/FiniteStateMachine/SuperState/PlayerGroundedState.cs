@@ -1,6 +1,7 @@
-using Interactable;
+using Interactive;
 using Manager;
 using Scene;
+using UI;
 using UnityEngine;
 
 namespace Player.FiniteStateMachine.SuperState
@@ -25,24 +26,34 @@ namespace Player.FiniteStateMachine.SuperState
         public override void LogicUpdate()
         {
             base.LogicUpdate();
-            
+
             var isInteractable = CheckVisibleIfInteractable();
 
-            if (StateController.AttackInput && SceneController.currentSceneType != SceneType.Home)
+            if (SceneController.currentSceneType != SceneType.Home)
             {
-                StateMachine.ChangeState(StateController.AttackState);
+                if (StateController.AttackInput)
+                {
+                    StateMachine.ChangeState(StateController.AttackState);
+                }
+                else if (StateController.AttackMagicInput)
+                {
+                    StateMachine.ChangeState(StateController.AttackMagicState);
+                }
+                else if (StateController.AttackSuperInput)
+                {
+                    StateMachine.ChangeState(StateController.AttackSuperState);
+                }
             }
-            else if (StateController.AttackMagicInput && SceneController.currentSceneType != SceneType.Home)
+            else if (isInteractable)
             {
-                StateMachine.ChangeState(StateController.AttackMagicState);
-            }
-            else if (StateController.AttackSuperInput && SceneController.currentSceneType != SceneType.Home)
-            {
-                StateMachine.ChangeState(StateController.AttackSuperState);
-            }
-            else if (isInteractable && StateController.InteractInput)
-            {
-                StateMachine.ChangeState(StateController.InteractState);
+                if (StateController.InteractInput)
+                {
+                    StateMachine.ChangeState(StateController.InteractState);
+                }
+                else if (StateController.TakeInput)
+                {
+                    StateMachine.ChangeState(StateController.InteractState);
+                }
             }
         }
 
@@ -70,18 +81,18 @@ namespace Player.FiniteStateMachine.SuperState
             var ray = new Ray(cameraTransform.position, cameraTransform.forward);
 
             if (Physics.SphereCast(ray, PlayerStatistic.InterCheckSphereRadius, out var hitInfo,
-                    PlayerStatistic.InterCheckDistance, LayerMask.GetMask("Interactable")))
+                    PlayerStatistic.InterCheckDistance, LayerMask.GetMask($"Interactive")))
             {
-                var interactable = hitInfo.collider.GetComponent<InteractableBase>();
+                var interactive = hitInfo.collider.GetComponent<IInteractive>();
 
-                if (interactable != null)
+                if (interactive != null)
                     if (PlayerStatistic.interactionObject.IsEmpty() ||
-                        PlayerStatistic.interactionObject.IsSameInteractable(interactable))
+                        PlayerStatistic.interactionObject.IsSameInteractable(interactive))
                     {
-                        PlayerStatistic.interactionObject.Interactable = interactable;
+                        PlayerStatistic.interactionObject.Interactive = interactive;
                         PlayerStatistic.Instance.interactionTransform = hitInfo.transform;
-                        UIInteractionBare.Instance.SetTooltipText(interactable.TooltipText);
-
+                        UIInteractionBare.Instance.SetTooltipText(interactive.TooltipTextInteract + " " +
+                                                                  interactive.TooltipTextTake);
                         return true;
                     }
             }

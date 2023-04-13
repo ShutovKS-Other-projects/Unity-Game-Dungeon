@@ -7058,6 +7058,12 @@ PrefabInstance:
       propertyPath: weaponType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 440674850754098900, guid: 131c5e211f381fd43be00927db1dc98d,
+        type: 3}
+      propertyPath: interactiveObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 7283919bddf9a8940a0deb3386d6fa63,
+        type: 2}
     - target: {fileID: 4475064448374899061, guid: 131c5e211f381fd43be00927db1dc98d,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -11085,15 +11091,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 501310726}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e180a19d92849447a77b0c9bc1a8a77, type: 3}
+  m_Script: {fileID: 11500000, guid: 03af9710ce3dbaf4e89377f2c8da0706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0
-  holdInteract: 0
-  multipleUse: 0
-  isInteractable: 1
-  tooltipText: "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 F \u0447\u0442\u043E\u0431\u044B
-    \u043E\u0442\u043A\u0440\u044B\u0442\u044C \u043A\u043D\u0438\u0433\u0443 \u043D\u0430\u0432\u044B\u043A\u043E\u0432"
+  interactiveObject: {fileID: 11400000, guid: a9aa1afb209fdee4ba04ad92088bc10b, type: 2}
 --- !u!65 &501310730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19662,7 +19663,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20720,6 +20721,12 @@ PrefabInstance:
       propertyPath: weaponType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 440674850754098900, guid: 131c5e211f381fd43be00927db1dc98d,
+        type: 3}
+      propertyPath: interactiveObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 7283919bddf9a8940a0deb3386d6fa63,
+        type: 2}
     - target: {fileID: 4475064448374899061, guid: 131c5e211f381fd43be00927db1dc98d,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -22148,6 +22155,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
@@ -25430,6 +25438,12 @@ PrefabInstance:
       propertyPath: weaponType
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 440674850754098900, guid: 131c5e211f381fd43be00927db1dc98d,
+        type: 3}
+      propertyPath: interactiveObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 7283919bddf9a8940a0deb3386d6fa63,
+        type: 2}
     - target: {fileID: 4475064448374899061, guid: 131c5e211f381fd43be00927db1dc98d,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -29767,6 +29781,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e428ff178df04aebbb0b8ef0c69f67e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1230073654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75002311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94dace9bc77c87d469950f18ab693028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1230868740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30160,6 +30186,12 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1096735778}
     m_Modifications:
+    - target: {fileID: 440674850754098900, guid: 131c5e211f381fd43be00927db1dc98d,
+        type: 3}
+      propertyPath: interactiveObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 7283919bddf9a8940a0deb3386d6fa63,
+        type: 2}
     - target: {fileID: 4475064448374899061, guid: 131c5e211f381fd43be00927db1dc98d,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -31689,6 +31721,12 @@ PrefabInstance:
       propertyPath: weaponType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 440674850754098900, guid: 131c5e211f381fd43be00927db1dc98d,
+        type: 3}
+      propertyPath: interactiveObject
+      value: 
+      objectReference: {fileID: 11400000, guid: 7283919bddf9a8940a0deb3386d6fa63,
+        type: 2}
     - target: {fileID: 4475064448374899061, guid: 131c5e211f381fd43be00927db1dc98d,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -38742,7 +38780,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1630093149}
-  - component: {fileID: 1630093150}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -38765,18 +38802,6 @@ Transform:
   m_Father: {fileID: 824661375}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1630093150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630093148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94dace9bc77c87d469950f18ab693028, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1633450676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45177,7 +45202,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1905589550}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000000044703484, y: 1.25, z: -1.0606602}
+  m_LocalPosition: {x: 0.00000022351742, y: 1.25, z: -0.06065905}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -45196,11 +45221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159eb864b00d001419498a95e8ce8510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holdDuration: 0
-  holdInteract: 0
-  multipleUse: 0
-  isInteractable: 1
-  tooltipText: "\u041D\u0430\u0447\u0430\u0442\u044C \u043F\u0440\u043E\u0445\u043E\u0436\u0434\u0435\u043D\u0438\u0435"
+  interactiveObject: {fileID: 11400000, guid: 9ae9012b9e1c25c478cf875fc398afc1, type: 2}
 --- !u!135 &1905589553
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -51897,12 +51918,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 47ee85fca8c06214d9e42a36e3099518,
         type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftArm'\n\tTransform
-        'mixamorig:RightHand'\n\tTransform 'mixamorig:LeftForeArm'\n\tTransform 'mixamorig:RightForeArm'\n\tTransform
-        'mixamorig:LeftHand'\n\tTransform 'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftArm'\n\tTransform
-        'mixamorig:RightHand'\n\tTransform 'mixamorig:LeftForeArm'\n\tand more ..."
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 47ee85fca8c06214d9e42a36e3099518,
         type: 3}
@@ -52257,11 +52273,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47ee85fca8c06214d9e42a36e3099518,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1230073652}
+      addedObject: {fileID: 1230073646}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47ee85fca8c06214d9e42a36e3099518,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1230073646}
+      addedObject: {fileID: 1230073654}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 47ee85fca8c06214d9e42a36e3099518,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1230073652}
     - targetCorrespondingSourceObject: {fileID: 1082271958561512970, guid: 47ee85fca8c06214d9e42a36e3099518,
         type: 3}
       insertIndex: -1

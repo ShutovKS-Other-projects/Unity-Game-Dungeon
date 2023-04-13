@@ -1,6 +1,6 @@
 using System;
 using Input;
-using Interactable;
+using Interactive;
 using Manager;
 using Player.FiniteStateMachine.SubState;
 using Scene;
@@ -81,6 +81,8 @@ namespace Player.FiniteStateMachine
             _inputReader.SprintCancelledEvent += HandlerRunCancelled;
             _inputReader.InteractEvent += HandlerInteract;
             _inputReader.InteractCancelledEvent += HandlerInteractCancelled;
+            _inputReader.TakeEvent += HandlerTake;
+            _inputReader.TakeCancelledEvent += HandlerTakeCancelled;
         }
 
         private void Start()
@@ -171,6 +173,7 @@ namespace Player.FiniteStateMachine
         public bool AttackSuperInput { get; private set; }
         public bool AttackMagicInput { get; private set; }
         public bool InteractInput { get; private set; }
+        public bool TakeInput { get; private set; }
 
         private void HandlerMovement(Vector2 value) => MovementInput = value;
         private void HandlerRun() => RunInput = true;
@@ -183,6 +186,8 @@ namespace Player.FiniteStateMachine
         private void HandlerAttackMagicCancelled() => AttackMagicInput = false;
         private void HandlerInteract() => InteractInput = true;
         private void HandlerInteractCancelled() => InteractInput = false;
+        private void HandlerTake() => TakeInput = true;
+        private void HandlerTakeCancelled() => TakeInput = false;
 
         #endregion
     }
