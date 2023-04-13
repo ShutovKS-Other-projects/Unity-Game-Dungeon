@@ -1,35 +1,36 @@
 ﻿using Input;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace XR
 {
     public class XRRig : MonoBehaviour
     {
         private InputReader _inputReader;
-        private bool _isTriggeredLeftHand, _isTriggeredRightHand;
+        private bool _isTriggeredLeftArm, _isTriggeredRightArm;
 
-        public XRMap leftHand;
-        public XRMap rightHand;
+        [FormerlySerializedAs("leftHand")] public XRMap leftArm;
+        [FormerlySerializedAs("rightHand")] public XRMap rightArm;
 
         private void Start()
         {
             _inputReader = Resources.Load<InputReader>($"ScriptableObject/Input/InputReader");
 
-            _inputReader.XRTrackingHandLeftEvent += OnEnableLeftHand;
-            _inputReader.XRTrackingHandLeftCancelledEvent += OnDisableLeftHand;
-            _inputReader.XRTrackingHandRightEvent += OnEnableRightHand;
-            _inputReader.XRTrackingHandRightCancelledEvent += OnDisableRightHand;
+            _inputReader.XRTrackingArmLeftEvent += OnEnableLeftArm;
+            _inputReader.XRTrackingArmLeftCancelledEvent += OnDisableLeftArm;
+            _inputReader.XRTrackingArmRightEvent += OnEnableRightArm;
+            _inputReader.XRTrackingArmRightCancelledEvent += OnDisableRightArm;
         }
 
         private void LateUpdate()
         {
-            if (_isTriggeredLeftHand) leftHand.Map();
-            if (_isTriggeredRightHand) rightHand.Map();
+            if (_isTriggeredLeftArm) leftArm.Map();
+            if (_isTriggeredRightArm) rightArm.Map();
         }
 
-        private void OnEnableLeftHand() => _isTriggeredLeftHand = true;
-        private void OnDisableLeftHand() => _isTriggeredLeftHand = false;
-        private void OnEnableRightHand() => _isTriggeredRightHand = true;
-        private void OnDisableRightHand() => _isTriggeredRightHand = false;
+        private void OnEnableLeftArm() => _isTriggeredLeftArm = true;
+        private void OnDisableLeftArm() => _isTriggeredLeftArm = false;
+        private void OnEnableRightArm() => _isTriggeredRightArm = true;
+        private void OnDisableRightArm() => _isTriggeredRightArm = false;
     }
 }

@@ -52,10 +52,10 @@ namespace Input
         public event Action SprintCancelledEvent;
         public event Action InteractEvent;
         public event Action InteractCancelledEvent;
-        public event Action XRTrackingHandLeftEvent;
-        public event Action XRTrackingHandLeftCancelledEvent;
-        public event Action XRTrackingHandRightEvent;
-        public event Action XRTrackingHandRightCancelledEvent;
+        public event Action XRTrackingArmLeftEvent;
+        public event Action XRTrackingArmLeftCancelledEvent;
+        public event Action XRTrackingArmRightEvent;
+        public event Action XRTrackingArmRightCancelledEvent;
         public event Action XRGripLeftEvent;
         public event Action XRGripLeftCancelledEvent;
         public event Action XRGripRightEvent;
@@ -135,17 +135,17 @@ namespace Input
         public void OnTrackingHandLeft(InputAction.CallbackContext context)
         {
             if (context.phase == InputActionPhase.Performed)
-                XRTrackingHandLeftEvent?.Invoke();
+                XRTrackingArmLeftEvent?.Invoke();
             else
-                XRTrackingHandLeftCancelledEvent?.Invoke();
+                XRTrackingArmLeftCancelledEvent?.Invoke();
         }
 
         public void OnTrackingHandRight(InputAction.CallbackContext context)
         {
             if (context.phase == InputActionPhase.Performed)
-                XRTrackingHandRightEvent?.Invoke();
+                XRTrackingArmRightEvent?.Invoke();
             else
-                XRTrackingHandRightCancelledEvent?.Invoke();
+                XRTrackingArmRightCancelledEvent?.Invoke();
         }
 
         public void OnGripLeft(InputAction.CallbackContext context)
@@ -164,7 +164,7 @@ namespace Input
                 XRGripRightCancelledEvent?.Invoke();
         }
 
-        public void OnActionLeft(InputAction.CallbackContext context)
+        public void OnTriggerLeft(InputAction.CallbackContext context)
         {
             if (context.phase == InputActionPhase.Performed)
                 XRActionLeftEvent?.Invoke();
@@ -172,7 +172,7 @@ namespace Input
                 XRActionLeftCancelledEvent?.Invoke();
         }
 
-        public void OnActionRight(InputAction.CallbackContext context)
+        public void OnTriggerRight(InputAction.CallbackContext context)
         {
             if (context.phase == InputActionPhase.Performed)
                 XRActionRightEvent?.Invoke();

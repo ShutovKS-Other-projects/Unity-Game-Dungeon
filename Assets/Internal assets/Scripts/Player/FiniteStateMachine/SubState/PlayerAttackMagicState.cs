@@ -61,13 +61,13 @@ namespace Player.FiniteStateMachine.SubState
 
         private static void SetTransformTarget(Vector3 position, Quaternion rotation)
         {
-            RigController.rHandTargetTransform.localPosition = position;
-            RigController.rHandTargetTransform.localRotation = rotation;
+            RigController.rArmTargetTransform.localPosition = position;
+            RigController.rArmTargetTransform.localRotation = rotation;
         }
 
         private static void SetTransformTargetZero()
         {
-            RigController.SetTransformTargetZero(RigController.rHandTargetTransform);
+            RigController.SetTransformTargetZero(RigController.rArmTargetTransform);
         }
     }
 }

@@ -36,8 +36,8 @@ namespace Player.FiniteStateMachine.SubState
             base.AnimationTrigger();
 
             if (_isInteracting) return;
-            RigController.rHand.weight = 0;
-            RigController.lHand.weight = 0;
+            RigController.rArm.weight = 0;
+            RigController.lArm.weight = 0;
             PlayerStatistic.interactionObject.Interact();
             _isInteracting = true;
         }
@@ -52,13 +52,13 @@ namespace Player.FiniteStateMachine.SubState
 
         private static void SetTransformTarget(Transform transform, Quaternion rotation)
         {
-            RigController.rHandTargetTransform.localPosition = transform.position;
-            RigController.rHandTargetTransform.localRotation = rotation;
+            RigController.rArmTargetTransform.localPosition = transform.position;
+            RigController.rArmTargetTransform.localRotation = rotation;
         }
 
         private static void SetTransformTargetZero()
         {
-            RigController.SetTransformTargetZero(RigController.rHandTargetTransform);
+            RigController.SetTransformTargetZero(RigController.rArmTargetTransform);
         }
     }
 }

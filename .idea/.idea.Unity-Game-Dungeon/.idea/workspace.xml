@@ -5,17 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8bfb18a8-1023-459b-adf4-9cbdeea9f1f6" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskArms.mask" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskArms.mask.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Unity-Game-Dungeon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskHands.mask" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskHands.mask" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskHands.mask.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Mask/AvatarMaskHands.mask.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Idle.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Animations/Sources/NoWeapon/Idle.anim" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/InputSystem/InputSystem.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/InputSystem/InputSystem.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scenes/HomeScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Input/InputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Input/InputReader.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Input/InputSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Input/InputSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerAttackMagicState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerAttackMagicState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerInteractState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Player/FiniteStateMachine/SubState/PlayerInteractState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Rig/RigController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/Rig/RigController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Internal assets/Scripts/XR/XRRig.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Internal assets/Scripts/XR/XRRig.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.2.0/XR Device Simulator/XR Device Simulator Controls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.2.0/XR Device Simulator/XR Device Simulator Controls.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.2.0/XR Device Simulator/XR Device Simulator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.2.0/XR Device Simulator/XR Device Simulator.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController Game.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/AnimationControllers/Player/PlayerAnimationController Game.controller" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +289,7 @@
       <workItem from="1681363195939" duration="7697000" />
       <workItem from="1681382753376" duration="699000" />
       <workItem from="1681385331925" duration="231000" />
-      <workItem from="1681396278222" duration="4897000" />
+      <workItem from="1681396278222" duration="8090000" />
     </task>
     <servers />
   </component>
