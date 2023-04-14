@@ -12,10 +12,5 @@ namespace Interactive.Interactive
         {
             SceneController.SwitchScene(SceneType.StartGame);
         }
-
-        public void OnTake()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

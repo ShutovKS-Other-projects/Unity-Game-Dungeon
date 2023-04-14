@@ -1,18 +1,18 @@
-using Manager;
+﻿using Player.FiniteStateMachine.SuperState;
 using Rig;
 using UnityEngine;
 
 namespace Player.FiniteStateMachine.SubState
 {
-    public class PlayerInteractState : SuperState.PlayerAbilityState
+    public class PlayerTakeState : PlayerAbilityState
     {
-        public PlayerInteractState(PlayerStateController stateController, PlayerStateMachine stateMachine,
+        public PlayerTakeState(PlayerStateController stateController, PlayerStateMachine stateMachine,
             PlayerStatistic playerStatistic, string animBoolName) : base(stateController, stateMachine, playerStatistic,
             animBoolName)
         {
         }
-
-        private bool _isInteracting;
+        
+        private bool _isTake;
 
         public override void Enter()
         {
@@ -26,7 +26,7 @@ namespace Player.FiniteStateMachine.SubState
         {
             base.Exit();
 
-            _isInteracting = false;
+            _isTake = false;
             SetTransformTargetZero();
         }
 
@@ -34,10 +34,10 @@ namespace Player.FiniteStateMachine.SubState
         {
             base.AnimationTrigger();
 
-            if (_isInteracting) return;
+            if (_isTake) return;
             RigController.rArm.weight = 0;
             RigController.lArm.weight = 0;
-            _isInteracting = PlayerStatistic.interactionObject.TryInteract();
+            _isTake = PlayerStatistic.interactionObject.TryTake();
         }
 
         public override void AnimationFinishTrigger()

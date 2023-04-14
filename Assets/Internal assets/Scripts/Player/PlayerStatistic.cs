@@ -58,7 +58,7 @@ namespace Player
         public float InterCheckDistance => playerData.interCheckDistance;
         public float InterCheckSphereRadius => playerData.interCheckSphereRadius;
 
-        public InteractionObject interactionObject = new InteractionObject();
+        public InteractionObject interactionObject = null;
         public Transform interactionTransform = null;
 
         #endregion

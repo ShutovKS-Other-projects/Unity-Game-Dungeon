@@ -12,7 +12,7 @@ namespace Rig
 
         [Space] public static RigBuilder rigBuilder;
 
-        [Space] [Header("Rig")] public static UnityEngine.Animations.Rigging.Rig rigGrips;
+        [Space] [Header("Rig")] public static UnityEngine.Animations.Rigging.Rig rigGrabs;
         public static UnityEngine.Animations.Rigging.Rig rigArms;
 
         [Space] [Header("Arm")] public static TwoBoneIKConstraint lArm;
@@ -23,8 +23,8 @@ namespace Rig
         
         
 
-        [Space] [Header("Grip")] public static MultiParentConstraint lArmGrip;
-        public static MultiParentConstraint rArmGrip;
+        [Space] [Header("Grab")] public static MultiParentConstraint lGrab;
+        public static MultiParentConstraint rGrab;
 
         private void Start()
         {
@@ -56,9 +56,9 @@ namespace Rig
             lArmTargetTransform = lArm.transform.Find("Target");
             rArmTargetTransform = rArm.transform.Find("Target");
 
-            rigGrips = _transform.Find("Grips").GetComponent<UnityEngine.Animations.Rigging.Rig>();
-            lArmGrip = rigGrips.transform.Find("L_Grip").GetComponent<MultiParentConstraint>();
-            rArmGrip = rigGrips.transform.Find("R_Grip").GetComponent<MultiParentConstraint>();
+            rigGrabs = _transform.Find("Grabs").GetComponent<UnityEngine.Animations.Rigging.Rig>();
+            lGrab = rigGrabs.transform.Find("L_Grab").GetComponent<MultiParentConstraint>();
+            rGrab = rigGrabs.transform.Find("R_Grab").GetComponent<MultiParentConstraint>();
         }
 
         private static void OnEnableLeftArm() => lArm.weight = 1;

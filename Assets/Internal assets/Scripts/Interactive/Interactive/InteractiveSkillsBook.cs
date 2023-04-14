@@ -14,10 +14,5 @@ namespace Interactive.Interactive
             UIHomeSceneController.Instance.SwitchSkillsBookUI(true);
             SceneController.SwitchCursor(true);
         }
-
-        public void OnTake()
-        {
-            throw new System.NotImplementedException();
-        }
     }
 }

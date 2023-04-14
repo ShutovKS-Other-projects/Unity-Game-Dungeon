@@ -52,7 +52,7 @@ namespace Player.FiniteStateMachine.SuperState
                 }
                 else if (StateController.TakeInput)
                 {
-                    StateMachine.ChangeState(StateController.InteractState);
+                    StateMachine.ChangeState(StateController.TakeState);
                 }
             }
         }

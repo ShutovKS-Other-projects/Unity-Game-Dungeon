@@ -3,10 +3,9 @@
     public enum WeaponType
     {
         Spear,
-        BowAndArrow,
-        SwordAndShield,
+        Bow,
         Hammer,
-        TwoSwords,
+        Sword,
         Other
     }
 }

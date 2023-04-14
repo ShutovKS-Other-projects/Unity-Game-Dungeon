@@ -23,6 +23,7 @@ namespace Player.FiniteStateMachine
         public PlayerDeathState DeathState { get; private set; }
         public PlayerRunState RunState { get; private set; }
         public PlayerAttackMagicState AttackMagicState { get; private set; }
+        public PlayerTakeState TakeState { get; private set; }
 
         #endregion
 
@@ -65,6 +66,7 @@ namespace Player.FiniteStateMachine
             AttackMagicState = new PlayerAttackMagicState(this, _stateMachine, _playerStatistic, "AttackMagic");
             AttackSuperState = new PlayerAttackSuperState(this, _stateMachine, _playerStatistic, "AttackSuper");
             InteractState = new PlayerInteractState(this, _stateMachine, _playerStatistic, "Interact");
+            TakeState = new PlayerTakeState(this, _stateMachine, _playerStatistic, "Interact");
             DamageState = new PlayerDamageState(this, _stateMachine, _playerStatistic, "Damage");
             DeathState = new PlayerDeathState(this, _stateMachine, _playerStatistic, "Death");
             RunState = new PlayerRunState(this, _stateMachine, _playerStatistic, "Run");
@@ -120,7 +122,7 @@ namespace Player.FiniteStateMachine
         private void OnTriggerExit(Collider other) => _stateMachine.CurrentState.TriggerExit(other);
 
         #endregion
-        
+
         #region Movement
 
         public void Movement(float speedMax)

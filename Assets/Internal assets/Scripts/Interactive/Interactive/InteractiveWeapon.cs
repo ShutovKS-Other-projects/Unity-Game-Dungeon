@@ -1,21 +1,15 @@
 using UnityEngine;
-using Weapon;
 
 namespace Interactive.Interactive
 {
     public class InteractiveWeapon : MonoBehaviour, IInteractive
     {
-        [SerializeField] private WeaponType weaponType;
         [SerializeField] private InteractiveObject interactiveObject;
         InteractiveObject IInteractive.InteractiveObject => interactiveObject;
 
-        public void OnInteract()
+        public void OnGrab()
         {
-            WeaponController.ChooseWeapon(weaponType);
-        }
-
-        public void OnTake()
-        {
+            GrabsController.GrabRight(transform);
         }
     }
 }

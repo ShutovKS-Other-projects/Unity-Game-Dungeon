@@ -7,22 +7,24 @@ namespace Interactive
     {
         public IInteractive Interactive { get; set; }
 
-        public void Interact()
+        public bool TryInteract()
         {
             if (Interactive == null)
-                return;
+                return false;
 
             Interactive.OnInteract();
             ResetData();
+            return true;
         }
-        
-        public void Take()
+
+        public bool TryTake()
         {
             if (Interactive == null)
-                return;
+                return false;
 
-            Interactive.OnTake();
+            Interactive.OnGrab();
             ResetData();
+            return true;
         }
 
         public bool IsSameInteractable(IInteractive newInteractable) => Interactive == newInteractable;
