@@ -4,7 +4,7 @@ namespace Manager
 {
     public class DontDestroyOnLoad : MonoBehaviour
     {
-        private void Awake()
+        private void Start()
         {
             DontDestroyOnLoad(gameObject);
         }

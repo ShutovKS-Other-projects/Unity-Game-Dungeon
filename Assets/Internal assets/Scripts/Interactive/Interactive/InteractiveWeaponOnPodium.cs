@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using Weapon;
+using XR;
 
 namespace Interactive.Interactive
 {
@@ -20,13 +21,42 @@ namespace Interactive.Interactive
 
         public void OnGrab()
         {
-            GrabsController.RemoveChildrenRight();
+            GrabsController.RemoveChildrens();
             WeaponController.ChooseWeapon(weaponType);
 
             SwitchWeapon?.Invoke();
 
             var weapon = Instantiate(Resources.Load<GameObject>($"Weapon/{weaponType}")).transform;
             GrabsController.GrabRight(weapon);
+        }
+        
+        public void OnGrabXR(SideType sideType)
+        {
+            switch (sideType)
+            {
+                case SideType.Left:
+                {
+                    GrabsController.RemoveChildrens();
+                    WeaponController.ChooseWeapon(weaponType);
+
+                    SwitchWeapon?.Invoke();
+
+                    var weapon = Instantiate(Resources.Load<GameObject>($"Weapon/{weaponType}")).transform;
+                    GrabsController.GrabLeft(weapon);
+                    break;
+                }
+                case SideType.Right:
+                {
+                    GrabsController.RemoveChildrens();
+                    WeaponController.ChooseWeapon(weaponType);
+
+                    SwitchWeapon?.Invoke();
+
+                    var weapon = Instantiate(Resources.Load<GameObject>($"Weapon/{weaponType}")).transform;
+                    GrabsController.GrabRight(weapon);
+                    break;
+                }
+            }
         }
 
         private void EnableWeapon() =>

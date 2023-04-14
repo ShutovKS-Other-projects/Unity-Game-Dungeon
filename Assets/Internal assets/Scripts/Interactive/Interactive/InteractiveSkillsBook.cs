@@ -1,6 +1,7 @@
 using Scene;
 using UI.Home_Scene;
 using UnityEngine;
+using XR;
 
 namespace Interactive.Interactive
 {
@@ -10,6 +11,12 @@ namespace Interactive.Interactive
         InteractiveObject IInteractive.InteractiveObject => interactiveObject;
 
         public void OnInteract()
+        {
+            UIHomeSceneController.Instance.SwitchSkillsBookUI(true);
+            SceneController.SwitchCursor(true);
+        }
+        
+        public void OnInteractXR(SideType sideType)
         {
             UIHomeSceneController.Instance.SwitchSkillsBookUI(true);
             SceneController.SwitchCursor(true);

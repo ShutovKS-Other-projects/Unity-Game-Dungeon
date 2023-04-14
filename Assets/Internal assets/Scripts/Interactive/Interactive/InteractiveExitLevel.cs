@@ -1,6 +1,7 @@
 using Enemy;
 using Scene;
 using UnityEngine;
+using XR;
 
 namespace Interactive.Interactive
 {
@@ -17,7 +18,11 @@ namespace Interactive.Interactive
         public void OnInteract()
         {
             SceneController.SwitchScene(SceneType.Game);
-            
         }
+        public void OnInteractXR(SideType sideType)
+        {
+            SceneController.SwitchScene(SceneType.Game);
+        }
+
     }
 }

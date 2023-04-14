@@ -11,16 +11,7 @@ namespace Player.FiniteStateMachine.SuperState
         }
 
         protected Vector2 MovementInput;
-
         protected bool IsAbilityDone;
-        protected bool IsGrounded;
-
-        protected override void DoChecks()
-        {
-            base.DoChecks();
-
-            IsGrounded = StateController.CheckIfGrounded();
-        }
 
         public override void Enter()
         {

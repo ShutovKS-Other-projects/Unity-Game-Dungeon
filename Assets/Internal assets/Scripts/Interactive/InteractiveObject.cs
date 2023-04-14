@@ -12,5 +12,8 @@ namespace Interactive
 
         [TextArea(5, 5)] [CanBeNull] public string tooltipTextInteract;
         [TextArea(5, 5)] [CanBeNull] public string tooltipTextTake;
+        
+        [TextArea(5, 5)] [CanBeNull] public string tooltipTextInteractXR;
+        [TextArea(5, 5)] [CanBeNull] public string tooltipTextTakeXR;
     }
 }

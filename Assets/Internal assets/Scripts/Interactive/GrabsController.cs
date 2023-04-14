@@ -62,6 +62,11 @@ namespace Interactive
         public static void RemoveChildrenLeft() => RemoveChildren(_lGrab);
         public static void RemoveChildrenRight() => RemoveChildren(_rGrab);
 
+        public static void RemoveChildrens()
+        {
+            RemoveChildrenLeft();
+            RemoveChildrenRight();
+        }
         private static void RemoveChildren(Transform grabTransform)
         {
             if (grabTransform.childCount > 0)

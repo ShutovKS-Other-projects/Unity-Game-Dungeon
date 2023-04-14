@@ -1,9 +1,6 @@
-using System;
 using Input;
 using Interactive;
-using Manager;
 using Player.FiniteStateMachine.SubState;
-using Scene;
 using UnityEngine;
 
 namespace Player.FiniteStateMachine
@@ -146,16 +143,6 @@ namespace Player.FiniteStateMachine
         {
             var cameraRotation = UnityEngine.Camera.main!.transform.rotation;
             transform.rotation = new Quaternion(0f, cameraRotation.y, 0f, cameraRotation.w);
-        }
-
-        #endregion
-
-        #region Check Functions
-
-        public bool CheckIfGrounded()
-        {
-            return Physics.CheckSphere(new Vector3(0, 0.12f, 0), _playerStatistic.GroundCheckRadius,
-                LayerMask.GetMask("Ground"));
         }
 
         #endregion

@@ -1,5 +1,6 @@
 ﻿using JetBrains.Annotations;
 using UnityEngine;
+using XR;
 
 namespace Interactive
 {
@@ -9,7 +10,7 @@ namespace Interactive
 
         public bool IsInteract => InteractiveObject.isInteract;
         public bool IsGrab => InteractiveObject.isGrab;
-        
+
         [CanBeNull] public string TooltipTextInteract => InteractiveObject.tooltipTextInteract;
         [CanBeNull] public string TooltipTextTake => InteractiveObject.tooltipTextTake;
 
@@ -18,9 +19,19 @@ namespace Interactive
             Debug.Log("No interact");
         }
 
+        public void OnInteractXR(SideType sideType)
+        {
+            Debug.Log("No interact XR");
+        }
+
         public void OnGrab()
         {
             Debug.Log("No grab");
+        }
+
+        public void OnGrabXR(SideType sideType)
+        {
+            Debug.Log("No grab XR");
         }
     }
 }
