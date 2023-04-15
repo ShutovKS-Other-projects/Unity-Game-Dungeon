@@ -96,15 +96,6 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "GripRight",
-                    "type": "Value",
-                    "id": "2d38ba14-f6a5-420f-8383-ed6163d4cc52",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
-                },
-                {
                     "name": "GripLeft",
                     "type": "Button",
                     "id": "72dc1c65-790c-40ff-867a-ee5fae9deb9a",
@@ -112,6 +103,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "GripRight",
+                    "type": "Value",
+                    "id": "2d38ba14-f6a5-420f-8383-ed6163d4cc52",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 },
                 {
                     "name": "TriggerLeft",
@@ -254,12 +254,12 @@
                 },
                 {
                     "name": "",
-                    "id": "a43f0223-2e86-4a40-a8c7-8d8eddee2937",
-                    "path": "<XRSimulatedController>{RightHand}/gripButton",
+                    "id": "124a98db-4660-4a32-b148-59806804f020",
+                    "path": "<Gamepad>/leftTrigger",
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
-                    "action": "GripRight",
+                    "action": "GripLeft",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -298,8 +298,30 @@
                 },
                 {
                     "name": "",
+                    "id": "0b9ed2a5-a089-4cdc-9779-ef9592a5c848",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "TriggerRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "2b818abb-2d5b-40e5-85dc-68d4b090428e",
                     "path": "<XRSimulatedController>{LeftHand}/triggerButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "TriggerLeft",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "70848822-30ea-419e-92b6-239d61b65c90",
+                    "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
                     "processors": "",
                     "groups": "XR",
@@ -323,7 +345,7 @@
                     "id": "f5798224-629e-4385-8d18-7680f5938106",
                     "path": "<XInputController>/rightStick",
                     "interactions": "",
-                    "processors": "ScaleVector2(x=17.5,y=12.5),NormalizeVector2",
+                    "processors": "NormalizeVector2,ScaleVector2(x=17.5,y=12.5)",
                     "groups": "Gamepad",
                     "action": "Look",
                     "isComposite": false,
@@ -557,6 +579,28 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "Pause",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a43f0223-2e86-4a40-a8c7-8d8eddee2937",
+                    "path": "<XRSimulatedController>{RightHand}/gripButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "GripRight",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "041b926a-1134-4210-b860-7f36c2c16ea1",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "XR",
+                    "action": "GripRight",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

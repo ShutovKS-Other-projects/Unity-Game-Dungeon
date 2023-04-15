@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Weapon
@@ -6,5 +7,10 @@ namespace Weapon
     public class ChosenWeaponObject : ScriptableObject
     {
         public WeaponType weaponType;
+
+        private void OnDisable()
+        {
+            weaponType = WeaponType.Other;
+        }
     }
 }

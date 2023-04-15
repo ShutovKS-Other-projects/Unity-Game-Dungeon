@@ -118,15 +118,6 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""GripRight"",
-                    ""type"": ""Value"",
-                    ""id"": ""2d38ba14-f6a5-420f-8383-ed6163d4cc52"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""GripLeft"",
                     ""type"": ""Button"",
                     ""id"": ""72dc1c65-790c-40ff-867a-ee5fae9deb9a"",
@@ -134,6 +125,15 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""GripRight"",
+                    ""type"": ""Value"",
+                    ""id"": ""2d38ba14-f6a5-420f-8383-ed6163d4cc52"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 },
                 {
                     ""name"": ""TriggerLeft"",
@@ -276,12 +276,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""a43f0223-2e86-4a40-a8c7-8d8eddee2937"",
-                    ""path"": ""<XRSimulatedController>{RightHand}/gripButton"",
+                    ""id"": ""124a98db-4660-4a32-b148-59806804f020"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
-                    ""action"": ""GripRight"",
+                    ""action"": ""GripLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -320,8 +320,30 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""0b9ed2a5-a089-4cdc-9779-ef9592a5c848"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""TriggerRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""2b818abb-2d5b-40e5-85dc-68d4b090428e"",
                     ""path"": ""<XRSimulatedController>{LeftHand}/triggerButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""TriggerLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""70848822-30ea-419e-92b6-239d61b65c90"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
@@ -345,7 +367,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""id"": ""f5798224-629e-4385-8d18-7680f5938106"",
                     ""path"": ""<XInputController>/rightStick"",
                     ""interactions"": """",
-                    ""processors"": ""ScaleVector2(x=17.5,y=12.5),NormalizeVector2"",
+                    ""processors"": ""NormalizeVector2,ScaleVector2(x=17.5,y=12.5)"",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Look"",
                     ""isComposite"": false,
@@ -581,6 +603,28 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a43f0223-2e86-4a40-a8c7-8d8eddee2937"",
+                    ""path"": ""<XRSimulatedController>{RightHand}/gripButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""GripRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""041b926a-1134-4210-b860-7f36c2c16ea1"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""GripRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -670,8 +714,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_Gameplay_Take = m_Gameplay.FindAction("Take", throwIfNotFound: true);
         m_Gameplay_TrackingHandLeft = m_Gameplay.FindAction("TrackingHandLeft", throwIfNotFound: true);
         m_Gameplay_TrackingHandRight = m_Gameplay.FindAction("TrackingHandRight", throwIfNotFound: true);
-        m_Gameplay_GripRight = m_Gameplay.FindAction("GripRight", throwIfNotFound: true);
         m_Gameplay_GripLeft = m_Gameplay.FindAction("GripLeft", throwIfNotFound: true);
+        m_Gameplay_GripRight = m_Gameplay.FindAction("GripRight", throwIfNotFound: true);
         m_Gameplay_TriggerLeft = m_Gameplay.FindAction("TriggerLeft", throwIfNotFound: true);
         m_Gameplay_TriggerRight = m_Gameplay.FindAction("TriggerRight", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
@@ -749,8 +793,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Take;
     private readonly InputAction m_Gameplay_TrackingHandLeft;
     private readonly InputAction m_Gameplay_TrackingHandRight;
-    private readonly InputAction m_Gameplay_GripRight;
     private readonly InputAction m_Gameplay_GripLeft;
+    private readonly InputAction m_Gameplay_GripRight;
     private readonly InputAction m_Gameplay_TriggerLeft;
     private readonly InputAction m_Gameplay_TriggerRight;
     private readonly InputAction m_Gameplay_Pause;
@@ -768,8 +812,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         public InputAction @Take => m_Wrapper.m_Gameplay_Take;
         public InputAction @TrackingHandLeft => m_Wrapper.m_Gameplay_TrackingHandLeft;
         public InputAction @TrackingHandRight => m_Wrapper.m_Gameplay_TrackingHandRight;
-        public InputAction @GripRight => m_Wrapper.m_Gameplay_GripRight;
         public InputAction @GripLeft => m_Wrapper.m_Gameplay_GripLeft;
+        public InputAction @GripRight => m_Wrapper.m_Gameplay_GripRight;
         public InputAction @TriggerLeft => m_Wrapper.m_Gameplay_TriggerLeft;
         public InputAction @TriggerRight => m_Wrapper.m_Gameplay_TriggerRight;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
@@ -812,12 +856,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @TrackingHandRight.started += instance.OnTrackingHandRight;
             @TrackingHandRight.performed += instance.OnTrackingHandRight;
             @TrackingHandRight.canceled += instance.OnTrackingHandRight;
-            @GripRight.started += instance.OnGripRight;
-            @GripRight.performed += instance.OnGripRight;
-            @GripRight.canceled += instance.OnGripRight;
             @GripLeft.started += instance.OnGripLeft;
             @GripLeft.performed += instance.OnGripLeft;
             @GripLeft.canceled += instance.OnGripLeft;
+            @GripRight.started += instance.OnGripRight;
+            @GripRight.performed += instance.OnGripRight;
+            @GripRight.canceled += instance.OnGripRight;
             @TriggerLeft.started += instance.OnTriggerLeft;
             @TriggerLeft.performed += instance.OnTriggerLeft;
             @TriggerLeft.canceled += instance.OnTriggerLeft;
@@ -861,12 +905,12 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @TrackingHandRight.started -= instance.OnTrackingHandRight;
             @TrackingHandRight.performed -= instance.OnTrackingHandRight;
             @TrackingHandRight.canceled -= instance.OnTrackingHandRight;
-            @GripRight.started -= instance.OnGripRight;
-            @GripRight.performed -= instance.OnGripRight;
-            @GripRight.canceled -= instance.OnGripRight;
             @GripLeft.started -= instance.OnGripLeft;
             @GripLeft.performed -= instance.OnGripLeft;
             @GripLeft.canceled -= instance.OnGripLeft;
+            @GripRight.started -= instance.OnGripRight;
+            @GripRight.performed -= instance.OnGripRight;
+            @GripRight.canceled -= instance.OnGripRight;
             @TriggerLeft.started -= instance.OnTriggerLeft;
             @TriggerLeft.performed -= instance.OnTriggerLeft;
             @TriggerLeft.canceled -= instance.OnTriggerLeft;
@@ -978,8 +1022,8 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         void OnTake(InputAction.CallbackContext context);
         void OnTrackingHandLeft(InputAction.CallbackContext context);
         void OnTrackingHandRight(InputAction.CallbackContext context);
-        void OnGripRight(InputAction.CallbackContext context);
         void OnGripLeft(InputAction.CallbackContext context);
+        void OnGripRight(InputAction.CallbackContext context);
         void OnTriggerLeft(InputAction.CallbackContext context);
         void OnTriggerRight(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);

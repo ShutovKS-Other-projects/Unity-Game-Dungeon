@@ -48,6 +48,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.5.1/InputSystem/Devices/InputDeviceChange.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.5.1/InputSystem/Events/InputEventTrace.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.5.1/InputSystem/Plugins/UI/InputSystemUIInputModule.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.5.1/InputSystem/Utilities/DelegateHelpers.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.3.2/UnityEngine.TestRunner/Assertions/LogScope/LogScope.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.test-framework@1.3.2/UnityEngine.TestRunner/NUnitExtensions/Runner/UnityTestAssemblyRunner.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.2.0/Runtime/Inputs/Simulation/XRDeviceSimulator.cs" root0="SKIP_HIGHLIGHTING" />
@@ -85,7 +86,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "qodana.show.link.project.notification": "false",
-    "settings.editor.selected.configurable": "preferences.sourceCode.C#",
+    "settings.editor.selected.configurable": "RiderDpaPageId",
     "settings.editor.splitter.proportion": "0.1523046",
     "vue.rearranger.settings.migration": "true"
   },
@@ -309,7 +310,7 @@
       <workItem from="1681471919923" duration="4287000" />
       <workItem from="1681484137749" duration="6448000" />
       <workItem from="1681493552380" duration="13224000" />
-      <workItem from="1681571204146" duration="2957000" />
+      <workItem from="1681571204146" duration="9732000" />
     </task>
     <servers />
   </component>

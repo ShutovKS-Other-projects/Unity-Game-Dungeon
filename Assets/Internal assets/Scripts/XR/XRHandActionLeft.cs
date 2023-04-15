@@ -20,7 +20,7 @@ namespace XR
             _sphereCollider = transform.AddComponent<SphereCollider>();
             _sphereCollider.isTrigger = true;
             _sphereCollider.enabled = false;
-            _sphereCollider.radius = 0.1f;
+            _sphereCollider.radius = 0.2f;
 
             _inputReader = Resources.Load<InputReader>($"ScriptableObject/Input/InputReader");
 
@@ -43,13 +43,12 @@ namespace XR
                 var interactive = other.GetComponent<IInteractive>();
                 interactive?.OnInteractXR(_sideType);
             }
-            else if (_isGrab)
+            if (_isGrab)
             {
                 var interactive = other.GetComponent<IInteractive>();
                 interactive.OnGrabXR(_sideType);
             }
         }
-
 
         private void OnGrab()
         {
@@ -61,6 +60,7 @@ namespace XR
         {
             Debug.Log("OnGrabCancelled");
             _isGrab = false;
+            GrabsController.LetGoLeftGrab();
         }
 
         private void OnAction()

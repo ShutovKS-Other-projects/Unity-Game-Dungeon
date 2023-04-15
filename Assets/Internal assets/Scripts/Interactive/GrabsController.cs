@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace Interactive
@@ -29,6 +30,12 @@ namespace Interactive
 
         private static void Grab(Transform childTransform, Transform grabTransform)
         {
+            if (childTransform.TryGetComponent<Rigidbody>(out Rigidbody componentRigidbody))
+                Destroy(componentRigidbody);
+            if (childTransform.TryGetComponent<MeshCollider>(out MeshCollider componentMeshCollider))
+                Destroy(componentMeshCollider);
+
+            childTransform.gameObject.layer = LayerMask.NameToLayer("Default");
             childTransform.parent = grabTransform;
             childTransform.localPosition = Vector3.zero;
             childTransform.localRotation = Quaternion.identity;
@@ -51,8 +58,12 @@ namespace Interactive
 
         private static void LetGo(Transform grabTransform)
         {
-            if (grabTransform.childCount > 0)
-                grabTransform.GetChild(0).transform.parent = null;
+            if (grabTransform.childCount <= 0) return;
+            var tempTransform = grabTransform.GetChild(0);
+            tempTransform.gameObject.AddComponent<Rigidbody>();
+            tempTransform.gameObject.AddComponent<MeshCollider>().convex = true;
+            tempTransform.gameObject.layer = LayerMask.NameToLayer("Interactive");
+            tempTransform.parent = null;
         }
 
         #endregion
@@ -67,6 +78,7 @@ namespace Interactive
             RemoveChildrenLeft();
             RemoveChildrenRight();
         }
+
         private static void RemoveChildren(Transform grabTransform)
         {
             if (grabTransform.childCount > 0)

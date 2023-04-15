@@ -21,7 +21,7 @@ namespace XR
             _sphereCollider = transform.AddComponent<SphereCollider>();
             _sphereCollider.isTrigger = true;
             _sphereCollider.enabled = false;
-            _sphereCollider.radius = 0.1f;
+            _sphereCollider.radius = 0.2f;
 
             _inputReader = Resources.Load<InputReader>($"ScriptableObject/Input/InputReader");
 
@@ -62,6 +62,7 @@ namespace XR
         {
             Debug.Log("OnGrabCancelled");
             _isGrab = false;
+            GrabsController.LetGoRightGrab();
         }
 
         private void OnAction()

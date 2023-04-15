@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hammer
       objectReference: {fileID: 0}
+    - target: {fileID: 8591273635324488586, guid: 82f1e40c0cf7c5048a41bfa78b10c9d9,
+        type: 3}
+      propertyPath: m_TagString
+      value: ObjectDamaging
+      objectReference: {fileID: 0}
     - target: {fileID: 8967095078329889072, guid: 82f1e40c0cf7c5048a41bfa78b10c9d9,
         type: 3}
       propertyPath: m_RootOrder
@@ -76,6 +81,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8591273635324488586, guid: 82f1e40c0cf7c5048a41bfa78b10c9d9,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: -8866023514424823122}
+    - targetCorrespondingSourceObject: {fileID: 8591273635324488586, guid: 82f1e40c0cf7c5048a41bfa78b10c9d9,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 9019503241286035975}
     - targetCorrespondingSourceObject: {fileID: 8591273635324488586, guid: 82f1e40c0cf7c5048a41bfa78b10c9d9,
         type: 3}
@@ -88,6 +97,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1279052809986022368}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-8866023514424823122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7420329215353909354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174141950882fb74a887dccc4215de4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveObject: {fileID: 11400000, guid: 7283919bddf9a8940a0deb3386d6fa63, type: 2}
 --- !u!65 &9019503241286035975
 BoxCollider:
   m_ObjectHideFlags: 0

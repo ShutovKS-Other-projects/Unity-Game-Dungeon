@@ -68,9 +68,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bow
       objectReference: {fileID: 0}
+    - target: {fileID: 3317823749142253822, guid: d4958227484245e4592c41ab2c02ad22,
+        type: 3}
+      propertyPath: m_TagString
+      value: ObjectDamaging
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6366871878821540098, guid: d4958227484245e4592c41ab2c02ad22, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3317823749142253822, guid: d4958227484245e4592c41ab2c02ad22,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4963739610549975436}
   m_SourcePrefab: {fileID: 100100000, guid: d4958227484245e4592c41ab2c02ad22, type: 3}
+--- !u!1 &7255384119604509260 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3317823749142253822, guid: d4958227484245e4592c41ab2c02ad22,
+    type: 3}
+  m_PrefabInstance: {fileID: 5384909279443806898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4963739610549975436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255384119604509260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174141950882fb74a887dccc4215de4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveObject: {fileID: 11400000, guid: 7283919bddf9a8940a0deb3386d6fa63, type: 2}

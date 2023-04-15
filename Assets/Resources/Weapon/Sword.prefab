@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 355312524381552382, guid: b84d7ca3927758646a65731cc107aa76,
+        type: 3}
+      propertyPath: m_TagString
+      value: ObjectDamaging
+      objectReference: {fileID: 0}
     - target: {fileID: 1127450730860520516, guid: b84d7ca3927758646a65731cc107aa76,
         type: 3}
       propertyPath: m_RootOrder
@@ -76,6 +81,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 355312524381552382, guid: b84d7ca3927758646a65731cc107aa76,
         type: 3}
       insertIndex: -1
+      addedObject: {fileID: -5552695865308221524}
+    - targetCorrespondingSourceObject: {fileID: 355312524381552382, guid: b84d7ca3927758646a65731cc107aa76,
+        type: 3}
+      insertIndex: -1
       addedObject: {fileID: 4058554684577053589}
     - targetCorrespondingSourceObject: {fileID: 355312524381552382, guid: b84d7ca3927758646a65731cc107aa76,
         type: 3}
@@ -88,6 +97,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7678540355749856010}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &-5552695865308221524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7953907928694177268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 174141950882fb74a887dccc4215de4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactiveObject: {fileID: 11400000, guid: 7283919bddf9a8940a0deb3386d6fa63, type: 2}
 --- !u!65 &4058554684577053589
 BoxCollider:
   m_ObjectHideFlags: 0
