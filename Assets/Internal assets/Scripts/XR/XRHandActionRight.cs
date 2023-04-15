@@ -2,6 +2,7 @@
 using Input;
 using Interactive;
 using JetBrains.Annotations;
+using Player;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace XR
         private SphereCollider _sphereCollider;
         private InputReader _inputReader;
         private SideType _sideType = SideType.Right;
+        private Animator _animator;
 
         private bool _isGrab;
         private bool _isAction;
@@ -23,6 +25,8 @@ namespace XR
             _sphereCollider.enabled = false;
             _sphereCollider.radius = 0.2f;
 
+            _animator = PlayerController.player.GetComponent<Animator>();
+
             _inputReader = Resources.Load<InputReader>($"ScriptableObject/Input/InputReader");
 
             _inputReader.XRGripRightEvent += OnGrab;
@@ -30,7 +34,7 @@ namespace XR
 
             _inputReader.XRActionRightEvent += OnAction;
             _inputReader.XRActionRightCancelledEvent += OnActionCancelled;
-            
+
             _inputReader.XRTrackingArmRightEvent += OnEnableCollider;
             _inputReader.XRTrackingArmRightCancelledEvent += OnDisableCollider;
         }
@@ -55,12 +59,14 @@ namespace XR
         private void OnGrab()
         {
             Debug.Log("OnGrab");
+            _animator.SetFloat("GripRight", 1);
             _isGrab = true;
         }
 
         private void OnGrabCancelled()
         {
             Debug.Log("OnGrabCancelled");
+            _animator.SetFloat("GripRight", 0);
             _isGrab = false;
             GrabsController.LetGoRightGrab();
         }
@@ -68,12 +74,14 @@ namespace XR
         private void OnAction()
         {
             Debug.Log("OnAction");
+            _animator.SetFloat("TriggerRight", 1);
             _isAction = true;
         }
 
         private void OnActionCancelled()
         {
             Debug.Log("OnActionCancelled");
+            _animator.SetFloat("TriggerRight", 0);
             _isAction = false;
         }
 
