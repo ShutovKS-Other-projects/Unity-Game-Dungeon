@@ -8,14 +8,13 @@ namespace XR
 {
     public class XRHandActionLeft : MonoBehaviour
     {
-        private InteractionObject _interactionObject = null;
         private SphereCollider _sphereCollider;
         private InputReader _inputReader;
         private SideType _sideType = SideType.Left;
 
         private bool _isGrab;
         private bool _isAction;
-
+ 
         private void Start()
         {
             _sphereCollider = transform.AddComponent<SphereCollider>();

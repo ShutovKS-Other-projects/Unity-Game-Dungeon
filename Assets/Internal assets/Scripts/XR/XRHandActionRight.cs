@@ -1,6 +1,7 @@
 ﻿using System;
 using Input;
 using Interactive;
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,7 +9,6 @@ namespace XR
 {
     public class XRHandActionRight : MonoBehaviour
     {
-        private InteractionObject _interactionObject = null;
         private SphereCollider _sphereCollider;
         private InputReader _inputReader;
         private SideType _sideType = SideType.Right;
