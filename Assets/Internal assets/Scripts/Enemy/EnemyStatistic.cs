@@ -1,6 +1,5 @@
 ﻿using System;
 using Enemy.FiniteStateMachine;
-using UnityEditor.Animations;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -42,7 +41,7 @@ namespace Enemy
         public bool IsDead => Health <= 0;
         [NonSerialized] public bool isVisiblePlayer;
 
-        public AnimatorController AnimatorController => _data.animatorController;
+        // public AnimatorController AnimatorController => _data.animatorController;
 
         #endregion
 

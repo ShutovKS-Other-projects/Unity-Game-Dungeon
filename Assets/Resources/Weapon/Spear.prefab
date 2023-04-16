@@ -105,6 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiveObject: {fileID: 11400000, guid: 7283919bddf9a8940a0deb3386d6fa63, type: 2}
+  weaponTransformObject: {fileID: 11400000, guid: 73e734b83eb83c045b3a1a8f2aa3da0c,
+    type: 2}
 --- !u!65 &4443686979848493789
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@
 using Enemy.FiniteStateMachine.SubState;
 using Manager;
 using Unity.VisualScripting;
+// using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -44,14 +45,15 @@ namespace Enemy.FiniteStateMachine
             DeathState = new EnemyDeathState(this, StateMachine, _enemyStatistic, "Death");
             IdleState = new EnemyIdleState(this, StateMachine, _enemyStatistic, "Idle");
             MoveState = new EnemyMoveState(this, StateMachine, _enemyStatistic, "Move");
-            
+
             EnemiesController.AddEnemy(gameObject);
         }
 
         private void Start()
         {
             Animator = TryGetComponent<Animator>(out var animator) ? animator : transform.AddComponent<Animator>();
-            Animator.runtimeAnimatorController = _enemyStatistic.AnimatorController;
+            // Animator.runtimeAnimatorController =
+                // Resources.Load<AnimatorController>("AnimationControllers/Enemy/EnemyAnimator.controller");
 
             NavMeshAgent = TryGetComponent<NavMeshAgent>(out var navMeshAgent)
                 ? navMeshAgent

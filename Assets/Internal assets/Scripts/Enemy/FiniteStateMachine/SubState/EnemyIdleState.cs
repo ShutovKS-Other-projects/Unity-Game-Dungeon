@@ -22,7 +22,8 @@ namespace Enemy.FiniteStateMachine.SubState
         {
             base.LogicUpdate();
 
-            if (EnemyStatistic.isVisiblePlayer && PlayerDistance > EnemyStatistic.AttackDistance)
+            if (!EnemyStatistic.isVisiblePlayer) return;
+            if (PlayerDistance > EnemyStatistic.AttackDistance)
                 StateMachine.ChangeState(StateController.MoveState);
             else if (IsAttack())
                 StateMachine.ChangeState(StateController.AttackState);
@@ -30,7 +31,6 @@ namespace Enemy.FiniteStateMachine.SubState
 
         private bool IsAttack()
         {
-            if (!EnemyStatistic.isVisiblePlayer || !(PlayerDistance < EnemyStatistic.AttackDistance)) return false;
             _attackTimer += Time.deltaTime;
             if (!(_attackTimer >= EnemyStatistic.AttackRetryTime)) return false;
             _attackTimer = 0;

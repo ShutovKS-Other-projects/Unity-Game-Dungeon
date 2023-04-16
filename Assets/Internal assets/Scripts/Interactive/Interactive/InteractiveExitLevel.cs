@@ -1,6 +1,7 @@
 using Enemy;
 using Scene;
 using UnityEngine;
+using Weapon;
 using XR;
 
 namespace Interactive.Interactive
@@ -9,7 +10,8 @@ namespace Interactive.Interactive
     {
         [SerializeField] private InteractiveObject interactiveObject;
         InteractiveObject IInteractive.InteractiveObject => interactiveObject;
-        
+        public WeaponTransformObject WeaponTransformObject { get; }
+
         private void Start()
         {
             // EnemiesController.AllEnemiesAreDead += () => _isInteractable = true;

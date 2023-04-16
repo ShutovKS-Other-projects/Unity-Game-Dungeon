@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Player;
+using UnityEngine;
 
 namespace Enemy.FiniteStateMachine.SubState
 {
@@ -13,7 +14,7 @@ namespace Enemy.FiniteStateMachine.SubState
         public override void Enter()
         {
             base.Enter();
-            Debug.Log("Enter Attack State");
+            PlayerController.player.GetComponent<PlayerStatistic>().CharacteristicHealth.AddValueMax(-1);
             IsAbilityDone = true;
         }
     }

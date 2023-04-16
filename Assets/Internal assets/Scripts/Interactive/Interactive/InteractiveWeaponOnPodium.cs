@@ -12,6 +12,8 @@ namespace Interactive.Interactive
 
         [SerializeField] private InteractiveObject interactiveObject;
         InteractiveObject IInteractive.InteractiveObject => interactiveObject;
+        public WeaponTransformObject WeaponTransformObject => weaponTransformObject;
+        [SerializeField] private WeaponTransformObject weaponTransformObject;
 
         private static event Action SwitchWeapon;
 
@@ -28,11 +30,11 @@ namespace Interactive.Interactive
             WeaponController.ChooseWeapon(weaponType);
 
             SwitchWeapon?.Invoke();
-            
+
             foreach (var variable in GameObject.FindGameObjectsWithTag("ObjectDamaging")) Destroy(variable);
             var weapon = Instantiate(Resources.Load<GameObject>($"Weapon/{weaponType}")).transform;
-            
-            GrabsController.GrabRight(weapon);
+
+            GrabsController.GrabRight(weapon, weaponTransformObject);
             weapon.AddComponent<ObjectDamage>();
         }
 
@@ -50,12 +52,12 @@ namespace Interactive.Interactive
             {
                 case SideType.Left:
                 {
-                    GrabsController.GrabLeft(weapon);
+                    GrabsController.GrabLeft(weapon, weaponTransformObject);
                     break;
                 }
                 case SideType.Right:
                 {
-                    GrabsController.GrabRight(weapon);
+                    GrabsController.GrabRight(weapon, weaponTransformObject);
                     break;
                 }
             }

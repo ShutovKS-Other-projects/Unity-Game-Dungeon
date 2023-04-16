@@ -102,3 +102,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactiveObject: {fileID: 11400000, guid: 7283919bddf9a8940a0deb3386d6fa63, type: 2}
+  weaponTransformObject: {fileID: 11400000, guid: 822e79b7af3520147b13b6a436b74145,
+    type: 2}

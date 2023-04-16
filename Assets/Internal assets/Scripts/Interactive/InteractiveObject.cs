@@ -9,7 +9,7 @@ namespace Interactive
     {
         public bool isInteract; 
         public bool isGrab;
-
+        
         [TextArea(5, 5)] [CanBeNull] public string tooltipTextInteract;
         [TextArea(5, 5)] [CanBeNull] public string tooltipTextTake;
         

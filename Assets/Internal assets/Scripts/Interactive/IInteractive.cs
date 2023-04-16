@@ -1,5 +1,6 @@
 ﻿using JetBrains.Annotations;
 using UnityEngine;
+using Weapon;
 using XR;
 
 namespace Interactive
@@ -7,7 +8,7 @@ namespace Interactive
     public interface IInteractive
     {
         protected InteractiveObject InteractiveObject { get; }
-
+        public WeaponTransformObject WeaponTransformObject { get; }
         public bool IsInteract => InteractiveObject.isInteract;
         public bool IsGrab => InteractiveObject.isGrab;
 

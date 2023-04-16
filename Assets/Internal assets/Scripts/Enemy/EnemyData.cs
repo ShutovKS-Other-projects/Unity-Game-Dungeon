@@ -1,4 +1,3 @@
-using UnityEditor.Animations;
 using UnityEngine;
 
 namespace Enemy
@@ -18,6 +17,6 @@ namespace Enemy
 
         [Header("Player Check")] public float playerCheckDistance;
 
-        [Header("Animation")] public AnimatorController animatorController;
+        // [Header("Animation")] public AnimatorController animatorController;
     }
 }

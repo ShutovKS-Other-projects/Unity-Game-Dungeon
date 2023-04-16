@@ -1,6 +1,7 @@
 using Scene;
 using UI.Home_Scene;
 using UnityEngine;
+using Weapon;
 using XR;
 
 namespace Interactive.Interactive
@@ -9,6 +10,7 @@ namespace Interactive.Interactive
     {
         [SerializeField] private InteractiveObject interactiveObject;
         InteractiveObject IInteractive.InteractiveObject => interactiveObject;
+        public WeaponTransformObject WeaponTransformObject { get; }
 
         public void OnInteract()
         {

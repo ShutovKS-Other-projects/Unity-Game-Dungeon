@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using Weapon;
 
 namespace Interactive
 {
@@ -16,19 +17,20 @@ namespace Interactive
 
         #region Grab
 
-        public static void GrabLeft(Transform childTransform)
+        public static void GrabLeft(Transform childTransform, WeaponTransformObject weaponTransformObject = null)
         {
             LetGoLeftGrab();
-            Grab(childTransform, _lGrab);
+            Grab(childTransform, _lGrab, weaponTransformObject);
         }
 
-        public static void GrabRight(Transform childTransform)
+        public static void GrabRight(Transform childTransform, WeaponTransformObject weaponTransformObject = null)
         {
             LetGoRightGrab();
-            Grab(childTransform, _rGrab);
+            Grab(childTransform, _rGrab, weaponTransformObject);
         }
 
-        private static void Grab(Transform childTransform, Transform grabTransform)
+        private static void Grab(Transform childTransform, Transform grabTransform,
+            WeaponTransformObject weaponTransformObject = null)
         {
             if (childTransform.TryGetComponent<Rigidbody>(out Rigidbody componentRigidbody))
                 Destroy(componentRigidbody);
@@ -37,9 +39,11 @@ namespace Interactive
 
             childTransform.gameObject.layer = LayerMask.NameToLayer("Default");
             childTransform.parent = grabTransform;
-            childTransform.localPosition = Vector3.zero;
-            childTransform.localRotation = Quaternion.identity;
-            childTransform.localScale = Vector3.one;
+            childTransform.localPosition =
+                weaponTransformObject == null ? Vector3.zero : weaponTransformObject.position;
+            childTransform.localRotation =
+                weaponTransformObject == null ? Quaternion.identity : weaponTransformObject.rotation;
+            childTransform.localScale = weaponTransformObject == null ? Vector3.one : weaponTransformObject.scale;
         }
 
         #endregion
