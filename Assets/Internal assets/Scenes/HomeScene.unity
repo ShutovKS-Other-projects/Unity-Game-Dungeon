@@ -3967,6 +3967,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 167923348}
+  - component: {fileID: 167923349}
   m_Layer: 0
   m_Name: L_Grab
   m_TagString: Untagged
@@ -3989,6 +3990,18 @@ Transform:
   m_Father: {fileID: 388820499}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &167923349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167923347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89210ad7b9a14032b15d5a4cd10c9af5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &171450876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4376,13 +4389,13 @@ MonoBehaviour:
   leftArm:
     xrTarget: {fileID: 1261780714}
     rigTarget: {fileID: 1943962772}
-    trackingPositionOffset: {x: 0, y: 0, z: 0}
-    trackingRotationOffset: {x: 0, y: 0, z: 0}
+    trackingPositionOffset: {x: 0, y: 0, z: 0.15}
+    trackingRotationOffset: {x: 180, y: -90, z: -90}
   rightArm:
     xrTarget: {fileID: 1593724676}
     rigTarget: {fileID: 1224892330}
-    trackingPositionOffset: {x: 0, y: 0, z: 0}
-    trackingRotationOffset: {x: 0, y: 0, z: 0}
+    trackingPositionOffset: {x: 0, y: 0, z: 0.15}
+    trackingRotationOffset: {x: 0, y: -90, z: -90}
 --- !u!114 &205625848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5943,7 +5956,7 @@ PrefabInstance:
     - target: {fileID: 3918751411058313036, guid: bf7a7fc00791eb945a5412768a68fffc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.1780014
+      value: 0.247
       objectReference: {fileID: 0}
     - target: {fileID: 3918751411058313036, guid: bf7a7fc00791eb945a5412768a68fffc,
         type: 3}
@@ -5953,7 +5966,7 @@ PrefabInstance:
     - target: {fileID: 3918751411058313036, guid: bf7a7fc00791eb945a5412768a68fffc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.299
+      value: 14.212
       objectReference: {fileID: 0}
     - target: {fileID: 3918751411058313036, guid: bf7a7fc00791eb945a5412768a68fffc,
         type: 3}
@@ -11307,7 +11320,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 485302, guid: 3bc099817d25fea43b3ad813c0cf68cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.144
       objectReference: {fileID: 0}
     - target: {fileID: 485302, guid: 3bc099817d25fea43b3ad813c0cf68cc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -20008,7 +20021,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 9f5a24a380916d14db9775daab4fe333,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27656,6 +27669,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1160590379}
+  - component: {fileID: 1160590380}
   m_Layer: 0
   m_Name: R_Grab
   m_TagString: Untagged
@@ -27678,6 +27692,18 @@ Transform:
   m_Father: {fileID: 388820499}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1160590380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160590378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ae207c50364eff8273dcda7b5dd654, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1174808720
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30186,7 +30212,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1261780714}
   - component: {fileID: 1261780719}
-  - component: {fileID: 1261780720}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: Untagged
@@ -30400,18 +30425,6 @@ MonoBehaviour:
     m_Reference: {fileID: 7779212132400271959, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &1261780720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1261780713}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89210ad7b9a14032b15d5a4cd10c9af5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1261852467
 GameObject:
   m_ObjectHideFlags: 0
@@ -37118,7 +37131,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1593724676}
   - component: {fileID: 1593724681}
-  - component: {fileID: 1593724682}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: Untagged
@@ -37332,18 +37344,6 @@ MonoBehaviour:
     m_Reference: {fileID: 875253871413052681, guid: c348712bda248c246b8c49b3db54643f,
       type: 3}
   m_ButtonPressPoint: 0.5
---- !u!114 &1593724682
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1593724675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83ae207c50364eff8273dcda7b5dd654, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1602763755
 PrefabInstance:
   m_ObjectHideFlags: 0

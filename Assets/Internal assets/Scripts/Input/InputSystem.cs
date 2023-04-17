@@ -276,6 +276,17 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""08734f5e-a667-46ac-b188-b11e971e20c2"",
+                    ""path"": ""<OculusTouchController>{LeftHand}/gripPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""GripLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""50be8aa5-989e-4b6e-970d-7c6a92b28b0e"",
                     ""path"": ""<XRController>{RightHand}/trackingState"",
                     ""interactions"": """",
@@ -309,8 +320,30 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""4442e4e3-6277-43da-90a3-c695d10b3a5f"",
+                    ""path"": ""<OculusTouchController>{RightHand}/triggerPressed"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""TriggerRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""2b818abb-2d5b-40e5-85dc-68d4b090428e"",
                     ""path"": ""<XRSimulatedController>{LeftHand}/triggerButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""TriggerLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c4488cda-2bdf-47a3-9c4d-0c02b19c0cca"",
+                    ""path"": ""<OculusTouchController>{LeftHand}/triggerPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",
@@ -345,21 +378,10 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""id"": ""c0e312c4-0602-4fd2-bd72-86445ef6aa90"",
                     ""path"": ""<XRController>{RightHand}/joystick"",
                     ""interactions"": """",
-                    ""processors"": """",
+                    ""processors"": ""NormalizeVector2,ScaleVector2(x=17.5,y=12.5)"",
                     ""groups"": ""XR"",
                     ""action"": ""Look"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""XR Head [IN DEVELOPING]"",
-                    ""id"": ""19738eff-a726-4f21-9956-d9ae97a5dac7"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Look"",
-                    ""isComposite"": true,
                     ""isPartOfComposite"": false
                 },
                 {
@@ -495,17 +517,6 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""XR Head [IN DEVELOPING]"",
-                    ""id"": ""24679571-f872-4617-b19c-9ff52c4a1179"",
-                    ""path"": ""2DVector"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Movement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
                     ""name"": """",
                     ""id"": ""a367e12d-f5ff-47b6-b883-9971f4aeff1b"",
                     ""path"": ""<Mouse>/leftButton"",
@@ -533,7 +544,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""Take"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -575,6 +586,17 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""name"": """",
                     ""id"": ""a43f0223-2e86-4a40-a8c7-8d8eddee2937"",
                     ""path"": ""<XRSimulatedController>{RightHand}/gripButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""GripRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec418af0-87d9-40ed-8a3d-44accd0396de"",
+                    ""path"": ""<OculusTouchController>{RightHand}/gripPressed"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""XR"",

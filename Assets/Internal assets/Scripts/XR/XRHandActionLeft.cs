@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using Input;
 using Interactive;
 using Player;
@@ -9,7 +9,7 @@ namespace XR
 {
     public class XRHandActionLeft : MonoBehaviour
     {
-        private SphereCollider _sphereCollider;
+        private CapsuleCollider _sphereCollider;
         private InputReader _inputReader;
         private SideType _sideType = SideType.Left;
         private Animator _animator;
@@ -20,11 +20,13 @@ namespace XR
 
         private void Start()
         {
-            _sphereCollider = transform.AddComponent<SphereCollider>();
+            _sphereCollider = transform.AddComponent<CapsuleCollider>();
             _sphereCollider.isTrigger = true;
             _sphereCollider.enabled = false;
-            _sphereCollider.radius = 0.2f;
-            
+            _sphereCollider.radius = 0.3f;
+            _sphereCollider.height = 1.25f;
+            _sphereCollider.center = new Vector3(0, 0.5f, 0);
+
             _animator = PlayerController.player.GetComponent<Animator>();
 
             _inputReader = Resources.Load<InputReader>($"ScriptableObject/Input/InputReader");
